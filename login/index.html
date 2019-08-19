@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="static/vendor/bootstrap/css/bootstrap-flat.css">
+    <link rel="stylesheet" href="static/vendor/animate/css/animate.min.css">
+    <link rel="stylesheet" href="static/css/login.css">
+    <link rel="icon" type="image/png" href="static/img/favicon.png" />
+    <title>e-Qhali</title>
+</head>
+
+<body class="bodyLogin">
+    <section class="contentLogin animated fadeIn">
+        <div class="loginContainer animated zoomIn">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-5">
+                        <div class="contentLogoLogin">
+                        	<img src="static/img/logo_minsa.png" alt="MINSA" class="img-responsive center-block logoMinsa">
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-7">
+                        <form action="." method="post">
+                            <input type='hidden' name='csrfmiddlewaretoken' value='yO0H1C6U4W74y0ba8DXQ83zUPNsH6Zgu044i147HXj5Y5UTWgH3TENiA1Ux15ewf' />
+                            <div class="form-group">
+                                <input type="text" name="username" class="form-control" placeholder="Usuario" autofocus="" required id="id_username" />
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input type="password" name="password" class="form-control input-password" placeholder="Contraseña" required id="id_password" />
+                                    <div class="input-group-addon" style="cursor: pointer;" id="div-eye-passwd"><i class="fa fa-eye-slash" id="eye-addon"></i></div>
+                                </div>
+                            </div>
+                            <button class="btn btn-block btn-primary">Ingresar</button>
+                            <input type="hidden" name="app_identifier" value="pe.gob.minsa.inmunizaciones">
+                            <input type="hidden" name="login_uuid" value="e8dfb284-ab2d-4434-ab97-4e0967348381">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="static/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <script src="static/js/login.js"></script>
+</body>
+
+</html>
