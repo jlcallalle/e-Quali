@@ -1,0 +1,736 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4b9e3164-26ba-4da1-979e-980abc0bd81a" name="Default" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileEditorManager">
+    <splitter split-orientation="horizontal" split-proportion="0.7050874">
+      <split-first>
+        <splitter split-orientation="vertical" split-proportion="0.7040111">
+          <split-first>
+            <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+              <file pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/js/ucOdontModel_manager.js">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="429">
+                      <caret line="7315" column="74" selection-start-line="7315" selection-start-column="74" selection-end-line="7315" selection-end-column="74" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/testOdonModel_v2.html">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="672">
+                      <caret line="271" column="80" selection-start-line="271" selection-start-column="80" selection-end-line="271" selection-end-column="80" />
+                      <folding>
+                        <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
+                        <element signature="n#style#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                        <element signature="n#style#0;n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                        <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                        <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                        <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                        <element signature="n#div#0;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+                        <element signature="n#div#1;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+                        <element signature="n#div#2;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+                        <element signature="n#div#3;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+                        <element signature="n#div#4;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+                        <element signature="n#div#5;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+                        <element signature="n#div#6;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+                        <element signature="n#div#7;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+                        <element signature="n#div#8;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+                        <element signature="n#div#9;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+                        <element signature="n#style#0;n#input#0;n#div#0;n#div#1;n#form#0;n#div#9;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="true" />
+                        <element signature="n#div#10;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+                        <element signature="n#div#11;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+                        <element signature="n#div#12;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+                        <element signature="n#div#13;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+                        <element signature="n#div#14;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+                        <element signature="n#div#15;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+                        <element signature="n#style#0;n#span#0;n#label#0;n#fieldset#0;n#div#1;n#div#0;n#div#2;n#form#0;n#div#15;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="true" />
+                        <element signature="n#style#0;n#span#0;n#label#1;n#fieldset#0;n#div#1;n#div#0;n#div#2;n#form#0;n#div#15;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="true" />
+                        <element signature="n#style#0;n#span#0;n#label#2;n#fieldset#0;n#div#1;n#div#0;n#div#2;n#form#0;n#div#15;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="true" />
+                        <element signature="n#div#16;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+                        <element signature="n#div#17;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+                        <element signature="n#div#18;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+                        <element signature="n#div#19;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+                        <element signature="n#div#20;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+                        <element signature="n#div#21;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+                        <element signature="n#div#22;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+                        <element signature="n#div#23;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+                        <element signature="n#div#24;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+                        <element signature="n#div#25;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+                        <element signature="n#div#26;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+                        <element signature="n#div#27;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+                        <element signature="n#div#28;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+                        <element signature="n#div#29;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+                        <element signature="n#div#30;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+                        <element signature="n#div#31;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+                        <element signature="n#div#32;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+                        <element signature="n#div#33;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+                        <element signature="n#div#34;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+                        <element signature="n#div#35;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+                        <element signature="n#div#36;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+                        <element signature="n#div#37;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+                        <element signature="n#div#38;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+                        <element signature="n#div#39;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+                        <element signature="n#div#40;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+                        <element signature="n#div#41;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+                        <element signature="n#div#42;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+                        <element signature="n#div#43;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+            </leaf>
+          </split-first>
+          <split-second>
+            <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+              <file pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/js/ucOdontModel_manager.js">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="99">
+                      <caret line="5318" column="18" selection-start-line="5318" selection-start-column="18" selection-end-line="5318" selection-end-column="18" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+            </leaf>
+          </split-second>
+        </splitter>
+      </split-first>
+      <split-second>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/js/ucOdontModel_manager.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="644">
+                  <caret line="457" column="26" selection-start-line="457" selection-start-column="26" selection-end-line="457" selection-end-column="26" />
+                  <folding>
+                    <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+                    <element signature="e#66#72#0" expanded="true" />
+                    <element signature="e#73#79#0" expanded="true" />
+                    <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+                    <element signature="e#43#49#0" expanded="true" />
+                    <element signature="e#97#104#0" expanded="true" />
+                    <element signature="e#94#99#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>150</find>
+      <find>ucOdontogramDocumentPNGdownlLink</find>
+      <find>descripcion</find>
+      <find>*det</find>
+      <find>especificaciones</find>
+      <find>especificacion</find>
+      <find>opc30</find>
+      <find>opc29</find>
+      <find>[&quot;option&quot;] === &quot;opc30&quot;</find>
+      <find>dataEventos</find>
+      <find>dataEventos[i][&quot;option&quot;] === &quot;opc26&quot;</find>
+      <find>pcl</find>
+      <find>opc03</find>
+      <find>dataEventos[i].param.especificacion;</find>
+      <find>fnAddEventos(</find>
+      <find>= datDientes.eventos;</find>
+      <find>datDientes.eventos</find>
+      <find>eventos</find>
+      <find>dataEventos[i]</find>
+      <find>dataEventos[opc]</find>
+      <find>act09</find>
+      <find>act03</find>
+      <find>&amp;DDotrahd;</find>
+      <find>fnAddEventos</find>
+      <find>pk</find>
+      <find>pkid</find>
+      <find>console.log</find>
+      <find>datDientes.eventos = fnAddEventos(datDientes,</find>
+      <find>onClose: function () {</find>
+      <find>act29</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>pcm</replace>
+      <replace>pcl</replace>
+      <replace>pcd.</replace>
+      <replace>pco.</replace>
+      <replace>act37</replace>
+      <replace>opc37</replace>
+      <replace>opc.</replace>
+      <replace>38</replace>
+      <replace>ucOdontogramViewPiezaDetariaDet</replace>
+      <replace>dataCodToKey</replace>
+      <replace>_radiooptions_html</replace>
+      <replace>_</replace>
+      <replace>&quot;S&quot;</replace>
+      <replace>'</replace>
+      <replace>37</replace>
+      <replace>40</replace>
+      <replace>36</replace>
+      <replace>33</replace>
+      <replace>indicacionTratmientoPulparBueno</replace>
+      <replace>textS0DienteAnotacionBlue</replace>
+      <replace>29</replace>
+      <replace>34</replace>
+      <replace>12</replace>
+      <replace>41</replace>
+      <replace>max_lengthLineEsp</replace>
+      <replace>max_lengthLineObsGen</replace>
+      <replace>42</replace>
+      <replace>max_lengthLineEspDet</replace>
+      <replace>dataEventos[opc]</replace>
+      <replace>dataEventos[opc][i]</replace>
+    </replaceStrings>
+    <dirStrings>
+      <dir>C:\xampp\htdocs\acodontogram-e\salud_bucal_src</dir>
+    </dirStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$USER_HOME$/Google Drive/proyectos-All/2018/saludBucal/version_2_nuevaOdont/modelo_graf_var.js" />
+        <option value="$PROJECT_DIR$/../../dentistas/prueba_union/prueba_HG.html" />
+        <option value="$PROJECT_DIR$/js/ucOdontModel.js" />
+        <option value="$PROJECT_DIR$/js/modelo_graf_var.js" />
+        <option value="$PROJECT_DIR$/js/ucOdontModel_log.js" />
+        <option value="$PROJECT_DIR$/testOdonView_v2.html" />
+        <option value="$PROJECT_DIR$/pruebas_xyz.html" />
+        <option value="$PROJECT_DIR$/js/ucOdontModel_graf_var.js" />
+        <option value="$PROJECT_DIR$/testOdonModel_v2.html" />
+        <option value="$PROJECT_DIR$/js/ucOdontModel_manager.js" />
+      </list>
+    </option>
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="PhpDebugGeneral" listening_started="true" />
+  <component name="PhpServers">
+    <servers />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="755" />
+    <option name="y" value="170" />
+    <option name="width" value="1495" />
+    <option name="height" value="1090" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="salud_bucal_src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="salud_bucal_src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="salud_bucal_src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="salud_bucal_src" type="462c0819:PsiDirectoryNode" />
+              <item name="copy_css_js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="salud_bucal_src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="salud_bucal_src" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="salud_bucal_src" type="b2602c69:ProjectViewProjectNode" />
+              <item name="salud_bucal_src" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs.mocha.mocha_node_package_dir" value="" />
+    <property name="nodejs.protractor.protractor_package" value="" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="xpath.settings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\acodontogram-e\salud_bucal_src\copy_css_js" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\acodontogram-e\salud_bucal_src\js" />
+      <recent name="C:\xampp\htdocs\acodontogram-e\salud_bucal_src" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="JavaScript Debug.testOdonModel_v2.html">
+    <configuration name="pruebas_xyz.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/salud_bucal_src/pruebas_xyz.html">
+      <method v="2" />
+    </configuration>
+    <configuration name="testOdonModel.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/salud_bucal_src/testOdonModel.html">
+      <method v="2" />
+    </configuration>
+    <configuration name="testOdonModel_v2.html (1)" type="JavascriptDebugType" nameIsGenerated="true" uri="http://localhost:51143/salud_bucal_src/testOdonModel_v2.html">
+      <method v="2" />
+    </configuration>
+    <configuration name="testOdonModel_v2.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/salud_bucal_src/testOdonModel_v2.html">
+      <method v="2" />
+    </configuration>
+    <configuration name="testOdonView.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/salud_bucal_src/testOdonView.html">
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="JavaScript Debug.testOdonModel_v2.html (1)" />
+      <item itemvalue="JavaScript Debug.testOdonModel.html" />
+      <item itemvalue="JavaScript Debug.pruebas_xyz.html" />
+      <item itemvalue="JavaScript Debug.testOdonView.html" />
+      <item itemvalue="JavaScript Debug.testOdonModel_v2.html" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.testOdonModel_v2.html" />
+        <item itemvalue="JavaScript Debug.testOdonView.html" />
+        <item itemvalue="JavaScript Debug.pruebas_xyz.html" />
+        <item itemvalue="JavaScript Debug.testOdonModel.html" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4b9e3164-26ba-4da1-979e-980abc0bd81a" name="Default" comment="" />
+      <created>1532452339952</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1532452339952</updated>
+      <workItem from="1532452341171" duration="42054000" />
+      <workItem from="1532751374158" duration="238000" />
+      <workItem from="1532923521042" duration="15000" />
+      <workItem from="1533016313294" duration="3038000" />
+      <workItem from="1533046426415" duration="25974000" />
+      <workItem from="1533119911923" duration="12765000" />
+      <workItem from="1533167277038" duration="1565000" />
+      <workItem from="1533224438028" duration="12045000" />
+      <workItem from="1533323084867" duration="39533000" />
+      <workItem from="1533883315330" duration="67894000" />
+      <workItem from="1534272907922" duration="14684000" />
+      <workItem from="1534865284104" duration="36607000" />
+      <workItem from="1535486983514" duration="596000" />
+      <workItem from="1536277404052" duration="147000" />
+      <workItem from="1536277618003" duration="3147000" />
+      <workItem from="1536607433226" duration="44736000" />
+      <workItem from="1536890074106" duration="590000" />
+      <workItem from="1537475573055" duration="360000" />
+      <workItem from="1537989273713" duration="45388000" />
+      <workItem from="1538449668563" duration="73122000" />
+      <workItem from="1561505089909" duration="662000" />
+      <workItem from="1561752318309" duration="610000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="425770000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" x="686" y="46" width="366" height="845" id="Project" order="0" visible="true" weight="0.15771812" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32918397" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39972338" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32918397" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.206333" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32918397" />
+      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24966443" />
+      <window_info anchor="right" id="Database" order="3" weight="0.3295302" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$USER_HOME$/Google Drive/proyectos-All/2018/saludBucal/version_2_nuevaOdont/modelo_graf_var.js" />
+    <entry file="file://$PROJECT_DIR$/template.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/md5.min.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="uml://JavaScript-modules-diagram/C:/xampp/htdocs/acodontogram-e/salud_bucal_src/js/modelo_graf_var.js">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JavaScript-modules-diagram</ID>
+          <OriginalElement>$PROJECT_DIR$/js/modelo_graf_var.js</OriginalElement>
+          <nodes />
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="364.0" y="335.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>All</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>Details</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testOdonModel.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="3" selection-start-line="3" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../dentistas/prueba_union/pruebaAcEv.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="658">
+          <caret line="276" column="3" lean-forward="true" selection-start-line="276" selection-start-column="3" selection-end-line="276" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../dentistas/prueba_union/prueba_HG.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="499" column="24" selection-start-line="499" selection-start-column="8" selection-end-line="499" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/ucOdontModel_manager-v10.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="14">
+          <caret line="1428" column="52" selection-start-line="1428" selection-start-column="27" selection-end-line="1428" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/ucOdontModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/ucOdontModel_log.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="644">
+          <caret line="104" lean-forward="true" selection-start-line="104" selection-end-line="104" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testOdonModel_1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-25" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testOdonView.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="13" column="24" lean-forward="true" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pruebas_xyz.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="464">
+          <caret line="106" column="41" selection-start-line="106" selection-start-column="41" selection-end-line="106" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testOdonView_v2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="90" column="32" selection-start-line="90" selection-start-column="32" selection-end-line="90" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/modelo_graf_var.js" />
+    <entry file="file://$PROJECT_DIR$/copy_css_js/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/ucOdontModel_graf_var.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="4383" column="19" lean-forward="true" selection-start-line="4383" selection-start-column="19" selection-end-line="4383" selection-end-column="19" />
+          <folding>
+            <element signature="e#991#35348#0" />
+            <element signature="e#1002#6648#0" />
+            <element signature="e#1015#1228#0" />
+            <element signature="e#6659#14790#0" />
+            <element signature="e#14801#22685#0" />
+            <element signature="e#22696#35343#0" />
+            <element signature="e#22709#23249#0" />
+            <element signature="e#23313#31625#0" />
+            <element signature="e#23330#25475#0" />
+            <element signature="e#23388#23599#0" />
+            <element signature="e#23646#23989#0" />
+            <element signature="e#24010#24356#0" />
+            <element signature="e#24377#24724#0" />
+            <element signature="e#24746#25084#0" />
+            <element signature="e#25106#25448#0" />
+            <element signature="e#25492#26545#0" />
+            <element signature="e#26562#27971#0" />
+            <element signature="e#26617#26828#0" />
+            <element signature="e#26875#27219#0" />
+            <element signature="e#27240#27583#0" />
+            <element signature="e#27604#27944#0" />
+            <element signature="e#27966#28304#0" />
+            <element signature="e#28327#28670#0" />
+            <element signature="e#27988#29029#0" />
+            <element signature="e#28042#28251#0" />
+            <element signature="e#28298#28641#0" />
+            <element signature="e#28662#29002#0" />
+            <element signature="e#29101#29312#0" />
+            <element signature="e#29360#29712#0" />
+            <element signature="e#29734#30089#0" />
+            <element signature="e#30111#30467#0" />
+            <element signature="e#30489#30842#0" />
+            <element signature="e#30864#31216#0" />
+            <element signature="e#31238#31587#0" />
+            <element signature="e#32336#32687#0" />
+            <element signature="e#32710#33061#0" />
+            <element signature="e#33086#33434#0" />
+            <element signature="e#33457#33806#0" />
+            <element signature="e#33829#34181#0" />
+            <element signature="e#34204#34552#0" />
+            <element signature="e#34575#34923#0" />
+            <element signature="e#31646#35336#0" />
+            <element signature="e#31716#32021#0" />
+            <element signature="e#32039#32348#0" />
+            <element signature="e#32367#32681#0" />
+            <element signature="e#32700#33016#0" />
+            <element signature="e#33035#33346#0" />
+            <element signature="e#33365#33677#0" />
+            <element signature="e#33696#34011#0" />
+            <element signature="e#34030#34341#0" />
+            <element signature="e#34360#34673#0" />
+            <element signature="e#34691#34993#0" />
+            <element signature="e#35011#35317#0" />
+            <element signature="e#35358#68991#0" />
+            <element signature="e#69001#93675#0" />
+            <element signature="e#93696#98888#0" />
+            <element signature="e#93709#93924#0" />
+            <element signature="e#94005#95390#0" />
+            <element signature="e#95407#96415#0" />
+            <element signature="e#96432#97845#0" />
+            <element signature="e#97862#98861#0" />
+            <element signature="e#98899#106702#0" />
+            <element signature="e#106726#107111#0" />
+            <element signature="e#107192#108577#0" />
+            <element signature="e#107247#107452#0" />
+            <element signature="e#107499#107833#0" />
+            <element signature="e#107854#108191#0" />
+            <element signature="e#108212#108550#0" />
+            <element signature="e#125162#125495#0" />
+            <element signature="e#125517#125854#0" />
+            <element signature="e#108594#109635#0" />
+            <element signature="e#109710#109919#0" />
+            <element signature="e#109966#110311#0" />
+            <element signature="e#110332#110676#0" />
+            <element signature="e#110697#111038#0" />
+            <element signature="e#128364#128700#0" />
+            <element signature="e#128722#129062#0" />
+            <element signature="e#111082#112111#0" />
+            <element signature="e#112183#112390#0" />
+            <element signature="e#112438#112783#0" />
+            <element signature="e#112805#113153#0" />
+            <element signature="e#113175#113524#0" />
+            <element signature="e#113546#113898#0" />
+            <element signature="e#113920#114271#0" />
+            <element signature="e#114293#114641#0" />
+            <element signature="e#132688#133032#0" />
+            <element signature="e#133055#133401#0" />
+            <element signature="e#133424#133772#0" />
+            <element signature="e#133795#134140#0" />
+            <element signature="e#134163#134507#0" />
+            <element signature="e#114700#118346#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testOdonModel_v2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="672">
+          <caret line="271" column="80" selection-start-line="271" selection-start-column="80" selection-end-line="271" selection-end-column="80" />
+          <folding>
+            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#1;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#2;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#3;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#4;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#5;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#6;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#7;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#8;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#9;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#1;n#form#0;n#div#9;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#10;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#11;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#12;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#13;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#14;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#15;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#span#0;n#label#0;n#fieldset#0;n#div#1;n#div#0;n#div#2;n#form#0;n#div#15;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#label#1;n#fieldset#0;n#div#1;n#div#0;n#div#2;n#form#0;n#div#15;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#label#2;n#fieldset#0;n#div#1;n#div#0;n#div#2;n#form#0;n#div#15;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#16;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#17;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#18;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#19;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#20;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#21;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#22;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#23;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#24;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#25;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#26;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#27;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#28;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#29;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#30;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#31;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#32;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#33;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#34;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#35;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#36;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#37;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#38;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#39;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#40;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#41;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#42;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#43;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/ucOdontModel_manager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="644">
+          <caret line="457" column="26" selection-start-line="457" selection-start-column="26" selection-end-line="457" selection-end-column="26" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="e#66#72#0" expanded="true" />
+            <element signature="e#73#79#0" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="e#43#49#0" expanded="true" />
+            <element signature="e#97#104#0" expanded="true" />
+            <element signature="e#94#99#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="Copyright.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

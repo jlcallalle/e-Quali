@@ -1,0 +1,882 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--<meta charset="utf8">-->
+    <!--<meta http-equiv="content-type" content="text/html; utf-8">-->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="http://dtriaje.minsa.gob.pe/static/minsalogin/vendor/sweetalert2/sweetalert2.min.css" rel="stylesheet" type="text/css"/>
+    <link href="http://dtriaje.minsa.gob.pe/static/minsalogin/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="http://dtriaje.minsa.gob.pe/static/minsalogin/vendor/jquery/css/jquery-ui.min.css"/>
+    <link rel="stylesheet" href="http://acdsaludbucal.minsa.gob.pe:8000/static/minsalogin/vendor/jquery/css/jquery-ui.structure.min.css"/>
+    <style>
+      body{
+        font-size: 14px;
+        font-family: Arial;
+      }
+      .ucOdontogramButtonHallazgos{
+        font-size: 11px;padding:2px;
+      }
+      .ucOdontogramButtonHallazgos{
+        font-size: 10px;
+      }
+      .ucOdontogramButtonItemHallazgosOpc{
+        font-size: 10px;padding:2px;cursor: pointer;border: 1px solid #dedede;
+        font-weight: bold;
+      }
+      .ucOdontogramButtonItemHallazgosOpc.select{
+        font-size: 10px;padding:2px;cursor: pointer;border: 1px solid #149414;
+        font-weight: bold;background-color: #f1f5f9;color: #149414;
+      }
+      .ucOdontogramEvent{
+        font-size: 11px;padding:2px;
+      }
+      .ucOdontogramButtonEdit{
+        padding:2px;color:blue;cursor:pointer;
+      }
+      .ucOdontogramButtonDelete{
+        padding:2px;color:#ff0000;cursor:pointer;
+      }
+      .ucOdontogramElemTextCodDiente{
+          cursor: pointer;font-weight: bold;
+      }
+      .ucOdontogramElemTextCodDiente:hover{
+          cursor: pointer;font-weight: bold;
+          fill: red;
+      }
+      #ucOdontogramTxtView{
+        position: fixed;top: 10px; right: 4px;width: 280px;height: 560px;background-color: #FFF;
+      }
+      #ucOdontogramTxtView .ucOdontogramOpcTitle{
+        border-bottom: 1px solid #0078AE;
+      }
+      #ucOdontogramHallazgoEventosView{
+        height: 280px;border-left: 1px solid #0078AE;overflow-y: auto;
+      }
+      .ucOdontogramMsg{
+        font-weight: bold;
+      }
+      #ucOdontogramMsgEventosView{
+      font-size: 12px;color:green;font-weight: bold;text-align: justify;height: 20px;
+      }
+      .ucOdontogramButtonSaveAll{
+        cursor: pointer;padding: 2px;border: 1px solid #dedede;font-size: 10px;
+      }
+      .ucOdontogramButtonRefresh{
+        cursor: pointer;padding: 2px;border: 1px solid #dedede;font-size: 10px;
+      }
+      #ucOdontogramListEventosView{
+        height: 250px;border-left: 1px solid #0078AE;overflow-y: auto;
+      }
+      .ucOdontogramFormInput{
+        font-size:12px;
+      }
+      .ucOdontogramFormInput input {
+        font-size:12px;
+        width:80px;
+        text-align:center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="ucOdontogramTxtView">
+      <div class="ucOdontogramOpcTitle">Opciones</div>
+      <div id="ucOdontogramHallazgoEventosView"></div>
+      <div style="clear: both;font-size: 11px;">
+        <span class="ucOdontogramMsg">Mensajes: </span>
+        <div id="ucOdontogramMsgEventosView"></div>
+      </div>
+      <div style="clear: both;"></div>
+      <div class="ucOdontogramOpcTitle">
+        Hallazgos Encontrados
+        <span id="ucOdontogramListEventosSave" class="ucOdontogramButtonSaveAll">Guardar</span>
+        <span class="ucOdontogramButtonRefresh">Refresh</span>
+        <span id="ucOdontogramDocumentPNGdownload" style="display:none;">Actualizar Descarga</span>
+        <a href="#" id="ucOdontogramDocumentPNGdownlLink">Descargar</a>
+        <span id="ucOdontogramListEventosSaveMsg" style="color: green;font-size: 10px;">&nbsp;</span>
+      </div>
+      <div id="ucOdontogramListEventosView"></div>
+    </div>
+    <h1>Test Odontogram</h1>
+    <div style="padding: 10px;">
+      <div data-ucodnt-pkid='2' id="pruebaconsola2" style="margin: 0px;padding: 2px;"></div>
+    </div>
+    <div style="display: none;">
+    </div>
+    <div style="clear: both;"></div>
+    <script src="js/jquery-1.12.4.min.js" type="text/javascript"></script>
+    <script src="js/ucOdontModel_manager.js" type="text/javascript"></script>
+    <script src="js/ucOdontModel_log.js" type="text/javascript"></script>
+    <script src="js/base64.js" type="text/javascript"></script>
+    <script src="http://dtriaje.minsa.gob.pe/static/minsalogin/vendor/sweetalert2/sweetalert2.min.js" type="text/javascript"></script>
+    <script src="http://dtriaje.minsa.gob.pe/static/minsalogin/vendor/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="js/jquery.svg.min.js" type="text/javascript"></script>
+    <script src="js/ucOdontModel.js" type="text/javascript"></script>
+    <script src="js/md5.min.js" type="text/javascript"></script>
+    <script src="http://dtriaje.minsa.gob.pe/static/minsalogin/vendor/jquery/js/jquery-ui.min.js"></script>
+    <!--<script src="js/svgeezy.min.js" type="text/javascript"></script>-->
+    <!--<script src="js/FileSaver.min.js" type="text/javascript"></script>-->
+    <!--<script src="js/saveSvgAsPng.js" type="text/javascript"></script>-->
+    <script type="text/javascript">
+            var misDientes = ucOdontogram_model.config.defaulData;
+            misDientes.config = {
+              'id_list_hallazgos': 'ucOdontogramHallazgoEventosView',
+              'id_msg_evento': 'ucOdontogramMsgEventosView',
+              'id_list_eventos': 'ucOdontogramListEventosView',
+              'id_template': 'ucOdontogramTemplateHtml',
+              'id_save': 'ucOdontogramListEventosSave',
+              'id_save_msg': 'ucOdontogramMsgEventosView',
+              'urlws_save': 'http://localhost/prueba/',
+            };
+            $(document).ready(function () {
+              $("#pruebaconsola2").ucOdontogram(misDientes);
+              $("#"+misDientes.config.id_list_hallazgos).html(ucOdontogram_model.action.load.listOpcHallazgos());
+              //$( ".ucOdontrogramFielsetGroup > input" ).checkboxradio();
+              //$('body').on('ready','input[type=radio]',function(){ $(this).checkboxradio() });
+              //$("input[type=radio]").checkboxradio();
+              //$( ".ucOdontrogramFielsetGroup" ).controlgroup();
+            });
+            
+    </script>
+    <div style="clear: both;">&nbsp;</div>
+    <br />
+    <div id="pruebaJSONencode64"></div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <div style="display: none;" id="ucOdontogramTemplateHtml">
+      <div style="display: none;">
+        <!-- OPC 01 -->
+        <div id="template_form_01">
+          <form class="ucOdontogramFormInput form-horizontal" name="form_FORM01_" id="id_form_FORM01_">
+            <div class="row">
+              <div class="form-group col-md-6 center">
+                <label for="id_codini_FORM01_" class="control-label">Pieza Dentaria Inicial</label>
+                <input type="text" class="form-control center-block" readonly="readonly" name="codini" value="_CODINI_VALUE_" id="id_codini_FORM01_" />
+              </div>
+              <div class="form-group col-md-6 center">
+                <label for="id_codfin_FORM01_" class="control-label">Pieza Dentaria Final</label>
+                <input type="text" class="form-control center-block" readonly="readonly" name="codfin" value="_CODFIN_VALUE_" id="id_codfin_FORM01_" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group">
+                <label class="control-label col-sm-4" for="id_estado_FORM01__02">Tipo Aparatologia Encontrada: </label>
+                <div class="col-sm-7">
+                  <select class="form-control" name="tipo" id="id_tipo_FORM01_">
+                    __TIPO_OPCIONES__
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group">
+                <div class="col-sm-5">
+                  <label>Estado de Aparato: </label>
+                </div>
+                <div class="col-sm-5">
+                  <fieldset class="ucOdontrogramFielsetGroup">
+                    <label for="id_estado_FORM01__01">Bueno</label>
+                    <input type="radio" name="estado" value="B" id="id_estado_FORM01__01" checked="" />
+                    <label for="id_estado_FORM01__02">Malo</label>
+                    <input type="radio" name="estado" value="M" id="id_estado_FORM01__02" />
+                  </fieldset>
+                </div>
+              </div>
+            </div>
+          </form>
+          <p class="text-info">¿Aplicar este hallazgo?</p>
+        </div>
+        <!-- OPC 02 -->
+        <div id="template_form_02">
+          <form class="ucOdontogramFormInput form-horizontal" name="form_FORM02_" id="id_form_FORM02_">
+            <div class="row">
+              <div class="form-group col-md-6 center">
+                <label for="id_codini_FORM02_" class="control-label">Pieza Dentaria Inicial</label>
+                <input type="text" class="form-control center-block" readonly="readonly" name="codini" value="_CODINI_VALUE_" id="id_codini_FORM02_" />
+              </div>
+              <div class="form-group col-md-6 center">
+                <label for="id_codfin_FORM02_" class="control-label">Pieza Dentaria Final</label>
+                <input type="text" class="form-control center-block" readonly="readonly" name="codfin" value="_CODFIN_VALUE_" id="id_codfin_FORM02_" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group">
+                <label class="control-label col-sm-4" for="id_tipo_FORM02_">Tipo Aparatologia Encontrada: </label>
+                <div class="col-sm-7">
+                  <select class="form-control" name="tipo" id="id_tipo_FORM02_">
+                    __TIPO_OPCIONES__
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group">
+                <div class="col-sm-5">
+                  <label>Estado de Aparato: </label>
+                </div>
+                <div class="col-sm-5">
+                  <fieldset class="ucOdontrogramFielsetGroup">
+                    <label for="id_estado_FORM02__01">Bueno</label>
+                    <input type="radio" name="estado" value="B" id="id_estado_FORM02__01" checked="" />
+                    <label for="id_estado_FORM02__02">Malo</label>
+                    <input type="radio" name="estado" value="M" id="id_estado_FORM02__02" />
+                  </fieldset>
+                </div>
+              </div>
+            </div>
+          </form>
+          <p class="text-info">¿Aplicar este hallazgo?</p>
+        </div>
+        <!-- OPC 03 - no tiene -->
+        <!-- OPC 04 -->
+        <div id="template_form_04">
+          <form class="ucOdontogramFormInput form-horizontal" name="form_FORM04_" id="id_form_FORM04_">
+            <div class="row">
+              <div class="form-group col-md-12 center">
+                <label for="id_cod_FORM04_" class="control-label">Pieza Dentaria</label>
+                <input type="text" class="form-control center-block" readonly="readonly" name="cod" value="_COD_VALUE_" id="id_cod_FORM04_" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group">
+                <div class="col-sm-4">
+                  <label>Color de Metal de la Corona: </label>
+                </div>
+                <div class="col-sm-6">
+                  <fieldset class="ucOdontrogramFielsetGroup">
+                    <label for="id_colormetal_FORM04__01">Dorado</label>
+                    <input type="radio" name="colormetal" value="D" id="id_colormetal_FORM04__01" checked="" />
+                    <label for="id_colormetal_FORM04__02">Plateado</label>
+                    <input type="radio" name="colormetal" value="P" id="id_colormetal_FORM04__02" />
+                  </fieldset>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group">
+                <label class="control-label col-sm-4" for="id_tipo_FORM04_">Tipo de Corona: </label>
+                <div class="col-sm-7">
+                  <select class="form-control" name="tipo" id="id_tipo_FORM04_">
+                    __TIPO_OPCIONES__
+                  </select>
+                </div>
+              </div>
+            </div>
+          </form>
+          <p class="text-info">¿Aplicar este hallazgo?</p>
+        </div>
+        <!-- OPC 05 -->
+        <div id="template_form_05">
+          <form class="ucOdontogramFormInput form-horizontal" name="form_FORM05_" id="id_form_FORM05_">
+            <div class="row">
+              <div class="form-group col-md-12 center">
+                <label for="id_cod_FORM05_" class="control-label">Pieza Dentaria</label>
+                <input type="text" class="form-control center-block" readonly="readonly" name="cod" value="_COD_VALUE_" id="id_cod_FORM05_" />
+              </div>
+            </div>
+          </form>
+          <p class="text-info">¿Aplicar este hallazgo?</p>
+        </div>
+        <!-- OPC 06 -->
+        <div id="template_form_06">
+          <form class="ucOdontogramFormInput form-horizontal" name="form_FORM06_" id="id_form_FORM06_">
+            <div class="row">
+              <div class="form-group col-md-6 center">
+                <label for="id_codini_FORM06_" class="control-label">Pieza Dentaria Anterior</label>
+                <input type="text" class="form-control center-block" readonly="readonly" name="codini" value="_CODINI_VALUE_" id="id_codini_FORM06_" />
+              </div>
+              <div class="form-group col-md-6 center">
+                <label for="id_codfin_FORM06_" class="control-label">Pieza Dentaria Posterios</label>
+                <input type="text" class="form-control center-block" readonly="readonly" name="codfin" value="_CODFIN_VALUE_" id="id_codfin_FORM06_" />
+              </div>
+            </div>
+          </form>
+          <p class="text-info">¿Aplicar este hallazgo?</p>
+        </div>
+        <!-- OPC 07 -->
+        <div id="template_form_07">
+          <form class="ucOdontogramFormInput form-horizontal" name="form_FORM07_" id="id_form_FORM07_">
+            <div class="row">
+              <div class="form-group col-md-12 center">
+                <label for="id_cod_FORM07_" class="control-label">Pieza Dentaria que no se observa</label>
+                <input type="text" class="form-control center-block" readonly="readonly" name="cod" value="_COD_VALUE_" id="id_cod_FORM07_" />
+              </div>
+            </div>
+          </form>
+          <p class="text-info">¿Aplicar este hallazgo?</p>
+        </div>
+        <!-- OPC 08 -->
+        <div id="template_form_08">
+          <form class="ucOdontogramFormInput form-horizontal" name="form_FORM08_" id="id_form_FORM08_">
+            <div class="row">
+              <div class="form-group col-md-12 center">
+                <label for="id_cod_FORM08_" class="control-label">Pieza Dentaria</label>
+                <input type="text" class="form-control center-block" readonly="readonly" name="cod" value="_COD_VALUE_" id="id_cod_FORM08_" />
+              </div>
+            </div>
+          </form>
+          <p class="text-info">¿Aplicar este hallazgo?</p>
+        </div>
+        <!-- OPC 09 -->
+        <div id="template_form_09">
+          <form class="ucOdontogramFormInput form-horizontal" name="form_FORM09_" id="id_form_FORM09_">
+            <div class="row">
+              <div class="form-group col-md-12 center">
+                <label for="id_cod_FORM09_" class="control-label">Pieza Dentaria</label>
+                <input type="text" class="form-control center-block" readonly="readonly" name="cod" value="_COD_VALUE_" id="id_cod_FORM09_" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group col-md-12 center">
+                <label for="id_ubicaciontxt_FORM09_" class="control-label">Ubicación del Diente Ectópico</label>
+                <input type="text" class="form-control center-block" style="width: 80%;" maxlength="50" name="ubicaciontxt" value="" id="id_ubicaciontxt_FORM09_" />
+              </div>
+            </div>
+          </form>
+          <p class="text-info">¿Aplicar este hallazgo?</p>
+        </div>
+        <!-- OPC 10 -->
+        <div id="template_form_10">
+          <form class="ucOdontogramFormInput form-horizontal" name="form_FORM10_" id="id_form_FORM10_">
+            <div class="row">
+              <div class="form-group col-md-12 center">
+                <label for="id_cod_FORM10_" class="control-label">Pieza Dentaria</label>
+                <input type="text" class="form-control center-block" readonly="readonly" name="cod" value="_COD_VALUE_" id="id_cod_FORM10_" />
+              </div>
+            </div>
+          </form>
+          <p class="text-info">¿Aplicar este hallazgo?</p>
+        </div>
+        <!-- OPC 11 -->
+        <div id="template_form_11">
+          <form class="ucOdontogramFormInput form-horizontal" name="form_FORM11_" id="id_form_FORM11_">
+            <div class="row">
+              <div class="form-group col-md-12 center">
+                <label for="id_cod_FORM11_" class="control-label">Pieza Dentaria</label>
+                <input type="text" class="form-control center-block" readonly="readonly" name="cod" value="_COD_VALUE_" id="id_cod_FORM11_" />
+              </div>
+            </div>
+          </form>
+          <p class="text-info">¿Aplicar este hallazgo?</p>
+        </div>
+        <!-- OPC 12 -->
+        <div id="template_form_12">
+          <form class="ucOdontogramFormInput form-horizontal" name="form_FORM12_" id="id_form_FORM12_">
+            <div class="row">
+              <div class="form-group col-md-12 center">
+                <label for="id_cod_FORM12_" class="control-label">Pieza Dentaria</label>
+                <input type="text" class="form-control center-block" readonly="readonly" name="cod" value="_COD_VALUE_" id="id_cod_FORM12_" />
+              </div>
+            </div>
+          </form>
+          <p class="text-info">¿Aplicar este hallazgo?</p>
+        </div>
+        <!-- OPC 13 -->
+        <div id="template_form_13">
+          <form class="ucOdontogramFormInput form-horizontal" name="form_FORM13_" id="id_form_FORM13_">
+            <div class="row">
+              <div class="form-group col-md-12 center">
+                <label for="id_cod_FORM13_" class="control-label">Pieza Dentaria</label>
+                <input type="text" class="form-control center-block" readonly="readonly" name="cod" value="_COD_VALUE_" id="id_cod_FORM13_" />
+              </div>
+            </div>
+          </form>
+          <p class="text-info">¿Aplicar este hallazgo?</p>
+        </div>
+        <!-- OPC 14 -->
+        <div id="template_form_14">
+          <form class="ucOdontogramFormInput form-horizontal" name="form_FORM14_" id="id_form_FORM14_">
+            <div class="row">
+              <div class="form-group">
+                <div class="col-sm-12">
+                  <label>Ubicación de las Piezas Dentarias: </label>
+                </div>
+                <div class="col-sm-12">
+                  <fieldset class="ucOdontrogramFielsetGroup">
+                    <label for="id_ubic_FORM14__01">Maxilar Superior</label>
+                    <input type="radio" name="ubic" value="DS" id="id_ubic_FORM14__01" />
+                    <label for="id_ubic_FORM14__02">Maxilar Inferior</label>
+                    <input type="radio" name="ubic" value="DI" id="id_ubic_FORM14__02" />
+                  </fieldset>
+                </div>
+              </div>
+            </div>
+          </form>
+          <p class="text-info">¿Aplicar este hallazgo?</p>
+        </div>
+        <!-- OPC 15 -->
+        <div id="template_form_15">
+          <form class="ucOdontogramFormInput form-horizontal" name="form_FORM15_" id="id_form_FORM15_">
+            <div class="row">
+              <div class="form-group col-md-12 center">
+                <label for="id_cod_FORM15_" class="control-label">Pieza Dentaria</label>
+                <input type="text" class="form-control center-block" readonly="readonly" name="cod" value="_COD_VALUE_" id="id_cod_FORM15_" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group">
+                <div class="col-sm-12">
+                  <label>Ubicación y Sentido de la Fractura: </label>
+                </div>
+                <div class="col-sm-12">
+                  <fieldset class="ucOdontrogramFielsetGroup">
+                    <label for="id_direccionubicacion_FORM15__01">CZSDI</label>
+                    <input type="radio" name="direccionubicacion" value="CZSDI" id="id_direccionubicacion_FORM15__01" />
+                    <label for="id_direccionubicacion_FORM15__02">CZIDS</label>
+                    <input type="radio" name="direccionubicacion" value="CZIDS" id="id_direccionubicacion_FORM15__02" />
+                    <br />
+                    <label for="id_direccionubicacion_FORM15__03">CRZSDI</label>
+                    <input type="radio" name="direccionubicacion" value="CRZSDI" id="id_direccionubicacion_FORM15__03" />
+                    <label for="id_direccionubicacion_FORM15__04">CRZIDS</label>
+                    <input type="radio" name="direccionubicacion" value="CRZIDS" id="id_direccionubicacion_FORM15__04" />
+                  </fieldset>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group">
+                <div class="col-sm-12">
+                  <label>Sentido de la Fractura: </label>
+                </div>
+                <div class="col-sm-12">
+                  <fieldset class="ucOdontrogramFielsetGroup">
+                    <label for="id_direccion_FORM15__01"><span style="color: red;background: #fff;">&nbsp;&nbsp;\&nbsp;&nbsp;</span></label>
+                    <input type="radio" name="direccion" value="ZSDI" id="id_direccion_FORM15__01" />
+                    <label for="id_direccion_FORM15__02"><span style="color: red;background: #fff;">&nbsp;&nbsp;/&nbsp;&nbsp;</span></label>
+                    <input type="radio" name="direccion" value="ZIDS" id="id_direccion_FORM15__02" />
+                  </fieldset>
+                </div>
+              </div>
+            </div>
+          </form>
+          <p class="text-info">¿Aplicar este hallazgo?</p>
+        </div>
+        <!-- OPC 16 -->
+        <div id="template_form_16">
+          <form class="ucOdontogramFormInput form-horizontal" name="form_FORM16_" id="id_form_FORM16_">
+            <div class="row">
+              <div class="form-group col-md-6 center">
+                <label for="id_codini_FORM16_" class="control-label">Pieza Dentaria Anterior</label>
+                <input type="text" class="form-control center-block" readonly="readonly" name="codini" value="_CODINI_VALUE_" id="id_codini_FORM16_" />
+              </div>
+              <div class="form-group col-md-6 center">
+                <label for="id_codfin_FORM16_" class="control-label">Pieza Dentaria Posterios</label>
+                <input type="text" class="form-control center-block" readonly="readonly" name="codfin" value="_CODFIN_VALUE_" id="id_codfin_FORM16_" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group">
+                <div class="col-sm-4">
+                  <label>Tipo: </label>
+                </div>
+                <div class="col-sm-6">
+                  <fieldset class="ucOdontrogramFielsetGroup">
+                    <label for="id_tipo_FORM16__01">Geminación</label>
+                    <input type="radio" name="tipo" value="G" id="id_tipo_FORM16__01" />
+                    <label for="id_tipo_FORM16__02">Fusión</label>
+                    <input type="radio" name="tipo" value="F" id="id_tipo_FORM16__02" />
+                  </fieldset>
+                </div>
+              </div>
+            </div>
+          </form>
+          <p class="text-info">¿Aplicar este hallazgo?</p>
+        </div>
+        <!-- OPC 17 -->
+        <div id="template_form_17">
+          <form class="ucOdontogramFormInput form-horizontal" name="form_FORM17_" id="id_form_FORM17_">
+            <div class="row">
+              <div class="form-group col-md-12 center">
+                <label for="id_cod_FORM17_" class="control-label">Pieza Dentaria</label>
+                <input type="text" class="form-control center-block" readonly="readonly" name="cod" value="_COD_VALUE_" id="id_cod_FORM17_" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group">
+                <div class="col-sm-5">
+                  <label>Sentido de la giro-versión: </label>
+                </div>
+                <div class="col-sm-6">
+                  <fieldset class="ucOdontrogramFielsetGroup">
+                    <label for="id_giro_FORM17__01">Izquierda</label>
+                    <input type="radio" name="giro" value="Z" id="id_giro_FORM17__01" />
+                    <label for="id_giro_FORM17__02">Derecha</label>
+                    <input type="radio" name="giro" value="D" id="id_giro_FORM17__02" />
+                  </fieldset>
+                </div>
+              </div>
+            </div>
+          </form>
+          <p class="text-info">¿Aplicar este hallazgo?</p>
+        </div>
+        <!-- OPC 18 -->
+        <div id="template_form_18">
+          <form class="ucOdontogramFormInput form-horizontal" name="form_FORM18_" id="id_form_FORM18_">
+            <div class="row">
+              <div class="form-group col-md-12 center">
+                <label for="id_cod_FORM18_" class="control-label">Pieza Dentaria</label>
+                <input type="text" class="form-control center-block" readonly="readonly" name="cod" value="_COD_VALUE_" id="id_cod_FORM18_" />
+              </div>
+            </div>
+          </form>
+          <p class="text-info">¿Aplicar este hallazgo?</p>
+        </div>
+        <!-- OPC 19 -->
+        <div id="template_form_19">
+          <form class="ucOdontogramFormInput form-horizontal" name="form_FORM19_" id="id_form_FORM19_">
+            <div class="row">
+              <div class="form-group col-md-12 center">
+                <label for="id_cod_FORM19_" class="control-label">Pieza Dentaria</label>
+                <input type="text" class="form-control center-block" readonly="readonly" name="cod" value="_COD_VALUE_" id="id_cod_FORM19_" />
+              </div>
+            </div>
+          </form>
+          <p class="text-info">¿Aplicar este hallazgo?</p>
+        </div>
+        <!-- OPC 20 -->
+        <div id="template_form_20">
+          <form class="ucOdontogramFormInput form-horizontal" name="form_FORM20_" id="id_form_FORM20_">
+            <div class="row">
+              <div class="form-group col-md-12 center">
+                <label for="id_cod_FORM20_" class="control-label">Pieza Dentaria</label>
+                <input type="text" class="form-control center-block" readonly="readonly" name="cod" value="_COD_VALUE_" id="id_cod_FORM20_" />
+              </div>
+            </div>
+          </form>
+          <p class="text-info">¿Aplicar este hallazgo?</p>
+        </div>
+        <!-- OPC 21 -->
+        <div id="template_form_21">
+          <form class="ucOdontogramFormInput form-horizontal" name="form_FORM21_" id="id_form_FORM21_">
+            <div class="row">
+              <div class="form-group col-md-12 center">
+                <label for="id_cod_FORM21_" class="control-label">Pieza Dentaria</label>
+                <input type="text" class="form-control center-block" readonly="readonly" name="cod" value="_COD_VALUE_" id="id_cod_FORM21_" />
+              </div>
+            </div>
+          </form>
+          <p class="text-info">¿Aplicar este hallazgo?</p>
+        </div>
+        <!-- OPC 22 -->
+        <div id="template_form_22">
+          <form class="ucOdontogramFormInput form-horizontal" name="form_FORM22_" id="id_form_FORM22_">
+            <div class="row">
+              <div class="form-group col-md-12 center">
+                <label for="id_cod_FORM22_" class="control-label">Pieza Dentaria</label>
+                <input type="text" class="form-control center-block" readonly="readonly" name="cod" value="_COD_VALUE_" id="id_cod_FORM22_" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group">
+                <div class="col-sm-5">
+                  <label>Sentido de la Migración: </label>
+                </div>
+                <div class="col-sm-6">
+                  <fieldset class="ucOdontrogramFielsetGroup">
+                    <label for="id_direccion_FORM22__01">Izquierda</label>
+                    <input type="radio" name="direccion" value="Z" id="id_direccion_FORM22__01" />
+                    <label for="id_direccion_FORM22__02">Derecha</label>
+                    <input type="radio" name="direccion" value="D" id="id_direccion_FORM22__02" />
+                  </fieldset>
+                </div>
+              </div>
+            </div>
+          </form>
+          <p class="text-info">¿Aplicar este hallazgo?</p>
+        </div>
+        <!-- OPC 23 -->
+        <div id="template_form_23">
+          <form class="ucOdontogramFormInput form-horizontal" name="form_FORM23_" id="id_form_FORM23_">
+            <div class="row">
+              <div class="form-group col-md-12 center">
+                <label for="id_cod_FORM23_" class="control-label">Pieza Dentaria</label>
+                <input type="text" class="form-control center-block" readonly="readonly" name="cod" value="_COD_VALUE_" id="id_cod_FORM23_" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group">
+                <label class="control-label col-sm-4" for="id_nivel_FORM23_">Grado de Movilidad Dentaria: </label>
+                <div class="col-sm-7">
+                  <select class="form-control" name="nivel" id="id_nivel_FORM23_">
+                    __TIPO_OPCIONES__
+                  </select>
+                </div>
+              </div>
+            </div>
+          </form>
+          <p class="text-info">¿Aplicar este hallazgo?</p>
+        </div>
+        <!-- OPC 24 -->
+        <div id="template_form_24">
+          <form class="ucOdontogramFormInput form-horizontal" name="form_FORM24_" id="id_form_FORM24_">
+            <div class="row">
+              <div class="form-group col-md-12 center">
+                <label for="id_cod_FORM24_" class="control-label">Pieza Dentaria</label>
+                <input type="text" class="form-control center-block" readonly="readonly" name="cod" value="_COD_VALUE_" id="id_cod_FORM24_" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group">
+                <div class="col-sm-5">
+                  <label>Estado de Tratamiento: </label>
+                </div>
+                <div class="col-sm-6">
+                  <fieldset class="ucOdontrogramFielsetGroup">
+                    <label for="id_estado_FORM24__01">Bueno</label>
+                    <input type="radio" name="estado" value="B" id="id_estado_FORM24__01" />
+                    <label for="id_estado_FORM24__02">Malo</label>
+                    <input type="radio" name="estado" value="M" id="id_estado_FORM24__02" />
+                  </fieldset>
+                </div>
+              </div>
+            </div>
+          </form>
+          <p class="text-info">¿Aplicar este hallazgo?</p>
+        </div>
+        <!-- OPC 25 -->
+        <div id="template_form_25">
+          <form class="ucOdontogramFormInput form-horizontal" name="form_FORM25_" id="id_form_FORM25_">
+            <div class="row">
+              <div class="form-group col-md-6 center">
+                <label for="id_codini_FORM25_" class="control-label">Pieza Dentaria Inicial</label>
+                <input type="text" class="form-control center-block" readonly="readonly" name="codini" value="_CODINI_VALUE_" id="id_codini_FORM25_" />
+              </div>
+              <div class="form-group col-md-6 center">
+                <label for="id_codfin_FORM25_" class="control-label">Pieza Dentaria Final</label>
+                <input type="text" class="form-control center-block" readonly="readonly" name="codfin" value="_CODFIN_VALUE_" id="id_codfin_FORM25_" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group">
+                <div class="col-sm-4">
+                  <label>Estado de la Prótesis: </label>
+                </div>
+                <div class="col-sm-6">
+                  <fieldset class="ucOdontrogramFielsetGroup">
+                    <label for="id_estado_FORM25__01">Bueno</label>
+                    <input type="radio" name="estado" value="B" id="id_estado_FORM25__01" />
+                    <label for="id_estado_FORM25__02">Malo</label>
+                    <input type="radio" name="estado" value="M" id="id_estado_FORM25__02" />
+                  </fieldset>
+                </div>
+              </div>
+            </div>
+          </form>
+          <p class="text-info">¿Aplicar este hallazgo?</p>
+        </div>
+        <!-- OPC 26 -->
+        <div id="template_form_26">
+          <form class="ucOdontogramFormInput form-horizontal" name="form_FORM26_" id="id_form_FORM26_">
+            <div class="row">
+              <div class="form-group col-md-6 center">
+                <label for="id_codini_FORM26_" class="control-label">Pieza Dentaria Inicial</label>
+                <input type="text" class="form-control center-block" readonly="readonly" name="codini" value="_CODINI_VALUE_" id="id_codini_FORM26_" />
+              </div>
+              <div class="form-group col-md-6 center">
+                <label for="id_codfin_FORM26_" class="control-label">Pieza Dentaria Final</label>
+                <input type="text" class="form-control center-block" readonly="readonly" name="codfin" value="_CODFIN_VALUE_" id="id_codfin_FORM26_" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group">
+                <label class="control-label col-sm-4" for="id_tipomaterial_FORM26_">Tipo de Material: </label>
+                <div class="col-sm-7">
+                  <select class="form-control" name="tipomaterial" id="id_tipomaterial_FORM26_">
+                    __TIPO_OPCIONES__
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group">
+                <div class="col-sm-4">
+                  <label>Estado de la Prótesis: </label>
+                </div>
+                <div class="col-sm-6">
+                  <fieldset class="ucOdontrogramFielsetGroup">
+                    <label for="id_estado_FORM26__01">Bueno</label>
+                    <input type="radio" name="estado" value="B" id="id_estado_FORM26__01" />
+                    <label for="id_estado_FORM26__02">Malo</label>
+                    <input type="radio" name="estado" value="M" id="id_estado_FORM26__02" />
+                  </fieldset>
+                </div>
+              </div>
+            </div>
+          </form>
+          <p class="text-info">¿Aplicar este hallazgo?</p>
+        </div>
+        <!-- OPC 27 -->
+        <div id="template_form_27">
+          <form class="ucOdontogramFormInput form-horizontal" name="form_FORM27_" id="id_form_FORM27_">
+            <div class="row">
+              <div class="form-group">
+                <div class="col-sm-4">
+                  <label>Ubicación de las Piezas Dentarias: </label>
+                </div>
+                <div class="col-sm-6">
+                  <fieldset class="ucOdontrogramFielsetGroup">
+                    <label for="id_ubicacion_FORM27__01">Superior</label>
+                    <input type="radio" name="ubicacion" value="superior" id="id_ubicacion_FORM27__01" />
+                    <label for="id_ubicacion_FORM27__02">Inferior</label>
+                    <input type="radio" name="ubicacion" value="inferior" id="id_ubicacion_FORM27__02" />
+                  </fieldset>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group">
+                <label class="control-label col-sm-4" for="id_tipo_FORM27_">Tipo de Material: </label>
+                <div class="col-sm-7">
+                  <select class="form-control" name="tipo" id="id_tipo_FORM27_">
+                    __TIPO_OPCIONES__
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group">
+                <div class="col-sm-4">
+                  <label>Estado de la Prótesis: </label>
+                </div>
+                <div class="col-sm-6">
+                  <fieldset class="ucOdontrogramFielsetGroup">
+                    <label for="id_estado_FORM27__01">Bueno</label>
+                    <input type="radio" name="estado" value="B" id="id_estado_FORM27__01" />
+                    <label for="id_estado_FORM27__02">Malo</label>
+                    <input type="radio" name="estado" value="M" id="id_estado_FORM27__02" />
+                  </fieldset>
+                </div>
+              </div>
+            </div>
+          </form>
+          <p class="text-info">¿Aplicar este hallazgo?</p>
+        </div>
+        <!-- OPC 28 -->
+        <div id="template_form_28">
+          <form class="ucOdontogramFormInput form-horizontal" name="form_FORM28_" id="id_form_FORM28_">
+            <div class="row">
+              <div class="form-group col-md-12 center">
+                <label for="id_cod_FORM28_" class="control-label">Pieza Dentaria</label>
+                <input type="text" class="form-control center-block" readonly="readonly" name="cod" value="_COD_VALUE_" id="id_cod_FORM28_" />
+              </div>
+            </div>
+          </form>
+          <p class="text-info">¿Aplicar este hallazgo?</p>
+        </div>
+        <!-- OPC 29 -->
+        <div id="template_form_29">
+          <form class="ucOdontogramFormInput form-horizontal" name="form_FORM29_" id="id_form_FORM29_">
+            <div class="row">
+              <div class="form-group col-md-5 center">
+                <label for="id_cod_FORM29_" class="control-label">Pieza Dentaria</label>
+                <input type="text" class="form-control center-block" readonly="readonly" name="cod" value="_COD_VALUE_" id="id_cod_FORM29_" />
+              </div>
+              <div class="form-group col-md-4 center">
+                <label for="id_cara_FORM29_" class="control-label">Cara</label>
+                <input type="text" class="form-control center-block" readonly="readonly" name="cara" value="_CARA_VALUE_" id="id_cara_FORM29_" />
+              </div>
+              <div class="form-group col-md-3 center">
+                <label for="id_parte_FORM29_" class="control-label">Parte</label>
+                <input type="text" class="form-control center-block" readonly="readonly" name="parte" value="_PARTE_VALUE_" id="id_parte_FORM29_" />
+                <input type="hidden" name="estado" value="_ESTADO_VALUE_" id="id_estado_FORM29_" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group">
+                <label class="control-label col-sm-4" for="id_tipomaterial_FORM29_">Tipo de Material Empleado: </label>
+                <div class="col-sm-7">
+                  <select class="form-control" name="tipomaterial" id="id_tipomaterial_FORM29_">
+                    __TIPOMATERIAL_OPCIONES__
+                  </select>
+                </div>
+              </div>
+            </div>
+          </form>
+          <p class="text-info">¿Aplicar este hallazgo?</p>
+        </div>
+        <!-- OPC 30 - Falta -->
+        <!-- OPC 31 - Falta -->
+        <!-- OPC 32 -->
+        <div id="template_form_32">
+          <form class="ucOdontogramFormInput form-horizontal" name="form_FORM32_" id="id_form_FORM32_">
+            <div class="row">
+              <div class="form-group col-md-12 center">
+                <label for="id_cod_FORM32_" class="control-label">Pieza Dentaria</label>
+                <input type="text" class="form-control center-block" readonly="readonly" name="cod" value="_COD_VALUE_" id="id_cod_FORM32_" />
+              </div>
+            </div>
+          </form>
+          <p class="text-info">¿Aplicar este hallazgo?</p>
+        </div>
+        <!-- OPC 33 -->
+        <div id="template_form_33">
+          <form class="ucOdontogramFormInput form-horizontal" name="form_FORM33_" id="id_form_FORM33_">
+            <div class="row">
+              <div class="form-group col-md-12 center">
+                <label for="id_cod_FORM33_" class="control-label">Pieza Dentaria</label>
+                <input type="text" class="form-control center-block" readonly="readonly" name="cod" value="_COD_VALUE_" id="id_cod_FORM33_" />
+              </div>
+            </div>
+          </form>
+          <p class="text-info">¿Aplicar este hallazgo?</p>
+        </div>
+        <!-- OPC 34 -->
+        <div id="template_form_34">
+          <form class="ucOdontogramFormInput form-horizontal" name="form_FORM34_" id="id_form_FORM34_">
+            <div class="row">
+              <div class="form-group col-md-6 center">
+                <label for="id_codini_FORM34_" class="control-label">Pieza Dentaria Anterior</label>
+                <input type="text" class="form-control center-block" readonly="readonly" name="codini" value="_CODINI_VALUE_" id="id_codini_FORM34_" />
+              </div>
+              <div class="form-group col-md-6 center">
+                <label for="id_codfin_FORM34_" class="control-label">Pieza Dentaria Posterios</label>
+                <input type="text" class="form-control center-block" readonly="readonly" name="codfin" value="_CODFIN_VALUE_" id="id_codfin_FORM34_" />
+              </div>
+            </div>
+          </form>
+          <p class="text-info">¿Aplicar este hallazgo?</p>
+        </div>
+        <!-- OPC 35 -->
+        <div id="template_form_35">
+          <form class="ucOdontogramFormInput form-horizontal" name="form_FORM35_" id="id_form_FORM35_">
+            <div class="row">
+              <div class="form-group col-md-6 center">
+                <label for="id_codini_FORM35_" class="control-label">Pieza Dentaria Anterior</label>
+                <input type="text" class="form-control center-block" readonly="readonly" name="codini" value="_CODINI_VALUE_" id="id_codini_FORM35_" />
+              </div>
+              <div class="form-group col-md-6 center">
+                <label for="id_codfin_FORM35_" class="control-label">Pieza Dentaria Posterios</label>
+                <input type="text" class="form-control center-block" readonly="readonly" name="codfin" value="_CODFIN_VALUE_" id="id_codfin_FORM35_" />
+              </div>
+            </div>
+          </form>
+          <p class="text-info">¿Aplicar este hallazgo?</p>
+        </div>
+        <!-- OPC 36 -->
+        <div id="template_form_36">
+          <form class="ucOdontogramFormInput form-horizontal" name="form_FORM36_" id="id_form_FORM36_">
+            <div class="row">
+              <div class="form-group col-md-12 center">
+                <label for="id_cod_FORM36_" class="control-label">Pieza Dentaria</label>
+                <input type="text" class="form-control center-block" readonly="readonly" name="cod" value="_COD_VALUE_" id="id_cod_FORM36_" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group col-md-5">
+                <label for="id_tipo_FORM36_" class="control-label">Tipo de Tratamiento pulpar: </label>
+              </div>
+              <div class="form-group col-md-7 center">
+                <select name="tipo" id="id_tipo_FORM36_" class="form-control center-block">
+                  __TIPO_OPCIONES__
+                </select>
+              </div>
+            </div>
+          </form>
+          <p class="text-info">¿Aplicar este hallazgo?</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html> 

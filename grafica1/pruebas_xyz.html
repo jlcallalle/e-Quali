@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--<meta charset="utf8">-->
+    <!--<meta http-equiv="content-type" content="text/html; utf-8">-->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!--
+    <link href="http://dtriaje.minsa.gob.pe/static/minsalogin/vendor/sweetalert2/sweetalert2.min.css" rel="stylesheet" type="text/css"/>
+    <link href="http://dtriaje.minsa.gob.pe/static/minsalogin/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="http://dtriaje.minsa.gob.pe/static/minsalogin/vendor/jquery/css/jquery-ui.min.css"/>
+    <link rel="stylesheet" href="http://acdsaludbucal.minsa.gob.pe:8000/static/minsalogin/vendor/jquery/css/jquery-ui.structure.min.css"/> -->
+    <style>
+      body{
+        font-size: 14px;
+        font-family: Arial;
+      }
+      .ucOdontogramButtonHallazgos{
+        font-size: 10px;
+      }
+      .ucOdontogramButtonItemHallazgosOpc{
+        font-size: 10px;padding:2px;cursor: pointer;border: 1px solid #dedede;
+        font-weight: bold;
+      }
+      .ucOdontogramButtonItemHallazgosOpc.select{
+        font-size: 10px;padding:2px;cursor: pointer;border: 1px solid #149414;
+        font-weight: bold;background-color: #f1f5f9;color: #149414;
+      }
+      .ucOdontogramEvent{
+        font-size: 11px;padding:2px;
+      }
+      .ucOdontogramButtonEdit{
+        padding:2px;color:blue;cursor:pointer;
+      }
+      .ucOdontogramButtonDelete{
+        padding:2px;color:#ff0000;cursor:pointer;
+      }
+      .ucOdontogramElemTextCodDiente{
+          cursor: pointer;font-weight: bold;
+      }
+      .ucOdontogramElemTextCodDiente:hover{
+          cursor: pointer;font-weight: bold;
+          fill: red;
+      }
+      #ucOdontogramTxtView{
+        position: fixed;top: 10px; right: 4px;width: 240px;height: 560px;background-color: #FFF;z-index: 200;
+      }
+      #ucOdontogramTxtView .ucOdontogramOpcTitle{
+        border-bottom: 1px solid #0078AE;
+      }
+      #ucOdontogramHallazgoEventosView{
+        height: 280px;border-left: 1px solid #0078AE;overflow-y: auto;
+      }
+      .ucOdontogramMsg{
+        font-weight: bold;
+      }
+      #ucOdontogramMsgEventosView{
+      font-size: 12px;color:green;font-weight: bold;text-align: justify;height: 20px;
+      }
+      .ucOdontogramButtonSaveAll{
+        cursor: pointer;padding: 2px;border: 1px solid #dedede;font-size: 10px;
+      }
+      .ucOdontogramButtonRefresh{
+        cursor: pointer;padding: 2px;border: 1px solid #dedede;font-size: 10px;
+      }
+      #ucOdontogramListEventosView{
+        height: 250px;border-left: 1px solid #0078AE;overflow-y: auto;
+      }
+      .ucOdontogramFormInput{
+        font-size:12px;
+      }
+      .ucOdontogramFormInput input {
+        font-size:12px;
+        width:80px;
+        text-align:center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="ucOdontogramTxtView">
+      <div class="ucOdontogramOpcTitle">Opciones</div>
+      <div id="ucOdontogramHallazgoEventosView"></div>
+      <div style="clear: both;font-size: 11px;">
+        <span class="ucOdontogramMsg">Mensajes: </span>
+        <div id="ucOdontogramMsgEventosView"></div>
+      </div>
+      <div style="clear: both;"></div>
+      <div class="ucOdontogramOpcTitle">
+        Hallazgos Encontrados
+        <span id="ucOdontogramListEventosSave" class="ucOdontogramButtonSaveAll">Guardar</span>
+        <span class="ucOdontogramButtonRefresh">Refresh</span>
+        <span id="ucOdontogramDocumentPNGdownload" style="display:none;">Actualizar Descarga</span>
+        <a href="#" id="ucOdontogramDocumentPNGdownlLink">Descargar</a>
+        <span id="ucOdontogramListEventosSaveMsg" style="color: green;font-size: 10px;">&nbsp;</span>
+      </div>
+      <div id="ucOdontogramListEventosView"></div>
+    </div>
+    <h1>Test Odontogram</h1>
+    <div style="padding: 10px;">
+      <div data-ucodnt-pkid='2' id="pruebaconsola2" style="margin: 0px;padding: 2px;"></div>
+      <div id="ucOdontogramResumenView"> </div>
+    </div>
+    <div style="display: none;">
+    </div>
+    <div style="clear: both;"></div>
+
+    <script src="js/ucOdontModel_graf_var.js"></script>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    </div>
+  </body>
+</html> 
