@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <link rel="stylesheet" href="static/minsalogin/css/loadingPage.css" />
+    <link rel="stylesheet" href="static/minsalogin/vendor/nprogress/nprogress.css" />
+    <link rel="stylesheet" href="static/minsalogin/vendor/animate/css/animate.min.css" />
+    <link rel="stylesheet" href="static/minsalogin/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/minsalogin/vendor/bootstrap/css/bootstrap-flat.css">
+    <link rel="stylesheet" href="static/minsalogin/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="static/minsalogin/vendor/jquery/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="static/minsalogin/vendor/jquery/css/jquery-ui.structure.min.css">
+    <link rel="stylesheet" href="static/minsalogin/vendor/jquery/css/jquery-ui.theme.min.css">
+    <link rel="stylesheet" href="static/minsalogin/vendor/sweetalert2/sweetalert2.min.css">
+    <link rel="stylesheet" href="static/minsalogin/vendor/select2/css/select2.min.css">
+    <link rel="stylesheet" href="static/minsalogin/vendor/select2/css/select2-bootstrap.css">
+    <link rel="stylesheet" href="static/minsalogin/vendor/datatables/datatables.min.css">
+    <link rel="stylesheet" href="static/minsalogin/vendor/datatables/dataTables.fontAwesome.css">
+    <link rel="stylesheet" href="static/minsalogin/css/base.css" />
+    <link rel="icon" type="image/png" href="/static/minsalogin/img/favicon.png" />
+    <link rel="stylesheet" href="static/css/login.css">
+    <!--CSS Generado -->
+    <link rel="stylesheet" href="css/main.css">
+
+    <title> e-Qhali - </title>
+</head>
+
+<body id="body">
+    <nav class="navbar no-print">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div class="logo-box ">
+                    <a href="/">
+                        <img src="static/minsalogin/img/minsa-peque.png" id="minsa-peque" class="center-block">
+                    </a>
+                </div>
+            </div>
+            <button class="navbar-toggle collapse in  no-padding" data-toggle="collapse" id="menu-toggle-3">
+                <span class="fa fa-indent" aria-hidden="true"></span>
+            </button>
+            <div class="desaparece-movil">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <span class="nameUser white nombre ellipsis desaparece-movil">JORGE LUIS CALLALLE TORRES</span>
+                        <i class="fa fa-user-md white" id="icon-usuario"></i><span class="caret "></span>
+                    </li>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Ver Perfil</a></li>
+                            <li><a href="/accounts/password/">Cambiar contraseña</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="/accounts/logout/">Cerrar Sesión</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div id="wrapper">
+        <div class="nav-side-menu scrollbar style-2 no-print" id="sidebar-wrapper">
+            <div class="menu-list heightList">
+                <ul id="menu-content" class="menu-content collapse in">
+                    <li class="hospitalSidebar">
+                        <div class="col-lg-4 col-md-4 col-xs-4">
+                            <a href="/"><img src="static/minsalogin/img/hospital-icon.png" id="iconNameHospital"></a>
+                        </div>
+                    </li>
+                    <li data-toggle="collapse" data-target="#moduloSelected" class="collapsed  row active modulo-activado" aria-hidden="true" aria-expanded="false">
+                        <a href="/">
+                            <div class="col-lg-3 col-md-3 col-xs-3"><img class="modulo-icon" src="static/minsalogin/vendor/img/app-icons/vigilancia.png"></div>
+                            <div class="col-lg-7 col-md-7 col-xs-7">
+                                <p class="modulo ocultar ellipsis">
+                                    INICIO
+                                    <p>
+                            </div>
+                        </a>
+                        <div class="col-lg-2 col-md-2 col-xs-2"><i class="fa fa-angle-down modulo ocultar" aria-hidden="true"></i></div>
+                    </li>
+                    <ul class="sub-menu modulo-selected collapse" id="moduloSelected" aria-expanded="true">
+                        <li><a href="/citas/"><i class="fa fa-fw fa-file-text"></i> Citas programadas</a></li>
+                        <li><a href="/modulos/"><i class="fa fa-fw fa-file-text"></i> Modulos administrativos</a></li>
+                    </ul>
+                </ul>
+            </div>
+            <div class="menu-bottom">
+                <div class="row no-margin">
+                    <a href="http://ccred.minsa.gob.pe/">
+                        <div class="relleno"><img class="modulo-icon img-responsive left" src="static/minsalogin/vendor/img/app-icons/smiling-baby.png">
+                            <p class="modulo ocultar">CRED</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="row no-margin">
+                    <a href="http://cinmunizaciones.minsa.gob.pe/">
+                        <div class="relleno"><img class="modulo-icon img-responsive left" src="static/minsalogin/vendor/img/app-icons/injection.png">
+                            <p class="modulo ocultar">Inmunizaciones</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <section id="page">
+            <div id="loading" class="no-print"></div>
+            <div id="page-content-wrapper">
+                <div class="mi-slider">
+                    <div class="container">
+                        <section class="citas">
+                            <h3>Odontograma</h3>
+                            <div class="contentCards row">
+                                <div class="column col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                    <!-- <div class="demo-title">Descripción Odontograma</div> -->
+                                    <div class="post-module">
+                                       <img src="static/img/odontograma2.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+                <div id="over"></div>
+            </div>
+        </section>
+    </div>
+    <script src="static/minsalogin/js/loadingPage.js"></script>
+    <script src="static/minsalogin/vendor/nprogress/nprogress.js"></script>
+    <script>
+        NProgress.configure({
+            easing: "ease",
+            speed: 1000,
+            parent: "#body"
+        });
+        NProgress.start();
+    </script>
+
+    <script src="static/minsalogin/vendor/jquery/js/jquery-3.2.1.min.js"></script>
+    <script src="static/minsalogin/vendor/jquery/js/jquery-ui.min.js"></script>
+    <script src="static/minsalogin/vendor/moment/js/moment.min.js"></script>
+    <script src="static/minsalogin/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="static/minsalogin/vendor/sweetalert2/sweetalert2.min.js"></script>
+    <script src="static/minsalogin/vendor/select2/js/select2.full.min.js"></script>
+    <script src="static/minsalogin/vendor/select2/js/i18n/es.js"></script>
+    <script src="static/minsalogin/vendor/datatables/datatables.min.js"></script>
+    <script src="static/minsalogin/js/common.js"></script>
+    <script>
+        var url_minsa_logo_peque = "static/minsalogin/img/minsa-peque.png";
+        var url_minsa_logo_grande = "static/minsalogin/img/minsa-grande.png";
+    </script>
+    <script src="static/minsalogin/js/animation.js"></script>
+    <script src="static/minsalogin/js/fancy.js"></script>
+    <script src="public/js/main.js"></script>
+
+</body>
+
+</html>
