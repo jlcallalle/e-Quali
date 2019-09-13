@@ -11,29 +11,29 @@ var MyApp = {
             }
             return false;
         });
-    },
-    onlyLetters : function () {
-        $('.only-letters').on('keypress', function(event) {
-            var englishAlphabetAndWhiteSpace = /[A-Za-z- ]/g;
-            var arr_latin_character = [8,37,39,193,225,200,232,205,237,211,243,218,250,209,241];
-            var key = String.fromCharCode(event.which);
-            if ($.inArray(event.keyCode, arr_latin_character) >= 0 || englishAlphabetAndWhiteSpace.test(key)) {
-                return true;
-            }
-            return false;
-        });
-    },
+    }
 }
 
 $(function () {
-    console.log('helo world');
+    console.log('page odontologia');
 
-    if ($('.only-numbers').length) {
-        MyApp.onlyNumbers();
+    if ($('.contenido-odontograma').length) {
+       // MyApp.onlyNumbers();
+       console.log('hola');
     }
-
-    if ($('.only-letters').length) {
-        MyApp.onlyLetters();
-    }
-
 });
+
+/* Get Element */
+var box18 = document.querySelector('#box-18');
+var diente18 = document.querySelector('#diente-18');
+console.log(box18);
+
+box18.addEventListener('click', onClickBox18)
+diente18.addEventListener('click', onClickDiente18)
+
+function onClickBox18() {
+    console.log('onClick Box18');
+}
+function onClickDiente18() {
+    console.log('onClick diente 18');
+}

@@ -55,4 +55,148 @@ body {
     .home-box {
       display: grid; } }
 
+.seccion-odontograma {
+  position: relative;
+  top: -80px; }
+
+.contenido-odontograma {
+  padding: 20px 0; }
+
+.box-options .row-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
+.box-options .box {
+  border-left: 1px solid gray;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid;
+  width: 50px;
+  height: 40px;
+  position: relative; }
+  .box-options .box:last-child {
+    border-right: 1px solid gray; }
+  .box-options .box:after {
+    position: absolute;
+    bottom: -25px;
+    font-size: 14px;
+    text-align: center;
+    display: block;
+    width: 50px; }
+
+.box-18:after {
+  content: '18'; }
+
+.box-17:after {
+  content: '17'; }
+
+.box-16:after {
+  content: '16'; }
+
+.box-15:after {
+  content: '15'; }
+
+.box-14:after {
+  content: '14'; }
+
+.box-13:after {
+  content: '13'; }
+
+.box-12:after {
+  content: '12'; }
+
+.box-11:after {
+  content: '11'; }
+
+.box-21:after {
+  content: '21'; }
+
+.box-22:after {
+  content: '22'; }
+
+.box-23:after {
+  content: '23'; }
+
+.box-24:after {
+  content: '24'; }
+
+.box-25:after {
+  content: '25'; }
+
+.box-26:after {
+  content: '26'; }
+
+.box-27:after {
+  content: '27'; }
+
+.box-28:after {
+  content: '28'; }
+
+.box-lista-dientes {
+  margin: 80px 0 20px; }
+  .box-lista-dientes .row-dientes {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+  .box-lista-dientes .diente {
+    border-left: 1px solid gray;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid;
+    width: 50px;
+    height: 40px;
+    position: relative; }
+    .box-lista-dientes .diente:last-child {
+      border-right: 1px solid gray; }
+
+.modelo1 .triangle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+  .modelo1 .triangle:after {
+    content: '';
+    position: absolute;
+    top: -19px;
+    width: 37px;
+    height: 36px;
+    background: #FFFFFF;
+    border-right: 1px solid gray;
+    border-bottom: 1px solid gray;
+    -webkit-transform: rotate(226deg);
+            transform: rotate(226deg); }
+
+.trapecio {
+  /* border-bottom: 100px solid red; */
+  /* border-left: 25px solid transparent; */
+  /* border-right: 25px solid transparent; */
+  /* height: 0; */
+  /* width: 100px; */
+  border-bottom: 20px solid blue !important;
+  border-left: 18px solid transparent !important;
+  border-right: 18px solid transparent !important;
+  width: 49px;
+  /* border: 1px solid red; */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+  content: ''; }
+
 /*# sourceMappingURL=main.css.map */
