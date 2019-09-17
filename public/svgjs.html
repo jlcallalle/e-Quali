@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SVG.js</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/2.7.1/svg.js"></script>
+</head>
+<body>
+  <div id="drawing"></div>
+  <div id="circle"></div>
+  <div id="line"></div>
+  <div id="polygon"></div>
+
+
+  <script>
+    var draw = SVG('drawing').size(300, 300)
+    var rect = draw.rect(100, 100).attr({ fill: '#f06' })
+    var rect = draw.rect(100, 100).move(100, 50).fill('#f06')
+
+
+    var draw2 = SVG('circle').size(300, 300)
+    var circle = draw2.circle(100)
+
+    var line = draw.line(0, 0, 100, 150).stroke({ width: 1 })
+
+    var draw = SVG('polygon').size(300, 130)
+    var polygon = draw.polygon('50,0 60,40 100,50 60,60 50,100 40,60 0,50 40,40')
+    polygon.fill('#f06').move(20, 20)
+
+  </script>
+</body>
+</html>

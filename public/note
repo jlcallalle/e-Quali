@@ -5,3 +5,20 @@ SVG
 Canvas
 CSS Shapes (complex polygons)
 clip-path
+
+Crearción de Polygon Element
+El elemento "polígono" define una forma cerrada que consiste en un conjunto de segmentos de línea recta conectados.
+Los puntos que componen el polígono. Todos los valores de coordenadas están en el sistema de coordenadas del usuario.
+
+Matemáticamente, un elemento de "polígono" se puede asignar a un elemento de "path" equivalente de la siguiente manera:
+
+- realizar una operación absoluta de mover al primer par de coordenadas en la lista de puntos
+- para cada par de coordenadas subsiguiente, realice una operación de línea absoluta a ese par de coordenadas
+- realizar un comando closepath
+
+El ejemplo polygon01 a continuación especifica dos polígonos (una estrella y un hexágono) en el sistema de coordenadas del usuario establecido por el atributo "viewBox" en el elemento "svg".
+
+
+The value of the ‘viewBox’ attribute is a list of four numbers <min-x>, <min-y>, <width> and <height>,
+
+The x, y, width, height, rx and ry

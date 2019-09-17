@@ -18,7 +18,10 @@ var browserSync = require('browser-sync').create();
   files = {
     JS: [
       `${dir.nm}/jquery/dist/jquery.min.js`,
-      `${dir.nm}/owl.carousel/dist/owl.carousel.min.js`
+      `${dir.nm}/owl.carousel/dist/owl.carousel.min.js`,
+      `${dir.nm}/jquery.svg/jquery.svg.js`,
+      `${dir.nm}/jquery.svg/jquery.svganim.js`,
+      `${dir.nm}/@svgdotjs/svg.js/dist/svg.js`
     ],
     fonts: [`${dir.nm}/font-awesome/fonts/*.*`],
     statics : [

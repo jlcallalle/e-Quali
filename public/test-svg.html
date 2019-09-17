@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<title>jQuery SVG Basics</title>
+
+<style>
+  #svgbasics { width: 400px; height: 300px; border: 1px solid #484; }
+  #nuevo { width: 400px; height: 300px; border: 1px solid red; }
+</style>
+
+
+</head>
+<body>
+
+<div id="svgbasics"></div>
+
+<p>
+  <button id="rect">Add rectangle</button>
+  <button id="line">Add line</button>
+  <button id="circle">Add circle</button>
+  <button id="ellipse">Add ellipse</button>
+  <button id="clear">Clear</button>
+  <button id="export">Export</button>
+</p>
+<div id="svgexport"></div>
+<br>
+<div id="nuevo"></div>
+
+
+
+<script src="js/recursos.min.js"></script>
+<script src="js/main.js"></script>
+
+<script>
+
+    $(function() {
+      $('#nuevo').svg({onLoad: drawInitial2});
+
+
+    function drawInitial2(svg) {
+      //rectangulo
+      svg.rect(20, 50, 100, 50, {fill: 'yellow', stroke: 'navy', strokeWidth: 5});
+
+      //rectangulo ovalado
+      svg.rect(150, 50, 100, 50, 10, 10, {fill: 'green'});
+
+      var g = svg.group({transform: 'translate(270 80) rotate(-30)'});
+      svg.rect(g, 0, 0, 100, 50, 10, 10, {fill: 'none', stroke: 'purple', strokeWidth: 3});
+
+      svg.circle(70, 220, 50, {fill: 'red', stroke: 'blue', strokeWidth: 5});
+      g = svg.group({transform: 'translate(175 220)'});
+      svg.ellipse(g, '', '', 75, 50, {fill: 'yellow'});
+      svg.ellipse('', '', 75, 50, {transform: 'translate(300 220) rotate(-30)',
+          fill: 'none', stroke: 'blue', strokeWidth: 10});
+      g = svg.group({stroke: 'green'});
+
+      svg.line(g, 450, 120, 550, 20, {strokeWidth: 5});
+      svg.line(g, 550, 120, 650, 20, {strokeWidth: 10});
+      svg.line(g, 650, 120, 750, 20, {strokeWidth: 15});
+      svg.line(g, 750, 120, 850, 20, {strokeWidth: 20});
+      svg.line(g, 850, 120, 950, 20, {strokeWidth: 25});
+
+      svg.polyline([[450,250], [475,250],[475,220],[500,220],[500,250],
+          [525,250],[525,200],[550,200],[550,250],
+          [575,250],[575,180],[600,180],[600,250],
+          [625,250],[625,160],[650,160],[650,250],[675,250]],
+          {fill: 'none', stroke: 'blue', strokeWidth: 5});
+      svg.polygon([[800,150],[900,180],[900,240],[800,270],[700,240],[700,180]],
+          {fill: 'lime', stroke: 'blue', strokeWidth: 10});
+  }
+
+
+
+
+      $('#svgbasics').svg({onLoad: drawInitial});
+      $('#rect,#line,#circle,#ellipse').click(drawShape);
+      $('#clear').click(function() {
+        $('#svgbasics').svg('get').clear();
+      });
+      $('#export').click(function() {
+        var xml = $('#svgbasics').svg('get').toSVG();
+        $('#svgexport').html(xml.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'));
+      });
+    });
+
+    function drawInitial(svg) {
+      svg.circle(75, 75, 50, {fill: 'none', stroke: 'red', strokeWidth: 3});
+      var g = svg.group({stroke: 'black', strokeWidth: 2});
+      svg.line(g, 15, 75, 135, 75);
+      svg.line(g, 75, 15, 75, 135);
+    }
+
+    var colours = ['purple', 'red', 'orange', 'yellow', 'lime', 'green', 'blue', 'navy', 'black'];
+
+    function drawShape() {
+      var shape = this.id;
+      var svg = $('#svgbasics').svg('get');
+      if (shape == 'rect') {
+        svg.rect(random(300), random(200), random(100) + 100, random(100) + 100,
+          {fill: colours[random(9)], stroke: colours[random(9)], strokeWidth: random(5) + 1});
+      }
+      else if (shape == 'line') {
+        svg.line(random(400), random(300), random(400), random(300),
+          {stroke: colours[random(9)], strokeWidth: random(5) + 1});
+      }
+      else if (shape == 'circle') {
+        svg.circle(random(300) + 50, random(200) + 50, random(80) + 20,
+          {fill: colours[random(9)], stroke: colours[random(9)], strokeWidth: random(5) + 1});
+      }
+      else if (shape == 'ellipse') {
+        svg.ellipse(random(300) + 50, random(200) + 50, random(80) + 20, random(80) + 20,
+          {fill: colours[random(9)], stroke: colours[random(9)], strokeWidth: random(5) + 1});
+      }
+    }
+
+    function random(range) {
+      return Math.floor(Math.random() * range);
+    }
+    </script>
+
+
+</body>
+</html>
+
