@@ -249,11 +249,12 @@
 
 .container-svg-odontograma {
     border:1px solid green;
+    background-color: rgba(255, 0, 0, 0.1);
+    height:100px;
 }
 
 
 /*  Sidebar Odontograma*/
-
 .opciones-odontologia {
     //background: rgba(255,0,0,0.1);
     height: 200px;
@@ -279,4 +280,24 @@
             text-decoration: none;
         }
     }
+}
+
+.caries {
+    fill: red;
+    stroke: black;
+    stroke-width: 1px;
+}
+
+
+.molar {
+    width: 90px;
+    border:1px solid green;
+    display: inline-block;
+
+    .caries {
+        fill: red;
+        stroke: black;
+        stroke-width: 1px;
+    }
+
 }

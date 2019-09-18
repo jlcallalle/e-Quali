@@ -1,7 +1,8 @@
 Toos for Grapich Web
 -------------------------
 
-SVG
+SVG Polygon: https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths
+SVG Path
 Canvas
 CSS Shapes (complex polygons)
 clip-path
