@@ -55,7 +55,36 @@ body {
     .home-box {
       display: grid; } }
 
-.seccion-odontograma {
+/*  Sidebar Odontograma*/
+.opciones-odontologia {
+  height: 200px;
+  width: 240px;
+  position: fixed;
+  top: 150px;
+  right: 20px;
+  border: 1px solid gray;
+  padding: 5px; }
+  .opciones-odontologia h5 {
+    margin: 0 0 10px 0; }
+
+.lista-hallazgos li {
+  font-size: 12px;
+  list-style: none; }
+  .lista-hallazgos li a {
+    color: #2d2d2d;
+    font-weight: bold; }
+  .lista-hallazgos li .codigo {
+    color: #367fa9; }
+  .lista-hallazgos li.opcion-caries a {
+    color: red; }
+  .lista-hallazgos li.opcion-extraccion a {
+    color: green; }
+  .lista-hallazgos li.opcion-fractura a {
+    color: #2d2d2d; }
+  .lista-hallazgos li.opcion-puente a {
+    color: coral; }
+
+.page-odontograma {
   position: relative;
   top: -80px; }
 
@@ -138,61 +167,6 @@ body {
 
 .box-lista-dientes {
   margin: 50px 0 20px; }
-  .box-lista-dientes .row-dientes {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center; }
-  .box-lista-dientes .diente {
-    border-left: 1px solid gray;
-    border-top: 1px solid gray;
-    border-bottom: 1px solid gray;
-    width: 50px;
-    height: 40px;
-    position: relative; }
-    .box-lista-dientes .diente:last-child {
-      border-right: 1px solid gray; }
-
-.modelo1 .triangle {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center; }
-  .modelo1 .triangle:after {
-    content: '';
-    position: absolute;
-    top: -19px;
-    width: 37px;
-    height: 36px;
-    background: #FFFFFF;
-    border-right: 1px solid gray;
-    border-bottom: 1px solid gray;
-    -webkit-transform: rotate(226deg);
-            transform: rotate(226deg); }
-
-.trapecio {
-  border-bottom: 20px solid blue !important;
-  border-left: 18px solid transparent !important;
-  border-right: 18px solid transparent !important;
-  width: 49px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  height: 100%;
-  content: ''; }
 
 .box-img {
   display: -webkit-box;
@@ -205,136 +179,53 @@ body {
       -ms-flex-pack: center;
           justify-content: center; }
 
-.all {
-  width: 50px;
-  height: 38px;
-  position: a;
-  z-index: 100;
-  -webkit-box-pack: c;
-      -ms-flex-pack: c;
-          justify-content: c;
-  font-size: 0; }
-
-.c1 {
-  width: 50px;
-  height: 12px;
-  left: 0;
-  position: absolute;
-  background: rgba(0, 0, 0, 0.1);
-  top: 0;
-  background-color: rgba(0, 0, 0, 0.2); }
-
-.c2 {
-  width: 24px;
-  height: 12px;
-  position: absolute;
-  background: rgba(0, 0, 255, 0);
-  top: 13px;
-  right: 0px;
-  background-color: rgba(0, 0, 255, 0.3); }
-
-.c3 {
-  width: 50px;
-  height: 12px;
-  left: 0;
-  position: absolute;
-  background: rgba(0, 0, 0, 0.1);
-  bottom: 0;
-  background-color: rgba(229, 80, 80, 0.3); }
-
-.c4 {
-  width: 24px;
-  height: 12px;
-  left: 0;
-  position: absolute;
-  background: rgba(0, 0, 0, 0.1);
-  top: 13px;
-  background-color: rgba(0, 255, 80, 0.3); }
-
-/* Shapers Css Border Backgroud*/
-.trap-top {
-  border-style: solid;
-  height: 0;
-  width: 50px;
-  border-color: transparent transparent #bbc1f1 transparent;
-  border-width: 0 15px 15px 15px;
-  position: absolute;
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
-  top: 0; }
-
-.trap-right {
-  border-style: solid;
-  height: 0;
-  width: 37px;
-  border-color: transparent transparent #d5d6dc transparent;
-  border-width: 0 15px 15px 15px;
-  position: absolute;
-  -webkit-transform: rotate(270deg);
-          transform: rotate(270deg);
-  right: -11px;
-  top: 11px; }
-
-.trap-sub {
-  border-style: solid;
-  height: 0;
-  width: 50px;
-  border-color: transparent transparent Pink transparent;
-  border-width: 0 15px 15px 15px;
-  bottom: 0;
-  position: absolute;
-  -webkit-transform: ro;
-          transform: ro; }
-
-.trap-left {
-  border-style: solid;
-  height: 0;
-  width: 37px;
-  border-color: transparent transparent #cfe4cf transparent;
-  border-width: 0 15px 15px 15px;
-  position: absolute;
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
-  left: -11px;
-  top: 11px; }
-
 .container-svg-odontograma {
-  border: 1px solid green;
-  background-color: rgba(255, 0, 0, 0.1);
-  height: 100px; }
+  background-color: rgba(255, 0, 0, 0.1); }
 
-/*  Sidebar Odontograma*/
-.opciones-odontologia {
-  height: 200px;
-  width: 240px;
-  position: fixed;
-  top: 150px;
-  right: 20px;
-  border: 1px solid gray;
-  padding: 5px; }
-  .opciones-odontologia h5 {
-    margin: 0 0 10px 0; }
+.box-test {
+  margin: 20px 0;
+  background-color: rgba(0, 255, 0, 0.2); }
 
-.lista-hallazgos li {
-  font-size: 12px;
-  list-style: none; }
-  .lista-hallazgos li span {
-    color: blue; }
-  .lista-hallazgos li a:hover {
-    text-decoration: none; }
-
-.caries {
-  fill: red;
-  stroke: black;
-  stroke-width: 1px; }
-
-.molar {
-  width: 90px;
-  border: 1px solid green;
+.diente {
+  width: 75px;
   display: inline-block; }
-  .molar .caries {
+  .diente .caries {
     fill: red;
     stroke: black;
     stroke-width: 1px; }
+  .diente .verde {
+    fill: green;
+    stroke: black;
+    stroke-width: 1px; }
+  .diente .amarillo {
+    fill: yellow;
+    stroke: black;
+    stroke-width: 1px; }
+  .diente .gray {
+    fill: gray;
+    stroke: black;
+    stroke-width: 1px; }
+  .diente .azul {
+    fill: blue;
+    stroke: black;
+    stroke-width: 1px; }
+
+.contenido-polygon {
+  position: relative; }
+  .contenido-polygon:before {
+    content: 'polygon';
+    position: absolute;
+    width: 70px;
+    top: 13px;
+    left: -61px; }
+
+.contenido-path {
+  position: relative; }
+  .contenido-path:before {
+    content: 'path';
+    position: absolute;
+    width: 70px;
+    top: 0;
+    left: -40px; }
 
 /*# sourceMappingURL=main.css.map */

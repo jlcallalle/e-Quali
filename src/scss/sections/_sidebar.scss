@@ -1,0 +1,50 @@
+/*  Sidebar Odontograma*/
+
+.opciones-odontologia {
+    height: 200px;
+    width: 240px;
+    position: fixed;
+    top: 150px;
+    right: 20px;
+    border: 1px solid gray;
+    padding: 5px;
+    h5 {
+        margin:0 0 10px 0 ;
+    }
+}
+
+.lista-hallazgos {
+    li {
+     font-size: 12px;
+     list-style: none;
+        a {
+            color: #2d2d2d;
+            font-weight: bold;
+        }
+        .codigo {
+            color: #367fa9;
+        }
+        &.opcion-caries {
+            a {
+                color:red;
+            }
+        }
+        &.opcion-extraccion {
+            a {
+                color:green;
+            }
+        }
+        &.opcion-fractura {
+            a {
+                color:#2d2d2d;
+            }
+        }
+        &.opcion-puente {
+            a {
+                color:coral;
+            }
+        }
+
+    }
+}
+

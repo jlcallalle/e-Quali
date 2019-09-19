@@ -1,4 +1,4 @@
-.seccion-odontograma {
+.page-odontograma {
     position: relative;
     top: -80px;
 }
@@ -86,53 +86,6 @@
 
 .box-lista-dientes {
     margin:50px 0 20px;
-    .row-dientes {
-        display: flex;
-        justify-content: center;
-    }
-    .diente {
-        border-left: 1px solid gray;
-        border-top: 1px solid gray;
-        border-bottom: 1px solid gray;
-        width: 50px;
-        height: 40px;
-        position: relative;
-        &:last-child {
-            border-right: 1px solid gray;
-        }
-    }
-}
-
-.modelo1 {
-    .triangle {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        &:after {
-            content: '';
-            position: absolute;
-            top: -19px;
-            width: 37px;
-            height: 36px;
-            background: #FFFFFF;
-            border-right: 1px solid gray;
-            border-bottom: 1px solid gray;
-            transform: rotate(226deg);
-        }
-
-    }
-}
-
-.trapecio {
-    border-bottom: 20px solid blue !important;
-    border-left: 18px solid transparent !important;
-    border-right: 18px solid transparent !important;
-    width: 49px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    content: '';
 }
 
 
@@ -142,162 +95,67 @@
     justify-content: center;
 }
 
-
-.all {
-    width: 50px;
-    height: 38px;
-    position: a;
-    z-index: 100;
-    justify-content: c;
-    font-size: 0;
-    //position: relative;
-    //left: -1px;
-}
-
-.c1 {
-    width: 50px;
-    height: 12px;
-    left: 0;
-    position: absolute;
-    background: rgba(0,0,0, 0.1);
-    top: 0;
-    background-color: rgba(0,0,0,0.2);
-}
-
-.c2 {
-    width: 24px;
-    height: 12px;
-    position: absolute;
-    background: rgba(0,0,255,0-4);
-    top: 13px;
-    right: 0px;
-    background-color: rgba(0, 0, 255, 0.3);
-}
-
-.c3 {
-    width: 50px;
-    height: 12px;
-    left: 0;
-    position: absolute;
-    background: rgba(0,0,0, 0.1);
-    bottom: 0;
-    background-color: rgba(229, 80, 80, 0.3);
-}
-
-.c4 {
-
-    width: 24px;
-    height: 12px;
-    left: 0;
-    position: absolute;
-    background: rgba(0,0,0, 0.1);
-    top: 13px;
-    background-color: rgba(0, 255, 80, 0.3);
-}
-
-
-/* Shapers Css Border Backgroud*/
-
-.trap-top {
-    border-style: solid;
-    height: 0;
-    width: 50px;
-    border-color: transparent transparent #bbc1f1 transparent;
-    border-width: 0 15px 15px 15px;
-    position: absolute;
-    transform: rotate(180deg);
-    top: 0;
-}
-
-.trap-right {
-    border-style: solid;
-    height: 0;
-    width: 37px;
-    border-color: transparent transparent #d5d6dc transparent;
-    border-width: 0 15px 15px 15px;
-    position: absolute;
-    transform: rotate(270deg);
-    right: -11px;
-    top: 11px;
-}
-
-.trap-sub {
-    border-style: solid;
-    height: 0;
-    width: 50px;
-    border-color: transparent transparent Pink transparent;
-    border-width: 0 15px 15px 15px;
-    bottom: 0;
-    position: absolute;
-    transform: ro;
-}
-
-.trap-left {
-    border-style: solid;
-    height: 0;
-    width: 37px;
-    border-color: transparent transparent #cfe4cf transparent;
-    border-width: 0 15px 15px 15px;
-    position: absolute;
-    transform: rotate(90deg);
-    left: -11px;
-    top: 11px;
-}
-
-
-
-
 .container-svg-odontograma {
-    border:1px solid green;
     background-color: rgba(255, 0, 0, 0.1);
-    height:100px;
+    //display: flex,
 }
 
-
-/*  Sidebar Odontograma*/
-.opciones-odontologia {
-    //background: rgba(255,0,0,0.1);
-    height: 200px;
-    width: 240px;
-    position: fixed;
-    top: 150px;
-    right: 20px;
-    border: 1px solid gray;
-    padding: 5px;
-    h5 {
-        margin:0 0 10px 0 ;
-    }
+//Tesst
+.box-test {
+    margin: 20px 0;
+    background-color: rgba(0,255,0,0.2);
 }
+// fin test
 
-.lista-hallazgos {
-    li {
-     font-size: 12px;
-     list-style: none;
-        span {
-            color: blue;
-        }
-        a:hover {
-            text-decoration: none;
-        }
-    }
-}
-
-.caries {
-    fill: red;
-    stroke: black;
-    stroke-width: 1px;
-}
-
-
-.molar {
-    width: 90px;
-    border:1px solid green;
+.diente {
+    width: 75px;
     display: inline-block;
-
     .caries {
         fill: red;
         stroke: black;
         stroke-width: 1px;
     }
-
+    .verde {
+        fill: green;
+        stroke: black;
+        stroke-width: 1px;
+    }
+    .amarillo {
+        fill: yellow;
+        stroke: black;
+        stroke-width: 1px;
+    }
+    .gray {
+        fill: gray;
+        stroke: black;
+        stroke-width: 1px;
+    }
+    .azul {
+        fill: blue;
+        stroke: black;
+        stroke-width: 1px;
+    }
 }
+
+.contenido-polygon {
+    position: relative;
+    &:before {
+        content: 'polygon';
+        position: absolute;
+        width: 70px;
+        top: 13px;
+        left: -61px;
+    }
+}
+
+.contenido-path {
+    position: relative;
+    &:before {
+        content: 'path';
+        position: absolute;
+        width: 70px;
+        top: 0;
+        left: -40px;
+    }
+}
+
