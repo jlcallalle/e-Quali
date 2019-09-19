@@ -140,14 +140,15 @@
 }
 .contenido-polygon {
     position: relative;
-    &:before {
-        content: 'polygon';
-        position: absolute;
-        width: 70px;
-        top: 0;
-        left: -36px;
-        font-size: 12px;
-    }
+    display: flex;
+    // &:before {
+    //     content: 'polygon';
+    //     position: absolute;
+    //     width: 70px;
+    //     top: 0;
+    //     left: -36px;
+    //     font-size: 12px;
+    // }
 }
 
 .contenido-path {
