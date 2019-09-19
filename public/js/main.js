@@ -21,4 +21,13 @@ $(function () {
     if ($('.page-odontograma').length) {
        console.log('enjoy odontogram');
     }
+
+    console.log('aa');
+
+    $('.cont-diente .diente').on("click", function(e){
+        console.log('aa');
+        $(this).toggleClass("active");
+    });
+
+
 });

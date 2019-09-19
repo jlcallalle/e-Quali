@@ -186,26 +186,26 @@ body {
   margin: 20px 0;
   background-color: rgba(0, 255, 0, 0.2); }
 
-.diente {
+.contenido-caries .cont-diente {
   width: 75px;
   display: inline-block; }
-  .diente .caries {
+  .contenido-caries .cont-diente .caries {
     fill: red;
     stroke: black;
     stroke-width: 1px; }
-  .diente .verde {
+  .contenido-caries .cont-diente .verde {
     fill: green;
     stroke: black;
     stroke-width: 1px; }
-  .diente .amarillo {
+  .contenido-caries .cont-diente .amarillo {
     fill: yellow;
     stroke: black;
     stroke-width: 1px; }
-  .diente .gray {
+  .contenido-caries .cont-diente .gray {
     fill: gray;
     stroke: black;
     stroke-width: 1px; }
-  .diente .azul {
+  .contenido-caries .cont-diente .azul {
     fill: blue;
     stroke: black;
     stroke-width: 1px; }
@@ -216,8 +216,9 @@ body {
     content: 'polygon';
     position: absolute;
     width: 70px;
-    top: 13px;
-    left: -61px; }
+    top: 0;
+    left: -36px;
+    font-size: 12px; }
 
 .contenido-path {
   position: relative; }
@@ -226,6 +227,20 @@ body {
     position: absolute;
     width: 70px;
     top: 0;
-    left: -40px; }
+    left: -36px;
+    font-size: 12px; }
+
+.contenido-extraccion .diente {
+  fill: transparent; }
+  .contenido-extraccion .diente:hover {
+    fill: green; }
+
+.contenido-caries .diente {
+  fill: transparent; }
+  .contenido-caries .diente:hover {
+    fill: red; }
+
+.contenido-caries .active {
+  fill: red; }
 
 /*# sourceMappingURL=main.css.map */

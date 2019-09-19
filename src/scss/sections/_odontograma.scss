@@ -107,44 +107,46 @@
 }
 // fin test
 
-.diente {
-    width: 75px;
-    display: inline-block;
-    .caries {
-        fill: red;
-        stroke: black;
-        stroke-width: 1px;
-    }
-    .verde {
-        fill: green;
-        stroke: black;
-        stroke-width: 1px;
-    }
-    .amarillo {
-        fill: yellow;
-        stroke: black;
-        stroke-width: 1px;
-    }
-    .gray {
-        fill: gray;
-        stroke: black;
-        stroke-width: 1px;
-    }
-    .azul {
-        fill: blue;
-        stroke: black;
-        stroke-width: 1px;
+.contenido-caries {
+    .cont-diente {
+        width: 75px;
+        display: inline-block;
+        .caries {
+            fill: red;
+            stroke: black;
+            stroke-width: 1px;
+        }
+        .verde {
+            fill: green;
+            stroke: black;
+            stroke-width: 1px;
+        }
+        .amarillo {
+            fill: yellow;
+            stroke: black;
+            stroke-width: 1px;
+        }
+        .gray {
+            fill: gray;
+            stroke: black;
+            stroke-width: 1px;
+        }
+        .azul {
+            fill: blue;
+            stroke: black;
+            stroke-width: 1px;
+        }
     }
 }
-
 .contenido-polygon {
     position: relative;
     &:before {
         content: 'polygon';
         position: absolute;
         width: 70px;
-        top: 13px;
-        left: -61px;
+        top: 0;
+        left: -36px;
+        font-size: 12px;
     }
 }
 
@@ -155,7 +157,30 @@
         position: absolute;
         width: 70px;
         top: 0;
-        left: -40px;
+        left: -36px;
+        font-size: 12px;
     }
 }
 
+
+.contenido-extraccion {
+    .diente {
+        //cursor:pointer;
+        fill: transparent;
+        &:hover {
+            fill: green;
+        }
+    }
+}
+
+.contenido-caries {
+    .diente {
+        fill: transparent;
+        &:hover {
+            fill: red;
+        }
+    }
+    .active {
+       fill:red;
+    }
+}
