@@ -193,38 +193,6 @@ body {
   margin: 20px 0;
   background-color: rgba(0, 255, 0, 0.2); }
 
-.contenido-caries .cont-diente {
-  width: 70px;
-  display: inline-block; }
-  .contenido-caries .cont-diente .caries {
-    fill: red;
-    stroke: black;
-    stroke-width: 1px; }
-  .contenido-caries .cont-diente .verde {
-    fill: green;
-    stroke: black;
-    stroke-width: 1px; }
-  .contenido-caries .cont-diente .amarillo {
-    fill: yellow;
-    stroke: black;
-    stroke-width: 1px; }
-  .contenido-caries .cont-diente .gray {
-    fill: gray;
-    stroke: black;
-    stroke-width: 1px; }
-  .contenido-caries .cont-diente .azul {
-    fill: blue;
-    stroke: black;
-    stroke-width: 1px; }
-
-.contenido-caries .diente {
-  fill: transparent; }
-  .contenido-caries .diente:hover {
-    fill: red; }
-
-.contenido-caries .active {
-  fill: red; }
-
 .contenido-polygon {
   position: relative;
   display: -webkit-box;
@@ -253,6 +221,39 @@ body {
   display: none; }
 
 .cont-diente.incisivos {
-  width: 59px; }
+  width: 54px; }
+
+/* */
+.contenido-odontograma .diente {
+  fill: transparent; }
+  .contenido-odontograma .diente:hover {
+    fill: red; }
+
+.contenido-odontograma .active {
+  fill: red; }
+
+.cont-diente {
+  width: 70px;
+  display: inline-block; }
+  .cont-diente .caries {
+    fill: red;
+    stroke: black;
+    stroke-width: 1px; }
+  .cont-diente .verde {
+    fill: green;
+    stroke: black;
+    stroke-width: 1px; }
+  .cont-diente .amarillo {
+    fill: yellow;
+    stroke: black;
+    stroke-width: 1px; }
+  .cont-diente .gray {
+    fill: gray;
+    stroke: black;
+    stroke-width: 1px; }
+  .cont-diente .azul {
+    fill: blue;
+    stroke: black;
+    stroke-width: 1px; }
 
 /*# sourceMappingURL=main.css.map */

@@ -34,7 +34,7 @@ $(function () {
     $(".select-tipo").change(function(){
         var tipo = $(this).children("option:selected").val();
         console.log(tipo);
-        $('#box-18').append(tipo);
+        $(this).parent().append(tipo);
     });
 
 
