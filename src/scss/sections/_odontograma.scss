@@ -20,6 +20,12 @@
         width: 50px;
         height: 40px;
         position: relative;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+
         &:last-child {
             border-right: 1px solid gray;
         }
@@ -96,7 +102,7 @@
 }
 
 .container-svg-odontograma {
-    background-color: rgba(255, 0, 0, 0.1);
+    //background-color: rgba(255, 0, 0, 0.1);
     //display: flex,
 }
 
@@ -109,7 +115,7 @@
 
 .contenido-caries {
     .cont-diente {
-        width: 75px;
+        width: 70px;
         display: inline-block;
         .caries {
             fill: red;
@@ -137,18 +143,23 @@
             stroke-width: 1px;
         }
     }
+
+    .diente {
+        fill: transparent;
+        &:hover {
+            fill: red;
+        }
+    }
+    .active {
+       fill:red;
+    }
+
 }
+
+
 .contenido-polygon {
     position: relative;
     display: flex;
-    // &:before {
-    //     content: 'polygon';
-    //     position: absolute;
-    //     width: 70px;
-    //     top: 0;
-    //     left: -36px;
-    //     font-size: 12px;
-    // }
 }
 
 .contenido-path {
@@ -174,14 +185,15 @@
     }
 }
 
-.contenido-caries {
-    .diente {
-        fill: transparent;
-        &:hover {
-            fill: red;
-        }
-    }
-    .active {
-       fill:red;
-    }
+
+.box select {
+    position: absolute;
+    top: -24px;
+    font-size: 12px;
+    display: none;
+}
+
+
+.cont-diente.incisivos {
+    width: 59px;
 }

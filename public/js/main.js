@@ -27,7 +27,18 @@ $(function () {
     $('.cont-diente .diente').on("click", function(e){
         console.log('aa');
         $(this).toggleClass("active");
+        $('.box select').show();
+
+    });
+
+    $(".select-tipo").change(function(){
+        var tipo = $(this).children("option:selected").val();
+        console.log(tipo);
+        $('#box-18').append(tipo);
     });
 
 
 });
+
+
+

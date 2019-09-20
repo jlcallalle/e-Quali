@@ -23,3 +23,10 @@ El ejemplo polygon01 a continuación especifica dos polígonos (una estrella y u
 The value of the ‘viewBox’ attribute is a list of four numbers <min-x>, <min-y>, <width> and <height>,
 
 The x, y, width, height, rx and ry
+
+
+CARIES
+MB: Mancha Blanca
+CE: Lesion de caries dental a nivel del esmalte
+CD: Lesion de caries dental a nivel de la dentina
+CDP: Lesion de caries dental a nivel de la dentina/ compromisode la pulpa
