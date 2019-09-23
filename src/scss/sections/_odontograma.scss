@@ -17,8 +17,8 @@
         border-left: 1px solid gray;
         border-top: 1px solid gray;
         border-bottom: 1px solid gray;
-        width: 52px;
-        height: 40px;
+        width: 55px;
+        height: 50px;
         position: relative;
 
         display: flex;
@@ -36,6 +36,10 @@
             text-align: center;
             display: block;
             width: 50px;
+        }
+        &.box-inc {
+            width: 45px;
+            //background: rgba(255,0,0,0.1);
         }
     }
 }
@@ -88,155 +92,6 @@
 .box-28:after {
     content: '28';
 }
-
-
-.box-lista-dientes {
-    margin:50px 0 20px;
-}
-
-
-.box-img {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
-//Tesst
-.box-test {
-    margin: 20px 0;
-    background-color: rgba(0,255,0,0.2);
-}
-// fin test
-
-.contenido-polygon {
-    position: relative;
-    display: flex;
-}
-
-.contenido-path {
-    position: relative;
-    &:before {
-        content: 'path';
-        position: absolute;
-        width: 70px;
-        top: 0;
-        left: -36px;
-        font-size: 12px;
-    }
-}
-
-.contenido-extraccion {
-    .diente {
-        fill: transparent;
-        &:hover {
-            fill: green;
-        }
-    }
-}
-
-
-.box select {
-    position: absolute;
-    top: -24px;
-    font-size: 12px;
-    display: none;
-}
-
-
-.cont-diente.incisivos {
-    width: 54px;
-}
-
-.contenido-odontograma  {
-    .diente {
-        fill: transparent;
-    }
-}
-
-.contenido-caries {
-    .diente {
-        &:hover {
-            fill: red;
-        }
-    }
-    .active {
-       fill:red;
-    }
-}
-.contenido-extraccion {
-    .diente {
-        &:hover {
-            fill: green;
-        }
-    }
-    .active {
-       fill:green;
-    }
-}
-
-.contenido-fractura {
-    .diente {
-        &:hover {
-            fill: gray;
-        }
-    }
-    .active {
-       fill:gray;
-    }
-}
-.contenido-puente {
-    .diente {
-        &:hover {
-            fill: coral;
-        }
-    }
-    .active {
-       fill:coral;
-    }
-}
-
-.cont-diente {
-    width: 70px;
-    display: inline-block;
-    margin-right: 3px;
-    &:last-child {
-        margin-right: 0;
-    }
-    .caries {
-        fill: red;
-        stroke: black;
-        stroke-width: 1px;
-    }
-    .verde {
-        fill: green;
-        stroke: black;
-        stroke-width: 1px;
-    }
-    .amarillo {
-        fill: yellow;
-        stroke: black;
-        stroke-width: 1px;
-    }
-    .gray {
-        fill: gray;
-        stroke: black;
-        stroke-width: 1px;
-    }
-    .azul {
-        fill: blue;
-        stroke: black;
-        stroke-width: 1px;
-    }
-}
-
-
-
-.box-sub-adulto {
-    display: flex;
-    flex-direction: column-reverse;
-}
-
 
 
 .box-48:after {
@@ -295,3 +150,240 @@
 .box-38:after {
     content: '38';
 }
+
+
+
+
+.box-55:after {
+    content: '55';
+}
+
+.box-54:after {
+    content: '54';
+}
+.box-53:after {
+    content: '53';
+}
+.box-52:after {
+    content: '52';
+}
+.box-51:after {
+    content: '51';
+}
+.box-61:after {
+    content: '61';
+}
+.box-62:after {
+    content: '62';
+}
+.box-63:after {
+    content: '63';
+}
+.box-64:after {
+    content: '64';
+}
+.box-65:after {
+    content: '65';
+}
+
+
+
+.box-85:after {
+    content: '85';
+}
+
+.box-84:after {
+    content: '84';
+}
+
+.box-83:after {
+    content: '83';
+}
+
+.box-82:after {
+    content: '82';
+}
+
+.box-81:after {
+    content: '81';
+}
+
+.box-71:after {
+    content: '71';
+}
+
+.box-72:after {
+    content: '72';
+}
+
+.box-73:after {
+    content: '73';
+}
+
+.box-74:after {
+    content: '74';
+}
+
+.box-75:after {
+    content: '75';
+}
+
+
+
+
+
+.box-lista-dientes {
+    margin:50px 0 20px;
+}
+
+
+.box-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+//Tesst
+.box-test {
+    margin: 20px 0;
+   // background-color: rgba(0,255,0,0.2);
+}
+// fin test
+
+.contenido-polygon {
+    position: relative;
+    text-align: center;
+    //display: flex;
+}
+
+.contenido-path {
+    position: relative;
+    &:before {
+        content: 'path';
+        position: absolute;
+        width: 70px;
+        top: 0;
+        left: -36px;
+        font-size: 12px;
+    }
+}
+
+.contenido-extraccion {
+    .diente {
+        fill: transparent;
+        &:hover {
+            fill: green;
+        }
+    }
+}
+
+
+.box select {
+    position: absolute;
+    top: -24px;
+    font-size: 12px;
+    display: none;
+}
+
+
+
+.contenido-odontograma  {
+    .diente {
+        fill: transparent;
+    }
+}
+
+.contenido-caries {
+    .diente {
+        &:hover {
+            fill: red;
+        }
+    }
+    .active {
+       fill:red;
+    }
+}
+.contenido-extraccion {
+    .diente {
+        &:hover {
+            fill: green;
+        }
+    }
+    .active {
+       fill:green;
+    }
+}
+
+.contenido-fractura {
+    .diente {
+        &:hover {
+            fill: gray;
+        }
+    }
+    .active {
+       fill:gray;
+    }
+}
+.contenido-puente {
+    .diente {
+        &:hover {
+            fill: coral;
+        }
+    }
+    .active {
+       fill:coral;
+    }
+}
+
+.cont-diente {
+    width: 51px;
+    display: inline-block;
+    margin-right: 2px;
+    &:last-child {
+        margin-right: 0;
+    }
+    &.incisivos {
+        width: 40px;
+    }
+    .caries {
+        fill: red;
+        stroke: black;
+        stroke-width: 1px;
+    }
+    .verde {
+        fill: green;
+        stroke: black;
+        stroke-width: 1px;
+    }
+    .amarillo {
+        fill: yellow;
+        stroke: black;
+        stroke-width: 1px;
+    }
+    .gray {
+        fill: gray;
+        stroke: black;
+        stroke-width: 1px;
+    }
+    .azul {
+        fill: blue;
+        stroke: black;
+        stroke-width: 1px;
+    }
+}
+
+
+
+.box-sub-adulto {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.box-sub-ninio {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+
+

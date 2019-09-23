@@ -104,8 +104,8 @@ body {
   border-left: 1px solid gray;
   border-top: 1px solid gray;
   border-bottom: 1px solid gray;
-  width: 52px;
-  height: 40px;
+  width: 55px;
+  height: 50px;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -126,6 +126,8 @@ body {
     text-align: center;
     display: block;
     width: 50px; }
+  .box-options .box.box-inc {
+    width: 45px; }
 
 .box-18:after {
   content: '18'; }
@@ -175,117 +177,6 @@ body {
 .box-28:after {
   content: '28'; }
 
-.box-lista-dientes {
-  margin: 50px 0 20px; }
-
-.box-img {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center; }
-
-.box-test {
-  margin: 20px 0;
-  background-color: rgba(0, 255, 0, 0.2); }
-
-.contenido-polygon {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex; }
-
-.contenido-path {
-  position: relative; }
-  .contenido-path:before {
-    content: 'path';
-    position: absolute;
-    width: 70px;
-    top: 0;
-    left: -36px;
-    font-size: 12px; }
-
-.contenido-extraccion .diente {
-  fill: transparent; }
-  .contenido-extraccion .diente:hover {
-    fill: green; }
-
-.box select {
-  position: absolute;
-  top: -24px;
-  font-size: 12px;
-  display: none; }
-
-.cont-diente.incisivos {
-  width: 54px; }
-
-.contenido-odontograma .diente {
-  fill: transparent; }
-
-.contenido-caries .diente:hover {
-  fill: red; }
-
-.contenido-caries .active {
-  fill: red; }
-
-.contenido-extraccion .diente:hover {
-  fill: green; }
-
-.contenido-extraccion .active {
-  fill: green; }
-
-.contenido-fractura .diente:hover {
-  fill: gray; }
-
-.contenido-fractura .active {
-  fill: gray; }
-
-.contenido-puente .diente:hover {
-  fill: coral; }
-
-.contenido-puente .active {
-  fill: coral; }
-
-.cont-diente {
-  width: 70px;
-  display: inline-block;
-  margin-right: 3px; }
-  .cont-diente:last-child {
-    margin-right: 0; }
-  .cont-diente .caries {
-    fill: red;
-    stroke: black;
-    stroke-width: 1px; }
-  .cont-diente .verde {
-    fill: green;
-    stroke: black;
-    stroke-width: 1px; }
-  .cont-diente .amarillo {
-    fill: yellow;
-    stroke: black;
-    stroke-width: 1px; }
-  .cont-diente .gray {
-    fill: gray;
-    stroke: black;
-    stroke-width: 1px; }
-  .cont-diente .azul {
-    fill: blue;
-    stroke: black;
-    stroke-width: 1px; }
-
-.box-sub-adulto {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: column-reverse;
-          flex-direction: column-reverse; }
-
 .box-48:after {
   content: '48'; }
 
@@ -333,5 +224,181 @@ body {
 
 .box-38:after {
   content: '38'; }
+
+.box-55:after {
+  content: '55'; }
+
+.box-54:after {
+  content: '54'; }
+
+.box-53:after {
+  content: '53'; }
+
+.box-52:after {
+  content: '52'; }
+
+.box-51:after {
+  content: '51'; }
+
+.box-61:after {
+  content: '61'; }
+
+.box-62:after {
+  content: '62'; }
+
+.box-63:after {
+  content: '63'; }
+
+.box-64:after {
+  content: '64'; }
+
+.box-65:after {
+  content: '65'; }
+
+.box-85:after {
+  content: '85'; }
+
+.box-84:after {
+  content: '84'; }
+
+.box-83:after {
+  content: '83'; }
+
+.box-82:after {
+  content: '82'; }
+
+.box-81:after {
+  content: '81'; }
+
+.box-71:after {
+  content: '71'; }
+
+.box-72:after {
+  content: '72'; }
+
+.box-73:after {
+  content: '73'; }
+
+.box-74:after {
+  content: '74'; }
+
+.box-75:after {
+  content: '75'; }
+
+.box-lista-dientes {
+  margin: 50px 0 20px; }
+
+.box-img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
+.box-test {
+  margin: 20px 0; }
+
+.contenido-polygon {
+  position: relative;
+  text-align: center; }
+
+.contenido-path {
+  position: relative; }
+  .contenido-path:before {
+    content: 'path';
+    position: absolute;
+    width: 70px;
+    top: 0;
+    left: -36px;
+    font-size: 12px; }
+
+.contenido-extraccion .diente {
+  fill: transparent; }
+  .contenido-extraccion .diente:hover {
+    fill: green; }
+
+.box select {
+  position: absolute;
+  top: -24px;
+  font-size: 12px;
+  display: none; }
+
+.contenido-odontograma .diente {
+  fill: transparent; }
+
+.contenido-caries .diente:hover {
+  fill: red; }
+
+.contenido-caries .active {
+  fill: red; }
+
+.contenido-extraccion .diente:hover {
+  fill: green; }
+
+.contenido-extraccion .active {
+  fill: green; }
+
+.contenido-fractura .diente:hover {
+  fill: gray; }
+
+.contenido-fractura .active {
+  fill: gray; }
+
+.contenido-puente .diente:hover {
+  fill: coral; }
+
+.contenido-puente .active {
+  fill: coral; }
+
+.cont-diente {
+  width: 51px;
+  display: inline-block;
+  margin-right: 2px; }
+  .cont-diente:last-child {
+    margin-right: 0; }
+  .cont-diente.incisivos {
+    width: 40px; }
+  .cont-diente .caries {
+    fill: red;
+    stroke: black;
+    stroke-width: 1px; }
+  .cont-diente .verde {
+    fill: green;
+    stroke: black;
+    stroke-width: 1px; }
+  .cont-diente .amarillo {
+    fill: yellow;
+    stroke: black;
+    stroke-width: 1px; }
+  .cont-diente .gray {
+    fill: gray;
+    stroke: black;
+    stroke-width: 1px; }
+  .cont-diente .azul {
+    fill: blue;
+    stroke: black;
+    stroke-width: 1px; }
+
+.box-sub-adulto {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse; }
+
+.box-sub-ninio {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse; }
 
 /*# sourceMappingURL=main.css.map */
