@@ -104,7 +104,7 @@ body {
   border-left: 1px solid gray;
   border-top: 1px solid gray;
   border-bottom: 1px solid gray;
-  width: 50px;
+  width: 52px;
   height: 40px;
   position: relative;
   display: -webkit-box;
@@ -223,18 +223,39 @@ body {
 .cont-diente.incisivos {
   width: 54px; }
 
-/* */
 .contenido-odontograma .diente {
   fill: transparent; }
-  .contenido-odontograma .diente:hover {
-    fill: red; }
 
-.contenido-odontograma .active {
+.contenido-caries .diente:hover {
   fill: red; }
+
+.contenido-caries .active {
+  fill: red; }
+
+.contenido-extraccion .diente:hover {
+  fill: green; }
+
+.contenido-extraccion .active {
+  fill: green; }
+
+.contenido-fractura .diente:hover {
+  fill: gray; }
+
+.contenido-fractura .active {
+  fill: gray; }
+
+.contenido-puente .diente:hover {
+  fill: coral; }
+
+.contenido-puente .active {
+  fill: coral; }
 
 .cont-diente {
   width: 70px;
-  display: inline-block; }
+  display: inline-block;
+  margin-right: 3px; }
+  .cont-diente:last-child {
+    margin-right: 0; }
   .cont-diente .caries {
     fill: red;
     stroke: black;
@@ -255,5 +276,62 @@ body {
     fill: blue;
     stroke: black;
     stroke-width: 1px; }
+
+.box-sub-adulto {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse; }
+
+.box-48:after {
+  content: '48'; }
+
+.box-47:after {
+  content: '47'; }
+
+.box-46:after {
+  content: '46'; }
+
+.box-45:after {
+  content: '45'; }
+
+.box-44:after {
+  content: '44'; }
+
+.box-43:after {
+  content: '43'; }
+
+.box-42:after {
+  content: '42'; }
+
+.box-41:after {
+  content: '41'; }
+
+.box-31:after {
+  content: '31'; }
+
+.box-32:after {
+  content: '32'; }
+
+.box-33:after {
+  content: '33'; }
+
+.box-34:after {
+  content: '34'; }
+
+.box-35:after {
+  content: '35'; }
+
+.box-36:after {
+  content: '36'; }
+
+.box-37:after {
+  content: '37'; }
+
+.box-38:after {
+  content: '38'; }
 
 /*# sourceMappingURL=main.css.map */

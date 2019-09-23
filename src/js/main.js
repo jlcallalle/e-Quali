@@ -1,5 +1,3 @@
-// Main
-
 var MyApp = {
 
     onlyNumbers : function() {
@@ -22,23 +20,34 @@ $(function () {
        console.log('enjoy odontogram');
     }
 
-    console.log('aa');
-
     $('.cont-diente .diente').on("click", function(e){
-        console.log('aa');
         $(this).toggleClass("active");
         $('.box select').show();
-
     });
 
     $(".select-tipo").change(function(){
         var tipo = $(this).children("option:selected").val();
-        console.log(tipo);
         $(this).parent().append(tipo);
+    });
+
+    /*
+    function onClickExtraccion() {
+        var wrapo = document.getElementById("contenido-odontograma");
+        wrapo.addClass("intro1");
+    }
+    var codExtraccion = document.getElementById('cod-extraccion');
+    codExtraccion.addEventListener("click", onClickExtraccion);
+    */
+
+    $('#cod-extraccion').on("click", function(e){
+        $(this).toggleClass("active");
+        $('.contenido-odontograma').addClass('contenido-extraccion');
+    });
+    $('#cod-fractura').on("click", function(e){
+        $(this).toggleClass("active");
+        $('.contenido-odontograma').addClass('contenido-fractura');
     });
 
 
 });
-
-
 
