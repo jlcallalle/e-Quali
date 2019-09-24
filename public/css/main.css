@@ -71,19 +71,20 @@ body {
   font-size: 12px;
   list-style: none; }
   .lista-hallazgos li a {
-    color: #2d2d2d;
-    font-weight: bold; }
+    color: #2d2d2d; }
+    .lista-hallazgos li a.active {
+      font-weight: bold; }
   .lista-hallazgos li .codigo {
     color: #367fa9; }
-  .lista-hallazgos li.opcion-caries a {
+  .lista-hallazgos li.opcion-caries a.active {
     color: red; }
-  .lista-hallazgos li.opcion-restauracion a {
+  .lista-hallazgos li.opcion-restauracion a.active {
     color: blue; }
-  .lista-hallazgos li.opcion-extraccion a {
+  .lista-hallazgos li.opcion-extraccion a.active {
     color: green; }
-  .lista-hallazgos li.opcion-fractura a {
+  .lista-hallazgos li.opcion-fractura a.active {
     color: #2d2d2d; }
-  .lista-hallazgos li.opcion-puente a {
+  .lista-hallazgos li.opcion-puente a.active {
     color: coral; }
 
 .page-odontograma {
@@ -346,6 +347,12 @@ body {
 
 .contenido-caries .active {
   fill: red; }
+
+.contenido-restauracion .diente:hover {
+  fill: blue; }
+
+.contenido-restauracion .active {
+  fill: blue; }
 
 .contenido-extraccion .diente:hover {
   fill: green; }

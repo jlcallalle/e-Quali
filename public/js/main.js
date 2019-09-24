@@ -20,6 +20,9 @@ $(function () {
        console.log('enjoy odontogram');
     }
 
+
+
+
     $('.cont-diente .diente').on("click", function(e){
         $(this).toggleClass("active");
         $('.box select').show();
@@ -28,6 +31,29 @@ $(function () {
     $(".select-tipo").change(function(){
         var tipo = $(this).children("option:selected").val();
         $(this).parent().append(tipo);
+    });
+
+
+
+
+
+    // $(".lista-hallazgos li a").on("click", function(e){
+    //     $('.lista-hallazgos li a').removeClass('active');
+    //     $(this).addClass('active');
+    // });
+
+    /* Hallazgos*/
+
+    $('#cod-caries').on("click", function(e){
+        $(this).toggleClass("active");
+        $('.contenido-odontograma').addClass('contenido-caries');
+        $('.contenido-odontograma').removeClass('contenido-restauracion');
+    });
+
+    $('#cod-restauracion').on("click", function(e){
+        $(this).toggleClass("active");
+        $('.contenido-odontograma').addClass('contenido-restauracion');
+        $('.contenido-odontograma').removeClass('contenido-caries');
     });
 
     /*
@@ -39,14 +65,16 @@ $(function () {
     codExtraccion.addEventListener("click", onClickExtraccion);
     */
 
-    $('#cod-extraccion').on("click", function(e){
-        $(this).toggleClass("active");
-        $('.contenido-odontograma').addClass('contenido-extraccion');
-    });
-    $('#cod-fractura').on("click", function(e){
-        $(this).toggleClass("active");
-        $('.contenido-odontograma').addClass('contenido-fractura');
-    });
+
+    // $('#cod-extraccion').on("click", function(e){
+    //     $(this).toggleClass("active");
+    //     $('.contenido-odontograma').addClass('contenido-extraccion');
+    // });
+
+    // $('#cod-fractura').on("click", function(e){
+    //     $(this).toggleClass("active");
+    //     $('.contenido-odontograma').addClass('contenido-fractura');
+    // });
 
 
 });
