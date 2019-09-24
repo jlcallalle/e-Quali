@@ -22,15 +22,20 @@ $(function () {
 
 
 
-
     $('.cont-diente .diente').on("click", function(e){
         $(this).toggleClass("active");
         $('.box select').show();
+        var nombrePosition = $(this).attr("data-pos");
+        var siglaPosition = $(this).attr("data-sigla");
+        console.log( nombrePosition + ' ' + siglaPosition );
     });
 
     $(".select-tipo").change(function(){
-        var tipo = $(this).children("option:selected").val();
-        $(this).parent().append(tipo);
+        var codLesion = $(this).children("option:selected").text();
+        var nombreLesion = $(this).children("option:selected").val();
+        $(this).parent().append(codLesion);
+        console.log('aaaaa');
+        $('.lista-hallazgo-detallado').append('<li>'+ nombreLesion + ' <span>'+ (codLesion) + ' </span>, en la cara mesial <span> (CM) </span> de la  <span> Pieza Dental 1.8</span>  </li> ');
     });
 
 
