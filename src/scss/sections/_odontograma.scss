@@ -41,6 +41,13 @@
             width: 45px;
             //background: rgba(255,0,0,0.1);
         }
+
+        &.reverse {
+            &:after {
+                bottom: 0;
+                top: -28px;
+            }
+        }
     }
 }
 
@@ -232,8 +239,18 @@
 
 
 
+.box-lista-dientes-top {
+    margin:45px 0 20px;
+    //background-color:rgba(255,0,0,0.1);
+}
+
+.box-lista-dientes-sub {
+    margin: 20px 0 45px;
+    //background-color:rgba(0,255,0,0.1);
+}
+
 .box-lista-dientes {
-    margin:50px 0 20px;
+    margin:45px 0 20px;
 }
 
 
@@ -374,16 +391,14 @@
 }
 
 
-
 .box-sub-adulto {
-    display: flex;
-    flex-direction: column-reverse;
+    margin-top: 50px;
+    @include clearfix;
 }
 
-.box-sub-nino {
-    display: flex;
-    flex-direction: column-reverse;
+.box-top-adulto {
+    @include clearfix;
+    margin-bottom: 20px;
 }
-
 
 
