@@ -21,10 +21,11 @@ $(function () {
     }
 
 
+/* Mannipulando Polygon diente */
 
     $('.cont-diente .diente').on("click", function(e){
         $(this).toggleClass("active");
-        $('.box select').show();
+        $('#box-18 select').show();
         var nombrePosition = $(this).attr("data-pos");
         var siglaPosition = $(this).attr("data-sigla");
         console.log( nombrePosition + ' ' + siglaPosition );
