@@ -402,3 +402,30 @@
 }
 
 
+.box-contenido {
+    max-width: 825px;
+    border:1px solid gray;
+    padding: 20px 10px;
+    margin: 0 0 20px 0;
+    h4 {
+        font-size: 14px;
+        margin: 0 0 10px 0;
+        font-weight: bold;
+    }
+    textarea {
+        font-size: 14px;
+        height: 120px;
+        resize: none;
+        width: 800px;
+    }
+}
+
+.lista-hallazgo-detallado {
+    list-style: none;
+    li {
+        font-size: 14px;
+        span {
+            font-weight: bold;
+        }
+    }
+}
