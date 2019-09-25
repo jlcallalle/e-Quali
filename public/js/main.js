@@ -27,7 +27,7 @@ $(function () {
         $(this).toggleClass("active");
         var nombrePosition = $(this).attr("data-pos");
         var siglaPosition = $(this).attr("data-sigla");
-        console.log( nombrePosition + ' ' + siglaPosition );
+        //console.log( nombrePosition + ' ' + siglaPosition );
         $('.opciones-odo.ntologia p').removeClass('show');
 
         var idDiente = $(this).parents('svg').attr('id')
@@ -38,7 +38,7 @@ $(function () {
             if (boxId == idDiente) {
                 $( this ).find('.select-tipo').addClass('show');
             }
-          });
+        });
 
     });
 
@@ -46,9 +46,31 @@ $(function () {
         var codLesion = $(this).children("option:selected").text();
         var nombreLesion = $(this).children("option:selected").val();
         $(this).parent().append(codLesion);
-        var codPieza = $(this).parents('.box').attr("data-pieza");
-        var idDental = $(this).parents('.box-options').siblings().find('.svg').attr('id');
-        $('.lista-hallazgo-detallado').append('<li>'+ nombreLesion + ' <span>'+ (codLesion) + ' </span>, en la cara mesial <span> (CM) </span> de la  pieza dental <span> '+ codPieza + '</span>  </li> ');
+        var numPieza = $(this).parents('.box').attr("data-pieza");
+        var idBox = $(this).parents('.box').attr("id");
+        //console.log(idBox);
+
+        //var idDental = $(this).parents('.box-options').siblings().find('.svg').attr('id');
+        var parteDental = $(this).parents('.box-options').siblings().find('.svg');
+        $( parteDental ).each(function( index ) {
+            var idParte = this.id;
+            if (idBox == idParte) {
+                //console.log(idParte);
+                var piezaPosition = $(this).find('.active').attr("data-pos");
+                var siglaPosition = $(this).find('.active').attr("data-sigla");
+                console.log( 'Pieza Positionx:' + piezaPosition);
+                console.log( 'Sigla Positionx:' + siglaPosition);
+
+                $('.lista-hallazgo-detallado').append('<li>'+ nombreLesion + ' <span>'+ (codLesion) + ' </span>,  en la '
+                                                        +  piezaPosition + ' <span>  '  + siglaPosition  + ' </span>, de la  pieza dental <span> '
+                                                        + numPieza + '</span>  </li> ');
+            }
+        });
+
+
+
+
+        //console.log(idDental);
     });
 
 
@@ -57,7 +79,6 @@ $(function () {
         $(this).toggleClass("active-restaura");
         var nombrePosition = $(this).attr("data-pos");
         var siglaPosition = $(this).attr("data-sigla");
-
     });
 
 
