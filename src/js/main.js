@@ -52,13 +52,9 @@ $(function () {
         var codLesion = $(this).children("option:selected").text();
         var nombreLesion = $(this).children("option:selected").val();
         $(this).parent().append(codLesion);
-        var codigo = $(this).parents('.box').attr('id');
-        var getNum = codigo.split(" ")[0];
-        console.log(getNum);
-
-
-        $('.lista-hallazgo-detallado').append('<li>'+ nombreLesion + ' <span>'+ (codLesion) + ' </span>, en la cara mesial <span> (CM) </span> de la  <span> Pieza Dental 1.8</span>  </li> ');
-
+        //var codPieza = $(this).parents('.box').attr('id');
+        var codPieza = $(this).parents('.box').attr("data-pieza");
+        $('.lista-hallazgo-detallado').append('<li>'+ nombreLesion + ' <span>'+ (codLesion) + ' </span>, en la cara mesial <span> (CM) </span> de la  <span> pieza dental'+ codPieza + '</span>  </li> ');
     });
 
 

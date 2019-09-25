@@ -31,14 +31,10 @@ $(function () {
         $('.opciones-odo.ntologia p').removeClass('show');
 
         var idDiente = $(this).parents('svg').attr('id')
-        //console.log(idDiente);
 
         var rowBox = $(this).parents('.box-lista-dientes-top').siblings().find('.box');
         $( rowBox ).each(function( index ) {
-            //$( this ).addClass( "foo" );
             var boxId = this.id;
-            // console.log(idDiente);
-            //console.log(boxId);
             if (boxId == idDiente) {
                 $( this ).find('.select-tipo').addClass('show');
             }
@@ -46,21 +42,14 @@ $(function () {
 
     });
 
-
-
     $(".select-tipo").change(function(){
         var codLesion = $(this).children("option:selected").text();
         var nombreLesion = $(this).children("option:selected").val();
         $(this).parent().append(codLesion);
-        var codigo = $(this).parents('.box').attr('id');
-        var getNum = codigo.split(" ")[0];
-        console.log(getNum);
-
-
-        $('.lista-hallazgo-detallado').append('<li>'+ nombreLesion + ' <span>'+ (codLesion) + ' </span>, en la cara mesial <span> (CM) </span> de la  <span> Pieza Dental 1.8</span>  </li> ');
-
+        var codPieza = $(this).parents('.box').attr("data-pieza");
+        var idDental = $(this).parents('.box-options').siblings().find('.svg').attr('id');
+        $('.lista-hallazgo-detallado').append('<li>'+ nombreLesion + ' <span>'+ (codLesion) + ' </span>, en la cara mesial <span> (CM) </span> de la  pieza dental <span> '+ codPieza + '</span>  </li> ');
     });
-
 
 
 
