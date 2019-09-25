@@ -94,6 +94,15 @@ $(function () {
 
     // $('#cod-caries').on("click", function(e){
     //     $(this).toggleClass("active");
+    //     //$('.contenido-odontograma').addClass('contenido-restaura');
+    //     $('svg#box-15').parent().removeClass('diente-restaura');
+    //    // $('.contenido-odontograma').addClass('contenido-restauracion');
+    //    // $('.contenido-odontograma').removeClass('contenido-caries');
+    // });
+
+
+    // $('#cod-caries').on("click", function(e){
+    //     $(this).toggleClass("active");
     //     $('.contenido-odontograma').addClass('contenido-caries');
     //     $('.contenido-odontograma').removeClass('contenido-restauracion');
     // });
