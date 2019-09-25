@@ -352,7 +352,8 @@ body {
   position: absolute;
   top: -24px;
   font-size: 12px;
-  display: none; }
+  display: none;
+  left: 0; }
   .box select.show {
     display: none; }
 

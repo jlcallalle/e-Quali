@@ -28,10 +28,25 @@ $(function () {
         var nombrePosition = $(this).attr("data-pos");
         var siglaPosition = $(this).attr("data-sigla");
         console.log( nombrePosition + ' ' + siglaPosition );
-        $('.opciones-odontologia p').removeClass('show');
+        $('.opciones-odo.ntologia p').removeClass('show');
+
+        var idDiente = $(this).parent().parent().attr('id')
+        console.log(idDiente);
 
         //$('.row-box select').addClass('show');
-        $(this).parents('.box-lista-dientes-top').siblings().find('.select-tipo').addClass('show');
+        //$(this).parents('.box-lista-dientes-top').siblings().find('.select-tipo').addClass('show');
+        var rowBox = $(this).parents('.box-lista-dientes-top').siblings().find('.box');
+
+        $( rowBox ).each(function( index ) {
+            $( this ).addClass( "foo" );
+            var boxId = this.id;
+            console.log(boxId);
+
+            if (boxId == idDiente) {
+                $( this ).find('.select-tipo').addClass('show');
+            }
+
+          });
 
     });
 
