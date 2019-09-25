@@ -21,32 +21,36 @@ $(function () {
     }
 
 
-/* Mannipulando Polygon diente */
+/* Mannipulando Polygon Odontograma */
 
     $('.cont-diente .diente').on("click", function(e){
         $(this).toggleClass("active");
-        $('#box-18 select').show();
         var nombrePosition = $(this).attr("data-pos");
         var siglaPosition = $(this).attr("data-sigla");
         console.log( nombrePosition + ' ' + siglaPosition );
+        $('.opciones-odontologia p').removeClass('show');
+
+        //$('.row-box select').addClass('show');
+        $(this).parents('.box-lista-dientes-top').siblings().find('.select-tipo').addClass('show');
+
     });
 
     $(".select-tipo").change(function(){
         var codLesion = $(this).children("option:selected").text();
         var nombreLesion = $(this).children("option:selected").val();
         $(this).parent().append(codLesion);
-        console.log('aaaaa');
         $('.lista-hallazgo-detallado').append('<li>'+ nombreLesion + ' <span>'+ (codLesion) + ' </span>, en la cara mesial <span> (CM) </span> de la  <span> Pieza Dental 1.8</span>  </li> ');
     });
 
 
+/* Sidebar*/
 
+    $(".lista-hallazgos li a").on("click", function(e){
+        $('.lista-hallazgos li a').removeClass('active');
+        $(this).addClass('active');
+        $(this).parents('.lista-hallazgos').next().addClass('show');
+    });
 
-
-    // $(".lista-hallazgos li a").on("click", function(e){
-    //     $('.lista-hallazgos li a').removeClass('active');
-    //     $(this).addClass('active');
-    // });
 
     /* Hallazgos*/
 

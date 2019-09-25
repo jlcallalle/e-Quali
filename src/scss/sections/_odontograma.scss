@@ -1,6 +1,9 @@
 .page-odontograma {
     position: relative;
     top: -80px;
+    h2  {
+        font-size: 24px;
+    }
 }
 
 .contenido-odontograma {
@@ -301,6 +304,9 @@
     top: -24px;
     font-size: 12px;
     display: none;
+    &.show {
+        display: none;
+    }
 }
 
 

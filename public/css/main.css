@@ -66,6 +66,13 @@ body {
   padding: 5px; }
   .opciones-odontologia h5 {
     margin: 0 0 10px 0; }
+  .opciones-odontologia p {
+    font-size: 12px;
+    font-weight: bold;
+    color: green;
+    display: none; }
+  .opciones-odontologia .show {
+    display: block; }
 
 .lista-hallazgos li {
   font-size: 12px;
@@ -96,6 +103,8 @@ body {
 .page-odontograma {
   position: relative;
   top: -80px; }
+  .page-odontograma h2 {
+    font-size: 24px; }
 
 .contenido-odontograma {
   padding: 20px 0;
@@ -344,6 +353,8 @@ body {
   top: -24px;
   font-size: 12px;
   display: none; }
+  .box select.show {
+    display: none; }
 
 .contenido-odontograma .diente {
   fill: transparent; }

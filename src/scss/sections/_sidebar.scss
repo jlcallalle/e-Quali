@@ -11,6 +11,15 @@
     h5 {
         margin:0 0 10px 0 ;
     }
+    p {
+        font-size: 12px;
+        font-weight: bold;
+        color:green;
+        display: none;
+    }
+    .show {
+        display: block;
+    }
 }
 
 .lista-hallazgos {
