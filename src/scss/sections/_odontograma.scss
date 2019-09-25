@@ -454,3 +454,18 @@
 //     top: 0;
 //     border:1px solid red;
 // }
+
+.contenido-restaura {
+    .active-restaura {
+        color:blue;
+        fill:blue;
+    }
+}
+
+.contenido-odontograma .diente-restaura .diente:hover {
+    fill: blue;
+}
+
+.contenido-caries .diente-restaura .active {
+    fill: blue;
+}

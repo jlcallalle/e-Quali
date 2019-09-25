@@ -31,11 +31,11 @@ $(function () {
         $('.opciones-odo.ntologia p').removeClass('show');
 
         var idDiente = $(this).parents('svg').attr('id')
-        console.log(idDiente);
+        //console.log(idDiente);
 
         var rowBox = $(this).parents('.box-lista-dientes-top').siblings().find('.box');
         $( rowBox ).each(function( index ) {
-            $( this ).addClass( "foo" );
+            //$( this ).addClass( "foo" );
             var boxId = this.id;
             // console.log(idDiente);
             //console.log(boxId);
@@ -52,7 +52,23 @@ $(function () {
         var codLesion = $(this).children("option:selected").text();
         var nombreLesion = $(this).children("option:selected").val();
         $(this).parent().append(codLesion);
+        var codigo = $(this).parents('.box').attr('id');
+        var getNum = codigo.split(" ")[0];
+        console.log(getNum);
+
+
         $('.lista-hallazgo-detallado').append('<li>'+ nombreLesion + ' <span>'+ (codLesion) + ' </span>, en la cara mesial <span> (CM) </span> de la  <span> Pieza Dental 1.8</span>  </li> ');
+
+    });
+
+
+
+
+    $('.cont-diente.diente-restaura .diente').on("click", function(e){
+        $(this).toggleClass("active-restaura");
+        var nombrePosition = $(this).attr("data-pos");
+        var siglaPosition = $(this).attr("data-sigla");
+
     });
 
 
@@ -67,17 +83,21 @@ $(function () {
 
     /* Hallazgos*/
 
+    $('#cod-restauracion').on("click", function(e){
+        $(this).toggleClass("active");
+        //$('.contenido-odontograma').addClass('contenido-restaura');
+        $('svg#box-15').parent().addClass('diente-restaura');
+       // $('.contenido-odontograma').addClass('contenido-restauracion');
+       // $('.contenido-odontograma').removeClass('contenido-caries');
+    });
+
+
     // $('#cod-caries').on("click", function(e){
     //     $(this).toggleClass("active");
     //     $('.contenido-odontograma').addClass('contenido-caries');
     //     $('.contenido-odontograma').removeClass('contenido-restauracion');
     // });
 
-    // $('#cod-restauracion').on("click", function(e){
-    //     $(this).toggleClass("active");
-    //     $('.contenido-odontograma').addClass('contenido-restauracion');
-    //     $('.contenido-odontograma').removeClass('contenido-caries');
-    // });
 
     /*
     function onClickExtraccion() {

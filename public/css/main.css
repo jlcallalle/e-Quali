@@ -455,4 +455,14 @@ body {
     .lista-hallazgo-detallado li span {
       font-weight: bold; }
 
+.contenido-restaura .active-restaura {
+  color: blue;
+  fill: blue; }
+
+.contenido-odontograma .diente-restaura .diente:hover {
+  fill: blue; }
+
+.contenido-caries .diente-restaura .active {
+  fill: blue; }
+
 /*# sourceMappingURL=main.css.map */
