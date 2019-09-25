@@ -30,25 +30,23 @@ $(function () {
         console.log( nombrePosition + ' ' + siglaPosition );
         $('.opciones-odo.ntologia p').removeClass('show');
 
-        var idDiente = $(this).parent().parent().attr('id')
+        var idDiente = $(this).parents('svg').attr('id')
         console.log(idDiente);
 
-        //$('.row-box select').addClass('show');
-        //$(this).parents('.box-lista-dientes-top').siblings().find('.select-tipo').addClass('show');
         var rowBox = $(this).parents('.box-lista-dientes-top').siblings().find('.box');
-
         $( rowBox ).each(function( index ) {
             $( this ).addClass( "foo" );
             var boxId = this.id;
-            console.log(boxId);
-
+            // console.log(idDiente);
+            //console.log(boxId);
             if (boxId == idDiente) {
                 $( this ).find('.select-tipo').addClass('show');
             }
-
           });
 
     });
+
+
 
     $(".select-tipo").change(function(){
         var codLesion = $(this).children("option:selected").text();
@@ -69,17 +67,17 @@ $(function () {
 
     /* Hallazgos*/
 
-    $('#cod-caries').on("click", function(e){
-        $(this).toggleClass("active");
-        $('.contenido-odontograma').addClass('contenido-caries');
-        $('.contenido-odontograma').removeClass('contenido-restauracion');
-    });
+    // $('#cod-caries').on("click", function(e){
+    //     $(this).toggleClass("active");
+    //     $('.contenido-odontograma').addClass('contenido-caries');
+    //     $('.contenido-odontograma').removeClass('contenido-restauracion');
+    // });
 
-    $('#cod-restauracion').on("click", function(e){
-        $(this).toggleClass("active");
-        $('.contenido-odontograma').addClass('contenido-restauracion');
-        $('.contenido-odontograma').removeClass('contenido-caries');
-    });
+    // $('#cod-restauracion').on("click", function(e){
+    //     $(this).toggleClass("active");
+    //     $('.contenido-odontograma').addClass('contenido-restauracion');
+    //     $('.contenido-odontograma').removeClass('contenido-caries');
+    // });
 
     /*
     function onClickExtraccion() {
