@@ -3,10 +3,13 @@ var MyApp = {
     eventoDientes : function() {
         $('.cont-diente .diente').on("click", function(e){
             $(this).toggleClass("active");
+            $('.cont-diente .diente').removeClass('active-last');
+            $(this).addClass('active-last');
             var nombrePosition = $(this).attr("data-pos");
             var siglaPosition = $(this).attr("data-sigla");
             //console.log( nombrePosition + ' ' + siglaPosition );
-            $('.opciones-odo.ntologia p').removeClass('show');
+            console.log( 'diente: ' + nombrePosition);
+            $('.opciones-odontologia p').removeClass('show');
 
             var idDiente = $(this).parents('svg').attr('id')
 
@@ -34,10 +37,14 @@ var MyApp = {
                 var idParte = this.id;
                 if (idBox == idParte) {
                     //console.log(idParte);
-                    var piezaPosition = $(this).find('.active').attr("data-pos");
-                    var siglaPosition = $(this).find('.active').attr("data-sigla");
-                    console.log( 'Pieza Positionx:' + piezaPosition);
-                    console.log( 'Sigla Positionx:' + siglaPosition);
+                    var piezaPosition = $(this).find('.active-last').attr("data-pos");
+                    var siglaPosition = $(this).find('.active-last').attr("data-sigla");
+                    console.log('select: ' + piezaPosition);
+                    //console.log( 'Pieza Positionx:' + piezaPosition);
+                    //console.log( 'Sigla Positionx:' + siglaPosition);
+                    // console.log(nombreLesion, codLesion);
+                    // console.log(piezaPosition, siglaPosition);
+                    // console.log(numPieza);
 
                     $('.lista-hallazgo-detallado').append('<li>'+ nombreLesion + ' <span>'+ (codLesion) + ' </span>,  en la '
                                                             +  piezaPosition + ' <span>  '  + siglaPosition  + ' </span>, de la  pieza dental <span> '

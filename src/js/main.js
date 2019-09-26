@@ -1,92 +1,91 @@
 var MyApp = {
 
-    onlyNumbers : function() {
-        $('.only-numbers').on('keypress', function(event) {
-            var numbers = /[0-9]/g;
-            var key = String.fromCharCode(event.which);
-            if ($.inArray(event.keyCode) >= 0 || numbers.test(key)) {
-                return true;
-            }
-            return false;
+    eventoDientes : function() {
+        $('.cont-diente .diente').on("click", function(e){
+            $(this).toggleClass("active");
+            $('.cont-diente .diente').removeClass('active-last');
+            $(this).addClass('active-last');
+            var nombrePosition = $(this).attr("data-pos");
+            var siglaPosition = $(this).attr("data-sigla");
+            //console.log( nombrePosition + ' ' + siglaPosition );
+            console.log( 'diente: ' + nombrePosition);
+            $('.opciones-odontologia p').removeClass('show');
+
+            var idDiente = $(this).parents('svg').attr('id')
+
+            var rowBox = $(this).parents('.box-lista-dientes-top').siblings().find('.box');
+            $( rowBox ).each(function( index ) {
+                var boxId = this.id;
+                if (boxId == idDiente) {
+                    $( this ).find('.select-tipo').addClass('show');
+                }
+            });
         });
+    },
+    eventoSelect : function() {
+        $(".select-tipo").change(function(){
+            var codLesion = $(this).children("option:selected").text();
+            var nombreLesion = $(this).children("option:selected").val();
+            $(this).parent().append(codLesion);
+            var numPieza = $(this).parents('.box').attr("data-pieza");
+            var idBox = $(this).parents('.box').attr("id");
+            //console.log(idBox);
+
+            //var idDental = $(this).parents('.box-options').siblings().find('.svg').attr('id');
+            var parteDental = $(this).parents('.box-options').siblings().find('.svg');
+            $( parteDental ).each(function( index ) {
+                var idParte = this.id;
+                if (idBox == idParte) {
+                    //console.log(idParte);
+                    var piezaPosition = $(this).find('.active-last').attr("data-pos");
+                    var siglaPosition = $(this).find('.active-last').attr("data-sigla");
+                    console.log('select: ' + piezaPosition);
+                    //console.log( 'Pieza Positionx:' + piezaPosition);
+                    //console.log( 'Sigla Positionx:' + siglaPosition);
+                    // console.log(nombreLesion, codLesion);
+                    // console.log(piezaPosition, siglaPosition);
+                    // console.log(numPieza);
+
+                    $('.lista-hallazgo-detallado').append('<li>'+ nombreLesion + ' <span>'+ (codLesion) + ' </span>,  en la '
+                                                            +  piezaPosition + ' <span>  '  + siglaPosition  + ' </span>, de la  pieza dental <span> '
+                                                            + numPieza + '</span>  </li> ');
+                }
+            });
+            //console.log(idDental);
+        });
+    },
+    eventoHallazgos : function() {
+        $(".lista-hallazgos li a").on("click", function(e){
+            $('.lista-hallazgos li a').removeClass('active');
+            $(this).addClass('active');
+            $(this).parents('.lista-hallazgos').next().addClass('show');
+        });
+    },
+    eventoRestauracion : function() {
+        $('.cont-diente.diente-restaura .diente').on("click", function(e){
+            $(this).toggleClass("active-restaura");
+            var nombrePosition = $(this).attr("data-pos");
+            var siglaPosition = $(this).attr("data-sigla");
+        });
+
+        $('#cod-restauracion').on("click", function(e){
+            $(this).toggleClass("active");
+            //$('.contenido-odontograma').addClass('contenido-restaura');
+            $('svg#box-15').parent().addClass('diente-restaura');
+           // $('.contenido-odontograma').addClass('contenido-restauracion');
+           // $('.contenido-odontograma').removeClass('contenido-caries');
+        });
+
     },
 }
 
 $(function () {
-    if ($('.only-numbers').length) {
-        MyApp.onlyNumbers();
-    }
     if ($('.page-odontograma').length) {
-       console.log('enjoy odontogram');
+       MyApp.eventoDientes();
+       MyApp.eventoSelect();
+       MyApp.eventoHallazgos();
+       MyApp.eventoRestauracion();
     }
-
-
-/* Mannipulando Polygon Odontograma */
-
-    $('.cont-diente .diente').on("click", function(e){
-        $(this).toggleClass("active");
-        var nombrePosition = $(this).attr("data-pos");
-        var siglaPosition = $(this).attr("data-sigla");
-        console.log( nombrePosition + ' ' + siglaPosition );
-        $('.opciones-odo.ntologia p').removeClass('show');
-
-        var idDiente = $(this).parents('svg').attr('id')
-        //console.log(idDiente);
-
-        var rowBox = $(this).parents('.box-lista-dientes-top').siblings().find('.box');
-        $( rowBox ).each(function( index ) {
-            //$( this ).addClass( "foo" );
-            var boxId = this.id;
-            // console.log(idDiente);
-            //console.log(boxId);
-            if (boxId == idDiente) {
-                $( this ).find('.select-tipo').addClass('show');
-            }
-          });
-
-    });
-
-
-
-    $(".select-tipo").change(function(){
-        var codLesion = $(this).children("option:selected").text();
-        var nombreLesion = $(this).children("option:selected").val();
-        $(this).parent().append(codLesion);
-        //var codPieza = $(this).parents('.box').attr('id');
-        var codPieza = $(this).parents('.box').attr("data-pieza");
-        $('.lista-hallazgo-detallado').append('<li>'+ nombreLesion + ' <span>'+ (codLesion) + ' </span>, en la cara mesial <span> (CM) </span> de la  <span> pieza dental'+ codPieza + '</span>  </li> ');
-    });
-
-
-
-
-    $('.cont-diente.diente-restaura .diente').on("click", function(e){
-        $(this).toggleClass("active-restaura");
-        var nombrePosition = $(this).attr("data-pos");
-        var siglaPosition = $(this).attr("data-sigla");
-
-    });
-
-
-/* Sidebar*/
-
-    $(".lista-hallazgos li a").on("click", function(e){
-        $('.lista-hallazgos li a').removeClass('active');
-        $(this).addClass('active');
-        $(this).parents('.lista-hallazgos').next().addClass('show');
-    });
-
-
-    /* Hallazgos*/
-
-    $('#cod-restauracion').on("click", function(e){
-        $(this).toggleClass("active");
-        //$('.contenido-odontograma').addClass('contenido-restaura');
-        $('svg#box-15').parent().addClass('diente-restaura');
-       // $('.contenido-odontograma').addClass('contenido-restauracion');
-       // $('.contenido-odontograma').removeClass('contenido-caries');
-    });
-
 
     // $('#cod-caries').on("click", function(e){
     //     $(this).toggleClass("active");
@@ -96,13 +95,11 @@ $(function () {
     //    // $('.contenido-odontograma').removeClass('contenido-caries');
     // });
 
-
     // $('#cod-caries').on("click", function(e){
     //     $(this).toggleClass("active");
     //     $('.contenido-odontograma').addClass('contenido-caries');
     //     $('.contenido-odontograma').removeClass('contenido-restauracion');
     // });
-
 
     /*
     function onClickExtraccion() {
@@ -113,7 +110,6 @@ $(function () {
     codExtraccion.addEventListener("click", onClickExtraccion);
     */
 
-
     // $('#cod-extraccion').on("click", function(e){
     //     $(this).toggleClass("active");
     //     $('.contenido-odontograma').addClass('contenido-extraccion');
@@ -123,7 +119,5 @@ $(function () {
     //     $(this).toggleClass("active");
     //     $('.contenido-odontograma').addClass('contenido-fractura');
     // });
-
-
 });
 
