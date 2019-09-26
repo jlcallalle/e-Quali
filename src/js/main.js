@@ -40,12 +40,6 @@ var MyApp = {
                     var piezaPosition = $(this).find('.active-last').attr("data-pos");
                     var siglaPosition = $(this).find('.active-last').attr("data-sigla");
                     console.log('select: ' + piezaPosition);
-                    //console.log( 'Pieza Positionx:' + piezaPosition);
-                    //console.log( 'Sigla Positionx:' + siglaPosition);
-                    // console.log(nombreLesion, codLesion);
-                    // console.log(piezaPosition, siglaPosition);
-                    // console.log(numPieza);
-
                     $('.lista-hallazgo-detallado').append('<li>'+ nombreLesion + ' <span>'+ (codLesion) + ' </span>,  en la '
                                                             +  piezaPosition + ' <span>  '  + siglaPosition  + ' </span>, de la  pieza dental <span> '
                                                             + numPieza + '</span>  </li> ');
