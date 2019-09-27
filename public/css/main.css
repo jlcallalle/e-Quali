@@ -108,7 +108,8 @@ body {
 
 .contenido-odontograma {
   padding: 20px 0;
-  max-width: 825px; }
+  max-width: 825px;
+  margin: 0 0 30px 0; }
 
 .box-options .row-box {
   display: -webkit-box;
@@ -356,6 +357,9 @@ body {
   left: 0; }
   .box select.show {
     display: none; }
+
+.box-sub-nino .box select, .box-sub-adulto .box select {
+  top: 52px; }
 
 .contenido-odontograma .diente {
   fill: transparent; }

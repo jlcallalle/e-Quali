@@ -9,6 +9,7 @@
 .contenido-odontograma {
     padding: 20px 0;
     max-width: 825px;
+    margin: 0 0 30px 0;
 }
 
 .box-options {
@@ -308,6 +309,12 @@
 
     &.show {
         display: none;
+    }
+}
+
+.box-sub-nino, .box-sub-adulto {
+    .box select {
+        top: 52px;
     }
 }
 

@@ -13,7 +13,7 @@ var MyApp = {
 
             var idDiente = $(this).parents('svg').attr('id')
 
-            var rowBox = $(this).parents('.box-lista-dientes-top').siblings().find('.box');
+            var rowBox = $(this).parents('.box-lista-dientes').siblings().find('.box');
             $( rowBox ).each(function( index ) {
                 var boxId = this.id;
                 if (boxId == idDiente) {
@@ -26,9 +26,11 @@ var MyApp = {
         $(".select-tipo").change(function(){
             var codLesion = $(this).children("option:selected").text();
             var nombreLesion = $(this).children("option:selected").val();
-            $(this).parent().append(codLesion);
+            $(this).parent().append('<span>' + codLesion  + '</span>');
             var numPieza = $(this).parents('.box').attr("data-pieza");
             var idBox = $(this).parents('.box').attr("id");
+            console.log('nunPieza: ' + numPieza);
+            console.log('idBox' +idBox);
             //console.log(idBox);
 
             //var idDental = $(this).parents('.box-options').siblings().find('.svg').attr('id');
