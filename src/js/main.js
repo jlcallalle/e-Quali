@@ -7,8 +7,6 @@ var MyApp = {
             $(this).addClass('active-last');
             var nombrePosition = $(this).attr("data-pos");
             var siglaPosition = $(this).attr("data-sigla");
-            //console.log( nombrePosition + ' ' + siglaPosition );
-            console.log( 'diente: ' + nombrePosition);
             $('.opciones-odontologia p').removeClass('show');
 
             var idDiente = $(this).parents('svg').attr('id')
@@ -20,34 +18,31 @@ var MyApp = {
                     $( this ).find('.select-tipo').addClass('show');
                 }
             });
+
+
         });
     },
     eventoSelect : function() {
         $(".select-tipo").change(function(){
             var codLesion = $(this).children("option:selected").text();
             var nombreLesion = $(this).children("option:selected").val();
-            $(this).parent().append('<span>' + codLesion  + '</span>');
+            $(this).parent().append('<span>' + codLesion  + '</span> ');
             var numPieza = $(this).parents('.box').attr("data-pieza");
             var idBox = $(this).parents('.box').attr("id");
-            console.log('nunPieza: ' + numPieza);
-            console.log('idBox' +idBox);
-            //console.log(idBox);
 
-            //var idDental = $(this).parents('.box-options').siblings().find('.svg').attr('id');
             var parteDental = $(this).parents('.box-options').siblings().find('.svg');
             $( parteDental ).each(function( index ) {
                 var idParte = this.id;
+
                 if (idBox == idParte) {
-                    //console.log(idParte);
                     var piezaPosition = $(this).find('.active-last').attr("data-pos");
                     var siglaPosition = $(this).find('.active-last').attr("data-sigla");
-                    console.log('select: ' + piezaPosition);
                     $('.lista-hallazgo-detallado').append('<li>'+ nombreLesion + ' <span>'+ (codLesion) + ' </span>,  en la '
                                                             +  piezaPosition + ' <span>  '  + siglaPosition  + ' </span>, de la  pieza dental <span> '
                                                             + numPieza + '</span>  </li> ');
+
                 }
             });
-            //console.log(idDental);
         });
     },
     eventoHallazgos : function() {
@@ -66,10 +61,7 @@ var MyApp = {
 
         $('#cod-restauracion').on("click", function(e){
             $(this).toggleClass("active");
-            //$('.contenido-odontograma').addClass('contenido-restaura');
             $('svg#box-15').parent().addClass('diente-restaura');
-           // $('.contenido-odontograma').addClass('contenido-restauracion');
-           // $('.contenido-odontograma').removeClass('contenido-caries');
         });
 
     },
@@ -82,38 +74,5 @@ $(function () {
        MyApp.eventoHallazgos();
        MyApp.eventoRestauracion();
     }
-
-    // $('#cod-caries').on("click", function(e){
-    //     $(this).toggleClass("active");
-    //     //$('.contenido-odontograma').addClass('contenido-restaura');
-    //     $('svg#box-15').parent().removeClass('diente-restaura');
-    //    // $('.contenido-odontograma').addClass('contenido-restauracion');
-    //    // $('.contenido-odontograma').removeClass('contenido-caries');
-    // });
-
-    // $('#cod-caries').on("click", function(e){
-    //     $(this).toggleClass("active");
-    //     $('.contenido-odontograma').addClass('contenido-caries');
-    //     $('.contenido-odontograma').removeClass('contenido-restauracion');
-    // });
-
-    /*
-    function onClickExtraccion() {
-        var wrapo = document.getElementById("contenido-odontograma");
-        wrapo.addClass("intro1");
-    }
-    var codExtraccion = document.getElementById('cod-extraccion');
-    codExtraccion.addEventListener("click", onClickExtraccion);
-    */
-
-    // $('#cod-extraccion').on("click", function(e){
-    //     $(this).toggleClass("active");
-    //     $('.contenido-odontograma').addClass('contenido-extraccion');
-    // });
-
-    // $('#cod-fractura').on("click", function(e){
-    //     $(this).toggleClass("active");
-    //     $('.contenido-odontograma').addClass('contenido-fractura');
-    // });
 });
 

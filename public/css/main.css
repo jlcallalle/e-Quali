@@ -327,9 +327,6 @@ body {
       -ms-flex-pack: center;
           justify-content: center; }
 
-.box-test {
-  margin: 20px 0; }
-
 .contenido-polygon {
   position: relative;
   text-align: center; }
@@ -468,5 +465,23 @@ body {
 
 .contenido-caries .diente-restaura .active {
   fill: blue; }
+
+.oclusal [data-pos~="oclusal"] {
+  fill: blue !important; }
+
+.select-caries {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+  .select-caries span {
+    margin: 0 2px; }
 
 /*# sourceMappingURL=main.css.map */

@@ -43,7 +43,6 @@
         }
         &.box-inc {
             width: 45px;
-            //background: rgba(255,0,0,0.1);
         }
 
         &.reverse {
@@ -241,16 +240,12 @@
 
 
 
-
-
 .box-lista-dientes-top {
     margin:45px 0 20px;
-    //background-color:rgba(255,0,0,0.1);
 }
 
 .box-lista-dientes-sub {
     margin: 20px 0 45px;
-    //background-color:rgba(0,255,0,0.1);
 }
 
 .box-lista-dientes {
@@ -265,17 +260,10 @@
 }
 
 
-//Tesst
-.box-test {
-    margin: 20px 0;
-   // background-color: rgba(0,255,0,0.2);
-}
-// fin test
 
 .contenido-polygon {
     position: relative;
     text-align: center;
-    //display: flex;
 }
 
 .contenido-path {
@@ -317,8 +305,6 @@
         top: 52px;
     }
 }
-
-
 
 .contenido-odontograma  {
     .diente {
@@ -455,13 +441,6 @@
     }
 }
 
-
-// ul.lista-hallazgo-detallado {
-//     position: fixed;
-//     top: 0;
-//     border:1px solid red;
-// }
-
 .contenido-restaura {
     .active-restaura {
         color:blue;
@@ -478,8 +457,19 @@
 }
 
 
-// [data-pos~="oclusal"] {
-//     fill: blue!important;
-// }
+.oclusal [data-pos~="oclusal"] {
+    fill: blue!important;
+}
+
+
+.select-caries {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    span {
+        margin: 0 2px;
+    }
+}
 
 
