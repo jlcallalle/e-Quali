@@ -26,7 +26,13 @@ var MyApp = {
         $(".select-tipo").change(function(){
             var codLesion = $(this).children("option:selected").text();
             var nombreLesion = $(this).children("option:selected").val();
-            $(this).parent().append('<span>' + codLesion  + '</span> ');
+            console.log(codLesion);
+            //console.log(nombreLesion);
+
+            if (codLesion !== 'Elegir') {
+                $(this).parent().append('<span>' + codLesion  + '</span> ');
+            }
+
             var numPieza = $(this).parents('.box').attr("data-pieza");
             var idBox = $(this).parents('.box').attr("id");
 
