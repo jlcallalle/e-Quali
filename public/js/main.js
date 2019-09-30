@@ -16,9 +16,14 @@ var MyApp = {
                 var boxId = this.id;
                 if (boxId == idDiente) {
                     $( this ).find('.select-tipo').addClass('show');
+                    // if (!$( this ).find('.select-tipo').hasClass('active')) {
+                    //     $( this ).find('.select-tipo').addClass('show');
+                    // }
+                }
+                if ($(this).hasClass('active')) {
+                    //console.log('aa');
                 }
             });
-
 
         });
     },
@@ -28,7 +33,6 @@ var MyApp = {
             var nombreLesion = $(this).children("option:selected").val();
             console.log(codLesion);
             //console.log(nombreLesion);
-
             if (codLesion !== 'Elegir') {
                 $(this).parent().append('<span>' + codLesion  + '</span> ');
             }
@@ -45,7 +49,7 @@ var MyApp = {
                     var siglaPosition = $(this).find('.active-last').attr("data-sigla");
                     $('.lista-hallazgo-detallado').append('<li>'+ nombreLesion + ' <span>'+ (codLesion) + ' </span>,  en la '
                                                             +  piezaPosition + ' <span>  '  + siglaPosition  + ' </span>, de la  pieza dental <span> '
-                                                            + numPieza + '</span>  </li> ');
+                                                            + numPieza + '</span> <a href="#">Delete</a>  </li> ');
 
                 }
             });
@@ -80,5 +84,13 @@ $(function () {
        MyApp.eventoHallazgos();
        MyApp.eventoRestauracion();
     }
+
+    // $('.lista-hallazgo-detallado  li ').on("click", function(e){
+    //     $(this).children().addBack('hola');
+    //     console.log('aa');
+    //     event.preventDefault();
+    //     event.stopPropagation();
+    // });
+
 });
 

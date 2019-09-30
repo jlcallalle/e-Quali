@@ -455,6 +455,10 @@ body {
     font-size: 14px; }
     .lista-hallazgo-detallado li span {
       font-weight: bold; }
+    .lista-hallazgo-detallado li a {
+      color: red;
+      margin: 0 0 0 15px;
+      position: relative; }
 
 .contenido-restaura .active-restaura {
   color: blue;
