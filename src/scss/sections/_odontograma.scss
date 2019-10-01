@@ -442,6 +442,14 @@
             color: red;
             margin: 0 0 0 15px;
             position: relative;
+            padding:0 0 0 12px;
+            display: inline-block;
+            &:after {
+                content: 'X';
+                width: 10px;
+                left: 0;
+                position: absolute;
+            }
         }
     }
 }

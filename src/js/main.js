@@ -47,9 +47,9 @@ var MyApp = {
                 if (idBox == idParte) {
                     var piezaPosition = $(this).find('.active-last').attr("data-pos");
                     var siglaPosition = $(this).find('.active-last').attr("data-sigla");
-                    $('.lista-hallazgo-detallado').append('<li>'+ nombreLesion + ' <span>'+ (codLesion) + ' </span>,  en la '
+                    $('.lista-hallazgo-detallado').append('<li id=' + idBox + ' >'+ nombreLesion + ' <span>'+ (codLesion) + ' </span>,  en la '
                                                             +  piezaPosition + ' <span>  '  + siglaPosition  + ' </span>, de la  pieza dental <span> '
-                                                            + numPieza + '</span> <a href="#">Delete</a>  </li> ');
+                                                            + numPieza + '</span> <a href="#">Eliminar</a>  </li> ');
 
                 }
             });
@@ -85,12 +85,33 @@ $(function () {
        MyApp.eventoRestauracion();
     }
 
-    // $('.lista-hallazgo-detallado  li ').on("click", function(e){
-    //     $(this).children().addBack('hola');
-    //     console.log('aa');
-    //     event.preventDefault();
-    //     event.stopPropagation();
-    // });
+    //Triger Click
+    $("#cod-caries").click();
+
+    $(document).on('click',".lista-hallazgo-detallado li a",function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        var idLista = $(this).parents('li').attr('id')
+        console.log(idLista);
+        //$(this).parents('li').remove();
+        // console.log('jorge');
+        var listaDientes = $(this).parents('.page-odontograma').find('.svg');
+        // var info = $(this).parents('.page-odontograma').addClass('nuevo');
+        console.log(listaDientes);
+
+        $( listaDientes ).each(function( index ) {
+            var boxId = this.id;
+            if (boxId == idLista) {
+                $(this).find('.active-last').removeClass('active');
+                console.log('id dient' + boxId);
+                console.log('id lista' +idLista);
+            }
+        });
+    });
+
+
+
 
 });
+
 

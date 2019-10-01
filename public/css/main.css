@@ -458,7 +458,14 @@ body {
     .lista-hallazgo-detallado li a {
       color: red;
       margin: 0 0 0 15px;
-      position: relative; }
+      position: relative;
+      padding: 0 0 0 12px;
+      display: inline-block; }
+      .lista-hallazgo-detallado li a:after {
+        content: 'X';
+        width: 10px;
+        left: 0;
+        position: absolute; }
 
 .contenido-restaura .active-restaura {
   color: blue;
