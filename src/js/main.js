@@ -92,26 +92,36 @@ $(function () {
         e.preventDefault();
         e.stopPropagation();
         var idLista = $(this).parents('li').attr('id')
-        console.log(idLista);
-        //$(this).parents('li').remove();
-        // console.log('jorge');
-        var listaDientes = $(this).parents('.page-odontograma').find('.svg');
-        // var info = $(this).parents('.page-odontograma').addClass('nuevo');
-        console.log(listaDientes);
+        // console.log(idLista);
 
+        //Remove color: cara dental
+        var listaDientes = $(this).parents('.page-odontograma').find('.svg');
+        // console.log(listaDientes);
         $( listaDientes ).each(function( index ) {
-            var boxId = this.id;
-            if (boxId == idLista) {
-                $(this).find('.active-last').removeClass('active');
-                console.log('id dient' + boxId);
-                console.log('id lista' +idLista);
+            var idDiente = this.id;
+            // console.log(idDiente);
+            if (idDiente == idLista) {
+                // console.log('id dient' + idDiente);
+                // console.log('id lista' +idLista);
+                //$(this).find('.active-last').removeClass('active');
+                $(this).find('.active').removeClass('active');
             }
         });
+
+        //Remove Texto Box
+        var infoCuadro = $(this).parents('.page-odontograma').find('.box');
+        $( infoCuadro ).each(function( index ) {
+            var boxId = this.id;
+
+            if (boxId == idLista) {
+                console.log(boxId);
+                $(this).find('.select-tipo').removeClass('show');
+                $(this).find('.select-tipo').next().remove();
+            }
+        });
+
+        $(this).parents('li').remove();
     });
-
-
-
-
 });
 
 
