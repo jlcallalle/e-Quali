@@ -47,7 +47,7 @@ var MyApp = {
                 if (idBox == idParte) {
                     var piezaPosition = $(this).find('.active-last').attr("data-pos");
                     var siglaPosition = $(this).find('.active-last').attr("data-sigla");
-                    $('.lista-hallazgo-detallado').append('<li id=' + idBox + ' data-sigla=' +siglaPosition+ ' >'+ 'Lesion de caries dental -' + nombreLesion + ' <span>'+ (codLesion) + ' </span>,  en la '
+                    $('.lista-hallazgo-detallado').append('<li id=' + idBox + ' data-pos=' +piezaPosition+ ' >'+ ' Lesion de caries dental - ' + nombreLesion + ' <span>'+ (codLesion) + ' </span>,  en la '
                                                             +  piezaPosition + ' <span>  '  + siglaPosition  + ' </span>, de la  pieza dental <span> '
                                                             + numPieza + '</span> <a href="#">Eliminar</a>  </li> ');
 
@@ -92,7 +92,9 @@ $(function () {
         e.preventDefault();
         e.stopPropagation();
         var idLista = $(this).parents('li').attr('id')
+        var caraLista = $(this).parents('li').attr("data-pos");
         // console.log(idLista);
+        console.log('cara lista: ' + caraLista);
 
         //Remove color: cara dental
         var listaDientes = $(this).parents('.page-odontograma').find('.svg');
@@ -101,10 +103,21 @@ $(function () {
             var idDiente = this.id;
             // console.log(idDiente);
             if (idDiente == idLista) {
-                // console.log('id dient' + idDiente);
-                // console.log('id lista' +idLista);
+                //console.log('id dient' + idDiente);
+                //console.log('id lista' +idLista);
                 //$(this).find('.active-last').removeClass('active');
-                $(this).find('.active').removeClass('active');
+                // var nombreCaraDiente = $(this).find('.diente').attr("data-pos");
+                var nombreCaraDiente = $(this).find('.diente');
+                $( nombreCaraDiente ).each(function( index ) {
+                    var caraDiente =  $(this).attr("data-pos");
+                    //console.log('cara diente: ' + caraDiente);
+                    if (caraLista == caraDiente) {
+                        console.log('cara diente: ' + caraDiente);
+                        $(this).removeClass('active');
+                    }
+                });
+
+                // $(this).find('.active').removeClass('active');
             }
         });
 
@@ -112,9 +125,8 @@ $(function () {
         var infoCuadro = $(this).parents('.page-odontograma').find('.box');
         $( infoCuadro ).each(function( index ) {
             var boxId = this.id;
-
             if (boxId == idLista) {
-                console.log(boxId);
+               // console.log(boxId);
                 $(this).find('.select-tipo').removeClass('show');
                 $(this).find('.select-tipo').next().remove();
             }
