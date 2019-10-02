@@ -312,7 +312,7 @@
     }
 }
 
-.contenido-caries {
+.hallazgo-caries {
     .diente {
         &:hover {
             fill: red;
@@ -322,6 +322,7 @@
        fill:red;
     }
 }
+
 .contenido-restauracion {
     .diente {
         &:hover {
@@ -465,9 +466,6 @@
     fill: blue;
 }
 
-.contenido-caries .diente-restaura .active {
-    fill: blue;
-}
 
 
 .oclusal [data-pos~="oclusal"] {
@@ -491,4 +489,9 @@
 }
 .diente[data-sigla='CD'] {
     //fill: orange;
+}
+
+
+.contenido-odontograma .diente-restaura .diente.active {
+    fill: blue;
 }

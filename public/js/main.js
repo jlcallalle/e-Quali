@@ -55,25 +55,95 @@ var MyApp = {
             });
         });
     },
-    eventoHallazgos : function() {
+    activarHallazgo : function() {
         $(".lista-hallazgos li a").on("click", function(e){
+            e.preventDefault();
+            e.stopPropagation();
+            nombreHallazgo = $(this).attr('id');
             $('.lista-hallazgos li a').removeClass('active');
             $(this).addClass('active');
-            $(this).parents('.lista-hallazgos').next().addClass('show');
+
+            var contenedorHallazgo = $(this).parents('.page-odontograma').find('.contenido-odontograma');
+
+            if (nombreHallazgo == 'hallazgo-caries') {
+                contenedorHallazgo.addClass(nombreHallazgo);
+                contenedorHallazgo.removeClass('hallazgo-restauracion-definitiva');
+                contenedorHallazgo.removeClass(' hallazgo-restauracion-temporal');
+            }
+            if (nombreHallazgo == 'hallazgo-restauracion-definitiva') {
+                contenedorHallazgo.addClass(nombreHallazgo);
+                contenedorHallazgo.removeClass('hallazgo-caries ');
+                contenedorHallazgo.removeClass('hallazgo-restauracion-temporal');
+                $('svg#box-44').parent().addClass('diente-restaura');
+            }
+            if (nombreHallazgo == 'hallazgo-restauracion-temporal') {
+                contenedorHallazgo.addClass(nombreHallazgo);
+                contenedorHallazgo.removeClass('hallazgo-caries');
+                contenedorHallazgo.removeClass('hallazgo-restauracion-definitiva');
+            }
         });
-    },
-    eventoRestauracion : function() {
+
         $('.cont-diente.diente-restaura .diente').on("click", function(e){
             $(this).toggleClass("active-restaura");
             var nombrePosition = $(this).attr("data-pos");
             var siglaPosition = $(this).attr("data-sigla");
         });
 
-        $('#cod-restauracion').on("click", function(e){
-            $(this).toggleClass("active");
-            $('svg#box-15').parent().addClass('diente-restaura');
-        });
+        // $('#hallazgo-restauracion-definitiva').on("click", function(e){
+        //     $(this).toggleClass("active");
+        //     $('#box-15').parent().addClass('diente-restaura');
+        // });
 
+        $("#hallazgo-caries").click();
+
+    },
+    eliminarHallazgos : function() {
+        $(document).on('click',".lista-hallazgo-detallado li a",function(e){
+            e.preventDefault();
+            e.stopPropagation();
+            var idLista = $(this).parents('li').attr('id')
+            var caraLista = $(this).parents('li').attr("data-pos");
+            // console.log(idLista);
+            console.log('cara lista: ' + caraLista);
+
+            //Remove color: cara dental
+            var listaDientes = $(this).parents('.page-odontograma').find('.svg');
+            // console.log(listaDientes);
+            $( listaDientes ).each(function( index ) {
+                var idDiente = this.id;
+                // console.log(idDiente);
+                if (idDiente == idLista) {
+                    //console.log('id dient' + idDiente);
+                    //console.log('id lista' +idLista);
+                    //$(this).find('.active-last').removeClass('active');
+                    // var nombreCaraDiente = $(this).find('.diente').attr("data-pos");
+                    var nombreCaraDiente = $(this).find('.diente');
+                    $( nombreCaraDiente ).each(function( index ) {
+                        var caraDiente =  $(this).attr("data-pos");
+                        //console.log('cara diente: ' + caraDiente);
+                        if (caraLista == caraDiente) {
+                            console.log('cara diente: ' + caraDiente);
+                            $(this).removeClass('active');
+                        }
+                    });
+
+                    // $(this).find('.active').removeClass('active');
+                }
+            });
+
+            //Remove Texto Box
+            var infoCuadro = $(this).parents('.page-odontograma').find('.box');
+            $( infoCuadro ).each(function( index ) {
+                var boxId = this.id;
+                if (boxId == idLista) {
+                   // console.log(boxId);
+                    $(this).find('.select-tipo').removeClass('show');
+                    $(this).find('.select-tipo').next().remove();
+                }
+            });
+
+            $(this).parents('li').remove();
+        });
     },
 }
 
@@ -81,59 +151,12 @@ $(function () {
     if ($('.page-odontograma').length) {
        MyApp.eventoDientes();
        MyApp.eventoSelect();
-       MyApp.eventoHallazgos();
-       MyApp.eventoRestauracion();
+       MyApp.activarHallazgo();
+      // MyApp.eventoRestauracion();
+       MyApp.eliminarHallazgos();
     }
 
-    //Triger Click
-    $("#cod-caries").click();
 
-    $(document).on('click',".lista-hallazgo-detallado li a",function(e){
-        e.preventDefault();
-        e.stopPropagation();
-        var idLista = $(this).parents('li').attr('id')
-        var caraLista = $(this).parents('li').attr("data-pos");
-        // console.log(idLista);
-        console.log('cara lista: ' + caraLista);
-
-        //Remove color: cara dental
-        var listaDientes = $(this).parents('.page-odontograma').find('.svg');
-        // console.log(listaDientes);
-        $( listaDientes ).each(function( index ) {
-            var idDiente = this.id;
-            // console.log(idDiente);
-            if (idDiente == idLista) {
-                //console.log('id dient' + idDiente);
-                //console.log('id lista' +idLista);
-                //$(this).find('.active-last').removeClass('active');
-                // var nombreCaraDiente = $(this).find('.diente').attr("data-pos");
-                var nombreCaraDiente = $(this).find('.diente');
-                $( nombreCaraDiente ).each(function( index ) {
-                    var caraDiente =  $(this).attr("data-pos");
-                    //console.log('cara diente: ' + caraDiente);
-                    if (caraLista == caraDiente) {
-                        console.log('cara diente: ' + caraDiente);
-                        $(this).removeClass('active');
-                    }
-                });
-
-                // $(this).find('.active').removeClass('active');
-            }
-        });
-
-        //Remove Texto Box
-        var infoCuadro = $(this).parents('.page-odontograma').find('.box');
-        $( infoCuadro ).each(function( index ) {
-            var boxId = this.id;
-            if (boxId == idLista) {
-               // console.log(boxId);
-                $(this).find('.select-tipo').removeClass('show');
-                $(this).find('.select-tipo').next().remove();
-            }
-        });
-
-        $(this).parents('li').remove();
-    });
 });
 
 

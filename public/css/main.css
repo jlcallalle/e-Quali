@@ -361,10 +361,10 @@ body {
 .contenido-odontograma .diente {
   fill: transparent; }
 
-.contenido-caries .diente:hover {
+.hallazgo-caries .diente:hover {
   fill: red; }
 
-.contenido-caries .active {
+.hallazgo-caries .active {
   fill: red; }
 
 .contenido-restauracion .diente:hover {
@@ -474,9 +474,6 @@ body {
 .contenido-odontograma .diente-restaura .diente:hover {
   fill: blue; }
 
-.contenido-caries .diente-restaura .active {
-  fill: blue; }
-
 .oclusal [data-pos~="oclusal"] {
   fill: blue !important; }
 
@@ -494,5 +491,8 @@ body {
       flex-wrap: wrap; }
   .select-caries span {
     margin: 0 2px; }
+
+.contenido-odontograma .diente-restaura .diente.active {
+  fill: blue; }
 
 /*# sourceMappingURL=main.css.map */
