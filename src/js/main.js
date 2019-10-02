@@ -47,7 +47,7 @@ var MyApp = {
                 if (idBox == idParte) {
                     var piezaPosition = $(this).find('.active-last').attr("data-pos");
                     var siglaPosition = $(this).find('.active-last').attr("data-sigla");
-                    $('.lista-hallazgo-detallado').append('<li id=' + idBox + ' >'+ nombreLesion + ' <span>'+ (codLesion) + ' </span>,  en la '
+                    $('.lista-hallazgo-detallado').append('<li id=' + idBox + ' data-sigla=' +siglaPosition+ ' >'+ 'Lesion de caries dental -' + nombreLesion + ' <span>'+ (codLesion) + ' </span>,  en la '
                                                             +  piezaPosition + ' <span>  '  + siglaPosition  + ' </span>, de la  pieza dental <span> '
                                                             + numPieza + '</span> <a href="#">Eliminar</a>  </li> ');
 
