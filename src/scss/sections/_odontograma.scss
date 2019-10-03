@@ -278,6 +278,17 @@
     }
 }
 
+.contenido-odontograma {
+    .row-dientes {
+        .diente {
+            &:hover {
+                stroke: skyblue;
+                stroke-width: 15px;
+            }
+        }
+    }
+}
+
 .contenido-extraccion {
     .diente {
         fill: transparent;
@@ -309,59 +320,74 @@
 .contenido-odontograma  {
     .diente {
         fill: transparent;
+        &:hover {
+            cursor:pointer;
+
+        }
     }
 }
 
 .hallazgo-caries {
     .diente {
         &:hover {
-            fill: red;
+            //fill: red;
         }
     }
     .active {
-       fill:red;
+       // fill:red;
     }
 }
 
-.contenido-restauracion {
+.hallazgo-restauracion-definitiva {
     .diente {
         &:hover {
-            fill: blue;
+            //fill: blue;
         }
     }
     .active {
-       fill:blue;
+       //fill:blue;
+    }
+}
+
+.hallazgo-restauracion-temporal {
+    .diente {
+        &:hover {
+            //fill: gray;
+        }
+    }
+    .active {
+       //fill:gray;
     }
 }
 .contenido-extraccion {
     .diente {
         &:hover {
-            fill: green;
+            //fill: green;
         }
     }
     .active {
-       fill:green;
+       //fill:green;
     }
 }
 
 .contenido-fractura {
     .diente {
         &:hover {
-            fill: gray;
+            //fill: gray;
         }
     }
     .active {
-       fill:gray;
+       //fill:gray;
     }
 }
 .contenido-puente {
     .diente {
         &:hover {
-            fill: coral;
+            //fill: coral;
         }
     }
     .active {
-       fill:coral;
+       //fill:coral;
     }
 }
 
@@ -494,4 +520,23 @@
 
 .contenido-odontograma .diente-restaura .diente.active {
     fill: blue;
+}
+
+
+.hallazgo-caries{
+    &.active {
+        fill:red;
+    }
+}
+
+.hallazgo-restauracion-definitiva{
+    &.active {
+        fill:blue;
+    }
+}
+
+.hallazgo-restauracion-temporal{
+    &.active {
+        fill:green;
+    }
 }

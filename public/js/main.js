@@ -2,7 +2,7 @@ var MyApp = {
 
     eventoDientes : function() {
         $('.cont-diente .diente').on("click", function(e){
-            $(this).toggleClass("active");
+
             $('.cont-diente .diente').removeClass('active-last');
             $(this).addClass('active-last');
             var nombrePosition = $(this).attr("data-pos");
@@ -12,16 +12,19 @@ var MyApp = {
             var idDiente = $(this).parents('svg').attr('id')
 
             var rowBox = $(this).parents('.box-lista-dientes').siblings().find('.box');
+
+            var contenidoOdontograma = $(this).parents('.contenido-odontograma');
+            var nombreData =  contenidoOdontograma.attr('data-name');
+            console.log(nombreData);
+
+            $(this).toggleClass("active");
+            $(this).toggleClass(nombreData);
+
+
             $( rowBox ).each(function( index ) {
                 var boxId = this.id;
                 if (boxId == idDiente) {
                     $( this ).find('.select-tipo').addClass('show');
-                    // if (!$( this ).find('.select-tipo').hasClass('active')) {
-                    //     $( this ).find('.select-tipo').addClass('show');
-                    // }
-                }
-                if ($(this).hasClass('active')) {
-                    //console.log('aa');
                 }
             });
 
@@ -60,6 +63,9 @@ var MyApp = {
             e.preventDefault();
             e.stopPropagation();
             nombreHallazgo = $(this).attr('id');
+
+            //console.log(nombreHallazgo);
+
             $('.lista-hallazgos li a').removeClass('active');
             $(this).addClass('active');
 
@@ -69,17 +75,20 @@ var MyApp = {
                 contenedorHallazgo.addClass(nombreHallazgo);
                 contenedorHallazgo.removeClass('hallazgo-restauracion-definitiva');
                 contenedorHallazgo.removeClass(' hallazgo-restauracion-temporal');
+                contenedorHallazgo.attr('data-name', nombreHallazgo);
             }
             if (nombreHallazgo == 'hallazgo-restauracion-definitiva') {
                 contenedorHallazgo.addClass(nombreHallazgo);
                 contenedorHallazgo.removeClass('hallazgo-caries ');
                 contenedorHallazgo.removeClass('hallazgo-restauracion-temporal');
                 $('svg#box-44').parent().addClass('diente-restaura');
+                contenedorHallazgo.attr('data-name', nombreHallazgo);
             }
             if (nombreHallazgo == 'hallazgo-restauracion-temporal') {
                 contenedorHallazgo.addClass(nombreHallazgo);
                 contenedorHallazgo.removeClass('hallazgo-caries');
                 contenedorHallazgo.removeClass('hallazgo-restauracion-definitiva');
+                contenedorHallazgo.attr('data-name', nombreHallazgo);
             }
         });
 
