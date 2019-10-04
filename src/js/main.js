@@ -15,7 +15,7 @@ var MyApp = {
 
             var contenidoOdontograma = $(this).parents('.contenido-odontograma');
             var nombreData =  contenidoOdontograma.attr('data-name');
-            //console.log(nombreData);
+            // console.log('content: ' + nombreData);
 
             $(this).toggleClass("active");
             $(this).toggleClass(nombreData);
@@ -24,9 +24,29 @@ var MyApp = {
             $( rowBox ).each(function( index ) {
                 var boxId = this.id;
                 if (boxId == idDiente) {
-                    $( this ).find('.select-tipo').addClass('show');
+                    // $( this ).find('.select-tipo').addClass('show');
+
+                    var listaSelect = $( this ).find('.select-tipo');
+                    $( listaSelect ).each(function( index ) {
+                        var nombreSelect =  $(this).attr("name");
+                        // console.log('nombre select: ' +nombreSelect);
+                        if( nombreSelect == nombreData ){
+                            $( this ).addClass('show');
+                        }
+                    });
                 }
             });
+
+
+            if ( $( contenidoOdontograma ).hasClass( "hallazgo-restauracion-temporal" ) ) {
+                    console.log('nuevo');
+                // var piezaPositionOdonto = $(this).find('.active-last').attr("data-pos");
+                // console.log(piezaPositionOdonto);
+                var idBox = $(this).parents('.box').attr("id");
+                var piezaPositiona = $(this).find('.active-last').attr("data-pos");
+
+                $('.lista-hallazgo-detallado').append('<li id=' + idBox + '> <span class="nombre-hallazo"> Restauración Temporal </span> en la cara mesial <span>  CM </span>  de la  pieza dental <span> 18 </span> <a href="#">Eliminar</a> </li >');
+            }
 
         });
     },
