@@ -45,7 +45,7 @@
                 }
             }
         }
-        &.opcion-restauracion {
+        &.opcion-restauracion-ref {
             a {
                 &.active {
                     color:blue;
@@ -55,13 +55,13 @@
                 }
             }
         }
-        &.opcion-extraccion {
+        &.opcion-restauracion-tem {
             a {
                 &.active {
-                    color:green;
+                    color:#47add7;
                 }
                 &:hover {
-                    color:green;
+                    color:#47add7;
                 }
             }
         }

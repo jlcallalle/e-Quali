@@ -15,7 +15,7 @@ var MyApp = {
 
             var contenidoOdontograma = $(this).parents('.contenido-odontograma');
             var nombreData =  contenidoOdontograma.attr('data-name');
-            console.log(nombreData);
+            //console.log(nombreData);
 
             $(this).toggleClass("active");
             $(this).toggleClass(nombreData);
@@ -34,7 +34,7 @@ var MyApp = {
         $(".select-tipo").change(function(){
             var codLesion = $(this).children("option:selected").text();
             var nombreLesion = $(this).children("option:selected").val();
-            console.log(codLesion);
+            // console.log(codLesion);
             //console.log(nombreLesion);
             if (codLesion !== 'Elegir') {
                 $(this).parent().append('<span>' + codLesion  + '</span> ');
@@ -43,6 +43,9 @@ var MyApp = {
             var numPieza = $(this).parents('.box').attr("data-pieza");
             var idBox = $(this).parents('.box').attr("id");
 
+            var wrapperContainer = $(this).parents('.contenido-odontograma');
+            var dataTexto = wrapperContainer.attr('data-texto');
+
             var parteDental = $(this).parents('.box-options').siblings().find('.svg');
             $( parteDental ).each(function( index ) {
                 var idParte = this.id;
@@ -50,7 +53,7 @@ var MyApp = {
                 if (idBox == idParte) {
                     var piezaPosition = $(this).find('.active-last').attr("data-pos");
                     var siglaPosition = $(this).find('.active-last').attr("data-sigla");
-                    $('.lista-hallazgo-detallado').append('<li id=' + idBox + ' data-pos=' +piezaPosition+ ' >'+ ' Lesion de caries dental - ' + nombreLesion + ' <span>'+ (codLesion) + ' </span>,  en la '
+                    $('.lista-hallazgo-detallado').append('<li id=' + idBox + ' data-pos=' +piezaPosition+ ' >'+ '<span class="nombre-hallazo"> ' + dataTexto + '</span> - ' + nombreLesion + ' <span>'+ (codLesion) + ' </span>,  en la cara '
                                                             +  piezaPosition + ' <span>  '  + siglaPosition  + ' </span>, de la  pieza dental <span> '
                                                             + numPieza + '</span> <a href="#">Eliminar</a>  </li> ');
 
@@ -63,32 +66,38 @@ var MyApp = {
             e.preventDefault();
             e.stopPropagation();
             nombreHallazgo = $(this).attr('id');
+            textoHallazgo = $(this).attr('data-texto');
 
-            //console.log(nombreHallazgo);
+            //console.log(textoHallazgo);
 
             $('.lista-hallazgos li a').removeClass('active');
             $(this).addClass('active');
 
             var contenedorHallazgo = $(this).parents('.page-odontograma').find('.contenido-odontograma');
+            contenedorHallazgo.attr('data-texto', textoHallazgo);
+            contenedorHallazgo.attr('data-name', nombreHallazgo);
 
             if (nombreHallazgo == 'hallazgo-caries') {
                 contenedorHallazgo.addClass(nombreHallazgo);
                 contenedorHallazgo.removeClass('hallazgo-restauracion-definitiva');
                 contenedorHallazgo.removeClass(' hallazgo-restauracion-temporal');
-                contenedorHallazgo.attr('data-name', nombreHallazgo);
+                // contenedorHallazgo.attr('data-name', nombreHallazgo);
+                // contenedorHallazgo.attr('data-texto', textoHallazgo);
             }
             if (nombreHallazgo == 'hallazgo-restauracion-definitiva') {
                 contenedorHallazgo.addClass(nombreHallazgo);
                 contenedorHallazgo.removeClass('hallazgo-caries ');
                 contenedorHallazgo.removeClass('hallazgo-restauracion-temporal');
-                $('svg#box-44').parent().addClass('diente-restaura');
-                contenedorHallazgo.attr('data-name', nombreHallazgo);
+                // $('svg#box-44').parent().addClass('diente-restaura');
+                // contenedorHallazgo.attr('data-name', nombreHallazgo);
+                // contenedorHallazgo.attr('data-texto', textoHallazgo);
             }
             if (nombreHallazgo == 'hallazgo-restauracion-temporal') {
                 contenedorHallazgo.addClass(nombreHallazgo);
                 contenedorHallazgo.removeClass('hallazgo-caries');
                 contenedorHallazgo.removeClass('hallazgo-restauracion-definitiva');
-                contenedorHallazgo.attr('data-name', nombreHallazgo);
+                // contenedorHallazgo.attr('data-name', nombreHallazgo);
+                // contenedorHallazgo.attr('data-texto', textoHallazgo);
             }
         });
 
@@ -113,7 +122,7 @@ var MyApp = {
             var idLista = $(this).parents('li').attr('id')
             var caraLista = $(this).parents('li').attr("data-pos");
             // console.log(idLista);
-            console.log('cara lista: ' + caraLista);
+            // console.log('cara lista: ' + caraLista);
 
             //Remove color: cara dental
             var listaDientes = $(this).parents('.page-odontograma').find('.svg');
@@ -131,7 +140,7 @@ var MyApp = {
                         var caraDiente =  $(this).attr("data-pos");
                         //console.log('cara diente: ' + caraDiente);
                         if (caraLista == caraDiente) {
-                            console.log('cara diente: ' + caraDiente);
+                            // console.log('cara diente: ' + caraDiente);
                             $(this).removeClass('active');
                         }
                     });

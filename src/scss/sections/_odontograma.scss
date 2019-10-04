@@ -9,7 +9,8 @@
 .contenido-odontograma {
     padding: 20px 0;
     max-width: 825px;
-    margin: 0 0 30px 0;
+    // margin: 0 0 30px 0;
+    margin: 30px 0 30px 0;
 }
 
 .box-options {
@@ -278,16 +279,17 @@
     }
 }
 
-.contenido-odontograma {
-    .row-dientes {
-        .diente {
-            &:hover {
-                stroke: skyblue;
-                stroke-width: 15px;
-            }
-        }
-    }
-}
+
+// .contenido-odontograma {
+//     .row-dientes {
+//         .diente {
+//             &:hover {
+//                 stroke: skyblue;
+//                 stroke-width: 15px;
+//             }
+//         }
+//     }
+// }
 
 .contenido-extraccion {
     .diente {
@@ -301,7 +303,7 @@
 
 .box select {
     position: absolute;
-    top: -24px;
+    top: -30px;
     font-size: 12px;
     display: none;
     left:0;
@@ -313,7 +315,7 @@
 
 .box-sub-nino, .box-sub-adulto {
     .box select {
-        top: 52px;
+        top: 55px;
     }
 }
 
@@ -330,7 +332,7 @@
 .hallazgo-caries {
     .diente {
         &:hover {
-            //fill: red;
+            fill: red;
         }
     }
     .active {
@@ -341,7 +343,7 @@
 .hallazgo-restauracion-definitiva {
     .diente {
         &:hover {
-            //fill: blue;
+            fill: blue;
         }
     }
     .active {
@@ -464,6 +466,9 @@
         font-size: 14px;
         span {
             font-weight: bold;
+            &.nombre-hallazo {
+                color: #3c8dbc;
+            }
         }
         a {
             color: red;
@@ -499,7 +504,7 @@
 }
 
 
-.select-caries {
+.select-hallazgos {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -526,6 +531,9 @@
 .hallazgo-caries{
     &.active {
         fill:red;
+        &:hover {
+            fill: red;
+        }
     }
 }
 
@@ -537,6 +545,21 @@
 
 .hallazgo-restauracion-temporal{
     &.active {
-        fill:green;
+        stroke: red;
+        stroke-width: 15px;
     }
+}
+
+
+.select-tipo {
+    background-color: #FFFFFF;
+    border: 1px solid #5183AF;
+    border-radius: 5px;
+    display: block;
+    min-height: 22px;
+    color: #282828;
+}
+
+.box-inc .select-tipo {
+    width: 44px;
 }

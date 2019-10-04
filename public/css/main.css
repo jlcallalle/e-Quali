@@ -87,14 +87,14 @@ body {
     color: red; }
   .lista-hallazgos li.opcion-caries a:hover {
     color: red; }
-  .lista-hallazgos li.opcion-restauracion a.active {
+  .lista-hallazgos li.opcion-restauracion-ref a.active {
     color: blue; }
-  .lista-hallazgos li.opcion-restauracion a:hover {
+  .lista-hallazgos li.opcion-restauracion-ref a:hover {
     color: blue; }
-  .lista-hallazgos li.opcion-extraccion a.active {
-    color: green; }
-  .lista-hallazgos li.opcion-extraccion a:hover {
-    color: green; }
+  .lista-hallazgos li.opcion-restauracion-tem a.active {
+    color: #47add7; }
+  .lista-hallazgos li.opcion-restauracion-tem a:hover {
+    color: #47add7; }
   .lista-hallazgos li.opcion-fractura a.active {
     color: gray; }
   .lista-hallazgos li.opcion-fractura a:hover {
@@ -109,7 +109,7 @@ body {
 .contenido-odontograma {
   padding: 20px 0;
   max-width: 825px;
-  margin: 0 0 30px 0; }
+  margin: 30px 0 30px 0; }
 
 .box-options .row-box {
   display: -webkit-box;
@@ -341,10 +341,6 @@ body {
     left: -36px;
     font-size: 12px; }
 
-.contenido-odontograma .row-dientes .diente:hover {
-  stroke: skyblue;
-  stroke-width: 15px; }
-
 .contenido-extraccion .diente {
   fill: transparent; }
   .contenido-extraccion .diente:hover {
@@ -352,7 +348,7 @@ body {
 
 .box select {
   position: absolute;
-  top: -24px;
+  top: -30px;
   font-size: 12px;
   display: none;
   left: 0; }
@@ -360,12 +356,18 @@ body {
     display: none; }
 
 .box-sub-nino .box select, .box-sub-adulto .box select {
-  top: 52px; }
+  top: 55px; }
 
 .contenido-odontograma .diente {
   fill: transparent; }
   .contenido-odontograma .diente:hover {
     cursor: pointer; }
+
+.hallazgo-caries .diente:hover {
+  fill: red; }
+
+.hallazgo-restauracion-definitiva .diente:hover {
+  fill: blue; }
 
 .cont-diente {
   width: 51px;
@@ -431,6 +433,8 @@ body {
     font-size: 14px; }
     .lista-hallazgo-detallado li span {
       font-weight: bold; }
+      .lista-hallazgo-detallado li span.nombre-hallazo {
+        color: #3c8dbc; }
     .lista-hallazgo-detallado li a {
       color: red;
       margin: 0 0 0 15px;
@@ -453,7 +457,7 @@ body {
 .oclusal [data-pos~="oclusal"] {
   fill: blue !important; }
 
-.select-caries {
+.select-hallazgos {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -465,7 +469,7 @@ body {
           justify-content: space-evenly;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap; }
-  .select-caries span {
+  .select-hallazgos span {
     margin: 0 2px; }
 
 .contenido-odontograma .diente-restaura .diente.active {
@@ -473,11 +477,25 @@ body {
 
 .hallazgo-caries.active {
   fill: red; }
+  .hallazgo-caries.active:hover {
+    fill: red; }
 
 .hallazgo-restauracion-definitiva.active {
   fill: blue; }
 
 .hallazgo-restauracion-temporal.active {
-  fill: green; }
+  stroke: red;
+  stroke-width: 15px; }
+
+.select-tipo {
+  background-color: #FFFFFF;
+  border: 1px solid #5183AF;
+  border-radius: 5px;
+  display: block;
+  min-height: 22px;
+  color: #282828; }
+
+.box-inc .select-tipo {
+  width: 44px; }
 
 /*# sourceMappingURL=main.css.map */
