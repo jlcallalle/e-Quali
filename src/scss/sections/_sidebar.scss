@@ -45,6 +45,16 @@
                 }
             }
         }
+        &.opcion-defectos-esmalte {
+            a {
+                &.active {
+                    color:orange;
+                }
+                &:hover {
+                    color:orange;
+                }
+            }
+        }
         &.opcion-restauracion-ref {
             a {
                 &.active {

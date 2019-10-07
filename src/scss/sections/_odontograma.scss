@@ -340,6 +340,17 @@
     }
 }
 
+.hallazgo-defectos-esmalte {
+    .diente {
+        &:hover {
+            fill: orange;
+        }
+    }
+    .active {
+       // fill:red;
+    }
+}
+
 .hallazgo-restauracion-definitiva {
     .diente {
         &:hover {
@@ -511,6 +522,16 @@
     flex-wrap: wrap;
     span {
         margin: 0 2px;
+        font-weight: bold;
+        &.hallazgo-caries {
+            color:red;
+        }
+        &.hallazgo-defectos-esmalte {
+            color:orange;
+        }
+        &.hallazgo-restauracion-definitiva {
+            color:blue;
+        }
     }
 }
 
@@ -533,6 +554,15 @@
         fill:red;
         &:hover {
             fill: red;
+        }
+    }
+}
+
+.hallazgo-defectos-esmalte{
+    &.active {
+        fill:orange;
+        &:hover {
+            fill: orange;
         }
     }
 }
