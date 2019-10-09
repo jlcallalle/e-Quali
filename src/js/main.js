@@ -10,31 +10,93 @@ var MyApp = {
             $(".opciones-odontologia p").removeClass("show");
 
             var idDiente = $(this).parents("svg").attr("id")
-
-            var rowBox = $(this).parents(".box-lista-dientes").siblings().find(".box");
+            var cuadroDiente = $(this).parents(".box-lista-dientes").siblings().find(".box");
 
             var contenidoOdontograma = $(this).parents(".contenido-odontograma");
-            var nombreData =  contenidoOdontograma.attr("data-name");
-            // console.log('content: ' + nombreData);
+            var nombreHallazgo =  contenidoOdontograma.attr("data-name");
+
+             //console.log('content: ' + nombreHallazgo);
 
             $(this).toggleClass("active");
-            $(this).toggleClass(nombreData);
+            $(this).toggleClass(nombreHallazgo);
 
 
-            $( rowBox ).each(function( index ) {
-                var boxId = this.id;
-                if (boxId == idDiente) {
-                    // $( this ).find('.select-tipo').addClass('show');
+            $( cuadroDiente ).each(function( index ) {
+                var idCuadro = this.id;
 
+                if (idCuadro == idDiente) {
+                    //console.log(idCuadro);
+                    //console.log(idDiente);
+
+                    if (nombreHallazgo == 'hallazgo-caries') {
+                        var selectCaries ="<select class='select-tipo select-caries' name='hallazgo-caries'><option value=''>Elegir</option><option value='Mancha Blanca'>MB</option> <option value='Caries del esmalte'>CE</option> <option value='Caries de la dentina'>CD</option> <option value='Caries de la pulpa'>CDP</option></select>"
+
+                        $( this ).find('.select-hallazgos').append(selectCaries);
+
+                    }
+                    if (nombreHallazgo == 'hallazgo-restauracion-definitiva') {
+                        var selectCaries ="<select class='select-tipo select-restauracion-definitiva' name='hallazgo-restauracion-definitiva'><option value=''>Elegir</option><option value='Amalgama Dental'>AD</option> <option value='Resina' >R</option></select>"
+                        $( this ).find('.select-hallazgos').append(selectCaries);
+                    }
+
+                    if (nombreHallazgo == 'hallazgo-defectos-esmalte') {
+                        var selectCaries ="<select class='select-tipo select-defectos-esmalte' name='hallazgo-defectos-esmalte'><option value=''>Elegir</option><option value='Hipoplasia'>HP</option> <option value='Hipo Mineralización' >HM</option> <option value='Opacidades de Esmalte'>O</option> </select>"
+                        $( this ).find('.select-hallazgos').append(selectCaries);
+                    }
+
+
+
+                    $( this ).find('.select-tipo').addClass('show');
                     var listaSelect = $( this ).find(".select-tipo");
+
                     $( listaSelect ).each(function( index ) {
                         var nombreSelect =  $(this).attr("name");
-                        // console.log('nombre select: ' +nombreSelect);
-                        if( nombreSelect == nombreData ){
+                        if( nombreSelect == nombreHallazgo ){
                             $( this ).addClass("show");
                         }
                     });
+
                 }
+            });
+
+
+
+            $(".select-tipo").change(function(){
+                //console.log('select-tipo en html');
+
+                var codLesion = $(this).children("option:selected").text();
+                var nombreLesion = $(this).children("option:selected").val();
+                // console.log(codLesion);
+                // console.log(nombreLesion);
+
+                var nameSelec = $(this).attr("name");
+
+                if (codLesion !== "Elegir") {
+                    $(this).parent().append('<span  class='+ nameSelec + '>' + codLesion  + '</span> ');
+                }
+
+                var numPieza = $(this).parents(".box").attr("data-pieza");
+                var idBox = $(this).parents(".box").attr("id");
+
+                var wrapperContainer = $(this).parents(".contenido-odontograma");
+                var dataTexto = wrapperContainer.attr("data-texto");
+
+                var parteDental = $(this).parents(".box-options").siblings().find(".svg");
+                $( parteDental ).each(function( index ) {
+                    var idParte = this.id;
+
+                    if (idBox == idParte) {
+                        var piezaPosition = $(this).find(".active-last").attr("data-pos");
+                        var siglaPosition = $(this).find(".active-last").attr("data-sigla");
+                        $(".lista-hallazgo-detallado").append('<li id=' + idBox + ' data-pos=' +piezaPosition+ ' data-sigla=' +codLesion+ ' >'+ '<span class="nombre-hallazo"> ' + dataTexto + '</span> - ' + nombreLesion + ' <span>'+ (codLesion) + ' </span>,  en la cara '
+                                                                +  piezaPosition + ' <span>  '  + siglaPosition  + ' </span>, de la  pieza dental <span> '
+                                                                + numPieza + '</span> <a href="#">Eliminar</a>  </li> ');
+                        // $(".select-tipo").removeClass("show");
+                        $(".select-tipo").remove();
+
+                    }
+                });
+
             });
 
 
@@ -51,39 +113,8 @@ var MyApp = {
         });
     },
     eventoSelect : function() {
-        $(".select-tipo").change(function(){
-            var codLesion = $(this).children("option:selected").text();
-            var nombreLesion = $(this).children("option:selected").val();
-            console.log(codLesion);
-            console.log(nombreLesion);
 
-           var nameSelec = $(this).attr("name");
 
-            if (codLesion !== "Elegir") {
-                $(this).parent().append('<span  class='+ nameSelec + '>' + codLesion  + '</span> ');
-            }
-
-            var numPieza = $(this).parents(".box").attr("data-pieza");
-            var idBox = $(this).parents(".box").attr("id");
-
-            var wrapperContainer = $(this).parents(".contenido-odontograma");
-            var dataTexto = wrapperContainer.attr("data-texto");
-
-            var parteDental = $(this).parents(".box-options").siblings().find(".svg");
-            $( parteDental ).each(function( index ) {
-                var idParte = this.id;
-
-                if (idBox == idParte) {
-                    var piezaPosition = $(this).find(".active-last").attr("data-pos");
-                    var siglaPosition = $(this).find(".active-last").attr("data-sigla");
-                    $(".lista-hallazgo-detallado").append('<li id=' + idBox + ' data-pos=' +piezaPosition+ ' >'+ '<span class="nombre-hallazo"> ' + dataTexto + '</span> - ' + nombreLesion + ' <span>'+ (codLesion) + ' </span>,  en la cara '
-                                                            +  piezaPosition + ' <span>  '  + siglaPosition  + ' </span>, de la  pieza dental <span> '
-                                                            + numPieza + '</span> <a href="#">Eliminar</a>  </li> ');
-                    $(".select-tipo").removeClass("show");
-
-                }
-            });
-        });
     },
     activarHallazgo : function() {
         $(".lista-hallazgos li a").on("click", function(e){
@@ -121,11 +152,14 @@ var MyApp = {
             e.stopPropagation();
             var idLista = $(this).parents("li").attr("id")
             var caraLista = $(this).parents("li").attr("data-pos");
-            // console.log(idLista);
-            // console.log("cara lista: " + caraLista);
+            var caraSigla = $(this).parents("li").attr("data-sigla");
+            console.log(idLista);
+            console.log("cara lista: " + caraLista);
+            console.log("cara sigla: " + caraSigla);
 
             //Remove color: cara dental
             var listaDientes = $(this).parents(".page-odontograma").find(".svg");
+
             // console.log(listaDientes);
             $( listaDientes ).each(function( index ) {
                 var idDiente = this.id;
@@ -136,11 +170,14 @@ var MyApp = {
                     //$(this).find('.active-last').removeClass('active');
                     // var nombreCaraDiente = $(this).find('.diente').attr("data-pos");
                     var nombreCaraDiente = $(this).find(".diente");
+
                     $( nombreCaraDiente ).each(function( index ) {
                         var caraDiente =  $(this).attr("data-pos");
-                        //console.log("cara diente: " + caraDiente);
+                        var caraSigla =  $(this).attr("data-sigla");
+                        // console.log("cara diente: " + caraDiente);
                         if (caraLista == caraDiente) {
-                            // console.log("cara diente: " + caraDiente);
+                            //console.log("cara diente: " + caraDiente);
+                            //console.log("cara sigla: " + caraSigla);
                             $(this).removeClass("active");
                         }
                     });
@@ -153,9 +190,31 @@ var MyApp = {
             $( infoCuadro ).each(function( index ) {
                 var boxId = this.id;
                 if (boxId == idLista) {
-                   // console.log(boxId);
-                    $(this).find(".select-tipo").removeClass("show");
-                    $(this).find(".select-tipo").next().remove();
+                    //console.log('id cuadro: ' +boxId);
+                    // $(this).find(".select-tipo").removeClass("show");
+                    // $(this).find(".select-tipo").next().remove();
+                    var textoBox = $(this).find(".select-hallazgos").find('span');
+
+                    $( textoBox ).each(function( index ) {
+                        var textoSigla =  $(this).text();
+                        //console.log('texto Sigla en span: ' + textoSigla);
+                        if( textoSigla == caraSigla) {
+                            console.log(caraSigla);
+                            $(this).remove();
+                        }
+                    });
+
+
+                    //  var lisHallazgo = $(this).find(".select-hallazgos").find("span");
+                    //  var nameHallazgo = $(this).find(".select-hallazgos").find("span").val();
+                    //  console.log(lisHallazgo);
+
+                    //  $( lisHallazgo ).each(function( key, value  ) {
+                    //     console.log( key + ": " + value );
+                    //     if (!lisHallazgo == '0') {
+                    //         console.log(nameHallazgo);
+                    //     }
+                    // });
                 }
             });
 
@@ -167,7 +226,7 @@ var MyApp = {
 $(function () {
     if ($(".page-odontograma").length) {
        MyApp.eventoDientes();
-       MyApp.eventoSelect();
+    //    MyApp.eventoSelect();
        MyApp.activarHallazgo();
        MyApp.eliminarHallazgos();
     }

@@ -345,16 +345,17 @@ body {
     left: -36px;
     font-size: 12px; }
 
-.contenido-extraccion .diente {
+.contenido-extraccion +
+.diente {
   fill: transparent; }
-  .contenido-extraccion .diente:hover {
+  .contenido-extraccion +
+.diente:hover {
     fill: green; }
 
 .box select {
   position: absolute;
   top: -30px;
   font-size: 12px;
-  display: none;
   left: 0; }
   .box select.show {
     display: none; }

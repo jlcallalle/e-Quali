@@ -291,7 +291,7 @@
 //     }
 // }
 
-.contenido-extraccion {
+.contenido-extraccion {+
     .diente {
         fill: transparent;
         &:hover {
@@ -303,13 +303,14 @@
 
 .box select {
     position: absolute;
+    // position:relative;
     top: -30px;
     font-size: 12px;
-    display: none;
+    // display: none;
     left:0;
 
     &.show {
-        display: none;
+         display: none;
     }
 }
 
