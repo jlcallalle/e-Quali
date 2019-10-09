@@ -280,17 +280,6 @@
 }
 
 
-// .contenido-odontograma {
-//     .row-dientes {
-//         .diente {
-//             &:hover {
-//                 stroke: skyblue;
-//                 stroke-width: 15px;
-//             }
-//         }
-//     }
-// }
-
 .contenido-extraccion {+
     .diente {
         fill: transparent;
@@ -336,19 +325,13 @@
             fill: red;
         }
     }
-    .active {
-       // fill:red;
-    }
 }
 
 .hallazgo-defectos-esmalte {
     .diente {
         &:hover {
-            fill: orange;
+            fill: red;
         }
-    }
-    .active {
-       // fill:red;
     }
 }
 
@@ -358,15 +341,14 @@
             fill: blue;
         }
     }
-    .active {
-       //fill:blue;
-    }
 }
 
 .hallazgo-restauracion-temporal {
     .diente {
         &:hover {
             //fill: gray;
+            stroke: red;
+            stroke-width: 15px;
         }
     }
     .active {
@@ -528,7 +510,7 @@
             color:red;
         }
         &.hallazgo-defectos-esmalte {
-            color:orange;
+            color:red;
         }
         &.hallazgo-restauracion-definitiva {
             color:blue;
@@ -561,9 +543,9 @@
 
 .hallazgo-defectos-esmalte{
     &.active {
-        fill:orange;
+        fill:red;
         &:hover {
-            fill: orange;
+            fill: red;
         }
     }
 }

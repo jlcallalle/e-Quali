@@ -20,7 +20,6 @@ var MyApp = {
             $(this).toggleClass("active");
             $(this).toggleClass(nombreHallazgo);
 
-
             $( cuadroDiente ).each(function( index ) {
                 var idCuadro = this.id;
 
@@ -34,16 +33,17 @@ var MyApp = {
                         $( this ).find('.select-hallazgos').append(selectCaries);
 
                     }
-                    if (nombreHallazgo == 'hallazgo-restauracion-definitiva') {
-                        var selectCaries ="<select class='select-tipo select-restauracion-definitiva' name='hallazgo-restauracion-definitiva'><option value=''>Elegir</option><option value='Amalgama Dental'>AD</option> <option value='Resina' >R</option></select>"
-                        $( this ).find('.select-hallazgos').append(selectCaries);
-                    }
 
                     if (nombreHallazgo == 'hallazgo-defectos-esmalte') {
-                        var selectCaries ="<select class='select-tipo select-defectos-esmalte' name='hallazgo-defectos-esmalte'><option value=''>Elegir</option><option value='Hipoplasia'>HP</option> <option value='Hipo Mineralización' >HM</option> <option value='Opacidades de Esmalte'>O</option> </select>"
+                        var selectCaries ="<select class='select-tipo select-defectos-esmalte' name='hallazgo-defectos-esmalte'><option value=''>Elegir</option><option value='Hipoplasia'>HP</option> <option value='Hipo Mineralización' >HM</option> <option value='Opacidades de Esmalte'>O</option> <option value='Decoloración del Esmalte'>D</option><option value='Fluorosis'>Fluorosis</option></select>"
                         $( this ).find('.select-hallazgos').append(selectCaries);
                     }
 
+
+                    if (nombreHallazgo == 'hallazgo-restauracion-definitiva') {
+                        var selectCaries ="<select class='select-tipo select-restauracion-definitiva' name='hallazgo-restauracion-definitiva'><option value=''>Elegir</option><option value='Amalgama Dental'>AD</option> <option value='Resina' >R</option> <option value='Ionónedo de vidrio'>IV</option><option value='Incrustación Estética'>IE</option><option value='Canilla Estética'>C</option></select>"
+                        $( this ).find('.select-hallazgos').append(selectCaries);
+                    }
 
 
                     $( this ).find('.select-tipo').addClass('show');
@@ -58,8 +58,6 @@ var MyApp = {
 
                 }
             });
-
-
 
             $(".select-tipo").change(function(){
                 //console.log('select-tipo en html');
@@ -81,6 +79,7 @@ var MyApp = {
                 var wrapperContainer = $(this).parents(".contenido-odontograma");
                 var dataTexto = wrapperContainer.attr("data-texto");
 
+
                 var parteDental = $(this).parents(".box-options").siblings().find(".svg");
                 $( parteDental ).each(function( index ) {
                     var idParte = this.id;
@@ -91,23 +90,27 @@ var MyApp = {
                         $(".lista-hallazgo-detallado").append('<li id=' + idBox + ' data-pos=' +piezaPosition+ ' data-sigla=' +codLesion+ ' >'+ '<span class="nombre-hallazo"> ' + dataTexto + '</span> - ' + nombreLesion + ' <span>'+ (codLesion) + ' </span>,  en la cara '
                                                                 +  piezaPosition + ' <span>  '  + siglaPosition  + ' </span>, de la  pieza dental <span> '
                                                                 + numPieza + '</span> <a href="#">Eliminar</a>  </li> ');
-                        // $(".select-tipo").removeClass("show");
-                        $(".select-tipo").remove();
+                        $(this).addClass('ubaldo');
 
                     }
                 });
 
-            });
+                $(this).remove();
 
+            });
 
             if ( $( contenidoOdontograma ).hasClass( "hallazgo-restauracion-temporal" ) ) {
                     console.log("nuevo");
                 // var piezaPositionOdonto = $(this).find(".active-last").attr("data-pos");
                 // console.log(piezaPositionOdonto);
-                var idBox = $(this).parents(".box").attr("id");
+                $(this).parent().attr("id");
+                var getid = $(this).parent().attr("id");
+                //console.log(getid);
+
                 var piezaPositiona = $(this).find(".active-last").attr("data-pos");
 
-                $(".lista-hallazgo-detallado").append('<li id=' + idBox + '> <span class="nombre-hallazo"> Restauración Temporal </span> en la cara mesial <span>  CM </span>  de la  pieza dental <span> 18 </span> <a href="#">Eliminar</a> </li >');
+                $(".lista-hallazgo-detallado").append('<li id=' + getid + ' data-pos="mesial"> <span class="nombre-hallazo"> Restauración Temporal </span> en la cara mesial <span>  CM </span>  de la  pieza dental <span> 45 </span> <a href="#">Eliminar</a> </li >');
+
             }
 
         });
@@ -165,8 +168,8 @@ var MyApp = {
                 var idDiente = this.id;
                 // console.log(idDiente);
                 if (idDiente == idLista) {
-                    //console.log('id dient' + idDiente);
-                    //console.log('id lista' +idLista);
+                    console.log('id dient' + idDiente);
+                    console.log('id lista' +idLista);
                     //$(this).find('.active-last').removeClass('active');
                     // var nombreCaraDiente = $(this).find('.diente').attr("data-pos");
                     var nombreCaraDiente = $(this).find(".diente");

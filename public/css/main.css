@@ -88,9 +88,9 @@ body {
   .lista-hallazgos li.opcion-caries a:hover {
     color: red; }
   .lista-hallazgos li.opcion-defectos-esmalte a.active {
-    color: orange; }
+    color: red; }
   .lista-hallazgos li.opcion-defectos-esmalte a:hover {
-    color: orange; }
+    color: red; }
   .lista-hallazgos li.opcion-restauracion-ref a.active {
     color: blue; }
   .lista-hallazgos li.opcion-restauracion-ref a:hover {
@@ -372,10 +372,14 @@ body {
   fill: red; }
 
 .hallazgo-defectos-esmalte .diente:hover {
-  fill: orange; }
+  fill: red; }
 
 .hallazgo-restauracion-definitiva .diente:hover {
   fill: blue; }
+
+.hallazgo-restauracion-temporal .diente:hover {
+  stroke: red;
+  stroke-width: 15px; }
 
 .cont-diente {
   width: 51px;
@@ -483,7 +487,7 @@ body {
     .select-hallazgos span.hallazgo-caries {
       color: red; }
     .select-hallazgos span.hallazgo-defectos-esmalte {
-      color: orange; }
+      color: red; }
     .select-hallazgos span.hallazgo-restauracion-definitiva {
       color: blue; }
 
@@ -496,9 +500,9 @@ body {
     fill: red; }
 
 .hallazgo-defectos-esmalte.active {
-  fill: orange; }
+  fill: red; }
   .hallazgo-defectos-esmalte.active:hover {
-    fill: orange; }
+    fill: red; }
 
 .hallazgo-restauracion-definitiva.active {
   fill: blue; }
