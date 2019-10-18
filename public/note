@@ -21,7 +21,6 @@ El ejemplo polygon01 a continuación especifica dos polígonos (una estrella y u
 
 
 The value of the ‘viewBox’ attribute is a list of four numbers <min-x>, <min-y>, <width> and <height>,
-
 The x, y, width, height, rx and ry
 
 
@@ -30,3 +29,25 @@ MB: Mancha Blanca
 CE: Lesion de caries dental a nivel del esmalte
 CD: Lesion de caries dental a nivel de la dentina
 CDP: Lesion de caries dental a nivel de la dentina/ compromisode la pulpa
+
+
+Work Dealine
+----------------
+
+5.3.1 Lesión de Caries Dental  (LISTO)
+5.3.2 Defectos de Desarrollo del Esmalte (LISTO)
+
+-------------------------------------
+5.3.16 Posición Dentaria  (LISTO)
+5.3.5  Fosas y Fisuras Profundas  (LISTO)
+5.3.18 Pieza Dentaria Ectópica  (LISTO)
+5.3.19 Macrodoncia
+5.3.20 Microdoncia
+5.3.23 Impactación
+5.3.25 Remanente Radicular
+5.3.26 Movilidad Patologica
+
+
+-------------------------------------
+
+dsaludbucal.minsa.gob.pe

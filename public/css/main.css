@@ -99,10 +99,10 @@ body {
     color: #47add7; }
   .lista-hallazgos li.opcion-restauracion-tem a:hover {
     color: #47add7; }
-  .lista-hallazgos li.opcion-fractura a.active {
-    color: gray; }
-  .lista-hallazgos li.opcion-fractura a:hover {
-    color: gray; }
+  .lista-hallazgos li.opcion-posicion-dentaria a.active {
+    color: green; }
+  .lista-hallazgos li.opcion-posicion-dentaria a:hover {
+    color: green; }
 
 .page-odontograma {
   position: relative;
@@ -381,6 +381,9 @@ body {
   stroke: red;
   stroke-width: 15px; }
 
+svg.active-dentaria {
+  fill: blue; }
+
 .cont-diente {
   width: 51px;
   display: inline-block;
@@ -490,6 +493,10 @@ body {
       color: red; }
     .select-hallazgos span.hallazgo-restauracion-definitiva {
       color: blue; }
+    .select-hallazgos span.hallazgo-poosicion-dentaria {
+      color: blue; }
+    .select-hallazgos span.hallazgo-fosas-fisuras-profundas {
+      color: blue; }
 
 .contenido-odontograma .diente-restaura .diente.active {
   fill: blue; }
@@ -510,6 +517,18 @@ body {
 .hallazgo-restauracion-temporal.active {
   stroke: red;
   stroke-width: 15px; }
+
+.hallazgo-poosicion-dentaria .svg:hover {
+  cursor: pointer;
+  fill: blue; }
+
+.hallazgo-fosas-fisuras-profundas .svg:hover {
+  cursor: pointer;
+  fill: blue; }
+
+.hallazgo-piesa-dentaria-ectopica .svg:hover {
+  cursor: pointer;
+  fill: blue; }
 
 .select-tipo {
   background-color: #FFFFFF;

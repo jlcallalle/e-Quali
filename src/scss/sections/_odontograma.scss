@@ -355,36 +355,18 @@
        //fill:gray;
     }
 }
-.contenido-extraccion {
-    .diente {
-        &:hover {
-            //fill: green;
-        }
-    }
-    .active {
-       //fill:green;
-    }
+
+.hallazgo-poosicion-dentaria {
+    // .diente {
+    //     &:hover {
+    //         fill: green;
+    //     }
+    // }
 }
 
-.contenido-fractura {
-    .diente {
-        &:hover {
-            //fill: gray;
-        }
-    }
-    .active {
-       //fill:gray;
-    }
-}
-.contenido-puente {
-    .diente {
-        &:hover {
-            //fill: coral;
-        }
-    }
-    .active {
-       //fill:coral;
-    }
+
+svg.active-dentaria {
+    fill: blue;
 }
 
 .cont-diente {
@@ -515,6 +497,12 @@
         &.hallazgo-restauracion-definitiva {
             color:blue;
         }
+        &.hallazgo-poosicion-dentaria {
+            color:blue;;
+        }
+        &.hallazgo-fosas-fisuras-profundas {
+            color:blue;;
+        }
     }
 }
 
@@ -563,6 +551,33 @@
     }
 }
 
+
+.hallazgo-poosicion-dentaria {
+    .svg {
+        &:hover {
+            cursor:pointer;
+            fill: blue;
+        }
+    }
+}
+
+.hallazgo-fosas-fisuras-profundas {
+    .svg {
+        &:hover {
+            cursor:pointer;
+            fill: blue;
+        }
+    }
+}
+
+.hallazgo-piesa-dentaria-ectopica {
+    .svg {
+        &:hover {
+            cursor:pointer;
+            fill: blue;
+        }
+    }
+}
 
 .select-tipo {
     background-color: #FFFFFF;

@@ -75,13 +75,13 @@
                 }
             }
         }
-        &.opcion-fractura {
+        &.opcion-posicion-dentaria {
             a {
                 &.active {
-                    color:gray;
+                    color:green;
                 }
                 &:hover {
-                    color:gray;
+                    color:green;
                 }
             }
         }
