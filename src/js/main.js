@@ -27,12 +27,6 @@ var dataOdontograma = {
             $(this).toggleClass("active");
             $(this).toggleClass(nombreHallazgo);
 
-
-            //mostrar imagen activo diente total
-            if ( $( contenidoOdontograma ).hasClass( "hallazgo-poosicion-dentaria" ) ) {
-                $(this).parents("svg").toggleClass("active-dentaria");
-            }
-
             $( cuadroDiente ).each(function( index ) {
                 var idCuadro = this.id;
 
@@ -84,6 +78,10 @@ var dataOdontograma = {
                 }
             });
 
+            if ( $( contenidoOdontograma ).hasClass( "hallazgo-poosicion-dentaria" ) ) {
+                $(this).parents("svg").toggleClass("active-dentaria"); //active pieza all
+            }
+
 
             $(".select-tipo").change(function(){
                 var codLesion = $(this).children("option:selected").text();
@@ -101,6 +99,7 @@ var dataOdontograma = {
                 var wrapperContainer = $(this).parents(".contenido-odontograma");
                 var nombreHallazgo = wrapperContainer.attr("data-texto");
 
+
                 var parteDental = $(this).parents(".box-options").siblings().find(".svg");
                 $( parteDental ).each(function( index ) {
                     var idParte = this.id;
@@ -117,98 +116,58 @@ var dataOdontograma = {
 
                         }
 
-
-                      //   valorHallazgo = $('.lista-hallazgo-detallado');
-                      //   $( valorHallazgo ).each(function( index ) {
-                      //     var listahtext = $(this).find('li').text().slice(0,valorHallazgo.length - 12)
-                      //     var listahtextClear = listahtext.replace('Eliminar', '');
-                      //     var campoEspecificaciones = $("#id_odontograma_especificaciones");
-                      //     campoEspecificaciones.val(listahtextClear);
-                      //  });
-
-                        dataOdontograma.caries.push({
-                          "numero_pieza":idDiente,
-                          "posicion_pieza":piezaPosition,
-                          "hallazgo_pieza":nombreHallazgo,
-                        })
-
-
                         if( idDiente in dientes) {
-                          // console.log(idDiente, dientes[idDiente]);
-                          console.log('existe');
+                          if(nombreHallazgo in dientes[idDiente]){
+                            dientes[idDiente][nombreHallazgo][piezaPosition] = true;
+                          }
 
                         } else {
                           dientes[idDiente]={};
+
                           if (nombreHallazgo in dientes[idDiente]){
-                            console.log('existe');
-                          }else
-                            dientes[idDiente][nombreHallazgo] = piezaPosition;
+                          } else {
+                            dientes[idDiente][nombreHallazgo] ={}
+                            dientes[idDiente][nombreHallazgo][piezaPosition] = true;
+                          }
                        }
 
-
-
-
-
-                        // dientes.push ({
-                        //   "id_pieza":idDiente,
-                        //   "posicion_pieza":piezaPosition,
-                        //   "hallazgo_pieza":nombreHallazgo,
-                        // })
-
-                        // document.getElementById("data-json").innerHTML =
-                        // dataOdontograma.caries[0].hallazgo_pieza  + " en la cara " + dataOdontograma.caries[0].posicion_pieza   + " de la pieza dental " +  dataOdontograma.caries[0].numero_pieza;
-
-                        // var parseOdontograma = JSON.parse(dataOdontograma);
-
-                        // document.getElementById("data-json").innerHTML = JSON.stringify(dataOdontograma2);
                         document.getElementById("id_odontograma_especificaciones").innerHTML = JSON.stringify(dientes);
 
 
+                        dataOdontograma.caries.push({
+                            "numero_pieza":idDiente,
+                            "posicion_pieza":piezaPosition,
+                            "hallazgo_pieza":nombreHallazgo,
+                        })
 
+                        document.getElementById("data-json").innerHTML =
+                        dataOdontograma.caries[0].hallazgo_pieza  + " en la cara " + dataOdontograma.caries[0].posicion_pieza   + " de la pieza dental " +  dataOdontograma.caries[0].numero_pieza;
+
+                        var parseOdontograma = JSON.parse(dataOdontograma);
+                        document.getElementById("id_odontograma_especificaciones2").innerHTML = JSON.stringify(parseOdontograma);
                     }
                 });
+
 
                 $(this).remove();
 
             });
 
             if ( $( contenidoOdontograma ).hasClass( "hallazgo-restauracion-temporal" ) ) {
-                    // console.log("nuevo");
-                // var piezaPositionOdonto = $(this).find(".active-last").attr("data-pos");
-                // console.log(piezaPositionOdonto);
                 $(this).parent().attr("id");
                 var getid = $(this).parent().attr("id");
-                //console.log(getid);
-
                 var piezaPositiona = $(this).find(".active-last").attr("data-pos");
-
                 $(".lista-hallazgo-detallado").append('<li id=' + getid + ' data-pos="mesial"> <span class="nombre-hallazo"> Restauración Temporal </span> en la cara mesial <span>  CM </span>  de la  pieza dental <span> 45 </span> <a href="#">Eliminar</a> </li >');
-
 
             }
 
         });
     },
     eventJson : function() {
-
-      //JSON HALLAZGOS
       var hallazgo = '{ "nombre": "caries","pieza": "1.1" , "cara": "mesial",  "tipo" : "mancha blanca"}';
       var myObj = JSON.parse(hallazgo);
-      // document.getElementById("id_odontograma_especificaciones").innerHTML = myObj.nombre + " en la cara " +   myObj.cara  + " de la pieza dental " + myObj.pieza ;
-      // document.getElementById("id_odontograma_especificaciones").innerHTML = hallazgo ;
-
-
-
-      // console.log('pieza dentaria' + dataOdontograma.pieza_dentaria);
-      // console.log(JSON.stringify(dataOdontograma));
-      // document.getElementById("id_odontograma_especificaciones").innerHTML = hallazgo;
-
-      // document.getElementById("data-json").innerHTML = hallazgo;
-
-
-
-
     },
+
     activarHallazgo : function() {
         $(".lista-hallazgos li a").on("click", function(e){
             e.preventDefault();
@@ -226,8 +185,6 @@ var dataOdontograma = {
             contenedorHallazgo.removeClass();
             contenedorHallazgo.addClass("contenido-odontograma");
             contenedorHallazgo.addClass(nombreHallazgo);
-
-            $('.texto-seleccione').show();
 
         });
 
@@ -248,72 +205,43 @@ var dataOdontograma = {
             var idLista = $(this).parents("li").attr("id")
             var caraLista = $(this).parents("li").attr("data-pos");
             var caraSigla = $(this).parents("li").attr("data-sigla");
-            console.log(idLista);
-            console.log("cara lista: " + caraLista);
-            console.log("cara sigla: " + caraSigla);
 
-            //Remove color: cara dental
             var listaDientes = $(this).parents(".page-odontograma").find(".svg");
 
-            // console.log(listaDientes);
             $( listaDientes ).each(function( index ) {
                 var idDiente = this.id;
-                // console.log(idDiente);
                 if (idDiente == idLista) {
-                    console.log('id dient' + idDiente);
-                    console.log('id lista' +idLista);
-                    //$(this).find('.active-last').removeClass('active');
-                    // var nombreCaraDiente = $(this).find('.diente').attr("data-pos");
                     var nombreCaraDiente = $(this).find(".diente");
 
                     $( nombreCaraDiente ).each(function( index ) {
                         var caraDiente =  $(this).attr("data-pos");
                         var caraSigla =  $(this).attr("data-sigla");
-                        // console.log("cara diente: " + caraDiente);
                         if (caraLista == caraDiente) {
-                            //console.log("cara diente: " + caraDiente);
-                            //console.log("cara sigla: " + caraSigla);
                             $(this).removeClass("active");
                         }
                     });
-                    // $(this).find(".active").removeClass("active");
                 }
             });
 
-            //Remove Texto Box
             var infoCuadro = $(this).parents(".page-odontograma").find(".box");
             $( infoCuadro ).each(function( index ) {
                 var boxId = this.id;
                 if (boxId == idLista) {
-                    //console.log('id cuadro: ' +boxId);
-                    // $(this).find(".select-tipo").removeClass("show");
-                    // $(this).find(".select-tipo").next().remove();
                     var textoBox = $(this).find(".select-hallazgos").find('span');
 
                     $( textoBox ).each(function( index ) {
                         var textoSigla =  $(this).text();
-                        //console.log('texto Sigla en span: ' + textoSigla);
                         if( textoSigla == caraSigla) {
-                            console.log(caraSigla);
                             $(this).remove();
                         }
                     });
-
-
-                    //  var lisHallazgo = $(this).find(".select-hallazgos").find("span");
-                    //  var nameHallazgo = $(this).find(".select-hallazgos").find("span").val();
-                    //  console.log(lisHallazgo);
-
-                    //  $( lisHallazgo ).each(function( key, value  ) {
-                    //     console.log( key + ": " + value );
-                    //     if (!lisHallazgo == '0') {
-                    //         console.log(nameHallazgo);
-                    //     }
-                    // });
                 }
             });
 
             $(this).parents("li").remove();
+            var jsonTexto = $('#id_odontograma_especificaciones');
+            var valorjsonTexto = jsonTexto.val();
+
         });
     },
   }
@@ -325,58 +253,4 @@ var dataOdontograma = {
        MyApp.activarHallazgo();
        MyApp.eliminarHallazgos();
     }
-
-    function cargarDatos() {
-      // for(var diente in dientes){
-      //   var id_diente = diente;
-      //   for(var hallazagos in dientes[diente]){
-      //   }
-      // }
-
-      //  for ( let i = 0; i < dataOdontograma2.dientes.length; ++i) {
-      //     console.log(`${i} es ${dataOdontograma2.dientes[i]}`);
-      //     for ( var propiedad in dataOdontograma2.dientes[i]) {
-      //       console.log(propiedad, dataOdontograma2.dientes[i][propiedad]);
-      //     }
-      // }
-
-      $("#box-46").find('[data-pos="mesial"]').addClass('active hallazgo-caries');
-
-    }
-
-    // cargarDatos();
-
-    var dientes = {
-        "4.8":{"Lesion de caries dental":"mesial"},
-        "4.6":{"Lesion de caries dental":"distal"},
-        llantas : [
-            { estado: 'ok'},
-            { estado: 'ok'},
-            { estado: 'ok'},
-            { estado: 'pinchada'}
-          ]
-    };
-
-
-    var dienttetotal= {
-        "dientes": [
-        {
-            "48": {
-            "caries":[1,2,3,4,5],
-            "restauracion":[3,4,6]
-            }
-        },
-        {
-            "47": {
-            "1":[5],
-            "25":[3,6],
-            }
-        }
-        ]
-    }
-
-
-
-
-
   });
