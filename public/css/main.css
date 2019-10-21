@@ -57,13 +57,14 @@ body {
 
 /*  Sidebar Odontograma*/
 .opciones-odontologia {
-  height: 200px;
+  height: 207px;
   width: 240px;
   position: fixed;
   top: 150px;
   right: 20px;
   border: 1px solid gray;
-  padding: 5px; }
+  padding: 5px;
+  overflow-x: auto; }
   .opciones-odontologia h5 {
     margin: 0 0 10px 0; }
   .opciones-odontologia p {
@@ -497,6 +498,12 @@ svg.active-dentaria {
       color: blue; }
     .select-hallazgos span.hallazgo-fosas-fisuras-profundas {
       color: blue; }
+    .select-hallazgos span.hallazgo-piesa-dentaria-ectopica {
+      color: blue; }
+    .select-hallazgos span.hallazgo-macrodoncia {
+      color: blue; }
+    .select-hallazgos span.hallazgo-microdoncias {
+      color: blue; }
 
 .contenido-odontograma .diente-restaura .diente.active {
   fill: blue; }
@@ -527,6 +534,22 @@ svg.active-dentaria {
   fill: blue; }
 
 .hallazgo-piesa-dentaria-ectopica .svg:hover {
+  cursor: pointer;
+  fill: blue; }
+
+.hallazgo-macrodoncia .svg:hover {
+  cursor: pointer;
+  fill: blue; }
+
+.hallazgo-microdoncia .svg:hover {
+  cursor: pointer;
+  fill: blue; }
+
+.hallazgo-remanente-radicular .svg:hover {
+  cursor: pointer;
+  fill: blue; }
+
+.hallazgo-movilidad-patologica .svg:hover {
   cursor: pointer;
   fill: blue; }
 

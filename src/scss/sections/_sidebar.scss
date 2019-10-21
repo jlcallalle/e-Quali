@@ -1,13 +1,14 @@
 /*  Sidebar Odontograma*/
 
 .opciones-odontologia {
-    height: 200px;
+    height: 207px;
     width: 240px;
     position: fixed;
     top: 150px;
     right: 20px;
     border: 1px solid gray;
     padding: 5px;
+    overflow-x: auto;
     h5 {
         margin:0 0 10px 0 ;
     }

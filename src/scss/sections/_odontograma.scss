@@ -503,6 +503,15 @@ svg.active-dentaria {
         &.hallazgo-fosas-fisuras-profundas {
             color:blue;;
         }
+        &.hallazgo-piesa-dentaria-ectopica {
+            color:blue;;
+        }
+        &.hallazgo-macrodoncia {
+            color:blue;;
+        }
+        &.hallazgo-microdoncias {
+            color:blue;;
+        }
     }
 }
 
@@ -571,6 +580,38 @@ svg.active-dentaria {
 }
 
 .hallazgo-piesa-dentaria-ectopica {
+    .svg {
+        &:hover {
+            cursor:pointer;
+            fill: blue;
+        }
+    }
+}
+.hallazgo-macrodoncia {
+    .svg {
+        &:hover {
+            cursor:pointer;
+            fill: blue;
+        }
+    }
+}
+.hallazgo-microdoncia {
+    .svg {
+        &:hover {
+            cursor:pointer;
+            fill: blue;
+        }
+    }
+}
+.hallazgo-remanente-radicular {
+    .svg {
+        &:hover {
+            cursor:pointer;
+            fill: blue;
+        }
+    }
+}
+.hallazgo-movilidad-patologica{
     .svg {
         &:hover {
             cursor:pointer;
