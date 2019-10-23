@@ -166,18 +166,24 @@ var dataOdontograma = {
                         // document.getElementById("id_odontograma_especificaciones2").innerHTML = JSON.stringify(parseOdontograma);
                     }
                 });
-
-
                 $(this).remove();
 
             });
 
-            if ( $( contenidoOdontograma ).hasClass( "hallazgo-restauracion-temporal" ) ) {
-                $(this).parent().attr("id");
-                var getid = $(this).parent().attr("id");
-                var piezaPositiona = $(this).find(".active-last").attr("data-pos");
-                $(".lista-hallazgo-detallado").append('<li id=' + getid + ' data-pos="mesial"> <span class="nombre-hallazo"> Restauración Temporal </span> en la cara mesial <span>  CM </span>  de la  pieza dental <span> 45 </span> <a href="#">Eliminar</a> </li >');
 
+            if ( $( contenidoOdontograma ).hasClass( "hallazgo-restauracion-temporal" ) ) {
+                var idDiente = $(this).parents().attr("data-pieza");
+                var wrapperContainer = $(this).parents(".contenido-odontograma");
+                var nombreHallazgo = wrapperContainer.attr("data-texto");
+                console.log('a2: ' + idDiente);
+                console.log('b: ' + nombrePosition);
+                console.log('c: ' + siglaPosition);
+                console.log('c: ' + nombrePosition);
+                console.log('d:'  + nombreHallazgo);
+                // var piezaPositiona = $(this).find(".active-last").attr("data-pos");
+                $(".lista-hallazgo-detallado").append('<li id=' + idDiente + ' data-pos=' +nombrePosition+ ' data-sigla=' +siglaPosition+ ' >'+ '<span class="nombre-hallazo"> ' + nombreHallazgo + '</span>  En la cara '
+                +  nombrePosition + ' <span>  '  + siglaPosition  + ' </span>, de la  pieza dental <span> '
+                + idDiente + '</span> <a href="#">Eliminar</a>  </li>');
             }
 
         });
