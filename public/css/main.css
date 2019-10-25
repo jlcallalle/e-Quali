@@ -502,7 +502,13 @@ svg.active-dentaria {
       color: blue; }
     .select-hallazgos span.hallazgo-macrodoncia {
       color: blue; }
-    .select-hallazgos span.hallazgo-microdoncias {
+    .select-hallazgos span.hallazgo-microdoncia {
+      color: blue; }
+    .select-hallazgos span.hallazgo-iimpactacion {
+      color: blue; }
+    .select-hallazgos span.hallazgo-remanente-radicular {
+      color: blue; }
+    .select-hallazgos span.hallazgo-movilidad-patologica {
       color: blue; }
 
 .contenido-odontograma .diente-restaura .diente.active {
