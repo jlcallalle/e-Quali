@@ -372,11 +372,14 @@ body {
 .hallazgo-caries .diente:hover {
   fill: red; }
 
-.hallazgo-defectos-esmalte .diente:hover {
+.hallazgo-defectos-del-esmalte .diente:hover {
   fill: red; }
 
 .hallazgo-restauracion-definitiva .diente:hover {
   fill: blue; }
+
+.hallazgo-restauracion-definitiva-malo .diente:hover {
+  fill: red; }
 
 .hallazgo-restauracion-temporal .diente:hover {
   stroke: red;
@@ -490,10 +493,12 @@ svg.active-dentaria {
     font-weight: bold; }
     .select-hallazgos span.hallazgo-caries {
       color: red; }
-    .select-hallazgos span.hallazgo-defectos-esmalte {
+    .select-hallazgos span.hallazgo-defectos-del-esmalte {
       color: red; }
     .select-hallazgos span.hallazgo-restauracion-definitiva {
       color: blue; }
+    .select-hallazgos span.hallazgo-restauracion-definitiva-malo {
+      color: red; }
     .select-hallazgos span.hallazgo-poosicion-dentaria {
       color: blue; }
     .select-hallazgos span.hallazgo-fosas-fisuras-profundas {
@@ -519,13 +524,16 @@ svg.active-dentaria {
   .hallazgo-caries.active:hover {
     fill: red; }
 
-.hallazgo-defectos-esmalte.active {
+.hallazgo-defectos-del-esmalte.active {
   fill: red; }
-  .hallazgo-defectos-esmalte.active:hover {
+  .hallazgo-defectos-del-esmalte.active:hover {
     fill: red; }
 
 .hallazgo-restauracion-definitiva.active {
   fill: blue; }
+
+.hallazgo-restauracion-definitiva-malo.active {
+  fill: red; }
 
 .hallazgo-restauracion-temporal.active {
   stroke: red;
@@ -569,5 +577,33 @@ svg.active-dentaria {
 
 .box-inc .select-tipo {
   width: 44px; }
+
+.restaura-estado {
+  position: absolute;
+  top: 0;
+  right: 5px;
+  width: 101px;
+  height: 25px;
+  font-size: 10px;
+  text-align: center;
+  height: 42px;
+  display: none; }
+  .restaura-estado.show {
+    display: block; }
+  .restaura-estado .estados {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    z-index: 99999; }
+    .restaura-estado .estados a {
+      width: 20px;
+      height: 20px; }
+    .restaura-estado .estados .bueno {
+      background: blue; }
+    .restaura-estado .estados .malo {
+      background: red; }
 
 /*# sourceMappingURL=main.css.map */

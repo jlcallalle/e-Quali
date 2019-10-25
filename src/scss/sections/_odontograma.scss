@@ -327,7 +327,7 @@
     }
 }
 
-.hallazgo-defectos-esmalte {
+.hallazgo-defectos-del-esmalte {
     .diente {
         &:hover {
             fill: red;
@@ -339,6 +339,14 @@
     .diente {
         &:hover {
             fill: blue;
+        }
+    }
+}
+
+.hallazgo-restauracion-definitiva-malo {
+    .diente {
+        &:hover {
+            fill: red;
         }
     }
 }
@@ -491,11 +499,14 @@ svg.active-dentaria {
         &.hallazgo-caries {
             color:red;
         }
-        &.hallazgo-defectos-esmalte {
+        &.hallazgo-defectos-del-esmalte {
             color:red;
         }
         &.hallazgo-restauracion-definitiva {
             color:blue;
+        }
+        &.hallazgo-restauracion-definitiva-malo {
+            color:red;
         }
         &.hallazgo-poosicion-dentaria {
             color:blue;;
@@ -547,7 +558,7 @@ svg.active-dentaria {
     }
 }
 
-.hallazgo-defectos-esmalte{
+.hallazgo-defectos-del-esmalte{
     &.active {
         fill:red;
         &:hover {
@@ -561,6 +572,16 @@ svg.active-dentaria {
         fill:blue;
     }
 }
+
+.hallazgo-restauracion-definitiva-malo {
+    &.active {
+        fill:red;
+    }
+}
+
+// .malo .hallazgo-restauracion-definitiva.active {
+//     fill: red;
+// }
 
 .hallazgo-restauracion-temporal{
     &.active {
@@ -640,4 +661,34 @@ svg.active-dentaria {
 
 .box-inc .select-tipo {
     width: 44px;
+}
+
+.restaura-estado {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    width: 101px;
+    height: 25px;
+    font-size: 10px;
+    text-align: center;
+    height: 42px;
+    display:none;
+    &.show {
+        display:block;
+    }
+    .estados {
+        display: flex;
+        justify-content: space-evenly;
+        z-index: 99999;
+        a {
+            width: 20px;
+            height: 20px;
+        }
+        .bueno {
+            background: blue;
+        }
+        .malo {
+            background: red;
+        }
+    }
 }
