@@ -75,7 +75,9 @@ var dataOdontograma = {
                         $( this ).find('.select-hallazgos').append('<span class="hallazgo-microdoncia">MIC<span>');
                     }
                     if (nombreHallazgo == 'hallazgo-movilidad-patologica') {
-                        $( this ).find('.select-hallazgos').append('<span class="hallazgo-movilidad-patologica">M</span>');
+                        // $( this ).find('.select-hallazgos').append('<span class="hallazgo-movilidad-patologica">M</span>');
+                        var selectCaries ="<select class='select-tipo select-movilidad-patologica' name='hallazgo-movilidad-patologica'><option value=''>Elegir</option><option value='M1'>M1</option> <option value='M2'>M2</option> <option value='M3'>M3</option> </select>"
+                        $( this ).find('.select-hallazgos').append(selectCaries);
                     }
                     if (nombreHallazgo == 'hallazgo-impactacion') {
                         $( this ).find('.select-hallazgos').append('<span class="hallazgo-impactacion">I</span>');
@@ -103,6 +105,7 @@ var dataOdontograma = {
 
 
             } else if ($(contenidoOdontograma).is('[data-tipo~="4"]')){
+                console.log('aaaa tipo 4');
                 var idDiente = $(this).parents("svg").attr("id");
                 var piezaDiente = $(this).parents("svg").attr("data-pieza");
                 console.log('pieza: '+piezaDiente);
@@ -110,6 +113,12 @@ var dataOdontograma = {
                 var nombreHallazgo = wrapperContainer.attr("data-texto");
                 $(".lista-hallazgo-detallado").append('<li id=' + idDiente + ' data-pos=' +nombrePosition+ ' data-sigla=' +siglaPosition+ ' >'+ '<span class="nombre-hallazo"> ' + nombreHallazgo + ' </span>: En la  pieza dental <span> '
                 + piezaDiente + '</span> <a href="#">Eliminar</a>  </li>');
+
+                // $(this).parents(".cont-diente").addClass('.disable');
+
+                // $(this).addClass('.disable');
+                // $(this).attr("disabled", true);
+
             }
 
 
