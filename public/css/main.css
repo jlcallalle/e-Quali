@@ -88,21 +88,49 @@ body {
     color: red; }
   .lista-hallazgos li.opcion-caries a:hover {
     color: red; }
-  .lista-hallazgos li.opcion-defectos-esmalte a.active {
+  .lista-hallazgos li.opcion-defectos-del-esmalte a.active {
     color: red; }
-  .lista-hallazgos li.opcion-defectos-esmalte a:hover {
+  .lista-hallazgos li.opcion-defectos-del-esmalte a:hover {
     color: red; }
-  .lista-hallazgos li.opcion-restauracion-ref a.active {
+  .lista-hallazgos li.opcion-restauracion-definitiva a.active {
     color: blue; }
-  .lista-hallazgos li.opcion-restauracion-ref a:hover {
+  .lista-hallazgos li.opcion-restauracion-definitiva a:hover {
     color: blue; }
-  .lista-hallazgos li.opcion-restauracion-tem a.active {
-    color: #47add7; }
-  .lista-hallazgos li.opcion-restauracion-tem a:hover {
-    color: #47add7; }
+  .lista-hallazgos li.opcion-restauracion-temporal a.active {
+    color: green; }
+  .lista-hallazgos li.opcion-restauracion-temporal a:hover {
+    color: green; }
   .lista-hallazgos li.opcion-posicion-dentaria a.active {
     color: green; }
   .lista-hallazgos li.opcion-posicion-dentaria a:hover {
+    color: green; }
+  .lista-hallazgos li.opcion-fosas-fisuras-profundas a.active {
+    color: green; }
+  .lista-hallazgos li.opcion-fosas-fisuras-profundas a:hover {
+    color: green; }
+  .lista-hallazgos li.opcion-piesa-dentaria-ectopica a.active {
+    color: green; }
+  .lista-hallazgos li.opcion-piesa-dentaria-ectopica a:hover {
+    color: green; }
+  .lista-hallazgos li.opcion-macrodoncia a.active {
+    color: green; }
+  .lista-hallazgos li.opcion-macrodoncia a:hover {
+    color: green; }
+  .lista-hallazgos li.opcion-microdoncia a.active {
+    color: green; }
+  .lista-hallazgos li.opcion-microdoncia a:hover {
+    color: green; }
+  .lista-hallazgos li.opcion-movilidad-patologica a.active {
+    color: green; }
+  .lista-hallazgos li.opcion-movilidad-patologica a:hover {
+    color: green; }
+  .lista-hallazgos li.opcion-impactacion a.active {
+    color: green; }
+  .lista-hallazgos li.opcion-impactacion a:hover {
+    color: green; }
+  .lista-hallazgos li.opcion-remanente-radicular a.active {
+    color: green; }
+  .lista-hallazgos li.opcion-remanente-radicular a:hover {
     color: green; }
 
 .page-odontograma {
@@ -447,6 +475,7 @@ svg.active-dentaria {
     width: 800px; }
 
 .lista-hallazgo-detallado {
+  padding: 0;
   list-style: none; }
   .lista-hallazgo-detallado li {
     font-size: 14px; }
@@ -499,7 +528,7 @@ svg.active-dentaria {
       color: blue; }
     .select-hallazgos span.hallazgo-restauracion-definitiva-malo {
       color: red; }
-    .select-hallazgos span.hallazgo-poosicion-dentaria {
+    .select-hallazgos span.hallazgo-posicion-dentaria {
       color: blue; }
     .select-hallazgos span.hallazgo-fosas-fisuras-profundas {
       color: blue; }
@@ -509,10 +538,10 @@ svg.active-dentaria {
       color: blue; }
     .select-hallazgos span.hallazgo-microdoncia {
       color: blue; }
-    .select-hallazgos span.hallazgo-iimpactacion {
+    .select-hallazgos span.hallazgo-impactacion {
       color: blue; }
     .select-hallazgos span.hallazgo-remanente-radicular {
-      color: blue; }
+      color: red; }
     .select-hallazgos span.hallazgo-movilidad-patologica {
       color: blue; }
 
@@ -539,7 +568,7 @@ svg.active-dentaria {
   stroke: red;
   stroke-width: 15px; }
 
-.hallazgo-poosicion-dentaria .svg:hover {
+.hallazgo-posicion-dentaria .svg:hover {
   cursor: pointer;
   fill: blue; }
 
@@ -556,6 +585,10 @@ svg.active-dentaria {
   fill: blue; }
 
 .hallazgo-microdoncia .svg:hover {
+  cursor: pointer;
+  fill: blue; }
+
+.hallazgo-impactacion .svg:hover {
   cursor: pointer;
   fill: blue; }
 
@@ -605,5 +638,20 @@ svg.active-dentaria {
       background: blue; }
     .restaura-estado .estados .malo {
       background: red; }
+
+.list-editable {
+  list-style: none;
+  counter-reset: my-awesome-counter; }
+  .list-editable li span:first-child {
+    counter-increment: my-awesome-counter; }
+    .list-editable li span:first-child:before {
+      content: counter(my-awesome-counter) ".- ";
+      color: black; }
+
+.hide {
+  display: none; }
+
+.lista-hallazgos {
+  padding: 0; }
 
 /*# sourceMappingURL=main.css.map */

@@ -364,7 +364,7 @@
     }
 }
 
-.hallazgo-poosicion-dentaria {
+.hallazgo-posicion-dentaria {
     // .diente {
     //     &:hover {
     //         fill: green;
@@ -445,6 +445,7 @@ svg.active-dentaria {
 }
 
 .lista-hallazgo-detallado {
+    padding: 0;
     list-style: none;
     li {
         font-size: 14px;
@@ -508,7 +509,7 @@ svg.active-dentaria {
         &.hallazgo-restauracion-definitiva-malo {
             color:red;
         }
-        &.hallazgo-poosicion-dentaria {
+        &.hallazgo-posicion-dentaria {
             color:blue;;
         }
         &.hallazgo-fosas-fisuras-profundas {
@@ -523,11 +524,11 @@ svg.active-dentaria {
         &.hallazgo-microdoncia {
             color:blue;;
         }
-        &.hallazgo-iimpactacion {
+        &.hallazgo-impactacion {
             color:blue;;
         }
         &.hallazgo-remanente-radicular {
-            color:blue;;
+            color:red;;
         }
         &.hallazgo-movilidad-patologica {
             color:blue;;
@@ -579,10 +580,6 @@ svg.active-dentaria {
     }
 }
 
-// .malo .hallazgo-restauracion-definitiva.active {
-//     fill: red;
-// }
-
 .hallazgo-restauracion-temporal{
     &.active {
         stroke: red;
@@ -591,7 +588,7 @@ svg.active-dentaria {
 }
 
 
-.hallazgo-poosicion-dentaria {
+.hallazgo-posicion-dentaria {
     .svg {
         &:hover {
             cursor:pointer;
@@ -626,6 +623,14 @@ svg.active-dentaria {
     }
 }
 .hallazgo-microdoncia {
+    .svg {
+        &:hover {
+            cursor:pointer;
+            fill: blue;
+        }
+    }
+}
+.hallazgo-impactacion {
     .svg {
         &:hover {
             cursor:pointer;
@@ -692,3 +697,28 @@ svg.active-dentaria {
         }
     }
 }
+
+.list-editable {
+    list-style: none;
+    counter-reset: my-awesome-counter;
+    li {
+        span {
+            &:first-child {
+                counter-increment: my-awesome-counter;
+                &:before {
+                    content: counter(my-awesome-counter) ".- ";
+                    color:black;
+                }
+            }
+        }
+    }
+}
+
+.hide {
+    display:none;
+  }
+
+.lista-hallazgos {
+    padding: 0;
+}
+

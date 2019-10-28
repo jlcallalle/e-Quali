@@ -46,7 +46,7 @@
                 }
             }
         }
-        &.opcion-defectos-esmalte {
+        &.opcion-defectos-del-esmalte {
             a {
                 &.active {
                     color:red;
@@ -56,7 +56,7 @@
                 }
             }
         }
-        &.opcion-restauracion-ref {
+        &.opcion-restauracion-definitiva {
             a {
                 &.active {
                     color:blue;
@@ -66,17 +66,87 @@
                 }
             }
         }
-        &.opcion-restauracion-tem {
+        &.opcion-restauracion-temporal {
             a {
                 &.active {
-                    color:#47add7;
+                    color:green;
                 }
                 &:hover {
-                    color:#47add7;
+                    color:green;
                 }
             }
         }
         &.opcion-posicion-dentaria {
+            a {
+                &.active {
+                    color:green;
+                }
+                &:hover {
+                    color:green;
+                }
+            }
+        }
+        &.opcion-fosas-fisuras-profundas {
+            a {
+                &.active {
+                    color:green;
+                }
+                &:hover {
+                    color:green;
+                }
+            }
+        }
+        &.opcion-piesa-dentaria-ectopica{
+            a {
+                &.active {
+                    color:green;
+                }
+                &:hover {
+                    color:green;
+                }
+            }
+        }
+        &.opcion-macrodoncia {
+            a {
+                &.active {
+                    color:green;
+                }
+                &:hover {
+                    color:green;
+                }
+            }
+        }
+        &.opcion-microdoncia {
+            a {
+                &.active {
+                    color:green;
+                }
+                &:hover {
+                    color:green;
+                }
+            }
+        }
+        &.opcion-movilidad-patologica {
+            a {
+                &.active {
+                    color:green;
+                }
+                &:hover {
+                    color:green;
+                }
+            }
+        }
+        &.opcion-impactacion {
+            a {
+                &.active {
+                    color:green;
+                }
+                &:hover {
+                    color:green;
+                }
+            }
+        }
+        &.opcion-remanente-radicular {
             a {
                 &.active {
                     color:green;
