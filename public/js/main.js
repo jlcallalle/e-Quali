@@ -11,27 +11,29 @@ var dataOdontograma = {
     eventoDientes : function() {
         $(".cont-diente .diente").on("click", function(e){
 
-            $(".cont-diente .diente").removeClass("active-last");
-            $(this).addClass("active-last");
-            var nombrePosition = $(this).attr("data-pos");
-            var siglaPosition = $(this).attr("data-sigla");
-            $(".opciones-odontologia p").removeClass("show");
-
-            var idDiente = $(this).parents("svg").attr("id");
-            var cuadroDiente = $(this).parents(".box-lista-dientes").siblings().find(".box");
-
+            //deteremina nombre hallazgo y tipo
             var contenidoOdontograma = $(this).parents(".contenido-odontograma");
             var nombreHallazgo =  contenidoOdontograma.attr("data-name");
             var tipoHallazgo =  contenidoOdontograma.attr("data-tipo");
-             console.log('nombre hallazgo: ' + nombreHallazgo);
-             console.log('tipo hallazgo: ' + tipoHallazgo);
-
+            console.log('nombre hallazgo: ' + nombreHallazgo);
+            console.log('tipo hallazgo: ' + tipoHallazgo);
 
             $(this).toggleClass("active");
             $(this).toggleClass(nombreHallazgo);
+            $(".cont-diente .diente").removeClass("active-last");
+            $(this).addClass("active-last");
+
+
+            var nombrePosition = $(this).attr("data-pos");
+            var siglaPosition = $(this).attr("data-sigla");
+
+            var idDiente = $(this).parents("svg").attr("id"); //box-48
+            var cuadroDiente = $(this).parents(".box-lista-dientes").siblings().find(".box");
+
 
             $( cuadroDiente ).each(function( index ) {
                 var idCuadro = this.id;
+                console.log(idCuadro);
 
                 if (idCuadro == idDiente) {
 
@@ -40,59 +42,58 @@ var dataOdontograma = {
                         $( this ).find('.select-hallazgos').append(selectCaries);
                     }
 
-                    if (nombreHallazgo == 'hallazgo-defectos-del-esmalte') {
+                    if (nombreHallazgo == 'hallazgo-defectos-del-esmalte') {  //tipo 1
                         var selectCaries ="<select class='select-tipo select-defectos-esmalte' name='hallazgo-defectos-del-esmalte'><option value=''>Elegir</option><option value='Hipoplasia'>HP</option> <option value='Hipo Mineralización' >HM</option> <option value='Opacidades de Esmalte'>O</option> <option value='Decoloración del Esmalte'>D</option><option value='Fluorosis'>Fluorosis</option></select>"
                         $( this ).find('.select-hallazgos').append(selectCaries);
                     }
 
-                    if (nombreHallazgo == 'hallazgo-restauracion-definitiva') {
+                    if (nombreHallazgo == 'hallazgo-restauracion-definitiva') {  //tipo 2
                         var selectCaries ="<select class='select-tipo select-restauracion-definitiva' name='hallazgo-restauracion-definitiva'><option value=''>Elegir</option><option value='Amalgama Dental'>AD</option> <option value='Resina' >R</option> <option value='Ionónedo de vidrio'>IV</option><option value='Incrustación Estética'>IE</option><option value='Canilla Estética'>C</option></select>"
                         $( this ).find('.select-hallazgos').append(selectCaries);
                     }
 
-                    if (nombreHallazgo == 'hallazgo-restauracion-definitiva-malo') {
+                    if (nombreHallazgo == 'hallazgo-restauracion-definitiva-malo') { //tipo 2
                         var selectCaries ="<select class='select-tipo select-restauracion-definitiva' name='hallazgo-restauracion-definitiva-malo'><option value=''>Elegir</option><option value='Amalgama Dental'>AD</option> <option value='Resina' >R</option> <option value='Ionónedo de vidrio'>IV</option><option value='Incrustación Estética'>IE</option><option value='Canilla Estética'>C</option></select>"
                         $( this ).find('.select-hallazgos').append(selectCaries);
                     }
 
-                    if (nombreHallazgo == 'hallazgo-posicion-dentaria') { //tipo 3
+                    if (nombreHallazgo == 'hallazgo-posicion-dentaria') { //tipo 4
                         var selectCaries ="<select class='select-tipo select-restauracion-definitiva' name='hallazgo-posicion-dentaria'><option value=''>Elegir</option><option value='Mesializado'>M</option> <option value='Distalizado'>D</option> <option value='Vestibularizado'>V</option><option value='Palatinizado'>P</option><option value='Lingualizado'>L</option></select>"
                         $( this ).find('.select-hallazgos').append(selectCaries);
                     }
-
-                    if (nombreHallazgo == 'hallazgo-fosas-fisuras-profundas') {
-                        $( this ).find('.select-hallazgos').append('<span class="hallazgo-fosas-fisuras-profundas">FFP</span>');
-                    }
-
-                    if (nombreHallazgo == 'hallazgo-piesa-dentaria-ectopica') {
-                        $( this ).find('.select-hallazgos').append('<span class="hallazgo-piesa-dentaria-ectopica">E</span>');
-                    }
-
-                    if (nombreHallazgo == 'hallazgo-macrodoncia') {
-                        $( this ).find('.select-hallazgos').append('<span class="hallazgo-macrodoncia">MAC</span>');
-                    }
-                    if (nombreHallazgo == 'hallazgo-microdoncia') {
-                        $( this ).find('.select-hallazgos').append('<span class="hallazgo-microdoncia">MIC<span>');
-                    }
-                    if (nombreHallazgo == 'hallazgo-movilidad-patologica') {
-                        // $( this ).find('.select-hallazgos').append('<span class="hallazgo-movilidad-patologica">M</span>');
+                    if (nombreHallazgo == 'hallazgo-movilidad-patologica') {  //tipo 4
                         var selectCaries ="<select class='select-tipo select-movilidad-patologica' name='hallazgo-movilidad-patologica'><option value=''>Elegir</option><option value='M1'>M1</option> <option value='M2'>M2</option> <option value='M3'>M3</option> </select>"
                         $( this ).find('.select-hallazgos').append(selectCaries);
                     }
-                    if (nombreHallazgo == 'hallazgo-impactacion') {
+
+                    if (nombreHallazgo == 'hallazgo-fosas-fisuras-profundas') { //tipo 5
+                        $( this ).find('.select-hallazgos').append('<span class="hallazgo-fosas-fisuras-profundas">FFP</span>');
+                    }
+
+                    if (nombreHallazgo == 'hallazgo-piesa-dentaria-ectopica') { //tipo 5
+                        $( this ).find('.select-hallazgos').append('<span class="hallazgo-piesa-dentaria-ectopica">E</span>');
+                    }
+
+                    if (nombreHallazgo == 'hallazgo-macrodoncia') { //tipo 5
+                        $( this ).find('.select-hallazgos').append('<span class="hallazgo-macrodoncia">MAC</span>');
+                    }
+                    if (nombreHallazgo == 'hallazgo-microdoncia') { //tipo 5
+                        $( this ).find('.select-hallazgos').append('<span class="hallazgo-microdoncia">MIC<span>');
+                    }
+
+                    if (nombreHallazgo == 'hallazgo-impactacion') { //tipo 5
                         $( this ).find('.select-hallazgos').append('<span class="hallazgo-impactacion">I</span>');
                     }
 
-                    if (nombreHallazgo == 'hallazgo-remanente-radicular') {
+                    if (nombreHallazgo == 'hallazgo-remanente-radicular') { //tipo 5
                         $( this ).find('.select-hallazgos').append('<span class="hallazgo-remanente-radicular">RR</span>');
                     }
-
                 }
 
             });
 
 
-            if( $(contenidoOdontograma).is('[data-tipo~="2"]') ) {
+            if( $(contenidoOdontograma).is('[data-tipo~="3"]') ) { //tipo 3: Restauración temporal
                 var idDiente = $(this).parents("svg").attr("id");
                 var piezaDiente = $(this).parents("svg").attr("data-pieza");
                 var wrapperContainer = $(this).parents(".contenido-odontograma");
@@ -101,10 +102,7 @@ var dataOdontograma = {
                 +  nombrePosition + ' <span>  '  + siglaPosition  + ' </span>, de la  pieza dental <span> '
                 + piezaDiente + '</span> <a href="#">Eliminar</a>  </li>');
 
-            } else if($(contenidoOdontograma).is('[data-tipo~="3"]')) {
-
-
-            } else if ($(contenidoOdontograma).is('[data-tipo~="4"]')){
+            } else if ($(contenidoOdontograma).is('[data-tipo~="5"]')){
                 console.log('aaaa tipo 4');
                 var idDiente = $(this).parents("svg").attr("id");
                 var piezaDiente = $(this).parents("svg").attr("data-pieza");
@@ -113,20 +111,19 @@ var dataOdontograma = {
                 var nombreHallazgo = wrapperContainer.attr("data-texto");
                 $(".lista-hallazgo-detallado").append('<li id=' + idDiente + ' data-pos=' +nombrePosition+ ' data-sigla=' +siglaPosition+ ' >'+ '<span class="nombre-hallazo"> ' + nombreHallazgo + ' </span>: En la  pieza dental <span> '
                 + piezaDiente + '</span> <a href="#">Eliminar</a>  </li>');
-
                 // $(this).parents(".cont-diente").addClass('.disable');
-
                 // $(this).addClass('.disable');
                 // $(this).attr("disabled", true);
-
             }
 
 
             $(".select-tipo").change(function(){
                 var codLesion = $(this).children("option:selected").text();
                 var nombreLesion = $(this).children("option:selected").val();
-
                 var nameSelec = $(this).attr("name");
+                console.log(codLesion);
+                console.log(nombreLesion);
+                console.log(nameSelec);
 
                 if (codLesion !== "Elegir") {
                     $(this).parent().append('<span  class='+ nameSelec + '>' + codLesion  + '</span> ');
@@ -151,7 +148,6 @@ var dataOdontograma = {
                             $(".lista-hallazgo-detallado").append('<li id=' + idBox + ' data-pos=' +piezaPosition+ ' data-sigla=' +codLesion+ ' >'+ '<span class="nombre-hallazo"> ' +nombreHallazgo+ '</span> : ' + nombreLesion + ' <span>'+ (codLesion) + ' </span>,  en la cara '
                             +  piezaPosition + ' <span>  '  + siglaPosition  + ' </span>, de la  pieza dental <span> '
                             + idDiente + '</span> <a href="#">Eliminar</a>  </li> ');
-
                         }
 
                         if( idDiente in dientes) {
@@ -182,6 +178,7 @@ var dataOdontograma = {
 
                         // var parseOdontograma = JSON.parse(dataOdontograma);
                         // document.getElementById("id_odontograma_especificaciones2").innerHTML = JSON.stringify(parseOdontograma);
+
                     }
                 });
                 $(this).remove();
@@ -203,7 +200,7 @@ var dataOdontograma = {
             nombreHallazgo = $(this).attr("id");
             textoHallazgo = $(this).attr("data-texto");
             tipoHallazgo = $(this).attr("data-tipo");
-            console.log(tipoHallazgo);
+            console.log('opciones: ' + tipoHallazgo);
 
             $(".lista-hallazgos li a").removeClass("active");
             $(this).addClass("active");
@@ -222,20 +219,29 @@ var dataOdontograma = {
             } else {
                 $('.restaura-estado').removeClass('show');
             }
+
+            $("#hallazgo-restauracion-definitiva-malo").toggleClass('actiive');
         });
 
 
-        $( ".bueno" ).click(function(e) {
+        $( ".estados .bueno" ).click(function(e) {
             e.preventDefault();
             e.stopPropagation();
             $("#hallazgo-restauracion-definitiva").trigger("click")
         });
-
-        $(".cont-diente.diente-restaura .diente").on("click", function(e){
-            $(this).toggleClass("active-restaura");
-            var nombrePosition = $(this).attr("data-pos");
-            var siglaPosition = $(this).attr("data-sigla");
+        $( ".estados .malo" ).click(function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('hola malo');
+            $("#hallazgo-restauracion-definitiva").toggleClass('active');
         });
+
+        // $(".cont-diente.diente-restaura .diente").on("click", function(e){
+        //     alert('diente restaura');
+        //     $(this).toggleClass("active-restaura");
+        //     var nombrePosition = $(this).attr("data-pos");
+        //     var siglaPosition = $(this).attr("data-sigla");
+        // });
 
 
         $("#hallazgo-caries").click();
@@ -249,8 +255,6 @@ var dataOdontograma = {
             var idLista = $(this).parents("li").attr("id")
             var caraLista = $(this).parents("li").attr("data-pos");
             var caraSigla = $(this).parents("li").attr("data-sigla");
-
-
 
             var listaDientes = $(this).parents(".page-odontograma").find(".svg");
 
@@ -271,35 +275,31 @@ var dataOdontograma = {
             });
 
 
-
             var textoHallazgo = $(this).parents("li").find(".nombre-hallazo").text().trim();
-            console.log(textoHallazgo);
+            var infoCuadro = $(this).parents(".page-odontograma").find(".box");
+            $( infoCuadro ).each(function( index ) {
+                var boxId = this.id;
+                if (boxId == idLista) {
+                    var textoBox = $(this).find(".select-hallazgos").find('span');
 
+                    if ( textoHallazgo == 'Remanente radicular' || textoHallazgo == 'Impactacion' || textoHallazgo == 'Fosas y Fisuras Profundas' || textoHallazgo == 'Pieza dentaria ectopica' || textoHallazgo == 'Macrodoncia' || textoHallazgo == 'Microdoncia'  ) {
+                        textoBox.remove();
 
-                var infoCuadro = $(this).parents(".page-odontograma").find(".box");
-                $( infoCuadro ).each(function( index ) {
-                    var boxId = this.id;
-                    if (boxId == idLista) {
-                        var textoBox = $(this).find(".select-hallazgos").find('span');
-
-                        if ( textoHallazgo == 'Remanente radicular' || textoHallazgo == 'Impactacion' || textoHallazgo == 'Fosas y Fisuras Profundas' || textoHallazgo == 'Pieza dentaria ectopica' || textoHallazgo == 'Macrodoncia' || textoHallazgo == 'Microdoncia'  ) {
-                            textoBox.remove();
-
-                        } else {
-                             $( textoBox ).each(function( index ) {
-                                var textoSigla =  $(this).text();
-                                if( textoSigla == caraSigla) {
-                                    $(this).remove();
-                                }
-                            });
-                        }
-
+                    } else {
+                            $( textoBox ).each(function( index ) {
+                            var textoSigla =  $(this).text();
+                            if( textoSigla == caraSigla) {
+                                $(this).remove();
+                            }
+                        });
                     }
-                });
+
+                }
+            });
 
             $(this).parents("li").remove();
-            var jsonTexto = $('#id_odontograma_especificaciones');
-            var valorjsonTexto = jsonTexto.val();
+            // var jsonTexto = $('#id_odontograma_especificaciones');
+            // var valorjsonTexto = jsonTexto.val();
 
         });
     },
@@ -311,8 +311,6 @@ var dataOdontograma = {
        MyApp.eventJson();
        MyApp.activarHallazgo();
        MyApp.eliminarHallazgos();
-
-
 
     }
   });

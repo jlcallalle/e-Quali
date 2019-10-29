@@ -463,7 +463,9 @@ svg.active-dentaria {
   max-width: 825px;
   border: 1px solid gray;
   padding: 20px 10px;
-  margin: 0 0 20px 0; }
+  margin: 0 0 20px 0;
+  max-height: 240px;
+  overflow: auto; }
   .box-contenido h4 {
     font-size: 14px;
     margin: 0 0 10px 0;
@@ -543,7 +545,7 @@ svg.active-dentaria {
     .select-hallazgos span.hallazgo-remanente-radicular {
       color: red; }
     .select-hallazgos span.hallazgo-movilidad-patologica {
-      color: blue; }
+      color: red; }
 
 .contenido-odontograma .diente-restaura .diente.active {
   fill: blue; }
