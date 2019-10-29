@@ -551,15 +551,16 @@ svg.active-dentaria {
     fill: blue;
 }
 
-
-.hallazgo-caries{
-    &.active {
-        fill:red;
-        &:hover {
-            fill: red;
+// .seleccionado {
+    .hallazgo-caries{
+        &.active {
+            fill:red;
+            &:hover {
+                fill: red;
+            }
         }
     }
-}
+// }
 
 .hallazgo-defectos-del-esmalte{
     &.active {

@@ -30,14 +30,12 @@ var dataOdontograma = {
             var idDiente = $(this).parents("svg").attr("id"); //box-48
             var cuadroDiente = $(this).parents(".box-lista-dientes").siblings().find(".box");
 
+            if ( $(this).parents("svg").hasClass("pre-seleccionado") ) {
+                console.log('se agrega pre-seleccionado');
+            }
 
-            //eliminar combobox de elementos no seleccioandos
-
+            $(this).parents("svg").addClass('pre-seleccionado');
             $('.select-tipo').remove();
-
-            $(this).parents("svg").addClass('pres-eleccionado');
-
-
 
 
             $( cuadroDiente ).each(function( index ) {
@@ -164,6 +162,12 @@ var dataOdontograma = {
                             + idDiente + '</span> <a href="#">Eliminar</a>  </li> '); //completo
                         }
 
+                        $(this).addClass('seleccionado');
+                        $(this).removeClass('pre-seleccionado');
+
+
+
+                        // Json Arrays save
                         if( idDiente in dientes) {
                           if(nombreHallazgo in dientes[idDiente]){
                             dientes[idDiente][nombreHallazgo][piezaPosition] = true;
@@ -195,11 +199,14 @@ var dataOdontograma = {
 
                     }
                 });
+                $(this).remove();
 
-                //$(this).remove();
                 //mostrar referencia diente seleccionado
-
             });
+
+            // $(document).on('change', '.select-tipo', function(){
+            //     console.log('termina change');
+            // });
 
         });
     },
