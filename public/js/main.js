@@ -38,6 +38,10 @@ var dataOdontograma = {
             $('.select-tipo').remove();
 
 
+            //diente ausente
+            // $(this).parents("svg").toggleClass('active-ausente');
+
+
             $( cuadroDiente ).each(function( index ) {
                 var idCuadro = this.id;
 
@@ -95,6 +99,11 @@ var dataOdontograma = {
                     if (nombreHallazgo == 'hallazgo-remanente-radicular') { //tipo 5
                         $( this ).find('.select-hallazgos').append('<span class="hallazgo-remanente-radicular">RR</span>');
                     }
+
+                    if (nombreHallazgo == 'hallazgo-pieza-dentaria-ausente') {
+                        console.log('ausente');
+
+                     }
                 }
 
             });
@@ -108,6 +117,8 @@ var dataOdontograma = {
                 $(".lista-hallazgo-detallado").append('<li id=' + idDiente + ' data-pos=' +nombrePosition+ ' data-sigla=' +siglaPosition+ ' >'+ '<span class="nombre-hallazo"> ' + nombreHallazgo + ' : </span>  En la cara '
                 +  nombrePosition + ' <span>  '  + siglaPosition  + ' </span>, de la  pieza dental <span> '
                 + piezaDiente + '</span> <a href="#">Eliminar</a>  </li>');
+
+
 
             } else if ($(contenidoOdontograma).is('[data-tipo~="5"]')){
                 console.log('aaaa tipo 4');

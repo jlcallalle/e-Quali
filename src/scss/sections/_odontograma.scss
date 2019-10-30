@@ -364,13 +364,14 @@
     }
 }
 
-.hallazgo-posicion-dentaria {
-    // .diente {
-    //     &:hover {
-    //         fill: green;
-    //     }
-    // }
-}
+// .hallazgo-pieza-dentaria-ausente {
+//     .diente {
+//         &:hover {
+//             fill: red;
+//         }
+//     }
+// }
+
 
 
 svg.active-dentaria {
@@ -657,7 +658,22 @@ svg.active-dentaria {
         }
     }
 }
+.hallazgo-pieza-dentaria-ausente {
+    .svg {
+        &:hover {
+            .icon-ausente {
+                fill:blue;
+            }
+        }
+    }
 
+}
+
+.active-ausente {
+    .icon-ausente {
+        fill:blue;
+    }
+}
 .select-tipo {
     background-color: #FFFFFF;
     border: 1px solid #5183AF;
@@ -725,3 +741,6 @@ svg.active-dentaria {
     padding: 0;
 }
 
+.active .icon-ausente {
+    fill:blue;
+}

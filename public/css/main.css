@@ -602,6 +602,12 @@ svg.active-dentaria {
   cursor: pointer;
   fill: blue; }
 
+.hallazgo-pieza-dentaria-ausente .svg:hover .icon-ausente {
+  fill: blue; }
+
+.active-ausente .icon-ausente {
+  fill: blue; }
+
 .select-tipo {
   background-color: #FFFFFF;
   border: 1px solid #5183AF;
@@ -655,5 +661,8 @@ svg.active-dentaria {
 
 .lista-hallazgos {
   padding: 0; }
+
+.active .icon-ausente {
+  fill: blue; }
 
 /*# sourceMappingURL=main.css.map */
