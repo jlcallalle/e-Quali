@@ -1,3 +1,4 @@
+
 var dataOdontograma = {
     "caries": [],
     "restauracion": [],
@@ -316,7 +317,7 @@ var dataOdontograma = {
                 if (boxId == idLista) {
                     var textoBox = $(this).find(".select-hallazgos").find('span');
 
-                    if ( textoHallazgo == 'Remanente radicular' || textoHallazgo == 'Impactacion' || textoHallazgo == 'Fosas y Fisuras Profundas' || textoHallazgo == 'Pieza dentaria ectopica' || textoHallazgo == 'Macrodoncia' || textoHallazgo == 'Microdoncia'  ) {
+                    if ( textoHallazgo == 'Remanente radicular' || textoHallazgo == 'Impactacion' || textoHallazgo == 'Fosas y fisuras profundas' || textoHallazgo == 'Pieza dentaria ectopica' || textoHallazgo == 'Macrodoncia' || textoHallazgo == 'Microdoncia'  ) {
                         textoBox.remove();
 
                     } else {
