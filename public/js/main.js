@@ -124,9 +124,6 @@ var dataOdontograma = {
                 + piezaDiente + '</span> <a href="#">Eliminar</a>  </li>');
 
 
-
-
-
             } else if ($(contenidoOdontograma).is('[data-tipo~="5"]')){   //tipo 5: //Macrodoncia
                 console.log('aaaa tipo 4');
                 var idDiente = $(this).parents("svg").attr("id");
@@ -141,89 +138,94 @@ var dataOdontograma = {
                 // $(this).attr("disabled", true);
             }
 
-
-            $(".select-tipo").change(function(){
-                var codLesion = $(this).children("option:selected").text();
-                var nombreLesion = $(this).children("option:selected").val();
-                var nameSelec = $(this).attr("name");
-                console.log(codLesion);
-                console.log(nombreLesion);
-                console.log(nameSelec);
-
-                if (codLesion !== "Elegir") {
-                    $(this).parent().append('<span  class='+ nameSelec + '>' + codLesion  + '</span> ');
-                }
-
-                var idDiente = $(this).parents(".box").attr("data-pieza");
-                var idBox = $(this).parents(".box").attr("id"); //box-48
-
-                var wrapperContainer = $(this).parents(".contenido-odontograma");
-                var nombreHallazgo = wrapperContainer.attr("data-texto");
-                var idTipo = wrapperContainer.attr("data-tipo");
-
-                console.log('select hallazgo: ' + nombreHallazgo);
-
-                var parteDental = $(this).parents(".box-options").siblings().find(".svg");
-                $( parteDental ).each(function( index ) {
-                    var idParte = this.id;
-                    if (idBox == idParte) {
-                        var piezaPosition = $(this).find(".active-last").attr("data-pos");
-                        var siglaPosition = $(this).find(".active-last").attr("data-sigla");
-
-                        if(idTipo == '4' ||  idTipo == '5' ){
-                            $(".lista-hallazgo-detallado").append('<li id=' + idBox + ' data-pos=' +piezaPosition+ ' data-sigla=' +codLesion+ ' >'+ '<span class="nombre-hallazo"> ' +nombreHallazgo+ '</span> : ' + nombreLesion + ' <span>'+ (codLesion) + ' </span>, de la  pieza dental <span> '
-                            + idDiente + '</span> <a href="#">Eliminar</a>  </li> ');
-
-                        } else {
-                            $(".lista-hallazgo-detallado").append('<li id=' + idBox + ' data-pos=' +piezaPosition+ ' data-sigla=' +codLesion+ ' >'+ '<span class="nombre-hallazo"> ' +nombreHallazgo+ '</span> : ' + nombreLesion + ' <span>'+ (codLesion) + ' </span>,  en la cara '
-                            +  piezaPosition + ' <span>  '  + siglaPosition  + ' </span>, de la  pieza dental <span> '
-                            + idDiente + '</span> <a href="#">Eliminar</a>  </li> '); //completo
-                        }
-
-                        $(this).addClass('seleccionado');
-                        $(this).removeClass('pre-seleccionado');
-
-
-                        // Json Arrays save
-                        if( idDiente in dientes) {
-                          if(nombreHallazgo in dientes[idDiente]){
-                            dientes[idDiente][nombreHallazgo][piezaPosition] = true;
-                          }
-
-                        } else {
-                          dientes[idDiente]={};
-
-                          if (nombreHallazgo in dientes[idDiente]){
-                          } else {
-                            dientes[idDiente][nombreHallazgo] ={}
-                            dientes[idDiente][nombreHallazgo][piezaPosition] = true;
-                          }
-                       }
-
-                       $("#id_odontograma_especificaciones").html(JSON.stringify(dientes));
-
-                        // dataOdontograma.caries.push({
-                        //     "numero_pieza":idDiente,
-                        //     "posicion_pieza":piezaPosition,
-                        //     "hallazgo_pieza":nombreHallazgo,
-                        // })
-
-                        // document.getElementById("data-json").innerHTML =
-                        // dataOdontograma.caries[0].hallazgo_pieza  + " en la cara " + dataOdontograma.caries[0].posicion_pieza   + " de la pieza dental " +  dataOdontograma.caries[0].numero_pieza;
-
-                        // var parseOdontograma = JSON.parse(dataOdontograma);
-                        // document.getElementById("id_odontograma_especificaciones2").innerHTML = JSON.stringify(parseOdontograma);
-
-                    }
-                });
-                $(this).remove();
-
-                //mostrar referencia diente seleccionado
-            });
-
             // $(document).on('change', '.select-tipo', function(){
             //     console.log('termina change');
             // });
+
+
+
+        });
+    },
+    eventoSelect : function() {
+        console.log('aaa');
+        $(document).on('change','.select-tipo',function(){
+
+            var codLesion = $(this).children("option:selected").text();
+            var nombreLesion = $(this).children("option:selected").val();
+            var nameSelec = $(this).attr("name");
+            console.log(codLesion,'asdasd');
+            console.log(nombreLesion);
+            console.log(nameSelec);
+
+            if (codLesion !== "Elegir") {
+                $(this).parent().append('<span  class='+ nameSelec + '>' + codLesion  + '</span> ');
+            }
+
+            var idDiente = $(this).parents(".box").attr("data-pieza");
+            var idBox = $(this).parents(".box").attr("id"); //box-48
+
+            var wrapperContainer = $(this).parents(".contenido-odontograma");
+            var nombreHallazgo = wrapperContainer.attr("data-texto");
+            var idTipo = wrapperContainer.attr("data-tipo");
+
+            console.log('select hallazgo: ' + nombreHallazgo);
+
+            var parteDental = $(this).parents(".box-options").siblings().find(".svg");
+            $( parteDental ).each(function( index ) {
+                var idParte = this.id;
+                if (idBox == idParte) {
+                    var piezaPosition = $(this).find(".active-last").attr("data-pos");
+                    var siglaPosition = $(this).find(".active-last").attr("data-sigla");
+
+                    if(idTipo == '4' ||  idTipo == '5' ){
+                        $(".lista-hallazgo-detallado").append('<li id=' + idBox + ' data-pos=' +piezaPosition+ ' data-sigla=' +codLesion+ ' >'+ '<span class="nombre-hallazo"> ' +nombreHallazgo+ '</span> : ' + nombreLesion + ' <span>'+ (codLesion) + ' </span>, de la  pieza dental <span> '
+                        + idDiente + '</span> <a href="#">Eliminar</a>  </li> ');
+
+                    } else {
+                        $(".lista-hallazgo-detallado").append('<li id=' + idBox + ' data-pos=' +piezaPosition+ ' data-sigla=' +codLesion+ ' >'+ '<span class="nombre-hallazo"> ' +nombreHallazgo+ '</span> : ' + nombreLesion + ' <span>'+ (codLesion) + ' </span>,  en la cara '
+                        +  piezaPosition + ' <span>  '  + siglaPosition  + ' </span>, de la  pieza dental <span> '
+                        + idDiente + '</span> <a href="#">Eliminar</a>  </li> '); //completo
+                    }
+
+                    $(this).addClass('seleccionado');
+                    $(this).removeClass('pre-seleccionado');
+
+
+                    // Json Arrays save
+                    if( idDiente in dientes) {
+                        if(nombreHallazgo in dientes[idDiente]){
+                        dientes[idDiente][nombreHallazgo][piezaPosition] = true;
+                        }
+
+                    } else {
+                        dientes[idDiente]={};
+
+                        if (nombreHallazgo in dientes[idDiente]){
+                        } else {
+                        dientes[idDiente][nombreHallazgo] ={}
+                        dientes[idDiente][nombreHallazgo][piezaPosition] = true;
+                        }
+                    }
+
+                    $("#id_odontograma_especificaciones").html(JSON.stringify(dientes));
+
+                    // dataOdontograma.caries.push({
+                    //     "numero_pieza":idDiente,
+                    //     "posicion_pieza":piezaPosition,
+                    //     "hallazgo_pieza":nombreHallazgo,
+                    // })
+
+                    // document.getElementById("data-json").innerHTML =
+                    // dataOdontograma.caries[0].hallazgo_pieza  + " en la cara " + dataOdontograma.caries[0].posicion_pieza   + " de la pieza dental " +  dataOdontograma.caries[0].numero_pieza;
+
+                    // var parseOdontograma = JSON.parse(dataOdontograma);
+                    // document.getElementById("id_odontograma_especificaciones2").innerHTML = JSON.stringify(parseOdontograma);
+
+                }
+            });
+            $(this).remove();
+
+            //mostrar referencia diente seleccionado
 
         });
     },
@@ -348,6 +350,7 @@ var dataOdontograma = {
   $(function () {
     if ($(".page-odontograma").length) {
        MyApp.eventoDientes();
+       MyApp.eventoSelect();
        MyApp.eventJson();
        MyApp.activarHallazgo();
        MyApp.eliminarHallazgos();
