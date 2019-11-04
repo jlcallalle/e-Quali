@@ -35,17 +35,19 @@ var dataOdontograma = {
             var idDiente = $(this).parents("svg").attr("id"); //box-48 SVG
             var cuadroDiente = $(this).parents(".box-lista-dientes").siblings().find(".box");  // <div id="box-48" class="box box-48" data-pieza="4.8">
 
-            // if ( $(this).parents("svg").hasClass("pre-seleccionado") ) {
-            //     console.log('se agrega pre-seleccionado');
-            // }
-
 
 
             $(this).parents("svg").addClass('pre-seleccionado');
             $('.select-tipo').remove();
 
             //diente ausente
-            // $(this).parents("svg").toggleClass('active-ausente');
+
+            if ( $(contenidoOdontograma).hasClass("hallazgo-pieza-dentaria-ausente") ) {
+                console.log('pieza dentaria ausente');
+                $(this).parents("svg").toggleClass('active-ausente');
+            }
+
+
 
             $( cuadroDiente ).each(function( index ) { // <div id="box-48" class="box box-48" data-pieza="4.8">
                 var idCuadro = this.id;
@@ -133,9 +135,14 @@ var dataOdontograma = {
                 var nombreHallazgo = wrapperContainer.attr("data-texto");
                 $(".lista-hallazgo-detallado").append('<li id=' + idDiente + ' data-pos=' +nombrePosition+ ' data-sigla=' +siglaPosition+ ' >'+ '<span class="nombre-hallazo"> ' + nombreHallazgo + ' </span>: En la  pieza dental <span> '
                 + piezaDiente + '</span> <a href="#">Eliminar</a>  </li>');
-                // $(this).parents(".cont-diente").addClass('.disable');
-                // $(this).addClass('.disable');
-                // $(this).attr("disabled", true);
+
+            } else if ($(contenidoOdontograma).is('[data-tipo~="6"]')){   //tipo 6: //ausente
+                var idDiente = $(this).parents("svg").attr("id");
+                var piezaDiente = $(this).parents("svg").attr("data-pieza");
+                var wrapperContainer = $(this).parents(".contenido-odontograma");
+                var nombreHallazgo = wrapperContainer.attr("data-texto");
+                $(".lista-hallazgo-detallado").append('<li id=' + idDiente + ' data-pos=' +nombrePosition+ ' data-sigla=' +siglaPosition+ ' >'+ '<span class="nombre-hallazo"> ' + nombreHallazgo + ' : </span> De la  pieza dental <span> '
+                + piezaDiente + '</span> <a href="#">Eliminar</a>  </li>');
             }
 
             // $(document).on('change', '.select-tipo', function(){
@@ -309,8 +316,10 @@ var dataOdontograma = {
                         var caraDiente =  $(this).attr("data-pos");
                         var caraSigla =  $(this).attr("data-sigla");
                         if (caraLista == caraDiente) {
+                            console.log('a-'+caraLista);
+                            console.log('b-'+caraDiente);
                             $(this).removeClass("active");
-                            $(this).parents('.svg').removeClass("active-dentaria");
+                            $(this).parents('.svg').removeClass("active-ausente"); //elimina pieza dentaria ausente
                         }
                     });
                 }
@@ -318,6 +327,7 @@ var dataOdontograma = {
 
 
             var textoHallazgo = $(this).parents("li").find(".nombre-hallazo").text().trim();
+            console.log(textoHallazgo);
             var infoCuadro = $(this).parents(".page-odontograma").find(".box");
             $( infoCuadro ).each(function( index ) {
                 var boxId = this.id;

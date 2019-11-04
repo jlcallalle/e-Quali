@@ -132,6 +132,10 @@ body {
     color: green; }
   .lista-hallazgos li.opcion-remanente-radicular a:hover {
     color: green; }
+  .lista-hallazgos li.opcion-pieza-dentaria-ausente a.active {
+    color: blue; }
+  .lista-hallazgos li.opcion-pieza-dentaria-ausente a:hover {
+    color: blue; }
 
 .page-odontograma {
   position: relative;
@@ -602,10 +606,15 @@ svg.active-dentaria {
   cursor: pointer;
   fill: blue; }
 
-.hallazgo-pieza-dentaria-ausente .svg:hover .icon-ausente {
-  fill: blue; }
+.hallazgo-pieza-dentaria-ausente .svg:hover {
+  cursor: pointer; }
+  .hallazgo-pieza-dentaria-ausente .svg:hover .icon-ausente {
+    fill: blue; }
 
 .active-ausente .icon-ausente {
+  fill: blue; }
+
+.active .icon-ausente {
   fill: blue; }
 
 .select-tipo {
@@ -661,8 +670,5 @@ svg.active-dentaria {
 
 .lista-hallazgos {
   padding: 0; }
-
-.active .icon-ausente {
-  fill: blue; }
 
 /*# sourceMappingURL=main.css.map */
