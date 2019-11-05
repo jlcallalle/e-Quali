@@ -607,12 +607,17 @@ svg.active-dentaria {
   fill: blue; }
 
 .hallazgo-pieza-dentaria-ausente .svg:hover {
-  cursor: pointer; }
-  .hallazgo-pieza-dentaria-ausente .svg:hover .icon-ausente {
-    fill: blue; }
+  cursor: pointer;
+  background-image: url(../../img/diente-ausente.png);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100% 90%; }
 
-.active-ausente .icon-ausente {
-  fill: blue; }
+.active-ausente {
+  background-image: url(../../img/diente-ausente.png);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100% 90%; }
 
 .active .icon-ausente {
   fill: blue; }

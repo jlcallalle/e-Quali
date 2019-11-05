@@ -364,15 +364,6 @@
     }
 }
 
-// .hallazgo-pieza-dentaria-ausente {
-//     .diente {
-//         &:hover {
-//             fill: red;
-//         }
-//     }
-// }
-
-
 
 svg.active-dentaria {
     fill: blue;
@@ -662,17 +653,27 @@ svg.active-dentaria {
     .svg {
         &:hover {
             cursor:pointer;
-            .icon-ausente {
-                fill:blue;
-            }
+            background-image: url(../../img/diente-ausente.png);
+            // background-image: url(../../img/diente-ausente-small.png);
+            background-repeat: no-repeat;
+            background-position: top center;
+            background-size: 100% 90%;
+            // .icon-ausente {
+            //     fill:blue;
+            // }
         }
     }
 
 }
 
 .active-ausente {
+    background-image: url(../../img/diente-ausente.png);
+    // background-image: url(../../img/diente-ausente-small.png);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 100% 90%;
     .icon-ausente {
-        fill:blue;
+        // fill:blue;
     }
 }
 

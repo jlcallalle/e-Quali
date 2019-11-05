@@ -11,6 +11,10 @@ var dataOdontograma = {
             if ($(this).hasClass('active')) {
               return;
             }
+            if ($(this).parents(".svg").hasClass('active-ausente')) {
+              return;
+            }
+
             $(".contenido-polygon").find(".svg").removeClass("pre-seleccionado");
             $(".contenido-polygon").find(".svg").not(".seleccionado").find(".diente").removeClass("active");
             var contenidoOdontograma = $(this).parents(".contenido-odontograma");
@@ -96,6 +100,9 @@ var dataOdontograma = {
                 var nombreHallazgo = wrapperContainer.attr("data-texto");
                 $(".lista-hallazgo-detallado").append('<li id=' + idDiente + ' data-pos=' +nombrePosition+ ' data-sigla=' +siglaPosition+ '  data-hallazgo=' +tipoHallazgo+ '>'+ '<span class="nombre-hallazo"> ' + nombreHallazgo + ' : </span>  En la cara '
                 +  nombrePosition + ' <span>  '  + siglaPosition  + ' </span>, de la  pieza dental <span> ' + piezaDiente + '</span> <a href="#">Eliminar</a>  </li>');
+
+                $(this).parents("svg").addClass('seleccionado');
+                $(this).parents("svg").removeClass('pre-seleccionado');
 
               } else if ($(contenidoOdontograma).is('[data-tipo~="5"]')){ //tipo 5: //Macrodoncia
                 var idDiente = $(this).parents("svg").attr("id");
