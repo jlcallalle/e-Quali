@@ -31,6 +31,12 @@ var dataOdontograma = {
             $(this).parents("svg").addClass("pre-seleccionado");
             $(".select-tipo").remove();
 
+            //Pieza Ausente
+            if ( $(contenidoOdontograma).hasClass("hallazgo-pieza-dentaria-ausente") ) {
+                console.log('pieza dentaria ausente');
+                $(this).parents("svg").toggleClass('active-ausente');
+            }
+
             $( cuadroDiente ).each(function( index ) {
                 var idCuadro = this.id;
 
@@ -83,7 +89,7 @@ var dataOdontograma = {
 
             });
 
-            if( $(contenidoOdontograma).is('[data-tipo~="3"]') ) {
+            if( $(contenidoOdontograma).is('[data-tipo~="3"]') ) { //tipo 3: Restauración temporal
                 var idDiente = $(this).parents("svg").attr("id");
                 var piezaDiente = $(this).parents("svg").attr("data-pieza");
                 var wrapperContainer = $(this).parents(".contenido-odontograma");
@@ -91,12 +97,20 @@ var dataOdontograma = {
                 $(".lista-hallazgo-detallado").append('<li id=' + idDiente + ' data-pos=' +nombrePosition+ ' data-sigla=' +siglaPosition+ '  data-hallazgo=' +tipoHallazgo+ '>'+ '<span class="nombre-hallazo"> ' + nombreHallazgo + ' : </span>  En la cara '
                 +  nombrePosition + ' <span>  '  + siglaPosition  + ' </span>, de la  pieza dental <span> ' + piezaDiente + '</span> <a href="#">Eliminar</a>  </li>');
 
-              } else if ($(contenidoOdontograma).is('[data-tipo~="5"]')){
+              } else if ($(contenidoOdontograma).is('[data-tipo~="5"]')){ //tipo 5: //Macrodoncia
                 var idDiente = $(this).parents("svg").attr("id");
                 var piezaDiente = $(this).parents("svg").attr("data-pieza");
                 var wrapperContainer = $(this).parents(".contenido-odontograma");
                 var nombreHallazgo = wrapperContainer.attr("data-texto");
                 $(".lista-hallazgo-detallado").append('<li id=' + idDiente + ' data-pos=' +nombrePosition+ ' data-sigla=' +siglaPosition+ '  data-hallazgo=' +tipoHallazgo+ '>'+ '<span class="nombre-hallazo"> ' + nombreHallazgo + ' </span>: En la  pieza dental <span> '
+                + piezaDiente + '</span> <a href="#">Eliminar</a>  </li>');
+
+            } else if ($(contenidoOdontograma).is('[data-tipo~="6"]')){   //tipo 6: //ausente
+                var idDiente = $(this).parents("svg").attr("id");
+                var piezaDiente = $(this).parents("svg").attr("data-pieza");
+                var wrapperContainer = $(this).parents(".contenido-odontograma");
+                var nombreHallazgo = wrapperContainer.attr("data-texto");
+                $(".lista-hallazgo-detallado").append('<li id=' + idDiente + ' data-pos=' +nombrePosition+ ' data-sigla=' +siglaPosition+ ' >'+ '<span class="nombre-hallazo"> ' + nombreHallazgo + ' : </span> De la  pieza dental <span> '
                 + piezaDiente + '</span> <a href="#">Eliminar</a>  </li>');
             }
 
@@ -229,7 +243,7 @@ var dataOdontograma = {
                         var caraSigla =  $(this).attr("data-sigla");
                         if (caraLista == caraDiente) {
                             $(this).removeClass("active");
-                            $(this).parents('.svg').removeClass("active-dentaria");
+                            $(this).parents('.svg').removeClass("active-ausente");
                         }
                     });
                 }
