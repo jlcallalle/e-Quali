@@ -254,7 +254,7 @@
 }
 
 
-.box-img {
+.bimg {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -657,7 +657,7 @@ svg.active-dentaria {
     .svg {
         &:hover {
             cursor:pointer;
-            background-image: url(../../img/diente-ausente.png);
+            background-image: url(../img/diente-ausente.png);
             background-repeat: no-repeat;
             background-position: top center;
             background-size: 100% 100%;
@@ -669,7 +669,7 @@ svg.active-dentaria {
     .svg {
         &:hover {
             cursor:pointer;
-            background-image: url(../../img/erupcion-sub.png);
+            background-image: url(../img/erupcion-sub.png);
             background-repeat: no-repeat;
             background-position: top center;
             background-size: 100% 90%;
@@ -681,7 +681,7 @@ svg.active-dentaria {
     .box-sub-adulto, .box-sub-nino {
         .svg {
             &:hover {
-                background-image: url(../../img/erupcion-top.png);
+                background-image: url(../img/erupcion-top.png);
                 background-position: bottom center;
             }
         }
@@ -691,7 +691,7 @@ svg.active-dentaria {
 
 //Ausente
 .seleccionado.active-ausente {
-    background-image: url(../../img/diente-ausente.png);
+    background-image: url(../img/diente-ausente.png);
     background-repeat: no-repeat;
     background-position: top center;
     background-size: 100% 100%;
@@ -700,11 +700,11 @@ svg.active-dentaria {
 //Erupcion
 .box-sub-adulto .seleccionado.active-erupcion,
 .box-sub-nino .seleccionado.active-erupcion  {
-    background-image: url(../../img/erupcion-top.png);
+    background-image: url(../img/erupcion-top.png);
     background-position: bottom center;
 }
 .seleccionado.active-erupcion {
-    background-image: url(../../img/erupcion-sub.png);
+    background-image: url(../img/erupcion-sub.png);
     background-repeat: no-repeat;
     background-position: top center;
     background-size: 100% 90%;
