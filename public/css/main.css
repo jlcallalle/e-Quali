@@ -140,6 +140,14 @@ body {
     color: blue; }
   .lista-hallazgos li.opcion-pieza-dentaria-en-erupcion a:hover {
     color: blue; }
+  .lista-hallazgos li.opcion-pieza-dentaria-extruida a.active {
+    color: blue; }
+  .lista-hallazgos li.opcion-pieza-dentaria-extruida a:hover {
+    color: blue; }
+  .lista-hallazgos li.opcion-pieza-dentaria-intruida a.active {
+    color: blue; }
+  .lista-hallazgos li.opcion-pieza-dentaria-intruida a:hover {
+    color: blue; }
 
 .page-odontograma {
   position: relative;
@@ -628,6 +636,20 @@ svg.active-dentaria {
   background-image: url(../img/erupcion-top.png);
   background-position: bottom center; }
 
+.hallazgo-pieza-dentaria-extruida .svg:hover {
+  cursor: pointer;
+  background-image: url(../img/flecha-extruida.png);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 35% 35%; }
+
+.hallazgo-pieza-dentaria-intruida .svg:hover {
+  cursor: pointer;
+  background-image: url(../img/flecha-intruida.png);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 35% 35%; }
+
 .seleccionado.active-ausente {
   background-image: url(../img/diente-ausente.png);
   background-repeat: no-repeat;
@@ -647,6 +669,26 @@ svg.active-dentaria {
 
 .active .icon-ausente {
   fill: blue; }
+
+.flecha-extruida {
+  position: relative; }
+
+.flecha-extruida img {
+  width: 20px;
+  height: auto;
+  position: absolute;
+  left: 16px;
+  top: -34px; }
+
+.flecha-intruida {
+  position: relative; }
+
+.flecha-intruida img {
+  width: 20px;
+  height: auto;
+  position: absolute;
+  left: 16px;
+  top: -34px; }
 
 .select-tipo {
   background-color: #FFFFFF;

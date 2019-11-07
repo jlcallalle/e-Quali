@@ -645,7 +645,7 @@ svg.active-dentaria {
         }
     }
 }
-.hallazgo-movilidad-patologica{
+.hallazgo-movilidad-patologica {
     .svg {
         &:hover {
             cursor:pointer;
@@ -689,6 +689,32 @@ svg.active-dentaria {
     }
 }
 
+.hallazgo-pieza-dentaria-extruida {
+    .svg {
+        &:hover {
+            cursor:pointer;
+            background-image: url(../img/flecha-extruida.png);
+            background-repeat: no-repeat;
+            background-position: top center;
+            background-size: 35% 35%;
+        }
+    }
+}
+
+.hallazgo-pieza-dentaria-intruida {
+    .svg {
+        &:hover {
+            cursor:pointer;
+            background-image: url(../img/flecha-intruida.png);
+            background-repeat: no-repeat;
+            background-position: top center;
+            background-size: 35% 35%;
+        }
+    }
+}
+
+
+
 //Ausente
 .seleccionado.active-ausente {
     background-image: url(../img/diente-ausente.png);
@@ -710,10 +736,39 @@ svg.active-dentaria {
     background-size: 100% 90%;
 }
 
-
 .active .icon-ausente {
     fill:blue;
 }
+
+
+//Extruida
+.flecha-extruida {
+    position: relative;
+}
+
+.flecha-extruida img {
+    width: 20px;
+    height: auto;
+    position: absolute;
+    left: 16px;
+    top: -34px;
+}
+
+//Intruida
+.flecha-intruida {
+    position: relative;
+}
+
+.flecha-intruida img {
+    width: 20px;
+    height: auto;
+    position: absolute;
+    left: 16px;
+    top: -34px;
+}
+
+
+
 
 
 .select-tipo {

@@ -18,9 +18,17 @@ var dataOdontograma = {
             if ($(this).parents(".svg").hasClass('active-erupcion')) {
               return;
             }
+            if ($(this).parents(".svg").hasClass('active-extruida')) {
+              return;
+            }
+
             // if ($(this).parents(".svg").hasClass('seleccionado')) {
             //   return;
             // }
+            // if ($(this).parents(".svg").hasClass('seleccionado')) {
+            //   return;
+            // }
+
             // se elimina clase 'pre-seleccionado' en general y elimina clase active cuando no tienen clase .seleccionado
             $(".contenido-polygon").find(".svg").removeClass("pre-seleccionado");
             $(".contenido-polygon").find(".svg").not(".seleccionado").find(".diente").removeClass("active");
@@ -47,10 +55,30 @@ var dataOdontograma = {
                 console.log('pieza dentaria ausente');
                 $(this).parents("svg").toggleClass('active-ausente');
             }
-            //Pieza Erupción
+            //Pieza Extuida
             if ( $(contenidoOdontograma).hasClass("hallazgo-pieza-dentaria-en-erupcion") ) {
                 console.log('pieza dentaria erupción');
                 $(this).parents("svg").toggleClass('active-erupcion');
+            }
+
+            //Pieza Extruida
+            if ( $(contenidoOdontograma).hasClass("hallazgo-pieza-dentaria-extruida") ) {
+                console.log('pieza dentaria extuida');
+                $(this).parents("svg").toggleClass('active-extruida');
+
+                var tagFlecha = '<img src="img/flecha-extruida.png">';
+                $(this).parents(".cont-diente").addClass('flecha-extruida');
+                $(this).parents(".cont-diente").append(tagFlecha)
+            }
+
+            //Pieza Intruida
+            if ( $(contenidoOdontograma).hasClass("hallazgo-pieza-dentaria-intruida") ) {
+                console.log('pieza dentaria extuida');
+                $(this).parents("svg").toggleClass('active-intruida');
+
+                var tagFlecha = '<img src="img/flecha-intruida.png">';
+                $(this).parents(".cont-diente").addClass('flecha-intruida');
+                $(this).parents(".cont-diente").append(tagFlecha)
             }
 
             $( cuadroDiente ).each(function( index ) {
@@ -166,11 +194,11 @@ var dataOdontograma = {
 
                         if(idTipo === listaPintado.tipoPintado4 ||  idTipo === listaPintado.tipoPintado5 ){ //muestra lista contenido completo
                             $(".lista-hallazgo-detallado").append('<li id=' + idBox + ' data-pos=' +piezaPosition+ ' data-sigla=' +codLesion+ '  data-hallazgo=' +tipoHallazgo+ '>'+ '<span class="nombre-hallazo"> ' +nombreHallazgo+ '</span> : ' + nombreLesion + ' <span>'+ (codLesion) + ' </span>, de la  pieza dental <span> '
-                            + idDiente + '</span> <a href="#">Eliminar BB</a> </li> ');
+                            + idDiente + '</span> <a href="#">Eliminar</a> </li> ');
                         } else { //muestra lista contenido completo
                             $(".lista-hallazgo-detallado").append('<li id=' + idBox + ' data-pos=' +piezaPosition+ ' data-sigla=' +codLesion+ ' data-hallazgo=' +tipoHallazgo+ '>'+ '<span class="nombre-hallazo"> ' +nombreHallazgo+ '</span> : ' + nombreLesion + ' <span>'+ (codLesion) + ' </span>,  en la cara '
                             +  piezaPosition + ' <span>  '  + siglaPosition  + ' </span>, de la  pieza dental <span> '
-                            + idDiente + '</span> <a href="#">Eliminar AA</a> </li> ');
+                            + idDiente + '</span> <a href="#">Eliminar</a> </li> ');
                         }
 
                         $(this).addClass('seleccionado');
@@ -270,6 +298,8 @@ var dataOdontograma = {
                             $(this).parents(".svg").removeClass("seleccionado");
                             $(this).parents('.svg').removeClass("active-ausente");
                             $(this).parents('.svg').removeClass("active-erupcion");
+                            $(this).parents('.flecha-extruida').find('img').remove();
+                            $(this).parents('.flecha-intruida').find('img').remove();
                         }
                     });
                 }

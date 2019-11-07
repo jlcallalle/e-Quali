@@ -166,7 +166,27 @@
                 }
             }
         }
-        &.opcion-pieza-dentaria-en-erupcion{
+        &.opcion-pieza-dentaria-en-erupcion {
+            a {
+                &.active {
+                    color:blue;
+                }
+                &:hover {
+                    color:blue;
+                }
+            }
+        }
+        &.opcion-pieza-dentaria-extruida {
+            a {
+                &.active {
+                    color:blue;
+                }
+                &:hover {
+                    color:blue;
+                }
+            }
+        }
+        &.opcion-pieza-dentaria-intruida {
             a {
                 &.active {
                     color:blue;
