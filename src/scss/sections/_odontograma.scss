@@ -583,6 +583,10 @@ svg.active-dentaria {
 }
 
 
+.container-svg-odontograma .svg.seleccionado:hover {
+    // background-image: none;
+}
+
 .hallazgo-posicion-dentaria {
     .svg {
         &:hover {
@@ -654,27 +658,56 @@ svg.active-dentaria {
         &:hover {
             cursor:pointer;
             background-image: url(../../img/diente-ausente.png);
-            // background-image: url(../../img/diente-ausente-small.png);
+            background-repeat: no-repeat;
+            background-position: top center;
+            background-size: 100% 100%;
+        }
+    }
+}
+
+.hallazgo-pieza-dentaria-en-erupcion {
+    .svg {
+        &:hover {
+            cursor:pointer;
+            background-image: url(../../img/erupcion-sub.png);
             background-repeat: no-repeat;
             background-position: top center;
             background-size: 100% 90%;
-            // .icon-ausente {
-            //     fill:blue;
-            // }
         }
     }
-
 }
 
-.active-ausente {
+.hallazgo-pieza-dentaria-en-erupcion {
+    .box-sub-adulto, .box-sub-nino {
+        .svg {
+            &:hover {
+                background-image: url(../../img/erupcion-top.png);
+                background-position: bottom center;
+            }
+        }
+
+    }
+}
+
+//Ausente
+.seleccionado.active-ausente {
     background-image: url(../../img/diente-ausente.png);
-    // background-image: url(../../img/diente-ausente-small.png);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 100% 100%;
+}
+
+//Erupcion
+.box-sub-adulto .seleccionado.active-erupcion,
+.box-sub-nino .seleccionado.active-erupcion  {
+    background-image: url(../../img/erupcion-top.png);
+    background-position: bottom center;
+}
+.seleccionado.active-erupcion {
+    background-image: url(../../img/erupcion-sub.png);
     background-repeat: no-repeat;
     background-position: top center;
     background-size: 100% 90%;
-    .icon-ausente {
-        // fill:blue;
-    }
 }
 
 

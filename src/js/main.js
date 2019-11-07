@@ -8,13 +8,20 @@ var dataOdontograma = {
   var MyApp = {
     eventoDientes : function() {
         $(".cont-diente .diente").on("click", function(e){
+            //deshabilita eventos cuando se haya habilitado el hallazgo
             if ($(this).hasClass('active')) {
               return;
             }
             if ($(this).parents(".svg").hasClass('active-ausente')) {
               return;
             }
-
+            if ($(this).parents(".svg").hasClass('active-erupcion')) {
+              return;
+            }
+            // if ($(this).parents(".svg").hasClass('seleccionado')) {
+            //   return;
+            // }
+            // se elimina clase 'pre-seleccionado' en general y elimina clase active cuando no tienen clase .seleccionado
             $(".contenido-polygon").find(".svg").removeClass("pre-seleccionado");
             $(".contenido-polygon").find(".svg").not(".seleccionado").find(".diente").removeClass("active");
             var contenidoOdontograma = $(this).parents(".contenido-odontograma");
@@ -29,8 +36,8 @@ var dataOdontograma = {
             var nombrePosition = $(this).attr("data-pos");
             var siglaPosition = $(this).attr("data-sigla");
 
-            var idDiente = $(this).parents("svg").attr("id");
-            var cuadroDiente = $(this).parents(".box-lista-dientes").siblings().find(".box");
+            var idDiente = $(this).parents("svg").attr("id"); //obtiene id SVG
+            var cuadroDiente = $(this).parents(".box-lista-dientes").siblings().find(".box"); //cuadros dientes
 
             $(this).parents("svg").addClass("pre-seleccionado");
             $(".select-tipo").remove();
@@ -40,11 +47,16 @@ var dataOdontograma = {
                 console.log('pieza dentaria ausente');
                 $(this).parents("svg").toggleClass('active-ausente');
             }
+            //Pieza Erupción
+            if ( $(contenidoOdontograma).hasClass("hallazgo-pieza-dentaria-en-erupcion") ) {
+                console.log('pieza dentaria erupción');
+                $(this).parents("svg").toggleClass('active-erupcion');
+            }
 
             $( cuadroDiente ).each(function( index ) {
-                var idCuadro = this.id;
+                var idCuadro = this.id; //obtiene id Cuadro
 
-                if (idCuadro == idDiente) {
+                if (idCuadro == idDiente) { //muestra select o span según hallazgo
 
                     if (nombreHallazgo == listaHallazgo.hallazgoCaries) {
                         var selectCaries ="<select class='select-tipo select-caries' name='hallazgo-caries'><option value=''>Elegir</option><option value='Mancha Blanca'>MB</option> <option value='Caries del esmalte'>CE</option> <option value='Caries de la dentina'>CD</option> <option value='Caries de la pulpa'>CDP</option></select>"
@@ -59,11 +71,11 @@ var dataOdontograma = {
                         $( this ).find('.select-hallazgos').append(selectCaries);
                     }
                     if (nombreHallazgo == listaHallazgo.hallazgoRestauracionDefinitivaMalo) {
-                        var selectCaries ="<select class='select-tipo select-restauracion-definitiva' name='hallazgo-restauracion-definitiva-malo'><option value=''>Elegir</option><option value='Amalgama Dental'>AD</option> <option value='Resina' >R</option> <option value='Ionónedo de vidrio'>IV</option><option value='Incrustación Estética'>IE</option><option value='Canilla Estética'>C</option></select>"
+                        var selectCaries ="<select class='select-tipo select-restauracion-definitiva-malo' name='hallazgo-restauracion-definitiva-malo'><option value=''>Elegir</option><option value='Amalgama Dental'>AD</option> <option value='Resina' >R</option> <option value='Ionónedo de vidrio'>IV</option><option value='Incrustación Estética'>IE</option><option value='Canilla Estética'>C</option></select>"
                         $( this ).find('.select-hallazgos').append(selectCaries);
                     }
                     if (nombreHallazgo == listaHallazgo.hallazgoPosicionDentaria) {
-                        var selectCaries ="<select class='select-tipo select-restauracion-definitiva' name='hallazgo-posicion-dentaria'><option value=''>Elegir</option><option value='Mesializado'>M</option> <option value='Distalizado'>D</option> <option value='Vestibularizado'>V</option><option value='Palatinizado'>P</option><option value='Lingualizado'>L</option></select>"
+                        var selectCaries ="<select class='select-tipo select-posicion-dentari' name='hallazgo-posicion-dentaria'><option value=''>Elegir</option><option value='Mesializado'>M</option> <option value='Distalizado'>D</option> <option value='Vestibularizado'>V</option><option value='Palatinizado'>P</option><option value='Lingualizado'>L</option></select>"
                         $( this ).find('.select-hallazgos').append(selectCaries);
                     }
                     if (nombreHallazgo == listaHallazgo.hallazgoMovilidadPatologica) {
@@ -71,7 +83,7 @@ var dataOdontograma = {
                         $( this ).find('.select-hallazgos').append(selectCaries);
                     }
                     if (nombreHallazgo == listaHallazgo.hallazgoFosasyFisurasProfundas) {
-                        $( this ).find('.select-hallazgos').append('<span class="hallazgo-fosas-fisuras-profundas">FFP</span>');
+                        $( this ).find('.select-hallpazgos').append('<span class="hallazgo-fosas-fisuras-profundas">FFP</span>');
                     }
                     if (nombreHallazgo == listaHallazgo.hallazgoPiesaDentariaEctopica) {
                         $( this ).find('.select-hallazgos').append('<span class="hallazgo-piesa-dentaria-ectopica">E</span>');
@@ -93,6 +105,7 @@ var dataOdontograma = {
 
             });
 
+            //Mostrar resultado de hallazgo en lista SIN select
             if( $(contenidoOdontograma).is('[data-tipo~="3"]') ) { //tipo 3: Restauración temporal
                 var idDiente = $(this).parents("svg").attr("id");
                 var piezaDiente = $(this).parents("svg").attr("data-pieza");
@@ -100,7 +113,6 @@ var dataOdontograma = {
                 var nombreHallazgo = wrapperContainer.attr("data-texto");
                 $(".lista-hallazgo-detallado").append('<li id=' + idDiente + ' data-pos=' +nombrePosition+ ' data-sigla=' +siglaPosition+ '  data-hallazgo=' +tipoHallazgo+ '>'+ '<span class="nombre-hallazo"> ' + nombreHallazgo + ' : </span>  En la cara '
                 +  nombrePosition + ' <span>  '  + siglaPosition  + ' </span>, de la  pieza dental <span> ' + piezaDiente + '</span> <a href="#">Eliminar</a>  </li>');
-
                 $(this).parents("svg").addClass('seleccionado');
                 $(this).parents("svg").removeClass('pre-seleccionado');
 
@@ -111,6 +123,8 @@ var dataOdontograma = {
                 var nombreHallazgo = wrapperContainer.attr("data-texto");
                 $(".lista-hallazgo-detallado").append('<li id=' + idDiente + ' data-pos=' +nombrePosition+ ' data-sigla=' +siglaPosition+ '  data-hallazgo=' +tipoHallazgo+ '>'+ '<span class="nombre-hallazo"> ' + nombreHallazgo + ' </span>: En la  pieza dental <span> '
                 + piezaDiente + '</span> <a href="#">Eliminar</a>  </li>');
+                $(this).parents("svg").addClass('seleccionado');
+                $(this).parents("svg").removeClass('pre-seleccionado');
 
             } else if ($(contenidoOdontograma).is('[data-tipo~="6"]')){   //tipo 6: //ausente
                 var idDiente = $(this).parents("svg").attr("id");
@@ -119,8 +133,11 @@ var dataOdontograma = {
                 var nombreHallazgo = wrapperContainer.attr("data-texto");
                 $(".lista-hallazgo-detallado").append('<li id=' + idDiente + ' data-pos=' +nombrePosition+ ' data-sigla=' +siglaPosition+ ' >'+ '<span class="nombre-hallazo"> ' + nombreHallazgo + ' : </span> De la  pieza dental <span> '
                 + piezaDiente + '</span> <a href="#">Eliminar</a>  </li>');
+                $(this).parents("svg").addClass('seleccionado');
+                $(this).parents("svg").removeClass('pre-seleccionado');
             }
 
+            //Mostrar resultado de hallazgo en lista CON  select
             $(".select-tipo").change(function(){
                 var codLesion = $(this).children("option:selected").text();
                 var nombreLesion = $(this).children("option:selected").val();
@@ -147,13 +164,13 @@ var dataOdontograma = {
                         var piezaPosition = $(this).find(".active-last").attr("data-pos");
                         var siglaPosition = $(this).find(".active-last").attr("data-sigla");
 
-                        if(idTipo === listaPintado.tipoPintado4 ||  idTipo === listaPintado.tipoPintado5 ){
+                        if(idTipo === listaPintado.tipoPintado4 ||  idTipo === listaPintado.tipoPintado5 ){ //muestra lista contenido completo
                             $(".lista-hallazgo-detallado").append('<li id=' + idBox + ' data-pos=' +piezaPosition+ ' data-sigla=' +codLesion+ '  data-hallazgo=' +tipoHallazgo+ '>'+ '<span class="nombre-hallazo"> ' +nombreHallazgo+ '</span> : ' + nombreLesion + ' <span>'+ (codLesion) + ' </span>, de la  pieza dental <span> '
-                            + idDiente + '</span> <a href="#">Eliminar</a> </li> ');
-                        } else {
+                            + idDiente + '</span> <a href="#">Eliminar BB</a> </li> ');
+                        } else { //muestra lista contenido completo
                             $(".lista-hallazgo-detallado").append('<li id=' + idBox + ' data-pos=' +piezaPosition+ ' data-sigla=' +codLesion+ ' data-hallazgo=' +tipoHallazgo+ '>'+ '<span class="nombre-hallazo"> ' +nombreHallazgo+ '</span> : ' + nombreLesion + ' <span>'+ (codLesion) + ' </span>,  en la cara '
                             +  piezaPosition + ' <span>  '  + siglaPosition  + ' </span>, de la  pieza dental <span> '
-                            + idDiente + '</span> <a href="#">Eliminar</a> </li> ');
+                            + idDiente + '</span> <a href="#">Eliminar AA</a> </li> ');
                         }
 
                         $(this).addClass('seleccionado');
@@ -250,7 +267,9 @@ var dataOdontograma = {
                         var caraSigla =  $(this).attr("data-sigla");
                         if (caraLista == caraDiente) {
                             $(this).removeClass("active");
+                            $(this).parents(".svg").removeClass("seleccionado");
                             $(this).parents('.svg').removeClass("active-ausente");
+                            $(this).parents('.svg').removeClass("active-erupcion");
                         }
                     });
                 }

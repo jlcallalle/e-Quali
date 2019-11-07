@@ -166,6 +166,16 @@
                 }
             }
         }
+        &.opcion-pieza-dentaria-en-erupcion{
+            a {
+                &.active {
+                    color:blue;
+                }
+                &:hover {
+                    color:blue;
+                }
+            }
+        }
     }
 }
 
