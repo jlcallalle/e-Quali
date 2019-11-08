@@ -321,6 +321,7 @@ var dataOdontograma = {
                             $(this).parents('.svg').removeClass("active-erupcion");
                             $(this).parents('.flecha-extruida').find('img').remove();
                             $(this).parents('.flecha-intruida').find('img').remove();
+                            $(this).parents('.diastema').find('img').remove();
                         }
                     });
                 }
