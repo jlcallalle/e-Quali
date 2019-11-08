@@ -721,7 +721,22 @@ svg.active-dentaria {
     background-image: url(../img/flecha-extruida.png);
 }
 
+//Diastema
+.hallazgo-diastema {
+    .svg {
+        &:hover {
+            cursor:pointer;
+            background-image: url(../img/diastema.png);
+            background-repeat: no-repeat;
+            background-position: right 37px;
+            background-size: 35px 54px;
+        }
+    }
+}
 
+.hallazgo-diastema .box-lista-dientes-sub .svg:hover {
+    background-position: right -8px;
+}
 
 //Ausente
 .seleccionado.active-ausente {
@@ -749,7 +764,7 @@ svg.active-dentaria {
 }
 
 
-//Extruida
+//Icono Extruida
 .flecha-extruida {
     position: relative;
     img {
@@ -759,6 +774,44 @@ svg.active-dentaria {
         left: 17px;
         top: 85px;
     }
+}
+//Icono Extruida
+.flecha-extruida {
+    position: relative;
+    img {
+        width:16px;
+        height: auto;
+        position: absolute;
+        left: 17px;
+        top: 85px;
+    }
+}
+
+//Diastema
+
+.box-lista-dientes-sub .diastema img {
+    top: -8px;
+}
+
+.diastema {
+    position:relative;
+    img {
+        width: 37px;
+        height: auto;
+        position: absolute;
+        left: 38px;
+        top: 34px;
+    }
+}
+
+.incisivos.diastema {
+    img {
+        left: 25px;
+    }
+}
+
+.container-svg-odontograma .cont-diente.diastema:last-child img {
+    display:none;
 }
 
 .incisivos.flecha-extruida,

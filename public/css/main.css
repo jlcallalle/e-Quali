@@ -148,6 +148,10 @@ body {
     color: blue; }
   .lista-hallazgos li.opcion-pieza-dentaria-intruida a:hover {
     color: blue; }
+  .lista-hallazgos li.opcion-diastema a.active {
+    color: blue; }
+  .lista-hallazgos li.opcion-diastema a:hover {
+    color: blue; }
 
 .page-odontograma {
   position: relative;
@@ -656,6 +660,16 @@ svg.active-dentaria {
 .hallazgo-pieza-dentaria-intruida .box-lista-dientes-sub .svg:hover {
   background-image: url(../img/flecha-extruida.png); }
 
+.hallazgo-diastema .svg:hover {
+  cursor: pointer;
+  background-image: url(../img/diastema.png);
+  background-repeat: no-repeat;
+  background-position: right 37px;
+  background-size: 35px 54px; }
+
+.hallazgo-diastema .box-lista-dientes-sub .svg:hover {
+  background-position: right -8px; }
+
 .seleccionado.active-ausente {
   background-image: url(../img/diente-ausente.png);
   background-repeat: no-repeat;
@@ -684,6 +698,33 @@ svg.active-dentaria {
     position: absolute;
     left: 17px;
     top: 85px; }
+
+.flecha-extruida {
+  position: relative; }
+  .flecha-extruida img {
+    width: 16px;
+    height: auto;
+    position: absolute;
+    left: 17px;
+    top: 85px; }
+
+.box-lista-dientes-sub .diastema img {
+  top: -8px; }
+
+.diastema {
+  position: relative; }
+  .diastema img {
+    width: 37px;
+    height: auto;
+    position: absolute;
+    left: 38px;
+    top: 34px; }
+
+.incisivos.diastema img {
+  left: 25px; }
+
+.container-svg-odontograma .cont-diente.diastema:last-child img {
+  display: none; }
 
 .incisivos.flecha-extruida img,
 .incisivos.flecha-intruida img {

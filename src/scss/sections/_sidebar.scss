@@ -196,6 +196,16 @@
                 }
             }
         }
+        &.opcion-diastema {
+            a {
+                &.active {
+                    color:blue;
+                }
+                &:hover {
+                    color:blue;
+                }
+            }
+        }
     }
 }
 

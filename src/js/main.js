@@ -21,6 +21,9 @@ var dataOdontograma = {
             if ($(this).parents(".svg").hasClass('active-extruida')) {
               return;
             }
+            if ($(this).parents(".svg").hasClass('active-diastema')) {
+              return;
+            }
 
             // if ($(this).parents(".svg").hasClass('seleccionado')) {
             //   return;
@@ -63,7 +66,6 @@ var dataOdontograma = {
 
             //Pieza Extruida
             if ( $(contenidoOdontograma).hasClass("hallazgo-pieza-dentaria-extruida") ) {
-                console.log('pieza dentaria extuida');
                 $(this).parents("svg").toggleClass('active-extruida');
 
                 var tagFlecha = '<img src="img/flecha-extruida.png">';
@@ -73,11 +75,19 @@ var dataOdontograma = {
 
             //Pieza Intruida
             if ( $(contenidoOdontograma).hasClass("hallazgo-pieza-dentaria-intruida") ) {
-                console.log('pieza dentaria extuida');
                 $(this).parents("svg").toggleClass('active-intruida');
 
                 var tagFlecha = '<img src="img/flecha-intruida.png">';
                 $(this).parents(".cont-diente").addClass('flecha-intruida');
+                $(this).parents(".cont-diente").append(tagFlecha)
+            }
+
+            //Pieza Diastema
+            if ( $(contenidoOdontograma).hasClass("hallazgo-diastema") ) {
+                $(this).parents("svg").toggleClass('active-diastema');
+
+                var tagFlecha = '<img src="img/diastema.png">';
+                $(this).parents(".cont-diente").addClass('diastema');
                 $(this).parents(".cont-diente").append(tagFlecha)
             }
 
@@ -160,6 +170,17 @@ var dataOdontograma = {
                 var wrapperContainer = $(this).parents(".contenido-odontograma");
                 var nombreHallazgo = wrapperContainer.attr("data-texto");
                 $(".lista-hallazgo-detallado").append('<li id=' + idDiente + ' data-pos=' +nombrePosition+ ' data-sigla=' +siglaPosition+ ' >'+ '<span class="nombre-hallazo"> ' + nombreHallazgo + ' : </span> De la  pieza dental <span> '
+                + piezaDiente + '</span> <a href="#">Eliminar</a>  </li>');
+                $(this).parents("svg").addClass('seleccionado');
+                $(this).parents("svg").removeClass('pre-seleccionado');
+
+            } else if ($(contenidoOdontograma).is('[data-tipo~="7"]')){   //tipo 7: //Diastema
+                var idDiente = $(this).parents("svg").attr("id");
+                var piezaDiente = $(this).parents("svg").attr("data-pieza");
+                // var piezaDienteSiguiente = parseFloat($(this).parents("svg").attr("data-pieza")) - 0.1;
+                var wrapperContainer = $(this).parents(".contenido-odontograma");
+                var nombreHallazgo = wrapperContainer.attr("data-texto");
+                $(".lista-hallazgo-detallado").append('<li id=' + idDiente + ' data-pos=' +nombrePosition+ ' data-sigla=' +siglaPosition+ ' >'+ '<span class="nombre-hallazo"> ' + nombreHallazgo + ' : </span> Entre la  pieza dental <span> '
                 + piezaDiente + '</span> <a href="#">Eliminar</a>  </li>');
                 $(this).parents("svg").addClass('seleccionado');
                 $(this).parents("svg").removeClass('pre-seleccionado');
