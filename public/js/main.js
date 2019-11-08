@@ -91,6 +91,15 @@ var dataOdontograma = {
                 $(this).parents(".cont-diente").append(tagFlecha)
             }
 
+            //Pieza Giroversion
+            if ( $(contenidoOdontograma).hasClass("hallazgo-giroversion") ) {
+                $(this).parents("svg").toggleClass('active-giroversion');
+
+                var tagFlecha = '<img src="img/giroversion.png">';
+                $(this).parents(".cont-diente").addClass('giroversion');
+                $(this).parents(".cont-diente").append(tagFlecha)
+            }
+
             $( cuadroDiente ).each(function( index ) {
                 var idCuadro = this.id; //obtiene id Cuadro
 
@@ -322,6 +331,7 @@ var dataOdontograma = {
                             $(this).parents('.flecha-extruida').find('img').remove();
                             $(this).parents('.flecha-intruida').find('img').remove();
                             $(this).parents('.diastema').find('img').remove();
+                            $(this).parents('.giroversion').find('img').remove();
                         }
                     });
                 }

@@ -738,6 +738,27 @@ svg.active-dentaria {
     background-position: right -8px;
 }
 
+
+.hallazgo-giroversion {
+    .svg {
+        &:hover {
+            cursor:pointer;
+            background-image: url(../img/giroversion.png);
+            background-repeat: no-repeat;
+            background-position: center bottom;
+            background-size: 40px;
+        }
+    }
+}
+
+.hallazgo-giroversion .box-lista-dientes-sub .svg:hover {
+    background-position: center 14px;
+}
+
+
+
+
+//ACTIVE GRAFICAS
 //Ausente
 .seleccionado.active-ausente {
     background-image: url(../img/diente-ausente.png);
@@ -786,8 +807,21 @@ svg.active-dentaria {
         top: 85px;
     }
 }
+//Icono Giroversion
+.giroversion {
+    position: relative;
+    img {
+        width: 35px;
+        height: auto;
+        position: absolute;
+        left: 8px;
+        top: 85px;
+    }
+}
 
-//Diastema
+.box-lista-dientes-sub .giroversion img {
+    top: -23px;
+}
 
 .box-lista-dientes-sub .diastema img {
     top: -8px;
@@ -844,7 +878,6 @@ svg.active-dentaria {
         top: 85px;
     }
 }
-
 
 
 

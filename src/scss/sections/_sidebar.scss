@@ -206,6 +206,16 @@
                 }
             }
         }
+        &.opcion-giroversion {
+            a {
+                &.active {
+                    color:blue;
+                }
+                &:hover {
+                    color:blue;
+                }
+            }
+        }
     }
 }
 

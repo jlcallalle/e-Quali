@@ -152,6 +152,10 @@ body {
     color: blue; }
   .lista-hallazgos li.opcion-diastema a:hover {
     color: blue; }
+  .lista-hallazgos li.opcion-giroversion a.active {
+    color: blue; }
+  .lista-hallazgos li.opcion-giroversion a:hover {
+    color: blue; }
 
 .page-odontograma {
   position: relative;
@@ -670,6 +674,16 @@ svg.active-dentaria {
 .hallazgo-diastema .box-lista-dientes-sub .svg:hover {
   background-position: right -8px; }
 
+.hallazgo-giroversion .svg:hover {
+  cursor: pointer;
+  background-image: url(../img/giroversion.png);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 40px; }
+
+.hallazgo-giroversion .box-lista-dientes-sub .svg:hover {
+  background-position: center 14px; }
+
 .seleccionado.active-ausente {
   background-image: url(../img/diente-ausente.png);
   background-repeat: no-repeat;
@@ -707,6 +721,18 @@ svg.active-dentaria {
     position: absolute;
     left: 17px;
     top: 85px; }
+
+.giroversion {
+  position: relative; }
+  .giroversion img {
+    width: 35px;
+    height: auto;
+    position: absolute;
+    left: 8px;
+    top: 85px; }
+
+.box-lista-dientes-sub .giroversion img {
+  top: -23px; }
 
 .box-lista-dientes-sub .diastema img {
   top: -8px; }
