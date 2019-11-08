@@ -111,7 +111,7 @@ var dataOdontograma = {
                         $( this ).find('.select-hallazgos').append(selectCaries);
                     }
                     if (nombreHallazgo == listaHallazgo.hallazgoFosasyFisurasProfundas) {
-                        $( this ).find('.select-hallpazgos').append('<span class="hallazgo-fosas-fisuras-profundas">FFP</span>');
+                        $( this ).find('.select-hallazgos').append('<span class="hallazgo-fosas-fisuras-profundas">FFP</span>');
                     }
                     if (nombreHallazgo == listaHallazgo.hallazgoPiesaDentariaEctopica) {
                         $( this ).find('.select-hallazgos').append('<span class="hallazgo-piesa-dentaria-ectopica">E</span>');

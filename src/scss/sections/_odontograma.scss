@@ -701,6 +701,10 @@ svg.active-dentaria {
     }
 }
 
+.hallazgo-pieza-dentaria-extruida .box-lista-dientes-sub .svg:hover {
+    background-image: url(../img/flecha-intruida.png);
+}
+
 .hallazgo-pieza-dentaria-intruida {
     .svg {
         &:hover {
@@ -711,6 +715,10 @@ svg.active-dentaria {
             background-size: 35% 35%;
         }
     }
+}
+
+.hallazgo-pieza-dentaria-intruida .box-lista-dientes-sub .svg:hover {
+    background-image: url(../img/flecha-extruida.png);
 }
 
 
@@ -744,29 +752,45 @@ svg.active-dentaria {
 //Extruida
 .flecha-extruida {
     position: relative;
+    img {
+        width:16px;
+        height: auto;
+        position: absolute;
+        left: 17px;
+        top: 85px;
+    }
 }
 
-.flecha-extruida img {
-    width: 20px;
-    height: auto;
-    position: absolute;
-    left: 16px;
-    top: -34px;
+.incisivos.flecha-extruida,
+.incisivos.flecha-intruida {
+    img {
+        left: 13px;
+    }
+}
+
+.box-sub-nino .flecha-extruida img,
+.box-sub-adulto .flecha-extruida img{
+    top: -24px;
+    transform: rotate(179deg);
+}
+
+.box-sub-nino .flecha-intruida img,
+.box-sub-adulto .flecha-intruida img{
+    top: -24px;
+    transform: rotate(179deg);
 }
 
 //Intruida
 .flecha-intruida {
     position: relative;
+    img {
+        width: 15px;
+        height: auto;
+        position: absolute;
+        left: 17px;
+        top: 85px;
+    }
 }
-
-.flecha-intruida img {
-    width: 20px;
-    height: auto;
-    position: absolute;
-    left: 16px;
-    top: -34px;
-}
-
 
 
 
