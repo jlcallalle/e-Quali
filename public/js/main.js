@@ -35,6 +35,7 @@ var dataOdontograma = {
             // se elimina clase 'pre-seleccionado' en general y elimina clase active cuando no tienen clase .seleccionado
             $(".contenido-polygon").find(".svg").removeClass("pre-seleccionado");
             $(".contenido-polygon").find(".svg").not(".seleccionado").find(".diente").removeClass("active");
+            $(".contenido-polygon").find(".svg").not(".seleccionado").removeClass("active-corona active-corona-malo");
             var contenidoOdontograma = $(this).parents(".contenido-odontograma");
             var nombreHallazgo =  contenidoOdontograma.attr("data-name");
             var tipoHallazgo =  contenidoOdontograma.attr("data-tipo");
@@ -110,6 +111,14 @@ var dataOdontograma = {
                 $(this).parents("svg").removeClass('pre-seleccionado');
             }
 
+            //Pieza Intruida
+            if ( $(contenidoOdontograma).hasClass("hallazgo-corona") ) {
+                $(this).parents("svg").toggleClass('active-corona');
+            }
+            if ( $(contenidoOdontograma).hasClass("hallazgo-corona-malo") ) {
+                $(this).parents("svg").toggleClass('active-corona-malo');
+            }
+
             $( cuadroDiente ).each(function( index ) {
                 var idCuadro = this.id; //obtiene id Cuadro
 
@@ -162,6 +171,14 @@ var dataOdontograma = {
                     }
                     if (nombreHallazgo == listaHallazgo.hallazgoRemanenteRadicular) {
                         $( this ).find('.select-hallazgos').append('<span class="hallazgo-remanente-radicular">RR</span>');
+                    }
+                    if (nombreHallazgo == listaHallazgo.hallazgoCorona) {
+                        var selectCaries ="<select class='select-tipo select-corona' name='hallazgo-corona'><option value=''>Elegir</option><option value='Corona Metálica'>CM</option><option value='Corona Fenestrada'>CF</option><option value='Corona Metal Cerámica'>CMC</option><option value='Corona Veneer'>CV</option><option value='Canilla Estética'>CJ</option><option value='Corona Temporal'>CT</option> </select>"
+                        $( this ).find('.select-hallazgos').append(selectCaries);
+                    }
+                    if (nombreHallazgo == listaHallazgo.hallazgoCoronaMalo) {
+                        var selectCaries ="<select class='select-tipo select-corona-malo' name='hallazgo-corona'><option value=''>Elegir</option><option value='Corona Metálica'>CM</option><option value='Corona Fenestrada'>CF</option><option value='Corona Metal Cerámica'>CMC</option><option value='Corona Veneer'>CV</option><option value='Canilla Estética'>CJ</option><option value='Corona Temporal'>CT</option> </select>"
+                        $( this ).find('.select-hallazgos').append(selectCaries);
                     }
 
                 }
@@ -311,6 +328,13 @@ var dataOdontograma = {
             }
             $("#hallazgo-implante-dental-malo").toggleClass(".actiive");
 
+            if(nombreHallazgo == listaHallazgo.hallazgoCorona || nombreHallazgo == listaHallazgo.hallazgoCoronaMalo ){
+                $(".corona-estado").addClass("show");
+            } else {
+                $(".corona-estado").removeClass("show");
+            }
+            $("#hallazgo-corona-malo").toggleClass(".actiive");
+
 
         });
 
@@ -326,6 +350,7 @@ var dataOdontograma = {
             $("#hallazgo-restauracion-definitiva").toggleClass('active');
         });
 
+
         $( ".implante-estado .bueno" ).click(function(e) {
             e.preventDefault();
             e.stopPropagation();
@@ -336,6 +361,18 @@ var dataOdontograma = {
             e.preventDefault();
             e.stopPropagation();
             $("#hallazgo-implante-dental").toggleClass('active');
+        });
+
+        $( ".corona-estado .bueno" ).click(function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            $("#hallazgo-corona").trigger("click")
+        });
+
+        $( ".corona-estado .malo" ).click(function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            $("#hallazgo-corona").toggleClass('active');
         });
 
         $("#hallazgo-caries").click();
@@ -366,6 +403,8 @@ var dataOdontograma = {
                             $(this).parents(".svg").removeClass("seleccionado");
                             $(this).parents('.svg').removeClass("active-ausente");
                             $(this).parents('.svg').removeClass("active-erupcion");
+                            $(this).parents('.svg').removeClass("active-corona");
+                            $(this).parents('.svg').removeClass("active-corona-malo");
                             $(this).parents('.flecha-extruida').find('img').remove();
                             $(this).parents('.flecha-intruida').find('img').remove();
                             $(this).parents('.diastema').find('img').remove();

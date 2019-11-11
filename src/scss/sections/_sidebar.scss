@@ -226,6 +226,16 @@
                 }
             }
         }
+        &.opcion-corona {
+            a {
+                &.active {
+                    color:blue;
+                }
+                &:hover {
+                    color:blue;
+                }
+            }
+        }
     }
 }
 

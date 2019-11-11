@@ -160,6 +160,10 @@ body {
     color: blue; }
   .lista-hallazgos li.opcion-implante-dental a:hover {
     color: blue; }
+  .lista-hallazgos li.opcion-corona a.active {
+    color: blue; }
+  .lista-hallazgos li.opcion-corona a:hover {
+    color: blue; }
 
 .page-odontograma {
   position: relative;
@@ -445,6 +449,28 @@ body {
 .hallazgo-implante-dental-malo .diente:hover {
   fill: red; }
 
+.hallazgo-corona .svg:hover {
+  cursor: pointer; }
+  .hallazgo-corona .svg:hover .contorno {
+    stroke: blue;
+    stroke-width: 10px; }
+
+.hallazgo-corona-malo .svg:hover {
+  cursor: pointer; }
+  .hallazgo-corona-malo .svg:hover .contorno {
+    stroke: red;
+    stroke-width: 10px; }
+
+.active-corona .contorno {
+  cursor: pointer;
+  stroke: blue;
+  stroke-width: 10px; }
+
+.active-corona-malo .contorno {
+  cursor: pointer;
+  stroke: red;
+  stroke-width: 10px; }
+
 svg.active-dentaria {
   fill: blue; }
 
@@ -582,6 +608,10 @@ svg.active-dentaria {
       color: red; }
     .select-hallazgos span.hallazgo-movilidad-patologica {
       color: red; }
+    .select-hallazgos span.hallazgo-corona {
+      color: blue; }
+    .select-hallazgos span.hallazgo-corona-malo {
+      color: blue; }
 
 .contenido-odontograma .diente-restaura .diente.active {
   fill: blue; }
@@ -810,7 +840,8 @@ svg.active-dentaria {
   width: 44px; }
 
 .restaura-estado,
-.implante-estado {
+.implante-estado,
+.corona-estado {
   position: absolute;
   top: 0;
   right: 5px;
@@ -821,10 +852,12 @@ svg.active-dentaria {
   height: 42px;
   display: none; }
   .restaura-estado.show,
-  .implante-estado.show {
+  .implante-estado.show,
+  .corona-estado.show {
     display: block; }
   .restaura-estado .estados,
-  .implante-estado .estados {
+  .implante-estado .estados,
+  .corona-estado .estados {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -833,14 +866,17 @@ svg.active-dentaria {
             justify-content: space-evenly;
     z-index: 99999; }
     .restaura-estado .estados a,
-    .implante-estado .estados a {
+    .implante-estado .estados a,
+    .corona-estado .estados a {
       width: 20px;
       height: 20px; }
     .restaura-estado .estados .bueno,
-    .implante-estado .estados .bueno {
+    .implante-estado .estados .bueno,
+    .corona-estado .estados .bueno {
       background: blue; }
     .restaura-estado .estados .malo,
-    .implante-estado .estados .malo {
+    .implante-estado .estados .malo,
+    .corona-estado .estados .malo {
       background: red; }
 
 .list-editable {

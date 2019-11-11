@@ -372,6 +372,43 @@
     }
 }
 
+.hallazgo-corona {
+    .svg {
+        &:hover {
+            cursor:pointer;
+            .contorno {
+                stroke: blue;
+                stroke-width: 10px;
+            }
+        }
+    }
+}
+.hallazgo-corona-malo {
+    .svg {
+        &:hover {
+            cursor:pointer;
+            .contorno {
+                stroke: red;
+                stroke-width: 10px;
+            }
+        }
+    }
+}
+
+.active-corona  {
+    .contorno {
+        cursor: pointer;
+        stroke: blue;
+        stroke-width: 10px;
+    }
+}
+.active-corona-malo  {
+    .contorno {
+        cursor: pointer;
+        stroke: red;
+        stroke-width: 10px;
+    }
+}
 
 svg.active-dentaria {
     fill: blue;
@@ -538,6 +575,12 @@ svg.active-dentaria {
         }
         &.hallazgo-movilidad-patologica {
             color:red;;
+        }
+        &.hallazgo-corona {
+            color:blue;;
+        }
+        &.hallazgo-corona-malo {
+            color:blue;;
         }
     }
 }
@@ -936,7 +979,8 @@ svg.active-dentaria {
 }
 
 .restaura-estado,
-.implante-estado {
+.implante-estado,
+.corona-estado {
     position: absolute;
     top: 0;
     right: 5px;
