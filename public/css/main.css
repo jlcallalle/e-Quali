@@ -156,6 +156,10 @@ body {
     color: blue; }
   .lista-hallazgos li.opcion-giroversion a:hover {
     color: blue; }
+  .lista-hallazgos li.opcion-implante-dental a.active {
+    color: blue; }
+  .lista-hallazgos li.opcion-implante-dental a:hover {
+    color: blue; }
 
 .page-odontograma {
   position: relative;
@@ -435,6 +439,12 @@ body {
   stroke: red;
   stroke-width: 15px; }
 
+.hallazgo-implante-dental .diente:hover {
+  fill: blue; }
+
+.hallazgo-implante-dental-malo .diente:hover {
+  fill: red; }
+
 svg.active-dentaria {
   fill: blue; }
 
@@ -552,6 +562,10 @@ svg.active-dentaria {
       color: blue; }
     .select-hallazgos span.hallazgo-restauracion-definitiva-malo {
       color: red; }
+    .select-hallazgos span.hallazgo-implante-dental {
+      color: blue; }
+    .select-hallazgos span.hallazgo-implante-dental-malo {
+      color: red; }
     .select-hallazgos span.hallazgo-posicion-dentaria {
       color: blue; }
     .select-hallazgos span.hallazgo-fosas-fisuras-profundas {
@@ -586,6 +600,12 @@ svg.active-dentaria {
   fill: blue; }
 
 .hallazgo-restauracion-definitiva-malo.active {
+  fill: red; }
+
+.hallazgo-implante-dental.active {
+  fill: blue; }
+
+.hallazgo-implante-dental-malo.active {
   fill: red; }
 
 .hallazgo-restauracion-temporal.active {
@@ -629,7 +649,7 @@ svg.active-dentaria {
   background-image: url(../img/erupcion-sub.png);
   background-repeat: no-repeat;
   background-position: top center;
-  background-size: 100% 90%; }
+  background-size: 80% 85%; }
 
 .hallazgo-pieza-dentaria-en-erupcion .box-sub-adulto .svg:hover, .hallazgo-pieza-dentaria-en-erupcion .box-sub-nino .svg:hover {
   background-image: url(../img/erupcion-top.png);
@@ -702,7 +722,7 @@ svg.active-dentaria {
   background-image: url(../img/erupcion-sub.png);
   background-repeat: no-repeat;
   background-position: top center;
-  background-size: 100% 90%; }
+  background-size: 80% 85%; }
 
 .active .icon-ausente {
   fill: blue; }
@@ -789,7 +809,8 @@ svg.active-dentaria {
 .box-inc .select-tipo {
   width: 44px; }
 
-.restaura-estado {
+.restaura-estado,
+.implante-estado {
   position: absolute;
   top: 0;
   right: 5px;
@@ -799,9 +820,11 @@ svg.active-dentaria {
   text-align: center;
   height: 42px;
   display: none; }
-  .restaura-estado.show {
+  .restaura-estado.show,
+  .implante-estado.show {
     display: block; }
-  .restaura-estado .estados {
+  .restaura-estado .estados,
+  .implante-estado .estados {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -809,12 +832,15 @@ svg.active-dentaria {
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
     z-index: 99999; }
-    .restaura-estado .estados a {
+    .restaura-estado .estados a,
+    .implante-estado .estados a {
       width: 20px;
       height: 20px; }
-    .restaura-estado .estados .bueno {
+    .restaura-estado .estados .bueno,
+    .implante-estado .estados .bueno {
       background: blue; }
-    .restaura-estado .estados .malo {
+    .restaura-estado .estados .malo,
+    .implante-estado .estados .malo {
       background: red; }
 
 .list-editable {

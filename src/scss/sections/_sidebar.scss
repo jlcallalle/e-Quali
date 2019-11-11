@@ -216,6 +216,16 @@
                 }
             }
         }
+        &.opcion-implante-dental {
+            a {
+                &.active {
+                    color:blue;
+                }
+                &:hover {
+                    color:blue;
+                }
+            }
+        }
     }
 }
 

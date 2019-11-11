@@ -100,6 +100,16 @@ var dataOdontograma = {
                 $(this).parents(".cont-diente").append(tagFlecha)
             }
 
+            //Implante Dental
+            if ( $(contenidoOdontograma).hasClass("hallazgo-implante-dental") ) {
+                $(this).parents("svg").addClass('seleccionado');
+                $(this).parents("svg").removeClass('pre-seleccionado');
+            }
+            if ( $(contenidoOdontograma).hasClass("hallazgo-implante-dental-malo") ) {
+                $(this).parents("svg").addClass('seleccionado');
+                $(this).parents("svg").removeClass('pre-seleccionado');
+            }
+
             $( cuadroDiente ).each(function( index ) {
                 var idCuadro = this.id; //obtiene id Cuadro
 
@@ -120,6 +130,12 @@ var dataOdontograma = {
                     if (nombreHallazgo == listaHallazgo.hallazgoRestauracionDefinitivaMalo) {
                         var selectCaries ="<select class='select-tipo select-restauracion-definitiva-malo' name='hallazgo-restauracion-definitiva-malo'><option value=''>Elegir</option><option value='Amalgama Dental'>AD</option> <option value='Resina' >R</option> <option value='Ionónedo de vidrio'>IV</option><option value='Incrustación Estética'>IE</option><option value='Canilla Estética'>C</option></select>"
                         $( this ).find('.select-hallazgos').append(selectCaries);
+                    }
+                    if (nombreHallazgo == listaHallazgo.hallazgoImplanteDental) {
+                        $( this ).find('.select-hallazgos').append('<span class="hallazgo-implante-dental">IMP</span>');
+                    }
+                    if (nombreHallazgo == listaHallazgo.hallazgoImplanteDentalMalo) {
+                        $( this ).find('.select-hallazgos').append('<span class="hallazgo-implante-dental-malo">IMP</span>');
                     }
                     if (nombreHallazgo == listaHallazgo.hallazgoPosicionDentaria) {
                         var selectCaries ="<select class='select-tipo select-posicion-dentari' name='hallazgo-posicion-dentaria'><option value=''>Elegir</option><option value='Mesializado'>M</option> <option value='Distalizado'>D</option> <option value='Vestibularizado'>V</option><option value='Palatinizado'>P</option><option value='Lingualizado'>L</option></select>"
@@ -231,6 +247,7 @@ var dataOdontograma = {
                             + idDiente + '</span> <a href="#">Eliminar</a> </li> ');
                         }
 
+                        //activa seleccionado en select
                         $(this).addClass('seleccionado');
                         $(this).removeClass('pre-seleccionado');
 
@@ -284,20 +301,41 @@ var dataOdontograma = {
             } else {
                 $(".restaura-estado").removeClass("show");
             }
+            $("#hallazgo-restauracion-definitiva-malo").toggleClass(".actiive");
 
-            $("#hallazgo-restauracion-definitiva-malo").toggleClass("actiive");
+
+            if(nombreHallazgo == listaHallazgo.hallazgoImplanteDental || nombreHallazgo == listaHallazgo.hallazgoImplanteDentalMalo ){
+                $(".implante-estado").addClass("show");
+            } else {
+                $(".implante-estado").removeClass("show");
+            }
+            $("#hallazgo-implante-dental-malo").toggleClass(".actiive");
+
+
         });
 
-        $( ".estados .bueno" ).click(function(e) {
+        $( ".restaura-estado .bueno" ).click(function(e) {
             e.preventDefault();
             e.stopPropagation();
             $("#hallazgo-restauracion-definitiva").trigger("click")
         });
 
-        $( ".estados .malo" ).click(function(e) {
+        $( ".restaura-estado .malo" ).click(function(e) {
             e.preventDefault();
             e.stopPropagation();
             $("#hallazgo-restauracion-definitiva").toggleClass('active');
+        });
+
+        $( ".implante-estado .bueno" ).click(function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            $("#hallazgo-implante-dental").trigger("click")
+        });
+
+        $( ".implante-estado .malo" ).click(function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            $("#hallazgo-implante-dental").toggleClass('active');
         });
 
         $("#hallazgo-caries").click();
