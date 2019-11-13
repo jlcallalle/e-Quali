@@ -1,14 +1,13 @@
 var dataOdontograma = {
-    "caries": [],
-    "restauracion": [],
-  };
+  "caries": [],
+  "restauracion": [],
+};
 
-  var dientes = {};
+var dientes = {};
 
-  var MyApp = {
+var MyApp = {
     eventoDientes : function() {
         $(".cont-diente .diente").on("click", function(e){
-            //deshabilita eventos cuando se haya habilitado el hallazgo
             if ($(this).hasClass('active')) {
               return;
             }
@@ -24,10 +23,6 @@ var dataOdontograma = {
             if ($(this).parents(".svg").hasClass('active-diastema')) {
               return;
             }
-
-            // if ($(this).parents(".svg").hasClass('seleccionado')) {
-            //   return;
-            // }
             // if ($(this).parents(".svg").hasClass('seleccionado')) {
             //   return;
             // }
@@ -55,67 +50,63 @@ var dataOdontograma = {
             $(".select-tipo").remove();
 
             //Pieza Ausente
-            if ( $(contenidoOdontograma).hasClass("hallazgo-pieza-dentaria-ausente") ) {
-                console.log('pieza dentaria ausente');
+            if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoDienteAusente) ) {
                 $(this).parents("svg").toggleClass('active-ausente');
             }
             //Pieza Extuida
-            if ( $(contenidoOdontograma).hasClass("hallazgo-pieza-dentaria-en-erupcion") ) {
-                console.log('pieza dentaria erupción');
+            if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoDienteErupcion) ) {
                 $(this).parents("svg").toggleClass('active-erupcion');
             }
 
             //Pieza Extruida
-            if ( $(contenidoOdontograma).hasClass("hallazgo-pieza-dentaria-extruida") ) {
+            if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoDienteExtruida) ) {
                 $(this).parents("svg").toggleClass('active-extruida');
-
                 var tagFlecha = '<img src="img/flecha-extruida.png">';
                 $(this).parents(".cont-diente").addClass('flecha-extruida');
                 $(this).parents(".cont-diente").append(tagFlecha)
             }
 
             //Pieza Intruida
-            if ( $(contenidoOdontograma).hasClass("hallazgo-pieza-dentaria-intruida") ) {
+            if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoDienteIntruida) ) {
                 $(this).parents("svg").toggleClass('active-intruida');
-
                 var tagFlecha = '<img src="img/flecha-intruida.png">';
                 $(this).parents(".cont-diente").addClass('flecha-intruida');
                 $(this).parents(".cont-diente").append(tagFlecha)
             }
 
             //Pieza Diastema
-            if ( $(contenidoOdontograma).hasClass("hallazgo-diastema") ) {
+            if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoDiastema) ) {
                 $(this).parents("svg").toggleClass('active-diastema');
-
                 var tagFlecha = '<img src="img/diastema.png">';
                 $(this).parents(".cont-diente").addClass('diastema');
                 $(this).parents(".cont-diente").append(tagFlecha)
             }
 
             //Pieza Giroversion
-            if ( $(contenidoOdontograma).hasClass("hallazgo-giroversion") ) {
+            if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoGiroversion) ) {
                 $(this).parents("svg").toggleClass('active-giroversion');
-
                 var tagFlecha = '<img src="img/giroversion.png">';
                 $(this).parents(".cont-diente").addClass('giroversion');
                 $(this).parents(".cont-diente").append(tagFlecha)
             }
 
             //Implante Dental
-            if ( $(contenidoOdontograma).hasClass("hallazgo-implante-dental") ) {
+            if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoImplanteDental) ) {
                 $(this).parents("svg").addClass('seleccionado');
                 $(this).parents("svg").removeClass('pre-seleccionado');
             }
-            if ( $(contenidoOdontograma).hasClass("hallazgo-implante-dental-malo") ) {
+
+            if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoImplanteDentalMalo) ) {
                 $(this).parents("svg").addClass('seleccionado');
                 $(this).parents("svg").removeClass('pre-seleccionado');
             }
 
             //Pieza Intruida
-            if ( $(contenidoOdontograma).hasClass("hallazgo-corona") ) {
+            if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoCorona) ) {
                 $(this).parents("svg").toggleClass('active-corona');
             }
-            if ( $(contenidoOdontograma).hasClass("hallazgo-corona-malo") ) {
+
+            if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoCoronaMalo) ) {
                 $(this).parents("svg").toggleClass('active-corona-malo');
             }
 
@@ -177,7 +168,7 @@ var dataOdontograma = {
                         $( this ).find('.select-hallazgos').append(selectCaries);
                     }
                     if (nombreHallazgo == listaHallazgo.hallazgoCoronaMalo) {
-                        var selectCaries ="<select class='select-tipo select-corona-malo' name='hallazgo-corona'><option value=''>Elegir</option><option value='Corona Metálica'>CM</option><option value='Corona Fenestrada'>CF</option><option value='Corona Metal Cerámica'>CMC</option><option value='Corona Veneer'>CV</option><option value='Canilla Estética'>CJ</option><option value='Corona Temporal'>CT</option> </select>"
+                        var selectCaries ="<select class='select-tipo select-corona-malo' name='hallazgo-corona-malo'><option value=''>Elegir</option><option value='Corona Metálica'>CM</option><option value='Corona Fenestrada'>CF</option><option value='Corona Metal Cerámica'>CMC</option><option value='Corona Veneer'>CV</option><option value='Canilla Estética'>CJ</option><option value='Corona Temporal'>CT</option> </select>"
                         $( this ).find('.select-hallazgos').append(selectCaries);
                     }
 

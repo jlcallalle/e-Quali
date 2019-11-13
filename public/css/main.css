@@ -57,6 +57,7 @@ body {
 
 /*  Sidebar Odontograma*/
 .opciones-odontologia {
+  background-color: white;
   height: 207px;
   width: 240px;
   position: fixed;
@@ -611,7 +612,7 @@ svg.active-dentaria {
     .select-hallazgos span.hallazgo-corona {
       color: blue; }
     .select-hallazgos span.hallazgo-corona-malo {
-      color: blue; }
+      color: red; }
 
 .contenido-odontograma .diente-restaura .diente.active {
   fill: blue; }
