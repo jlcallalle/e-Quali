@@ -394,6 +394,17 @@
         }
     }
 }
+.hallazgo-corona-temporal {
+    .svg {
+        &:hover {
+            cursor:pointer;
+            .contorno {
+                stroke: red;
+                stroke-width: 10px;
+            }
+        }
+    }
+}
 
 .active-corona  {
     .contorno {
@@ -403,6 +414,13 @@
     }
 }
 .active-corona-malo  {
+    .contorno {
+        cursor: pointer;
+        stroke: red;
+        stroke-width: 10px;
+    }
+}
+.active-corona-temporal  {
     .contorno {
         cursor: pointer;
         stroke: red;
@@ -580,6 +598,9 @@ svg.active-dentaria {
             color:blue;;
         }
         &.hallazgo-corona-malo {
+            color:red;;
+        }
+        &.hallazgo-corona-temporal {
             color:red;;
         }
     }

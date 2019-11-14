@@ -165,6 +165,10 @@ body {
     color: blue; }
   .lista-hallazgos li.opcion-corona a:hover {
     color: blue; }
+  .lista-hallazgos li.opcion-corona-temporal a.active {
+    color: red; }
+  .lista-hallazgos li.opcion-corona-temporal a:hover {
+    color: red; }
 
 .page-odontograma {
   position: relative;
@@ -462,12 +466,23 @@ body {
     stroke: red;
     stroke-width: 10px; }
 
+.hallazgo-corona-temporal .svg:hover {
+  cursor: pointer; }
+  .hallazgo-corona-temporal .svg:hover .contorno {
+    stroke: red;
+    stroke-width: 10px; }
+
 .active-corona .contorno {
   cursor: pointer;
   stroke: blue;
   stroke-width: 10px; }
 
 .active-corona-malo .contorno {
+  cursor: pointer;
+  stroke: red;
+  stroke-width: 10px; }
+
+.active-corona-temporal .contorno {
   cursor: pointer;
   stroke: red;
   stroke-width: 10px; }
@@ -612,6 +627,8 @@ svg.active-dentaria {
     .select-hallazgos span.hallazgo-corona {
       color: blue; }
     .select-hallazgos span.hallazgo-corona-malo {
+      color: red; }
+    .select-hallazgos span.hallazgo-corona-temporal {
       color: red; }
 
 .contenido-odontograma .diente-restaura .diente.active {
