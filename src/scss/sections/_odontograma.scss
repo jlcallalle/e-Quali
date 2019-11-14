@@ -313,6 +313,13 @@
     }
 }
 
+.svg {
+  &:hover {
+      cursor:pointer;
+  }
+}
+
+
 //Hallazgos Dientes Hovere
 
 .hallazgo-caries {
@@ -386,7 +393,6 @@
 .hallazgo-corona-malo {
     .svg {
         &:hover {
-            cursor:pointer;
             .contorno {
                 stroke: red;
                 stroke-width: 10px;
@@ -397,7 +403,7 @@
 .hallazgo-corona-temporal {
     .svg {
         &:hover {
-            cursor:pointer;
+            // cursor:pointer;
             .contorno {
                 stroke: red;
                 stroke-width: 10px;
@@ -406,11 +412,6 @@
     }
 }
 .hallazgo-geminacion {
-    .svg {
-        &:hover {
-            cursor:pointer;
-        }
-    }
     .cont-diente {
       position:relative;
       &:hover {
@@ -446,6 +447,46 @@
     }
 }
 
+.hallazgo-fusion {
+  .svg {
+      &:hover {
+          cursor:pointer;
+      }
+  }
+  .cont-diente {
+    position:relative;
+    &:hover {
+      // &:before {
+      //   content: '';
+      //   width: 25px;
+      //   height: 25px;
+      //   border: 2px solid blue;
+      //   display: block;
+      //   top: -43px;
+      //   border-radius: 14px;
+      //   position: absolute;
+      //   left: 15px;
+      // }
+    }
+    &.incisivos {
+      // &:hover {
+      //   &:before {
+      //     left: 8px;
+      //   }
+      // }
+    }
+  }
+
+  .box-lista-dientes-sub {
+    .cont-diente {
+      &:hover {
+        &:before {
+          top: 78px;
+        }
+      }
+    }
+  }
+}
 
 .active-corona  {
     .contorno {
@@ -468,13 +509,6 @@
         stroke-width: 10px;
     }
 }
-// .active-geminacion {
-//     .contorno {
-//         cursor: pointer;
-//         stroke: green;
-//         stroke-width: 10px;
-//     }
-// }
 
 .active-geminacion {
   position: relative;
@@ -488,21 +522,53 @@
     border-radius: 14px;
     position: absolute;
     left: 15px;
-  }
-}
-
-.box-lista-dientes-sub {
-  .active-geminacion {
-    &:before {
+    .box-lista-dientes-sub & {
       top: 78px;
+    }
+  }
+  &.incisivos  {
+    &:before {
+      left: 8px;
     }
   }
 }
 
-.incisivos {
-  &.active-geminacion {
+.active-fusion {
+  position: relative;
+  &:before {
+    content: '';
+    width: 54px;
+    height: 25px;
+    border: 2px solid blue;
+    display: block;
+    top: -43px;
+    border-radius: 14px;
+    position: absolute;
+    left: 10px;
+    .box-lista-dientes-sub & {
+      top: 78px;
+    }
+  }
+  &:after {
+    content: '';
+    width: 54px;
+    height: 25px;
+    border: 2px solid blue;
+    display: block;
+    top: -43px;
+    border-radius: 14px;
+    position: absolute;
+    left: 50px;
+    .box-lista-dientes-sub & {
+      top: 78px;
+    }
+  }
+  &.incisivos  {
     &:before {
-      left: 8px;
+      left: 43px;
+    }
+    &:after {
+      left: 0;
     }
   }
 }

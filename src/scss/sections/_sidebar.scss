@@ -250,10 +250,20 @@
         &.opcion-geminacion {
             a {
                 &.active {
-                    color:red;
+                    color:blue;
                 }
                 &:hover {
-                    color:red;
+                    color:blue;
+                }
+            }
+        }
+        &.opcion-fusion {
+            a {
+                &.active {
+                    color:blue;
+                }
+                &:hover {
+                    color:blue;
                 }
             }
         }

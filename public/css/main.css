@@ -170,9 +170,13 @@ body {
   .lista-hallazgos li.opcion-corona-temporal a:hover {
     color: red; }
   .lista-hallazgos li.opcion-geminacion a.active {
-    color: red; }
+    color: blue; }
   .lista-hallazgos li.opcion-geminacion a:hover {
-    color: red; }
+    color: blue; }
+  .lista-hallazgos li.opcion-fusion a.active {
+    color: blue; }
+  .lista-hallazgos li.opcion-fusion a:hover {
+    color: blue; }
 
 .page-odontograma {
   position: relative;
@@ -436,6 +440,9 @@ body {
   .contenido-odontograma .diente:hover {
     cursor: pointer; }
 
+.svg:hover {
+  cursor: pointer; }
+
 .hallazgo-caries .diente:hover {
   fill: red; }
 
@@ -464,20 +471,13 @@ body {
     stroke: blue;
     stroke-width: 10px; }
 
-.hallazgo-corona-malo .svg:hover {
-  cursor: pointer; }
-  .hallazgo-corona-malo .svg:hover .contorno {
-    stroke: red;
-    stroke-width: 10px; }
+.hallazgo-corona-malo .svg:hover .contorno {
+  stroke: red;
+  stroke-width: 10px; }
 
-.hallazgo-corona-temporal .svg:hover {
-  cursor: pointer; }
-  .hallazgo-corona-temporal .svg:hover .contorno {
-    stroke: red;
-    stroke-width: 10px; }
-
-.hallazgo-geminacion .svg:hover {
-  cursor: pointer; }
+.hallazgo-corona-temporal .svg:hover .contorno {
+  stroke: red;
+  stroke-width: 10px; }
 
 .hallazgo-geminacion .cont-diente {
   position: relative; }
@@ -495,6 +495,15 @@ body {
     left: 8px; }
 
 .hallazgo-geminacion .box-lista-dientes-sub .cont-diente:hover:before {
+  top: 78px; }
+
+.hallazgo-fusion .svg:hover {
+  cursor: pointer; }
+
+.hallazgo-fusion .cont-diente {
+  position: relative; }
+
+.hallazgo-fusion .box-lista-dientes-sub .cont-diente:hover:before {
   top: 78px; }
 
 .active-corona .contorno {
@@ -524,12 +533,41 @@ body {
     border-radius: 14px;
     position: absolute;
     left: 15px; }
+    .box-lista-dientes-sub .active-geminacion:before {
+      top: 78px; }
+  .active-geminacion.incisivos:before {
+    left: 8px; }
 
-.box-lista-dientes-sub .active-geminacion:before {
-  top: 78px; }
-
-.incisivos.active-geminacion:before {
-  left: 8px; }
+.active-fusion {
+  position: relative; }
+  .active-fusion:before {
+    content: '';
+    width: 54px;
+    height: 25px;
+    border: 2px solid blue;
+    display: block;
+    top: -43px;
+    border-radius: 14px;
+    position: absolute;
+    left: 10px; }
+    .box-lista-dientes-sub .active-fusion:before {
+      top: 78px; }
+  .active-fusion:after {
+    content: '';
+    width: 54px;
+    height: 25px;
+    border: 2px solid blue;
+    display: block;
+    top: -43px;
+    border-radius: 14px;
+    position: absolute;
+    left: 50px; }
+    .box-lista-dientes-sub .active-fusion:after {
+      top: 78px; }
+  .active-fusion.incisivos:before {
+    left: 43px; }
+  .active-fusion.incisivos:after {
+    left: 0; }
 
 svg.active-dentaria {
   fill: blue; }
