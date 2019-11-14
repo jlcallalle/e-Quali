@@ -267,6 +267,16 @@
                 }
             }
         }
+        &.opcion-clavija {
+            a {
+                &.active {
+                    color:blue;
+                }
+                &:hover {
+                    color:blue;
+                }
+            }
+        }
     }
 }
 

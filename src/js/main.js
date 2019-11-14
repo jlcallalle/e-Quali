@@ -111,6 +111,10 @@ var MyApp = {
           $(this).parents("svg").parent().toggleClass('active-fusion');
       }
 
+      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoDienteClavija) ) {
+          $(this).parents("svg").parent().toggleClass('active-clavija');
+      }
+
       $( cuadroDiente ).each(function( index ) {
           var idCuadro = this.id;
 
@@ -395,6 +399,7 @@ var MyApp = {
                           $(this).parents('.svg').removeClass("active-corona-temporal");
                           $(this).parents('.svg').parent().removeClass("active-geminacion");
                           $(this).parents('.svg').parent().removeClass("active-fusion");
+                          $(this).parents('.svg').parent().removeClass("active-clavija");
                           $(this).parents('.flecha-extruida').find('img').remove();
                           $(this).parents('.flecha-intruida').find('img').remove();
                           $(this).parents('.diastema').find('img').remove();

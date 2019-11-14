@@ -533,6 +533,35 @@
   }
 }
 
+
+.active-clavija {
+  position: relative;
+  &:before {
+    content: '';
+    width: 36px;
+    height: 36px;
+    display: block;
+    top: -50px;
+    position: absolute;
+    left: 10px;
+    background-image: url(../img/clavija.png);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: contain;
+
+    .box-lista-dientes-sub & {
+      top: 71px;
+    }
+  }
+  &.incisivos  {
+    &:before {
+      left: 3px;
+    }
+  }
+
+}
+
+
 .active-fusion {
   position: relative;
   &:before {
@@ -938,6 +967,44 @@ svg.active-dentaria {
     background-image: url(../img/flecha-extruida.png);
 }
 
+
+.hallazgo-pieza-dentaria-clavija {
+    .cont-diente {
+      position:relative;
+      &:hover {
+        &:before {
+          content: '';
+          width: 36px;
+          height: 36px;
+          display: block;
+          top: -50px;
+          position: absolute;
+          left: 10px;
+          background-image: url(../img/clavija.png);
+          background-repeat: no-repeat;
+          background-position: top center;
+          background-size: contain;
+        }
+        &.incisivos {
+          &:hover {
+            &:before {
+              left: 3px;
+            }
+          }
+        }
+      }
+    }
+
+    .box-lista-dientes-sub {
+      .cont-diente {
+        &:hover {
+          &:before {
+            top: 71px;
+          }
+        }
+      }
+    }
+}
 //Diastema
 .hallazgo-diastema {
     .svg {
