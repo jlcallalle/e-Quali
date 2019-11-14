@@ -405,6 +405,47 @@
         }
     }
 }
+.hallazgo-geminacion {
+    .svg {
+        &:hover {
+            cursor:pointer;
+        }
+    }
+    .cont-diente {
+      position:relative;
+      &:hover {
+        &:before {
+          content: '';
+          width: 25px;
+          height: 25px;
+          border: 2px solid blue;
+          display: block;
+          top: -43px;
+          border-radius: 14px;
+          position: absolute;
+          left: 15px;
+        }
+      }
+      &.incisivos {
+        &:hover {
+          &:before {
+            left: 8px;
+          }
+        }
+      }
+    }
+
+    .box-lista-dientes-sub {
+      .cont-diente {
+        &:hover {
+          &:before {
+            top: 78px;
+          }
+        }
+      }
+    }
+}
+
 
 .active-corona  {
     .contorno {
@@ -427,6 +468,45 @@
         stroke-width: 10px;
     }
 }
+// .active-geminacion {
+//     .contorno {
+//         cursor: pointer;
+//         stroke: green;
+//         stroke-width: 10px;
+//     }
+// }
+
+.active-geminacion {
+  position: relative;
+  &:before {
+    content: '';
+    width: 25px;
+    height: 25px;
+    border: 2px solid blue;
+    display: block;
+    top: -43px;
+    border-radius: 14px;
+    position: absolute;
+    left: 15px;
+  }
+}
+
+.box-lista-dientes-sub {
+  .active-geminacion {
+    &:before {
+      top: 78px;
+    }
+  }
+}
+
+.incisivos {
+  &.active-geminacion {
+    &:before {
+      left: 8px;
+    }
+  }
+}
+
 
 svg.active-dentaria {
     fill: blue;
@@ -917,10 +997,13 @@ svg.active-dentaria {
     }
 }
 
-.box-lista-dientes-sub .giroversion img {
-    top: -23px;
+.box-lista-dientes-sub {
+  .giroversion {
+    img {
+        top: -23px;
+    }
+  }
 }
-
 
 
 .diastema {

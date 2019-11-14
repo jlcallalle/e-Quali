@@ -247,6 +247,16 @@
                 }
             }
         }
+        &.opcion-geminacion {
+            a {
+                &.active {
+                    color:red;
+                }
+                &:hover {
+                    color:red;
+                }
+            }
+        }
     }
 }
 

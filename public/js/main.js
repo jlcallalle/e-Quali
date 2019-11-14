@@ -103,6 +103,10 @@ var MyApp = {
           $(this).parents("svg").toggleClass('active-corona-temporal');
       }
 
+      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoGeminacion) ) {
+          $(this).parents("svg").parent().toggleClass('active-geminacion');
+      }
+
       $( cuadroDiente ).each(function( index ) {
           var idCuadro = this.id;
 
@@ -385,6 +389,7 @@ var MyApp = {
                           $(this).parents('.svg').removeClass("active-corona");
                           $(this).parents('.svg').removeClass("active-corona-malo");
                           $(this).parents('.svg').removeClass("active-corona-temporal");
+                          $(this).parents('.svg').parent().removeClass("active-geminacion");
                           $(this).parents('.flecha-extruida').find('img').remove();
                           $(this).parents('.flecha-intruida').find('img').remove();
                           $(this).parents('.diastema').find('img').remove();

@@ -169,6 +169,10 @@ body {
     color: red; }
   .lista-hallazgos li.opcion-corona-temporal a:hover {
     color: red; }
+  .lista-hallazgos li.opcion-geminacion a.active {
+    color: red; }
+  .lista-hallazgos li.opcion-geminacion a:hover {
+    color: red; }
 
 .page-odontograma {
   position: relative;
@@ -472,6 +476,27 @@ body {
     stroke: red;
     stroke-width: 10px; }
 
+.hallazgo-geminacion .svg:hover {
+  cursor: pointer; }
+
+.hallazgo-geminacion .cont-diente {
+  position: relative; }
+  .hallazgo-geminacion .cont-diente:hover:before {
+    content: '';
+    width: 25px;
+    height: 25px;
+    border: 2px solid blue;
+    display: block;
+    top: -43px;
+    border-radius: 14px;
+    position: absolute;
+    left: 15px; }
+  .hallazgo-geminacion .cont-diente.incisivos:hover:before {
+    left: 8px; }
+
+.hallazgo-geminacion .box-lista-dientes-sub .cont-diente:hover:before {
+  top: 78px; }
+
 .active-corona .contorno {
   cursor: pointer;
   stroke: blue;
@@ -486,6 +511,25 @@ body {
   cursor: pointer;
   stroke: red;
   stroke-width: 10px; }
+
+.active-geminacion {
+  position: relative; }
+  .active-geminacion:before {
+    content: '';
+    width: 25px;
+    height: 25px;
+    border: 2px solid blue;
+    display: block;
+    top: -43px;
+    border-radius: 14px;
+    position: absolute;
+    left: 15px; }
+
+.box-lista-dientes-sub .active-geminacion:before {
+  top: 78px; }
+
+.incisivos.active-geminacion:before {
+  left: 8px; }
 
 svg.active-dentaria {
   fill: blue; }
