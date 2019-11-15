@@ -181,6 +181,10 @@ body {
     color: blue; }
   .lista-hallazgos li.opcion-clavija a:hover {
     color: blue; }
+  .lista-hallazgos li.opcion-edentulo-total a.active {
+    color: blue; }
+  .lista-hallazgos li.opcion-edentulo-total a:hover {
+    color: blue; }
 
 .page-odontograma {
   position: relative;
@@ -411,7 +415,8 @@ body {
 
 .contenido-polygon {
   position: relative;
-  text-align: center; }
+  text-align: center;
+  overflow: hidden; }
 
 .contenido-path {
   position: relative; }
@@ -594,6 +599,19 @@ body {
 
 svg.active-dentaria {
   fill: blue; }
+
+.active-edentulo-total:before {
+  content: '';
+  width: 20px;
+  height: 3px;
+  background: blue;
+  position: absolute;
+  width: 100%;
+  top: 62px; }
+  .box-nino .active-edentulo-total:before {
+    width: 490px; }
+  .box-lista-dientes-sub .active-edentulo-total:before {
+    top: 20px; }
 
 .cont-diente {
   width: 51px;
@@ -1037,7 +1055,9 @@ svg.active-dentaria {
 .lista-hallazgos {
   padding: 0; }
 
-.hola {
-  color: red; }
+.info-hallazgo {
+  font-size: 12px;
+  color: green;
+  font-weight: bold; }
 
 /*# sourceMappingURL=main.css.map */

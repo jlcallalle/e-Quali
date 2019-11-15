@@ -277,6 +277,16 @@
                 }
             }
         }
+        &.opcion-edentulo-total {
+            a {
+                &.active {
+                    color:blue;
+                }
+                &:hover {
+                    color:blue;
+                }
+            }
+        }
     }
 }
 

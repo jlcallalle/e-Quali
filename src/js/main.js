@@ -115,6 +115,10 @@ var MyApp = {
           $(this).parents("svg").parent().toggleClass('active-clavija');
       }
 
+      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoEdentuloTotal) ) {
+          $(this).parents("svg").parent().toggleClass('active-edentulo-total');
+      }
+
       $( cuadroDiente ).each(function( index ) {
           var idCuadro = this.id;
 
@@ -328,6 +332,12 @@ var MyApp = {
               $(".corona-estado").removeClass("show");
           }
           $("#hallazgo-corona-malo").toggleClass(".actiive");
+
+
+          if(nombreHallazgo == listaHallazgo.hallazgoEdentuloTotal ){
+            alert('Selecinonar la primera pieza dentaria');
+          }
+
       });
 
       $( ".restaura-estado .bueno" ).click(function(e) {
@@ -400,6 +410,7 @@ var MyApp = {
                           $(this).parents('.svg').parent().removeClass("active-geminacion");
                           $(this).parents('.svg').parent().removeClass("active-fusion");
                           $(this).parents('.svg').parent().removeClass("active-clavija");
+                          $(this).parents('.svg').parent().removeClass("active-edentulo-total");
                           $(this).parents('.flecha-extruida').find('img').remove();
                           $(this).parents('.flecha-intruida').find('img').remove();
                           $(this).parents('.diastema').find('img').remove();

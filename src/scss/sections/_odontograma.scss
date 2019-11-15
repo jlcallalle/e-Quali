@@ -263,6 +263,7 @@
 .contenido-polygon {
     position: relative;
     text-align: center;
+    overflow: hidden;
 }
 
 .contenido-path {
@@ -390,6 +391,7 @@
         }
     }
 }
+
 .hallazgo-corona-malo {
     .svg {
         &:hover {
@@ -488,6 +490,16 @@
   }
 }
 
+.hallazgo-edentulo-total {
+  .svg {
+      &:hover {
+          .contorno {
+              // stroke: red;
+              // stroke-width: 10px;
+          }
+      }
+  }
+}
 .active-corona  {
     .contorno {
         cursor: pointer;
@@ -606,6 +618,26 @@
 svg.active-dentaria {
     fill: blue;
 }
+
+
+.active-edentulo-total  {
+  &:before {
+    content: '';
+    width: 20px;
+    height: 3px;
+    background: blue;
+    position: absolute;
+    width: 100%;
+    top: 62px;
+    .box-nino  & {
+      width: 490px;
+    }
+    .box-lista-dientes-sub & {
+      top: 20px;
+    }
+  }
+}
+
 
 .cont-diente {
     width: 51px;
@@ -1271,6 +1303,8 @@ svg.active-dentaria {
     padding: 0;
 }
 
-.hola {
-    color:red;
+.info-hallazgo {
+  font-size: 12px;
+  color: green;
+  font-weight: bold;
 }
