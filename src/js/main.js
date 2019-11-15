@@ -194,7 +194,7 @@ var MyApp = {
           var wrapperContainer = $(this).parents(".contenido-odontograma");
           var nombreHallazgo = wrapperContainer.attr("data-texto");
           $(".lista-hallazgo-detallado").append('<li id=' + idDiente + ' data-pos=' +nombrePosition+ ' data-sigla=' +siglaPosition+ '  data-hallazgo=' +tipoHallazgo+ '>'+ '<span class="nombre-hallazo"> ' + nombreHallazgo + ' : </span>  En la cara '
-          +  nombrePosition + ' <span>  '  + siglaPosition  + ' </span>, de la  pieza dental <span> ' + piezaDiente + '</span> <a href="#">Eliminar</a>  </li>');
+          +  nombrePosition + ' <span>  '  + siglaPosition  + ' </span>, de la  pieza dental <span> ' + piezaDiente + '</span>  <a href="#">Eliminar</a>  </li>');
           $(this).parents("svg").addClass('seleccionado');
           $(this).parents("svg").removeClass('pre-seleccionado');
 
@@ -227,7 +227,21 @@ var MyApp = {
           + piezaDiente + '</span> <a href="#">Eliminar</a>  </li>');
           $(this).parents("svg").addClass('seleccionado');
           $(this).parents("svg").removeClass('pre-seleccionado');
-      }
+
+      }  else if ($(contenidoOdontograma).is('[data-tipo~="8"]')){
+          var idDiente = $(this).parents("svg").attr("id");
+          var tipoEdentulo = $(this).parents(".box-lista-dientes").parent().attr("data-edentulo");
+          console.log(tipoEdentulo);
+          var piezaDiente = $(this).parents("svg").attr("data-pieza");
+          var wrapperContainer = $(this).parents(".contenido-odontograma");
+          var nombreHallazgo = wrapperContainer.attr("data-texto");
+          $(".lista-hallazgo-detallado").append('<li id=' + idDiente + ' data-pos=' +nombrePosition+ ' data-sigla=' +siglaPosition+ ' >'+ '<span class="nombre-hallazo"> ' + nombreHallazgo + ' : </span> <span> '
+          + tipoEdentulo + '</span> <a href="#">Eliminar</a>  </li>');
+          $(this).parents("svg").addClass('seleccionado');
+          $(this).parents("svg").removeClass('pre-seleccionado');
+    }
+
+
 
       $(".select-tipo").change(function(){
           var codLesion = $(this).children("option:selected").text();
@@ -335,8 +349,12 @@ var MyApp = {
 
 
           if(nombreHallazgo == listaHallazgo.hallazgoEdentuloTotal ){
-            alert('Selecinonar la primera pieza dentaria');
+            alert('Selecinonar la pieza dentaria inicial');
+            $(".svg").addClass("disabledbutton");
+            $(".row-dientes .cont-diente:first-child svg").removeClass("disabledbutton");
+
           }
+
 
       });
 
