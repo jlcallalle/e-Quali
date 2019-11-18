@@ -499,6 +499,70 @@
       }
   }
 }
+
+.hallazgo-pieza-supernumeraria {
+  .cont-diente {
+    position:relative;
+    &:hover {
+      &:before {
+        content: 'S';
+        width: 25px;
+        height: 25px;
+        border: 2px solid blue;
+        display: block;
+        top: -20px;
+        border-radius: 14px;
+        position: absolute;
+        color: blue;
+        left: 43px;
+      }
+    }
+    &.incisivos {
+      &:hover {
+        &:before {
+          left: 28px;
+        }
+      }
+    }
+  }
+
+  .box-lista-dientes-sub {
+    .cont-diente {
+      &:hover {
+        &:before {
+          top: 67px;
+        }
+      }
+    }
+  }
+}
+
+
+.active-supernumeraria {
+  position: relative;
+  &:before {
+      content: 'S';
+      width: 25px;
+      height: 25px;
+      border: 2px solid blue;
+      display: block;
+      top: -20px;
+      border-radius: 14px;
+      position: absolute;
+      color: blue;
+      left: 43px;
+    .box-lista-dientes-sub & {
+      top: 67px;
+    }
+  }
+  &.incisivos  {
+    &:before {
+      left: 28px;
+    }
+  }
+}
+
+
 .active-corona  {
     .contorno {
         cursor: pointer;
@@ -636,6 +700,7 @@ svg.active-dentaria {
     }
   }
 }
+
 
 
 .cont-diente {

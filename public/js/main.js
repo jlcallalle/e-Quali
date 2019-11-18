@@ -119,6 +119,11 @@ var MyApp = {
           $(this).parents("svg").parent().toggleClass('active-edentulo-total');
       }
 
+      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoSupernumeraria) ) {
+        $(this).parents("svg").parent().toggleClass('active-supernumeraria');
+    }
+
+
       $( cuadroDiente ).each(function( index ) {
           var idCuadro = this.id;
 
@@ -430,6 +435,7 @@ var MyApp = {
                           $(this).parents('.svg').parent().removeClass("active-fusion");
                           $(this).parents('.svg').parent().removeClass("active-clavija");
                           $(this).parents('.svg').parent().removeClass("active-edentulo-total");
+                          $(this).parents('.svg').parent().removeClass("active-supernumeraria");
                           $(this).parents('.flecha-extruida').find('img').remove();
                           $(this).parents('.flecha-intruida').find('img').remove();
                           $(this).parents('.diastema').find('img').remove();

@@ -185,6 +185,10 @@ body {
     color: blue; }
   .lista-hallazgos li.opcion-edentulo-total a:hover {
     color: blue; }
+  .lista-hallazgos li.opcion-pieza-supernumeraria a.active {
+    color: blue; }
+  .lista-hallazgos li.opcion-pieza-supernumeraria a:hover {
+    color: blue; }
 
 .page-odontograma {
   position: relative;
@@ -513,6 +517,43 @@ body {
 
 .hallazgo-fusion .box-lista-dientes-sub .cont-diente:hover:before {
   top: 78px; }
+
+.hallazgo-pieza-supernumeraria .cont-diente {
+  position: relative; }
+  .hallazgo-pieza-supernumeraria .cont-diente:hover:before {
+    content: 'S';
+    width: 25px;
+    height: 25px;
+    border: 2px solid blue;
+    display: block;
+    top: -20px;
+    border-radius: 14px;
+    position: absolute;
+    color: blue;
+    left: 43px; }
+  .hallazgo-pieza-supernumeraria .cont-diente.incisivos:hover:before {
+    left: 28px; }
+
+.hallazgo-pieza-supernumeraria .box-lista-dientes-sub .cont-diente:hover:before {
+  top: 67px; }
+
+.active-supernumeraria {
+  position: relative; }
+  .active-supernumeraria:before {
+    content: 'S';
+    width: 25px;
+    height: 25px;
+    border: 2px solid blue;
+    display: block;
+    top: -20px;
+    border-radius: 14px;
+    position: absolute;
+    color: blue;
+    left: 43px; }
+    .box-lista-dientes-sub .active-supernumeraria:before {
+      top: 67px; }
+  .active-supernumeraria.incisivos:before {
+    left: 28px; }
 
 .active-corona .contorno {
   cursor: pointer;
