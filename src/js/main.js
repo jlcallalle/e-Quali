@@ -352,7 +352,8 @@ var MyApp = {
             alert('Selecinonar la pieza dentaria inicial');
             $(".svg").addClass("disabledbutton");
             $(".row-dientes .cont-diente:first-child svg").removeClass("disabledbutton");
-
+          }  else {
+            $(".svg").removeClass("disabledbutton");
           }
 
 
