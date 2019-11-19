@@ -189,6 +189,10 @@ body {
     color: blue; }
   .lista-hallazgos li.opcion-pieza-supernumeraria a:hover {
     color: blue; }
+  .lista-hallazgos li.opcion-protesis-total a.active {
+    color: blue; }
+  .lista-hallazgos li.opcion-protesis-total a:hover {
+    color: blue; }
 
 .page-odontograma {
   position: relative;
@@ -642,16 +646,41 @@ svg.active-dentaria {
 
 .active-edentulo-total:before {
   content: '';
-  width: 20px;
   height: 3px;
   background: blue;
   position: absolute;
-  width: 100%;
+  width: 824px;
   top: 62px; }
   .box-nino .active-edentulo-total:before {
     width: 490px; }
   .box-lista-dientes-sub .active-edentulo-total:before {
     top: 20px; }
+
+.active-protesis-total:before {
+  content: '';
+  height: 3px;
+  background: blue;
+  position: absolute;
+  width: 824px;
+  top: -9px; }
+  .box-nino .active-protesis-total:before {
+    width: 490px; }
+  .box-lista-dientes-sub .active-protesis-total:before {
+    top: 98px; }
+
+.active-protesis-total:after {
+  content: '';
+  height: 3px;
+  background: blue;
+  position: absolute;
+  width: 824px;
+  top: -17px;
+  left: 0; }
+  .box-nino .active-protesis-total:after {
+    width: 490px;
+    left: 169px; }
+  .box-lista-dientes-sub .active-protesis-total:after {
+    top: 106px; }
 
 .cont-diente {
   width: 51px;

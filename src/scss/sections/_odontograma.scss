@@ -489,16 +489,7 @@
   }
 }
 
-.hallazgo-edentulo-total {
-  .svg {
-      &:hover {
-          .contorno {
-              // stroke: red;
-              // stroke-width: 10px;
-          }
-      }
-  }
-}
+
 
 .hallazgo-pieza-supernumeraria {
   .cont-diente {
@@ -686,17 +677,49 @@ svg.active-dentaria {
 .active-edentulo-total  {
   &:before {
     content: '';
-    width: 20px;
     height: 3px;
     background: blue;
     position: absolute;
-    width: 100%;
+    width: 824px;
     top: 62px;
     .box-nino  & {
       width: 490px;
     }
     .box-lista-dientes-sub & {
       top: 20px;
+    }
+  }
+}
+
+.active-protesis-total  {
+  &:before {
+    content: '';
+    height: 3px;
+    background: blue;
+    position: absolute;
+    width: 824px;
+    top: -9px;
+    .box-nino  & {
+      width: 490px;
+    }
+    .box-lista-dientes-sub & {
+      top: 98px;
+    }
+  }
+  &:after {
+    content: '';
+    height: 3px;
+    background: blue;
+    position: absolute;
+    width: 824px;
+    top: -17px;
+    left:0;
+    .box-nino  & {
+      width: 490px;
+      left: 169px;
+    }
+    .box-lista-dientes-sub & {
+      top: 106px;
     }
   }
 }

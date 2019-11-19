@@ -120,8 +120,12 @@ var MyApp = {
       }
 
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoSupernumeraria) ) {
-        $(this).parents("svg").parent().toggleClass('active-supernumeraria');
-    }
+          $(this).parents("svg").parent().toggleClass('active-supernumeraria');
+      }
+
+      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoProtesisTotal) ) {
+          $(this).parents("svg").parent().toggleClass('active-protesis-total');
+      }
 
 
       $( cuadroDiente ).each(function( index ) {
@@ -361,6 +365,14 @@ var MyApp = {
             $(".svg").removeClass("disabledbutton");
           }
 
+          if(nombreHallazgo == listaHallazgo.hallazgoProtesisTotal ){
+            alert('Selecinonar la pieza dentaria inicial');
+            $(".svg").addClass("disabledbutton");
+            $(".row-dientes .cont-diente:first-child svg").removeClass("disabledbutton");
+          }  else {
+            $(".svg").removeClass("disabledbutton");
+          }
+
 
       });
 
@@ -436,6 +448,7 @@ var MyApp = {
                           $(this).parents('.svg').parent().removeClass("active-clavija");
                           $(this).parents('.svg').parent().removeClass("active-edentulo-total");
                           $(this).parents('.svg').parent().removeClass("active-supernumeraria");
+                          $(this).parents('.svg').parent().removeClass("active-protesis-total");
                           $(this).parents('.flecha-extruida').find('img').remove();
                           $(this).parents('.flecha-intruida').find('img').remove();
                           $(this).parents('.diastema').find('img').remove();
