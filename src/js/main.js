@@ -127,6 +127,10 @@ var MyApp = {
           $(this).parents("svg").parent().toggleClass('active-protesis-total');
       }
 
+      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoProtesisTotalMalo) ) {
+          $(this).parents("svg").parent().toggleClass('active-protesis-total-malo');
+      }
+
 
       $( cuadroDiente ).each(function( index ) {
           var idCuadro = this.id;
@@ -365,13 +369,16 @@ var MyApp = {
             $(".svg").removeClass("disabledbutton");
           }
 
-          if(nombreHallazgo == listaHallazgo.hallazgoProtesisTotal ){
+          if(nombreHallazgo == listaHallazgo.hallazgoProtesisTotal || nombreHallazgo == listaHallazgo.hallazgoProtesisTotalMalo  ){
             alert('Selecinonar la pieza dentaria inicial');
             $(".svg").addClass("disabledbutton");
             $(".row-dientes .cont-diente:first-child svg").removeClass("disabledbutton");
+            $(".protesis-estado").addClass("show");
           }  else {
             $(".svg").removeClass("disabledbutton");
+            $(".protesis-estado").removeClass("show");
           }
+          $("#hallazgo-protesis-total-malo").toggleClass(".actiive");
 
 
       });
@@ -412,6 +419,18 @@ var MyApp = {
           $("#hallazgo-corona").toggleClass('active');
       });
 
+      $( ".protesis-estado .bueno" ).click(function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          $("#hallazgo-protesis-total").trigger("click")
+      });
+
+      $( ".protesis-estado .malo" ).click(function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          $("#hallazgo-protesis-total-malo").toggleClass('active');
+      });
+
       $("#hallazgo-caries").click();
 
   },
@@ -449,6 +468,7 @@ var MyApp = {
                           $(this).parents('.svg').parent().removeClass("active-edentulo-total");
                           $(this).parents('.svg').parent().removeClass("active-supernumeraria");
                           $(this).parents('.svg').parent().removeClass("active-protesis-total");
+                          $(this).parents('.svg').parent().removeClass("active-protesis-total-malo");
                           $(this).parents('.flecha-extruida').find('img').remove();
                           $(this).parents('.flecha-intruida').find('img').remove();
                           $(this).parents('.diastema').find('img').remove();

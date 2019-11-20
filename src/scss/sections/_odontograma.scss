@@ -724,6 +724,39 @@ svg.active-dentaria {
   }
 }
 
+.active-protesis-total-malo  {
+  &:before {
+    content: '';
+    height: 3px;
+    background: red;
+    position: absolute;
+    width: 824px;
+    top: -9px;
+    .box-nino  & {
+      width: 490px;
+    }
+    .box-lista-dientes-sub & {
+      top: 98px;
+    }
+  }
+  &:after {
+    content: '';
+    height: 3px;
+    background: red;
+    position: absolute;
+    width: 824px;
+    top: -17px;
+    left:0;
+    .box-nino  & {
+      width: 490px;
+      left: 169px;
+    }
+    .box-lista-dientes-sub & {
+      top: 106px;
+    }
+  }
+}
+
 
 
 .cont-diente {
@@ -1336,7 +1369,8 @@ svg.active-dentaria {
 
 .restaura-estado,
 .implante-estado,
-.corona-estado {
+.corona-estado,
+.protesis-estado {
     position: absolute;
     top: 0;
     right: 5px;

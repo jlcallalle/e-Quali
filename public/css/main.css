@@ -682,6 +682,32 @@ svg.active-dentaria {
   .box-lista-dientes-sub .active-protesis-total:after {
     top: 106px; }
 
+.active-protesis-total-malo:before {
+  content: '';
+  height: 3px;
+  background: red;
+  position: absolute;
+  width: 824px;
+  top: -9px; }
+  .box-nino .active-protesis-total-malo:before {
+    width: 490px; }
+  .box-lista-dientes-sub .active-protesis-total-malo:before {
+    top: 98px; }
+
+.active-protesis-total-malo:after {
+  content: '';
+  height: 3px;
+  background: red;
+  position: absolute;
+  width: 824px;
+  top: -17px;
+  left: 0; }
+  .box-nino .active-protesis-total-malo:after {
+    width: 490px;
+    left: 169px; }
+  .box-lista-dientes-sub .active-protesis-total-malo:after {
+    top: 106px; }
+
 .cont-diente {
   width: 51px;
   display: inline-block;
@@ -1071,7 +1097,8 @@ svg.active-dentaria {
 
 .restaura-estado,
 .implante-estado,
-.corona-estado {
+.corona-estado,
+.protesis-estado {
   position: absolute;
   top: 0;
   right: 5px;
@@ -1083,11 +1110,13 @@ svg.active-dentaria {
   display: none; }
   .restaura-estado.show,
   .implante-estado.show,
-  .corona-estado.show {
+  .corona-estado.show,
+  .protesis-estado.show {
     display: block; }
   .restaura-estado .estados,
   .implante-estado .estados,
-  .corona-estado .estados {
+  .corona-estado .estados,
+  .protesis-estado .estados {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1097,16 +1126,19 @@ svg.active-dentaria {
     z-index: 99999; }
     .restaura-estado .estados a,
     .implante-estado .estados a,
-    .corona-estado .estados a {
+    .corona-estado .estados a,
+    .protesis-estado .estados a {
       width: 20px;
       height: 20px; }
     .restaura-estado .estados .bueno,
     .implante-estado .estados .bueno,
-    .corona-estado .estados .bueno {
+    .corona-estado .estados .bueno,
+    .protesis-estado .estados .bueno {
       background: blue; }
     .restaura-estado .estados .malo,
     .implante-estado .estados .malo,
-    .corona-estado .estados .malo {
+    .corona-estado .estados .malo,
+    .protesis-estado .estados .malo {
       background: red; }
 
 .list-editable {
