@@ -1228,4 +1228,44 @@ svg.active-dentaria {
     right: 0;
     background: blue; }
 
+.seleccionado.puente1:after {
+  content: '';
+  width: 100%;
+  display: block;
+  width: 10px;
+  height: 5px;
+  background: blue;
+  width: 100%;
+  position: absolute;
+  top: -12px; }
+
+.seleccionado.puente1:before {
+  content: '';
+  width: 4px;
+  height: 13px;
+  position: absolute;
+  top: -12px;
+  background: blue;
+  z-index: 10; }
+
+.puente2:after {
+  content: '';
+  width: 100%;
+  display: block;
+  width: 10px;
+  height: 5px;
+  background: white;
+  width: 100%;
+  position: absolute;
+  top: -12px; }
+
+.puente2:before {
+  content: '';
+  width: 4px;
+  height: 13px;
+  position: absolute;
+  top: -12px;
+  background: blue;
+  z-index: 10; }
+
 /*# sourceMappingURL=main.css.map */

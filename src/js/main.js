@@ -5,9 +5,12 @@ var dataOdontograma = {
 
 var dientes = {};
 
+var count = 0;
+
 var MyApp = {
   eventoDientes : function() {
     $(".cont-diente .diente").on("click", function(e){
+
       if ($(this).hasClass('active')) {
         return;
       }
@@ -140,22 +143,21 @@ var MyApp = {
 
 
 
-
+      count++;
+      console.log(count);
 
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoProtesisFija) ) {
 
-          // $(this).parents("svg").parent().toggleClass('active-protesis-fija');
-          $(this).parents("svg").parent().toggleClass('puente1');
-          $(this).addClass("jorge123");
-          console.log('lef:' + $(this).offset().left);
-          console.log('top:' + $(this).offset().top);
-          console.log('lef2:' + $(this)[0].offsetLeft);
-
-          var width = 200;
-          $(this).parents("svg").parent().prepend('<div style="width:' + width + 'px;"  id="puente" class="linea-fija"></div>');
+          if(count=='1'){
+            $(this).parents("svg").parent().toggleClass('puente1');
+          } else if (count=='2') {
+            count = 0;
+            $(this).parents("svg").parent().toggleClass('puente2');
+            $(this).parents("svg").parent().addClass('seleccionado');
+            $(this).parents("svg").parent().parent().find('.puente1').addClass('seleccionado');
+          }
 
       }
-
 
 
       $( cuadroDiente ).each(function( index ) {
