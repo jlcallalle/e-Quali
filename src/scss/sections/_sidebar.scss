@@ -307,6 +307,26 @@
                 }
             }
         }
+        &.opcion-protesis-fija {
+            a {
+                &.active {
+                    color:blue;
+                }
+                &:hover {
+                    color:blue;
+                }
+            }
+        }
+        &.opcion-ortodontico-removible {
+            a {
+                &.active {
+                    color:blue;
+                }
+                &:hover {
+                    color:blue;
+                }
+            }
+        }
     }
 }
 

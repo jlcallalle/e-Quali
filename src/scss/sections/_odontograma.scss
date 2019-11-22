@@ -554,6 +554,16 @@
 }
 
 
+.active-protesis-fija {
+  // .contorno {
+  //     cursor: pointer;
+  //     stroke: red;
+  //     stroke-width: 10px;
+  // }
+}
+
+
+
 .active-corona  {
     .contorno {
         cursor: pointer;
@@ -757,7 +767,52 @@ svg.active-dentaria {
   }
 }
 
+.active-ortodontico-removible {
+  &:before {
+    content: '';
+    height: 3px;
+    background: transparent;
+    position: absolute;
+    width: 824px;
+    top: -9px;
 
+    background-image: url(../img/zigzag_line.png);
+    height: 20px;
+    background-repeat: repeat;
+    background-size: 276px 20px;
+
+    .box-nino  & {
+      width: 490px;
+    }
+    .box-lista-dientes-sub & {
+      top: 98px;
+    }
+  }
+
+}
+
+.active-ortodontico-removible-malo  {
+  &:before {
+    content: '';
+    height: 3px;
+    background: transparent;
+    position: absolute;
+    width: 824px;
+    top: -9px;
+
+    background-image: url(../img/zigzag_line.png);
+    height: 20px;
+    background-repeat: repeat;
+    background-size: 276px 20px;
+
+    .box-nino  & {
+      width: 490px;
+    }
+    .box-lista-dientes-sub & {
+      top: 98px;
+    }
+  }
+}
 
 .cont-diente {
     width: 51px;
@@ -1433,4 +1488,32 @@ svg.active-dentaria {
 .disabledbutton {
   pointer-events: none;
   opacity: 0.6;
+}
+
+
+.linea-fija {
+  background: blue;
+  display: block;
+  position: absolute;
+  top: -14px;
+  // width: 365px;
+  height: 3px;
+  &:after {
+    content: '';
+    width: 4px;
+    height: 13px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: blue;
+  }
+  &:before {
+    content: '';
+    width: 4px;
+    height: 13px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: blue;
+  }
 }

@@ -131,6 +131,32 @@ var MyApp = {
           $(this).parents("svg").parent().toggleClass('active-protesis-total-malo');
       }
 
+      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoOrtodonticoRemovible) ) {
+          $(this).parents("svg").parent().toggleClass('active-ortodontico-removible');
+      }
+      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoOrtodonticoRemovibleMalo) ) {
+          $(this).parents("svg").parent().toggleClass('active-ortodontico-removible-malo');
+      }
+
+
+
+
+
+      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoProtesisFija) ) {
+
+          // $(this).parents("svg").parent().toggleClass('active-protesis-fija');
+          $(this).parents("svg").parent().toggleClass('puente1');
+          $(this).addClass("jorge123");
+          console.log('lef:' + $(this).offset().left);
+          console.log('top:' + $(this).offset().top);
+          console.log('lef2:' + $(this)[0].offsetLeft);
+
+          var width = 200;
+          $(this).parents("svg").parent().prepend('<div style="width:' + width + 'px;"  id="puente" class="linea-fija"></div>');
+
+      }
+
+
 
       $( cuadroDiente ).each(function( index ) {
           var idCuadro = this.id;
@@ -252,6 +278,18 @@ var MyApp = {
           + tipoEdentulo + '</span> <a href="#">Eliminar</a>  </li>');
           $(this).parents("svg").addClass('seleccionado');
           $(this).parents("svg").removeClass('pre-seleccionado');
+
+      }  else if ($(contenidoOdontograma).is('[data-tipo~="9"]')){
+          var idDiente = $(this).parents("svg").attr("id");
+          var piezaDiente = $(this).parents("svg").attr("data-pieza");
+          var wrapperContainer = $(this).parents(".contenido-odontograma");
+          var nombreHallazgo = wrapperContainer.attr("data-texto");
+
+          var segundoDiente = 4.5;
+          $(".lista-hallazgo-detallado").append('<li id=' + idDiente + ' data-pos=' +nombrePosition+ ' data-sigla=' +siglaPosition+ '  data-hallazgo=' +tipoHallazgo+ '>'+ '<span class="nombre-hallazo"> ' + nombreHallazgo + ' : </span>   '
+           + siglaPosition  + ' </span>, Entre la  pieza dental <span> ' + piezaDiente + '</span> y <span> '+segundoDiente+' </span> <a href="#">Eliminar</a>  </li>');
+          // $(this).parents("svg").addClass('seleccionado');
+          // $(this).parents("svg").removeClass('pre-seleccionado');
     }
 
 
@@ -469,6 +507,7 @@ var MyApp = {
                           $(this).parents('.svg').parent().removeClass("active-supernumeraria");
                           $(this).parents('.svg').parent().removeClass("active-protesis-total");
                           $(this).parents('.svg').parent().removeClass("active-protesis-total-malo");
+                          $(this).parents('.svg').parent().removeClass("active-ortodontico-removible");
                           $(this).parents('.flecha-extruida').find('img').remove();
                           $(this).parents('.flecha-intruida').find('img').remove();
                           $(this).parents('.diastema').find('img').remove();
