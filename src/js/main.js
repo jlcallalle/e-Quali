@@ -420,6 +420,17 @@ var MyApp = {
           }
           $("#hallazgo-protesis-total-malo").toggleClass(".actiive");
 
+          if(nombreHallazgo == listaHallazgo.hallazgoOrtodonticoRemovible || nombreHallazgo == listaHallazgo.hallazgoOrtodonticoRemovibleMalo  ){
+            alert('Selecinonar la pieza dentaria inicial');
+            $(".svg").addClass("disabledbutton");
+            $(".row-dientes .cont-diente:first-child svg").removeClass("disabledbutton");
+            $(".ortodontico-estado").addClass("show");
+          }  else {
+            $(".svg").removeClass("disabledbutton");
+            $(".ortodontico-estado").removeClass("show");
+          }
+          $("#hallazgo-protesis-total-malo").toggleClass(".actiive");
+
 
       });
 
@@ -510,6 +521,7 @@ var MyApp = {
                           $(this).parents('.svg').parent().removeClass("active-protesis-total");
                           $(this).parents('.svg').parent().removeClass("active-protesis-total-malo");
                           $(this).parents('.svg').parent().removeClass("active-ortodontico-removible");
+                          $(this).parents('.svg').parent().removeClass("active-ortodontico-removible-malo");
                           $(this).parents('.flecha-extruida').find('img').remove();
                           $(this).parents('.flecha-intruida').find('img').remove();
                           $(this).parents('.diastema').find('img').remove();
