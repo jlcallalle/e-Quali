@@ -6,6 +6,7 @@ var dataOdontograma = {
 var dientes = {};
 
 var countClick = 0;
+var countClickFijo = 0;
 
 var MyApp = {
   eventoDientes : function() {
@@ -132,6 +133,18 @@ var MyApp = {
 
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoOrtodonticoRemovibleMalo) ) {
           $(this).parents("svg").parent().toggleClass('active-ortodontico-removible-malo');
+      }
+
+      countClickFijo++;
+      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoOrtodonticoFijo) ) {
+        if(countClickFijo=='1'){
+          $(this).parents("svg").parent().toggleClass('puente1-fijo');
+        } else if (countClickFijo=='2') {
+          countClickFijo = 0;
+          $(this).parents("svg").parent().toggleClass('puente2-fijo');
+          $(this).parents("svg").parent().addClass('seleccionado');
+          $(this).parents("svg").parent().parent().find('.puente1-fijo').addClass('seleccionado');
+        }
       }
 
       countClick++;

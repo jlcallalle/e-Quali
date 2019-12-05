@@ -327,6 +327,16 @@
                 }
             }
         }
+        &.opcion-ortodontico-fijo {
+            a {
+                &.active {
+                    color:blue;
+                }
+                &:hover {
+                    color:blue;
+                }
+            }
+        }
     }
 }
 

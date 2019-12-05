@@ -201,6 +201,10 @@ body {
     color: blue; }
   .lista-hallazgos li.opcion-ortodontico-removible a:hover {
     color: blue; }
+  .lista-hallazgos li.opcion-ortodontico-fijo a.active {
+    color: blue; }
+  .lista-hallazgos li.opcion-ortodontico-fijo a:hover {
+    color: blue; }
 
 .page-odontograma {
   position: relative;
@@ -1284,5 +1288,68 @@ svg.active-dentaria {
     top: -12px;
     background: blue;
     z-index: 10; }
+
+.puente1-fijo {
+  position: static; }
+  .puente1-fijo .contorno {
+    stroke: blue;
+    stroke-width: 10px; }
+
+.seleccionado.puente1-fijo:after {
+  content: '';
+  width: 100%;
+  display: block;
+  width: 10px;
+  height: 5px;
+  background: blue;
+  width: 100%;
+  position: absolute;
+  top: -12px; }
+
+.seleccionado.puente1-fijo:before {
+  content: '+';
+  width: 4px;
+  color: blue;
+  height: 13px;
+  position: absolute;
+  top: -15px;
+  z-index: 10;
+  border: 1px solid;
+  width: 13px;
+  background: white;
+  line-height: 8px;
+  font-size: 16px; }
+
+.seleccionado.puente1-fijo .contorno {
+  stroke: transparent;
+  stroke-width: 10px; }
+
+.puente2-fijo {
+  position: static; }
+  .puente2-fijo:after {
+    content: '';
+    width: 100%;
+    display: block;
+    width: 10px;
+    height: 5px;
+    background: white;
+    width: 100%;
+    position: absolute;
+    top: -12px; }
+  .puente2-fijo:before {
+    content: '+';
+    width: 4px;
+    height: 13px;
+    width: 13px;
+    position: absolute;
+    top: -14px;
+    background: green;
+    z-index: 10;
+    border: 1px solid;
+    width: 13px;
+    background: white;
+    line-height: 8px;
+    font-size: 16px;
+    color: blue; }
 
 /*# sourceMappingURL=main.css.map */
