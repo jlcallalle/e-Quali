@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Proyecto Js</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.css">
+  <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+  
+</head>
+<body>
+  <!-- END NAV -->
+  <div class="container">
+    <br>
+    <div class="columns">
+      <div class="column is-two-fifths">
+        <div class="box">
+          <article class="media">
+            <div class="media-content">
+              <div class="content">
+                <p>
+                  <small>@jlcallalle</small>
+                  <br>
+                  Mostrar la conversión de euros a dólares utilizando inputs.
+                </p>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="ca  rd-content">
+          <div class="field">
+            <label class="label">EUR</label> <!-- "EUR": 1, -->
+            <div class="control">
+              <input id="input-euros" class="input" type="text" placeholder="Euros">
+            </div>
+          </div>
+          <div class="field is-grouped">
+            <div class="control">
+              <button id="btn-envio" class="button is-link">Submit</button>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">USD</label> <!-- "USD": 1.153649, -->
+            <div class="control">
+              <input id="input-dolar" class="input" type="text" placeholder="Dolares">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column is-two-fifths">
+        <div class="box">
+          <article class="media">
+            <div class="media-content">
+              <div class="content">
+                <p>
+                  <small>@jlcallalle</small>
+                  <br>
+                  Mostrar la conversión específica de un select a dolares.
+                </p>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="ca  rd-content">
+          <div class="field">
+            <label class="label">Tipo Moneda</label> <!-- "EUR": 1, -->
+            <div class="control-all" style="display:flex">
+              <div class="control">
+                <div class="select">
+                  <select id="select-tipo">
+                    <option>Selecccione</option>
+                  </select>
+                </div>
+                <div  id="precio" style="display:none">Precio: <span id="cantidad"></span> </div>
+              </div>
+              <div class="control" style="margin-left:20px">
+                <input id="inputMoneda" class="input" type="text" placeholder="cantidad">
+              </div>
+            </div>
+          </div>
+         
+          <div class="field is-grouped">
+            <div class="control">
+              <button id="btn-envio-select" class="button is-link">Submit</button>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">USD</label> <!-- "USD": 1.153649, -->
+            <div class="control">
+              <input id="dolarSelect" class="input" type="text" placeholder="Dolares">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 
+    Proyecto : webpack + babel + eslint(airbnb) fetch + modules JS
+    https://gist.github.com/renzocastro/16599f66443ad0d8b862ad89e5d5b229 
+    http://data.fixer.io/api/latest?access_key=9e1910b221f5db999a84e0c82d049cf0
+   -->
+   
+  <script src="dist/main.js"></script>
+</body>
+</html>
+

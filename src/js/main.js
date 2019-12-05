@@ -29,6 +29,7 @@ var MyApp = {
       var tipoHallazgo =  parseInt(contenidoOdontograma.attr("data-tipo"));
       var nombreHallazgo =  contenidoOdontograma.attr("data-name");
       var nombreHallazgoTexto =  contenidoOdontograma.attr("data-texto");
+      var tipoEdentulo = $(this).parents(".box-lista-dientes").parent().attr("data-edentulo");
 
       var nombrePosition = $(this).attr("data-pos");
       var siglaPosition = $(this).attr("data-sigla");

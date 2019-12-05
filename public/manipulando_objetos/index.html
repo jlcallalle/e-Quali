@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Manipulando Objetos</title>
+</head>
+<body>
+  <h1>test2</h1>
+  <div id="select-tipo"></div>
+
+  <script>
+    // const data = "http://127.0.0.1:4000/data.json";
+    const data = "http://e-quali.herokuapp.com/public/manipulando_objetos/data.json";
+    const dataurl = "https://jsonplaceholder.typicode.com/users";
+
+    fetch(data)
+    .then(response => response.json())
+    .then(json => {
+      console.log(json);
+
+      //manipular json
+      const precioDolar = json.rates.USD;
+      const listaTipos = json.rates;
+      const keynames = Object.keys(listaTipos);
+      const valores = Object.values(listaTipos);
+      console.log(`El precio del Dolar es ${precioDolar}`)
+      console.log(`listaTipo ${listaTipos}`);
+      //console.log(`keynames ${keynames}`);
+      //console.log(`valores ${valores}`);
+
+      console.log(`El precio del Dolar es ${precioDolar}`)
+
+      const selectTipo = document.querySelector('#select-tipo');
+
+      //-- Mostrar Select Tipo Cambio
+      keynames.forEach(function (key, i, arreglo) {
+        var opt = keynames[i];
+        selectTipo.innerHTML += `<li value = '${valores[i]}'> ${keynames[i]} </li>`;
+      });
+
+
+    })
+
+  </script>
+</body>
+</html>
