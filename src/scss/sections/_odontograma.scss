@@ -1428,7 +1428,8 @@ svg.active-dentaria {
 .implante-estado,
 .corona-estado,
 .protesis-estado,
-.ortodontico-estado {
+.ortodontico-estado,
+.ortodontico-estado-fijo {
     position: absolute;
     top: 0;
     right: 5px;
@@ -1530,7 +1531,6 @@ svg.active-dentaria {
   }
 
 
-
   .seleccionado.puente1 {
     &:after {
       content: '';
@@ -1584,48 +1584,49 @@ svg.active-dentaria {
   }
 }
 
-  .puente1-fijo {
-      position:static;
-      .contorno {
-          stroke: blue;
-          stroke-width: 10px;
-      }
-  }
 
 
 
-  .seleccionado.puente1-fijo {
-    &:after {
-      content: '';
-      width: 100%;
-      display: block;
-      width: 10px;
-      height: 5px;
-      background: blue;
-      width: 100%;
-      position: absolute;
-      top: -12px;
-    }
-    &:before {
-      content: '+';
-      width: 4px;
-      color: blue;
-      height: 13px;
-      position: absolute;
-      top: -15px;
-      z-index: 10;
-      border: 1px solid;
-      width: 13px;
-      background: white;
-      line-height: 8px;
-      font-size: 16px;
-    }
-
+.puente1-fijo {
+    position:static;
     .contorno {
-        stroke: transparent;
+        stroke: blue;
         stroke-width: 10px;
     }
+}
+
+.seleccionado.puente1-fijo {
+  &:after {
+    content: '';
+    width: 100%;
+    display: block;
+    width: 10px;
+    height: 5px;
+    background: blue;
+    width: 100%;
+    position: absolute;
+    top: -12px;
   }
+  &:before {
+    content: '+';
+    width: 4px;
+    color: blue;
+    height: 13px;
+    position: absolute;
+    top: -15px;
+    z-index: 10;
+    border: 1px solid;
+    width: 13px;
+    background: white;
+    line-height: 8px;
+    font-size: 16px;
+  }
+
+  .contorno {
+      stroke: transparent;
+      stroke-width: 10px;
+  }
+}
 
 
 .puente2-fijo {
@@ -1647,7 +1648,7 @@ svg.active-dentaria {
     height: 13px;
     width: 13px;
     position: absolute;
-    top: -14px;
+    top: -15px;
     background: green;
     z-index: 10;
     border: 1px solid;
@@ -1658,3 +1659,85 @@ svg.active-dentaria {
     color: blue;
   }
 }
+
+
+
+
+
+
+
+.puente1-fijo-malo {
+  position:static;
+  .contorno {
+      stroke: red;
+      stroke-width: 10px;
+  }
+}
+
+.seleccionado.puente1-fijo-malo {
+&:after {
+  content: '';
+  width: 100%;
+  display: block;
+  width: 10px;
+  height: 5px;
+  background: red;
+  width: 100%;
+  position: absolute;
+  top: -12px;
+}
+&:before {
+  content: '+';
+  width: 4px;
+  color: red;
+  height: 13px;
+  position: absolute;
+  top: -15px;
+  z-index: 10;
+  border: 1px solid;
+  width: 13px;
+  background: white;
+  line-height: 8px;
+  font-size: 16px;
+}
+
+.contorno {
+    stroke: transparent;
+    stroke-width: 10px;
+}
+}
+
+
+.puente2-fijo-malo {
+position:static;
+&:after {
+  content: '';
+  width: 100%;
+  display: block;
+  width: 10px;
+  height: 5px;
+  background: white;
+  width: 100%;
+  position: absolute;
+  top: -12px;
+}
+&:before {
+  content: '+';
+  width: 4px;
+  height: 13px;
+  width: 13px;
+  position: absolute;
+  top: -15px;
+  background: green;
+  z-index: 10;
+  border: 1px solid;
+  width: 13px;
+  background: white;
+  line-height: 8px;
+  font-size: 16px;
+  color: red;
+}
+}
+
+
+

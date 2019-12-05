@@ -7,6 +7,7 @@ var dientes = {};
 
 var countClick = 0;
 var countClickFijo = 0;
+var countClickFijoMalo = 0;
 
 var MyApp = {
   eventoDientes : function() {
@@ -137,6 +138,7 @@ var MyApp = {
 
       countClickFijo++;
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoOrtodonticoFijo) ) {
+          console.log(nombreHallazgo);
         if(countClickFijo=='1'){
           $(this).parents("svg").parent().toggleClass('puente1-fijo');
         } else if (countClickFijo=='2') {
@@ -144,6 +146,19 @@ var MyApp = {
           $(this).parents("svg").parent().toggleClass('puente2-fijo');
           $(this).parents("svg").parent().addClass('seleccionado');
           $(this).parents("svg").parent().parent().find('.puente1-fijo').addClass('seleccionado');
+        }
+      }
+
+      countClickFijoMalo++;
+      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoOrtodonticoFijoMalo) ) {
+          console.log(nombreHallazgo);
+        if(countClickFijoMalo=='1'){
+          $(this).parents("svg").parent().toggleClass('puente1-fijo-malo');
+        } else if (countClickFijoMalo=='2') {
+          countClickFijoMalo = 0;
+          $(this).parents("svg").parent().toggleClass('puente2-fijo-malo');
+          $(this).parents("svg").parent().addClass('seleccionado');
+          $(this).parents("svg").parent().parent().find('.puente1-fijo-malo').addClass('seleccionado');
         }
       }
 
@@ -280,6 +295,7 @@ var MyApp = {
           $(this).parents("svg").removeClass('pre-seleccionado');
 
       }  else if ($(contenidoOdontograma).is('[data-tipo~="9"]')){
+        console.log('aaaa123');
           var idDiente = $(this).parents("svg").attr("id");
           var piezaDiente = $(this).parents("svg").attr("data-pieza");
           var wrapperContainer = $(this).parents(".contenido-odontograma");
@@ -432,6 +448,14 @@ var MyApp = {
           }
           $("#hallazgo-protesis-total-malo").toggleClass(".actiive");
 
+          if( nombreHallazgo == listaHallazgo.hallazgoOrtodonticoFijo
+            || nombreHallazgo == listaHallazgo.hallazgoOrtodonticoFijoMalo ){
+              $(".ortodontico-estado-fijo").addClass("show");
+          } else {
+              $(".ortodontico-estado-fijo").removeClass("show");
+          }
+          $("#hallazgo-ortodontico-fijo-malo").toggleClass(".actiive");
+
       });
 
       $( ".restaura-estado .bueno" ).click(function(e) {
@@ -465,6 +489,16 @@ var MyApp = {
       $( ".protesis-estado .malo" ).click(function(e) {
           $("#hallazgo-protesis-total-malo").toggleClass('active');
       });
+
+      $( ".ortodontico-estado-fijo .bueno" ).click(function(e) {
+        $("#hallazgo-ortodontico-fijo").trigger("click")
+      });
+
+      $( ".ortodontico-estado-fijo .malo" ).click(function(e) {
+          $("#hallazgo-ortodontico-fijo-malo").toggleClass('active');
+      });
+
+
 
       $("#hallazgo-caries").click();
 
