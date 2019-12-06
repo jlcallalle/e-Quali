@@ -8,6 +8,7 @@ var dientes = {};
 var countClick = 0;
 var countClickFijo = 0;
 var countClickFijoMalo = 0;
+var countClickRemovible = 0;
 
 var MyApp = {
   eventoDientes : function() {
@@ -136,6 +137,18 @@ var MyApp = {
           $(this).parents("svg").parent().toggleClass('active-ortodontico-removible-malo');
       }
 
+      countClick++;
+      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoProtesisFija) ) {
+          if(countClick=='1'){
+            $(this).parents("svg").parent().toggleClass('puente1');
+          } else if (countClick=='2') {
+            countClick = 0;
+            $(this).parents("svg").parent().toggleClass('puente2');
+            $(this).parents("svg").parent().addClass('seleccionado');
+            $(this).parents("svg").parent().parent().find('.puente1').addClass('seleccionado');
+          }
+      }
+
       countClickFijo++;
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoOrtodonticoFijo) ) {
           console.log(nombreHallazgo);
@@ -162,17 +175,19 @@ var MyApp = {
         }
       }
 
-      countClick++;
-      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoProtesisFija) ) {
-          if(countClick=='1'){
-            $(this).parents("svg").parent().toggleClass('puente1');
-          } else if (countClick=='2') {
-            countClick = 0;
-            $(this).parents("svg").parent().toggleClass('puente2');
+      countClickRemovible++;
+      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoProtesisRemovible) ) {
+        console.log('es removible: ' + listaHallazgo.hallazgoProtesisRemovible);
+          if(countClickRemovible=='1'){
+            $(this).parents("svg").parent().toggleClass('puente1-removible');
+          } else if (countClickRemovible=='2') {
+            countClickRemovible = 0;
+            $(this).parents("svg").parent().toggleClass('puente2-removible');
             $(this).parents("svg").parent().addClass('seleccionado');
-            $(this).parents("svg").parent().parent().find('.puente1').addClass('seleccionado');
+            $(this).parents("svg").parent().parent().find('.puente1-removible').addClass('seleccionado');
           }
       }
+
 
       $( cuadroDiente ).each(function( index ) {
           var idCuadro = this.id;
@@ -540,6 +555,10 @@ var MyApp = {
                           $(this).parents('.svg').parent().removeClass("active-protesis-total-malo");
                           $(this).parents('.svg').parent().removeClass("active-ortodontico-removible");
                           $(this).parents('.svg').parent().removeClass("active-ortodontico-removible-malo");
+                          $(this).parents('.svg').parent().removeClass("puente1");
+                          $(this).parents('.svg').parent().removeClass("puente2");
+                          $(this).parents('.svg').parent().removeClass("puente1-removible");
+                          $(this).parents('.svg').parent().removeClass("puente2-removible");
                           $(this).parents('.flecha-extruida').find('img').remove();
                           $(this).parents('.flecha-intruida').find('img').remove();
                           $(this).parents('.diastema').find('img').remove();

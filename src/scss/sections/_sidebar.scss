@@ -337,6 +337,16 @@
                 }
             }
         }
+        &.opcion-protesis-removible {
+            a {
+                &.active {
+                    color:blue;
+                }
+                &:hover {
+                    color:blue;
+                }
+            }
+        }
     }
 }
 
