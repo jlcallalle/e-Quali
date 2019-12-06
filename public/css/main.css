@@ -65,7 +65,8 @@ body {
   right: 20px;
   border: 1px solid gray;
   padding: 5px;
-  overflow-x: auto; }
+  overflow-x: auto;
+  z-index: 100; }
   .opciones-odontologia h5 {
     margin: 0 0 10px 0; }
   .opciones-odontologia p {
@@ -1148,7 +1149,8 @@ svg.active-dentaria {
 .corona-estado,
 .protesis-estado,
 .ortodontico-estado,
-.ortodontico-estado-fijo {
+.ortodontico-estado-fijo,
+.protesis-removible-estado {
   position: absolute;
   top: 0;
   right: 5px;
@@ -1163,14 +1165,16 @@ svg.active-dentaria {
   .corona-estado.show,
   .protesis-estado.show,
   .ortodontico-estado.show,
-  .ortodontico-estado-fijo.show {
+  .ortodontico-estado-fijo.show,
+  .protesis-removible-estado.show {
     display: block; }
   .restaura-estado .estados,
   .implante-estado .estados,
   .corona-estado .estados,
   .protesis-estado .estados,
   .ortodontico-estado .estados,
-  .ortodontico-estado-fijo .estados {
+  .ortodontico-estado-fijo .estados,
+  .protesis-removible-estado .estados {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1183,7 +1187,8 @@ svg.active-dentaria {
     .corona-estado .estados a,
     .protesis-estado .estados a,
     .ortodontico-estado .estados a,
-    .ortodontico-estado-fijo .estados a {
+    .ortodontico-estado-fijo .estados a,
+    .protesis-removible-estado .estados a {
       width: 20px;
       height: 20px; }
     .restaura-estado .estados .bueno,
@@ -1191,14 +1196,16 @@ svg.active-dentaria {
     .corona-estado .estados .bueno,
     .protesis-estado .estados .bueno,
     .ortodontico-estado .estados .bueno,
-    .ortodontico-estado-fijo .estados .bueno {
+    .ortodontico-estado-fijo .estados .bueno,
+    .protesis-removible-estado .estados .bueno {
       background: blue; }
     .restaura-estado .estados .malo,
     .implante-estado .estados .malo,
     .corona-estado .estados .malo,
     .protesis-estado .estados .malo,
     .ortodontico-estado .estados .malo,
-    .ortodontico-estado-fijo .estados .malo {
+    .ortodontico-estado-fijo .estados .malo,
+    .protesis-removible-estado .estados .malo {
       background: red; }
 
 .list-editable {
@@ -1469,6 +1476,58 @@ svg.active-dentaria {
     position: absolute;
     top: -12px; }
   .puente2-removible:before {
+    content: '';
+    width: 100%;
+    height: 5px;
+    position: absolute;
+    top: -20px;
+    background: white;
+    z-index: 10; }
+
+/**/
+.puente1-removible-malo {
+  position: static; }
+  .puente1-removible-malo .contorno {
+    stroke: red;
+    stroke-width: 10px; }
+
+.seleccionado.puente1-removible-malo:after {
+  content: '';
+  width: 100%;
+  display: block;
+  width: 10px;
+  height: 3px;
+  background: red;
+  width: 100%;
+  position: absolute;
+  top: -12px; }
+
+.seleccionado.puente1-removible-malo:before {
+  content: '';
+  width: 100%;
+  height: 3px;
+  position: absolute;
+  top: -18px;
+  background: red;
+  z-index: 10; }
+
+.seleccionado.puente1-removible-malo .contorno {
+  stroke: transparent;
+  stroke-width: 10px; }
+
+.puente2-removible-malo {
+  position: static; }
+  .puente2-removible-malo:after {
+    content: '';
+    width: 100%;
+    display: block;
+    width: 10px;
+    height: 5px;
+    background: white;
+    width: 100%;
+    position: absolute;
+    top: -12px; }
+  .puente2-removible-malo:before {
     content: '';
     width: 100%;
     height: 5px;

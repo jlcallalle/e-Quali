@@ -9,6 +9,7 @@ var countClick = 0;
 var countClickFijo = 0;
 var countClickFijoMalo = 0;
 var countClickRemovible = 0;
+var countClickRemovibleMalo = 0;
 
 var MyApp = {
   eventoDientes : function() {
@@ -177,7 +178,6 @@ var MyApp = {
 
       countClickRemovible++;
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoProtesisRemovible) ) {
-        console.log('es removible: ' + listaHallazgo.hallazgoProtesisRemovible);
           if(countClickRemovible=='1'){
             $(this).parents("svg").parent().toggleClass('puente1-removible');
           } else if (countClickRemovible=='2') {
@@ -187,6 +187,19 @@ var MyApp = {
             $(this).parents("svg").parent().parent().find('.puente1-removible').addClass('seleccionado');
           }
       }
+
+      countClickRemovibleMalo++;
+      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoProtesisRemovibleMalo) ) {
+          if(countClickRemovibleMalo=='1'){
+            $(this).parents("svg").parent().toggleClass('puente1-removible-malo');
+          } else if (countClickRemovibleMalo=='2') {
+            countClickRemovibleMalo = 0;
+            $(this).parents("svg").parent().toggleClass('puente2-removible-malo');
+            $(this).parents("svg").parent().addClass('seleccionado');
+            $(this).parents("svg").parent().parent().find('.puente1-removible-malo').addClass('seleccionado');
+          }
+      }
+
 
 
       $( cuadroDiente ).each(function( index ) {
@@ -415,7 +428,7 @@ var MyApp = {
           } else {
               $(".restaura-estado").removeClass("show");
           }
-          $("#hallazgo-restauracion-definitiva-malo").toggleClass(".actiive");
+          // $("#hallazgo-restauracion-definitiva-malo").toggleClass(".actiive");
 
           if( nombreHallazgo == listaHallazgo.hallazgoImplanteDental
             || nombreHallazgo == listaHallazgo.hallazgoImplanteDentalMalo ){
@@ -423,7 +436,7 @@ var MyApp = {
           } else {
               $(".implante-estado").removeClass("show");
           }
-          $("#hallazgo-implante-dental-malo").toggleClass(".actiive");
+          // $("#hallazgo-implante-dental-malo").toggleClass(".actiive");
 
           if( nombreHallazgo == listaHallazgo.hallazgoCorona
             || nombreHallazgo == listaHallazgo.hallazgoCoronaMalo ){
@@ -431,7 +444,7 @@ var MyApp = {
           } else {
               $(".corona-estado").removeClass("show");
           }
-          $("#hallazgo-corona-malo").toggleClass(".actiive");
+          // $("#hallazgo-corona-malo").toggleClass(".actiive");
 
           if( nombreHallazgo == listaHallazgo.hallazgoEdentuloTotal ){
             alert("Selecinonar la pieza dentaria inicial");
@@ -450,7 +463,7 @@ var MyApp = {
           }  else {
             $(".protesis-estado").removeClass("show");
           }
-          $("#hallazgo-protesis-total-malo").toggleClass(".actiive");
+          // $("#hallazgo-protesis-total-malo").toggleClass(".actiive");
 
           if( nombreHallazgo == listaHallazgo.hallazgoOrtodonticoRemovible
             || nombreHallazgo == listaHallazgo.hallazgoOrtodonticoRemovibleMalo  ){
@@ -461,7 +474,7 @@ var MyApp = {
           }  else {
             $(".ortodontico-estado").removeClass("show");
           }
-          $("#hallazgo-protesis-total-malo").toggleClass(".actiive");
+          // $("#hallazgo-protesis-total-malo").toggleClass(".actiive");
 
           if( nombreHallazgo == listaHallazgo.hallazgoOrtodonticoFijo
             || nombreHallazgo == listaHallazgo.hallazgoOrtodonticoFijoMalo ){
@@ -469,7 +482,14 @@ var MyApp = {
           } else {
               $(".ortodontico-estado-fijo").removeClass("show");
           }
-          $("#hallazgo-ortodontico-fijo-malo").toggleClass(".actiive");
+          // $("#hallazgo-ortodontico-fijo-malo").toggleClass(".actiive");
+
+          if( nombreHallazgo == listaHallazgo.hallazgoProtesisRemovible
+            || nombreHallazgo == listaHallazgo.hallazgoProtesisRemovibleMalo ){
+              $(".protesis-removible-estado").addClass("show");
+          } else {
+              $(".protesis-removible-estado").removeClass("show");
+          }
 
       });
 
@@ -510,6 +530,15 @@ var MyApp = {
       });
 
       $( ".ortodontico-estado-fijo .malo" ).click(function(e) {
+          $("#hallazgo-ortodontico-fijo-malo").toggleClass('active');
+      });
+
+
+      $( ".protesis-removible-estado .bueno" ).click(function(e) {
+        $("#hallazgo-protesis-removible").trigger("click")
+      });
+
+      $( ".protesis-removible-estado .malo" ).click(function(e) {
           $("#hallazgo-ortodontico-fijo-malo").toggleClass('active');
       });
 
@@ -558,7 +587,7 @@ var MyApp = {
                           $(this).parents('.svg').parent().removeClass("puente1");
                           $(this).parents('.svg').parent().removeClass("puente2");
                           $(this).parents('.svg').parent().removeClass("puente1-removible");
-                          $(this).parents('.svg').parent().removeClass("puente2-removible");
+                          $(this).parents('.svg').parent().removeClass("puente2-removible-malo");
                           $(this).parents('.flecha-extruida').find('img').remove();
                           $(this).parents('.flecha-intruida').find('img').remove();
                           $(this).parents('.diastema').find('img').remove();
