@@ -48,6 +48,13 @@ var MyApp = {
       $(this).parents("svg").addClass("pre-seleccionado");
       $(".select-tipo").remove();
 
+      //Desabilitar oclusal
+      if(nombrePosition == 'oclusal') {
+          console.log('oclusal');
+          $(this).parents('svg').find('[data-pos="oclusal"]').addClass('disabledbutton');
+          $(this).removeClass("disabledbutton");
+      }
+
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoDienteAusente) ) {
           $(this).parents("svg").toggleClass('active-ausente');
       }
@@ -140,6 +147,16 @@ var MyApp = {
 
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoTransposicion) ) {
           $(this).parents("svg").parent().toggleClass('active-transposicion');
+      }
+
+      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoFractura) ) {
+          console.log('fracutra');
+          $(this).parents("svg").toggleClass('active-fractura');
+      }
+
+      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoFracturaMalo) ) {
+          console.log('fracutra');
+          $(this).parents("svg").toggleClass('active-fractura-malo');
       }
 
 
@@ -417,6 +434,8 @@ var MyApp = {
           $(".lista-hallazgos li a").removeClass("active");
           $(this).addClass("active");
 
+           $(".select-tipo").remove();
+
           var contenedorHallazgo = $(this).parents(".page-odontograma").find(".contenido-odontograma");
           contenedorHallazgo.attr("data-texto", textoHallazgo);
           contenedorHallazgo.attr("data-name", nombreHallazgo);
@@ -426,6 +445,9 @@ var MyApp = {
           contenedorHallazgo.removeClass();
           contenedorHallazgo.addClass("contenido-odontograma");
           contenedorHallazgo.addClass(nombreHallazgo);
+
+          //remove active pre-seleccionado
+          contenedorHallazgo.find('.pre-seleccionado .diente').removeClass('active');
 
           if ( nombreHallazgo == listaHallazgo.hallazgoRestauracionDefinitiva
             || nombreHallazgo == listaHallazgo.hallazgoRestauracionDefinitivaMalo ){
@@ -496,6 +518,12 @@ var MyApp = {
               $(".protesis-removible-estado").removeClass("show");
           }
 
+         if( nombreHallazgo == listaHallazgo.hallazgoFractura || nombreHallazgo == listaHallazgo.hallazgoFracturaMalo ){
+              $(".fractura-estado").addClass("show");
+          } else {
+              $(".fractura-estado").removeClass("show");
+          }
+
       });
 
       $( ".restaura-estado .bueno" ).click(function(e) {
@@ -548,6 +576,17 @@ var MyApp = {
       });
 
 
+      $( ".fractura-estado .bueno" ).click(function(e) {
+        $("#hallazgo-fractura").trigger("click")
+      });
+
+      $( ".fractura-estado .malo" ).click(function(e) {
+          $("#hallazgo-fractura-malo").toggleClass('active');
+      });
+
+
+ 
+
 
       $("#hallazgo-caries").click();
 
@@ -580,6 +619,8 @@ var MyApp = {
                           $(this).parents('.svg').removeClass("active-corona");
                           $(this).parents('.svg').removeClass("active-corona-malo");
                           $(this).parents('.svg').removeClass("active-corona-temporal");
+                          $(this).parents('.svg').removeClass("active-fractura");
+                          $(this).parents('.svg').removeClass("active-fractura-malo");
                           $(this).parents('.svg').parent().removeClass("active-geminacion");
                           $(this).parents('.svg').parent().removeClass("active-transposicion");
                           $(this).parents('.svg').parent().removeClass("active-fusion");
@@ -594,6 +635,7 @@ var MyApp = {
                           $(this).parents('.svg').parent().removeClass("puente2");
                           $(this).parents('.svg').parent().removeClass("puente1-removible");
                           $(this).parents('.svg').parent().removeClass("puente2-removible-malo");
+                          $(this).parents('.svg').find('[data-pos="oclusal"]').removeClass('disabledbutton');
                           $(this).parents('.flecha-extruida').find('img').remove();
                           $(this).parents('.flecha-intruida').find('img').remove();
                           $(this).parents('.diastema').find('img').remove();

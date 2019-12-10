@@ -2721,7 +2721,7 @@
                                     <li class="opcion-fractura">
                                         <span>33.-</span>
                                         <span class="codigo">(opc32)</span>
-                                        <a id="hallazgo-fractura" href="#" data-texto="Hallazgo Fractura" data-tipo="6">Fractura</a>
+                                        <a id="hallazgo-fractura" href="#" data-texto="Fractura" data-tipo="5">Fractura</a>
                                     </li>
                                   </ul>
                                  <div class="box-estado restaura-estado">
@@ -2776,15 +2776,17 @@
 
                                   <div class="box-estado fractura-estado">
                                     <span>Seleccione estado:</span>
-                                    <div class="box-opciones">
-                                      <div class="linea-horizontal-top"></div>
-                                      <div class="linea-horizontal-sub"></div>
-                                      <div class="linea-horizontal-top"></div>
-                                      <div class="linea-horizontal-sub"></div>
+                                    <div class="estados">
+                                      <a class="bueno" href="#"></a>
+                                      <a id="hallazgo-fractura-malo" class="malo" href="#" data-texto="Fractura malo" data-tipo="5"></a>
                                     </div>
+                                    <!-- <div class="box-opciones">
+                                      <a class="linea-horizontal-top"></a>
+                                      <a class="linea-horizontal-sub"></a>
+                                      <a class="linea-horizontal-top"></a>
+                                      <a class="linea-horizontal-sub"></a>
+                                    </div> -->
                                   </div>
-                                  
-                                      
                               </div>
                             </div>
 
@@ -2885,6 +2887,8 @@
         hallazgoProtesisRemovible: "hallazgo-protesis-removible",
         hallazgoProtesisRemovibleMalo: "hallazgo-protesis-removible-malo",
         hallazgoTransposicion: "hallazgo-transposicion",
+        hallazgoFractura: "hallazgo-fractura",
+        hallazgoFracturaMalo: "hallazgo-fractura-malo",
       };
       var urlImagenes = {
         dienteExtruido: "img/flecha-extruida.png",

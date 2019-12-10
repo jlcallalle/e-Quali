@@ -842,6 +842,22 @@ svg.active-dentaria {
   }
 }
 
+
+.active-fractura  {
+    .contorno {
+        cursor: pointer;
+        stroke: blue;
+        stroke-width: 10px;
+    }
+}
+.active-fractura-malo  {
+    .contorno {
+        cursor: pointer;
+        stroke: red;
+        stroke-width: 10px;
+    }
+}
+
 .cont-diente {
     width: 51px;
     display: inline-block;
