@@ -56,19 +56,23 @@ body {
       display: grid; } }
 
 /*  Sidebar Odontograma*/
+.sidebar-hallazgos {
+  position: absolute;
+  top: 400px;
+  right: 20px;
+  padding: 52px 0 0 0; }
+
 .opciones-odontologia {
   background-color: white;
   height: 207px;
   width: 240px;
-  position: fixed;
-  top: 150px;
-  right: 20px;
   border: 1px solid gray;
   padding: 5px;
   overflow-x: auto;
   z-index: 100; }
   .opciones-odontologia h5 {
-    margin: 0 0 10px 0; }
+    margin: 0 0 10px 0;
+    font-size: 13px; }
   .opciones-odontologia p {
     font-size: 12px;
     font-weight: bold;
@@ -76,6 +80,10 @@ body {
     display: none; }
   .opciones-odontologia .show {
     display: block; }
+  .opciones-odontologia .box-estado span {
+    font-size: 12px; }
+  .opciones-odontologia .box-estado .estados {
+    margin: 2px 0 0 0; }
 
 .lista-hallazgos li {
   font-size: 12px;
@@ -210,6 +218,52 @@ body {
     color: blue; }
   .lista-hallazgos li.opcion-protesis-removible a:hover {
     color: blue; }
+  .lista-hallazgos li.opcion-transposicion a.active {
+    color: blue; }
+  .lista-hallazgos li.opcion-transposicion a:hover {
+    color: blue; }
+  .lista-hallazgos li.opcion-fractura a.active {
+    color: blue; }
+  .lista-hallazgos li.opcion-fractura a:hover {
+    color: blue; }
+
+.box-opciones {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 30px;
+  background: rgba(25, 0, 0, 0.1);
+  position: relative; }
+  .box-opciones > div {
+    position: relative;
+    border: 1px solid gray;
+    margin: 0 4px 0 0; }
+
+.linea-horizontal-top {
+  width: 25px;
+  height: 22px;
+  background: white; }
+  .linea-horizontal-top:before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 3px;
+    background: red;
+    top: 4px;
+    left: 2px; }
+
+.linea-horizontal-sub {
+  width: 25px;
+  height: 22px;
+  background: white; }
+  .linea-horizontal-sub:before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 3px;
+    background: blue;
+    top: 8px;
+    left: 2px; }
 
 .page-odontograma {
   position: relative;
@@ -757,6 +811,25 @@ svg.active-dentaria {
   .box-lista-dientes-sub .active-ortodontico-removible-malo:before {
     top: 98px; }
 
+.active-transposicion {
+  position: relative; }
+  .active-transposicion:before {
+    content: '';
+    width: 36px;
+    height: 26px;
+    display: block;
+    top: -19px;
+    position: absolute;
+    left: 10px;
+    background-image: url(../img/transposicion.png);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 48px; }
+    .box-lista-dientes-sub .active-transposicion:before {
+      top: -26px; }
+  .active-transposicion.incisivos:before {
+    left: 3px; }
+
 .cont-diente {
   width: 51px;
   display: inline-block;
@@ -1150,7 +1223,8 @@ svg.active-dentaria {
 .protesis-estado,
 .ortodontico-estado,
 .ortodontico-estado-fijo,
-.protesis-removible-estado {
+.protesis-removible-estado,
+.fractura-estado {
   position: absolute;
   top: 0;
   right: 5px;
@@ -1166,7 +1240,8 @@ svg.active-dentaria {
   .protesis-estado.show,
   .ortodontico-estado.show,
   .ortodontico-estado-fijo.show,
-  .protesis-removible-estado.show {
+  .protesis-removible-estado.show,
+  .fractura-estado.show {
     display: block; }
   .restaura-estado .estados,
   .implante-estado .estados,
@@ -1174,7 +1249,8 @@ svg.active-dentaria {
   .protesis-estado .estados,
   .ortodontico-estado .estados,
   .ortodontico-estado-fijo .estados,
-  .protesis-removible-estado .estados {
+  .protesis-removible-estado .estados,
+  .fractura-estado .estados {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1188,7 +1264,8 @@ svg.active-dentaria {
     .protesis-estado .estados a,
     .ortodontico-estado .estados a,
     .ortodontico-estado-fijo .estados a,
-    .protesis-removible-estado .estados a {
+    .protesis-removible-estado .estados a,
+    .fractura-estado .estados a {
       width: 20px;
       height: 20px; }
     .restaura-estado .estados .bueno,
@@ -1197,7 +1274,8 @@ svg.active-dentaria {
     .protesis-estado .estados .bueno,
     .ortodontico-estado .estados .bueno,
     .ortodontico-estado-fijo .estados .bueno,
-    .protesis-removible-estado .estados .bueno {
+    .protesis-removible-estado .estados .bueno,
+    .fractura-estado .estados .bueno {
       background: blue; }
     .restaura-estado .estados .malo,
     .implante-estado .estados .malo,
@@ -1205,7 +1283,8 @@ svg.active-dentaria {
     .protesis-estado .estados .malo,
     .ortodontico-estado .estados .malo,
     .ortodontico-estado-fijo .estados .malo,
-    .protesis-removible-estado .estados .malo {
+    .protesis-removible-estado .estados .malo,
+    .fractura-estado .estados .malo {
       background: red; }
 
 .list-editable {

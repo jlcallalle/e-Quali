@@ -1,19 +1,28 @@
 /*  Sidebar Odontograma*/
 
+.sidebar-hallazgos {
+    position: absolute;
+    top: 400px;
+    right: 20px;
+    padding: 52px 0 0 0;
+}
 .opciones-odontologia {
     background-color: white;
     height: 207px;
     width: 240px;
-    position: fixed;
-    top: 150px;
-    right: 20px;
+    // position: fixed;
+    // top: 150px;
+    // position: absolute;
+    // top:400px;
+    // right: 20px;
     border: 1px solid gray;
     padding: 5px;
-    overflow-x: auto;
+     overflow-x: auto;
     z-index: 100;
     h5 {
         margin:0 0 10px 0 ;
-    }
+        font-size: 13px;
+      }
     p {
         font-size: 12px;
         font-weight: bold;
@@ -23,6 +32,16 @@
     .show {
         display: block;
     }
+
+    .box-estado {
+        span {
+            font-size:12px;
+        }
+        .estados {
+            margin:2px 0 0 0;
+        }
+    }
+
 }
 
 .lista-hallazgos {
@@ -348,6 +367,73 @@
                 }
             }
         }
+        &.opcion-transposicion {
+            a {
+                &.active {
+                    color:blue;
+                }
+                &:hover {
+                    color:blue;
+                }
+            }
+        }
+        &.opcion-fractura {
+            a {
+                &.active {
+                    color:blue;
+                }
+                &:hover {
+                    color:blue;
+                }
+            }
+        }
     }
 }
+
+
+
+
+
+//Fractura
+
+
+  .box-opciones {
+    display: flex;
+    height: 30px;
+    background: rgba(25,0,0,0.1);
+    position: relative;
+    > div {
+      position:relative;
+      border: 1px solid gray;
+      margin: 0 4px 0 0;
+    }
+  }
+  .linea-horizontal-top {
+    width: 25px;
+    height: 22px;
+    background: white;
+    &:before {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 3px;
+      background: red;
+      top: 4px;
+      left: 2px;
+    }
+  }
+  .linea-horizontal-sub {
+    width: 25px;
+    height: 22px;
+    background: white;
+    &:before {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 3px;
+      background: blue;
+      top: 8px;
+      left: 2px;
+    }
+  }
 

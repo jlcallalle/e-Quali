@@ -138,6 +138,11 @@ var MyApp = {
           $(this).parents("svg").parent().toggleClass('active-ortodontico-removible-malo');
       }
 
+      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoTransposicion) ) {
+          $(this).parents("svg").parent().toggleClass('active-transposicion');
+      }
+
+
       countClick++;
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoProtesisFija) ) {
           if(countClick=='1'){
@@ -323,7 +328,7 @@ var MyApp = {
           $(this).parents("svg").removeClass('pre-seleccionado');
 
       }  else if ($(contenidoOdontograma).is('[data-tipo~="9"]')){
-        console.log('aaaa123');
+        // console.log('aaaa123');
           var idDiente = $(this).parents("svg").attr("id");
           var piezaDiente = $(this).parents("svg").attr("data-pieza");
           var wrapperContainer = $(this).parents(".contenido-odontograma");
@@ -576,6 +581,7 @@ var MyApp = {
                           $(this).parents('.svg').removeClass("active-corona-malo");
                           $(this).parents('.svg').removeClass("active-corona-temporal");
                           $(this).parents('.svg').parent().removeClass("active-geminacion");
+                          $(this).parents('.svg').parent().removeClass("active-transposicion");
                           $(this).parents('.svg').parent().removeClass("active-fusion");
                           $(this).parents('.svg').parent().removeClass("active-clavija");
                           $(this).parents('.svg').parent().removeClass("active-edentulo-total");
