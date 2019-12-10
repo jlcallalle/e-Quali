@@ -150,13 +150,21 @@ var MyApp = {
       }
 
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoFractura) ) {
-          console.log('fracutra');
-          $(this).parents("svg").toggleClass('active-fractura');
+          console.log('fracutra bueno');
+          $(this).parents("svg").parent().toggleClass('active-fractura-linea-top');
       }
 
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoFracturaMalo) ) {
-          console.log('fracutra');
-          $(this).parents("svg").toggleClass('active-fractura-malo');
+          console.log('fracutra malo');
+          $(this).parents("svg").parent().toggleClass('active-fractura-malo');
+      }
+      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoFracturaDiagonalIzquierda) ) {
+          console.log('fracutra diagonal izquierda');
+          $(this).parents("svg").parent().toggleClass('active-fractura-diagonal-izquierda');
+      }
+      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoFracturaDiagonallDerecha) ) {
+          console.log('fracutra diagonal derecha');
+          $(this).parents("svg").parent().toggleClass('active-fractura-diagonal-derecha');
       }
 
 
@@ -518,7 +526,10 @@ var MyApp = {
               $(".protesis-removible-estado").removeClass("show");
           }
 
-         if( nombreHallazgo == listaHallazgo.hallazgoFractura || nombreHallazgo == listaHallazgo.hallazgoFracturaMalo ){
+         if( nombreHallazgo == listaHallazgo.hallazgoFractura 
+         || nombreHallazgo == listaHallazgo.hallazgoFracturaMalo
+         || nombreHallazgo == listaHallazgo.hallazgoFracturaDiagonalIzquierda
+         || nombreHallazgo == listaHallazgo.hallazgoFracturaDiagonallDerecha ){
               $(".fractura-estado").addClass("show");
           } else {
               $(".fractura-estado").removeClass("show");
@@ -576,7 +587,7 @@ var MyApp = {
       });
 
 
-      $( ".fractura-estado .bueno" ).click(function(e) {
+      $( ".fractura-estado .fractura-linea-top" ).click(function(e) {
         $("#hallazgo-fractura").trigger("click")
       });
 

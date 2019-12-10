@@ -842,20 +842,46 @@ svg.active-dentaria {
   }
 }
 
+//hallazgo fracturas
 
-.active-fractura  {
-    .contorno {
-        cursor: pointer;
-        stroke: blue;
-        stroke-width: 10px;
+.active-fractura-linea-top  {
+    position: relative;
+    &:before {
+        content: '';
+        position: absolute;
+        width: 50px;
+        height: 3px;
+        background: red;
+        // top: 8px;
+        top: 50px;
+        left: 0;
+        .box-lista-dientes-sub & {
+            top: 8px;
+        }
     }
 }
 .active-fractura-malo  {
-    .contorno {
-        cursor: pointer;
-        stroke: red;
-        stroke-width: 10px;
+    position: relative;
+    &:before {
+        content: '';
+        position: absolute;
+        width: 50px;
+        height: 3px;
+        background: red;
+        top: 73px;
+        // top: 26px;
+        left: 0;
+        .box-lista-dientes-sub & {
+           top: 26px;
+        }
     }
+}
+
+.incisivos.active-fractura-linea-top:before {
+    width: 39px;
+}
+.incisivos.active-fractura-malo:before {
+    width: 39px;
 }
 
 .cont-diente {
@@ -894,7 +920,6 @@ svg.active-dentaria {
         stroke-width: 1px;
     }
 }
-
 
 .box-sub-adulto {
     margin-top: 50px;
@@ -1493,6 +1518,7 @@ svg.active-dentaria {
         a {
             width: 20px;
             height: 20px;
+            position: relative;
         }
         .bueno {
             background: blue;
@@ -1920,3 +1946,61 @@ position:static;
 }
 
 
+.fractura-estado {
+    .estados {
+        .fractura-linea-top {
+            background-color:white;
+            &:before {
+                content: '';
+                position: absolute;
+                width: 20px;
+                height: 3px;
+                // background: red;
+                background: red;
+                top: 4px;
+                left: 0;
+            }
+        }
+        .fractura-linea-sub {
+             background-color:white;
+            &:before {
+                content: '';
+                position: absolute;
+                width: 20px;
+                height: 3px;
+                background: red;
+                top: 12px;
+                left: 0;
+            }
+        }
+        .diagonal-izquierda {
+             background-color:white;
+            &:before {
+               content: '';
+                position: absolute;
+                width: 20px;
+                height: 3px;
+                background: red;
+                top: 9px;
+                left: 0;
+                transform: rotate(45deg);
+            }
+        }
+        .diagonal-derecha {
+            //  background-color:rgba(255,0,0,0.2);
+            &:before {
+               content: '';
+                position: absolute;
+                width: 20px;
+                height: 3px;
+                background: red;
+                top: 9px;
+                left: 0;
+                transform: rotate(135deg);
+            }
+        }
+        a {
+           border: 1px solid gray;
+        }
+    }
+}

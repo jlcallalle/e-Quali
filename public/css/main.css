@@ -830,15 +830,37 @@ svg.active-dentaria {
   .active-transposicion.incisivos:before {
     left: 3px; }
 
-.active-fractura .contorno {
-  cursor: pointer;
-  stroke: blue;
-  stroke-width: 10px; }
+.active-fractura-linea-top {
+  position: relative; }
+  .active-fractura-linea-top:before {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 3px;
+    background: red;
+    top: 50px;
+    left: 0; }
+    .box-lista-dientes-sub .active-fractura-linea-top:before {
+      top: 8px; }
 
-.active-fractura-malo .contorno {
-  cursor: pointer;
-  stroke: red;
-  stroke-width: 10px; }
+.active-fractura-malo {
+  position: relative; }
+  .active-fractura-malo:before {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 3px;
+    background: red;
+    top: 73px;
+    left: 0; }
+    .box-lista-dientes-sub .active-fractura-malo:before {
+      top: 26px; }
+
+.incisivos.active-fractura-linea-top:before {
+  width: 39px; }
+
+.incisivos.active-fractura-malo:before {
+  width: 39px; }
 
 .cont-diente {
   width: 51px;
@@ -1277,7 +1299,8 @@ svg.active-dentaria {
     .protesis-removible-estado .estados a,
     .fractura-estado .estados a {
       width: 20px;
-      height: 20px; }
+      height: 20px;
+      position: relative; }
     .restaura-estado .estados .bueno,
     .implante-estado .estados .bueno,
     .corona-estado .estados .bueno,
@@ -1624,5 +1647,54 @@ svg.active-dentaria {
     top: -20px;
     background: white;
     z-index: 10; }
+
+.fractura-estado .estados .fractura-linea-top {
+  background-color: white; }
+  .fractura-estado .estados .fractura-linea-top:before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 3px;
+    background: red;
+    top: 4px;
+    left: 0; }
+
+.fractura-estado .estados .fractura-linea-sub {
+  background-color: white; }
+  .fractura-estado .estados .fractura-linea-sub:before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 3px;
+    background: red;
+    top: 12px;
+    left: 0; }
+
+.fractura-estado .estados .diagonal-izquierda {
+  background-color: white; }
+  .fractura-estado .estados .diagonal-izquierda:before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 3px;
+    background: red;
+    top: 9px;
+    left: 0;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg); }
+
+.fractura-estado .estados .diagonal-derecha:before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 3px;
+  background: red;
+  top: 9px;
+  left: 0;
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg); }
+
+.fractura-estado .estados a {
+  border: 1px solid gray; }
 
 /*# sourceMappingURL=main.css.map */
