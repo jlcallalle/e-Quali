@@ -18,8 +18,11 @@ var MyApp = {
         return;
       }
       var piezaDentariaActual = $(this).parents(".svg");
-      if ( piezaDentariaActual.hasClass("active-ausente") || piezaDentariaActual.hasClass("active-erupcion")
-        || piezaDentariaActual.hasClass("active-extruida") || piezaDentariaActual.hasClass("active-diastema") ) {
+      if ( piezaDentariaActual.hasClass("active-ausente")
+         || piezaDentariaActual.hasClass("active-erupcion")
+         || piezaDentariaActual.hasClass("active-extruida")
+         || piezaDentariaActual.hasClass("active-diastema")
+         || piezaDentariaActual.hasClass("active-remanente-radicular") ) {
         return;
       }
 
@@ -179,6 +182,10 @@ var MyApp = {
           $(this).parents("svg").parent().toggleClass('active-fractura-raya-derecha');
       }
 
+      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoRemanenteRadicular) ) {
+        $(this).parents("svg").toggleClass('active-remanente-radicular');
+      }
+
 
       countClick++;
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoProtesisFija) ) {
@@ -258,7 +265,7 @@ var MyApp = {
                   $( this ).find('.select-hallazgos').append(selectCaries);
               }
               if (nombreHallazgo == listaHallazgo.hallazgoRestauracionDefinitiva) {
-                  var selectCaries ="<select class='select-tipo select-restauracion-definitiva' name='hallazgo-restauracion-definitiva'><option value=''>Elegir</option><option value='Amalgama Dental'>AD</option> <option value='Resina' >R</option> <option value='Ionónedo de vidrio'>IV</option><option value='Incrustación Estética'>IE</option><option value='Canilla Estética'>C</option></select>"
+                  var selectCaries ="<select class='select-tipo select-restauracion-definitiva' name='hallazgo-restauracion-definitiva'><option value=''>Elegir</option><option value='Amalgama Dental'>AM</option> <option value='Resina' >R</option> <option value='Ionónedo de vidrio'>IV</option><option value='Incrustación Estética'>IE</option><option value='Canilla Estética'>C</option></select>"
                   $( this ).find('.select-hallazgos').append(selectCaries);
               }
               if (nombreHallazgo == listaHallazgo.hallazgoRestauracionDefinitivaMalo) {
@@ -648,6 +655,7 @@ var MyApp = {
                           $(this).parents('.svg').removeClass("active-corona-temporal");
                           $(this).parents('.svg').removeClass("active-fractura");
                           $(this).parents('.svg').removeClass("active-fractura-malo");
+                          $(this).parents('.svg').removeClass("active-remanente-radicular");
                           $(this).parents('.svg').parent().removeClass("active-geminacion");
                           $(this).parents('.svg').parent().removeClass("active-transposicion");
                           $(this).parents('.svg').parent().removeClass("active-fusion");
@@ -666,6 +674,9 @@ var MyApp = {
                           $(this).parents('.svg').parent().removeClass("active-fractura-linea-sub");
                           $(this).parents('.svg').parent().removeClass("active-fractura-diagonal-izquierda");
                           $(this).parents('.svg').parent().removeClass("active-fractura-diagonal-derecha");
+                          $(this).parents('.svg').parent().removeClass("active-fractura-diagonal-izquierda-small");
+                          $(this).parents('.svg').parent().removeClass("active-fractura-diagonal-derecha-small");
+                          $(this).parents('.svg').parent().removeClass("active-fractura-raya-izquierda");
                           $(this).parents('.svg').find('[data-pos="oclusal"]').removeClass('disabledbutton');
                           $(this).parents('.flecha-extruida').find('img').remove();
                           $(this).parents('.flecha-intruida').find('img').remove();

@@ -64,7 +64,7 @@ body {
 
 .opciones-odontologia {
   background-color: white;
-  height: 207px;
+  height: 237px;
   width: 240px;
   border: 1px solid gray;
   padding: 5px;
@@ -953,7 +953,7 @@ svg.active-dentaria {
     -webkit-transform: rotate(90deg);
             transform: rotate(90deg); }
     .box-lista-dientes-sub .active-fractura-raya-derecha:before {
-      top: 26px; }
+      top: 16px; }
 
 .incisivos.active-fractura-raya-derecha:before {
   left: 16px; }
