@@ -853,7 +853,6 @@ svg.active-dentaria {
         width: 50px;
         height: 3px;
         background: red;
-        // top: 8px;
         top: 50px;
         left: 0;
         .box-lista-dientes-sub & {
@@ -870,7 +869,6 @@ svg.active-dentaria {
         height: 3px;
         background: red;
         top: 73px;
-        // top: 26px;
         left: 0;
         .box-lista-dientes-sub & {
            top: 26px;
@@ -907,7 +905,7 @@ svg.active-dentaria {
       left: -10px;
       transform: rotate(123deg);
       .box-lista-dientes-sub & {
-         top: 26px;
+        top: 26px;
       }
   }
 }
@@ -921,13 +919,15 @@ svg.active-dentaria {
       height: 3px;
       background: red;
       top: 46px;
-      left: 0;
+      // left: 0;
+      left: -5px;
       transform: rotate(53deg);
       .box-lista-dientes-sub & {
-         top: 26px;
+        top: 10px;
       }
   }
 }
+
 
 .active-fractura-diagonal-derecha-small {
   position: relative;
@@ -941,24 +941,39 @@ svg.active-dentaria {
       left: 16px;
       transform: rotate(123deg);
       .box-lista-dientes-sub & {
-         top: 26px;
+         top:10px;
+      }
+      .box-lista-dientes-top & {
+         top: 70px;
       }
   }
 }
+
+.box-lista-dientes-top .active-fractura-diagonal-izquierda-small:before {
+  top: 70px;
+}
+
+
+.incisivos.active-fractura-diagonal-derecha-small:before {
+  left: 18px;
+}
+
+
+
 
 .active-fractura-raya-izquierda  {
   position: relative;
   &:before {
       content: '';
       position: absolute;
-      width: 50px;
+      width: 34px;
       height: 3px;
       background: red;
-      // top: 8px;
-      top: 50px;
-      left: 0;
+      top: 62px;
+      left: -10px;
+      transform: rotate(90deg);
       .box-lista-dientes-sub & {
-          top: 8px;
+          top: 16px;
       }
   }
 }
@@ -968,16 +983,20 @@ svg.active-dentaria {
   &:before {
       content: '';
       position: absolute;
-      width: 50px;
+      width: 34px;
       height: 3px;
       background: red;
-      top: 73px;
-      // top: 26px;
-      left: 0;
+      top: 62px;
+      left: 27px;
+      transform: rotate(90deg);
       .box-lista-dientes-sub & {
          top: 26px;
       }
   }
+}
+
+.incisivos.active-fractura-raya-derecha:before {
+  left:16px;
 }
 
 .incisivos.active-fractura-linea-top:before {
@@ -2130,25 +2149,29 @@ position:static;
         .fractura-raya-izquierda {
             background-color:white;
             &:before {
-                content: '';
-                position: absolute;
-                width: 20px;
-                height: 3px;
-                background: red;
-                top: 12px;
-                left: 0;
+              content: '';
+              position: absolute;
+              width: 16px;
+              height: 3px;
+              background: red;
+              top: 8px;
+              left: -3px;
+              transform: rotate(90deg);
             }
         }
         .fractura-raya-derecha {
           background-color:white;
           &:before {
-              content: '';
-              position: absolute;
-              width: 20px;
-              height: 3px;
-              background: red;
-              top: 12px;
-              left: 0;
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 3px;
+            background: red;
+            top: 12px;
+            left: 0;
+            transform: rotate(90deg);
+            top: 8px;
+            left: 5px;
           }
       }
 
