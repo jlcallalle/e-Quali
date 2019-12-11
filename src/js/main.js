@@ -150,21 +150,33 @@ var MyApp = {
       }
 
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoFractura) ) {
-          console.log('fracutra bueno');
           $(this).parents("svg").parent().toggleClass('active-fractura-linea-top');
       }
 
-      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoFracturaMalo) ) {
-          console.log('fracutra malo');
-          $(this).parents("svg").parent().toggleClass('active-fractura-malo');
+      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoFracturaLineaTop) ) {
+          console.log('fracutra linea top');
+          $(this).parents("svg").parent().toggleClass('active-fractura-linea-sub');
       }
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoFracturaDiagonalIzquierda) ) {
-          console.log('fracutra diagonal izquierda');
           $(this).parents("svg").parent().toggleClass('active-fractura-diagonal-izquierda');
       }
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoFracturaDiagonallDerecha) ) {
-          console.log('fracutra diagonal derecha');
           $(this).parents("svg").parent().toggleClass('active-fractura-diagonal-derecha');
+      }
+
+      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoFracturaDiagonalIzquierdaSmall) ) {
+          $(this).parents("svg").parent().toggleClass('active-fractura-diagonal-izquierda-small');
+      }
+      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoFracturaDiagonallDerechaSmall) ) {
+          $(this).parents("svg").parent().toggleClass('active-fractura-diagonal-derecha-small');
+      }
+
+      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoFracturaRayalIzquierda) ) {
+          $(this).parents("svg").parent().toggleClass('active-fractura-raya-izquierda');
+      }
+
+      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoFracturaRayalDerecha) ) {
+          $(this).parents("svg").parent().toggleClass('active-fractura-raya-derecha');
       }
 
 
@@ -526,10 +538,14 @@ var MyApp = {
               $(".protesis-removible-estado").removeClass("show");
           }
 
-         if( nombreHallazgo == listaHallazgo.hallazgoFractura 
-         || nombreHallazgo == listaHallazgo.hallazgoFracturaMalo
+         if( nombreHallazgo == listaHallazgo.hallazgoFractura
+         || nombreHallazgo == listaHallazgo.hallazgoFracturaLineaTop
          || nombreHallazgo == listaHallazgo.hallazgoFracturaDiagonalIzquierda
-         || nombreHallazgo == listaHallazgo.hallazgoFracturaDiagonallDerecha ){
+         || nombreHallazgo == listaHallazgo.hallazgoFracturaDiagonallDerecha
+         || nombreHallazgo == listaHallazgo.hallazgoFracturaDiagonalIzquierdaSmall
+         || nombreHallazgo == listaHallazgo.hallazgoFracturaDiagonallDerechaSmall
+         || nombreHallazgo == listaHallazgo.hallazgoFracturaRayalIzquierda
+         || nombreHallazgo == listaHallazgo.hallazgoFracturaRayalDerecha){
               $(".fractura-estado").addClass("show");
           } else {
               $(".fractura-estado").removeClass("show");
@@ -596,7 +612,7 @@ var MyApp = {
       });
 
 
- 
+
 
 
       $("#hallazgo-caries").click();
@@ -646,6 +662,10 @@ var MyApp = {
                           $(this).parents('.svg').parent().removeClass("puente2");
                           $(this).parents('.svg').parent().removeClass("puente1-removible");
                           $(this).parents('.svg').parent().removeClass("puente2-removible-malo");
+                          $(this).parents('.svg').parent().removeClass("active-fractura-linea-top");
+                          $(this).parents('.svg').parent().removeClass("active-fractura-linea-sub");
+                          $(this).parents('.svg').parent().removeClass("active-fractura-diagonal-izquierda");
+                          $(this).parents('.svg').parent().removeClass("active-fractura-diagonal-derecha");
                           $(this).parents('.svg').find('[data-pos="oclusal"]').removeClass('disabledbutton');
                           $(this).parents('.flecha-extruida').find('img').remove();
                           $(this).parents('.flecha-intruida').find('img').remove();

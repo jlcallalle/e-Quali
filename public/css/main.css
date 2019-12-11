@@ -824,7 +824,8 @@ svg.active-dentaria {
     background-image: url(../img/transposicion.png);
     background-repeat: no-repeat;
     background-position: top center;
-    background-size: 48px; }
+    background-size: 48px;
+    z-index: 10; }
     .box-lista-dientes-sub .active-transposicion:before {
       top: -26px; }
   .active-transposicion.incisivos:before {
@@ -843,9 +844,9 @@ svg.active-dentaria {
     .box-lista-dientes-sub .active-fractura-linea-top:before {
       top: 8px; }
 
-.active-fractura-malo {
+.active-fractura-linea-sub {
   position: relative; }
-  .active-fractura-malo:before {
+  .active-fractura-linea-sub:before {
     content: '';
     position: absolute;
     width: 50px;
@@ -853,13 +854,99 @@ svg.active-dentaria {
     background: red;
     top: 73px;
     left: 0; }
-    .box-lista-dientes-sub .active-fractura-malo:before {
+    .box-lista-dientes-sub .active-fractura-linea-sub:before {
+      top: 26px; }
+
+.active-fractura-diagonal-izquierda {
+  position: relative; }
+  .active-fractura-diagonal-izquierda:before {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 3px;
+    background: red;
+    top: 46px;
+    left: -8px;
+    -webkit-transform: rotate(53deg);
+            transform: rotate(53deg); }
+    .box-lista-dientes-sub .active-fractura-diagonal-izquierda:before {
+      top: 26px; }
+
+.active-fractura-diagonal-derecha {
+  position: relative; }
+  .active-fractura-diagonal-derecha:before {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 3px;
+    background: red;
+    top: 46px;
+    left: -10px;
+    -webkit-transform: rotate(123deg);
+            transform: rotate(123deg); }
+    .box-lista-dientes-sub .active-fractura-diagonal-derecha:before {
+      top: 26px; }
+
+.active-fractura-diagonal-izquierda-small {
+  position: relative; }
+  .active-fractura-diagonal-izquierda-small:before {
+    content: '';
+    position: absolute;
+    width: 27px;
+    height: 3px;
+    background: red;
+    top: 46px;
+    left: 0;
+    -webkit-transform: rotate(53deg);
+            transform: rotate(53deg); }
+    .box-lista-dientes-sub .active-fractura-diagonal-izquierda-small:before {
+      top: 26px; }
+
+.active-fractura-diagonal-derecha-small {
+  position: relative; }
+  .active-fractura-diagonal-derecha-small:before {
+    content: '';
+    position: absolute;
+    width: 27px;
+    height: 3px;
+    background: red;
+    top: 46px;
+    left: 16px;
+    -webkit-transform: rotate(123deg);
+            transform: rotate(123deg); }
+    .box-lista-dientes-sub .active-fractura-diagonal-derecha-small:before {
+      top: 26px; }
+
+.active-fractura-raya-izquierda {
+  position: relative; }
+  .active-fractura-raya-izquierda:before {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 3px;
+    background: red;
+    top: 50px;
+    left: 0; }
+    .box-lista-dientes-sub .active-fractura-raya-izquierda:before {
+      top: 8px; }
+
+.active-fractura-raya-derecha {
+  position: relative; }
+  .active-fractura-raya-derecha:before {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 3px;
+    background: red;
+    top: 73px;
+    left: 0; }
+    .box-lista-dientes-sub .active-fractura-raya-derecha:before {
       top: 26px; }
 
 .incisivos.active-fractura-linea-top:before {
   width: 39px; }
 
-.incisivos.active-fractura-malo:before {
+.incisivos.active-fractura-linea-sub:before {
   width: 39px; }
 
 .cont-diente {
@@ -1648,31 +1735,41 @@ svg.active-dentaria {
     background: white;
     z-index: 10; }
 
-.fractura-estado .estados .fractura-linea-top {
-  background-color: white; }
-  .fractura-estado .estados .fractura-linea-top:before {
-    content: '';
-    position: absolute;
-    width: 20px;
-    height: 3px;
-    background: red;
-    top: 4px;
-    left: 0; }
-
-.fractura-estado .estados .fractura-linea-sub {
-  background-color: white; }
-  .fractura-estado .estados .fractura-linea-sub:before {
-    content: '';
-    position: absolute;
-    width: 20px;
-    height: 3px;
-    background: red;
-    top: 12px;
-    left: 0; }
-
-.fractura-estado .estados .diagonal-izquierda {
-  background-color: white; }
-  .fractura-estado .estados .diagonal-izquierda:before {
+.fractura-estado {
+  width: 240px; }
+  .fractura-estado .estados .fractura-linea-top {
+    background-color: white; }
+    .fractura-estado .estados .fractura-linea-top:before {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 3px;
+      background: red;
+      top: 4px;
+      left: 0; }
+  .fractura-estado .estados .fractura-linea-sub {
+    background-color: white; }
+    .fractura-estado .estados .fractura-linea-sub:before {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 3px;
+      background: red;
+      top: 12px;
+      left: 0; }
+  .fractura-estado .estados .diagonal-izquierda {
+    background-color: white; }
+    .fractura-estado .estados .diagonal-izquierda:before {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 3px;
+      background: red;
+      top: 9px;
+      left: 0;
+      -webkit-transform: rotate(45deg);
+              transform: rotate(45deg); }
+  .fractura-estado .estados .diagonal-derecha:before {
     content: '';
     position: absolute;
     width: 20px;
@@ -1680,21 +1777,49 @@ svg.active-dentaria {
     background: red;
     top: 9px;
     left: 0;
+    -webkit-transform: rotate(135deg);
+            transform: rotate(135deg); }
+  .fractura-estado .estados .diagonal-izquierda-small:before {
+    content: '';
+    position: absolute;
+    width: 13px;
+    height: 3px;
+    background: red;
+    top: 11px;
+    left: 2px;
     -webkit-transform: rotate(45deg);
             transform: rotate(45deg); }
-
-.fractura-estado .estados .diagonal-derecha:before {
-  content: '';
-  position: absolute;
-  width: 20px;
-  height: 3px;
-  background: red;
-  top: 9px;
-  left: 0;
-  -webkit-transform: rotate(135deg);
-          transform: rotate(135deg); }
-
-.fractura-estado .estados a {
-  border: 1px solid gray; }
+  .fractura-estado .estados .diagonal-derecha-small:before {
+    content: '';
+    position: absolute;
+    width: 13px;
+    height: 3px;
+    background: red;
+    top: 11px;
+    left: 2px;
+    -webkit-transform: rotate(135deg);
+            transform: rotate(135deg); }
+  .fractura-estado .estados .fractura-raya-izquierda {
+    background-color: white; }
+    .fractura-estado .estados .fractura-raya-izquierda:before {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 3px;
+      background: red;
+      top: 12px;
+      left: 0; }
+  .fractura-estado .estados .fractura-raya-derecha {
+    background-color: white; }
+    .fractura-estado .estados .fractura-raya-derecha:before {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 3px;
+      background: red;
+      top: 12px;
+      left: 0; }
+  .fractura-estado .estados a {
+    border: 1px solid gray; }
 
 /*# sourceMappingURL=main.css.map */

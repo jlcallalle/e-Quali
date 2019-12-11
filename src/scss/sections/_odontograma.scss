@@ -830,6 +830,7 @@ svg.active-dentaria {
     background-repeat: no-repeat;
     background-position: top center;
     background-size: 48px;
+    z-index: 10;;
     .box-lista-dientes-sub & {
       // top: 71px;
       top: -26px;
@@ -860,7 +861,7 @@ svg.active-dentaria {
         }
     }
 }
-.active-fractura-malo  {
+.active-fractura-linea-sub  {
     position: relative;
     &:before {
         content: '';
@@ -877,10 +878,112 @@ svg.active-dentaria {
     }
 }
 
+.active-fractura-diagonal-izquierda {
+  position: relative;
+  &:before {
+      content: '';
+      position: absolute;
+      width: 60px;
+      height: 3px;
+      background: red;
+      top: 46px;
+      left: -8px;
+      transform: rotate(53deg);
+      .box-lista-dientes-sub & {
+         top: 26px;
+      }
+  }
+}
+
+.active-fractura-diagonal-derecha {
+  position: relative;
+  &:before {
+      content: '';
+      position: absolute;
+      width: 60px;
+      height: 3px;
+      background: red;
+      top: 46px;
+      left: -10px;
+      transform: rotate(123deg);
+      .box-lista-dientes-sub & {
+         top: 26px;
+      }
+  }
+}
+
+.active-fractura-diagonal-izquierda-small {
+  position: relative;
+  &:before {
+      content: '';
+      position: absolute;
+      width: 27px;
+      height: 3px;
+      background: red;
+      top: 46px;
+      left: 0;
+      transform: rotate(53deg);
+      .box-lista-dientes-sub & {
+         top: 26px;
+      }
+  }
+}
+
+.active-fractura-diagonal-derecha-small {
+  position: relative;
+  &:before {
+      content: '';
+      position: absolute;
+      width: 27px;
+      height: 3px;
+      background: red;
+      top: 46px;
+      left: 16px;
+      transform: rotate(123deg);
+      .box-lista-dientes-sub & {
+         top: 26px;
+      }
+  }
+}
+
+.active-fractura-raya-izquierda  {
+  position: relative;
+  &:before {
+      content: '';
+      position: absolute;
+      width: 50px;
+      height: 3px;
+      background: red;
+      // top: 8px;
+      top: 50px;
+      left: 0;
+      .box-lista-dientes-sub & {
+          top: 8px;
+      }
+  }
+}
+
+.active-fractura-raya-derecha  {
+  position: relative;
+  &:before {
+      content: '';
+      position: absolute;
+      width: 50px;
+      height: 3px;
+      background: red;
+      top: 73px;
+      // top: 26px;
+      left: 0;
+      .box-lista-dientes-sub & {
+         top: 26px;
+      }
+  }
+}
+
 .incisivos.active-fractura-linea-top:before {
     width: 39px;
 }
-.incisivos.active-fractura-malo:before {
+.incisivos.active-fractura-linea-sub:before {
     width: 39px;
 }
 
@@ -1947,6 +2050,7 @@ position:static;
 
 
 .fractura-estado {
+     width: 240px;
     .estados {
         .fractura-linea-top {
             background-color:white;
@@ -1987,7 +2091,6 @@ position:static;
             }
         }
         .diagonal-derecha {
-            //  background-color:rgba(255,0,0,0.2);
             &:before {
                content: '';
                 position: absolute;
@@ -1999,6 +2102,56 @@ position:static;
                 transform: rotate(135deg);
             }
         }
+        .diagonal-izquierda-small {
+            &:before {
+               content: '';
+                position: absolute;
+                width: 13px;
+                height: 3px;
+                background: red;
+                top: 11px;
+                left: 2px;
+                transform: rotate(45deg);
+            }
+        }
+        .diagonal-derecha-small {
+            &:before {
+              content: '';
+                position: absolute;
+                width: 13px;
+                height: 3px;
+                background: red;
+                top: 11px;
+                left: 2px;
+                transform: rotate(135deg);
+            }
+        }
+
+        .fractura-raya-izquierda {
+            background-color:white;
+            &:before {
+                content: '';
+                position: absolute;
+                width: 20px;
+                height: 3px;
+                background: red;
+                top: 12px;
+                left: 0;
+            }
+        }
+        .fractura-raya-derecha {
+          background-color:white;
+          &:before {
+              content: '';
+              position: absolute;
+              width: 20px;
+              height: 3px;
+              background: red;
+              top: 12px;
+              left: 0;
+          }
+      }
+
         a {
            border: 1px solid gray;
         }
