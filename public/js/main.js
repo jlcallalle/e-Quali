@@ -647,6 +647,7 @@ var MyApp = {
                       var caraSigla =  $(this).attr("data-sigla");
                       if (caraLista == caraDiente) {
                           $(this).removeClass("active");
+                          $(this).removeClass("hallazgo-caries");
                           $(this).parents(".svg").removeClass("seleccionado");
                           $(this).parents('.svg').removeClass("active-ausente");
                           $(this).parents('.svg').removeClass("active-erupcion");
