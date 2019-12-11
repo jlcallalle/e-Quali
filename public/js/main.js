@@ -281,7 +281,7 @@ var MyApp = {
                   $( this ).find('.select-hallazgos').append(selectCaries);
               }
               if (nombreHallazgo == listaHallazgo.hallazgoCorona) {
-                  var selectCaries ="<select class='select-tipo select-corona' name='hallazgo-corona'><option value=''>Elegir</option><option value='Corona Metálica'>CM</option><option value='Corona Fenestrada'>CF</option><option value='Corona Metal Cerámica'>CMC</option><option value='Corona Veneer'>CV</option><option value='Canilla Estética'>CJ</option><option value='Corona Temporal'>CT</option> </select>"
+                  var selectCaries ="<select class='select-tipo select-corona' name='hallazgo-corona'><option value=''>Elegir</option><option value='Corona en Diente Deciduo'>CDD</option><option value='Corona Metálica'>CM</option><option value='Corona Fenestrada'>CF</option><option value='Corona Metal Cerámica'>CMC</option><option value='Corona Veneer'>CV</option><option value='Canilla Estética'>CJ</option><option value='Corona Temporal'>CT</option> </select>"
                   $( this ).find('.select-hallazgos').append(selectCaries);
               }
               if (nombreHallazgo == listaHallazgo.hallazgoCoronaMalo) {
