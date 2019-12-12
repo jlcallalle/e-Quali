@@ -55,7 +55,7 @@ var MyApp = {
       $(".select-tipo").remove();
 
       //agrega clase padre en hallazgos de 1 sola pieza dentaria
-      if (tipoHallazgo == '5') {
+      if (tipoHallazgo == listaPintado.tipoPintado5) {
         $(this).parents("svg").addClass(nombreHallazgo);
       }
 

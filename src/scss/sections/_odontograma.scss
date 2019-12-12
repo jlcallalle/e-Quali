@@ -2190,7 +2190,8 @@ position:static;
   &.hallazgo-piesa-dentaria-ectopica,
   &.hallazgo-macrodoncia,
   &.hallazgo-microdoncia,
-  &.hallazgo-impactacion  {
+  &.hallazgo-impactacion,
+  &.hallazgo-corona-temporal  {
     pointer-events: none;
   }
 }
