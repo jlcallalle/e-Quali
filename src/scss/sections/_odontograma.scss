@@ -2191,7 +2191,14 @@ position:static;
   &.hallazgo-macrodoncia,
   &.hallazgo-microdoncia,
   &.hallazgo-impactacion,
-  &.hallazgo-corona-temporal  {
+  &.hallazgo-corona-temporal,
+  &.active-edentulo-total  {
+    pointer-events: none;
+  }
+}
+
+.active-edentulo-total {
+  .svg {
     pointer-events: none;
   }
 }

@@ -1846,7 +1846,10 @@ svg.active-dentaria {
   .fractura-estado .estados a {
     border: 1px solid gray; }
 
-.seleccionado.hallazgo-fosas-fisuras-profundas, .seleccionado.hallazgo-piesa-dentaria-ectopica, .seleccionado.hallazgo-macrodoncia, .seleccionado.hallazgo-microdoncia, .seleccionado.hallazgo-impactacion, .seleccionado.hallazgo-corona-temporal {
+.seleccionado.hallazgo-fosas-fisuras-profundas, .seleccionado.hallazgo-piesa-dentaria-ectopica, .seleccionado.hallazgo-macrodoncia, .seleccionado.hallazgo-microdoncia, .seleccionado.hallazgo-impactacion, .seleccionado.hallazgo-corona-temporal, .seleccionado.active-edentulo-total {
+  pointer-events: none; }
+
+.active-edentulo-total .svg {
   pointer-events: none; }
 
 /*# sourceMappingURL=main.css.map */
