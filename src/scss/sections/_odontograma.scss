@@ -1470,23 +1470,12 @@ svg.active-dentaria {
       background-repeat: no-repeat;
       background-position: bottom;
       background-size: 90% 80%;
+      pointer-events: none;
       .box-lista-dientes-sub & {
           background-position: top center;
       }
   }
 
-
-// .seleccionado {
-//     &.active-ausente {
-//         background-image: url(../img/diente-ausente.png);
-//         background-repeat: no-repeat;
-//         background-position: bottom;
-//         background-size: 90% 80%;
-//         .box-lista-dientes-sub & {
-//             background-position: top center;
-//         }
-//     }
-// }
 
 //Erupcion
 .box-sub-adulto .seleccionado.active-erupcion,

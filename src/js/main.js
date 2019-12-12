@@ -23,7 +23,8 @@ var MyApp = {
          || piezaDentariaActual.hasClass("active-erupcion")
          || piezaDentariaActual.hasClass("active-extruida")
          || piezaDentariaActual.hasClass("active-diastema")
-         || piezaDentariaActual.hasClass("active-remanente-radicular") ) {
+         || piezaDentariaActual.hasClass("active-remanente-radicular")
+         || piezaDentariaActual.hasClass("active-ausente") ) {
         return;
       }
 

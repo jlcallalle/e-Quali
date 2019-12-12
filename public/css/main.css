@@ -1253,7 +1253,8 @@ svg.active-dentaria {
   background-image: url(../img/diente-ausente.png);
   background-repeat: no-repeat;
   background-position: bottom;
-  background-size: 90% 80%; }
+  background-size: 90% 80%;
+  pointer-events: none; }
   .box-lista-dientes-sub .active-ausente {
     background-position: top center; }
 
