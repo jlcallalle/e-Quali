@@ -2192,7 +2192,8 @@ position:static;
   &.hallazgo-microdoncia,
   &.hallazgo-impactacion,
   &.hallazgo-corona-temporal,
-  &.active-edentulo-total  {
+  &.active-edentulo-total,
+  &.hallazgo-pieza-supernumeraria  {
     pointer-events: none;
   }
 }

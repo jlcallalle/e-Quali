@@ -556,6 +556,13 @@ var MyApp = {
               $(".protesis-removible-estado").removeClass("show");
           }
 
+          if( nombreHallazgo == listaHallazgo.hallazgoSupernumeraria ){
+            // $(".svg").addClass("disabledbutton");
+            $(".row-dientes .cont-diente:last-child svg").addClass("disabledbutton");
+          } else {
+            // $(".svg").removeClass("disabledbutton");
+          }
+
          if( nombreHallazgo == listaHallazgo.hallazgoFractura
          || nombreHallazgo == listaHallazgo.hallazgoFracturaLineaTop
          || nombreHallazgo == listaHallazgo.hallazgoFracturaDiagonalIzquierda
