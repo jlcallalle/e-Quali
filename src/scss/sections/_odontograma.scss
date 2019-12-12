@@ -2183,3 +2183,14 @@ position:static;
         }
     }
 }
+
+
+.seleccionado {
+  &.hallazgo-fosas-fisuras-profundas,
+  &.hallazgo-piesa-dentaria-ectopica,
+  &.hallazgo-macrodoncia,
+  &.hallazgo-microdoncia,
+  &.hallazgo-impactacion  {
+    pointer-events: none;
+  }
+}

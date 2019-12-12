@@ -54,13 +54,16 @@ var MyApp = {
       $(this).parents("svg").addClass("pre-seleccionado");
       $(".select-tipo").remove();
 
+      //agrega clase padre en hallazgos de 1 sola pieza dentaria
+      if (tipoHallazgo == '5') {
+        $(this).parents("svg").addClass(nombreHallazgo);
+      }
+
       //Desabilitar las caras oclusales, menos la seleccionada
       if(nombrePosition == 'oclusal') {
           $(this).parents('svg').find('[data-pos="oclusal"]').addClass('disabledbutton');
           $(this).removeClass("disabledbutton");
       }
-
-
 
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoDienteErupcion) ) {
           $(this).parents("svg").toggleClass('active-erupcion');
