@@ -1104,6 +1104,8 @@ svg.active-dentaria {
       color: red; }
     .select-hallazgos span.hallazgo-corona-temporal {
       color: red; }
+    .select-hallazgos span.hallazgo-pieza-dentaria-ausente {
+      color: blue; }
 
 .contenido-odontograma .diente-restaura .diente.active {
   fill: blue; }
@@ -1247,12 +1249,12 @@ svg.active-dentaria {
 .hallazgo-pieza-dentaria-ausente .box-lista-dientes-sub .svg:hover {
   background-position: top center; }
 
-.seleccionado.active-ausente {
+.active-ausente {
   background-image: url(../img/diente-ausente.png);
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: 90% 80%; }
-  .box-lista-dientes-sub .seleccionado.active-ausente {
+  .box-lista-dientes-sub .active-ausente {
     background-position: top center; }
 
 .box-sub-adulto .seleccionado.active-erupcion,

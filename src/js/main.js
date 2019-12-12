@@ -17,6 +17,7 @@ var MyApp = {
       if ($(this).hasClass('active')) {
         return;
       }
+      //desabilita piezas dentaria, al segundo evento click
       var piezaDentariaActual = $(this).parents(".svg");
       if ( piezaDentariaActual.hasClass("active-ausente")
          || piezaDentariaActual.hasClass("active-erupcion")
@@ -30,6 +31,7 @@ var MyApp = {
       piezasDentariasTotal.removeClass("pre-seleccionado");
       piezasDentariasTotal.not(".seleccionado").find(".diente").removeClass("active");
       piezasDentariasTotal.not(".seleccionado").removeClass("active-corona active-corona-malo");
+      piezasDentariasTotal.not(".seleccionado").removeClass("active-ausente");
 
       var contenidoOdontograma = $(this).parents(".contenido-odontograma");
       var idHallazgo =  contenidoOdontograma.attr("data-id");
@@ -51,16 +53,13 @@ var MyApp = {
       $(this).parents("svg").addClass("pre-seleccionado");
       $(".select-tipo").remove();
 
-      //Desabilitar oclusal
+      //Desabilitar las caras oclusales, menos la seleccionada
       if(nombrePosition == 'oclusal') {
-          console.log('oclusal');
           $(this).parents('svg').find('[data-pos="oclusal"]').addClass('disabledbutton');
           $(this).removeClass("disabledbutton");
       }
 
-      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoDienteAusente) ) {
-          $(this).parents("svg").toggleClass('active-ausente');
-      }
+
 
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoDienteErupcion) ) {
           $(this).parents("svg").toggleClass('active-erupcion');
@@ -102,6 +101,10 @@ var MyApp = {
 
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoCorona) ) {
           $(this).parents("svg").toggleClass('active-corona');
+      }
+
+      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoDienteAusente) ) {
+          $(this).parents("svg").toggleClass('active-ausente');
       }
 
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoCoronaMalo) ) {
@@ -284,6 +287,10 @@ var MyApp = {
                   var selectCaries ="<select class='select-tipo select-corona' name='hallazgo-corona'><option value=''>Elegir</option><option value='Corona en Diente Deciduo'>CDD</option><option value='Corona Metálica'>CM</option><option value='Corona Fenestrada'>CF</option><option value='Corona Metal Cerámica'>CMC</option><option value='Corona Veneer'>CV</option><option value='Canilla Estética'>CJ</option><option value='Corona Temporal'>CT</option> </select>"
                   $( this ).find('.select-hallazgos').append(selectCaries);
               }
+              if (nombreHallazgo == listaHallazgo.hallazgoDienteAusente) {
+                  var selectCaries ="<select class='select-tipo select-ausente' name='hallazgo-ausente'><option value=''>Elegir</option><option value='Diente no erupcionado'>DNE</option><option value='Diente ausente por extracción'>DEX</option><option value='Diente ausente por otras razones'>DAO</option> </select>"
+                  $( this ).find('.select-hallazgos').append(selectCaries);
+              }
               if (nombreHallazgo == listaHallazgo.hallazgoCoronaMalo) {
                   var selectCaries ="<select class='select-tipo select-corona-malo' name='hallazgo-corona-malo'><option value=''>Elegir</option><option value='Corona Metálica'>CM</option><option value='Corona Fenestrada'>CF</option><option value='Corona Metal Cerámica'>CMC</option><option value='Corona Veneer'>CV</option><option value='Canilla Estética'>CJ</option><option value='Corona Temporal'>CT</option> </select>"
                   $( this ).find('.select-hallazgos').append(selectCaries);
@@ -372,7 +379,6 @@ var MyApp = {
           $(this).parents("svg").removeClass('pre-seleccionado');
 
       }  else if ($(contenidoOdontograma).is('[data-tipo~="9"]')){
-        // console.log('aaaa123');
           var idDiente = $(this).parents("svg").attr("id");
           var piezaDiente = $(this).parents("svg").attr("data-pieza");
           var wrapperContainer = $(this).parents(".contenido-odontograma");
