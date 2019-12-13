@@ -14,16 +14,12 @@ var countClickRemovibleMalo = 0;
 var MyApp = {
   eventoDientes : function() {
     $(".cont-diente .diente").on("click", function(e){
-      if ($(this).hasClass("active")) {
+      if ($(this).hasClass('active')) {
         return;
       }
       var piezaDentariaActual = $(this).parents(".svg");
-      if ( piezaDentariaActual.hasClass("active-ausente")
-         || piezaDentariaActual.hasClass("active-erupcion")
-         || piezaDentariaActual.hasClass("active-extruida")
-         || piezaDentariaActual.hasClass("active-diastema")
-         || piezaDentariaActual.hasClass("active-remanente-radicular")
-         || piezaDentariaActual.hasClass("active-ausente") ) {
+      if ( piezaDentariaActual.hasClass("active-ausente") || piezaDentariaActual.hasClass("active-erupcion")
+        || piezaDentariaActual.hasClass("active-extruida") || piezaDentariaActual.hasClass("active-diastema") ) {
         return;
       }
 
@@ -31,7 +27,6 @@ var MyApp = {
       piezasDentariasTotal.removeClass("pre-seleccionado");
       piezasDentariasTotal.not(".seleccionado").find(".diente").removeClass("active");
       piezasDentariasTotal.not(".seleccionado").removeClass("active-corona active-corona-malo");
-      piezasDentariasTotal.not(".seleccionado").removeClass("active-ausente");
 
       var contenidoOdontograma = $(this).parents(".contenido-odontograma");
       var idHallazgo =  contenidoOdontograma.attr("data-id");
@@ -53,11 +48,9 @@ var MyApp = {
       $(this).parents("svg").addClass("pre-seleccionado");
       $(".select-tipo").remove();
 
-      if (tipoHallazgo == listaPintado.tipoPintado5) {
-        $(this).parents("svg").addClass(nombreHallazgo);
-      }
-
+      //Desabilitar oclusal
       if(nombrePosition == 'oclusal') {
+          console.log('oclusal');
           $(this).parents('svg').find('[data-pos="oclusal"]').addClass('disabledbutton');
           $(this).removeClass("disabledbutton");
       }
@@ -105,89 +98,75 @@ var MyApp = {
       }
 
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoCorona) ) {
-          $(this).parents("svg").toggleClass("active-corona");
+          $(this).parents("svg").toggleClass('active-corona');
       }
 
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoCoronaMalo) ) {
-          $(this).parents("svg").toggleClass("active-corona-malo");
+          $(this).parents("svg").toggleClass('active-corona-malo');
       }
 
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoCoronaTemporal) ) {
-          $(this).parents("svg").toggleClass("active-corona-temporal");
+          $(this).parents("svg").toggleClass('active-corona-temporal');
       }
 
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoGeminacion) ) {
-          $(this).parents("svg").parent().toggleClass("active-geminacion");
+          $(this).parents("svg").parent().toggleClass('active-geminacion');
       }
 
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgFusion) ) {
-          $(this).parents("svg").parent().toggleClass("active-fusion");
+          $(this).parents("svg").parent().toggleClass('active-fusion');
       }
 
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoDienteClavija) ) {
-          $(this).parents("svg").parent().toggleClass("active-clavija");
+          $(this).parents("svg").parent().toggleClass('active-clavija');
       }
 
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoEdentuloTotal) ) {
-          $(this).parents("svg").parent().toggleClass("active-edentulo-total");
+          $(this).parents("svg").parent().toggleClass('active-edentulo-total');
       }
 
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoSupernumeraria) ) {
-          $(this).parents("svg").parent().toggleClass("active-supernumeraria");
+          $(this).parents("svg").parent().toggleClass('active-supernumeraria');
       }
 
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoProtesisTotal) ) {
-          $(this).parents("svg").parent().toggleClass("active-protesis-total");
+          $(this).parents("svg").parent().toggleClass('active-protesis-total');
       }
 
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoProtesisTotalMalo) ) {
-          $(this).parents("svg").parent().toggleClass("active-protesis-total-malo");
+          $(this).parents("svg").parent().toggleClass('active-protesis-total-malo');
       }
 
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoOrtodonticoRemovible) ) {
-          $(this).parents("svg").parent().toggleClass("active-ortodontico-removible");
+          $(this).parents("svg").parent().toggleClass('active-ortodontico-removible');
       }
 
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoOrtodonticoRemovibleMalo) ) {
-          $(this).parents("svg").parent().toggleClass("active-ortodontico-removible-malo");
+          $(this).parents("svg").parent().toggleClass('active-ortodontico-removible-malo');
       }
 
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoTransposicion) ) {
-          $(this).parents("svg").parent().toggleClass("active-transposicion");
+          $(this).parents("svg").parent().toggleClass('active-transposicion');
       }
 
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoFractura) ) {
-          $(this).parents("svg").parent().toggleClass("active-fractura-linea-top");
+          console.log('fracutra bueno');
+          $(this).parents("svg").parent().toggleClass('active-fractura-linea-top');
       }
 
-      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoFracturaLineaTop) ) {
-          $(this).parents("svg").parent().toggleClass("active-fractura-linea-sub");
+      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoFracturaMalo) ) {
+          console.log('fracutra malo');
+          $(this).parents("svg").parent().toggleClass('active-fractura-malo');
       }
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoFracturaDiagonalIzquierda) ) {
-          $(this).parents("svg").parent().toggleClass("active-fractura-diagonal-izquierda");
+          console.log('fracutra diagonal izquierda');
+          $(this).parents("svg").parent().toggleClass('active-fractura-diagonal-izquierda');
       }
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoFracturaDiagonallDerecha) ) {
-          $(this).parents("svg").parent().toggleClass("active-fractura-diagonal-derecha");
+          console.log('fracutra diagonal derecha');
+          $(this).parents("svg").parent().toggleClass('active-fractura-diagonal-derecha');
       }
 
-      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoFracturaDiagonalIzquierdaSmall) ) {
-          $(this).parents("svg").parent().toggleClass("active-fractura-diagonal-izquierda-small");
-      }
-      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoFracturaDiagonallDerechaSmall) ) {
-          $(this).parents("svg").parent().toggleClass("active-fractura-diagonal-derecha-small");
-      }
-
-      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoFracturaRayalIzquierda) ) {
-          $(this).parents("svg").parent().toggleClass("active-fractura-raya-izquierda");
-      }
-
-      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoFracturaRayalDerecha) ) {
-          $(this).parents("svg").parent().toggleClass("active-fractura-raya-derecha");
-      }
-
-      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoRemanenteRadicular) ) {
-        $(this).parents("svg").toggleClass("active-remanente-radicular");
-      }
 
       countClick++;
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoProtesisFija) ) {
@@ -203,6 +182,7 @@ var MyApp = {
 
       countClickFijo++;
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoOrtodonticoFijo) ) {
+          console.log(nombreHallazgo);
         if(countClickFijo=='1'){
           $(this).parents("svg").parent().toggleClass('puente1-fijo');
         } else if (countClickFijo=='2') {
@@ -215,6 +195,7 @@ var MyApp = {
 
       countClickFijoMalo++;
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoOrtodonticoFijoMalo) ) {
+          console.log(nombreHallazgo);
         if(countClickFijoMalo=='1'){
           $(this).parents("svg").parent().toggleClass('puente1-fijo-malo');
         } else if (countClickFijoMalo=='2') {
@@ -227,7 +208,6 @@ var MyApp = {
 
       countClickRemovible++;
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoProtesisRemovible) ) {
-        alert('hola');
           if(countClickRemovible=='1'){
             $(this).parents("svg").parent().toggleClass('puente1-removible');
           } else if (countClickRemovible=='2') {
@@ -250,6 +230,8 @@ var MyApp = {
           }
       }
 
+
+
       $( cuadroDiente ).each(function( index ) {
           var idCuadro = this.id;
 
@@ -264,7 +246,7 @@ var MyApp = {
                   $( this ).find('.select-hallazgos').append(selectCaries);
               }
               if (nombreHallazgo == listaHallazgo.hallazgoRestauracionDefinitiva) {
-                  var selectCaries ="<select class='select-tipo select-restauracion-definitiva' name='hallazgo-restauracion-definitiva'><option value=''>Elegir</option><option value='Amalgama Dental'>AM</option> <option value='Resina' >R</option> <option value='Ionónedo de vidrio'>IV</option><option value='Incrustación Estética'>IE</option><option value='Canilla Estética'>C</option></select>"
+                  var selectCaries ="<select class='select-tipo select-restauracion-definitiva' name='hallazgo-restauracion-definitiva'><option value=''>Elegir</option><option value='Amalgama Dental'>AD</option> <option value='Resina' >R</option> <option value='Ionónedo de vidrio'>IV</option><option value='Incrustación Estética'>IE</option><option value='Canilla Estética'>C</option></select>"
                   $( this ).find('.select-hallazgos').append(selectCaries);
               }
               if (nombreHallazgo == listaHallazgo.hallazgoRestauracionDefinitivaMalo) {
@@ -280,11 +262,7 @@ var MyApp = {
                   $( this ).find('.select-hallazgos').append(selectCaries);
               }
               if (nombreHallazgo == listaHallazgo.hallazgoCorona) {
-                  var selectCaries ="<select class='select-tipo select-corona' name='hallazgo-corona'><option value=''>Elegir</option><option value='Corona en Diente Deciduo'>CDD</option><option value='Corona Metálica'>CM</option><option value='Corona Fenestrada'>CF</option><option value='Corona Metal Cerámica'>CMC</option><option value='Corona Veneer'>CV</option><option value='Canilla Estética'>CJ</option><option value='Corona Temporal'>CT</option> </select>"
-                  $( this ).find('.select-hallazgos').append(selectCaries);
-              }
-              if (nombreHallazgo == listaHallazgo.hallazgoDienteAusente) {
-                  var selectCaries ="<select class='select-tipo select-ausente' name='hallazgo-ausente'><option value=''>Elegir</option><option value='Diente no erupcionado'>DNE</option><option value='Diente ausente por extracción'>DEX</option><option value='Diente ausente por otras razones'>DAO</option> </select>"
+                  var selectCaries ="<select class='select-tipo select-corona' name='hallazgo-corona'><option value=''>Elegir</option><option value='Corona Metálica'>CM</option><option value='Corona Fenestrada'>CF</option><option value='Corona Metal Cerámica'>CMC</option><option value='Corona Veneer'>CV</option><option value='Canilla Estética'>CJ</option><option value='Corona Temporal'>CT</option> </select>"
                   $( this ).find('.select-hallazgos').append(selectCaries);
               }
               if (nombreHallazgo == listaHallazgo.hallazgoCoronaMalo) {
@@ -375,6 +353,7 @@ var MyApp = {
           $(this).parents("svg").removeClass('pre-seleccionado');
 
       }  else if ($(contenidoOdontograma).is('[data-tipo~="9"]')){
+        // console.log('aaaa123');
           var idDiente = $(this).parents("svg").attr("id");
           var piezaDiente = $(this).parents("svg").attr("data-pieza");
           var wrapperContainer = $(this).parents(".contenido-odontograma");
@@ -426,18 +405,28 @@ var MyApp = {
                   $(this).addClass('seleccionado');
                   $(this).removeClass('pre-seleccionado');
 
+                  console.log(idDiente,'idDiente');
+                  console.log(codLesion,'codLesion');
+                  console.log(nombreLesion,'nombreLesion');
+                  nombreHallazgo = nombreHallazgo.toString().toLowerCase();
+                  piezaPosition = piezaPosition.toString().toLowerCase();
+                  //var data = [];
+                  var datos = {'tipo':codLesion,'nomtipo':nombreLesion,'pos':siglaPosition,'nompos':'cara '+piezaPosition};
+
                   if( idDiente in dientes) {
                     if(nombreHallazgo in dientes[idDiente]){
-                      dientes[idDiente][nombreHallazgo][piezaPosition] = true;
+                      dientes[idDiente][nombreHallazgo][piezaPosition]=datos
                     }
                   } else {
                     dientes[idDiente]={};
                     if (nombreHallazgo in dientes[idDiente]){
                     } else {
-                      dientes[idDiente][nombreHallazgo] ={}
-                      dientes[idDiente][nombreHallazgo][piezaPosition] = true;
+                      dientes[idDiente][nombreHallazgo] = {};
+                      dientes[idDiente][nombreHallazgo][piezaPosition] = datos;
                     }
                   }
+                  console.log(dientes,'dientes');
+
                   $("#id_odontograma_especificaciones").html(JSON.stringify(dientes));
               }
           });
@@ -463,7 +452,7 @@ var MyApp = {
           $(".lista-hallazgos li a").removeClass("active");
           $(this).addClass("active");
 
-          $(".select-tipo").remove();
+           $(".select-tipo").remove();
 
           var contenedorHallazgo = $(this).parents(".page-odontograma").find(".contenido-odontograma");
           contenedorHallazgo.attr("data-texto", textoHallazgo);
@@ -475,6 +464,7 @@ var MyApp = {
           contenedorHallazgo.addClass("contenido-odontograma");
           contenedorHallazgo.addClass(nombreHallazgo);
 
+          //remove active pre-seleccionado
           contenedorHallazgo.find('.pre-seleccionado .diente').removeClass('active');
 
           if ( nombreHallazgo == listaHallazgo.hallazgoRestauracionDefinitiva
@@ -483,6 +473,7 @@ var MyApp = {
           } else {
               $(".restaura-estado").removeClass("show");
           }
+          // $("#hallazgo-restauracion-definitiva-malo").toggleClass(".actiive");
 
           if( nombreHallazgo == listaHallazgo.hallazgoImplanteDental
             || nombreHallazgo == listaHallazgo.hallazgoImplanteDentalMalo ){
@@ -490,6 +481,7 @@ var MyApp = {
           } else {
               $(".implante-estado").removeClass("show");
           }
+          // $("#hallazgo-implante-dental-malo").toggleClass(".actiive");
 
           if( nombreHallazgo == listaHallazgo.hallazgoCorona
             || nombreHallazgo == listaHallazgo.hallazgoCoronaMalo ){
@@ -497,6 +489,7 @@ var MyApp = {
           } else {
               $(".corona-estado").removeClass("show");
           }
+          // $("#hallazgo-corona-malo").toggleClass(".actiive");
 
           if( nombreHallazgo == listaHallazgo.hallazgoEdentuloTotal ){
             alert("Selecinonar la pieza dentaria inicial");
@@ -515,6 +508,7 @@ var MyApp = {
           }  else {
             $(".protesis-estado").removeClass("show");
           }
+          // $("#hallazgo-protesis-total-malo").toggleClass(".actiive");
 
           if( nombreHallazgo == listaHallazgo.hallazgoOrtodonticoRemovible
             || nombreHallazgo == listaHallazgo.hallazgoOrtodonticoRemovibleMalo  ){
@@ -525,6 +519,7 @@ var MyApp = {
           }  else {
             $(".ortodontico-estado").removeClass("show");
           }
+          // $("#hallazgo-protesis-total-malo").toggleClass(".actiive");
 
           if( nombreHallazgo == listaHallazgo.hallazgoOrtodonticoFijo
             || nombreHallazgo == listaHallazgo.hallazgoOrtodonticoFijoMalo ){
@@ -532,6 +527,7 @@ var MyApp = {
           } else {
               $(".ortodontico-estado-fijo").removeClass("show");
           }
+          // $("#hallazgo-ortodontico-fijo-malo").toggleClass(".actiive");
 
           if( nombreHallazgo == listaHallazgo.hallazgoProtesisRemovible
             || nombreHallazgo == listaHallazgo.hallazgoProtesisRemovibleMalo ){
@@ -540,18 +536,10 @@ var MyApp = {
               $(".protesis-removible-estado").removeClass("show");
           }
 
-          if( nombreHallazgo == listaHallazgo.hallazgoSupernumeraria ){
-            $(".row-dientes .cont-diente:last-child svg").addClass("disabledbutton");
-          }
-
          if( nombreHallazgo == listaHallazgo.hallazgoFractura
-          || nombreHallazgo == listaHallazgo.hallazgoFracturaLineaTop
-          || nombreHallazgo == listaHallazgo.hallazgoFracturaDiagonalIzquierda
-          || nombreHallazgo == listaHallazgo.hallazgoFracturaDiagonallDerecha
-          || nombreHallazgo == listaHallazgo.hallazgoFracturaDiagonalIzquierdaSmall
-          || nombreHallazgo == listaHallazgo.hallazgoFracturaDiagonallDerechaSmall
-          || nombreHallazgo == listaHallazgo.hallazgoFracturaRayalIzquierda
-          || nombreHallazgo == listaHallazgo.hallazgoFracturaRayalDerecha){
+         || nombreHallazgo == listaHallazgo.hallazgoFracturaMalo
+         || nombreHallazgo == listaHallazgo.hallazgoFracturaDiagonalIzquierda
+         || nombreHallazgo == listaHallazgo.hallazgoFracturaDiagonallDerecha ){
               $(".fractura-estado").addClass("show");
           } else {
               $(".fractura-estado").removeClass("show");
@@ -599,6 +587,7 @@ var MyApp = {
           $("#hallazgo-ortodontico-fijo-malo").toggleClass('active');
       });
 
+
       $( ".protesis-removible-estado .bueno" ).click(function(e) {
         $("#hallazgo-protesis-removible").trigger("click")
       });
@@ -607,6 +596,7 @@ var MyApp = {
           $("#hallazgo-ortodontico-fijo-malo").toggleClass('active');
       });
 
+
       $( ".fractura-estado .fractura-linea-top" ).click(function(e) {
         $("#hallazgo-fractura").trigger("click")
       });
@@ -614,6 +604,9 @@ var MyApp = {
       $( ".fractura-estado .malo" ).click(function(e) {
           $("#hallazgo-fractura-malo").toggleClass('active');
       });
+
+
+
 
 
       $("#hallazgo-caries").click();
@@ -641,8 +634,6 @@ var MyApp = {
                       var caraSigla =  $(this).attr("data-sigla");
                       if (caraLista == caraDiente) {
                           $(this).removeClass("active");
-                          $(this).removeClass("hallazgo-caries");
-                          $(this).removeClass("hallazgo-restauracion-temporal");
                           $(this).parents(".svg").removeClass("seleccionado");
                           $(this).parents('.svg').removeClass("active-ausente");
                           $(this).parents('.svg').removeClass("active-erupcion");
@@ -651,7 +642,6 @@ var MyApp = {
                           $(this).parents('.svg').removeClass("active-corona-temporal");
                           $(this).parents('.svg').removeClass("active-fractura");
                           $(this).parents('.svg').removeClass("active-fractura-malo");
-                          $(this).parents('.svg').removeClass("active-remanente-radicular");
                           $(this).parents('.svg').parent().removeClass("active-geminacion");
                           $(this).parents('.svg').parent().removeClass("active-transposicion");
                           $(this).parents('.svg').parent().removeClass("active-fusion");
@@ -666,13 +656,6 @@ var MyApp = {
                           $(this).parents('.svg').parent().removeClass("puente2");
                           $(this).parents('.svg').parent().removeClass("puente1-removible");
                           $(this).parents('.svg').parent().removeClass("puente2-removible-malo");
-                          $(this).parents('.svg').parent().removeClass("active-fractura-linea-top");
-                          $(this).parents('.svg').parent().removeClass("active-fractura-linea-sub");
-                          $(this).parents('.svg').parent().removeClass("active-fractura-diagonal-izquierda");
-                          $(this).parents('.svg').parent().removeClass("active-fractura-diagonal-derecha");
-                          $(this).parents('.svg').parent().removeClass("active-fractura-diagonal-izquierda-small");
-                          $(this).parents('.svg').parent().removeClass("active-fractura-diagonal-derecha-small");
-                          $(this).parents('.svg').parent().removeClass("active-fractura-raya-izquierda");
                           $(this).parents('.svg').find('[data-pos="oclusal"]').removeClass('disabledbutton');
                           $(this).parents('.flecha-extruida').find('img').remove();
                           $(this).parents('.flecha-intruida').find('img').remove();
@@ -709,6 +692,40 @@ var MyApp = {
 
       });
   },
+  mostrarOdontrograma: function(){
+     var data ='{"4.3":{"caries":{"vestibular":{"tipo":"MB","nomtipo":"Mancha Blanca","pos":"VE","nompos":"cara vestibular"},"lingual":{"tipo":"CE","nomtipo":"Caries del esmalte","pos":"LN","nompos":"cara lingual"},"mesial":{"tipo":"CD","nomtipo":"Caries de la dentina","pos":"CM","nompos":"cara mesial"},"distal":{"tipo":"CDP","nomtipo":"Caries de la pulpa","pos":"CD","nompos":"cara distal"}}},"3.8":{"caries":{"oclusal":{"tipo":"CE","nomtipo":"Caries del esmalte","pos":"OC","nompos":"cara oclusal"},"vestibular":{"tipo":"CDP","nomtipo":"Caries de la pulpa","pos":"VE","nompos":"cara vestibular"}}}}';
+    data = JSON.parse(data);
+    console.log(data,'data');
+    $('.cont-diente .svg').each(function(index, value){
+      var idpieza = $(value).attr('data-pieza');
+        for (item in data) {
+          if (idpieza == item) {
+            $(value).addClass('seleccionado');
+
+            console.log(data[item]);
+            var hallazgo = data[item];
+            if (hallazgo) {
+              for (itemHallaz in hallazgo) {
+                console.log(itemHallaz,'itemHallaz');
+                var dataHallazgo = hallazgo[itemHallaz];
+                if (dataHallazgo) {
+                  var diente = $(value).find('.diente');
+                  for (itemDataHallaz in dataHallazgo) {
+                    //diente.attr('data-pos')
+                    console.log(dataHallazgo[itemDataHallaz],'dataHallazgo[itemDataHallaz]');
+                    $(value).find('[data-pos="'+itemDataHallaz+'"]').addClass('active').addClass('hallazgo-'+itemHallaz+'');
+                    //console.log(itemDataHallaz,'itemDataHallaz');
+                  }
+                }
+                //$(value).find('[data-pos="'+itemHallaz+'"]').addClass('active');
+
+              }
+            }
+          }
+
+        }
+    });
+  }
 }
 
 $(function () {
@@ -717,5 +734,8 @@ $(function () {
       MyApp.eventJson();
       MyApp.activarHallazgo();
       MyApp.eliminarHallazgos();
+  }
+  if ($(".resultado-odontograma").length) {
+      MyApp.mostrarOdontrograma();
   }
 });
