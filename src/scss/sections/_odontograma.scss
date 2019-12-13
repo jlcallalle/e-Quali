@@ -320,8 +320,6 @@
 }
 
 
-//Hallazgos Dientes Hovere
-
 .hallazgo-caries {
     .diente {
         &:hover {
@@ -404,7 +402,6 @@
 .hallazgo-corona-temporal {
     .svg {
         &:hover {
-            // cursor:pointer;
             .contorno {
                 stroke: red;
                 stroke-width: 10px;
@@ -456,26 +453,6 @@
   }
   .cont-diente {
     position:relative;
-    &:hover {
-      // &:before {
-      //   content: '';
-      //   width: 25px;
-      //   height: 25px;
-      //   border: 2px solid blue;
-      //   display: block;
-      //   top: -43px;
-      //   border-radius: 14px;
-      //   position: absolute;
-      //   left: 15px;
-      // }
-    }
-    &.incisivos {
-      // &:hover {
-      //   &:before {
-      //     left: 8px;
-      //   }
-      // }
-    }
   }
 
   .box-lista-dientes-sub {
@@ -555,14 +532,6 @@
   }
 }
 
-
-.active-protesis-fija {
-  // .contorno {
-  //     cursor: pointer;
-  //     stroke: red;
-  //     stroke-width: 10px;
-  // }
-}
 
 
 
@@ -832,7 +801,6 @@ svg.active-dentaria {
     background-size: 48px;
     z-index: 10;;
     .box-lista-dientes-sub & {
-      // top: 71px;
       top: -26px;
     }
   }
@@ -919,7 +887,6 @@ svg.active-dentaria {
       height: 3px;
       background: red;
       top: 46px;
-      // left: 0;
       left: -5px;
       transform: rotate(53deg);
       .box-lista-dientes-sub & {
@@ -2006,8 +1973,6 @@ position:static;
 
 
 
-/**/
-
 .puente1-removible-malo {
   position:static;
   .contorno {
@@ -2081,7 +2046,6 @@ position:static;
                 position: absolute;
                 width: 20px;
                 height: 3px;
-                // background: red;
                 background: red;
                 top: 4px;
                 left: 0;
