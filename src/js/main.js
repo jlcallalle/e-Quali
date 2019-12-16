@@ -719,27 +719,35 @@ var MyApp = {
       });
   },
   mostrarOdontrograma: function(){
-    var data ='{"4.3":{"caries":{"vestibular":{"tipo":"MB","nomtipo":"Mancha Blanca","pos":"VE","nompos":"cara vestibular"},"lingual":{"tipo":"CE","nomtipo":"Caries del esmalte","pos":"LN","nompos":"cara lingual"},"mesial":{"tipo":"CD","nomtipo":"Caries de la dentina","pos":"CM","nompos":"cara mesial"},"distal":{"tipo":"CDP","nomtipo":"Caries de la pulpa","pos":"CD","nompos":"cara distal"}}},"3.8":{"caries":{"oclusal":{"tipo":"CE","nomtipo":"Caries del esmalte","pos":"OC","nompos":"cara oclusal"},"vestibular":{"tipo":"CDP","nomtipo":"Caries de la pulpa","pos":"VE","nompos":"cara vestibular"}}}}';
-   data = JSON.parse(data);
+    // var data ='{"4.3":{"caries":{"vestibular":{"tipo":"MB","nomtipo":"Mancha Blanca","pos":"VE","nompos":"cara vestibular"},"lingual":{"tipo":"CE","nomtipo":"Caries del esmalte","pos":"LN","nompos":"cara lingual"},"mesial":{"tipo":"CD","nomtipo":"Caries de la dentina","pos":"CM","nompos":"cara mesial"},"distal":{"tipo":"CDP","nomtipo":"Caries de la pulpa","pos":"CD","nompos":"cara distal"}}},"3.8":{"caries":{"oclusal":{"tipo":"CE","nomtipo":"Caries del esmalte","pos":"OC","nompos":"cara oclusal"},"vestibular":{"tipo":"CDP","nomtipo":"Caries de la pulpa","pos":"VE","nompos":"cara vestibular"}}}}';
+
+    var data ='{"4.8":{"lesión de caries dental":{"lingual":{"tipo":"MB","nomtipo":"Mancha Blanca","pos":"LN","nompos":"cara lingual"}}},"4.7":{"defectos del esmalte":{"vestibular":{"tipo":"HP","nomtipo":"Hipoplasia","pos":"VE","nompos":"cara vestibular"}}},"4.6":{"restauracion definitiva":{"mesial":{"tipo":"AM","nomtipo":"Amalgama Dental","pos":"CM","nompos":"cara mesial"}}}}';
+   data = JSON.parse(data);  //convierte a objetos en javascript
    console.log(data,'data');
    $('.cont-diente .svg').each(function(index, value){
      var idpieza = $(value).attr('data-pieza');
+    //  console.log(idpieza, 'data-pieza');
        for (item in data) {
          if (idpieza == item) {
            $(value).addClass('seleccionado');
-
-           console.log(data[item]);
+           console.log(data[item],'data item abc');
            var hallazgo = data[item];
            if (hallazgo) {
              for (itemHallaz in hallazgo) {
-               console.log(itemHallaz,'itemHallaz');
+               console.log(itemHallaz);  //lesión de caries dental
                var dataHallazgo = hallazgo[itemHallaz];
                if (dataHallazgo) {
+                 console.log(dataHallazgo,'hallazgo 54');
                  var diente = $(value).find('.diente');
                  for (itemDataHallaz in dataHallazgo) {
                    //diente.attr('data-pos')
-                   console.log(dataHallazgo[itemDataHallaz],'dataHallazgo[itemDataHallaz]');
-                   $(value).find('[data-pos="'+itemDataHallaz+'"]').addClass('active').addClass('hallazgo-'+itemHallaz+'');
+                   console.log('item Hallazgo', itemDataHallaz);
+                   console.log('data Hallazgo', dataHallazgo);
+                   console.log(dataHallazgo[itemDataHallaz],'dataHallazgo[itemDataHallaz]'); //<span class="hallazgo-restauracion-definitiva">AM</span> </div>
+                   $(value).find('[data-pos="'+itemDataHallaz+'"]').addClass('active').addClass('hallazgo-'+itemHallaz.split(" ").join("-"));
+                  $('.box-options').find("#box-"+idpieza.replace('.', '')).find('.select-hallazgos').append(`<span class="hallazgo-${itemHallaz.split(" ").join("-")}">${dataHallazgo[itemDataHallaz]['tipo']}</span> </div>`);
+                  //  console.log(dataHallazgo[itemDataHallaz]['tipo']);
+                  //  $(value).find('[data-pos="'+itemDataHallaz+'"]').addClass('active').addClass(nombreHallazgo);
                    //console.log(itemDataHallaz,'itemDataHallaz');
                  }
                }

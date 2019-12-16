@@ -72,7 +72,7 @@ gulp.task('css', function(){
 gulp.task('js', function () {
    gulp.src(`${dir.src}/js/*.js`)
      .pipe(gulp.dest(`${dir.dist}/js`))
-     .pipe(uglify())
+    //  .pipe(uglify())
      .pipe(rename({ extname: '.min.js' }))
      .pipe(gulp.dest(`${dir.dist}/js`))
 });

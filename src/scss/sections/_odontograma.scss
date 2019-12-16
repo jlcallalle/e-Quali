@@ -1095,6 +1095,9 @@ svg.active-dentaria {
         &.hallazgo-caries {
             color:red;
         }
+        &.hallazgo-lesión-de-caries-dental {
+            color:red;
+        }
         &.hallazgo-defectos-del-esmalte {
             color:red;
         }
@@ -1161,7 +1164,8 @@ svg.active-dentaria {
     fill: blue;
 }
 
-.hallazgo-caries{
+.hallazgo-caries,
+.hallazgo-lesión-de-caries-dental {
     &.active {
         fill:red;
         &:hover {
