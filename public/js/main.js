@@ -721,7 +721,9 @@ var MyApp = {
   mostrarOdontrograma: function(){
     // var data ='{"4.3":{"caries":{"vestibular":{"tipo":"MB","nomtipo":"Mancha Blanca","pos":"VE","nompos":"cara vestibular"},"lingual":{"tipo":"CE","nomtipo":"Caries del esmalte","pos":"LN","nompos":"cara lingual"},"mesial":{"tipo":"CD","nomtipo":"Caries de la dentina","pos":"CM","nompos":"cara mesial"},"distal":{"tipo":"CDP","nomtipo":"Caries de la pulpa","pos":"CD","nompos":"cara distal"}}},"3.8":{"caries":{"oclusal":{"tipo":"CE","nomtipo":"Caries del esmalte","pos":"OC","nompos":"cara oclusal"},"vestibular":{"tipo":"CDP","nomtipo":"Caries de la pulpa","pos":"VE","nompos":"cara vestibular"}}}}';
 
-    var data ='{"4.8":{"lesión de caries dental":{"lingual":{"tipo":"MB","nomtipo":"Mancha Blanca","pos":"LN","nompos":"cara lingual"}}},"4.7":{"defectos del esmalte":{"vestibular":{"tipo":"HP","nomtipo":"Hipoplasia","pos":"VE","nompos":"cara vestibular"}}},"4.6":{"restauracion definitiva":{"mesial":{"tipo":"AM","nomtipo":"Amalgama Dental","pos":"CM","nompos":"cara mesial"}}}}';
+    // var data ='{"4.8":{"lesión de caries dental":{"lingual":{"tipo":"MB","nomtipo":"Mancha Blanca","pos":"LN","nompos":"cara lingual"}}},"4.7":{"defectos del esmalte":{"vestibular":{"tipo":"HP","nomtipo":"Hipoplasia","pos":"VE","nompos":"cara vestibular"}}},"4.6":{"restauracion definitiva":{"mesial":{"tipo":"AM","nomtipo":"Amalgama Dental","pos":"CM","nompos":"cara mesial"}}}}';
+
+    var data ='{"4.8":{"lesión de caries dental":{"lingual":{"tipo":"MB","nomtipo":"Mancha Blanca","pos":"LN","nompos":"cara lingual"},"vestibular":{"tipo":"CE","nomtipo":"Caries del esmalte","pos":"VE","nompos":"cara vestibular"}}},"4.7":{"defectos del esmalte":{"mesial":{"tipo":"HM","nomtipo":"Hipo Mineralización","pos":"CM","nompos":"cara mesial"}}},"4.6":{"restauracion definitiva":{"lingual":{"tipo":"R","nomtipo":"Resina","pos":"LN","nompos":"cara lingual"}}},"4.5":{"restauracion definitiva malo":{"vestibular":{"tipo":"R","nomtipo":"Resina","pos":"VE","nompos":"cara vestibular"}}},"4.3":{"lesión de caries dental":{"lingual":{"tipo":"CE","nomtipo":"Caries del esmalte","pos":"LN","nompos":"cara lingual"}}},"3.4":{"defectos del esmalte":{"distal":{"tipo":"HM","nomtipo":"Hipo Mineralización","pos":"CD","nompos":"cara distal"}}},"7.4":{"restauracion definitiva":{"lingual":{"tipo":"R","nomtipo":"Resina","pos":"LN","nompos":"cara lingual"}}},"8.1":{"restauracion definitiva":{"vestibular":{"tipo":"R","nomtipo":"Resina","pos":"VE","nompos":"cara vestibular"}}}}';
    data = JSON.parse(data);  //convierte a objetos en javascript
    console.log(data,'data');
    $('.cont-diente .svg').each(function(index, value){
@@ -743,9 +745,10 @@ var MyApp = {
                    //diente.attr('data-pos')
                    console.log('item Hallazgo', itemDataHallaz);
                    console.log('data Hallazgo', dataHallazgo);
-                   console.log(dataHallazgo[itemDataHallaz],'dataHallazgo[itemDataHallaz]'); //<span class="hallazgo-restauracion-definitiva">AM</span> </div>
+                   console.log(dataHallazgo[itemDataHallaz],'dataHallazgo[itemDataHallaz]');  //<span class="hallazgo-restauracion-definitiva">AM</span> </div>
                    $(value).find('[data-pos="'+itemDataHallaz+'"]').addClass('active').addClass('hallazgo-'+itemHallaz.split(" ").join("-"));
                   $('.box-options').find("#box-"+idpieza.replace('.', '')).find('.select-hallazgos').append(`<span class="hallazgo-${itemHallaz.split(" ").join("-")}">${dataHallazgo[itemDataHallaz]['tipo']}</span> </div>`);
+                  $('.lista-hallazgo-detallado').append(`<li> <span class="nombre-hallazo">${itemHallaz}</span>: ${dataHallazgo[itemDataHallaz]['nomtipo']} <span>${dataHallazgo[itemDataHallaz]['tipo']}</span>, en la cara <span>${itemDataHallaz} ${dataHallazgo[itemDataHallaz]['pos']} </span>, de la pieza dental <span>${idpieza} </span></li>`);
                   //  console.log(dataHallazgo[itemDataHallaz]['tipo']);
                   //  $(value).find('[data-pos="'+itemDataHallaz+'"]').addClass('active').addClass(nombreHallazgo);
                    //console.log(itemDataHallaz,'itemDataHallaz');
