@@ -426,18 +426,27 @@ var MyApp = {
                   $(this).addClass('seleccionado');
                   $(this).removeClass('pre-seleccionado');
 
+                  console.log(idDiente,'idDiente');
+                  console.log(codLesion,'codLesion');
+                  console.log(nombreLesion,'nombreLesion');
+                  nombreHallazgo = nombreHallazgo.toString().toLowerCase();
+                  piezaPosition = piezaPosition.toString().toLowerCase();
+                  //var data = [];
+                  var datos = {'tipo':codLesion,'nomtipo':nombreLesion,'pos':siglaPosition,'nompos':'cara '+piezaPosition};
+
                   if( idDiente in dientes) {
                     if(nombreHallazgo in dientes[idDiente]){
-                      dientes[idDiente][nombreHallazgo][piezaPosition] = true;
+                      dientes[idDiente][nombreHallazgo][piezaPosition]=datos
                     }
                   } else {
                     dientes[idDiente]={};
                     if (nombreHallazgo in dientes[idDiente]){
                     } else {
-                      dientes[idDiente][nombreHallazgo] ={}
-                      dientes[idDiente][nombreHallazgo][piezaPosition] = true;
+                      dientes[idDiente][nombreHallazgo] = {};
+                      dientes[idDiente][nombreHallazgo][piezaPosition] = datos;
                     }
                   }
+                  console.log(dientes,'dientes');
                   $("#id_odontograma_especificaciones").html(JSON.stringify(dientes));
               }
           });
@@ -709,6 +718,40 @@ var MyApp = {
 
       });
   },
+  mostrarOdontrograma: function(){
+    var data ='{"4.3":{"caries":{"vestibular":{"tipo":"MB","nomtipo":"Mancha Blanca","pos":"VE","nompos":"cara vestibular"},"lingual":{"tipo":"CE","nomtipo":"Caries del esmalte","pos":"LN","nompos":"cara lingual"},"mesial":{"tipo":"CD","nomtipo":"Caries de la dentina","pos":"CM","nompos":"cara mesial"},"distal":{"tipo":"CDP","nomtipo":"Caries de la pulpa","pos":"CD","nompos":"cara distal"}}},"3.8":{"caries":{"oclusal":{"tipo":"CE","nomtipo":"Caries del esmalte","pos":"OC","nompos":"cara oclusal"},"vestibular":{"tipo":"CDP","nomtipo":"Caries de la pulpa","pos":"VE","nompos":"cara vestibular"}}}}';
+   data = JSON.parse(data);
+   console.log(data,'data');
+   $('.cont-diente .svg').each(function(index, value){
+     var idpieza = $(value).attr('data-pieza');
+       for (item in data) {
+         if (idpieza == item) {
+           $(value).addClass('seleccionado');
+
+           console.log(data[item]);
+           var hallazgo = data[item];
+           if (hallazgo) {
+             for (itemHallaz in hallazgo) {
+               console.log(itemHallaz,'itemHallaz');
+               var dataHallazgo = hallazgo[itemHallaz];
+               if (dataHallazgo) {
+                 var diente = $(value).find('.diente');
+                 for (itemDataHallaz in dataHallazgo) {
+                   //diente.attr('data-pos')
+                   console.log(dataHallazgo[itemDataHallaz],'dataHallazgo[itemDataHallaz]');
+                   $(value).find('[data-pos="'+itemDataHallaz+'"]').addClass('active').addClass('hallazgo-'+itemHallaz+'');
+                   //console.log(itemDataHallaz,'itemDataHallaz');
+                 }
+               }
+               //$(value).find('[data-pos="'+itemHallaz+'"]').addClass('active');
+
+             }
+           }
+         }
+
+       }
+   });
+ }
 }
 
 $(function () {
@@ -717,5 +760,8 @@ $(function () {
       MyApp.eventJson();
       MyApp.activarHallazgo();
       MyApp.eliminarHallazgos();
+  }
+  if ($(".resultado-odontograma").length) {
+      MyApp.mostrarOdontrograma();
   }
 });
