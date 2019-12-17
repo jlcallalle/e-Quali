@@ -382,7 +382,7 @@ var MyApp = {
 
           var segundoDiente = 4.5;
           $(".lista-hallazgo-detallado").append('<li id=' + idDiente + ' data-pos=' +nombrePosition+ ' data-sigla=' +siglaPosition+ '  data-hallazgo=' +tipoHallazgo+ '>'+ '<span class="nombre-hallazo"> ' + nombreHallazgo + ' : </span>   '
-           + siglaPosition  + ' </span>, Entre la  pieza dental <span> ' + piezaDiente + '</span> y <span> '+segundoDiente+' </span> <a href="#">Eliminar</a>  </li>');
+           + siglaPosition  + ' </span>, Entre la  pieza dental <span> ' + piezaDiente + '</span> y <span class="id-pieza"> '+segundoDiente+' </span> <a href="#">Eliminar</a>  </li>');
           // $(this).parents("svg").addClass('seleccionado');
           // $(this).parents("svg").removeClass('pre-seleccionado');
     }
@@ -419,7 +419,7 @@ var MyApp = {
                       + idDiente + '</span> <a href="#">Eliminar</a> </li> ');
                   } else {
                       $(".lista-hallazgo-detallado").append('<li id=' + idBox + ' data-pos=' +piezaPosition+ ' data-sigla=' +codLesion+ ' data-hallazgo=' +tipoHallazgo+ '>'+ '<span class="nombre-hallazo"> ' +nombreHallazgo+ '</span> : ' + nombreLesion + ' <span>'+ (codLesion) + ' </span>,  en la cara '
-                      +  piezaPosition + ' <span>  '  + siglaPosition  + ' </span>, de la  pieza dental <span> '
+                      +  piezaPosition + ' <span>  '  + siglaPosition+ ' </span>, de la  pieza dental <span  class="id-pieza"> '
                       + idDiente + '</span> <a href="#">Eliminar</a> </li> ');
                   }
 
@@ -634,21 +634,19 @@ var MyApp = {
 
         var data3 = $("#id_odontograma_especificaciones").val();
         data3 = JSON.parse(data3);
-        console.log(data3);
 
-        // var data4 = data3.replace(".", "");
-        // var data4 = data3.replace(".", "",);
-        // console.log(data3);
-
+        var valorPieza = $(this).parent().find('.id-pieza').text().trim();  //4.8
 
         for (key in data3) {
-            console.log(key.replace(".", ""));
-            console.log(data3);
+           console.log(key)
+           console.log(delete data3[valorPieza])
         }
 
-        // console.log(data4);
+        console.log(data3, 'objeto convertido');
 
-
+        datafinal = JSON.stringify(data3);
+        console.log(datafinal);
+        $("#id_odontograma_especificaciones").val(datafinal);
 
           e.preventDefault();
           e.stopPropagation();
