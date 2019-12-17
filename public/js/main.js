@@ -631,6 +631,25 @@ var MyApp = {
   eliminarHallazgos : function() {
 
       $(document).on("click",".lista-hallazgo-detallado li a",function(e){
+
+        var data3 = $("#id_odontograma_especificaciones").val();
+        data3 = JSON.parse(data3);
+        console.log(data3);
+
+        // var data4 = data3.replace(".", "");
+        // var data4 = data3.replace(".", "",);
+        // console.log(data3);
+
+
+        for (key in data3) {
+            console.log(key.replace(".", ""));
+            console.log(data3);
+        }
+
+        // console.log(data4);
+
+
+
           e.preventDefault();
           e.stopPropagation();
           var idLista = $(this).parents("li").attr("id")
@@ -719,10 +738,8 @@ var MyApp = {
       });
   },
   mostrarOdontrograma: function(){
-    // var data ='{"4.3":{"caries":{"vestibular":{"tipo":"MB","nomtipo":"Mancha Blanca","pos":"VE","nompos":"cara vestibular"},"lingual":{"tipo":"CE","nomtipo":"Caries del esmalte","pos":"LN","nompos":"cara lingual"},"mesial":{"tipo":"CD","nomtipo":"Caries de la dentina","pos":"CM","nompos":"cara mesial"},"distal":{"tipo":"CDP","nomtipo":"Caries de la pulpa","pos":"CD","nompos":"cara distal"}}},"3.8":{"caries":{"oclusal":{"tipo":"CE","nomtipo":"Caries del esmalte","pos":"OC","nompos":"cara oclusal"},"vestibular":{"tipo":"CDP","nomtipo":"Caries de la pulpa","pos":"VE","nompos":"cara vestibular"}}}}';
-    // var data ='{"4.8":{"lesión de caries dental":{"lingual":{"tipo":"MB","nomtipo":"Mancha Blanca","pos":"LN","nompos":"cara lingual"}}},"4.7":{"defectos del esmalte":{"vestibular":{"tipo":"HP","nomtipo":"Hipoplasia","pos":"VE","nompos":"cara vestibular"}}},"4.6":{"restauracion definitiva":{"mesial":{"tipo":"AM","nomtipo":"Amalgama Dental","pos":"CM","nompos":"cara mesial"}}}}';
-
-    var data ='{"4.8":{"lesión de caries dental":{"lingual":{"tipo":"MB","nomtipo":"Mancha Blanca","pos":"LN","nompos":"cara lingual"},"vestibular":{"tipo":"CE","nomtipo":"Caries del esmalte","pos":"VE","nompos":"cara vestibular"}}},"4.7":{"defectos del esmalte":{"mesial":{"tipo":"HM","nomtipo":"Hipo Mineralización","pos":"CM","nompos":"cara mesial"}}},"4.6":{"restauracion definitiva":{"lingual":{"tipo":"R","nomtipo":"Resina","pos":"LN","nompos":"cara lingual"}}},"4.5":{"restauracion definitiva malo":{"vestibular":{"tipo":"R","nomtipo":"Resina","pos":"VE","nompos":"cara vestibular"}}},"4.3":{"lesión de caries dental":{"lingual":{"tipo":"CE","nomtipo":"Caries del esmalte","pos":"LN","nompos":"cara lingual"}}},"3.4":{"defectos del esmalte":{"distal":{"tipo":"HM","nomtipo":"Hipo Mineralización","pos":"CD","nompos":"cara distal"}}},"7.4":{"restauracion definitiva":{"lingual":{"tipo":"R","nomtipo":"Resina","pos":"LN","nompos":"cara lingual"}}},"8.1":{"restauracion definitiva":{"vestibular":{"tipo":"R","nomtipo":"Resina","pos":"VE","nompos":"cara vestibular"}}}}';
+    var data ='{"4.8":{"lesión de caries dental":{"mesial":{"tipo":"MB","nomtipo":"Mancha Blanca","pos":"CM","nompos":"cara mesial"}}},"4.7":{"restauracion definitiva":{"vestibular":{"tipo":"AM","nomtipo":"Amalgama Dental","pos":"VE","nompos":"cara vestibular"}}}}';
+    // var data2 ='{"x48":{"lesión de caries dental":{"mesial":{"tipo":"MB","nomtipo":"Mancha Blanca","pos":"CM","nompos":"cara mesial"}}},"x47":{"restauracion definitiva":{"vestibular":{"tipo":"AM","nomtipo":"Amalgama Dental","pos":"VE","nompos":"cara vestibular"}}}}';
    data = JSON.parse(data);  //convierte a objetos en javascript
    console.log(data,'data');
    $('.cont-diente .svg').each(function(index, value){
@@ -730,6 +747,8 @@ var MyApp = {
     //  console.log(idpieza, 'data-pieza');
        for (item in data) {
          if (idpieza == item) {
+           console.log(idpieza,'aaa');
+           console.log(item,'bbb');
            $(value).addClass('seleccionado');
            console.log(data[item],'data item abc');
            var hallazgo = data[item];
