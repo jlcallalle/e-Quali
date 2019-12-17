@@ -419,16 +419,16 @@ var MyApp = {
                       + idDiente + '</span> <a href="#">Eliminar</a> </li> ');
                   } else {
                       $(".lista-hallazgo-detallado").append('<li id=' + idBox + ' data-pos=' +piezaPosition+ ' data-sigla=' +codLesion+ ' data-hallazgo=' +tipoHallazgo+ '>'+ '<span class="nombre-hallazo"> ' +nombreHallazgo+ '</span> : ' + nombreLesion + ' <span>'+ (codLesion) + ' </span>,  en la cara '
-                      +  piezaPosition + ' <span>  '  + siglaPosition+ ' </span>, de la  pieza dental <span  class="id-pieza"> '
+                    + '<span class="posicion">' +  piezaPosition +'</span>' +  ' <span>  '  + siglaPosition+ ' </span>, de la  pieza dental <span  class="id-pieza"> '
                       + idDiente + '</span> <a href="#">Eliminar</a> </li> ');
                   }
 
                   $(this).addClass('seleccionado');
                   $(this).removeClass('pre-seleccionado');
 
-                  console.log(idDiente,'idDiente');
-                  console.log(codLesion,'codLesion');
-                  console.log(nombreLesion,'nombreLesion');
+                  // console.log(idDiente,'idDiente');
+                  // console.log(codLesion,'codLesion');
+                  // console.log(nombreLesion,'nombreLesion');
                   nombreHallazgo = nombreHallazgo.toString().toLowerCase();
                   piezaPosition = piezaPosition.toString().toLowerCase();
                   //var data = [];
@@ -447,6 +447,7 @@ var MyApp = {
                     }
                   }
                   console.log(dientes,'dientes');
+                  // console(dientes);
                   $("#id_odontograma_especificaciones").html(JSON.stringify(dientes));
               }
           });
@@ -631,21 +632,42 @@ var MyApp = {
   eliminarHallazgos : function() {
 
       $(document).on("click",".lista-hallazgo-detallado li a",function(e){
-
-        var data3 = $("#id_odontograma_especificaciones").val();
-        data3 = JSON.parse(data3);
-
+        var data = $("#id_odontograma_especificaciones").val();
+        data = JSON.parse(data);
         var valorPieza = $(this).parent().find('.id-pieza').text().trim();  //4.8
+        var nombrePieza = $(this).parent().find('.nombre-hallazo').text().trim().toLowerCase();  //4.8
+        var posPieza = $(this).parent().find('.posicion').text();  //4.8
+        // console.log(posPieza);
 
-        for (key in data3) {
+
+        for (key in data) {
+          count = 0;
            console.log(key)
-           console.log(delete data3[valorPieza])
-        }
+          //  console.log(delete data[valorPieza])
+          console.log(data[valorPieza][nombrePieza],'valor Pieza');
+          if (key == valorPieza) {
+            for (keypost in data[valorPieza][nombrePieza]) {
+              count++;
+             }
+          }
+          console.log(count);
 
-        console.log(data3, 'objeto convertido');
+          if (count == '1') {
+            console.log(delete data[valorPieza]);
 
-        datafinal = JSON.stringify(data3);
+          } else {
+            console.log(delete data[valorPieza][nombrePieza][posPieza]);
+
+          }
+          //  console.log(delete data[valorPieza][nombrePieza][posPieza]);
+          }
+
+
+          console.log(nombrePieza);
+
+        datafinal = JSON.stringify(data);
         console.log(datafinal);
+
         $("#id_odontograma_especificaciones").val(datafinal);
 
           e.preventDefault();

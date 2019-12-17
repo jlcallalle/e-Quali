@@ -1045,6 +1045,8 @@ svg.active-dentaria {
         width: 10px;
         left: 0;
         position: absolute; }
+    .lista-hallazgo-detallado li .posicion {
+      font-weight: normal; }
 
 .contenido-restaura .active-restaura {
   color: blue;
