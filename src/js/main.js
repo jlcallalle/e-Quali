@@ -413,12 +413,29 @@ var MyApp = {
               if (idBox == idParte) {
                   var piezaPosition = $(this).find(".active-last").attr("data-pos");
                   var siglaPosition = $(this).find(".active-last").attr("data-sigla");
+                  //------nuevo evento json------//
+                  var param5 = {
+                    diente: idDiente,
+                    cara: piezaPosition,
+                    tipo: codLesion,
+                    nomtipo: nombreLesion,
+                    pos: siglaPosition,
+                    nompos: piezaPosition,
+                    slug: nomHallazgo,
+                    nombreHallazgo: nombreHallazgo,
+                    tipoHallazgo: tipoHallazgo,
+                  };
+
+
+                  var eventoxy = dOdont.fngSetAgregarHallazgo(param5, nomHallazgo);
+                  console.log(eventoxy,'eventoxy');
+                  //------nuevo evento json------//
 
                   if(tipoHallazgo === listaPintado.tipoPintado4 ||  tipoHallazgo === listaPintado.tipoPintado5 ){
                       $(".lista-hallazgo-detallado").append('<li id=' + idBox + ' data-pos=' +piezaPosition+ ' data-sigla=' +codLesion+ '  data-hallazgo=' +tipoHallazgo+ '>'+ '<span class="nombre-hallazo"> ' +nombreHallazgo+ '</span> : ' + nombreLesion + ' <span>'+ (codLesion) + ' </span>, de la  pieza dental <span> '
                       + idDiente + '</span> <a href="#">Eliminar</a> </li> ');
                   } else {
-                      $(".lista-hallazgo-detallado").append('<li id=' + idBox + ' data-pos=' +piezaPosition+ ' data-sigla=' +codLesion+ ' data-hallazgo=' +tipoHallazgo+ '>'+ '<span class="nombre-hallazo"> ' +nombreHallazgo+ '</span> : ' + nombreLesion + ' <span>'+ (codLesion) + ' </span>,  en la cara '
+                      $(".lista-hallazgo-detallado").append('<li id=' + idBox + ' data-pos=' +piezaPosition+ ' data-sigla=' +codLesion+ ' data-hallazgo=' +tipoHallazgo+ ' data-evento=' +eventoxy+ '>'+ '<span class="nombre-hallazo"> ' +nombreHallazgo+ '</span> : ' + nombreLesion + ' <span>'+ (codLesion) + ' </span>,  en la cara '
                     + '<span class="posicion">' +  piezaPosition +'</span>' +  ' <span>  '  + siglaPosition+ ' </span>, de la  pieza dental <span  class="id-pieza"> '
                       + idDiente + '</span> <a href="#">Eliminar</a> </li> ');
                   }
@@ -426,9 +443,7 @@ var MyApp = {
                   $(this).addClass('seleccionado');
                   $(this).removeClass('pre-seleccionado');
 
-                  // console.log(idDiente,'idDiente');
-                  // console.log(codLesion,'codLesion');
-                  // console.log(nombreLesion,'nombreLesion');
+
                   nombreHallazgo = nombreHallazgo.toString().toLowerCase();
                   piezaPosition = piezaPosition.toString().toLowerCase();
                   //var data = [];
@@ -448,7 +463,8 @@ var MyApp = {
                   }
                   console.log(dientes,'dientes');
                   // console(dientes);
-                  $("#id_odontograma_especificaciones").html(JSON.stringify(dientes));
+                  // $("#id_odontograma_especificaciones").html(JSON.stringify(dientes));
+                  $("#id_odontograma_especificaciones").html(dOdont.getJsonData());
               }
           });
           $(this).remove();
@@ -634,41 +650,36 @@ var MyApp = {
       $(document).on("click",".lista-hallazgo-detallado li a",function(e){
         var data = $("#id_odontograma_especificaciones").val();
         data = JSON.parse(data);
-        var valorPieza = $(this).parent().find('.id-pieza').text().trim();  //4.8
-        var nombrePieza = $(this).parent().find('.nombre-hallazo').text().trim().toLowerCase();  //4.8
-        var posPieza = $(this).parent().find('.posicion').text();  //4.8
-        // console.log(posPieza);
+        var valorPieza = $(this).parent().find('.id-pieza').text().trim();
+        var nombrePieza = $(this).parent().find('.nombre-hallazo').text().trim().toLowerCase();
+        var posPieza = $(this).parent().find('.posicion').text();
 
 
-        for (key in data) {
-          count = 0;
-           console.log(key)
-          //  console.log(delete data[valorPieza])
-          console.log(data[valorPieza][nombrePieza],'valor Pieza');
-          if (key == valorPieza) {
-            for (keypost in data[valorPieza][nombrePieza]) {
-              count++;
-             }
-          }
-          console.log(count);
+        // for (key in data) {
+        //   count = 0;
+        //   console.log(key)
+        //   console.log(data[valorPieza][nombrePieza],'valor Pieza');
+        //   if (key == valorPieza) {
+        //     for (keypost in data[valorPieza][nombrePieza]) {
+        //       count++;
+        //      }
+        //   }
+        //   console.log(count);
+        //   if (count == '1') {
+        //     console.log(delete data[valorPieza]);
+        //   } else {
+        //     console.log(delete data[valorPieza][nombrePieza][posPieza]);
+        //   }
+        // }
+        // console.log(nombrePieza);
+        // datafinal = JSON.stringify(data);
+        // console.log(datafinal);
 
-          if (count == '1') {
-            console.log(delete data[valorPieza]);
+        var idEvento = $(this).parents("li").data("evento");
+        dOdont.fngQuitarHallazgoCodEvento(idEvento.toString());
 
-          } else {
-            console.log(delete data[valorPieza][nombrePieza][posPieza]);
-
-          }
-          //  console.log(delete data[valorPieza][nombrePieza][posPieza]);
-          }
-
-
-          console.log(nombrePieza);
-
-        datafinal = JSON.stringify(data);
-        console.log(datafinal);
-
-        $("#id_odontograma_especificaciones").val(datafinal);
+        $("#id_odontograma_especificaciones").html(dOdont.getJsonData());
+        // $("#id_odontograma_especificaciones").val(datafinal);
 
           e.preventDefault();
           e.stopPropagation();
@@ -758,13 +769,18 @@ var MyApp = {
       });
   },
   mostrarOdontrograma: function(){
-    var data ='{"4.8":{"lesión de caries dental":{"mesial":{"tipo":"MB","nomtipo":"Mancha Blanca","pos":"CM","nompos":"cara mesial"}}},"4.7":{"restauracion definitiva":{"vestibular":{"tipo":"AM","nomtipo":"Amalgama Dental","pos":"VE","nompos":"cara vestibular"}}}}';
-    // var data2 ='{"x48":{"lesión de caries dental":{"mesial":{"tipo":"MB","nomtipo":"Mancha Blanca","pos":"CM","nompos":"cara mesial"}}},"x47":{"restauracion definitiva":{"vestibular":{"tipo":"AM","nomtipo":"Amalgama Dental","pos":"VE","nompos":"cara vestibular"}}}}';
-   data = JSON.parse(data);  //convierte a objetos en javascript
-   console.log(data,'data');
+    // var data ='{"4.8":{"lesión de caries dental":{"mesial":{"tipo":"MB","nomtipo":"Mancha Blanca","pos":"CM","nompos":"cara mesial"}}},"4.7":{"restauracion definitiva":{"vestibular":{"tipo":"AM","nomtipo":"Amalgama Dental","pos":"VE","nompos":"cara vestibular"}}}}';
+
+    // data = JSON.parse(data);
+    // console.log(data,'data');
+
+    var data ='{"eventos":{"20191218170331220":{"hallazgo":"hallazgo-restauracion-definitiva","evento":"20191218170331220","cara":"vestibular","diente":"8.3","slug":"hallazgo-restauracion-definitiva","tipoHallazgo":2,"tipo":"R","nomtipo":"Resina","pos":"VE","nompos":"vestibular"},"20191218170339411":{"hallazgo":"hallazgo-caries","evento":"20191218170339411","cara":"vestibular","diente":"8.1","slug":"hallazgo-caries","tipoHallazgo":1,"tipo":"CE","nomtipo":"Caries del esmalte","pos":"VE","nompos":"vestibular"}},"datos":{"individual":{"8.3":{"hallazgo-restauracion-definitiva":{"vestibular":{"tipo":"R","nomtipo":"Resina","pos":"VE","nompos":"vestibular","evento":"20191218170331220","slug":"hallazgo-restauracion-definitiva","nombreHallazgo":"Restauracion definitiva"}}},"8.1":{"hallazgo-caries":{"vestibular":{"tipo":"CE","nomtipo":"Caries del esmalte","pos":"VE","nompos":"vestibular","evento":"20191218170339411","slug":"hallazgo-caries","nombreHallazgo":"Lesión de caries dental"}}}},"grupal":{}}}';
+
+    dOdont.setJsonData(data);
+    data = Object.assign({},dOdont.data.datos.individual);
+
    $('.cont-diente .svg').each(function(index, value){
      var idpieza = $(value).attr('data-pieza');
-    //  console.log(idpieza, 'data-pieza');
        for (item in data) {
          if (idpieza == item) {
            console.log(idpieza,'aaa');
@@ -774,26 +790,20 @@ var MyApp = {
            var hallazgo = data[item];
            if (hallazgo) {
              for (itemHallaz in hallazgo) {
-               console.log(itemHallaz);  //lesión de caries dental
+               console.log(itemHallaz);
                var dataHallazgo = hallazgo[itemHallaz];
                if (dataHallazgo) {
                  console.log(dataHallazgo,'hallazgo 54');
                  var diente = $(value).find('.diente');
                  for (itemDataHallaz in dataHallazgo) {
-                   //diente.attr('data-pos')
                    console.log('item Hallazgo', itemDataHallaz);
                    console.log('data Hallazgo', dataHallazgo);
-                   console.log(dataHallazgo[itemDataHallaz],'dataHallazgo[itemDataHallaz]');  //<span class="hallazgo-restauracion-definitiva">AM</span> </div>
-
-                  $(value).find('[data-pos="'+itemDataHallaz+'"]').addClass('active').addClass('hallazgo-'+itemHallaz.split(" ").join("-"));
-                  $('.box-options').find("#box-"+idpieza.replace('.', '')).find('.select-hallazgos').append(`<span class="hallazgo-${itemHallaz.split(" ").join("-")}">${dataHallazgo[itemDataHallaz]['tipo']}</span> </div>`);
+                   console.log(dataHallazgo[itemDataHallaz],'dataHallazgo[itemDataHallaz]');
+                  $(value).find('[data-pos="'+itemDataHallaz+'"]').addClass('active').addClass(itemHallaz);
+                  $('.box-options').find("#box-"+idpieza.replace('.', '')).find('.select-hallazgos').append(`<span class="${itemHallaz}">${dataHallazgo[itemDataHallaz]['tipo']}</span> </div>`);
                   $('.lista-hallazgo-detallado').append(`<li> <span class="nombre-hallazo">${itemHallaz}</span>: ${dataHallazgo[itemDataHallaz]['nomtipo']} <span>${dataHallazgo[itemDataHallaz]['tipo']}</span>, en la cara <span>${itemDataHallaz} ${dataHallazgo[itemDataHallaz]['pos']} </span>, de la pieza dental <span>${idpieza} </span></li>`);
-                  //  console.log(dataHallazgo[itemDataHallaz]['tipo']);
-                  //  $(value).find('[data-pos="'+itemDataHallaz+'"]').addClass('active').addClass(nombreHallazgo);
-                   //console.log(itemDataHallaz,'itemDataHallaz');
                  }
                }
-               //$(value).find('[data-pos="'+itemHallaz+'"]').addClass('active');
 
              }
            }
