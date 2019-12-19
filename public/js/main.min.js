@@ -655,31 +655,31 @@ var MyApp = {
         var posPieza = $(this).parent().find('.posicion').text();
 
 
-        // for (key in data) {
-        //   count = 0;
-        //   console.log(key)
-        //   console.log(data[valorPieza][nombrePieza],'valor Pieza');
-        //   if (key == valorPieza) {
-        //     for (keypost in data[valorPieza][nombrePieza]) {
-        //       count++;
-        //      }
-        //   }
-        //   console.log(count);
-        //   if (count == '1') {
-        //     console.log(delete data[valorPieza]);
-        //   } else {
-        //     console.log(delete data[valorPieza][nombrePieza][posPieza]);
-        //   }
-        // }
-        // console.log(nombrePieza);
-        // datafinal = JSON.stringify(data);
-        // console.log(datafinal);
+        for (key in data) {
+          count = 0;
+          console.log(key)
+          console.log(data[valorPieza][nombrePieza]);
+          if (key == valorPieza) {
+            for (keypost in data[valorPieza][nombrePieza]) {
+              count++;
+             }
+          }
+          console.log(count);
+          if (count == '1') {
+            console.log(delete data[valorPieza]);
+          } else {
+            console.log(delete data[valorPieza][nombrePieza][posPieza]);
+          }
+        }
+        console.log(nombrePieza);
+        datafinal = JSON.stringify(data);
+        console.log(datafinal);
 
-        var idEvento = $(this).parents("li").data("evento");
-        dOdont.fngQuitarHallazgoCodEvento(idEvento.toString());
+        // var idEvento = $(this).parents("li").data("evento");
+        // dOdont.fngQuitarHallazgoCodEvento(idEvento.toString());
 
-        $("#id_odontograma_especificaciones").html(dOdont.getJsonData());
-        // $("#id_odontograma_especificaciones").val(datafinal);
+        // $("#id_odontograma_especificaciones").html(dOdont.getJsonData());
+        $("#id_odontograma_especificaciones").val(datafinal);
 
           e.preventDefault();
           e.stopPropagation();
@@ -774,34 +774,43 @@ var MyApp = {
     // data = JSON.parse(data);
     // console.log(data,'data');
 
-    var data ='{"eventos":{"20191218170331220":{"hallazgo":"hallazgo-restauracion-definitiva","evento":"20191218170331220","cara":"vestibular","diente":"8.3","slug":"hallazgo-restauracion-definitiva","tipoHallazgo":2,"tipo":"R","nomtipo":"Resina","pos":"VE","nompos":"vestibular"},"20191218170339411":{"hallazgo":"hallazgo-caries","evento":"20191218170339411","cara":"vestibular","diente":"8.1","slug":"hallazgo-caries","tipoHallazgo":1,"tipo":"CE","nomtipo":"Caries del esmalte","pos":"VE","nompos":"vestibular"}},"datos":{"individual":{"8.3":{"hallazgo-restauracion-definitiva":{"vestibular":{"tipo":"R","nomtipo":"Resina","pos":"VE","nompos":"vestibular","evento":"20191218170331220","slug":"hallazgo-restauracion-definitiva","nombreHallazgo":"Restauracion definitiva"}}},"8.1":{"hallazgo-caries":{"vestibular":{"tipo":"CE","nomtipo":"Caries del esmalte","pos":"VE","nompos":"vestibular","evento":"20191218170339411","slug":"hallazgo-caries","nombreHallazgo":"Lesión de caries dental"}}}},"grupal":{}}}';
+    var data ='{"eventos":{"20191219155146048":{"hallazgo":"hallazgo-caries","evento":"20191219155146048","cara":"lingual","diente":"4.8","slug":"hallazgo-caries","tipoHallazgo":1,"tipo":"CE","nomtipo":"Caries del esmalte","pos":"LN","nompos":"lingual"},"20191219155147888":{"hallazgo":"hallazgo-caries","evento":"20191219155147888","cara":"vestibular","diente":"4.7","slug":"hallazgo-caries","tipoHallazgo":1,"tipo":"CD","nomtipo":"Caries de la dentina","pos":"VE","nompos":"vestibular"}},"datos":{"individual":{"4.8":{"hallazgo-caries":{"lingual":{"tipo":"CE","nomtipo":"Caries del esmalte","pos":"LN","nompos":"lingual","evento":"20191219155146048","slug":"hallazgo-caries","nombreHallazgo":"Lesión de caries dental"}}},"4.7":{"hallazgo-caries":{"vestibular":{"tipo":"CD","nomtipo":"Caries de la dentina","pos":"VE","nompos":"vestibular","evento":"20191219155147888","slug":"hallazgo-caries","nombreHallazgo":"Lesión de caries dental"}}}},"grupal":{}}}';
 
+    console.log(data,'data');
     dOdont.setJsonData(data);
     data = Object.assign({},dOdont.data.datos.individual);
 
+    console.log(data,'data nuevo');
+
+
    $('.cont-diente .svg').each(function(index, value){
-     var idpieza = $(value).attr('data-pieza');
+     var idpieza = $(value).attr('data-pieza');  //4.8
        for (item in data) {
          if (idpieza == item) {
-           console.log(idpieza,'aaa');
-           console.log(item,'bbb');
-           $(value).addClass('seleccionado');
-           console.log(data[item],'data item abc');
+           console.log(idpieza,'idpieza'); //4.8
+           console.log(item,'item'); // 4.8
+           $(value).addClass('seleccionado'); //addClass en .svg
+           console.log(data[item],'data [item]'); // hallazgo-caries: vestibular: {tipo: "CD", nomtipo: "Caries de la dentina", pos: "VE", nompos: "vestibular", evento: "20191219155147888", …}
            var hallazgo = data[item];
+
            if (hallazgo) {
              for (itemHallaz in hallazgo) {
-               console.log(itemHallaz);
-               var dataHallazgo = hallazgo[itemHallaz];
+               console.log(itemHallaz, 'itemHallaz'); //hallazgo-carie
+               var dataHallazgo = hallazgo[itemHallaz]; //vestibular: {tipo: "CD", nomtipo: "Caries de la dentina", pos: "VE", nompos: "vestibular", evento: "20191219155147888", …}
+               console.log(dataHallazgo,'dataHallazgo');
+
                if (dataHallazgo) {
-                 console.log(dataHallazgo,'hallazgo 54');
+                 console.log(dataHallazgo,'dataHallazgo-aa');
                  var diente = $(value).find('.diente');
                  for (itemDataHallaz in dataHallazgo) {
-                   console.log('item Hallazgo', itemDataHallaz);
-                   console.log('data Hallazgo', dataHallazgo);
-                   console.log(dataHallazgo[itemDataHallaz],'dataHallazgo[itemDataHallaz]');
-                  $(value).find('[data-pos="'+itemDataHallaz+'"]').addClass('active').addClass(itemHallaz);
-                  $('.box-options').find("#box-"+idpieza.replace('.', '')).find('.select-hallazgos').append(`<span class="${itemHallaz}">${dataHallazgo[itemDataHallaz]['tipo']}</span> </div>`);
-                  $('.lista-hallazgo-detallado').append(`<li> <span class="nombre-hallazo">${itemHallaz}</span>: ${dataHallazgo[itemDataHallaz]['nomtipo']} <span>${dataHallazgo[itemDataHallaz]['tipo']}</span>, en la cara <span>${itemDataHallaz} ${dataHallazgo[itemDataHallaz]['pos']} </span>, de la pieza dental <span>${idpieza} </span></li>`);
+                   console.log('item Hallazgo', itemDataHallaz); //vestibular
+                   console.log('data Hallazgo', dataHallazgo);  //vestibular: {tipo: "CD", nomtipo: "Caries de la dentina", pos: "VE", nompos: "vestibular", evento: "20191219155147888", …}
+
+                   console.log(dataHallazgo[itemDataHallaz],'dataHallazgo[itemDataHallaz]');  //{tipo: "CE", nomtipo: "Caries del esmalte", pos: "LN", nompos: "lingual", evento: "20191219155146048", …}
+                   console.log(dataHallazgo[itemDataHallaz]['nombreHallazgo'],'nombre Hallazgo texto ');
+                   $(value).find('[data-pos="'+itemDataHallaz+'"]').addClass('active').addClass(itemHallaz);
+                   $('.box-options').find("#box-"+idpieza.replace('.', '')).find('.select-hallazgos').append(`<span class="${itemHallaz}">${dataHallazgo[itemDataHallaz]['tipo']}</span> </div>`);
+                   $('.lista-hallazgo-detallado').append(`<li> <span class="nombre-hallazo">${dataHallazgo[itemDataHallaz]['nombreHallazgo']}</span>: ${dataHallazgo[itemDataHallaz]['nomtipo']} <span>${dataHallazgo[itemDataHallaz]['tipo']}</span>, en la cara <span>${itemDataHallaz} ${dataHallazgo[itemDataHallaz]['pos']} </span>, de la pieza dental <span>${idpieza} </span></li>`);
                  }
                }
 
