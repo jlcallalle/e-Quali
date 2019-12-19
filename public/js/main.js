@@ -428,7 +428,7 @@ var MyApp = {
 
 
                   var eventoxy = dOdont.fngSetAgregarHallazgo(param5, nomHallazgo);
-                  console.log(eventoxy,'eventoxy');
+                  console.log(eventoxy,'eventoxy 123');
                   //------nuevo evento json------//
 
                   if(tipoHallazgo === listaPintado.tipoPintado4 ||  tipoHallazgo === listaPintado.tipoPintado5 ){
@@ -447,21 +447,22 @@ var MyApp = {
                   nombreHallazgo = nombreHallazgo.toString().toLowerCase();
                   piezaPosition = piezaPosition.toString().toLowerCase();
                   //var data = [];
-                  var datos = {'tipo':codLesion,'nomtipo':nombreLesion,'pos':siglaPosition,'nompos':'cara '+piezaPosition};
+                  // var datos = {'tipo':codLesion,'nomtipo':nombreLesion,'pos':siglaPosition,'nompos':'cara '+piezaPosition};
 
-                  if( idDiente in dientes) {
-                    if(nombreHallazgo in dientes[idDiente]){
-                      dientes[idDiente][nombreHallazgo][piezaPosition]=datos
-                    }
-                  } else {
-                    dientes[idDiente]={};
-                    if (nombreHallazgo in dientes[idDiente]){
-                    } else {
-                      dientes[idDiente][nombreHallazgo] = {};
-                      dientes[idDiente][nombreHallazgo][piezaPosition] = datos;
-                    }
-                  }
-                  console.log(dientes,'dientes');
+                  // if( idDiente in dientes) {
+                  //   if(nombreHallazgo in dientes[idDiente]){
+                  //     dientes[idDiente][nombreHallazgo][piezaPosition]=datos
+                  //   }
+                  // } else {
+                  //   dientes[idDiente]={};
+                  //   if (nombreHallazgo in dientes[idDiente]){
+                  //   } else {
+                  //     dientes[idDiente][nombreHallazgo] = {};
+                  //     dientes[idDiente][nombreHallazgo][piezaPosition] = datos;
+                  //   }
+                  // }
+                  // console.log(dientes,'dientes');
+
                   // console(dientes);
                   // $("#id_odontograma_especificaciones").html(JSON.stringify(dientes));
                   $("#id_odontograma_especificaciones").html(dOdont.getJsonData());
@@ -654,32 +655,31 @@ var MyApp = {
         var nombrePieza = $(this).parent().find('.nombre-hallazo').text().trim().toLowerCase();
         var posPieza = $(this).parent().find('.posicion').text();
 
+        // for (key in data) {
+        //   count = 0;
+        //   console.log(key)
+        //   console.log(data[valorPieza][nombrePieza]);
+        //   if (key == valorPieza) {
+        //     for (keypost in data[valorPieza][nombrePieza]) {
+        //       count++;
+        //      }
+        //   }
+        //   console.log(count);
+        //   if (count == '1') {
+        //     console.log(delete data[valorPieza]);
+        //   } else {
+        //     console.log(delete data[valorPieza][nombrePieza][posPieza]);
+        //   }
+        // }
+        // console.log(nombrePieza);
+        // datafinal = JSON.stringify(data);
+        // console.log(datafinal);
 
-        for (key in data) {
-          count = 0;
-          console.log(key)
-          console.log(data[valorPieza][nombrePieza]);
-          if (key == valorPieza) {
-            for (keypost in data[valorPieza][nombrePieza]) {
-              count++;
-             }
-          }
-          console.log(count);
-          if (count == '1') {
-            console.log(delete data[valorPieza]);
-          } else {
-            console.log(delete data[valorPieza][nombrePieza][posPieza]);
-          }
-        }
-        console.log(nombrePieza);
-        datafinal = JSON.stringify(data);
-        console.log(datafinal);
+        // $("#id_odontograma_especificaciones").val(datafinal);
 
-        // var idEvento = $(this).parents("li").data("evento");
-        // dOdont.fngQuitarHallazgoCodEvento(idEvento.toString());
-
-        // $("#id_odontograma_especificaciones").html(dOdont.getJsonData());
-        $("#id_odontograma_especificaciones").val(datafinal);
+        var idEvento = $(this).parents("li").data("evento");
+        dOdont.fngQuitarHallazgoCodEvento(idEvento.toString());
+        $("#id_odontograma_especificaciones").html(dOdont.getJsonData());
 
           e.preventDefault();
           e.stopPropagation();
@@ -770,7 +770,6 @@ var MyApp = {
   },
   mostrarOdontrograma: function(){
     // var data ='{"4.8":{"lesión de caries dental":{"mesial":{"tipo":"MB","nomtipo":"Mancha Blanca","pos":"CM","nompos":"cara mesial"}}},"4.7":{"restauracion definitiva":{"vestibular":{"tipo":"AM","nomtipo":"Amalgama Dental","pos":"VE","nompos":"cara vestibular"}}}}';
-
     // data = JSON.parse(data);
     // console.log(data,'data');
 
