@@ -264,7 +264,7 @@ var MyApp = {
                   $( this ).find('.select-hallazgos').append(selectCaries);
               }
               if (nombreHallazgo == listaHallazgo.hallazgoRestauracionDefinitiva) {
-                  var selectCaries ="<select class='select-tipo select-restauracion-definitiva' name='hallazgo-restauracion-definitiva'><option value=''>Elegir</option><option value='Amalgama Dental'>AM</option> <option value='Resina' >R</option> <option value='Ionónedo de vidrio'>IV</option><option value='Incrustación Estética'>IE</option><option value='Canilla Estética'>C</option></select>"
+                  var selectCaries ="<select class='select-tipo select-restauracion-definitiva' name='hallazgo-restauracion-definitiva'><option value=''>Elegir</option><option value='Amalgama Dental'>AM</option> <option value='Resina' >R</option> <option value='Ionónedo de vidrio'>IV</option><option value='Incrustación Estética'>IE</option><option value='Canilla Estética'>CE</option></select>"
                   $( this ).find('.select-hallazgos').append(selectCaries);
               }
               if (nombreHallazgo == listaHallazgo.hallazgoRestauracionDefinitivaMalo) {
@@ -700,7 +700,7 @@ var MyApp = {
                       var caraSigla =  $(this).attr("data-sigla");
                       if (caraLista == caraDiente) {
                           $(this).removeClass("active");
-                          $(this).removeClass("hallazgo-caries");
+                          $(this).removeClass("hallazgo-caries hallazgo-defectos-del-esmalte hallazgo-restauracion-definitiva hallazgo-restauracion-definitiva-malo hallazgo-restauracion-temporal");
                           $(this).removeClass("hallazgo-restauracion-temporal");
                           $(this).parents(".svg").removeClass("seleccionado");
                           $(this).parents('.svg').removeClass("active-ausente");
