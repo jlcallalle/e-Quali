@@ -433,7 +433,7 @@ var MyApp = {
 
                   if(tipoHallazgo === listaPintado.tipoPintado4 ||  tipoHallazgo === listaPintado.tipoPintado5 ){
                       $(".lista-hallazgo-detallado").append('<li id=' + idBox + ' data-pos=' +piezaPosition+ ' data-sigla=' +codLesion+ '  data-hallazgo=' +tipoHallazgo+ '>'+ '<span class="nombre-hallazo"> ' +nombreHallazgo+ '</span> : ' + nombreLesion + ' <span>'+ (codLesion) + ' </span>, de la  pieza dental <span> '
-                      + idDiente + '</span> <a href="#">Eliminar</a> </li> ');
+                      + idDiente + '</span> <a href="#">Eliminar 123</a> </li> ');
                   } else {
                       $(".lista-hallazgo-detallado").append('<li id=' + idBox + ' data-pos=' +piezaPosition+ ' data-sigla=' +codLesion+ ' data-hallazgo=' +tipoHallazgo+ ' data-evento=' +eventoxy+ '>'+ '<span class="nombre-hallazo"> ' +nombreHallazgo+ '</span> : ' + nombreLesion + ' <span>'+ (codLesion) + ' </span>,  en la cara '
                     + '<span class="posicion">' +  piezaPosition +'</span>' +  ' <span>  '  + siglaPosition+ ' </span>, de la  pieza dental <span  class="id-pieza"> '
@@ -819,7 +819,27 @@ var MyApp = {
 
        }
    });
- }
+ },
+  examenPeriodontal:function() {
+    var edad = 20
+    console.log(edad);
+    if (edad >= 12 && edad <= 17) {
+      $(".panel-examenes-periodontal ").addClass("show");
+      $(".contenido-examen-periodontal").addClass("examen-adulto");
+    } else if (edad > 17) {
+      $(".panel-examenes-periodontal ").addClass("show");
+    }
+  },
+  onlyNumbers : function() {
+      $('.only-numbers').on('keypress', function(event) {
+          var numbers = /[0-4]/g;
+          var key = String.fromCharCode(event.which);
+          if ($.inArray(event.keyCode) >= 0 || numbers.test(key)) {
+              return true;
+          }
+          return false;
+      });
+  },
 }
 
 $(function () {
@@ -831,5 +851,11 @@ $(function () {
   }
   if ($(".resultado-odontograma").length) {
       MyApp.mostrarOdontrograma();
+  }
+  if ($(".contenido-examen-periodontal").length) {
+      MyApp.examenPeriodontal();
+  }
+  if ($('.only-numbers').length) {
+    MyApp.onlyNumbers();
   }
 });

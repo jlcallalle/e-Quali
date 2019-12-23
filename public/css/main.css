@@ -816,16 +816,16 @@ svg.active-dentaria {
   position: relative; }
   .active-transposicion:before {
     content: '';
-    width: 36px;
+    width: 75px;
     height: 26px;
     display: block;
     top: -19px;
     position: absolute;
-    left: 10px;
+    left: 20px;
     background-image: url(../img/transposicion.png);
     background-repeat: no-repeat;
     background-position: top center;
-    background-size: 48px;
+    background-size: 60px;
     z-index: 10; }
     .box-lista-dientes-sub .active-transposicion:before {
       top: -26px; }
@@ -1309,7 +1309,9 @@ svg.active-dentaria {
     top: 85px; }
 
 .box-lista-dientes-sub .giroversion img {
-  top: -23px; }
+  top: -23px;
+  -webkit-transform: rotate(185deg);
+          transform: rotate(185deg); }
 
 .diastema {
   position: relative; }
@@ -1859,5 +1861,74 @@ svg.active-dentaria {
 
 .active-edentulo-total .svg {
   pointer-events: none; }
+
+.panel-examenes-periodontal {
+  display: none; }
+  .panel-examenes-periodontal.show {
+    display: block; }
+
+.section-examen-periodontal {
+  margin-top: 30px; }
+
+.contenido-examen-periodontal {
+  border: 1px solid #2d2d2d;
+  max-width: 830px;
+  margin-top: 20px; }
+
+.box-examenes-periodontal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+
+.box-examen {
+  width: 275px;
+  padding: 10px; }
+  .box-examen .box-title {
+    background: #3c8dbc;
+    color: white;
+    font-weight: bold;
+    padding: 3px 0; }
+    .examen-adulto .box-examen .box-title {
+      background-color: #FFC107; }
+    .box-examen .box-title .titulo-pieza {
+      text-align: center;
+      padding: 2px; }
+    .box-examen .box-title .piezas-dentarias {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -ms-flex-pack: distribute;
+          justify-content: space-around; }
+  .box-examen .box-title.title-reverse {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse; }
+  .box-examen .box-valor {
+    margin: 10px 0 0 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 10px;
+    background: #75c875; }
+    .examen-adulto .box-examen .box-valor {
+      background-color: #3c8dbc; }
+    .box-examen .box-valor input {
+      padding: 0 4px;
+      width: 120px; }
 
 /*# sourceMappingURL=main.css.map */

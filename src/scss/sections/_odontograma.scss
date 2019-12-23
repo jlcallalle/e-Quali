@@ -789,16 +789,19 @@ svg.active-dentaria {
   position: relative;
   &:before {
     content: '';
-    width: 36px;
+    // width: 36px;
+    width: 75px;
     height: 26px;
     display: block;
     top: -19px;
     position: absolute;
-    left: 10px;
+    // left: 10px;
+    left: 20px;
     background-image: url(../img/transposicion.png);
     background-repeat: no-repeat;
     background-position: top center;
-    background-size: 48px;
+    // background-size: 48px;
+    background-size: 60px;
     z-index: 10;;
     .box-lista-dientes-sub & {
       top: -26px;
@@ -1512,6 +1515,7 @@ svg.active-dentaria {
   .giroversion {
     img {
         top: -23px;
+        transform: rotate(185deg);
     }
   }
 }
@@ -2175,5 +2179,73 @@ position:static;
 .active-edentulo-total {
   .svg {
     pointer-events: none;
+  }
+}
+
+//EXAMEN PERIODONTAL
+
+.panel-examenes-periodontal {
+  display:none;
+  &.show {
+    display: block;
+  }
+}
+.section-examen-periodontal {
+  margin-top: 30px;
+}
+
+.contenido-examen-periodontal {
+  border:1px solid #2d2d2d;
+  max-width: 830px;
+  margin-top:20px;
+}
+
+.box-examenes-periodontal {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.box-examen {
+  width: 275px;
+  padding: 10px;
+  .box-title {
+      background: #3c8dbc;
+      color: white;
+      font-weight: bold;
+      padding: 3px 0;
+      .examen-adulto & {
+        background-color: #FFC107;
+      }
+      .titulo-pieza {
+          text-align: center;
+          padding: 2px;
+      }
+      .piezas-dentarias {
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+      }
+  }
+
+  .box-title.title-reverse {
+      display: flex;
+      flex-direction: column-reverse;
+  }
+
+  .box-valor {
+      margin: 10px 0 0 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      background: #75c875;
+      .examen-adulto & {
+        background-color: #3c8dbc;
+      }
+
+      input {
+          padding: 0 4px;
+          width: 120px;
+      }
   }
 }
