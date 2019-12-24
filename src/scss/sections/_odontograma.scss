@@ -1193,6 +1193,15 @@ svg.active-dentaria {
     }
 }
 
+.hallazgo-defectos-de-desarrollo-del-esmalte {
+    &.active {
+        fill:red;
+        &:hover {
+            fill: red;
+        }
+    }
+}
+
 .hallazgo-restauracion-definitiva{
     &.active {
         fill:blue;

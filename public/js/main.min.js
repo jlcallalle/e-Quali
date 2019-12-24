@@ -389,7 +389,7 @@ var MyApp = {
 
 
 
-      $(".select-tipo").change(function(){
+        $(document).on("change", ".select-tipo", function() {
           var codLesion = $(this).children("option:selected").text();
           var nombreLesion = $(this).children("option:selected").val();
 
@@ -444,8 +444,9 @@ var MyApp = {
                   $(this).removeClass('pre-seleccionado');
 
 
-                  nombreHallazgo = nombreHallazgo.toString().toLowerCase();
-                  piezaPosition = piezaPosition.toString().toLowerCase();
+                  $("#id_odontograma_especificaciones").html(dOdont.getJsonData());
+                  // nombreHallazgo = nombreHallazgo.toString().toLowerCase();
+                  // piezaPosition = piezaPosition.toString().toLowerCase();
                   //var data = [];
                   // var datos = {'tipo':codLesion,'nomtipo':nombreLesion,'pos':siglaPosition,'nompos':'cara '+piezaPosition};
 
@@ -465,7 +466,6 @@ var MyApp = {
 
                   // console(dientes);
                   // $("#id_odontograma_especificaciones").html(JSON.stringify(dientes));
-                  $("#id_odontograma_especificaciones").html(dOdont.getJsonData());
               }
           });
           $(this).remove();
@@ -649,11 +649,18 @@ var MyApp = {
   eliminarHallazgos : function() {
 
       $(document).on("click",".lista-hallazgo-detallado li a",function(e){
+        //------ evento eliminar "nueva estructura" -----//
         var data = $("#id_odontograma_especificaciones").val();
         data = JSON.parse(data);
-        var valorPieza = $(this).parent().find('.id-pieza').text().trim();
-        var nombrePieza = $(this).parent().find('.nombre-hallazo').text().trim().toLowerCase();
-        var posPieza = $(this).parent().find('.posicion').text();
+        var idEvento = $(this).parents("li").data("evento");
+        dOdont.fngQuitarHallazgoCodEvento(idEvento.toString());
+        $("#id_odontograma_especificaciones").html(dOdont.getJsonData());
+        //------ ----------------------------------------//
+
+        //------ evento eliminar "estructura anterior" -----//
+        // var valorPieza = $(this).parent().find('.id-pieza').text().trim();
+        // var nombrePieza = $(this).parent().find('.nombre-hallazo').text().trim().toLowerCase();
+        // var posPieza = $(this).parent().find('.posicion').text();
 
         // for (key in data) {
         //   count = 0;
@@ -674,12 +681,8 @@ var MyApp = {
         // console.log(nombrePieza);
         // datafinal = JSON.stringify(data);
         // console.log(datafinal);
-
         // $("#id_odontograma_especificaciones").val(datafinal);
-
-        var idEvento = $(this).parents("li").data("evento");
-        dOdont.fngQuitarHallazgoCodEvento(idEvento.toString());
-        $("#id_odontograma_especificaciones").html(dOdont.getJsonData());
+        //------ ----------------------------------------//
 
           e.preventDefault();
           e.stopPropagation();

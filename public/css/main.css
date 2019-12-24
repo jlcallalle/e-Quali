@@ -1129,6 +1129,11 @@ svg.active-dentaria {
   .hallazgo-defectos-del-esmalte.active:hover {
     fill: red; }
 
+.hallazgo-defectos-de-desarrollo-del-esmalte.active {
+  fill: red; }
+  .hallazgo-defectos-de-desarrollo-del-esmalte.active:hover {
+    fill: red; }
+
 .hallazgo-restauracion-definitiva.active {
   fill: blue; }
 
