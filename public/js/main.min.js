@@ -432,12 +432,17 @@ var MyApp = {
                   //------nuevo evento json------//
 
                   if(tipoHallazgo === listaPintado.tipoPintado4 ||  tipoHallazgo === listaPintado.tipoPintado5 ){
-                      $(".lista-hallazgo-detallado").append('<li id=' + idBox + ' data-pos=' +piezaPosition+ ' data-sigla=' +codLesion+ '  data-hallazgo=' +tipoHallazgo+ '>'+ '<span class="nombre-hallazo"> ' +nombreHallazgo+ '</span> : ' + nombreLesion + ' <span>'+ (codLesion) + ' </span>, de la  pieza dental <span> '
-                      + idDiente + '</span> <a href="#">Eliminar 123</a> </li> ');
+                      // $(".lista-hallazgo-detallado").append('<li id=' + idBox + ' data-pos=' +piezaPosition+ ' data-sigla=' +codLesion+ '  data-hallazgo=' +tipoHallazgo+ '>'+ '<span class="nombre-hallazo"> ' +nombreHallazgo+ '</span> : ' + nombreLesion + ' <span>'+ (codLesion) + ' </span>, de la  pieza dental <span> '
+                      // + idDiente + '</span> <a href="#">Eliminar 123</a> </li> ');
+
+                      $(".lista-hallazgo-detallado").append(
+                        `<li id='${idBox}' data-pos='${piezaPosition}' data-sigla='${codLesion}' data-hallazgo='${tipoHallazgo}' data-evento='${eventoxy}'><span class="nombre-hallazo"> ${nombreHallazgo} </span>:
+                        ${nombreLesion} <span> ${codLesion} </span> , de la  pieza dental <span class="class="id-pieza"">${idDiente}</span> <a href="#">Eliminar aa</a> </li>`);
                   } else {
-                      $(".lista-hallazgo-detallado").append('<li id=' + idBox + ' data-pos=' +piezaPosition+ ' data-sigla=' +codLesion+ ' data-hallazgo=' +tipoHallazgo+ ' data-evento=' +eventoxy+ '>'+ '<span class="nombre-hallazo"> ' +nombreHallazgo+ '</span> : ' + nombreLesion + ' <span>'+ (codLesion) + ' </span>,  en la cara '
-                    + '<span class="posicion">' +  piezaPosition +'</span>' +  ' <span>  '  + siglaPosition+ ' </span>, de la  pieza dental <span  class="id-pieza"> '
-                      + idDiente + '</span> <a href="#">Eliminar</a> </li> ');
+                      $(".lista-hallazgo-detallado").append(
+                        `<li id='${idBox}' data-pos='${piezaPosition}' data-sigla='${codLesion}' data-hallazgo='${tipoHallazgo}' data-evento='${eventoxy}'><span class="nombre-hallazo"> ${nombreHallazgo} </span>:
+                        ${nombreLesion} <span> ${codLesion} </span> ,  en la cara <span  class="posicion">${piezaPosition} </span><span>${siglaPosition}</span>, de la  pieza dental <span class="class="id-pieza"">${idDiente}</span>
+                        <a href="#">Eliminar bb</a> </li>`);
                   }
 
                   $(this).addClass('seleccionado');
@@ -468,6 +473,7 @@ var MyApp = {
                   // $("#id_odontograma_especificaciones").html(JSON.stringify(dientes));
               }
           });
+          console.log('en remove');
           $(this).remove();
       });
 
@@ -650,14 +656,16 @@ var MyApp = {
 
       $(document).on("click",".lista-hallazgo-detallado li a",function(e){
         //------ evento eliminar "nueva estructura" -----//
-        var data = $("#id_odontograma_especificaciones").val();
-        data = JSON.parse(data);
         var idEvento = $(this).parents("li").data("evento");
         dOdont.fngQuitarHallazgoCodEvento(idEvento.toString());
         $("#id_odontograma_especificaciones").html(dOdont.getJsonData());
         //------ ----------------------------------------//
 
         //------ evento eliminar "estructura anterior" -----//
+
+         // var data = $("#id_odontograma_especificaciones").val();
+        // data = JSON.parse(data);
+
         // var valorPieza = $(this).parent().find('.id-pieza').text().trim();
         // var nombrePieza = $(this).parent().find('.nombre-hallazo').text().trim().toLowerCase();
         // var posPieza = $(this).parent().find('.posicion').text();
@@ -776,7 +784,7 @@ var MyApp = {
     // data = JSON.parse(data);
     // console.log(data,'data');
 
-    var data ='{"eventos":{"20191219155146048":{"hallazgo":"hallazgo-caries","evento":"20191219155146048","cara":"lingual","diente":"4.8","slug":"hallazgo-caries","tipoHallazgo":1,"tipo":"CE","nomtipo":"Caries del esmalte","pos":"LN","nompos":"lingual"},"20191219155147888":{"hallazgo":"hallazgo-caries","evento":"20191219155147888","cara":"vestibular","diente":"4.7","slug":"hallazgo-caries","tipoHallazgo":1,"tipo":"CD","nomtipo":"Caries de la dentina","pos":"VE","nompos":"vestibular"}},"datos":{"individual":{"4.8":{"hallazgo-caries":{"lingual":{"tipo":"CE","nomtipo":"Caries del esmalte","pos":"LN","nompos":"lingual","evento":"20191219155146048","slug":"hallazgo-caries","nombreHallazgo":"Lesión de caries dental"}}},"4.7":{"hallazgo-caries":{"vestibular":{"tipo":"CD","nomtipo":"Caries de la dentina","pos":"VE","nompos":"vestibular","evento":"20191219155147888","slug":"hallazgo-caries","nombreHallazgo":"Lesión de caries dental"}}}},"grupal":{}}}';
+    var data ='{"eventos":{"20191226061456494":{"hallazgo":"hallazgo-caries","evento":"20191226061456494","cara":"lingual","diente":"4.8","slug":"hallazgo-caries","tipoHallazgo":1,"tipo":"MB","nomtipo":"Mancha Blanca","pos":"LN","nompos":"lingual"},"20191226061502447":{"hallazgo":"hallazgo-defectos-del-esmalte","evento":"20191226061502447","cara":"mesial","diente":"4.7","slug":"hallazgo-defectos-del-esmalte","tipoHallazgo":1,"tipo":"HM","nomtipo":"Hipo Mineralización","pos":"CM","nompos":"mesial"},"20191226061507396":{"hallazgo":"hallazgo-restauracion-definitiva","evento":"20191226061507396","cara":"mesial","diente":"4.6","slug":"hallazgo-restauracion-definitiva","tipoHallazgo":2,"tipo":"AM","nomtipo":"Amalgama Dental","pos":"CM","nompos":"mesial"},"20191226061520126":{"hallazgo":"hallazgo-restauracion-definitiva-malo","evento":"20191226061520126","cara":"lingual","diente":"4.5","slug":"hallazgo-restauracion-definitiva-malo","tipoHallazgo":2,"tipo":"AD","nomtipo":"Amalgama Dental","pos":"LN","nompos":"lingual"},"20191226061528169":{"hallazgo":"hallazgo-posicion-dentaria","evento":"20191226061528169","cara":"oclusal","diente":"4.4","slug":"hallazgo-posicion-dentaria","tipoHallazgo":4,"tipo":"D","nomtipo":"Distalizado","pos":"OC","nompos":"oclusal"},"20191226061537431":{"hallazgo":"hallazgo-movilidad-patologica","evento":"20191226061537431","cara":"lingual","diente":"4.3","slug":"hallazgo-movilidad-patologica","tipoHallazgo":4,"tipo":"M1","nomtipo":"M1","pos":"LN","nompos":"lingual"},"20191226061550771":{"hallazgo":"hallazgo-pieza-dentaria-ausente","evento":"20191226061550771","cara":"lingual","diente":"4.2","slug":"hallazgo-pieza-dentaria-ausente","tipoHallazgo":4,"tipo":"DNE","nomtipo":"Diente no erupcionado","pos":"LN","nompos":"lingual"},"20191226061559820":{"hallazgo":"hallazgo-corona","evento":"20191226061559820","cara":"lingual","diente":"4.1","slug":"hallazgo-corona","tipoHallazgo":4,"tipo":"CDD","nomtipo":"Corona en Diente Deciduo","pos":"LN","nompos":"lingual"},"20191226061605444":{"hallazgo":"hallazgo-corona-malo","evento":"20191226061605444","cara":"lingual","diente":"3.1","slug":"hallazgo-corona-malo","tipoHallazgo":4,"tipo":"CV","nomtipo":"Corona Veneer","pos":"LN","nompos":"lingual"}},"datos":{"individual":{"4.8":{"hallazgo-caries":{"lingual":{"tipo":"MB","nomtipo":"Mancha Blanca","pos":"LN","nompos":"lingual","evento":"20191226061456494","slug":"hallazgo-caries","nombreHallazgo":"Lesión de caries dental"}}},"4.7":{"hallazgo-defectos-del-esmalte":{"mesial":{"tipo":"HM","nomtipo":"Hipo Mineralización","pos":"CM","nompos":"mesial","evento":"20191226061502447","slug":"hallazgo-defectos-del-esmalte","nombreHallazgo":"Defectos de desarrollo del esmalte"}}},"4.6":{"hallazgo-restauracion-definitiva":{"mesial":{"tipo":"AM","nomtipo":"Amalgama Dental","pos":"CM","nompos":"mesial","evento":"20191226061507396","slug":"hallazgo-restauracion-definitiva","nombreHallazgo":"Restauracion definitiva"}}},"4.5":{"hallazgo-restauracion-definitiva-malo":{"lingual":{"tipo":"AD","nomtipo":"Amalgama Dental","pos":"LN","nompos":"lingual","evento":"20191226061520126","slug":"hallazgo-restauracion-definitiva-malo","nombreHallazgo":"Restauracion definitiva malo"}}},"4.4":{"hallazgo-posicion-dentaria":{"oclusal":{"tipo":"D","nomtipo":"Distalizado","pos":"OC","nompos":"oclusal","evento":"20191226061528169","slug":"hallazgo-posicion-dentaria","nombreHallazgo":"Posicion Dentaria"}}},"4.3":{"hallazgo-movilidad-patologica":{"lingual":{"tipo":"M1","nomtipo":"M1","pos":"LN","nompos":"lingual","evento":"20191226061537431","slug":"hallazgo-movilidad-patologica","nombreHallazgo":"Movilidad patologica"}}},"4.2":{"hallazgo-pieza-dentaria-ausente":{"lingual":{"tipo":"DNE","nomtipo":"Diente no erupcionado","pos":"LN","nompos":"lingual","evento":"20191226061550771","slug":"hallazgo-pieza-dentaria-ausente","nombreHallazgo":"Pieza dentaria ausente"}}},"4.1":{"hallazgo-corona":{"lingual":{"tipo":"CDD","nomtipo":"Corona en Diente Deciduo","pos":"LN","nompos":"lingual","evento":"20191226061559820","slug":"hallazgo-corona","nombreHallazgo":"Corona"}}},"3.1":{"hallazgo-corona-malo":{"lingual":{"tipo":"CV","nomtipo":"Corona Veneer","pos":"LN","nompos":"lingual","evento":"20191226061605444","slug":"hallazgo-corona-malo","nombreHallazgo":"Corona malo"}}}},"grupal":{}}}';
 
     console.log(data,'data');
     dOdont.setJsonData(data);
@@ -787,6 +795,7 @@ var MyApp = {
 
    $('.cont-diente .svg').each(function(index, value){
      var idpieza = $(value).attr('data-pieza');  //4.8
+
        for (item in data) {
          if (idpieza == item) {
            console.log(idpieza,'idpieza'); //4.8
@@ -797,9 +806,10 @@ var MyApp = {
 
            if (hallazgo) {
              for (itemHallaz in hallazgo) {
-               console.log(itemHallaz, 'itemHallaz'); //hallazgo-carie
+               console.log(itemHallaz, 'itemHallaz'); //hallazgo-caries
                var dataHallazgo = hallazgo[itemHallaz]; //vestibular: {tipo: "CD", nomtipo: "Caries de la dentina", pos: "VE", nompos: "vestibular", evento: "20191219155147888", …}
                console.log(dataHallazgo,'dataHallazgo');
+               $(value).addClass('active-'+itemHallaz);
 
                if (dataHallazgo) {
                  console.log(dataHallazgo,'dataHallazgo-aa');
@@ -825,7 +835,6 @@ var MyApp = {
  },
   examenPeriodontal:function() {
     var edad = 20
-    console.log(edad);
     if (edad >= 12 && edad <= 17) {
       $(".panel-examenes-periodontal ").addClass("show");
       $(".contenido-examen-periodontal").addClass("examen-adulto");
@@ -861,4 +870,10 @@ $(function () {
   if ($('.only-numbers').length) {
     MyApp.onlyNumbers();
   }
+
+  $(".lista-hallazgos li").each(function(){
+    var tipo = $(this).find("a").data('tipo');
+    $(this).append(`<span class="mostrar-tipo">${tipo}</span>`);
+  });
+
 });

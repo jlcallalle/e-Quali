@@ -57,8 +57,8 @@ var mOdont;
         },
       }
     },
-    {
-      codigo: "hallazgo-pieza-dentaria-ausente",
+  {
+      codigo: "hallazgo-restauracion-definitiva",
       aplicar: MODNT_APLICAR_HALLAZGO.opciones.individual,
       parametros: [
         {parametro: "diente", tipoDato: "string"},
@@ -82,7 +82,151 @@ var mOdont;
       }
     },
   {
-      codigo: "hallazgo-restauracion-definitiva",
+      codigo: "hallazgo-restauracion-definitiva-malo",
+      aplicar: MODNT_APLICAR_HALLAZGO.opciones.individual,
+      parametros: [
+        {parametro: "diente", tipoDato: "string"},
+        {parametro: "cara", tipoDato: "string"},
+        {parametro: "tipo", tipoDato: "string"},
+        {parametro: "nomtipo", tipoDato: "string"},
+        {parametro: "pos", tipoDato: "string"},
+        {parametro: "nompos", tipoDato: "string"},
+        {parametro: "slug", tipoDato: "string"},
+        {parametro: "nombreHallazgo", tipoDato: "string"},
+        {parametro: "tipoHallazgo", tipoDato: "string"},
+      ],
+      formatoDato: {
+        evento: {
+          hallazgo: "hallazgo", evento: "evento", cara: "cara", diente: "diente", slug: "slug", tipoHallazgo: "tipoHallazgo",
+          tipo: "tipo", nomtipo: "nomtipo", pos: "pos", nompos: "nompos"
+        },
+        datos: {
+          r_cara: ["tipo", "nomtipo", "pos", "nompos", "evento","slug", "nombreHallazgo", "nombreLesion"]
+        },
+      }
+    },
+  {
+      codigo: "hallazgo-restauracion-temporal",
+      aplicar: MODNT_APLICAR_HALLAZGO.opciones.individual,
+      parametros: [
+        {parametro: "diente", tipoDato: "string"},
+        {parametro: "cara", tipoDato: "string"},
+        {parametro: "tipo", tipoDato: "string"},
+        {parametro: "nomtipo", tipoDato: "string"},
+        {parametro: "pos", tipoDato: "string"},
+        {parametro: "nompos", tipoDato: "string"},
+        {parametro: "slug", tipoDato: "string"},
+        {parametro: "nombreHallazgo", tipoDato: "string"},
+        {parametro: "tipoHallazgo", tipoDato: "string"},
+      ],
+      formatoDato: {
+        evento: {
+          hallazgo: "hallazgo", evento: "evento", cara: "cara", diente: "diente", slug: "slug", tipoHallazgo: "tipoHallazgo",
+          tipo: "tipo", nomtipo: "nomtipo", pos: "pos", nompos: "nompos"
+        },
+        datos: {
+          r_cara: ["tipo", "nomtipo", "pos", "nompos", "evento","slug", "nombreHallazgo", "nombreLesion"]
+        },
+      }
+    },
+  {
+      codigo: "hallazgo-posicion-dentaria",
+      aplicar: MODNT_APLICAR_HALLAZGO.opciones.individual,
+      parametros: [
+        {parametro: "diente", tipoDato: "string"},
+        {parametro: "cara", tipoDato: "string"},
+        {parametro: "tipo", tipoDato: "string"},
+        {parametro: "nomtipo", tipoDato: "string"},
+        {parametro: "pos", tipoDato: "string"},
+        {parametro: "nompos", tipoDato: "string"},
+        {parametro: "slug", tipoDato: "string"},
+        {parametro: "nombreHallazgo", tipoDato: "string"},
+        {parametro: "tipoHallazgo", tipoDato: "string"},
+      ],
+      formatoDato: {
+        evento: {
+          hallazgo: "hallazgo", evento: "evento", cara: "cara", diente: "diente", slug: "slug", tipoHallazgo: "tipoHallazgo",
+          tipo: "tipo", nomtipo: "nomtipo", pos: "pos", nompos: "nompos"
+        },
+        datos: {
+          r_cara: ["tipo", "nomtipo", "pos", "nompos", "evento","slug", "nombreHallazgo", "nombreLesion"]
+        },
+      }
+    },
+  {
+      codigo: "hallazgo-movilidad-patologica",
+      aplicar: MODNT_APLICAR_HALLAZGO.opciones.individual,
+      parametros: [
+        {parametro: "diente", tipoDato: "string"},
+        {parametro: "cara", tipoDato: "string"},
+        {parametro: "tipo", tipoDato: "string"},
+        {parametro: "nomtipo", tipoDato: "string"},
+        {parametro: "pos", tipoDato: "string"},
+        {parametro: "nompos", tipoDato: "string"},
+        {parametro: "slug", tipoDato: "string"},
+        {parametro: "nombreHallazgo", tipoDato: "string"},
+        {parametro: "tipoHallazgo", tipoDato: "string"},
+      ],
+      formatoDato: {
+        evento: {
+          hallazgo: "hallazgo", evento: "evento", cara: "cara", diente: "diente", slug: "slug", tipoHallazgo: "tipoHallazgo",
+          tipo: "tipo", nomtipo: "nomtipo", pos: "pos", nompos: "nompos"
+        },
+        datos: {
+          r_cara: ["tipo", "nomtipo", "pos", "nompos", "evento","slug", "nombreHallazgo", "nombreLesion"]
+        },
+      }
+    },
+  {
+      codigo: "hallazgo-corona",
+      aplicar: MODNT_APLICAR_HALLAZGO.opciones.individual,
+      parametros: [
+        {parametro: "diente", tipoDato: "string"},
+        {parametro: "cara", tipoDato: "string"},
+        {parametro: "tipo", tipoDato: "string"},
+        {parametro: "nomtipo", tipoDato: "string"},
+        {parametro: "pos", tipoDato: "string"},
+        {parametro: "nompos", tipoDato: "string"},
+        {parametro: "slug", tipoDato: "string"},
+        {parametro: "nombreHallazgo", tipoDato: "string"},
+        {parametro: "tipoHallazgo", tipoDato: "string"},
+      ],
+      formatoDato: {
+        evento: {
+          hallazgo: "hallazgo", evento: "evento", cara: "cara", diente: "diente", slug: "slug", tipoHallazgo: "tipoHallazgo",
+          tipo: "tipo", nomtipo: "nomtipo", pos: "pos", nompos: "nompos"
+        },
+        datos: {
+          r_cara: ["tipo", "nomtipo", "pos", "nompos", "evento","slug", "nombreHallazgo", "nombreLesion"]
+        },
+      }
+    },
+  {
+      codigo: "hallazgo-corona-malo",
+      aplicar: MODNT_APLICAR_HALLAZGO.opciones.individual,
+      parametros: [
+        {parametro: "diente", tipoDato: "string"},
+        {parametro: "cara", tipoDato: "string"},
+        {parametro: "tipo", tipoDato: "string"},
+        {parametro: "nomtipo", tipoDato: "string"},
+        {parametro: "pos", tipoDato: "string"},
+        {parametro: "nompos", tipoDato: "string"},
+        {parametro: "slug", tipoDato: "string"},
+        {parametro: "nombreHallazgo", tipoDato: "string"},
+        {parametro: "tipoHallazgo", tipoDato: "string"},
+      ],
+      formatoDato: {
+        evento: {
+          hallazgo: "hallazgo", evento: "evento", cara: "cara", diente: "diente", slug: "slug", tipoHallazgo: "tipoHallazgo",
+          tipo: "tipo", nomtipo: "nomtipo", pos: "pos", nompos: "nompos"
+        },
+        datos: {
+          r_cara: ["tipo", "nomtipo", "pos", "nompos", "evento","slug", "nombreHallazgo", "nombreLesion"]
+        },
+      }
+    },
+  {
+      codigo: "hallazgo-pieza-dentaria-ausente",
       aplicar: MODNT_APLICAR_HALLAZGO.opciones.individual,
       parametros: [
         {parametro: "diente", tipoDato: "string"},

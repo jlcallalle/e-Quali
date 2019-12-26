@@ -535,14 +535,14 @@
 
 
 
-.active-corona  {
+.active-hallazgo-corona  {
     .contorno {
         cursor: pointer;
         stroke: blue;
         stroke-width: 10px;
     }
 }
-.active-corona-malo  {
+.active-hallazgo-corona-malo  {
     .contorno {
         cursor: pointer;
         stroke: red;
@@ -1465,6 +1465,17 @@ svg.active-dentaria {
       }
   }
 
+  .active-hallazgo-pieza-dentaria-ausente {
+      background-image: url(../img/diente-ausente.png);
+      background-repeat: no-repeat;
+      background-position: bottom;
+      background-size: 90% 80%;
+      pointer-events: none;
+      .box-lista-dientes-sub & {
+          background-position: top center;
+      }
+  }
+
 
 //Erupcion
 .box-sub-adulto .seleccionado.active-erupcion,
@@ -2256,5 +2267,12 @@ position:static;
           padding: 0 4px;
           width: 120px;
       }
+  }
+}
+
+.lista-hallazgos  {
+  .mostrar-tipo {
+    color:blue;
+    margin:0 0 0 5px;
   }
 }
