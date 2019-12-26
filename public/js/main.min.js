@@ -324,6 +324,7 @@ var MyApp = {
       });
 
       if( $(contenidoOdontograma).is('[data-tipo~="3"]') ) {
+        console.log('tipo 3');
           var idDiente = $(this).parents("svg").attr("id");
           var piezaDiente = $(this).parents("svg").attr("data-pieza");
           var wrapperContainer = $(this).parents(".contenido-odontograma");
