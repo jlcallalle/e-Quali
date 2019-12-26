@@ -23,6 +23,7 @@ var MyApp = {
          || piezaDentariaActual.hasClass("active-extruida")
          || piezaDentariaActual.hasClass("active-diastema")
          || piezaDentariaActual.hasClass("active-remanente-radicular")
+         || piezaDentariaActual.hasClass("pieza-total")
          || piezaDentariaActual.hasClass("active-ausente") ) {
         return;
       }
@@ -439,6 +440,7 @@ var MyApp = {
                       $(".lista-hallazgo-detallado").append(
                         `<li id='${idBox}' data-pos='${piezaPosition}' data-sigla='${codLesion}' data-hallazgo='${tipoHallazgo}' data-evento='${eventoxy}'><span class="nombre-hallazo"> ${nombreHallazgo} </span>:
                         ${nombreLesion} <span> ${codLesion} </span> , de la  pieza dental <span class="class="id-pieza"">${idDiente}</span> <a href="#">Eliminar aa</a> </li>`);
+                        $(this).addClass('pieza-total');
                   } else {
                       $(".lista-hallazgo-detallado").append(
                         `<li id='${idBox}' data-pos='${piezaPosition}' data-sigla='${codLesion}' data-hallazgo='${tipoHallazgo}' data-evento='${eventoxy}'><span class="nombre-hallazo"> ${nombreHallazgo} </span>:
