@@ -334,6 +334,38 @@ var MyApp = {
           +  nombrePosition + ' <span>  '  + siglaPosition  + ' </span>, de la  pieza dental <span> ' + piezaDiente + '</span>  <a href="#">Eliminar</a>  </li>');
           $(this).parents("svg").addClass('seleccionado');
           $(this).parents("svg").removeClass('pre-seleccionado');
+          var nomHallazgo = contenidoOdontograma.attr("data-name");
+          var nombreSlug = contenidoOdontograma.attr("data-name");
+          var idPieza = piezaDiente;
+          var piezaPosition = nombrePosition;
+
+          console.log(idPieza);
+          console.log(piezaPosition);
+          console.log(siglaPosition);
+          console.log(nombreSlug);
+          console.log(siglaPosition);
+          console.log(piezaPosition);
+          console.log(nombreSlug);
+          console.log(nombreHallazgo);
+          console.log(tipoHallazgo);
+          //------nuevo evento json------//
+          var param5 = {
+            diente: idPieza,
+            cara: piezaPosition,
+            tipo: siglaPosition,
+            nomtipo: nombreSlug,
+            pos: siglaPosition,
+            nompos: piezaPosition,
+            slug: nomHallazgo,
+            nombreHallazgo: nombreHallazgo,
+            tipoHallazgo: tipoHallazgo,
+          };
+
+          var evento = dOdont.fngSetAgregarHallazgo(param5, nomHallazgo);
+          console.log(evento,'evento');
+          console.log(dOdont.getJsonData(),'json generado');
+          $("#id_odontograma_especificaciones").html(dOdont.getJsonData());
+
 
       } else if ($(contenidoOdontograma).is('[data-tipo~="5"]')){
           var idDiente = $(this).parents("svg").attr("id");
@@ -415,6 +447,15 @@ var MyApp = {
               if (idBox == idParte) {
                   var piezaPosition = $(this).find(".active-last").attr("data-pos");
                   var siglaPosition = $(this).find(".active-last").attr("data-sigla");
+                  console.log(idDiente);
+                  console.log(piezaPosition);
+                  console.log(codLesion);
+                  console.log(nombreLesion);
+                  console.log(siglaPosition);
+                  console.log(piezaPosition);
+                  console.log(nomHallazgo);
+                  console.log(nombreHallazgo);
+                  console.log(tipoHallazgo);
                   //------nuevo evento json------//
                   var param5 = {
                     diente: idDiente,
@@ -429,30 +470,29 @@ var MyApp = {
                   };
 
 
-                  var eventoxy = dOdont.fngSetAgregarHallazgo(param5, nomHallazgo);
-                  console.log(eventoxy,'eventoxy 123');
+                  var evento = dOdont.fngSetAgregarHallazgo(param5, nomHallazgo);
+                  console.log(evento,'evento');
+                  console.log(dOdont.getJsonData(),'json generado');
+                  $("#id_odontograma_especificaciones").html(dOdont.getJsonData());
+
                   //------nuevo evento json------//
 
-                  if(tipoHallazgo === listaPintado.tipoPintado4 ||  tipoHallazgo === listaPintado.tipoPintado5 ){
-                      // $(".lista-hallazgo-detallado").append('<li id=' + idBox + ' data-pos=' +piezaPosition+ ' data-sigla=' +codLesion+ '  data-hallazgo=' +tipoHallazgo+ '>'+ '<span class="nombre-hallazo"> ' +nombreHallazgo+ '</span> : ' + nombreLesion + ' <span>'+ (codLesion) + ' </span>, de la  pieza dental <span> '
-                      // + idDiente + '</span> <a href="#">Eliminar 123</a> </li> ');
-
-                      $(".lista-hallazgo-detallado").append(
-                        `<li id='${idBox}' data-pos='${piezaPosition}' data-sigla='${codLesion}' data-hallazgo='${tipoHallazgo}' data-evento='${eventoxy}'><span class="nombre-hallazo"> ${nombreHallazgo} </span>:
-                        ${nombreLesion} <span> ${codLesion} </span> , de la  pieza dental <span class="class="id-pieza"">${idDiente}</span> <a href="#">Eliminar aa</a> </li>`);
-                        $(this).addClass('pieza-total');
-                  } else {
-                      $(".lista-hallazgo-detallado").append(
-                        `<li id='${idBox}' data-pos='${piezaPosition}' data-sigla='${codLesion}' data-hallazgo='${tipoHallazgo}' data-evento='${eventoxy}'><span class="nombre-hallazo"> ${nombreHallazgo} </span>:
-                        ${nombreLesion} <span> ${codLesion} </span> ,  en la cara <span  class="posicion">${piezaPosition} </span><span>${siglaPosition}</span>, de la  pieza dental <span class="class="id-pieza"">${idDiente}</span>
-                        <a href="#">Eliminar bb</a> </li>`);
-                  }
+                  // if(tipoHallazgo === listaPintado.tipoPintado4 ||  tipoHallazgo === listaPintado.tipoPintado5 ){
+                  //     $(".lista-hallazgo-detallado").append(
+                  //       `<li id='${idBox}' data-pos='${piezaPosition}' data-sigla='${codLesion}' data-hallazgo='${tipoHallazgo}' data-evento='${eventoxy}'><span class="nombre-hallazo"> ${nombreHallazgo} </span>:
+                  //       ${nombreLesion} <span> ${codLesion} </span> , de la  pieza dental <span class="class="id-pieza"">${idDiente}</span> <a href="#">Eliminar aa</a> </li>`);
+                  //       $(this).addClass('pieza-total');
+                  // } else {
+                  //     $(".lista-hallazgo-detallado").append(
+                  //       `<li id='${idBox}' data-pos='${piezaPosition}' data-sigla='${codLesion}' data-hallazgo='${tipoHallazgo}' data-evento='${eventoxy}'><span class="nombre-hallazo"> ${nombreHallazgo} </span>:
+                  //       ${nombreLesion} <span> ${codLesion} </span> ,  en la cara <span  class="posicion">${piezaPosition} </span><span>${siglaPosition}</span>, de la  pieza dental <span class="class="id-pieza"">${idDiente}</span>
+                  //       <a href="#">Eliminar bb</a> </li>`);
+                  // }
 
                   $(this).addClass('seleccionado');
                   $(this).removeClass('pre-seleccionado');
 
 
-                  $("#id_odontograma_especificaciones").html(dOdont.getJsonData());
                   // nombreHallazgo = nombreHallazgo.toString().toLowerCase();
                   // piezaPosition = piezaPosition.toString().toLowerCase();
                   //var data = [];

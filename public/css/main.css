@@ -631,6 +631,16 @@ body {
   .active-supernumeraria.incisivos:before {
     left: 28px; }
 
+.active-corona .contorno {
+  cursor: pointer;
+  stroke: blue;
+  stroke-width: 10px; }
+
+.active-corona-malo .contorno {
+  cursor: pointer;
+  stroke: red;
+  stroke-width: 10px; }
+
 .active-hallazgo-corona .contorno {
   cursor: pointer;
   stroke: blue;
@@ -642,6 +652,11 @@ body {
   stroke-width: 10px; }
 
 .active-corona-temporal .contorno {
+  cursor: pointer;
+  stroke: red;
+  stroke-width: 10px; }
+
+.active-hallazgo-corona-temporal .contorno {
   cursor: pointer;
   stroke: red;
   stroke-width: 10px; }
@@ -716,16 +731,16 @@ body {
 svg.active-dentaria {
   fill: blue; }
 
-.active-edentulo-total:before {
+.active-edentulo-total:before, .active-hallazgo-edentulo-total:before {
   content: '';
   height: 3px;
   background: blue;
   position: absolute;
   width: 824px;
   top: 62px; }
-  .box-nino .active-edentulo-total:before {
+  .box-nino .active-edentulo-total:before, .box-nino .active-hallazgo-edentulo-total:before {
     width: 490px; }
-  .box-lista-dientes-sub .active-edentulo-total:before {
+  .box-lista-dientes-sub .active-edentulo-total:before, .box-lista-dientes-sub .active-hallazgo-edentulo-total:before {
     top: 20px; }
 
 .active-protesis-total:before {
@@ -1873,7 +1888,7 @@ svg.active-dentaria {
 .seleccionado.hallazgo-fosas-fisuras-profundas, .seleccionado.hallazgo-piesa-dentaria-ectopica, .seleccionado.hallazgo-macrodoncia, .seleccionado.hallazgo-microdoncia, .seleccionado.hallazgo-impactacion, .seleccionado.hallazgo-corona-temporal, .seleccionado.active-edentulo-total, .seleccionado.hallazgo-pieza-supernumeraria {
   pointer-events: none; }
 
-.active-edentulo-total .svg {
+.active-edentulo-total .svg, .active-hallazgo-edentulo-total .svg {
   pointer-events: none; }
 
 .panel-examenes-periodontal {

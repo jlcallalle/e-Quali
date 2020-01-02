@@ -535,6 +535,20 @@
 
 
 
+.active-corona  {
+    .contorno {
+        cursor: pointer;
+        stroke: blue;
+        stroke-width: 10px;
+    }
+}
+.active-corona-malo  {
+    .contorno {
+        cursor: pointer;
+        stroke: red;
+        stroke-width: 10px;
+    }
+}
 .active-hallazgo-corona  {
     .contorno {
         cursor: pointer;
@@ -550,6 +564,13 @@
     }
 }
 .active-corona-temporal  {
+    .contorno {
+        cursor: pointer;
+        stroke: red;
+        stroke-width: 10px;
+    }
+}
+.active-hallazgo-corona-temporal  {
     .contorno {
         cursor: pointer;
         stroke: red;
@@ -655,7 +676,7 @@ svg.active-dentaria {
 }
 
 
-.active-edentulo-total  {
+.active-edentulo-total, .active-hallazgo-edentulo-total  {
   &:before {
     content: '';
     height: 3px;
@@ -2196,7 +2217,7 @@ position:static;
   }
 }
 
-.active-edentulo-total {
+.active-edentulo-total,.active-hallazgo-edentulo-total {
   .svg {
     pointer-events: none;
   }
