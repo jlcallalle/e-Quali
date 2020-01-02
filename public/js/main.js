@@ -703,37 +703,6 @@ var MyApp = {
         $("#id_odontograma_especificaciones").html(dOdont.getJsonData());
         //------ ----------------------------------------//
 
-        //------ evento eliminar "estructura anterior" -----//
-
-         // var data = $("#id_odontograma_especificaciones").val();
-        // data = JSON.parse(data);
-
-        // var valorPieza = $(this).parent().find('.id-pieza').text().trim();
-        // var nombrePieza = $(this).parent().find('.nombre-hallazo').text().trim().toLowerCase();
-        // var posPieza = $(this).parent().find('.posicion').text();
-
-        // for (key in data) {
-        //   count = 0;
-        //   console.log(key)
-        //   console.log(data[valorPieza][nombrePieza]);
-        //   if (key == valorPieza) {
-        //     for (keypost in data[valorPieza][nombrePieza]) {
-        //       count++;
-        //      }
-        //   }
-        //   console.log(count);
-        //   if (count == '1') {
-        //     console.log(delete data[valorPieza]);
-        //   } else {
-        //     console.log(delete data[valorPieza][nombrePieza][posPieza]);
-        //   }
-        // }
-        // console.log(nombrePieza);
-        // datafinal = JSON.stringify(data);
-        // console.log(datafinal);
-        // $("#id_odontograma_especificaciones").val(datafinal);
-        //------ ----------------------------------------//
-
           e.preventDefault();
           e.stopPropagation();
           var idLista = $(this).parents("li").attr("id")
@@ -822,58 +791,149 @@ var MyApp = {
       });
   },
   mostrarOdontrograma: function(){
-    // var data ='{"4.8":{"lesión de caries dental":{"mesial":{"tipo":"MB","nomtipo":"Mancha Blanca","pos":"CM","nompos":"cara mesial"}}},"4.7":{"restauracion definitiva":{"vestibular":{"tipo":"AM","nomtipo":"Amalgama Dental","pos":"VE","nompos":"cara vestibular"}}}}';
-    // data = JSON.parse(data);
-    // console.log(data,'data');
+    // var data ='{"eventos":{"E20200102224435953":{"hallazgo":"hallazgo-caries","slug":"hallazgo-caries","tipoHallazgo":1,"evento":"E20200102224435953","diente":"4.8","cara":"mesial","pos":"CM","nompos":"mesial","tipo":"MB","nomtipo":"Mancha Blanca"},"E20200102224444046":{"hallazgo":"hallazgo-defectos-del-esmalte","slug":"hallazgo-defectos-del-esmalte","tipoHallazgo":1,"evento":"E20200102224444046","diente":"4.7","cara":"vestibular","pos":"VE","nompos":"vestibular","tipo":"HP","nomtipo":"Hipoplasia"},"E20200102224448478":{"hallazgo":"hallazgo-restauracion-definitiva","slug":"hallazgo-restauracion-definitiva","tipoHallazgo":2,"evento":"E20200102224448478","diente":"4.6","cara":"lingual","pos":"LN","nompos":"lingual","tipo":"AM","nomtipo":"Amalgama Dental","estado":"bueno"},"E20200102224452897":{"hallazgo":"hallazgo-restauracion-temporal","slug":"hallazgo-restauracion-temporal","tipoHallazgo":3,"evento":"E20200102224452897","diente":"4.5","cara":"lingual","pos":"LN","nompos":"lingual"},"E20200102224515614":{"hallazgo":"hallazgo-remanente-radicular","slug":"hallazgo-remanente-radicular","tipoHallazgo":5,"evento":"E20200102224515614","diente":"4.4","texto":"RR"},"E20200102224525708":{"hallazgo":"hallazgo-pieza-dentaria-ausente","slug":"hallazgo-pieza-dentaria-ausente","tipoHallazgo":4,"evento":"E20200102224525708","diente":"4.3","texto":"DEX"},"E20200102224535184":{"hallazgo":"hallazgo-corona","slug":"hallazgo-corona","tipoHallazgo":4,"evento":"E20200102224535184","diente":"4.2","estado":"bueno","texto":"CM"},"E20200102224537866":{"hallazgo":"hallazgo-corona-temporal","slug":"hallazgo-corona-temporal","tipoHallazgo":5,"evento":"E20200102224537866","diente":"4.1","texto":"CT"}},"datos":{"individual":{"4.8":{"hallazgo-caries":{"mesial":{"evento":"E20200102224435953","nombreHallazgo":"Lesión de caries dental","slug":"hallazgo-caries","pos":"CM","nompos":"mesial","tipo":"MB","nomtipo":"Mancha Blanca"}}},"4.7":{"hallazgo-defectos-del-esmalte":{"vestibular":{"evento":"E20200102224444046","nombreHallazgo":"Defectos de desarrollo del esmalte","slug":"hallazgo-defectos-del-esmalte","pos":"VE","nompos":"vestibular","tipo":"HP","nomtipo":"Hipoplasia"}}},"4.6":{"hallazgo-restauracion-definitiva":{"lingual":{"evento":"E20200102224448478","nombreHallazgo":"Restauracion definitiva","slug":"hallazgo-restauracion-definitiva","pos":"LN","nompos":"lingual","tipo":"AM","nomtipo":"Amalgama Dental","estado":"bueno"}}},"4.5":{"hallazgo-restauracion-temporal":{"lingual":{"evento":"E20200102224452897","nombreHallazgo":"hallazgo-restauracion-temporal","slug":"hallazgo-restauracion-temporal","pos":"LN","nompos":"lingual"}}},"4.4":{"hallazgo-remanente-radicular":{"evento":"E20200102224515614","nombreHallazgo":"hallazgo-remanente-radicular","slug":"hallazgo-remanente-radicular","texto":"RR"}},"4.3":{"hallazgo-pieza-dentaria-ausente":{"evento":"E20200102224525708","nombreHallazgo":"Pieza dentaria ausente","slug":"hallazgo-pieza-dentaria-ausente","texto":"DEX"}},"4.2":{"hallazgo-corona":{"evento":"E20200102224535184","nombreHallazgo":"Corona","slug":"hallazgo-corona","estado":"bueno","texto":"CM"}},"4.1":{"hallazgo-corona-temporal":{"evento":"E20200102224537866","nombreHallazgo":"hallazgo-corona-temporal","slug":"hallazgo-corona-temporal","texto":"CT"}}},"grupal":{}},"datosVersion":{"version":"v1.0"}}';
 
-    var data ='{"eventos":{"20191226061456494":{"hallazgo":"hallazgo-caries","evento":"20191226061456494","cara":"lingual","diente":"4.8","slug":"hallazgo-caries","tipoHallazgo":1,"tipo":"MB","nomtipo":"Mancha Blanca","pos":"LN","nompos":"lingual"},"20191226061502447":{"hallazgo":"hallazgo-defectos-del-esmalte","evento":"20191226061502447","cara":"mesial","diente":"4.7","slug":"hallazgo-defectos-del-esmalte","tipoHallazgo":1,"tipo":"HM","nomtipo":"Hipo Mineralización","pos":"CM","nompos":"mesial"},"20191226061507396":{"hallazgo":"hallazgo-restauracion-definitiva","evento":"20191226061507396","cara":"mesial","diente":"4.6","slug":"hallazgo-restauracion-definitiva","tipoHallazgo":2,"tipo":"AM","nomtipo":"Amalgama Dental","pos":"CM","nompos":"mesial"},"20191226061520126":{"hallazgo":"hallazgo-restauracion-definitiva-malo","evento":"20191226061520126","cara":"lingual","diente":"4.5","slug":"hallazgo-restauracion-definitiva-malo","tipoHallazgo":2,"tipo":"AD","nomtipo":"Amalgama Dental","pos":"LN","nompos":"lingual"},"20191226061528169":{"hallazgo":"hallazgo-posicion-dentaria","evento":"20191226061528169","cara":"oclusal","diente":"4.4","slug":"hallazgo-posicion-dentaria","tipoHallazgo":4,"tipo":"D","nomtipo":"Distalizado","pos":"OC","nompos":"oclusal"},"20191226061537431":{"hallazgo":"hallazgo-movilidad-patologica","evento":"20191226061537431","cara":"lingual","diente":"4.3","slug":"hallazgo-movilidad-patologica","tipoHallazgo":4,"tipo":"M1","nomtipo":"M1","pos":"LN","nompos":"lingual"},"20191226061550771":{"hallazgo":"hallazgo-pieza-dentaria-ausente","evento":"20191226061550771","cara":"lingual","diente":"4.2","slug":"hallazgo-pieza-dentaria-ausente","tipoHallazgo":4,"tipo":"DNE","nomtipo":"Diente no erupcionado","pos":"LN","nompos":"lingual"},"20191226061559820":{"hallazgo":"hallazgo-corona","evento":"20191226061559820","cara":"lingual","diente":"4.1","slug":"hallazgo-corona","tipoHallazgo":4,"tipo":"CDD","nomtipo":"Corona en Diente Deciduo","pos":"LN","nompos":"lingual"},"20191226061605444":{"hallazgo":"hallazgo-corona-malo","evento":"20191226061605444","cara":"lingual","diente":"3.1","slug":"hallazgo-corona-malo","tipoHallazgo":4,"tipo":"CV","nomtipo":"Corona Veneer","pos":"LN","nompos":"lingual"}},"datos":{"individual":{"4.8":{"hallazgo-caries":{"lingual":{"tipo":"MB","nomtipo":"Mancha Blanca","pos":"LN","nompos":"lingual","evento":"20191226061456494","slug":"hallazgo-caries","nombreHallazgo":"Lesión de caries dental"}}},"4.7":{"hallazgo-defectos-del-esmalte":{"mesial":{"tipo":"HM","nomtipo":"Hipo Mineralización","pos":"CM","nompos":"mesial","evento":"20191226061502447","slug":"hallazgo-defectos-del-esmalte","nombreHallazgo":"Defectos de desarrollo del esmalte"}}},"4.6":{"hallazgo-restauracion-definitiva":{"mesial":{"tipo":"AM","nomtipo":"Amalgama Dental","pos":"CM","nompos":"mesial","evento":"20191226061507396","slug":"hallazgo-restauracion-definitiva","nombreHallazgo":"Restauracion definitiva"}}},"4.5":{"hallazgo-restauracion-definitiva-malo":{"lingual":{"tipo":"AD","nomtipo":"Amalgama Dental","pos":"LN","nompos":"lingual","evento":"20191226061520126","slug":"hallazgo-restauracion-definitiva-malo","nombreHallazgo":"Restauracion definitiva malo"}}},"4.4":{"hallazgo-posicion-dentaria":{"oclusal":{"tipo":"D","nomtipo":"Distalizado","pos":"OC","nompos":"oclusal","evento":"20191226061528169","slug":"hallazgo-posicion-dentaria","nombreHallazgo":"Posicion Dentaria"}}},"4.3":{"hallazgo-movilidad-patologica":{"lingual":{"tipo":"M1","nomtipo":"M1","pos":"LN","nompos":"lingual","evento":"20191226061537431","slug":"hallazgo-movilidad-patologica","nombreHallazgo":"Movilidad patologica"}}},"4.2":{"hallazgo-pieza-dentaria-ausente":{"lingual":{"tipo":"DNE","nomtipo":"Diente no erupcionado","pos":"LN","nompos":"lingual","evento":"20191226061550771","slug":"hallazgo-pieza-dentaria-ausente","nombreHallazgo":"Pieza dentaria ausente"}}},"4.1":{"hallazgo-corona":{"lingual":{"tipo":"CDD","nomtipo":"Corona en Diente Deciduo","pos":"LN","nompos":"lingual","evento":"20191226061559820","slug":"hallazgo-corona","nombreHallazgo":"Corona"}}},"3.1":{"hallazgo-corona-malo":{"lingual":{"tipo":"CV","nomtipo":"Corona Veneer","pos":"LN","nompos":"lingual","evento":"20191226061605444","slug":"hallazgo-corona-malo","nombreHallazgo":"Corona malo"}}}},"grupal":{}}}';
+    var data = '{"eventos":{"E20200102230141972":{"hallazgo":"hallazgo-caries","slug":"hallazgo-caries","tipoHallazgo":1,"evento":"E20200102230141972","diente":"4.8","cara":"distal","pos":"CD","nompos":"distal","tipo":"MB","nomtipo":"Mancha Blanca"},"E20200102230155590":{"hallazgo":"hallazgo-defectos-del-esmalte","slug":"hallazgo-defectos-del-esmalte","tipoHallazgo":1,"evento":"E20200102230155590","diente":"4.7","cara":"distal","pos":"CD","nompos":"distal","tipo":"Fluorosis","nomtipo":"Fluorosis"},"E20200102230209309":{"hallazgo":"hallazgo-restauracion-definitiva","slug":"hallazgo-restauracion-definitiva","tipoHallazgo":2,"evento":"E20200102230209309","diente":"4.6","cara":"distal","pos":"CD","nompos":"distal","tipo":"IV","nomtipo":"Ionónedo de vidrio","estado":"bueno"},"E20200102230221903":{"hallazgo":"hallazgo-restauracion-definitiva","slug":"hallazgo-restauracion-definitiva","tipoHallazgo":2,"evento":"E20200102230221903","diente":"4.5","cara":"distal","pos":"CD","nompos":"distal","tipo":"IV","nomtipo":"Ionónedo de vidrio","estado":"malo"},"E20200102230245233":{"hallazgo":"hallazgo-restauracion-temporal","slug":"hallazgo-restauracion-temporal","tipoHallazgo":3,"evento":"E20200102230245233","diente":"4.4","cara":"vestibular","pos":"VE","nompos":"vestibular"},"E20200102230255532":{"hallazgo":"hallazgo-remanente-radicular","slug":"hallazgo-remanente-radicular","tipoHallazgo":5,"evento":"E20200102230255532","diente":"4.3","texto":"RR"},"E20200102230310863":{"hallazgo":"hallazgo-pieza-dentaria-ausente","slug":"hallazgo-pieza-dentaria-ausente","tipoHallazgo":4,"evento":"E20200102230310863","diente":"4.2","texto":"DEX"},"E20200102230323450":{"hallazgo":"hallazgo-corona","slug":"hallazgo-corona","tipoHallazgo":4,"evento":"E20200102230323450","diente":"4.1","estado":"bueno","texto":"CV"},"E20200102230330910":{"hallazgo":"hallazgo-corona","slug":"hallazgo-corona","tipoHallazgo":4,"evento":"E20200102230330910","diente":"3.1","estado":"malo","texto":"CF"},"E20200102230335125":{"hallazgo":"hallazgo-corona-temporal","slug":"hallazgo-corona-temporal","tipoHallazgo":5,"evento":"E20200102230335125","diente":"3.2","texto":"CT"},"E20200102230355623":{"hallazgo":"hallazgo-posicion-dentaria","slug":"hallazgo-posicion-dentaria","tipoHallazgo":4,"evento":"E20200102230355623","diente":"8.5","texto":"V"},"E20200102230407880":{"hallazgo":"hallazgo-movilidad-patologica","slug":"hallazgo-movilidad-patologica","tipoHallazgo":4,"evento":"E20200102230407880","diente":"8.4","texto":"M2"},"E20200102230417362":{"hallazgo":"hallazgo-fosas-fisuras-profundas","slug":"hallazgo-fosas-fisuras-profundas","tipoHallazgo":5,"evento":"E20200102230417362","diente":"8.3","texto":"FFP"},"E20200102230424871":{"hallazgo":"hallazgo-piesa-dentaria-ectopica","slug":"hallazgo-piesa-dentaria-ectopica","tipoHallazgo":5,"evento":"E20200102230424871","diente":"8.2","texto":"E"},"E20200102230430579":{"hallazgo":"hallazgo-macrodoncia","slug":"hallazgo-macrodoncia","tipoHallazgo":5,"evento":"E20200102230430579","diente":"8.1","texto":"MAC"},"E20200102230434444":{"hallazgo":"hallazgo-microdoncia","slug":"hallazgo-microdoncia","tipoHallazgo":5,"evento":"E20200102230434444","diente":"7.1","texto":"MIC"},"E20200102230441396":{"hallazgo":"hallazgo-impactacion","slug":"hallazgo-impactacion","tipoHallazgo":5,"evento":"E20200102230441396","diente":"7.2","texto":"I"}},"datos":{"individual":{"4.8":{"hallazgo-caries":{"distal":{"evento":"E20200102230141972","nombreHallazgo":"Lesión de caries dental","slug":"hallazgo-caries","pos":"CD","nompos":"distal","tipo":"MB","nomtipo":"Mancha Blanca"}}},"4.7":{"hallazgo-defectos-del-esmalte":{"distal":{"evento":"E20200102230155590","nombreHallazgo":"Defectos de desarrollo del esmalte","slug":"hallazgo-defectos-del-esmalte","pos":"CD","nompos":"distal","tipo":"Fluorosis","nomtipo":"Fluorosis"}}},"4.6":{"hallazgo-restauracion-definitiva":{"distal":{"evento":"E20200102230209309","nombreHallazgo":"Restauracion definitiva","slug":"hallazgo-restauracion-definitiva","pos":"CD","nompos":"distal","tipo":"IV","nomtipo":"Ionónedo de vidrio","estado":"bueno"}}},"4.5":{"hallazgo-restauracion-definitiva":{"distal":{"evento":"E20200102230221903","nombreHallazgo":"Restauracion definitiva malo","slug":"hallazgo-restauracion-definitiva","pos":"CD","nompos":"distal","tipo":"IV","nomtipo":"Ionónedo de vidrio","estado":"malo"}}},"4.4":{"hallazgo-restauracion-temporal":{"vestibular":{"evento":"E20200102230245233","nombreHallazgo":"hallazgo-restauracion-temporal","slug":"hallazgo-restauracion-temporal","pos":"VE","nompos":"vestibular"}}},"4.3":{"hallazgo-remanente-radicular":{"evento":"E20200102230255532","nombreHallazgo":"hallazgo-remanente-radicular","slug":"hallazgo-remanente-radicular","texto":"RR"}},"4.2":{"hallazgo-pieza-dentaria-ausente":{"evento":"E20200102230310863","nombreHallazgo":"Pieza dentaria ausente","slug":"hallazgo-pieza-dentaria-ausente","texto":"DEX"}},"4.1":{"hallazgo-corona":{"evento":"E20200102230323450","nombreHallazgo":"Corona","slug":"hallazgo-corona","estado":"bueno","texto":"CV"}},"3.1":{"hallazgo-corona":{"evento":"E20200102230330910","nombreHallazgo":"Corona malo","slug":"hallazgo-corona","estado":"malo","texto":"CF"}},"3.2":{"hallazgo-corona-temporal":{"evento":"E20200102230335125","nombreHallazgo":"hallazgo-corona-temporal","slug":"hallazgo-corona-temporal","texto":"CT"}},"8.5":{"hallazgo-posicion-dentaria":{"evento":"E20200102230355623","nombreHallazgo":"Posicion Dentaria","slug":"hallazgo-posicion-dentaria","texto":"V"}},"8.4":{"hallazgo-movilidad-patologica":{"evento":"E20200102230407880","nombreHallazgo":"Movilidad patologica","slug":"hallazgo-movilidad-patologica","texto":"M2"}},"8.3":{"hallazgo-fosas-fisuras-profundas":{"evento":"E20200102230417362","nombreHallazgo":"hallazgo-fosas-fisuras-profundas","slug":"hallazgo-fosas-fisuras-profundas","texto":"FFP"}},"8.2":{"hallazgo-piesa-dentaria-ectopica":{"evento":"E20200102230424871","nombreHallazgo":"hallazgo-piesa-dentaria-ectopica","slug":"hallazgo-piesa-dentaria-ectopica","texto":"E"}},"8.1":{"hallazgo-macrodoncia":{"evento":"E20200102230430579","nombreHallazgo":"hallazgo-macrodoncia","slug":"hallazgo-macrodoncia","texto":"MAC"}},"7.1":{"hallazgo-microdoncia":{"evento":"E20200102230434444","nombreHallazgo":"hallazgo-microdoncia","slug":"hallazgo-microdoncia","texto":"MIC"}},"7.2":{"hallazgo-impactacion":{"evento":"E20200102230441396","nombreHallazgo":"hallazgo-impactacion","slug":"hallazgo-impactacion","texto":"I"}}},"grupal":{}},"datosVersion":{"version":"v1.0"}}'
 
-    console.log(data,'data');
+    // var data = $("#id_odontograma_especificaciones").val();
+    var grupal = {}, ev = "", hl = "";
     dOdont.setJsonData(data);
-    data = Object.assign({},dOdont.data.datos.individual);
+    if ((typeof dOdont["data"] === "object") &&
+      (typeof dOdont["data"]["datos"] === "object") &&
+      (typeof dOdont["data"]["datos"]["individual"] === "object")) {
+      data = Object.assign({}, dOdont.data.datos.individual);
+    } else {
+      data = Object.assign({});
+    }
+    if (typeof dOdont.data.datos.grupal === "object") {
+      grupal = Object.assign({}, dOdont.data.datos.grupal);
+    }
+    $(".cont-diente .svg").each(function (index, value) {
+      var idpieza = $(value).attr("data-pieza");
+      for (item in data) {
+        if (idpieza == item) {
+          $(value).addClass("seleccionado");
+          var hallazgo = data[item];
+          if (hallazgo) {
+            for (itemHallaz in hallazgo) {
+              var dataHallazgo = hallazgo[itemHallaz];
+              var auxSlugPDHallazgo = itemHallaz;
+              if ((typeof dataHallazgo.estado === "string") &&
+                (dataHallazgo.estado === "malo")) {
+                auxSlugPDHallazgo = dataHallazgo.slug + "-malo";
+              }
+              $(value).addClass(`active-${auxSlugPDHallazgo}`);
+              if (dataHallazgo) {
+                var diente = $(value).find(".diente");
+                if (["hallazgo-pieza-dentaria-ausente", "hallazgo-remanente-radicular", "hallazgo-corona",
+                  "hallazgo-corona-temporal", "hallazgo-posicion-dentaria", "hallazgo-movilidad-patologica",
+                  "hallazgo-fosas-fisuras-profundas", "hallazgo-piesa-dentaria-ectopica",
+                  "hallazgo-macrodoncia", "hallazgo-microdoncia",
+                  "hallazgo-impactacion"].includes(itemHallaz)) {
+                  $(".box-options").find("#box-" + idpieza.replace(".", "")).find(".select-hallazgos").append(
+                    `<span class="${auxSlugPDHallazgo}">${dataHallazgo.texto}</span>`
+                  );
+                  $(".lista-hallazgo-detallado").append(
+                    `<li>
+                      <span class="nombre-hallazo">${dataHallazgo.nombreHallazgo}</span>:
+                      ${dataHallazgo.texto}, en la pieza dental <span>${idpieza} </span>
+                    </li>`
+                  );
+                }
+                for (itemDataHallaz in dataHallazgo) {
+                  var auxSlugHallazgo = itemHallaz;
+                  if ((typeof dataHallazgo[itemDataHallaz].estado === "string") &&
+                    (dataHallazgo[itemDataHallaz].estado === "malo")) {
+                    auxSlugHallazgo = itemHallaz + "-malo";
+                  }
 
-    console.log(data,'data nuevo');
+                  $(value).find('[data-pos="' + itemDataHallaz + '"]').addClass("active").addClass(auxSlugHallazgo);
+                  if ((typeof dataHallazgo[itemDataHallaz] === "object") &&
+                    (typeof dataHallazgo[itemDataHallaz]['tipo'] !== "undefined")) {
+                    $(".box-options").find("#box-" + idpieza.replace(".", "")).find(".select-hallazgos").append(
+                      `<span class="${auxSlugHallazgo}">${dataHallazgo[itemDataHallaz]["tipo"]}</span>`
+                    );
+                  }
+                  if (["hallazgo-caries", "hallazgo-defectos-del-esmalte", "hallazgo-restauracion-definitiva"].includes(itemHallaz)) {
+                    $(".lista-hallazgo-detallado").append(
+                      `<li>
+                      <span class="nombre-hallazo">${dataHallazgo[itemDataHallaz].nombreHallazgo}</span>:
+                      ${dataHallazgo[itemDataHallaz]["nomtipo"]} <span>${dataHallazgo[itemDataHallaz]["tipo"]}</span>,
+                      en la cara <span>${itemDataHallaz} ${dataHallazgo[itemDataHallaz]["pos"]} </span>,
+                      de la pieza dental <span>${idpieza} </span>
+                    </li>`
+                    );
+                  } else if (["hallazgo-restauracion-temporal"].includes(itemHallaz)) {
+                    $(".lista-hallazgo-detallado").append(
+                      `<li>
+                      <span class="nombre-hallazo">${dataHallazgo[itemDataHallaz].nombreHallazgo}</span>:
+                      en la cara <span>${itemDataHallaz} ${dataHallazgo[itemDataHallaz]["pos"]} </span>,
+                      de la pieza dental <span>${idpieza} </span>
+                    </li>`
+                    );
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      for (hallazgoFor in grupal) {
+        if (hallazgoFor === "hallazgo-edentulo-total") {
+          for (eventoFor in grupal[hallazgoFor]) {
+            if (grupal[hallazgoFor][eventoFor].diente === idpieza) {
+              $(value).parent().addClass("active-" + grupal[hallazgoFor][eventoFor].slug);
+              $(".lista-hallazgo-detallado").append(
+                `<li>
+                <span class="nombre-hallazo">${grupal[hallazgoFor][eventoFor].nombreHallazgo}</span>:
+                en la pieza dental <span>${idpieza} </span>
+              </li>`
+              );
+            }
+          }
+        }
+      }
+    });
+
+  //  $('.cont-diente .svg').each(function(index, value){
+  //    var idpieza = $(value).attr('data-pieza');  //4.8
+  //      for (item in data) {
+  //        if (idpieza == item) {
+  //          console.log(idpieza,'idpieza'); //4.8
+  //          console.log(item,'item'); // 4.8
+  //          $(value).addClass('seleccionado'); //addClass en .svg
+  //          console.log(data[item],'data [item]'); // hallazgo-caries: vestibular: {tipo: "CD", nomtipo: "Caries de la dentina", pos: "VE", nompos: "vestibular", evento: "20191219155147888", …}
+  //          var hallazgo = data[item];
+
+  //          if (hallazgo) {
+  //            for (itemHallaz in hallazgo) {
+  //              console.log(itemHallaz, 'itemHallaz'); //hallazgo-caries
+  //              var dataHallazgo = hallazgo[itemHallaz]; //vestibular: {tipo: "CD", nomtipo: "Caries de la dentina", pos: "VE", nompos: "vestibular", evento: "20191219155147888", …}
+  //              console.log(dataHallazgo,'dataHallazgo');
+  //              $(value).addClass('active-'+itemHallaz);
+
+  //              if (dataHallazgo) {
+  //                console.log(dataHallazgo,'dataHallazgo-aa');
+  //                var diente = $(value).find('.diente');
+  //                for (itemDataHallaz in dataHallazgo) {
+  //                  console.log('item Hallazgo', itemDataHallaz); //vestibular
+  //                  console.log('data Hallazgo', dataHallazgo);  //vestibular: {tipo: "CD", nomtipo: "Caries de la dentina", pos: "VE", nompos: "vestibular", evento: "20191219155147888", …}
+  //                  console.log(dataHallazgo[itemDataHallaz],'dataHallazgo[itemDataHallaz]');  //{tipo: "CE", nomtipo: "Caries del esmalte", pos: "LN", nompos: "lingual", evento: "20191219155146048", …}
+  //                  console.log(dataHallazgo[itemDataHallaz]['nombreHallazgo'],'nombre Hallazgo texto ');
+  //                  $(value).find('[data-pos="'+itemDataHallaz+'"]').addClass('active').addClass(itemHallaz);
+  //                  $('.box-options').find("#box-"+idpieza.replace('.', '')).find('.select-hallazgos').append(`<span class="${itemHallaz}">${dataHallazgo[itemDataHallaz]['tipo']}</span> </div>`);
+  //                  $('.lista-hallazgo-detallado').append(`<li> <span class="nombre-hallazo">${dataHallazgo[itemDataHallaz]['nombreHallazgo']}</span>: ${dataHallazgo[itemDataHallaz]['nomtipo']} <span>${dataHallazgo[itemDataHallaz]['tipo']}</span>, en la cara <span>${itemDataHallaz} ${dataHallazgo[itemDataHallaz]['pos']} </span>, de la pieza dental <span>${idpieza} </span></li>`);
+  //                }
+  //              }
+
+  //            }
+  //          }
+  //        }
+
+  //      }
+  //  });
 
 
-   $('.cont-diente .svg').each(function(index, value){
-     var idpieza = $(value).attr('data-pieza');  //4.8
-
-       for (item in data) {
-         if (idpieza == item) {
-           console.log(idpieza,'idpieza'); //4.8
-           console.log(item,'item'); // 4.8
-           $(value).addClass('seleccionado'); //addClass en .svg
-           console.log(data[item],'data [item]'); // hallazgo-caries: vestibular: {tipo: "CD", nomtipo: "Caries de la dentina", pos: "VE", nompos: "vestibular", evento: "20191219155147888", …}
-           var hallazgo = data[item];
-
-           if (hallazgo) {
-             for (itemHallaz in hallazgo) {
-               console.log(itemHallaz, 'itemHallaz'); //hallazgo-caries
-               var dataHallazgo = hallazgo[itemHallaz]; //vestibular: {tipo: "CD", nomtipo: "Caries de la dentina", pos: "VE", nompos: "vestibular", evento: "20191219155147888", …}
-               console.log(dataHallazgo,'dataHallazgo');
-               $(value).addClass('active-'+itemHallaz);
-
-               if (dataHallazgo) {
-                 console.log(dataHallazgo,'dataHallazgo-aa');
-                 var diente = $(value).find('.diente');
-                 for (itemDataHallaz in dataHallazgo) {
-                   console.log('item Hallazgo', itemDataHallaz); //vestibular
-                   console.log('data Hallazgo', dataHallazgo);  //vestibular: {tipo: "CD", nomtipo: "Caries de la dentina", pos: "VE", nompos: "vestibular", evento: "20191219155147888", …}
-
-                   console.log(dataHallazgo[itemDataHallaz],'dataHallazgo[itemDataHallaz]');  //{tipo: "CE", nomtipo: "Caries del esmalte", pos: "LN", nompos: "lingual", evento: "20191219155146048", …}
-                   console.log(dataHallazgo[itemDataHallaz]['nombreHallazgo'],'nombre Hallazgo texto ');
-                   $(value).find('[data-pos="'+itemDataHallaz+'"]').addClass('active').addClass(itemHallaz);
-                   $('.box-options').find("#box-"+idpieza.replace('.', '')).find('.select-hallazgos').append(`<span class="${itemHallaz}">${dataHallazgo[itemDataHallaz]['tipo']}</span> </div>`);
-                   $('.lista-hallazgo-detallado').append(`<li> <span class="nombre-hallazo">${dataHallazgo[itemDataHallaz]['nombreHallazgo']}</span>: ${dataHallazgo[itemDataHallaz]['nomtipo']} <span>${dataHallazgo[itemDataHallaz]['tipo']}</span>, en la cara <span>${itemDataHallaz} ${dataHallazgo[itemDataHallaz]['pos']} </span>, de la pieza dental <span>${idpieza} </span></li>`);
-                 }
-               }
-
-             }
-           }
-         }
-
-       }
-   });
  },
   examenPeriodontal:function() {
     var edad = 20
