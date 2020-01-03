@@ -361,21 +361,21 @@
     }
 }
 
-.hallazgo-implante-dental {
-    .diente {
-        &:hover {
-            fill: blue;
-        }
-    }
-}
+// .hallazgo-implante-dental {
+//     .diente {
+//         &:hover {
+//             fill: blue;
+//         }
+//     }
+// }
 
-.hallazgo-implante-dental-malo {
-    .diente {
-        &:hover {
-            fill: red;
-        }
-    }
-}
+// .hallazgo-implante-dental-malo {
+//     .diente {
+//         &:hover {
+//             fill: red;
+//         }
+//     }
+// }
 
 .hallazgo-corona {
     .svg {
@@ -1235,17 +1235,17 @@ svg.active-dentaria {
     }
 }
 
-.hallazgo-implante-dental{
-    &.active {
-        fill:blue;
-    }
-}
+// .hallazgo-implante-dental{
+//     &.active {
+//         fill:blue;
+//     }
+// }
 
-.hallazgo-implante-dental-malo {
-    &.active {
-        fill:red;
-    }
-}
+// .hallazgo-implante-dental-malo {
+//     &.active {
+//         fill:red;
+//     }
+// }
 
 .hallazgo-restauracion-temporal{
     &.active {

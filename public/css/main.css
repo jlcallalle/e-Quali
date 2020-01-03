@@ -547,12 +547,6 @@ body {
   stroke: red;
   stroke-width: 15px; }
 
-.hallazgo-implante-dental .diente:hover {
-  fill: blue; }
-
-.hallazgo-implante-dental-malo .diente:hover {
-  fill: red; }
-
 .hallazgo-corona .svg:hover {
   cursor: pointer; }
   .hallazgo-corona .svg:hover .contorno {
@@ -1153,12 +1147,6 @@ svg.active-dentaria {
   fill: blue; }
 
 .hallazgo-restauracion-definitiva-malo.active {
-  fill: red; }
-
-.hallazgo-implante-dental.active {
-  fill: blue; }
-
-.hallazgo-implante-dental-malo.active {
   fill: red; }
 
 .hallazgo-restauracion-temporal.active {
