@@ -21,6 +21,7 @@ var MyApp = {
       if ( piezaDentariaActual.hasClass("active-ausente")
          || piezaDentariaActual.hasClass("active-erupcion")
          || piezaDentariaActual.hasClass("active-extruida")
+         || piezaDentariaActual.hasClass("active-intruida")
          || piezaDentariaActual.hasClass("active-diastema")
          || piezaDentariaActual.hasClass("active-remanente-radicular")
          || piezaDentariaActual.hasClass("active-corona")
@@ -730,12 +731,12 @@ var MyApp = {
                           $(this).parents(".flecha-intruida").find("img").remove();
                           $(this).parents(".diastema").find("img").remove();
                           $(this).parents(".giroversion").find("img").remove();
-                          $(this).parents(".flecha-extruida").find("img").remove();
-                          $(this).parents(".svg").parent().removeClass("flecha-extruida");
-                          $(this).parents(".svg").removeClass("active-extruida"); 
+                          $(this).parents(".flecha-extruida, .flecha-intruida").find("img").remove();
+                          $(this).parents(".svg").parent().removeClass("flecha-extruida flecha-intruida");
+                          $(this).parents(".svg").removeClass("active-extruida active-intruida"); 
                       }
                   });
-                  
+
               }
           });
 
