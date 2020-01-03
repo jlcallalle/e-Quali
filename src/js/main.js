@@ -25,7 +25,8 @@ var MyApp = {
          || piezaDentariaActual.hasClass("active-diastema")
          || piezaDentariaActual.hasClass("active-remanente-radicular")
          || piezaDentariaActual.hasClass("active-corona")
-         || piezaDentariaActual.hasClass("active-corona-malo") ) {
+         || piezaDentariaActual.hasClass("active-corona-malo") 
+         || piezaDentariaActual.hasClass("active-giroversion") ) {
         return;
       }
 
@@ -87,6 +88,7 @@ var MyApp = {
       }
 
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoDiastema) ) {
+          console.log('diastema');
           $(this).parents("svg").toggleClass('active-diastema');
           var tagFlecha = '<img src="img/diastema.png">';
           $(this).parents(".cont-diente").addClass('diastema');
@@ -728,13 +730,12 @@ var MyApp = {
                           $(this).parents(".svg").parent().removeClass("active-geminacion active-transposicion active-fusion active-clavija active-edentulo-total active-supernumeraria active-protesis-total active-protesis-total-malo active-ortodontico-removible active-ortodontico-removible-malo");
                           $(this).parents(".svg").parent().removeClass("puente1 puente2 puente1-removible puente2-removible-malo active-fractura-linea-top active-fractura-linea-sub active-fractura-diagonal-izquierda active-fractura-diagonal-derecha active-fractura-diagonal-izquierda-small active-fractura-diagonal-derecha-small active-fractura-raya-izquierda ");
                           $(this).parents(".svg").find('[data-pos="oclusal"]').removeClass("disabledbutton");
-                          $(this).parents(".flecha-intruida").find("img").remove();
                           $(this).parents(".diastema").find("img").remove();
-                          $(this).parents(".giroversion").find("img").remove();
-                          $(this).parents(".flecha-extruida, .flecha-intruida").find("img").remove();
-                          $(this).parents(".svg").parent().removeClass("flecha-extruida flecha-intruida");
-                          $(this).parents(".svg").removeClass("active-extruida active-intruida"); 
-                      }
+                          
+                          $(this).parents(".flecha-extruida, .flecha-intruida, .giroversion").find("img").remove();
+                          $(this).parents(".svg").parent().removeClass("flecha-extruida flecha-intruida giroversion");
+                          $(this).parents(".svg").removeClass("active-extruida active-intruida active-giroversion"); 
+                      } 
                   });
 
               }
