@@ -732,9 +732,10 @@ var MyApp = {
                           $(this).parents(".giroversion").find("img").remove();
                           $(this).parents(".flecha-extruida").find("img").remove();
                           $(this).parents(".svg").parent().removeClass("flecha-extruida");
-                          $(this).parents(".svg").removeClass("active-extruida");
+                          $(this).parents(".svg").removeClass("active-extruida"); 
                       }
                   });
+                  
               }
           });
 
