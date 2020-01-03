@@ -361,21 +361,29 @@
     }
 }
 
-// .hallazgo-implante-dental {
-//     .diente {
-//         &:hover {
-//             fill: blue;
-//         }
-//     }
-// }
+.hallazgo-implante-dental {
+    .svg {
+        &:hover {
+            cursor:pointer;
+            .contorno {
+                stroke: blue;
+                stroke-width: 10px;
+            }
+        }
+    }
+}
 
-// .hallazgo-implante-dental-malo {
-//     .diente {
-//         &:hover {
-//             fill: red;
-//         }
-//     }
-// }
+.hallazgo-implante-dental-malo {
+    .svg {
+        &:hover {
+            cursor:pointer;
+            .contorno {
+                stroke: blue;
+                stroke-width: 10px;
+            }
+        }
+    }
+}
 
 .hallazgo-corona {
     .svg {
