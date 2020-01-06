@@ -556,7 +556,7 @@ body {
 .hallazgo-implante-dental-malo .svg:hover {
   cursor: pointer; }
   .hallazgo-implante-dental-malo .svg:hover .contorno {
-    stroke: blue;
+    stroke: red;
     stroke-width: 10px; }
 
 .hallazgo-corona .svg:hover {
