@@ -47,11 +47,9 @@ var MyApp = {
 
       var nombrePosition = $(this).attr("data-pos");
       // var posOclusal = $(this).attr("data-pos").indexOf("-");
-
       // if (posOclusal > 0) {
       //   var nombrePosition = nombrePosition.slice(0,posOclusal);
       // }
-
       // console.log(nombrePosition);
 
 
@@ -471,8 +469,6 @@ var MyApp = {
               if (idBox == idParte) {
                   var piezaPosition = $(this).find(".active-last").attr("data-pos");
                   var siglaPosition = $(this).find(".active-last").attr("data-sigla");
-
-
 
                   var paramPD = {
                     slug: nombreSlug,
