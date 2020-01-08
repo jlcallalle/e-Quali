@@ -540,7 +540,6 @@ var MyApp = {
 
               }
           });
-          console.log('en remove');
           $(this).remove();
       });
 
