@@ -23,7 +23,7 @@ var MyApp = {
          || piezaDentariaActual.hasClass("active-extruida")
          || piezaDentariaActual.hasClass("active-intruida")
          || piezaDentariaActual.hasClass("active-diastema")
-         || piezaDentariaActual.hasClass("active-remanente-radicular")
+        //  || piezaDentariaActual.hasClass("active-remanente-radicular")
          || piezaDentariaActual.hasClass("active-corona")
          || piezaDentariaActual.hasClass("active-corona-malo")
          || piezaDentariaActual.hasClass("active-implante-dental")
@@ -65,8 +65,8 @@ var MyApp = {
       $(this).parents("svg").addClass("pre-seleccionado");
       $(".select-tipo").remove();
 
-      if (tipoHallazgo == listaPintado.tipoPintado5) {
-        $(this).parents("svg").addClass(nombreHallazgo);
+      if (tipoHallazgo == listaPintado.tipoPintado4 || tipoHallazgo == listaPintado.tipoPintado5) {
+        $(this).parents("svg").addClass(`active-${nombreHallazgo}`);
       }
 
       if(nombrePosition == 'oclusal') {
@@ -204,7 +204,7 @@ var MyApp = {
       }
 
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoRemanenteRadicular) ) {
-        $(this).parents("svg").toggleClass("active-remanente-radicular");
+          $(this).parents("svg").toggleClass("active-remanente-radicular");
       }
 
       countClick++;

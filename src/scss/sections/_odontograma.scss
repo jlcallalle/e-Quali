@@ -2211,16 +2211,29 @@ position:static;
     }
 }
 
-
+//desactiva evento js en estas clases
 .seleccionado {
   &.hallazgo-fosas-fisuras-profundas,
   &.hallazgo-piesa-dentaria-ectopica,
   &.hallazgo-macrodoncia,
   &.hallazgo-microdoncia,
   &.hallazgo-impactacion,
-  &.hallazgo-corona-temporal,
   &.active-edentulo-total,
+  &.hallazgo-corona-temporal,
   &.hallazgo-pieza-supernumeraria  {
+    pointer-events: none;
+  }
+
+  &.active-hallazgo-fosas-fisuras-profundas,
+  &.active-hallazgo-piesa-dentaria-ectopica,
+  &.active-hallazgo-macrodoncia,
+  &.active-hallazgo-microdoncia,
+  &.active-hallazgo-impactacion,
+  &.active-edentulo-total,
+  &.active-hallazgo-corona-temporal,
+  &.active-hallazgo-pieza-supernumeraria,
+  &.active-hallazgo-movilidad-patologica,
+  &.active-hallazgo-remanente-radicular {
     pointer-events: none;
   }
 }

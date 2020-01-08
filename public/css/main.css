@@ -1885,7 +1885,10 @@ svg.active-dentaria {
   .fractura-estado .estados a {
     border: 1px solid gray; }
 
-.seleccionado.hallazgo-fosas-fisuras-profundas, .seleccionado.hallazgo-piesa-dentaria-ectopica, .seleccionado.hallazgo-macrodoncia, .seleccionado.hallazgo-microdoncia, .seleccionado.hallazgo-impactacion, .seleccionado.hallazgo-corona-temporal, .seleccionado.active-edentulo-total, .seleccionado.hallazgo-pieza-supernumeraria {
+.seleccionado.hallazgo-fosas-fisuras-profundas, .seleccionado.hallazgo-piesa-dentaria-ectopica, .seleccionado.hallazgo-macrodoncia, .seleccionado.hallazgo-microdoncia, .seleccionado.hallazgo-impactacion, .seleccionado.active-edentulo-total, .seleccionado.hallazgo-corona-temporal, .seleccionado.hallazgo-pieza-supernumeraria {
+  pointer-events: none; }
+
+.seleccionado.active-hallazgo-fosas-fisuras-profundas, .seleccionado.active-hallazgo-piesa-dentaria-ectopica, .seleccionado.active-hallazgo-macrodoncia, .seleccionado.active-hallazgo-microdoncia, .seleccionado.active-hallazgo-impactacion, .seleccionado.active-edentulo-total, .seleccionado.active-hallazgo-corona-temporal, .seleccionado.active-hallazgo-pieza-supernumeraria, .seleccionado.active-hallazgo-movilidad-patologica, .seleccionado.active-hallazgo-remanente-radicular {
   pointer-events: none; }
 
 .active-edentulo-total .svg, .active-hallazgo-edentulo-total .svg {
