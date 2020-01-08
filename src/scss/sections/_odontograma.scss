@@ -2246,7 +2246,8 @@ position:static;
   &.active-hallazgo-movilidad-patologica,
   &.active-hallazgo-remanente-radicular,
   &.active-hallazgo-geminacion,
-  &.active-hallazgo-fusion {
+  &.active-hallazgo-fusion,
+  &.active-hallazgo-pieza-dentaria-clavija {
     pointer-events: none;
   }
 }
