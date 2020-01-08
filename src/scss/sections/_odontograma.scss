@@ -459,6 +459,7 @@
           cursor:pointer;
       }
   }
+
   .cont-diente {
     position:relative;
   }
@@ -472,6 +473,16 @@
       }
     }
   }
+
+  .cont-diente {
+    &:last-child {
+      svg {
+        pointer-events: none;
+      }
+    }
+  }
+
+
 }
 
 
@@ -2234,7 +2245,8 @@ position:static;
   &.active-hallazgo-pieza-supernumeraria,
   &.active-hallazgo-movilidad-patologica,
   &.active-hallazgo-remanente-radicular,
-  &.active-hallazgo-geminacion {
+  &.active-hallazgo-geminacion,
+  &.active-hallazgo-fusion {
     pointer-events: none;
   }
 }
