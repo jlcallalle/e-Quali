@@ -2233,7 +2233,8 @@ position:static;
   &.active-hallazgo-corona-temporal,
   &.active-hallazgo-pieza-supernumeraria,
   &.active-hallazgo-movilidad-patologica,
-  &.active-hallazgo-remanente-radicular {
+  &.active-hallazgo-remanente-radicular,
+  &.active-hallazgo-geminacion {
     pointer-events: none;
   }
 }
