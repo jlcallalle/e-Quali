@@ -522,6 +522,13 @@
       }
     }
   }
+  .cont-diente {
+    &:last-child {
+      svg {
+        pointer-events: none;
+      }
+    }
+  }
 }
 
 
@@ -1518,13 +1525,27 @@ svg.active-dentaria {
 
 
 //Erupcion
-.box-sub-adulto .seleccionado.active-erupcion,
-.box-sub-nino .seleccionado.active-erupcion  {
+// .box-sub-adulto .seleccionado.active-erupcion,
+// .box-sub-nino .seleccionado.active-erupcion  {
+//     background-image: url(../img/erupcion-top.png);
+//     background-position: bottom center;
+// }
+// .seleccionado {
+//     &.active-erupcion {
+//         background-image: url(../img/erupcion-sub.png);
+//         background-repeat: no-repeat;
+//         background-position: top center;
+//         background-size: 80% 85%;
+//     }
+// }
+
+.box-sub-adulto .seleccionado.active-hallazgo-pieza-dentaria-en-erupcion,
+.box-sub-nino .seleccionado.active-hallazgo-pieza-dentaria-en-erupcion  {
     background-image: url(../img/erupcion-top.png);
     background-position: bottom center;
 }
 .seleccionado {
-    &.active-erupcion {
+    &.active-hallazgo-pieza-dentaria-en-erupcion {
         background-image: url(../img/erupcion-sub.png);
         background-repeat: no-repeat;
         background-position: top center;
@@ -2247,7 +2268,8 @@ position:static;
   &.active-hallazgo-remanente-radicular,
   &.active-hallazgo-geminacion,
   &.active-hallazgo-fusion,
-  &.active-hallazgo-pieza-dentaria-clavija {
+  &.active-hallazgo-pieza-dentaria-clavija,
+  &.active-hallazgo-pieza-dentaria-en-erupcion  {
     pointer-events: none;
   }
 }

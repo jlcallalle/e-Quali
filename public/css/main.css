@@ -622,6 +622,9 @@ body {
 .hallazgo-pieza-supernumeraria .box-lista-dientes-sub .cont-diente:hover:before {
   top: 67px; }
 
+.hallazgo-pieza-supernumeraria .cont-diente:last-child svg {
+  pointer-events: none; }
+
 .active-supernumeraria {
   position: relative; }
   .active-supernumeraria:before {
@@ -1299,12 +1302,12 @@ svg.active-dentaria {
   .box-lista-dientes-sub .active-hallazgo-pieza-dentaria-ausente {
     background-position: top center; }
 
-.box-sub-adulto .seleccionado.active-erupcion,
-.box-sub-nino .seleccionado.active-erupcion {
+.box-sub-adulto .seleccionado.active-hallazgo-pieza-dentaria-en-erupcion,
+.box-sub-nino .seleccionado.active-hallazgo-pieza-dentaria-en-erupcion {
   background-image: url(../img/erupcion-top.png);
   background-position: bottom center; }
 
-.seleccionado.active-erupcion {
+.seleccionado.active-hallazgo-pieza-dentaria-en-erupcion {
   background-image: url(../img/erupcion-sub.png);
   background-repeat: no-repeat;
   background-position: top center;
@@ -1891,7 +1894,7 @@ svg.active-dentaria {
 .seleccionado.hallazgo-fosas-fisuras-profundas, .seleccionado.hallazgo-piesa-dentaria-ectopica, .seleccionado.hallazgo-macrodoncia, .seleccionado.hallazgo-microdoncia, .seleccionado.hallazgo-impactacion, .seleccionado.active-edentulo-total, .seleccionado.hallazgo-corona-temporal, .seleccionado.hallazgo-pieza-supernumeraria {
   pointer-events: none; }
 
-.seleccionado.active-hallazgo-fosas-fisuras-profundas, .seleccionado.active-hallazgo-piesa-dentaria-ectopica, .seleccionado.active-hallazgo-macrodoncia, .seleccionado.active-hallazgo-microdoncia, .seleccionado.active-hallazgo-impactacion, .seleccionado.active-edentulo-total, .seleccionado.active-hallazgo-corona-temporal, .seleccionado.active-hallazgo-pieza-supernumeraria, .seleccionado.active-hallazgo-movilidad-patologica, .seleccionado.active-hallazgo-remanente-radicular, .seleccionado.active-hallazgo-geminacion, .seleccionado.active-hallazgo-fusion, .seleccionado.active-hallazgo-pieza-dentaria-clavija {
+.seleccionado.active-hallazgo-fosas-fisuras-profundas, .seleccionado.active-hallazgo-piesa-dentaria-ectopica, .seleccionado.active-hallazgo-macrodoncia, .seleccionado.active-hallazgo-microdoncia, .seleccionado.active-hallazgo-impactacion, .seleccionado.active-edentulo-total, .seleccionado.active-hallazgo-corona-temporal, .seleccionado.active-hallazgo-pieza-supernumeraria, .seleccionado.active-hallazgo-movilidad-patologica, .seleccionado.active-hallazgo-remanente-radicular, .seleccionado.active-hallazgo-geminacion, .seleccionado.active-hallazgo-fusion, .seleccionado.active-hallazgo-pieza-dentaria-clavija, .seleccionado.active-hallazgo-pieza-dentaria-en-erupcion {
   pointer-events: none; }
 
 .active-edentulo-total .svg, .active-hallazgo-edentulo-total .svg {
