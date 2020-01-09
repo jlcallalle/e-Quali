@@ -105,7 +105,7 @@ var MyApp = {
       }
 
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoGiroversion) ) {
-          $(this).parents("svg").toggleClass('active-giroversion');
+          // $(this).parents("svg").toggleClass('active-giroversion');
           var tagFlecha = '<img src="img/giroversion.png">';
           $(this).parents(".cont-diente").addClass('giroversion');
           $(this).parents(".cont-diente").append(tagFlecha)
@@ -751,7 +751,7 @@ var MyApp = {
                           $(this).parents(".diastema").find("img").remove();
                           $(this).parents(".flecha-extruida, .flecha-intruida, .giroversion").find("img").remove();
                           $(this).parents(".svg").parent().removeClass("flecha-extruida flecha-intruida giroversion diastema");
-                          $(this).parents(".svg").removeClass("active-extruida active-intruida active-giroversion active-diastema active-hallazgo-implante-dental active-hallazgo-implante-dental-malo active-hallazgo-transposicion active-hallazgo-fractura active-hallazgo-fractura-linea-sub active-hallazgo-fractura-diagonal-izquierda active-hallazgo-fractura-diagonal-derecha active-hallazgo-fractura-diagonal-izquierda-small active-hallazgo-fractura-diagonal-derecha-small active-hallazgo-fractura-raya-izquierda active-hallazgo-fractura-raya-derecha");
+                          $(this).parents(".svg").removeClass("active-extruida active-intruida active-hallazgo-giroversion active-diastema active-hallazgo-implante-dental active-hallazgo-implante-dental-malo active-hallazgo-transposicion active-hallazgo-fractura active-hallazgo-fractura-linea-sub active-hallazgo-fractura-diagonal-izquierda active-hallazgo-fractura-diagonal-derecha active-hallazgo-fractura-diagonal-izquierda-small active-hallazgo-fractura-diagonal-derecha-small active-hallazgo-fractura-raya-izquierda active-hallazgo-fractura-raya-derecha");
                       }
                   });
 

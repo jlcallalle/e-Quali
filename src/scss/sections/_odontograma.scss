@@ -252,6 +252,9 @@
     margin:45px 0 20px;
 }
 
+.box-lista-dientes-sub {
+  margin-bottom: 45px;
+}
 
 .bimg {
     display: flex;
@@ -856,7 +859,9 @@ svg.active-dentaria {
     background-size: 60px;
     z-index: 10;;
     .box-lista-dientes-sub & {
-      top: -26px;
+      // top: -26px;
+      top: 75px;
+      transform: rotate(180deg);
     }
   }
   &.incisivos  {
@@ -869,6 +874,7 @@ svg.active-dentaria {
       display:none;
     }
   }
+
 }
 
 //hallazgo fracturas
@@ -2291,7 +2297,8 @@ position:static;
   &.active-hallazgo-fractura-diagonal-derecha-small,
   &.active-hallazgo-fractura-raya-izquierda,
   &.active-hallazgo-fractura-raya-derecha,
-  &.active-hallazgo-protesis-total  {
+  &.active-hallazgo-protesis-total,
+  &.active-hallazgo-giroversion  {
     pointer-events: none;
   }
 }
