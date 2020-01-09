@@ -384,7 +384,7 @@ var MyApp = {
         // mostrarCPOCeo();
         lista.append(` en la cara ${nombrePosition} <span> ${siglaPosition}</span> `);
       } else if (tipoHallazgo === listaPintado.tipoPintado8) {
-        lista.append(`<span> ${tipoEdentulo}</span> `);
+        // lista.append(`<span> ${tipoEdentulo}</span> `);
         var nombreSlug = contenidoOdontograma.attr("data-name");
         var piezaPosition = nombrePosition;
         var paramPD = {
