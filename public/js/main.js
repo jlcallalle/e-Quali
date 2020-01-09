@@ -751,7 +751,7 @@ var MyApp = {
                           $(this).parents(".diastema").find("img").remove();
                           $(this).parents(".flecha-extruida, .flecha-intruida, .giroversion").find("img").remove();
                           $(this).parents(".svg").parent().removeClass("flecha-extruida flecha-intruida giroversion diastema");
-                          $(this).parents(".svg").removeClass("active-extruida active-intruida active-giroversion active-diastema active-hallazgo-implante-dental active-hallazgo-implante-dental-malo");
+                          $(this).parents(".svg").removeClass("active-extruida active-intruida active-giroversion active-diastema active-hallazgo-implante-dental active-hallazgo-implante-dental-malo active-hallazgo-transposicion");
                       }
                   });
 

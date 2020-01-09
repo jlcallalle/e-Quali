@@ -2282,7 +2282,10 @@ position:static;
   &.active-hallazgo-pieza-dentaria-en-erupcion,
   &.active-hallazgo-implante-dental,
   &.active-hallazgo-implante-dental-malo,
-  &.active-hallazgo-transposicion  {
+  &.active-hallazgo-transposicion,
+  &.active-hallazgo-fractura,
+  &.active-hallazgo-fractura-linea-sub,
+  &.active-hallazgo-fractura-diagonal-izquierda  {
     pointer-events: none;
   }
 }
