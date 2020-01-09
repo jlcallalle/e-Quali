@@ -66,7 +66,7 @@ var MyApp = {
       $(".select-tipo").remove();
 
       if (tipoHallazgo == listaPintado.tipoPintado4 || tipoHallazgo == listaPintado.tipoPintado5
-         || tipoHallazgo == listaPintado.tipoPintado6) {
+         || tipoHallazgo == listaPintado.tipoPintado6 || tipoHallazgo == listaPintado.tipoPintado8) {
         $(this).parents("svg").addClass(`active-${nombreHallazgo}`);
       }
 
@@ -746,12 +746,12 @@ var MyApp = {
                           $(this).removeClass("hallazgo-caries hallazgo-defectos-del-esmalte hallazgo-restauracion-definitiva hallazgo-restauracion-definitiva-malo hallazgo-restauracion-temporal");
                           $(this).parents(".svg").removeClass("seleccionado active-ausente active-erupcion active-hallazgo-pieza-dentaria-en-erupcion active-corona active-corona-malo active-corona-temporal active-fractura active-fractura-malo active-remanente-radicular active-hallazgo-fusion");
                           $(this).parents(".svg").parent().removeClass("active-geminacion active-transposicion active-fusion  active-clavija active-edentulo-total active-supernumeraria active-protesis-total active-protesis-total-malo active-ortodontico-removible active-ortodontico-removible-malo");
-                          $(this).parents(".svg").parent().removeClass("puente1 puente2 puente1-removible puente2-removible-malo active-fractura-linea-top active-fractura-linea-sub active-fractura-diagonal-izquierda active-fractura-diagonal-derecha active-fractura-diagonal-izquierda-small active-fractura-diagonal-derecha-small active-fractura-raya-izquierda ");
+                          $(this).parents(".svg").parent().removeClass("puente1 puente2 puente1-removible puente2-removible-malo active-fractura-linea-top active-fractura-linea-sub active-fractura-diagonal-izquierda active-fractura-diagonal-derecha active-fractura-diagonal-izquierda-small active-fractura-diagonal-derecha-small active-fractura-raya-izquierda active-fractura-raya-derecha");
                           $(this).parents(".svg").find('[data-pos="oclusal"]').removeClass("disabledbutton");
                           $(this).parents(".diastema").find("img").remove();
                           $(this).parents(".flecha-extruida, .flecha-intruida, .giroversion").find("img").remove();
                           $(this).parents(".svg").parent().removeClass("flecha-extruida flecha-intruida giroversion diastema");
-                          $(this).parents(".svg").removeClass("active-extruida active-intruida active-giroversion active-diastema active-hallazgo-implante-dental active-hallazgo-implante-dental-malo active-hallazgo-transposicion");
+                          $(this).parents(".svg").removeClass("active-extruida active-intruida active-giroversion active-diastema active-hallazgo-implante-dental active-hallazgo-implante-dental-malo active-hallazgo-transposicion active-hallazgo-fractura active-hallazgo-fractura-linea-sub active-hallazgo-fractura-diagonal-izquierda active-hallazgo-fractura-diagonal-derecha active-hallazgo-fractura-diagonal-izquierda-small active-hallazgo-fractura-diagonal-derecha-small active-hallazgo-fractura-raya-izquierda active-hallazgo-fractura-raya-derecha");
                       }
                   });
 

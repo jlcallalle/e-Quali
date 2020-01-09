@@ -2285,7 +2285,13 @@ position:static;
   &.active-hallazgo-transposicion,
   &.active-hallazgo-fractura,
   &.active-hallazgo-fractura-linea-sub,
-  &.active-hallazgo-fractura-diagonal-izquierda  {
+  &.active-hallazgo-fractura-diagonal-izquierda,
+  &.active-hallazgo-fractura-diagonal-derecha,
+  &.active-hallazgo-fractura-diagonal-izquierda-small,
+  &.active-hallazgo-fractura-diagonal-derecha-small,
+  &.active-hallazgo-fractura-raya-izquierda,
+  &.active-hallazgo-fractura-raya-derecha,
+  &.active-hallazgo-protesis-total  {
     pointer-events: none;
   }
 }
