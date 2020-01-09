@@ -26,8 +26,8 @@ var MyApp = {
         //  || piezaDentariaActual.hasClass("active-remanente-radicular")
          || piezaDentariaActual.hasClass("active-corona")
          || piezaDentariaActual.hasClass("active-corona-malo")
-         || piezaDentariaActual.hasClass("active-implante-dental")
-         || piezaDentariaActual.hasClass("active-implante-dental-malo")
+        //  || piezaDentariaActual.hasClass("active-implante-dental")
+        //  || piezaDentariaActual.hasClass("active-implante-dental-malo")
          || piezaDentariaActual.hasClass("active-giroversion") ) {
         return;
       }
@@ -112,13 +112,13 @@ var MyApp = {
       }
 
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoImplanteDental) ) {
-          $(this).parents("svg").addClass('active-implante-dental');
+          // $(this).parents("svg").addClass('active-implante-dental');
           $(this).parents("svg").addClass("seleccionado");
           $(this).parents("svg").removeClass("pre-seleccionado");
       }
 
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoImplanteDentalMalo) ) {
-          $(this).parents("svg").addClass('active-implante-dental-malo');
+          // $(this).parents("svg").addClass('active-implante-dental-malo');
           $(this).parents("svg").addClass("seleccionado");
           $(this).parents("svg").removeClass("pre-seleccionado");
       }
@@ -751,7 +751,7 @@ var MyApp = {
                           $(this).parents(".diastema").find("img").remove();
                           $(this).parents(".flecha-extruida, .flecha-intruida, .giroversion").find("img").remove();
                           $(this).parents(".svg").parent().removeClass("flecha-extruida flecha-intruida giroversion diastema");
-                          $(this).parents(".svg").removeClass("active-extruida active-intruida active-giroversion active-diastema active-implante-dental");
+                          $(this).parents(".svg").removeClass("active-extruida active-intruida active-giroversion active-diastema active-hallazgo-implante-dental active-hallazgo-implante-dental-malo");
                       }
                   });
 

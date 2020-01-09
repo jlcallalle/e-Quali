@@ -511,6 +511,11 @@
         }
       }
     }
+    &:last-child {
+      &:before {
+        display: none;
+      }
+    }
   }
 
   .box-lista-dientes-sub {
@@ -857,6 +862,11 @@ svg.active-dentaria {
   &.incisivos  {
     &:before {
       left: 3px;
+    }
+  }
+  &:last-child {
+    &:before {
+      display:none;
     }
   }
 }
@@ -2269,7 +2279,10 @@ position:static;
   &.active-hallazgo-geminacion,
   &.active-hallazgo-fusion,
   &.active-hallazgo-pieza-dentaria-clavija,
-  &.active-hallazgo-pieza-dentaria-en-erupcion  {
+  &.active-hallazgo-pieza-dentaria-en-erupcion,
+  &.active-hallazgo-implante-dental,
+  &.active-hallazgo-implante-dental-malo,
+  &.active-hallazgo-transposicion  {
     pointer-events: none;
   }
 }
