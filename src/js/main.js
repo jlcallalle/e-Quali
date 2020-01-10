@@ -18,14 +18,13 @@ var MyApp = {
         return;
       }
       var piezaDentariaActual = $(this).parents(".svg");
-      if ( piezaDentariaActual.hasClass("active-ausente")
-         || piezaDentariaActual.hasClass("active-erupcion")
+      if ( piezaDentariaActual.hasClass("active-erupcion")
          || piezaDentariaActual.hasClass("active-extruida")
          || piezaDentariaActual.hasClass("active-intruida")
          || piezaDentariaActual.hasClass("active-diastema")
         //  || piezaDentariaActual.hasClass("active-remanente-radicular")
-         || piezaDentariaActual.hasClass("active-corona")
-         || piezaDentariaActual.hasClass("active-corona-malo")
+        //  || piezaDentariaActual.hasClass("active-corona")
+        //  || piezaDentariaActual.hasClass("active-corona-malo")
         //  || piezaDentariaActual.hasClass("active-implante-dental")
         //  || piezaDentariaActual.hasClass("active-implante-dental-malo")
          || piezaDentariaActual.hasClass("active-giroversion") ) {
@@ -35,8 +34,8 @@ var MyApp = {
       var piezasDentariasTotal = $(".contenido-polygon").find(".svg");
       piezasDentariasTotal.removeClass("pre-seleccionado");
       piezasDentariasTotal.not(".seleccionado").find(".diente").removeClass("active");
-      piezasDentariasTotal.not(".seleccionado").removeClass("active-corona active-corona-malo");
-      piezasDentariasTotal.not(".seleccionado").removeClass("active-ausente");
+      piezasDentariasTotal.not(".seleccionado").removeClass("active-hallazgo-corona active-hallazgo-corona-malo active-hallazgo-corona-temporal ");
+      piezasDentariasTotal.not(".seleccionado").removeClass("active-hallazgo-pieza-dentaria-ausente");
 
       var contenidoOdontograma = $(this).parents(".contenido-odontograma");
       var idHallazgo =  contenidoOdontograma.attr("data-id");
@@ -76,7 +75,7 @@ var MyApp = {
       }
 
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoDienteAusente) ) {
-          $(this).parents("svg").toggleClass('active-ausente');
+          // $(this).parents("svg").toggleClass('active-ausente');
       }
 
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoDienteErupcion) ) {
@@ -124,15 +123,15 @@ var MyApp = {
       }
 
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoCorona) ) {
-          $(this).parents("svg").toggleClass("active-corona");
+          // $(this).parents("svg").toggleClass("active-corona");
       }
 
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoCoronaMalo) ) {
-          $(this).parents("svg").toggleClass("active-corona-malo");
+          // $(this).parents("svg").toggleClass("active-corona-malo");
       }
 
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoCoronaTemporal) ) {
-          $(this).parents("svg").toggleClass("active-corona-temporal");
+          // $(this).parents("svg").toggleClass("active-corona-temporal");
       }
 
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoGeminacion) ) {
@@ -748,7 +747,7 @@ var MyApp = {
                       if (caraLista == caraDiente) {
                           $(this).removeClass("active");
                           $(this).removeClass("hallazgo-caries hallazgo-defectos-del-esmalte hallazgo-restauracion-definitiva hallazgo-restauracion-definitiva-malo hallazgo-restauracion-temporal");
-                          $(this).parents(".svg").removeClass("seleccionado active-ausente active-erupcion active-hallazgo-pieza-dentaria-en-erupcion active-corona active-corona-malo active-corona-temporal active-fractura active-fractura-malo active-remanente-radicular active-hallazgo-fusion");
+                          $(this).parents(".svg").removeClass("seleccionado  active-erupcion active-hallazgo-pieza-dentaria-en-erupcion active-corona active-corona-malo active-hallazgo-corona-temporal active-fractura active-fractura-malo active-remanente-radicular active-hallazgo-fusion  active-hallazgo-corona-temporal active-hallazgo-corona  active-hallazgo-corona-malo active-hallazgo-pieza-dentaria-ausente");
                           $(this).parents(".svg").parent().removeClass("active-geminacion active-transposicion active-fusion  active-clavija active-edentulo-total active-supernumeraria active-protesis-total active-protesis-total-malo active-ortodontico-removible active-ortodontico-removible-malo");
                           $(this).parents(".svg").parent().removeClass("puente1 puente2 puente1-removible puente2-removible-malo active-fractura-linea-top active-fractura-linea-sub active-fractura-diagonal-izquierda active-fractura-diagonal-derecha active-fractura-diagonal-izquierda-small active-fractura-diagonal-derecha-small active-fractura-raya-izquierda active-fractura-raya-derecha");
                           $(this).parents(".svg").find('[data-pos="oclusal"]').removeClass("disabledbutton");

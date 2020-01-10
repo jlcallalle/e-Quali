@@ -449,7 +449,7 @@
       .cont-diente {
         &:hover {
           &:before {
-            top: 78px;
+            top: 101px;
           }
         }
       }
@@ -471,7 +471,7 @@
     .cont-diente {
       &:hover {
         &:before {
-          top: 78px;
+          top: 103px;
         }
       }
     }
@@ -625,7 +625,7 @@
     position: absolute;
     left: 15px;
     .box-lista-dientes-sub & {
-      top: 78px;
+      top: 101px;
     }
   }
   &.incisivos  {
@@ -652,7 +652,7 @@
     background-size: contain;
 
     .box-lista-dientes-sub & {
-      top: 71px;
+      top: 98px;
     }
   }
   &.incisivos  {
@@ -677,7 +677,7 @@
     position: absolute;
     left: 10px;
     .box-lista-dientes-sub & {
-      top: 78px;
+      top: 103px;
     }
   }
   &:after {
@@ -691,7 +691,7 @@
     position: absolute;
     left: 50px;
     .box-lista-dientes-sub & {
-      top: 78px;
+      top: 103px;
     }
   }
   &.incisivos  {
@@ -1452,7 +1452,7 @@ svg.active-dentaria {
       .cont-diente {
         &:hover {
           &:before {
-            top: 71px;
+            top: 98px;
           }
         }
       }
@@ -2298,7 +2298,11 @@ position:static;
   &.active-hallazgo-fractura-raya-izquierda,
   &.active-hallazgo-fractura-raya-derecha,
   &.active-hallazgo-protesis-total,
-  &.active-hallazgo-giroversion  {
+  &.active-hallazgo-giroversion,
+  &.active-hallazgo-corona,
+  &.active-hallazgo-corona-malo,
+  &.active-hallazgo-corona-temporal,
+  &.active-hallazgo-pieza-dentaria-ausente {
     pointer-events: none;
   }
 }

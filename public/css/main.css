@@ -592,7 +592,7 @@ body {
     left: 8px; }
 
 .hallazgo-geminacion .box-lista-dientes-sub .cont-diente:hover:before {
-  top: 78px; }
+  top: 101px; }
 
 .hallazgo-fusion .svg:hover {
   cursor: pointer; }
@@ -601,7 +601,7 @@ body {
   position: relative; }
 
 .hallazgo-fusion .box-lista-dientes-sub .cont-diente:hover:before {
-  top: 78px; }
+  top: 103px; }
 
 .hallazgo-fusion .cont-diente:last-child svg {
   pointer-events: none; }
@@ -691,7 +691,7 @@ body {
     position: absolute;
     left: 15px; }
     .box-lista-dientes-sub .active-geminacion:before {
-      top: 78px; }
+      top: 101px; }
   .active-geminacion.incisivos:before {
     left: 8px; }
 
@@ -710,7 +710,7 @@ body {
     background-position: top center;
     background-size: contain; }
     .box-lista-dientes-sub .active-clavija:before {
-      top: 71px; }
+      top: 98px; }
   .active-clavija.incisivos:before {
     left: 3px; }
 
@@ -727,7 +727,7 @@ body {
     position: absolute;
     left: 10px; }
     .box-lista-dientes-sub .active-fusion:before {
-      top: 78px; }
+      top: 103px; }
   .active-fusion:after {
     content: '';
     width: 54px;
@@ -739,7 +739,7 @@ body {
     position: absolute;
     left: 50px; }
     .box-lista-dientes-sub .active-fusion:after {
-      top: 78px; }
+      top: 103px; }
   .active-fusion.incisivos:before {
     left: 43px; }
   .active-fusion.incisivos:after {
@@ -1261,7 +1261,7 @@ svg.active-dentaria {
     left: 3px; }
 
 .hallazgo-pieza-dentaria-clavija .box-lista-dientes-sub .cont-diente:hover:before {
-  top: 71px; }
+  top: 98px; }
 
 .hallazgo-diastema .svg:hover {
   cursor: pointer;
@@ -1903,7 +1903,7 @@ svg.active-dentaria {
 .seleccionado.hallazgo-fosas-fisuras-profundas, .seleccionado.hallazgo-piesa-dentaria-ectopica, .seleccionado.hallazgo-macrodoncia, .seleccionado.hallazgo-microdoncia, .seleccionado.hallazgo-impactacion, .seleccionado.active-edentulo-total, .seleccionado.hallazgo-corona-temporal, .seleccionado.hallazgo-pieza-supernumeraria {
   pointer-events: none; }
 
-.seleccionado.active-hallazgo-fosas-fisuras-profundas, .seleccionado.active-hallazgo-piesa-dentaria-ectopica, .seleccionado.active-hallazgo-macrodoncia, .seleccionado.active-hallazgo-microdoncia, .seleccionado.active-hallazgo-impactacion, .seleccionado.active-edentulo-total, .seleccionado.active-hallazgo-corona-temporal, .seleccionado.active-hallazgo-pieza-supernumeraria, .seleccionado.active-hallazgo-movilidad-patologica, .seleccionado.active-hallazgo-remanente-radicular, .seleccionado.active-hallazgo-geminacion, .seleccionado.active-hallazgo-fusion, .seleccionado.active-hallazgo-pieza-dentaria-clavija, .seleccionado.active-hallazgo-pieza-dentaria-en-erupcion, .seleccionado.active-hallazgo-implante-dental, .seleccionado.active-hallazgo-implante-dental-malo, .seleccionado.active-hallazgo-transposicion, .seleccionado.active-hallazgo-fractura, .seleccionado.active-hallazgo-fractura-linea-sub, .seleccionado.active-hallazgo-fractura-diagonal-izquierda, .seleccionado.active-hallazgo-fractura-diagonal-derecha, .seleccionado.active-hallazgo-fractura-diagonal-izquierda-small, .seleccionado.active-hallazgo-fractura-diagonal-derecha-small, .seleccionado.active-hallazgo-fractura-raya-izquierda, .seleccionado.active-hallazgo-fractura-raya-derecha, .seleccionado.active-hallazgo-protesis-total, .seleccionado.active-hallazgo-giroversion {
+.seleccionado.active-hallazgo-fosas-fisuras-profundas, .seleccionado.active-hallazgo-piesa-dentaria-ectopica, .seleccionado.active-hallazgo-macrodoncia, .seleccionado.active-hallazgo-microdoncia, .seleccionado.active-hallazgo-impactacion, .seleccionado.active-edentulo-total, .seleccionado.active-hallazgo-corona-temporal, .seleccionado.active-hallazgo-pieza-supernumeraria, .seleccionado.active-hallazgo-movilidad-patologica, .seleccionado.active-hallazgo-remanente-radicular, .seleccionado.active-hallazgo-geminacion, .seleccionado.active-hallazgo-fusion, .seleccionado.active-hallazgo-pieza-dentaria-clavija, .seleccionado.active-hallazgo-pieza-dentaria-en-erupcion, .seleccionado.active-hallazgo-implante-dental, .seleccionado.active-hallazgo-implante-dental-malo, .seleccionado.active-hallazgo-transposicion, .seleccionado.active-hallazgo-fractura, .seleccionado.active-hallazgo-fractura-linea-sub, .seleccionado.active-hallazgo-fractura-diagonal-izquierda, .seleccionado.active-hallazgo-fractura-diagonal-derecha, .seleccionado.active-hallazgo-fractura-diagonal-izquierda-small, .seleccionado.active-hallazgo-fractura-diagonal-derecha-small, .seleccionado.active-hallazgo-fractura-raya-izquierda, .seleccionado.active-hallazgo-fractura-raya-derecha, .seleccionado.active-hallazgo-protesis-total, .seleccionado.active-hallazgo-giroversion, .seleccionado.active-hallazgo-corona, .seleccionado.active-hallazgo-corona-malo, .seleccionado.active-hallazgo-corona-temporal, .seleccionado.active-hallazgo-pieza-dentaria-ausente {
   pointer-events: none; }
 
 .active-edentulo-total .svg, .active-hallazgo-edentulo-total .svg {
