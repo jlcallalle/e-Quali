@@ -2302,7 +2302,9 @@ position:static;
   &.active-hallazgo-corona,
   &.active-hallazgo-corona-malo,
   &.active-hallazgo-corona-temporal,
-  &.active-hallazgo-pieza-dentaria-ausente {
+  &.active-hallazgo-pieza-dentaria-ausente,
+  &.active-hallazgo-ortodontico-removible,
+  &.active-hallazgo-ortodontico-removible-malo {
     pointer-events: none;
   }
 }
