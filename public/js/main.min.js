@@ -65,7 +65,8 @@ var MyApp = {
       $(".select-tipo").remove();
 
       if (tipoHallazgo == listaPintado.tipoPintado4 || tipoHallazgo == listaPintado.tipoPintado5
-         || tipoHallazgo == listaPintado.tipoPintado6 || tipoHallazgo == listaPintado.tipoPintado8) {
+         || tipoHallazgo == listaPintado.tipoPintado6 || tipoHallazgo == listaPintado.tipoPintado8
+         || tipoHallazgo == listaPintado.tipoPintado9) {
         $(this).parents("svg").addClass(`active-${nombreHallazgo}`);
       }
 
@@ -243,18 +244,30 @@ var MyApp = {
         }
       }
 
-      countClickRemovible++;
+      //PROTESIS REMOVIBLE
+      var piezaDiente =  $(this).parents("svg").attr("data-pieza");
+      var numeroDiente = parseFloat(piezaDiente);
+      // console.log(numeroDiente);
+
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoProtesisRemovible) ) {
+          countClickRemovible++;
+
           if(countClickRemovible=='1'){
+            console.log(countClickRemovible,'state');
             $(this).parents("svg").parent().toggleClass('puente1-removible');
+
           } else if (countClickRemovible=='2') {
+            console.log(countClickRemovible,'state');
             countClickRemovible = 0;
-            $(this).parents("svg").parent().toggleClass('puente2-removible');
+            $(this).parents("svg").parent().toggleClass('puente2-removible'); //crea un hack efecto, con fondo blacno para ocultar linea
             $(this).parents("svg").parent().addClass('seleccionado');
             $(this).parents("svg").parent().parent().find('.puente1-removible').addClass('seleccionado');
           }
       }
 
+
+
+      //PROTESIS REMOVIBLE MALO
       countClickRemovibleMalo++;
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoProtesisRemovibleMalo) ) {
           if(countClickRemovibleMalo=='1'){
@@ -428,6 +441,13 @@ var MyApp = {
         || tipoHallazgo === listaPintado.tipoPintado6
         || tipoHallazgo === listaPintado.tipoPintado7
         || tipoHallazgo === listaPintado.tipoPintado8 ) {
+          $(this).parents("svg").addClass("seleccionado");
+          $(this).parents("svg").removeClass("pre-seleccionado");
+          $(".lista-hallazgo-detallado").append(lista);
+      }
+
+      //PUENTE
+      if (tipoHallazgo === listaPintado.tipoPintado9 ) {
           $(this).parents("svg").addClass("seleccionado");
           $(this).parents("svg").removeClass("pre-seleccionado");
           $(".lista-hallazgo-detallado").append(lista);

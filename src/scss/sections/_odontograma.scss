@@ -2040,6 +2040,10 @@ position:static;
     width: 100%;
     position: absolute;
     top: -12px;
+
+    .box-lista-dientes-sub & {
+      top: 90px;
+    }
   }
   &:before {
     content: '';
@@ -2049,6 +2053,10 @@ position:static;
     top: -18px;
     background: blue;
     z-index: 10;
+
+    .box-lista-dientes-sub & {
+      top: 98px;
+    }
   }
 
   .contorno {
@@ -2070,6 +2078,9 @@ position:static;
     width: 100%;
     position: absolute;
     top: -12px;
+    .box-lista-dientes-sub & {
+      top: 90px;
+    }
   }
   &:before {
     content: '';
@@ -2079,6 +2090,9 @@ position:static;
     top: -20px;
     background: white;
     z-index: 10;
+    .box-lista-dientes-sub & {
+      top: 98px;
+    }
   }
 }
 
@@ -2304,7 +2318,11 @@ position:static;
   &.active-hallazgo-corona-temporal,
   &.active-hallazgo-pieza-dentaria-ausente,
   &.active-hallazgo-ortodontico-removible,
-  &.active-hallazgo-ortodontico-removible-malo {
+  &.active-hallazgo-ortodontico-removible-malo,
+  &.active-hallazgo-protesis-removible,
+  &.active-hallazgo-protesis-removible-malo,
+  &.puente1-removible,
+  &.puente2-removible {
     pointer-events: none;
   }
 }
