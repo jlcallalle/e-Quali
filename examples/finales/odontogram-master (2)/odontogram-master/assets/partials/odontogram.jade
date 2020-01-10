@@ -1,0 +1,11 @@
+.odontogram
+	.row
+		.quadrant.col-xs-6(v-for="(quadrant, index) in odontogram" v-bind:data-quadrant="index")
+			h3.quadrant__title {{quadrant.id}}
+			.quadrant__tooth(v-for="tooth in quadrant.teeth" v-bind:data-id="tooth.id" v-bind:class="{ 'quadrant__tooth--notPresent':!tooth.isPresent }")
+				a(href="#" class="quadrant__tooth--top" data-position="top" v-bind:data-state="tooth.top" v-on:click="setStateTooth")
+				a(href="#" class="quadrant__tooth--center" data-position="center" v-bind:data-state="tooth.center" v-on:click="setStateTooth")
+				a(href="#" class="quadrant__tooth--left" data-position="left" v-bind:data-state="tooth.left" v-on:click="setStateTooth")
+				a(href="#" class="quadrant__tooth--right" data-position="right" v-bind:data-state="tooth.right" v-on:click="setStateTooth")
+				a(href="#" class="quadrant__tooth--bottom" data-position="bottom" v-bind:data-state="tooth.bottom" v-on:click="setStateTooth")
+			

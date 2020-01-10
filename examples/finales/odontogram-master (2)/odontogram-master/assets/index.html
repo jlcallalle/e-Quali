@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link rel="icon" type="image/ico" href="#">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Odontogram</title>
+    <noscript>
+      <h1>Javascript needs to be enabled in your browser</h1>
+    </noscript>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <nav class="row">
+        <div class="col-xs-12">
+          <ul class="navigation">
+            <li class="navigation__item"></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="odontogram">
+            <div class="row">
+              <div v-for="(quadrant, index) in odontogram" v-bind:data-quadrant="index" class="quadrant col-xs-6">
+                <h3 class="quadrant__title">{{quadrant.id}}</h3>
+                <div v-for="tooth in quadrant.teeth" v-bind:data-id="tooth.id" v-bind:class="{ 'quadrant__tooth--notPresent':!tooth.isPresent }" class="quadrant__tooth"><a href="#" data-position="top" v-bind:data-state="tooth.top" v-on:click="setStateTooth" class="quadrant__tooth--top"></a><a href="#" data-position="center" v-bind:data-state="tooth.center" v-on:click="setStateTooth" class="quadrant__tooth--center"></a><a href="#" data-position="left" v-bind:data-state="tooth.left" v-on:click="setStateTooth" class="quadrant__tooth--left"></a><a href="#" data-position="right" v-bind:data-state="tooth.right" v-on:click="setStateTooth" class="quadrant__tooth--right"></a><a href="#" data-position="bottom" v-bind:data-state="tooth.bottom" v-on:click="setStateTooth" class="quadrant__tooth--bottom"></a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="editOdontogramModal" tabindex="-1" role="dialog" class="modal">
+        <div role="document" class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Editar Odontrograma</h5>
+              <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
+            </div>
+            <div class="modal-body">
+              <div class="modal-body__info"><span>Top</span>
+                <select v-model="top" data-position="top">
+                  <option value="">Select</option>
+                  <option v-for="reference in references" v-bind:value="reference.id">{{reference.name}}</option>
+                </select>
+              </div>
+              <div class="modal-body__info"><span>Bottom</span>
+                <select v-model="bottom" data-position="bottom">
+                  <option value="">Select</option>
+                  <option v-for="reference in references" v-bind:value="reference.id">{{reference.name}}</option>
+                </select>
+              </div>
+              <div class="modal-body__info"><span>Left</span>
+                <select v-model="left" data-position="left">
+                  <option value="">Select</option>
+                  <option v-for="reference in references" v-bind:value="reference.id">{{reference.name}}</option>
+                </select>
+              </div>
+              <div class="modal-body__info"><span>Right</span>
+                <select v-model="right" data-position="right">
+                  <option value="">Select</option>
+                  <option v-for="reference in references" v-bind:value="reference.id">{{reference.name}}</option>
+                </select>
+              </div>
+              <div class="modal-body__info"><span>Center</span>
+                <select v-model="center" data-position="center">
+                  <option value="">Select</option>
+                  <option v-for="reference in references" v-bind:value="reference.id">{{reference.name}}</option>
+                </select>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary">Save changes</button>
+              <button type="button" data-dismiss="modal" class="btn btn-secondary">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!--build:js js/main.min.js -->
+    <script src="js/vendor.js"></script>
+    <script src="js/util.js"></script>
+    <script src="js/components.js"></script><!-- endbuild -->
+  </body>
+</html>
