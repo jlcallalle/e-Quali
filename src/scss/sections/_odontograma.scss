@@ -2407,3 +2407,8 @@ position:static;
     margin:0 0 0 5px;
   }
 }
+
+.disabled {
+  pointer-events: none;
+  border-top:1px solid red;
+}
