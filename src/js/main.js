@@ -245,8 +245,8 @@ var MyApp = {
       }
 
       //PROTESIS REMOVIBLE
-      var piezaDiente =  $(this).parents("svg").attr("data-pieza");
-      var numeroDiente = parseFloat(piezaDiente);
+      // var piezaDiente =  $(this).parents("svg").attr("data-pieza");
+      // var numeroDiente = parseFloat(piezaDiente);
       // console.log(numeroDiente);
 
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoProtesisRemovible) ) {
@@ -255,6 +255,8 @@ var MyApp = {
           if(countClickRemovible=='1'){
             console.log(countClickRemovible,'state');
             $(this).parents("svg").parent().toggleClass('puente1-removible');
+            var valor1 =  parseFloat($(this).parents("svg").attr("data-pieza"));
+            console.log(valor1,'valor1', typeof(valor1));
 
           } else if (countClickRemovible=='2') {
             console.log(countClickRemovible,'state');
@@ -262,6 +264,11 @@ var MyApp = {
             $(this).parents("svg").parent().toggleClass('puente2-removible'); //crea un hack efecto, con fondo blacno para ocultar linea
             $(this).parents("svg").parent().addClass('seleccionado');
             $(this).parents("svg").parent().parent().find('.puente1-removible').addClass('seleccionado');
+            var valor2 =  parseFloat($(this).parents("svg").attr("data-pieza"));
+            console.log(valor2,'valor2', typeof(valor));
+
+            var recorrido = valor1 - valor2;
+            console.log(recorrido,'recorrido');
           }
       }
 
@@ -1002,5 +1009,18 @@ $(function () {
     var tipo = $(this).find("a").data('tipo');
     $(this).append(`<span class="mostrar-tipo">${tipo}</span>`);
   });
+
+  //listar
+
+  var listarPiezaDentaria = $(".page-odontograma").find(".svg");
+
+  $( listarPiezaDentaria ).each(function( index, value ) {
+      // var numeracion = index + 1;
+      // $(this).addClass('nuevo');
+      var contador = $(this).attr("data-count");
+      $(this).append(`<span class="mostrar-tipo">${contador}</span>`);
+      console.log(contador);
+  });
+
 
 });
