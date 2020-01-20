@@ -1861,7 +1861,7 @@ svg.active-dentaria {
 
 
 .puente1-fijo {
-    position:static;
+    position:relative;
     .contorno {
         stroke: blue;
         stroke-width: 10px;
@@ -1869,31 +1869,31 @@ svg.active-dentaria {
 }
 
 .seleccionado.puente1-fijo {
-  &:after {
-    content: '';
-    width: 100%;
-    display: block;
-    width: 10px;
-    height: 5px;
-    background: blue;
-    width: 100%;
-    position: absolute;
-    top: -12px;
-  }
-  &:before {
-    content: '+';
-    width: 4px;
-    color: blue;
-    height: 13px;
-    position: absolute;
-    top: -15px;
-    z-index: 10;
-    border: 1px solid;
-    width: 13px;
-    background: white;
-    line-height: 8px;
-    font-size: 16px;
-  }
+  // &:after {
+  //   content: '';
+  //   width: 100%;
+  //   display: block;
+  //   width: 10px;
+  //   height: 5px;
+  //   background: blue;
+  //   width: 100%;
+  //   position: absolute;
+  //   top: -12px;
+  // }
+  // &:before {
+  //   content: '+';
+  //   width: 4px;
+  //   color: blue;
+  //   height: 13px;
+  //   position: absolute;
+  //   top: -15px;
+  //   z-index: 10;
+  //   border: 1px solid;
+  //   width: 13px;
+  //   background: white;
+  //   line-height: 8px;
+  //   font-size: 16px;
+  // }
 
   .contorno {
       stroke: transparent;
@@ -1903,34 +1903,34 @@ svg.active-dentaria {
 
 
 .puente2-fijo {
-  position:static;
-  &:after {
-    content: '';
-    width: 100%;
-    display: block;
-    width: 10px;
-    height: 5px;
-    background: white;
-    width: 100%;
-    position: absolute;
-    top: -12px;
-  }
-  &:before {
-    content: '+';
-    width: 4px;
-    height: 13px;
-    width: 13px;
-    position: absolute;
-    top: -15px;
-    background: green;
-    z-index: 10;
-    border: 1px solid;
-    width: 13px;
-    background: white;
-    line-height: 8px;
-    font-size: 16px;
-    color: blue;
-  }
+  position:relative;
+  // &:after {
+  //   content: '';
+  //   width: 100%;
+  //   display: block;
+  //   width: 10px;
+  //   height: 5px;
+  //   background: white;
+  //   width: 100%;
+  //   position: absolute;
+  //   top: -12px;
+  // }
+  // &:before {
+  //   content: '+';
+  //   width: 4px;
+  //   height: 13px;
+  //   width: 13px;
+  //   position: absolute;
+  //   top: -15px;
+  //   background: green;
+  //   z-index: 10;
+  //   border: 1px solid;
+  //   width: 13px;
+  //   background: white;
+  //   line-height: 8px;
+  //   font-size: 16px;
+  //   color: blue;
+  // }
 }
 
 
@@ -1982,34 +1982,34 @@ svg.active-dentaria {
 
 
 .puente2-fijo-malo {
-position:static;
-&:after {
-  content: '';
-  width: 100%;
-  display: block;
-  width: 10px;
-  height: 5px;
-  background: white;
-  width: 100%;
-  position: absolute;
-  top: -12px;
-}
-&:before {
-  content: '+';
-  width: 4px;
-  height: 13px;
-  width: 13px;
-  position: absolute;
-  top: -15px;
-  background: green;
-  z-index: 10;
-  border: 1px solid;
-  width: 13px;
-  background: white;
-  line-height: 8px;
-  font-size: 16px;
-  color: red;
-}
+position:relative;
+// &:after {
+//   content: '';
+//   width: 100%;
+//   display: block;
+//   width: 10px;
+//   height: 5px;
+//   background: white;
+//   width: 100%;
+//   position: absolute;
+//   top: -12px;
+// }
+// &:before {
+//   content: '+';
+//   width: 4px;
+//   height: 13px;
+//   width: 13px;
+//   position: absolute;
+//   top: -15px;
+//   background: green;
+//   z-index: 10;
+//   border: 1px solid;
+//   width: 13px;
+//   background: white;
+//   line-height: 8px;
+//   font-size: 16px;
+//   color: red;
+// }
 }
 
 
@@ -2423,6 +2423,52 @@ position:static;
 }
 
 .puente-protesis-removible-malo {
+  background-color: red ;
+  &:before {
+    content: '';
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    top: -7px;
+    background: red;
+    z-index: 10;
+    right: 0;
+  }
+}
+
+.puente-ortodontico-fijo {
+  background-color: blue ;
+  &:before {
+    content: '+';
+    color: blue;
+    height: 13px;
+    position: absolute;
+    top: -4px;
+    z-index: 10;
+    border: 1px solid;
+    width: 13px;
+    background: white;
+    line-height: 8px;
+    font-size: 16px;
+    left: 0;
+  }
+  &:after {
+    content: '+';
+    height: 13px;
+    position: absolute;
+    top: -4px;
+    z-index: 10;
+    border: 1px solid;
+    width: 13px;
+    background: white;
+    line-height: 8px;
+    font-size: 16px;
+    color: blue;
+    right: 0;
+  }
+}
+
+.puente-ortodontico-fijo-malo {
   background-color: red ;
   &:before {
     content: '';

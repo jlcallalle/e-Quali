@@ -9,6 +9,8 @@ var countClick = 0;
 var countClickFijo = 0;
 var countClickFijoMalo = 0;
 var countClickRemovible = 0;
+var countClickOrtodonticoFijo = 0;
+var countClickOrtodonticoFijoMalo = 0;
 var countClickRemovibleMalo = 0;
 var posicionActual = null;
 
@@ -258,17 +260,17 @@ var MyApp = {
           }
       }
 
-      countClickFijo++;
-      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoOrtodonticoFijo) ) {
-        if(countClickFijo=='1'){
-          $(this).parents("svg").parent().toggleClass('puente1-fijo');
-        } else if (countClickFijo=='2') {
-          countClickFijo = 0;
-          $(this).parents("svg").parent().toggleClass('puente2-fijo');
-          $(this).parents("svg").parent().addClass('seleccionado');
-          $(this).parents("svg").parent().parent().find('.puente1-fijo').addClass('seleccionado');
-        }
-      }
+      // countClickFijo++;
+      // if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoOrtodonticoFijo) ) {
+      //   if(countClickFijo=='1'){
+      //     $(this).parents("svg").parent().toggleClass('puente1-fijo');
+      //   } else if (countClickFijo=='2') {
+      //     countClickFijo = 0;
+      //     $(this).parents("svg").parent().toggleClass('puente2-fijo');
+      //     $(this).parents("svg").parent().addClass('seleccionado');
+      //     $(this).parents("svg").parent().parent().find('.puente1-fijo').addClass('seleccionado');
+      //   }
+      // }
 
       countClickFijoMalo++;
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoOrtodonticoFijoMalo) ) {
@@ -962,7 +964,7 @@ var MyApp = {
   //  });
 
 
- },
+  },
   examenPeriodontal:function() {
     var edad = 20
     if (edad >= 12 && edad <= 17) {
@@ -983,12 +985,10 @@ var MyApp = {
       });
   },
   protesisRemovible : function() {
-
     var arregloProtesis = [];
     var arregloProtesisMalo = [];
 
     $(".cont-diente .diente").on("click", function(e){
-
       var contenidoOdontograma = $(this).parents(".contenido-odontograma");
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoProtesisRemovible) ) {
         countClickRemovible++;
@@ -1085,11 +1085,62 @@ var MyApp = {
           }
       }
 
+    });
+  },
+  ortodonticoFijo : function() {
+    var arregloOrtodonticoFijo = [];
+    var arregloOrtodonticoFijoMalo = [];
+
+    $(".cont-diente .diente").on("click", function(e){
+
+      var contenidoOdontograma = $(this).parents(".contenido-odontograma");
+      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoOrtodonticoFijo) ) {
+        countClickOrtodonticoFijo++;
+      
+        if(countClickOrtodonticoFijo == 1){
+          $(this).parents("svg").parent().toggleClass('puente1-fijo');
+          posicionActual = parseInt($(this).parent().attr("data-count"));  //37
+          arregloOrtodonticoFijo.push(posicionActual);
+          console.log(arregloOrtodonticoFijo,'arregloOrtodonticoFijo pos.actual');
+
+          var listarPiezaDentaria = $(".contenido-polygon .svg");
+          $( listarPiezaDentaria ).each(function( index ) {
+            var countIndex = index+1;
+            if (posicionActual > countIndex) {
+              $(this).addClass('disabled');
+            }
+          });
+
+        } else if (countClickOrtodonticoFijo == 2) {
+          countClickOrtodonticoFijo = 0;
+          var posicionFinal = parseInt($(this).parent().attr("data-count"));
+          arregloOrtodonticoFijo.push(posicionFinal);
+          console.log(arregloOrtodonticoFijo,'arregloOrtodonticoFijo final'); 
+
+          var diferencia = arregloOrtodonticoFijo[1] - arregloOrtodonticoFijo[0] + 1;
+
+          var rango = diferencia * 52;
+          console.log(rango, 'rango');
+
+          $(this).parent().parent().append('<div style="z-index: 9999; height: 5px; width:' + rango + 'px;"  class="puente-ortodontico-fijo"></div>');
+          $(this).parent().parent().children().last().css({
+              "position": "absolute",
+              "top": "-13px",
+              "right": "0"
+          });
+          arregloOrtodonticoFijo = []
+
+          $('.svg').removeClass('disabled');
+          $(this).parents("svg").parent().toggleClass('puente2-fijo');
+          $(this).parents("svg").parent().addClass('seleccionado');
+          $(this).parents("svg").parent().parent().find('.puente1-fijo').addClass('seleccionado');
+          
+        }
+      }
 
 
     });
-},
-
+  },
 }
 
 $(function () {
@@ -1110,6 +1161,7 @@ $(function () {
   }
 
   MyApp.protesisRemovible();
+  MyApp.ortodonticoFijo();
 
   $(".lista-hallazgos li").each(function(){
     var tipo = $(this).find("a").data('tipo');

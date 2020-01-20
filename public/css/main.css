@@ -1581,67 +1581,17 @@ svg.active-dentaria {
     z-index: 10; }
 
 .puente1-fijo {
-  position: static; }
+  position: relative; }
   .puente1-fijo .contorno {
     stroke: blue;
     stroke-width: 10px; }
-
-.seleccionado.puente1-fijo:after {
-  content: '';
-  width: 100%;
-  display: block;
-  width: 10px;
-  height: 5px;
-  background: blue;
-  width: 100%;
-  position: absolute;
-  top: -12px; }
-
-.seleccionado.puente1-fijo:before {
-  content: '+';
-  width: 4px;
-  color: blue;
-  height: 13px;
-  position: absolute;
-  top: -15px;
-  z-index: 10;
-  border: 1px solid;
-  width: 13px;
-  background: white;
-  line-height: 8px;
-  font-size: 16px; }
 
 .seleccionado.puente1-fijo .contorno {
   stroke: transparent;
   stroke-width: 10px; }
 
 .puente2-fijo {
-  position: static; }
-  .puente2-fijo:after {
-    content: '';
-    width: 100%;
-    display: block;
-    width: 10px;
-    height: 5px;
-    background: white;
-    width: 100%;
-    position: absolute;
-    top: -12px; }
-  .puente2-fijo:before {
-    content: '+';
-    width: 4px;
-    height: 13px;
-    width: 13px;
-    position: absolute;
-    top: -15px;
-    background: green;
-    z-index: 10;
-    border: 1px solid;
-    width: 13px;
-    background: white;
-    line-height: 8px;
-    font-size: 16px;
-    color: blue; }
+  position: relative; }
 
 .puente1-fijo-malo {
   position: static; }
@@ -1679,32 +1629,7 @@ svg.active-dentaria {
   stroke-width: 10px; }
 
 .puente2-fijo-malo {
-  position: static; }
-  .puente2-fijo-malo:after {
-    content: '';
-    width: 100%;
-    display: block;
-    width: 10px;
-    height: 5px;
-    background: white;
-    width: 100%;
-    position: absolute;
-    top: -12px; }
-  .puente2-fijo-malo:before {
-    content: '+';
-    width: 4px;
-    height: 13px;
-    width: 13px;
-    position: absolute;
-    top: -15px;
-    background: green;
-    z-index: 10;
-    border: 1px solid;
-    width: 13px;
-    background: white;
-    line-height: 8px;
-    font-size: 16px;
-    color: red; }
+  position: relative; }
 
 /**/
 .puente1-removible {
@@ -1923,6 +1848,47 @@ svg.active-dentaria {
 .puente-protesis-removible-malo {
   background-color: red; }
   .puente-protesis-removible-malo:before {
+    content: '';
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    top: -7px;
+    background: red;
+    z-index: 10;
+    right: 0; }
+
+.puente-ortodontico-fijo {
+  background-color: blue; }
+  .puente-ortodontico-fijo:before {
+    content: '+';
+    color: blue;
+    height: 13px;
+    position: absolute;
+    top: -4px;
+    z-index: 10;
+    border: 1px solid;
+    width: 13px;
+    background: white;
+    line-height: 8px;
+    font-size: 16px;
+    left: 0; }
+  .puente-ortodontico-fijo:after {
+    content: '+';
+    height: 13px;
+    position: absolute;
+    top: -4px;
+    z-index: 10;
+    border: 1px solid;
+    width: 13px;
+    background: white;
+    line-height: 8px;
+    font-size: 16px;
+    color: blue;
+    right: 0; }
+
+.puente-ortodontico-fijo-malo {
+  background-color: red; }
+  .puente-ortodontico-fijo-malo:before {
     content: '';
     width: 100%;
     height: 3px;
