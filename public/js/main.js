@@ -10,6 +10,8 @@ var countClickFijo = 0;
 var countClickFijoMalo = 0;
 var countClickRemovible = 0;
 var countClickRemovibleMalo = 0;
+var posicionActual = null;
+
 
 var MyApp = {
   eventoDientes : function() {
@@ -22,11 +24,6 @@ var MyApp = {
          || piezaDentariaActual.hasClass("active-extruida")
          || piezaDentariaActual.hasClass("active-intruida")
          || piezaDentariaActual.hasClass("active-diastema")
-        //  || piezaDentariaActual.hasClass("active-remanente-radicular")
-        //  || piezaDentariaActual.hasClass("active-corona")
-        //  || piezaDentariaActual.hasClass("active-corona-malo")
-        //  || piezaDentariaActual.hasClass("active-implante-dental")
-        //  || piezaDentariaActual.hasClass("active-implante-dental-malo")
          || piezaDentariaActual.hasClass("active-giroversion") ) {
         return;
       }
@@ -51,7 +48,6 @@ var MyApp = {
       // }
       // console.log(nombrePosition);
 
-
       var siglaPosition = $(this).attr("data-sigla");
       var idDiente = $(this).parents("svg").attr("id");
       var piezaDiente = $(this).parents("svg").attr("data-pieza");
@@ -73,14 +69,6 @@ var MyApp = {
       if(nombrePosition == 'oclusal') {
           $(this).parents('svg').find('[data-pos="oclusal"]').addClass('disabledbutton');
           $(this).removeClass("disabledbutton");
-      }
-
-      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoDienteAusente) ) {
-          // $(this).parents("svg").toggleClass('active-ausente');
-      }
-
-      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoDienteErupcion) ) {
-          // $(this).parents("svg").toggleClass('active-erupcion');
       }
 
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoDienteExtruida) ) {
@@ -105,34 +93,19 @@ var MyApp = {
       }
 
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoGiroversion) ) {
-          // $(this).parents("svg").toggleClass('active-giroversion');
           var tagFlecha = '<img src="img/giroversion.png">';
           $(this).parents(".cont-diente").addClass('giroversion');
           $(this).parents(".cont-diente").append(tagFlecha)
       }
 
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoImplanteDental) ) {
-          // $(this).parents("svg").addClass('active-implante-dental');
           $(this).parents("svg").addClass("seleccionado");
           $(this).parents("svg").removeClass("pre-seleccionado");
       }
 
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoImplanteDentalMalo) ) {
-          // $(this).parents("svg").addClass('active-implante-dental-malo');
           $(this).parents("svg").addClass("seleccionado");
           $(this).parents("svg").removeClass("pre-seleccionado");
-      }
-
-      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoCorona) ) {
-          // $(this).parents("svg").toggleClass("active-corona");
-      }
-
-      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoCoronaMalo) ) {
-          // $(this).parents("svg").toggleClass("active-corona-malo");
-      }
-
-      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoCoronaTemporal) ) {
-          // $(this).parents("svg").toggleClass("active-corona-temporal");
       }
 
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoGeminacion) ) {
@@ -209,8 +182,6 @@ var MyApp = {
       }
 
 
-
-
       //PROTESIS REMOVIBLE
       // var piezaDiente =  $(this).parents("svg").attr("data-pieza");
       // var numeroDiente = parseFloat(piezaDiente);
@@ -218,66 +189,59 @@ var MyApp = {
 
 
 
+    //   countClickRemovible++;
+    //   console.log(countClickRemovible);
 
-      countClickRemovible++;
+    //   if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoProtesisRemovible) ) {
 
-      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoProtesisRemovible) ) {
+    //     if(countClickRemovible=='1'){
+    //       $(this).parents("svg").parent().toggleClass('puente1-removible');
 
-        if(countClickRemovible=='1'){
-          $(this).parents("svg").parent().toggleClass('puente1-removible');
+    //       var firstPos = $(this).parent().attr("data-count"); //37
+    //       console.log(firstPos,'primera posición');
 
-          var firstPos = $(this).parent().attr("data-count"); //37
-          console.log(firstPos,'primera posición');
+    //       var listarPiezaDentaria = $(".contenido-polygon .svg");
 
-          var listarPiezaDentaria = $(".contenido-polygon .svg");
+    //       $( listarPiezaDentaria ).each(function( index ) {
+    //         var countIndex = index+1;
 
-          $( listarPiezaDentaria ).each(function( index ) {
-            var countIndex = index+1;
-
-            if (firstPos > countIndex) {
-              console.log(countIndex);
-              $(this).addClass('disabled');
-            } else {
-              $(this).addClass('minsa123');
-            }
-
-              // var contador = $(this).attr("data-count");
-              // if(firstPos > contador) {
-              //   console.log('aaaaaaa');
-              // }
-          });
+    //         if (firstPos > countIndex) {
+    //           console.log(countIndex);
+    //           $(this).addClass('disabled');
+    //         }
+    //       });
 
 
-        } else if (countClickRemovible=='2') {
-          // console.log(countClickRemovible,'state 2');
+    //     } else if (countClickRemovible=='2') {
 
-          var secondPos = $(this).parent().attr("data-count");
-          console.log(secondPos,);
+    //       var secondPos = $(this).parent().attr("data-count");
+    //       console.log(secondPos,);
+    //       countClickRemovible = 0;
+    //       $('.svg').removeClass('disabled');
+    //       $(this).parents("svg").parent().toggleClass('puente2-removible'); //crea un hack efecto, con fondo blacno para ocultar linea
+    //       $(this).parents("svg").parent().addClass('seleccionado');
+    //       $(this).parents("svg").parent().parent().find('.puente1-removible').addClass('seleccionado');
+    //     }
+    // }
 
-          countClickRemovible = 0;
-          $('.svg').removeClass('disabled');
-          $(this).parents("svg").parent().toggleClass('puente2-removible'); //crea un hack efecto, con fondo blacno para ocultar linea
-          $(this).parents("svg").parent().addClass('seleccionado');
-          $(this).parents("svg").parent().parent().find('.puente1-removible').addClass('seleccionado');
-        }
-    }
+
 
 
     //PROTESIS REMOVIBLE MALO
-    countClickRemovibleMalo++;
-    if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoProtesisRemovibleMalo) ) {
-        if(countClickRemovibleMalo=='1'){
-          $(this).parents("svg").parent().toggleClass('puente1-removible-malo');
-        } else if (countClickRemovibleMalo=='2') {
-          countClickRemovibleMalo = 0;
+    // countClickRemovibleMalo++;
+    // if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoProtesisRemovibleMalo) ) {
+    //     if(countClickRemovibleMalo=='1'){
+    //       $(this).parents("svg").parent().toggleClass('puente1-removible-malo');
+    //     } else if (countClickRemovibleMalo=='2') {
+    //       countClickRemovibleMalo = 0;
 
 
-          $(this).parents("svg").parent().toggleClass('puente2-removible-malo');
-          $(this).parents("svg").parent().addClass('seleccionado');
-          $(this).parents("svg").parent().parent().find('.puente1-removible-malo').addClass('seleccionado');
+    //       $(this).parents("svg").parent().toggleClass('puente2-removible-malo');
+    //       $(this).parents("svg").parent().addClass('seleccionado');
+    //       $(this).parents("svg").parent().parent().find('.puente1-removible-malo').addClass('seleccionado');
 
-        }
-    }
+    //     }
+    // }
 
 
 
@@ -1018,6 +982,114 @@ var MyApp = {
           return false;
       });
   },
+  protesisRemovible : function() {
+
+    var arregloProtesis = [];
+    var arregloProtesisMalo = [];
+
+    $(".cont-diente .diente").on("click", function(e){
+
+      var contenidoOdontograma = $(this).parents(".contenido-odontograma");
+      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoProtesisRemovible) ) {
+        countClickRemovible++;
+       
+        if(countClickRemovible == 1){
+          $(this).parents("svg").parent().toggleClass('puente1-removible');
+          posicionActual = parseInt($(this).parent().attr("data-count"));  //37
+          arregloProtesis.push(posicionActual);
+          console.log(arregloProtesis,'arregloProtesis pos.actual');
+
+          var listarPiezaDentaria = $(".contenido-polygon .svg");
+          $( listarPiezaDentaria ).each(function( index ) {
+            var countIndex = index+1;
+            if (posicionActual > countIndex) {
+              $(this).addClass('disabled');
+            }
+          });
+
+        } else if (countClickRemovible == 2) {
+          countClickRemovible = 0;
+          var posicionFinal = parseInt($(this).parent().attr("data-count"));
+          arregloProtesis.push(posicionFinal);
+          console.log(arregloProtesis,'arregloProtesis final'); 
+
+          var diferencia = arregloProtesis[1] - arregloProtesis[0] + 1;
+
+          var listarPiezaDentaria = $(".contenido-polygon .svg");
+          $( listarPiezaDentaria ).each(function( index ) {
+            var cuenta = $( this ).attr("data-count");
+            //var ancho = $( this ).outerWidth();
+            //console.log(cuenta);
+          });
+
+          //var rango = diferencia * 53;
+          var rango = diferencia * 52;
+          console.log(rango, 'rango');
+
+          $(this).parent().parent().append('<div style="z-index: 9999; height: 3px; width:' + rango + 'px;"  class="puente-protesis-removible"></div>');
+          $(this).parent().parent().children().last().css({
+              "position": "absolute",
+              "top": "96px",
+              "right": "0"
+          });
+          arregloProtesis = []
+
+          $('.svg').removeClass('disabled');
+          $(this).parents("svg").parent().toggleClass('puente2-removible'); //crea un hack efecto, con fondo blacno para ocultar linea
+          $(this).parents("svg").parent().addClass('seleccionado');
+          $(this).parents("svg").parent().parent().find('.puente1-removible').addClass('seleccionado');
+        }
+      }
+
+      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoProtesisRemovibleMalo) ) {
+          countClickRemovibleMalo++;
+
+          if(countClickRemovibleMalo == 1 ){
+            $(this).parents("svg").parent().toggleClass('puente1-removible-malo');
+            var posicionActual = $(this).parent().attr("data-count");
+            arregloProtesisMalo.push(posicionActual);
+            console.log(arregloProtesisMalo,'arregloProtesisMalo pos.actual');
+
+            var listarPiezaDentaria = $(".contenido-polygon .svg");
+            $( listarPiezaDentaria ).each(function( index ) {
+              var countIndex = index+1;
+            if (posicionActual > countIndex) {
+              $(this).addClass('disabled');
+            }
+          });
+
+          } else if (countClickRemovibleMalo=='2') {
+            countClickRemovibleMalo = 0;
+
+          var posicionFinal = parseInt($(this).parent().attr("data-count"));
+          arregloProtesisMalo.push(posicionFinal);
+          console.log(arregloProtesisMalo,'arregloProtesisMalo final'); 
+
+          var diferencia = arregloProtesisMalo[1] - arregloProtesisMalo[0] + 1;
+
+          var rango = diferencia * 52;
+          console.log(rango, 'rango');
+
+          $(this).parent().parent().append('<div style="z-index: 9999; height: 3px; width:' + rango + 'px;"  class="puente-protesis-removible-malo"></div>');
+          $(this).parent().parent().children().last().css({
+              "position": "absolute",
+              "top": "96px",
+              "right": "0"
+          });
+          arregloProtesisMalo = []
+
+            $('.svg').removeClass('disabled');
+            $(this).parents("svg").parent().toggleClass('puente2-removible-malo');
+            $(this).parents("svg").parent().addClass('seleccionado');
+            $(this).parents("svg").parent().parent().find('.puente1-removible-malo').addClass('seleccionado');
+          }
+      }
+
+
+
+    });
+},
+
 }
 
 $(function () {
@@ -1036,6 +1108,8 @@ $(function () {
   if ($('.only-numbers').length) {
     MyApp.onlyNumbers();
   }
+
+  MyApp.protesisRemovible();
 
   $(".lista-hallazgos li").each(function(){
     var tipo = $(this).find("a").data('tipo');
