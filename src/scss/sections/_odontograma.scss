@@ -2322,10 +2322,14 @@ position:relative;
   &.active-hallazgo-protesis-removible,
   &.active-hallazgo-protesis-removible-malo,
   &.puente1-removible,
-  &.puente2-removible {
+  &.puente2-removible,
+  &.active-hallazgo-ortodontico-fijo,
+  &.active-hallazgo-ortodontico-fijo-malo {
     pointer-events: none;
   }
 }
+
+
 
 .active-edentulo-total,.active-hallazgo-edentulo-total {
   .svg {
