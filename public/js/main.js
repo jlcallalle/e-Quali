@@ -957,7 +957,6 @@ var MyApp = {
           $(this).parents("svg").parent().append('<div style="z-index: 9999; height: 3px; width:' + rangoTotal + 'px;"  class="puente-protesis-removible"></div>');
           $(this).parents("svg").parent().children().last().css({
               "position": "absolute",
-              "top": "96px",
               "right": "0"
           });
           arregloProtesis = []
@@ -1020,7 +1019,6 @@ var MyApp = {
           $(this).parents("svg").parent().append('<div style="z-index: 9999; height: 3px; width:' + rangoTotal + 'px;"  class="puente-protesis-removible-malo"></div>');
           $(this).parents("svg").parent().children().last().css({
               "position": "absolute",
-              "top": "96px",
               "right": "0"
           });
           arregloProtesisMalo = []
@@ -1090,7 +1088,6 @@ var MyApp = {
           $(this).parents("svg").parent().append('<div style="z-index: 9999; height: 5px; width:' + rangoTotal + 'px;"  class="puente-ortodontico-fijo"></div>');
           $(this).parents("svg").parent().children().last().css({
               "position": "absolute",
-              "top": "-13px",
               "right": "0"
           });
           arregloOrtodonticoFijo = []
@@ -1147,7 +1144,6 @@ var MyApp = {
           $(this).parents("svg").parent().append('<div style="z-index: 9999; height: 5px; width:' + rangoTotal + 'px;"  class="puente-ortodontico-fijo-malo"></div>');
           $(this).parents("svg").parent().children().last().css({
               "position": "absolute",
-              "top": "-13px",
               "right": "0"
           });
           arregloOrtodonticoFijoMalo = []

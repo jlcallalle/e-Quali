@@ -1809,7 +1809,10 @@ svg.active-dentaria {
   margin: 0 0 0 5px; }
 
 .puente-protesis-removible {
-  background-color: blue; }
+  background-color: blue;
+  top: -9px; }
+  .box-lista-dientes-sub .puente-protesis-removible {
+    top: 96px; }
   .puente-protesis-removible:before {
     content: '';
     width: 100%;
@@ -1821,7 +1824,10 @@ svg.active-dentaria {
     right: 0; }
 
 .puente-protesis-removible-malo {
-  background-color: red; }
+  background-color: red;
+  top: -9px; }
+  .box-lista-dientes-sub .puente-protesis-removible-malo {
+    top: 96px; }
   .puente-protesis-removible-malo:before {
     content: '';
     width: 100%;
@@ -1833,7 +1839,10 @@ svg.active-dentaria {
     right: 0; }
 
 .puente-ortodontico-fijo {
-  background-color: blue; }
+  background-color: blue;
+  top: -13px; }
+  .box-lista-dientes-sub .puente-ortodontico-fijo {
+    top: 91px; }
   .puente-ortodontico-fijo:before {
     content: '+';
     color: blue;
@@ -1862,7 +1871,10 @@ svg.active-dentaria {
     right: 0; }
 
 .puente-ortodontico-fijo-malo {
-  background-color: red; }
+  background-color: red;
+  top: -13px; }
+  .box-lista-dientes-sub .puente-ortodontico-fijo-malo {
+    top: 91px; }
   .puente-ortodontico-fijo-malo:before {
     content: '+';
     color: red;

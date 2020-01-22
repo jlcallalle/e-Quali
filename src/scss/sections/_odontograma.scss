@@ -2414,6 +2414,10 @@ position:relative;
 
 .puente-protesis-removible {
   background-color: blue ;
+  top: -9px;
+  .box-lista-dientes-sub & {
+    top:96px;
+  }
   &:before {
     content: '';
     width: 100%;
@@ -2428,6 +2432,10 @@ position:relative;
 
 .puente-protesis-removible-malo {
   background-color: red ;
+  top: -9px;
+  .box-lista-dientes-sub & {
+    top:96px;
+  }
   &:before {
     content: '';
     width: 100%;
@@ -2442,6 +2450,10 @@ position:relative;
 
 .puente-ortodontico-fijo {
   background-color: blue ;
+  top: -13px;
+  .box-lista-dientes-sub & {
+    top:91px;
+  }
   &:before {
     content: '+';
     color: blue;
@@ -2474,6 +2486,10 @@ position:relative;
 
 .puente-ortodontico-fijo-malo {
   background-color: red ;
+  top: -13px;
+  .box-lista-dientes-sub & {
+    top:91px;
+  }
   &:before {
     content: '+';
     color: red;
