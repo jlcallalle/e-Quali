@@ -1418,7 +1418,8 @@ svg.active-dentaria {
 .ortodontico-estado,
 .ortodontico-estado-fijo,
 .protesis-removible-estado,
-.fractura-estado {
+.fractura-estado,
+.protesis-fija-estado {
   position: absolute;
   top: 0;
   right: 5px;
@@ -1435,7 +1436,8 @@ svg.active-dentaria {
   .ortodontico-estado.show,
   .ortodontico-estado-fijo.show,
   .protesis-removible-estado.show,
-  .fractura-estado.show {
+  .fractura-estado.show,
+  .protesis-fija-estado.show {
     display: block; }
   .restaura-estado .estados,
   .implante-estado .estados,
@@ -1444,7 +1446,8 @@ svg.active-dentaria {
   .ortodontico-estado .estados,
   .ortodontico-estado-fijo .estados,
   .protesis-removible-estado .estados,
-  .fractura-estado .estados {
+  .fractura-estado .estados,
+  .protesis-fija-estado .estados {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1459,7 +1462,8 @@ svg.active-dentaria {
     .ortodontico-estado .estados a,
     .ortodontico-estado-fijo .estados a,
     .protesis-removible-estado .estados a,
-    .fractura-estado .estados a {
+    .fractura-estado .estados a,
+    .protesis-fija-estado .estados a {
       width: 20px;
       height: 20px;
       position: relative; }
@@ -1470,7 +1474,8 @@ svg.active-dentaria {
     .ortodontico-estado .estados .bueno,
     .ortodontico-estado-fijo .estados .bueno,
     .protesis-removible-estado .estados .bueno,
-    .fractura-estado .estados .bueno {
+    .fractura-estado .estados .bueno,
+    .protesis-fija-estado .estados .bueno {
       background: blue; }
     .restaura-estado .estados .malo,
     .implante-estado .estados .malo,
@@ -1479,7 +1484,8 @@ svg.active-dentaria {
     .ortodontico-estado .estados .malo,
     .ortodontico-estado-fijo .estados .malo,
     .protesis-removible-estado .estados .malo,
-    .fractura-estado .estados .malo {
+    .fractura-estado .estados .malo,
+    .protesis-fija-estado .estados .malo {
       background: red; }
 
 .list-editable {
@@ -1530,55 +1536,30 @@ svg.active-dentaria {
     background: blue; }
 
 .puente1 {
-  position: static; }
+  position: relative; }
   .puente1 .contorno {
     stroke: blue;
     stroke-width: 10px; }
 
-.seleccionado.puente1:after {
-  content: '';
-  width: 100%;
-  display: block;
-  width: 10px;
-  height: 5px;
-  background: blue;
-  width: 100%;
-  position: absolute;
-  top: -12px; }
-
-.seleccionado.puente1:before {
-  content: '';
-  width: 4px;
-  height: 13px;
-  position: absolute;
-  top: -12px;
-  background: blue;
-  z-index: 10; }
+.puente1-malo {
+  position: relative; }
+  .puente1-malo .contorno {
+    stroke: red;
+    stroke-width: 10px; }
 
 .seleccionado.puente1 .contorno {
   stroke: transparent;
   stroke-width: 10px; }
 
+.seleccionado.puente1-malo .contorno {
+  stroke: transparent;
+  stroke-width: 10px; }
+
 .puente2 {
-  position: static; }
-  .puente2:after {
-    content: '';
-    width: 100%;
-    display: block;
-    width: 10px;
-    height: 5px;
-    background: white;
-    width: 100%;
-    position: absolute;
-    top: -12px; }
-  .puente2:before {
-    content: '';
-    width: 4px;
-    height: 13px;
-    position: absolute;
-    top: -12px;
-    background: blue;
-    z-index: 10; }
+  position: relative; }
+
+.puente2-malo {
+  position: relative; }
 
 .puente1-fijo {
   position: relative; }
@@ -1587,6 +1568,10 @@ svg.active-dentaria {
     stroke-width: 10px; }
 
 .seleccionado.puente1-fijo .contorno {
+  stroke: transparent;
+  stroke-width: 10px; }
+
+.seleccionado.puente1-fijo-malo .contorno {
   stroke: transparent;
   stroke-width: 10px; }
 
@@ -1901,6 +1886,54 @@ svg.active-dentaria {
     font-size: 16px;
     color: red;
     right: 0; }
+
+.puente-protesis-fija {
+  background-color: blue;
+  top: -12px; }
+  .box-lista-dientes-sub .puente-protesis-fija {
+    top: -12px; }
+  .puente-protesis-fija:before {
+    content: '';
+    width: 4px;
+    height: 13px;
+    position: absolute;
+    top: 0;
+    background: blue;
+    z-index: 10;
+    right: 0; }
+  .puente-protesis-fija:after {
+    content: '';
+    width: 4px;
+    height: 13px;
+    position: absolute;
+    top: 0;
+    background: blue;
+    z-index: 10;
+    left: 0; }
+
+.puente-protesis-fija-malo {
+  background-color: red;
+  top: -12px; }
+  .box-lista-dientes-sub .puente-protesis-fija-malo {
+    top: -12px; }
+  .puente-protesis-fija-malo:before {
+    content: '';
+    width: 4px;
+    height: 13px;
+    position: absolute;
+    top: 0;
+    background: red;
+    z-index: 10;
+    right: 0; }
+  .puente-protesis-fija-malo:after {
+    content: '';
+    width: 4px;
+    height: 13px;
+    position: absolute;
+    top: 0;
+    background: red;
+    z-index: 10;
+    left: 0; }
 
 .disabled {
   pointer-events: none; }

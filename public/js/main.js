@@ -12,6 +12,9 @@ var countClickRemovible = 0;
 var countClickRemovibleMalo = 0;
 var countClickOrtodonticoFijo = 0;
 var countClickOrtodonticoFijoMalo = 0;
+
+var countClickProtesisFija = 0;
+var countClickProtesisFijaMalo = 0;
 // var posicionActual = null;
 
 
@@ -183,23 +186,6 @@ var MyApp = {
           $(this).parents("svg").toggleClass("active-remanente-radicular");
       }
 
- 
-
-
-      countClick++;
-      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoProtesisFija) ) {
-          if(countClick=='1'){
-            $(this).parents("svg").parent().toggleClass('puente1');
-          } else if (countClick=='2') {
-            countClick = 0;
-            $(this).parents("svg").parent().toggleClass('puente2');
-            $(this).parents("svg").parent().addClass('seleccionado');
-            $(this).parents("svg").parent().parent().find('.puente1').addClass('seleccionado');
-          }
-      }
-
-
-
 
       $( cuadroDiente ).each(function( index ) {
           var idCuadro = this.id;
@@ -367,7 +353,7 @@ var MyApp = {
           $(".lista-hallazgo-detallado").append(lista);
       }
 
-      //PUENTE
+      //HALLAZGOS PINTADO
       if (tipoHallazgo === listaPintado.tipoPintado9 ) {
           $(this).parents("svg").addClass("seleccionado");
           $(this).parents("svg").removeClass("pre-seleccionado");
@@ -580,6 +566,13 @@ var MyApp = {
               $(".protesis-removible-estado").removeClass("show");
           }
 
+          if( nombreHallazgo == listaHallazgo.hallazgoProtesisFija
+            || nombreHallazgo == listaHallazgo.hallazgoProtesisFijaMalo ){
+              $(".protesis-fija-estado").addClass("show");
+          } else {
+              $(".protesis-fija-estado").removeClass("show");
+          }
+
           // if( nombreHallazgo == listaHallazgo.hallazgoSupernumeraria ){
           //   $(".row-dientes .cont-diente:last-child svg").addClass("disabledbutton");
           // }
@@ -654,6 +647,17 @@ var MyApp = {
       $( ".fractura-estado .malo" ).click(function(e) {
           $("#hallazgo-fractura-malo").toggleClass('active');
       });
+
+
+      $( ".protesis-fija-estado .bueno" ).click(function(e) {
+        $("#hallazgo-protesis-fija").trigger("click")
+      });
+
+      $( ".protesis-fija-estado .malo" ).click(function(e) {
+          $("#hallazgo-protesis-fija-malo").toggleClass('active');
+      });
+
+      
 
 
       $("#hallazgo-caries").click();
@@ -1023,8 +1027,8 @@ var MyApp = {
     var arregloOrtodonticoFijoMalo = [];
 
     $(".cont-diente .diente").on("click", function(e){
-
       var contenidoOdontograma = $(this).parents(".contenido-odontograma");
+
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoOrtodonticoFijo) ) {
         countClickOrtodonticoFijo++;
       
@@ -1136,6 +1140,149 @@ var MyApp = {
 
     });
   },
+  protesisFija: function() {
+
+    // countClick++;
+    // if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoProtesisFija) ) {
+    //     if(countClick=='1'){
+    //       $(this).parents("svg").parent().toggleClass('puente1');
+    //     } else if (countClick=='2') {
+    //       countClick = 0;
+    //       $(this).parents("svg").parent().toggleClass('puente2');
+    //       $(this).parents("svg").parent().addClass('seleccionado');
+    //       $(this).parents("svg").parent().parent().find('.puente1').addClass('seleccionado');
+    //     }
+    // }
+
+    var arregloProtesisFija = [];
+    var arregloProtesisFijaMalo = [];
+
+    $(".cont-diente .diente").on("click", function(e){
+      var contenidoOdontograma = $(this).parents(".contenido-odontograma");
+
+      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoProtesisFija) ) {
+        countClickProtesisFija++;
+       
+        if(countClickProtesisFija === 1){
+          // console.log(countClickProtesisFija, 'inicial');
+          $(this).parents("svg").parent().toggleClass("puente1");
+          var posicionActual = $(this).parents(".svg").attr("data-count");
+          arregloProtesisFija.push(posicionActual);
+          console.log(arregloProtesisFija,'arregloProtesisFija')
+
+          var listarPiezaDentaria = $(".contenido-polygon .svg");
+          $( listarPiezaDentaria ).each(function( index ) {
+            var countIndex = index+1;
+            if (posicionActual > countIndex) {
+              $(this).addClass("disabled");
+            }
+          });
+
+        } else if (countClickProtesisFija === 2) {
+          // console.log(countClickProtesisFija,'final');
+          countClickProtesisFija = 0;
+          var posicionFinal = $(this).parents(".svg").attr("data-count");
+          arregloProtesisFija.push(posicionFinal);
+
+          var diferencia = arregloProtesisFija[1] - arregloProtesisFija[0] + 1;
+
+          var listarPiezaDentaria = $(".contenido-polygon .svg");
+          var sumarAnchoRango = 0
+          var sumarMarginRango = 0
+
+          $( listarPiezaDentaria ).each(function( index ) {
+            var countIndex = index+1;
+            if (countIndex >= arregloProtesisFija[0] && countIndex <= arregloProtesisFija[1])  {
+              $(this).addClass("disabled-range");
+              var anchoDientes = $(this).outerWidth();
+              var marginRight = 2;
+              sumarAnchoRango += Number(anchoDientes);
+              sumarMarginRango += Number(marginRight);
+            }
+          });
+
+          var rangoTotal = sumarAnchoRango + sumarMarginRango;
+          console.log(rangoTotal,'rango total');
+
+          $(this).parents("svg").parent().append('<div style="z-index: 9999; height: 5px; width:' + rangoTotal + 'px;"  class="puente-protesis-fija"></div>');
+          $(this).parents("svg").parent().children().last().css({
+              "position": "absolute",
+              "right": "0"
+          });
+          arregloProtesisFija = []
+
+          $('.svg').removeClass('disabled');
+          $(this).parents("svg").parent().toggleClass('puente2');
+          $(this).parents("svg").parent().addClass('seleccionado');
+          $(this).parents("svg").parent().parent().find('.puente1').addClass('seleccionado');
+          
+        }
+      }
+
+      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoProtesisFijaMalo) ) {
+        countClickProtesisFijaMalo++;
+       
+        if(countClickProtesisFijaMalo === 1){
+          // console.log(countClickProtesisFijaMalo, 'inicial');
+          $(this).parents("svg").parent().toggleClass("puente1-malo");
+          var posicionActual = $(this).parents(".svg").attr("data-count");
+          arregloProtesisFijaMalo.push(posicionActual);
+          console.log(arregloProtesisFijaMalo,'arregloProtesisFijaMalo')
+
+          var listarPiezaDentaria = $(".contenido-polygon .svg");
+          $( listarPiezaDentaria ).each(function( index ) {
+            var countIndex = index+1;
+            if (posicionActual > countIndex) {
+              $(this).addClass("disabled");
+            }
+          });
+
+        } else if (countClickProtesisFijaMalo === 2) {
+          // console.log(countClickProtesisFijaMalo,'final');
+          countClickProtesisFijaMalo = 0;
+          var posicionFinal = $(this).parents(".svg").attr("data-count");
+          arregloProtesisFijaMalo.push(posicionFinal);
+
+          var listarPiezaDentaria = $(".contenido-polygon .svg");
+          var sumarAnchoRango = 0
+          var sumarMarginRango = 0
+
+          $( listarPiezaDentaria ).each(function( index ) {
+            var countIndex = index+1;
+            if (countIndex >= arregloProtesisFijaMalo[0] && countIndex <= arregloProtesisFijaMalo[1])  {
+              $(this).addClass("disabled-range");
+              var anchoDientes = $(this).outerWidth();
+              var marginRight = 2;
+              sumarAnchoRango += Number(anchoDientes);
+              sumarMarginRango += Number(marginRight);
+            }
+          });
+
+          var rangoTotal = sumarAnchoRango + sumarMarginRango;
+          console.log(rangoTotal,'rango total');
+
+          $(this).parents("svg").parent().append('<div style="z-index: 9999; height: 5px; width:' + rangoTotal + 'px;"  class="puente-protesis-fija-malo"></div>');
+          $(this).parents("svg").parent().children().last().css({
+              "position": "absolute",
+              "right": "0"
+          });
+          arregloProtesisFijaMalo = []
+
+          $('.svg').removeClass('disabled');
+          $(this).parents("svg").parent().toggleClass('puente2-malo');
+          $(this).parents("svg").parent().addClass('seleccionado');
+          $(this).parents("svg").parent().parent().find('.puente1-malo').addClass('seleccionado');
+          
+        }
+      }
+
+    });
+
+
+
+
+  }
+
 }
 
 $(function () {
@@ -1147,6 +1294,7 @@ $(function () {
 
       MyApp.protesisRemovible();
       MyApp.ortodonticoFijo();
+      MyApp.protesisFija();
   }
   if ($(".resultado-odontograma").length) {
       MyApp.mostrarOdontrograma();
