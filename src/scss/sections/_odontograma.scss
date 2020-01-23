@@ -2280,7 +2280,9 @@ position:relative;
   &.puente1-removible,
   &.puente2-removible,
   &.active-hallazgo-ortodontico-fijo,
-  &.active-hallazgo-ortodontico-fijo-malo {
+  &.active-hallazgo-ortodontico-fijo-malo,
+  &.active-hallazgo-protesis-fija,
+  &.active-hallazgo-protesis-fija-malo {
     pointer-events: none;
   }
 }
@@ -2480,7 +2482,8 @@ position:relative;
   background-color: blue ;
   top: -12px;
   .box-lista-dientes-sub & {
-    top:-12px;
+    top: 97px;
+    transform: rotate(180deg);
   }
   &:before {
     content: '';
@@ -2508,7 +2511,8 @@ position:relative;
   background-color: red ;
   top: -12px;
   .box-lista-dientes-sub & {
-    top:-12px;
+    top: 97px;
+    transform: rotate(180deg);
   }
   &:before {
     content: '';

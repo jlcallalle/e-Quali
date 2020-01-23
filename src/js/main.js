@@ -1011,9 +1011,8 @@ var MyApp = {
             $(this).parents("svg").parent().parent().find(".puente1-removible-malo").addClass("seleccionado");
           }
       }
-
     });
-},
+  },
   ortodonticoFijo : function() {
     var arregloOrtodonticoFijo = [];
     var arregloOrtodonticoFijoMalo = [];
@@ -1131,7 +1130,6 @@ var MyApp = {
     });
   },
   protesisFija: function() {
-
     var arregloProtesisFija = [];
     var arregloProtesisFijaMalo = [];
 
@@ -1247,10 +1245,6 @@ var MyApp = {
       }
 
     });
-
-
-
-
   }
 
 }
