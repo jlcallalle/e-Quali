@@ -9,10 +9,10 @@ var countClick = 0;
 var countClickFijo = 0;
 var countClickFijoMalo = 0;
 var countClickRemovible = 0;
+var countClickRemovibleMalo = 0;
 var countClickOrtodonticoFijo = 0;
 var countClickOrtodonticoFijoMalo = 0;
-var countClickRemovibleMalo = 0;
-var posicionActual = null;
+// var posicionActual = null;
 
 
 var MyApp = {
@@ -688,9 +688,8 @@ var MyApp = {
                       console.log(caraDientes,'caraDientes');
                       var caraSigla =  $(this).attr("data-sigla");
                       if (caraLista == caraDientes) {
-
-                          $(this).parents(".puente2-removible, .puente2-removible-malo, .puente2-fijo ,.puente2-fijo-malo").find("svg").siblings().remove();
                           $(this).removeClass("active");
+                          $(this).parents(".puente2-removible, .puente2-removible-malo, .puente2-fijo ,.puente2-fijo-malo").find("svg").siblings().remove();
                           $(this).removeClass("hallazgo-caries hallazgo-defectos-del-esmalte hallazgo-restauracion-definitiva hallazgo-restauracion-definitiva-malo hallazgo-restauracion-temporal hallazgo-protesis-removible");
                           $(this).parents(".svg").removeClass("seleccionado active-erupcion active-hallazgo-pieza-dentaria-en-erupcion active-corona active-corona-malo active-hallazgo-corona-temporal active-fractura active-fractura-malo active-remanente-radicular active-hallazgo-fusion  active-hallazgo-corona-temporal active-hallazgo-corona  active-hallazgo-corona-malo active-hallazgo-pieza-dentaria-ausente");
                           $(this).parents(".svg").parent().removeClass("active-geminacion active-transposicion active-fusion  active-clavija active-edentulo-total active-supernumeraria active-protesis-total active-protesis-total-malo active-ortodontico-removible active-ortodontico-removible-malo ");
@@ -913,27 +912,23 @@ var MyApp = {
       var contenidoOdontograma = $(this).parents(".contenido-odontograma");
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoProtesisRemovible) ) {
         countClickRemovible++;
-       
-        if(countClickRemovible == 1){
-          $(this).parents("svg").parent().toggleClass('puente1-removible');
-          var posicionActual = $(this).parents(".svg").attr("data-count");  
-          console.log(posicionActual,'posicionActual')
+      
+        if(countClickRemovible === 1){
+          $(this).parents("svg").parent().toggleClass("puente1-removible");
+          var posicionActual = $(this).parents(".svg").attr("data-count");
           arregloProtesis.push(posicionActual);
 
           var listarPiezaDentaria = $(".contenido-polygon .svg");
           $( listarPiezaDentaria ).each(function( index ) {
             var countIndex = index+1;
             if (posicionActual > countIndex) {
-              $(this).addClass('disabled');
+              $(this).addClass("disabled");
             }
           });
-
-        } else if (countClickRemovible == 2) {
+        } else if (countClickRemovible === 2) {
           countClickRemovible = 0;
           var posicionFinal = $(this).parents(".svg").attr("data-count");
           arregloProtesis.push(posicionFinal);
-          console.log(arregloProtesis,'arregloProtesis pos.final');
-
           var diferencia = arregloProtesis[1] - arregloProtesis[0] + 1;
 
           var listarPiezaDentaria = $(".contenido-polygon .svg");
@@ -952,81 +947,72 @@ var MyApp = {
           });
 
           var rangoTotal = sumarAnchoRango + sumarMarginRango;
-          console.log(rangoTotal,'rangoTotal');
 
           $(this).parents("svg").parent().append('<div style="z-index: 9999; height: 3px; width:' + rangoTotal + 'px;"  class="puente-protesis-removible"></div>');
           $(this).parents("svg").parent().children().last().css({
               "position": "absolute",
               "right": "0"
           });
+
           arregloProtesis = []
 
-          $('.svg').removeClass('disabled');
-          $(this).parents("svg").parent().toggleClass('puente2-removible'); 
-          $(this).parents("svg").parent().addClass('seleccionado');
-          $(this).parents("svg").parent().parent().find('.puente1-removible').addClass('seleccionado');
+          $(".svg").removeClass("disabled");
+          $(this).parents("svg").parent().toggleClass("puente2-removible"); 
+          $(this).parents("svg").parent().addClass("seleccionado");
+          $(this).parents("svg").parent().parent().find(".puente1-removible").addClass("seleccionado");
         }
       }
 
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoProtesisRemovibleMalo) ) {
           countClickRemovibleMalo++;
 
-          if(countClickRemovibleMalo == 1 ){
-            $(this).parents("svg").parent().toggleClass('puente1-removible-malo');
-            var posicionActual = $(this).parents(".svg").attr("data-count");
+          if(countClickRemovibleMalo === 1 ){
+            $(this).parents("svg").parent().toggleClass("puente1-removible-malo");
+            var posicionActual = $(this).parent().attr("data-count");
             arregloProtesisMalo.push(posicionActual);
 
             var listarPiezaDentaria = $(".contenido-polygon .svg");
             $( listarPiezaDentaria ).each(function( index ) {
               var countIndex = index+1;
-            if (posicionActual > countIndex) {
-              $(this).addClass('disabled');
-            }
-          });
-
-          } else if (countClickRemovibleMalo=='2') {
+              if (posicionActual > countIndex) {
+                $(this).addClass("disabled");
+              }
+            });
+          } else if ( countClickRemovibleMalo === 2 ) {
             countClickRemovibleMalo = 0;
+            var posicionFinal = parseInt($(this).parent().attr("data-count"));
+            arregloProtesisMalo.push(posicionFinal);
+            var diferencia = arregloProtesisMalo[1] - arregloProtesisMalo[0] + 1;
 
-          var posicionFinal = $(this).parents(".svg").attr("data-count");
-          arregloProtesisMalo.push(posicionFinal);
-          console.log(arregloProtesisMalo,'arregloProtesisMalo final'); 
+            var listarPiezaDentaria = $(".contenido-polygon .svg");
+            var sumarAnchoRango = 0
+            var sumarMarginRango = 0
 
-          var diferencia = arregloProtesisMalo[1] - arregloProtesisMalo[0] + 1;
+            $( listarPiezaDentaria ).each(function( index ) {
+              var countIndex = index+1;
+              if (countIndex >= arregloProtesisMalo[0] && countIndex <= arregloProtesisMalo[1])  {
+                $(this).addClass('disabled-range');
+                var anchoDientes = $(this).outerWidth();
+                var marginRight = 2;
+                sumarAnchoRango += Number(anchoDientes);
+                sumarMarginRango += Number(marginRight);
+              }
+            });
 
-          var listarPiezaDentaria = $(".contenido-polygon .svg");
+            var rangoTotal = sumarAnchoRango + sumarMarginRango;
 
-          var sumarAnchoRango = 0
-          var sumarMarginRango = 0
+            $(this).parents("svg").parent().append('<div style="z-index: 9999; height: 3px; width:' + rangoTotal + 'px;"  class="puente-protesis-removible-malo"></div>');
+            $(this).parents("svg").parent().children().last().css({
+                "position": "absolute",
+                "right": "0"
+            });;
 
-          $( listarPiezaDentaria ).each(function( index ) {
-            var countIndex = index+1;
-            if (countIndex >= arregloProtesisMalo[0] && countIndex <= arregloProtesisMalo[1])  {
-              $(this).addClass('disabled-range');
-              var anchoDientes = $(this).outerWidth();
-              var marginRight = 2;
-              sumarAnchoRango += Number(anchoDientes);
-              sumarMarginRango += Number(marginRight);
-            }
-          });
-
-          var rangoTotal = sumarAnchoRango + sumarMarginRango;
-          console.log(rangoTotal,'rangoTotal');
-
-
-          var rango = diferencia * 52;
-          console.log(rango, 'rango');
-
-          $(this).parents("svg").parent().append('<div style="z-index: 9999; height: 3px; width:' + rangoTotal + 'px;"  class="puente-protesis-removible-malo"></div>');
-          $(this).parents("svg").parent().children().last().css({
-              "position": "absolute",
-              "right": "0"
-          });
-          arregloProtesisMalo = []
-
-          $('.svg').removeClass('disabled');
-          $(this).parents("svg").parent().toggleClass('puente2-removible-malo');
-          $(this).parents("svg").parent().addClass('seleccionado');
-          $(this).parents("svg").parent().parent().find('.puente1-removible-malo').addClass('seleccionado');
+            arregloProtesisMalo = []
+            
+            $(".svg").removeClass("disabled");
+            $(this).parents("svg").parent().toggleClass("puente2-removible-malo");
+            $(this).parents("svg").parent().addClass("seleccionado");
+            $(this).parents("svg").parent().parent().find(".puente1-removible-malo").addClass("seleccionado");
           }
       }
 
@@ -1042,8 +1028,8 @@ var MyApp = {
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoOrtodonticoFijo) ) {
         countClickOrtodonticoFijo++;
       
-        if(countClickOrtodonticoFijo == 1){
-          $(this).parents("svg").parent().toggleClass('puente1-fijo');
+        if(countClickOrtodonticoFijo === 1){
+          $(this).parents("svg").parent().toggleClass("puente1-fijo");
           var posicionActual = $(this).parents(".svg").attr("data-count");
           arregloOrtodonticoFijo.push(posicionActual);
 
@@ -1051,15 +1037,14 @@ var MyApp = {
           $( listarPiezaDentaria ).each(function( index ) {
             var countIndex = index+1;
             if (posicionActual > countIndex) {
-              $(this).addClass('disabled');
+              $(this).addClass("disabled");
             }
           });
 
-        } else if (countClickOrtodonticoFijo == 2) {
+        } else if (countClickOrtodonticoFijo === 2) {
           countClickOrtodonticoFijo = 0;
           var posicionFinal = $(this).parents(".svg").attr("data-count");
           arregloOrtodonticoFijo.push(posicionFinal);
-          console.log(arregloOrtodonticoFijo,'arregloOrtodonticoFijo final'); 
 
           var diferencia = arregloOrtodonticoFijo[1] - arregloOrtodonticoFijo[0] + 1;
 
@@ -1070,7 +1055,7 @@ var MyApp = {
           $( listarPiezaDentaria ).each(function( index ) {
             var countIndex = index+1;
             if (countIndex >= arregloOrtodonticoFijo[0] && countIndex <= arregloOrtodonticoFijo[1])  {
-              $(this).addClass('disabled-range');
+              $(this).addClass("disabled-range");
               var anchoDientes = $(this).outerWidth();
               var marginRight = 2;
               sumarAnchoRango += Number(anchoDientes);
@@ -1079,11 +1064,6 @@ var MyApp = {
           });
 
           var rangoTotal = sumarAnchoRango + sumarMarginRango;
-          console.log(rangoTotal,'rangoTotal');
-
-          var rango = diferencia * 52;
-          console.log(diferencia,'diferencia');
-          console.log(rango, 'rango');
 
           $(this).parents("svg").parent().append('<div style="z-index: 9999; height: 5px; width:' + rangoTotal + 'px;"  class="puente-ortodontico-fijo"></div>');
           $(this).parents("svg").parent().children().last().css({
@@ -1099,12 +1079,12 @@ var MyApp = {
           
         }
       }
-
+      
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoOrtodonticoFijoMalo) ) {
         countClickOrtodonticoFijoMalo++;
       
-        if(countClickOrtodonticoFijoMalo == 1){
-          $(this).parents("svg").parent().toggleClass('puente1-fijo-malo');
+        if(countClickOrtodonticoFijoMalo === 1){
+          $(this).parents("svg").parent().toggleClass("puente1-fijo-malo");
           var posicionActual = $(this).parents(".svg").attr("data-count");
           arregloOrtodonticoFijoMalo.push(posicionActual);
 
@@ -1112,16 +1092,14 @@ var MyApp = {
           $( listarPiezaDentaria ).each(function( index ) {
             var countIndex = index+1;
             if (posicionActual > countIndex) {
-              $(this).addClass('disabled');
+              $(this).addClass("disabled");
             }
           });
 
-        } else if (countClickOrtodonticoFijoMalo == 2) {
+        } else if (countClickOrtodonticoFijoMalo === 2) {
           countClickOrtodonticoFijoMalo = 0;
           var posicionFinal = $(this).parents(".svg").attr("data-count");
           arregloOrtodonticoFijoMalo.push(posicionFinal);
-
-          var diferencia = arregloOrtodonticoFijoMalo[1] - arregloOrtodonticoFijoMalo[0] + 1;
 
           var listarPiezaDentaria = $(".contenido-polygon .svg");
           var sumarAnchoRango = 0
@@ -1130,7 +1108,7 @@ var MyApp = {
           $( listarPiezaDentaria ).each(function( index ) {
             var countIndex = index+1;
             if (countIndex >= arregloOrtodonticoFijoMalo[0] && countIndex <= arregloOrtodonticoFijoMalo[1])  {
-              $(this).addClass('disabled-range');
+              $(this).addClass("disabled-range");
               var anchoDientes = $(this).outerWidth();
               var marginRight = 2;
               sumarAnchoRango += Number(anchoDientes);
@@ -1139,16 +1117,15 @@ var MyApp = {
           });
 
           var rangoTotal = sumarAnchoRango + sumarMarginRango;
-          var rango = diferencia * 52;
 
           $(this).parents("svg").parent().append('<div style="z-index: 9999; height: 5px; width:' + rangoTotal + 'px;"  class="puente-ortodontico-fijo-malo"></div>');
           $(this).parents("svg").parent().children().last().css({
               "position": "absolute",
               "right": "0"
           });
-          arregloOrtodonticoFijoMalo = []
 
-          $('.svg').removeClass('disabled');
+          arregloOrtodonticoFijoMalo = []
+          $(".svg").removeClass("disabled");
 
           $(this).parents("svg").parent().toggleClass("puente2-fijo-malo");
           $(this).parents("svg").parent().addClass("seleccionado");
@@ -1156,7 +1133,6 @@ var MyApp = {
           
         }
       }
-
 
     });
   },
@@ -1168,6 +1144,7 @@ $(function () {
       MyApp.eventJson();
       MyApp.activarHallazgo();
       MyApp.eliminarHallazgos();
+
       MyApp.protesisRemovible();
       MyApp.ortodonticoFijo();
   }
