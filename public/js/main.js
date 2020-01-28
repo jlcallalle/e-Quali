@@ -216,14 +216,15 @@ var MyApp = {
                   var selectCaries ="<select class='select-tipo select-corona' name='hallazgo-corona'><option value=''>Elegir</option><option value='Corona en Diente Deciduo'>CDD</option><option value='Corona Metálica'>CM</option><option value='Corona Fenestrada'>CF</option><option value='Corona Metal Cerámica'>CMC</option><option value='Corona Veneer'>CV</option><option value='Canilla Estética'>CJ</option><option value='Corona Temporal'>CT</option> </select>"
                   $( this ).find('.select-hallazgos').append(selectCaries);
               }
+              if (nombreHallazgo == listaHallazgo.hallazgoCoronaMalo) {
+                var selectCaries ="<select class='select-tipo select-corona-malo' name='hallazgo-corona-malo'><option value=''>Elegir</option><option value='Corona Metálica'>CM</option><option value='Corona Fenestrada'>CF</option><option value='Corona Metal Cerámica'>CMC</option><option value='Corona Veneer'>CV</option><option value='Canilla Estética'>CJ</option><option value='Corona Temporal'>CT</option> </select>"
+                $( this ).find('.select-hallazgos').append(selectCaries);
+              }
               if (nombreHallazgo == listaHallazgo.hallazgoDienteAusente) {
                   var selectCaries ="<select class='select-tipo select-ausente' name='hallazgo-ausente'><option value=''>Elegir</option><option value='Diente no erupcionado'>DNE</option><option value='Diente ausente por extracción'>DEX</option><option value='Diente ausente por otras razones'>DAO</option> </select>"
                   $( this ).find('.select-hallazgos').append(selectCaries);
               }
-              if (nombreHallazgo == listaHallazgo.hallazgoCoronaMalo) {
-                  var selectCaries ="<select class='select-tipo select-corona-malo' name='hallazgo-corona-malo'><option value=''>Elegir</option><option value='Corona Metálica'>CM</option><option value='Corona Fenestrada'>CF</option><option value='Corona Metal Cerámica'>CMC</option><option value='Corona Veneer'>CV</option><option value='Canilla Estética'>CJ</option><option value='Corona Temporal'>CT</option> </select>"
-                  $( this ).find('.select-hallazgos').append(selectCaries);
-              }
+
               /*----------Fin Generado por DB--------- */
 
               if (nombreHallazgo == listaHallazgo.hallazgoImplanteDental) {
@@ -252,6 +253,12 @@ var MyApp = {
               }
               if (nombreHallazgo == listaHallazgo.hallazgoCoronaTemporal) {
                   $( this ).find('.select-hallazgos').append('<span class="hallazgo-corona-temporal">CT</span>');
+              }
+              if (nombreHallazgo == listaHallazgo.hallazgoSellantes) {
+                $( this ).find('.select-hallazgos').append('<span class="hallazgo-sellantes">S</span>');
+              }
+              if (nombreHallazgo == listaHallazgo.hallazgoSellantesMalo) {
+                $( this ).find('.select-hallazgos').append('<span class="hallazgo-sellantes-malo">S</span>');
               }
 
           }
@@ -568,9 +575,12 @@ var MyApp = {
               $(".protesis-fija-estado").removeClass("show");
           }
 
-          // if( nombreHallazgo == listaHallazgo.hallazgoSupernumeraria ){
-          //   $(".row-dientes .cont-diente:last-child svg").addClass("disabledbutton");
-          // }
+          if( nombreHallazgo == listaHallazgo.hallazgoSellantes
+            || nombreHallazgo == listaHallazgo.hallazgoSellantesMalo ){
+              $(".sellantes-estado").addClass("show");
+          } else {
+              $(".sellantes-estado").removeClass("show");
+          }
 
          if( nombreHallazgo == listaHallazgo.hallazgoFractura
           || nombreHallazgo == listaHallazgo.hallazgoFracturaLineaTop
@@ -643,7 +653,6 @@ var MyApp = {
           $("#hallazgo-fractura-malo").toggleClass('active');
       });
 
-
       $( ".protesis-fija-estado .bueno" ).click(function(e) {
         $("#hallazgo-protesis-fija").trigger("click")
       });
@@ -652,8 +661,13 @@ var MyApp = {
           $("#hallazgo-protesis-fija-malo").toggleClass('active');
       });
 
-      
+      $( ".sellantes-estado .bueno" ).click(function(e) {
+        $("#hallazgo-sellantes").trigger("click")
+      });
 
+      $( ".sellantes-estado .malo" ).click(function(e) {
+          $("#hallazgo-sellantes-malo").toggleClass('active');
+      });
 
       $("#hallazgo-caries").click();
 

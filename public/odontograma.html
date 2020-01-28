@@ -2706,6 +2706,11 @@
                                         <span class="codigo"></span>
                                         <a id="hallazgo-fractura" href="#" data-texto="Fractura" data-tipo="5">Fractura</a>
                                     </li>
+                                    <li class="opcion-sellantes">
+                                      <span>34.-</span>
+                                      <span class="codigo"></span>
+                                      <a id="hallazgo-sellantes" href="#" data-texto="Sellantes" data-tipo="5">Sellantes</a>
+                                    </li>
                                   </ul>
                                  <div class="box-estado restaura-estado">
                                     <span>Seleccione estado:</span>
@@ -2761,6 +2766,13 @@
                                     <div class="estados">
                                       <a class="bueno" href="#"></a>
                                       <a id="hallazgo-protesis-fija-malo" class="malo" href="#" data-texto="Protesis fija malo" data-tipo="8"></a>
+                                    </div>
+                                  </div>
+                                  <div class="box-estado sellantes-estado">
+                                    <span>Seleccione estado:</span>
+                                    <div class="estados">
+                                      <a class="bueno" href="#"></a>
+                                      <a id="hallazgo-sellantes-malo" class="malo" href="#" data-texto="Sellantes malo" data-tipo="5"></a>
                                     </div>
                                   </div>
                                   <div class="box-estado fractura-estado">
@@ -2989,6 +3001,8 @@
         hallazgoFracturaDiagonallDerechaSmall: "hallazgo-fractura-diagonal-derecha-small",
         hallazgoFracturaRayalIzquierda: "hallazgo-fractura-raya-izquierda",
         hallazgoFracturaRayalDerecha: "hallazgo-fractura-raya-derecha",
+        hallazgoSellantes: "hallazgo-sellantes",
+        hallazgoSellantesMalo: "hallazgo-sellantes-malo",
       };
       var urlImagenes = { //active-fractura-diagonal-izquierda-small
         dienteExtruido: "img/flecha-extruida.png",

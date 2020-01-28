@@ -389,6 +389,16 @@
                 }
             }
         }
+        &.opcion-sellantes {
+            a {
+                &.active {
+                    color:blue;
+                }
+                &:hover {
+                    color:blue;
+                }
+            }
+        }
     }
 }
 
