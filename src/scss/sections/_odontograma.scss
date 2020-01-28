@@ -1060,7 +1060,7 @@ svg.active-dentaria {
 }
 
 
-.active-sellantes  {
+.molar.active-sellantes  {
   position: relative;
   &:before {
       content: '';
@@ -1086,7 +1086,7 @@ svg.active-dentaria {
   }
 }
 
-.active-sellantes-malo  {
+.molar.active-sellantes-malo  {
   position: relative;
   &:before {
       content: '';
@@ -1110,6 +1110,49 @@ svg.active-dentaria {
     left: 16px;
     transform: rotate(90deg);
   }
+}
+
+
+.pre-molar.active-sellantes, .incisivos.active-sellantes  {
+  position: relative;
+  &:before {
+      content: '';
+      position: absolute;
+      width: 25px;
+      height: 3px;
+      background: blue;
+      top: 62px;
+      left: 13px;
+      .box-lista-dientes-sub & {
+          top: 8px;
+      }
+  }
+}
+
+.pre-molar.active-sellantes-malo, .incisivos.active-sellantes-malo  {
+  position: relative;
+  &:before {
+      content: '';
+      position: absolute;
+      width: 25px;
+      height: 3px;
+      background: red;
+      top: 62px;
+      left: 13px;
+      .box-lista-dientes-sub & {
+          top: 8px;
+      }
+  }
+}
+
+.incisivos.active-sellantes:before {
+  width: 24px;
+  left: 8px;
+}
+
+.incisivos.active-sellantes-malo:before {
+  width: 24px;
+  left: 8px;
 }
 
 .cont-diente {

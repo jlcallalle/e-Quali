@@ -1010,9 +1010,9 @@ svg.active-dentaria {
 .incisivos.active-fractura-linea-sub:before {
   width: 39px; }
 
-.active-sellantes {
+.molar.active-sellantes {
   position: relative; }
-  .active-sellantes:before {
+  .molar.active-sellantes:before {
     content: '';
     position: absolute;
     width: 25px;
@@ -1020,9 +1020,9 @@ svg.active-dentaria {
     background: blue;
     top: 62px;
     left: 13px; }
-    .box-lista-dientes-sub .active-sellantes:before {
+    .box-lista-dientes-sub .molar.active-sellantes:before {
       top: 8px; }
-  .active-sellantes:after {
+  .molar.active-sellantes:after {
     content: '';
     position: absolute;
     width: 20px;
@@ -1033,9 +1033,9 @@ svg.active-dentaria {
     -webkit-transform: rotate(90deg);
             transform: rotate(90deg); }
 
-.active-sellantes-malo {
+.molar.active-sellantes-malo {
   position: relative; }
-  .active-sellantes-malo:before {
+  .molar.active-sellantes-malo:before {
     content: '';
     position: absolute;
     width: 25px;
@@ -1043,9 +1043,9 @@ svg.active-dentaria {
     background: red;
     top: 62px;
     left: 13px; }
-    .box-lista-dientes-sub .active-sellantes-malo:before {
+    .box-lista-dientes-sub .molar.active-sellantes-malo:before {
       top: 8px; }
-  .active-sellantes-malo:after {
+  .molar.active-sellantes-malo:after {
     content: '';
     position: absolute;
     width: 20px;
@@ -1055,6 +1055,40 @@ svg.active-dentaria {
     left: 16px;
     -webkit-transform: rotate(90deg);
             transform: rotate(90deg); }
+
+.pre-molar.active-sellantes, .incisivos.active-sellantes {
+  position: relative; }
+  .pre-molar.active-sellantes:before, .incisivos.active-sellantes:before {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 3px;
+    background: blue;
+    top: 62px;
+    left: 13px; }
+    .box-lista-dientes-sub .pre-molar.active-sellantes:before, .box-lista-dientes-sub .incisivos.active-sellantes:before {
+      top: 8px; }
+
+.pre-molar.active-sellantes-malo, .incisivos.active-sellantes-malo {
+  position: relative; }
+  .pre-molar.active-sellantes-malo:before, .incisivos.active-sellantes-malo:before {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 3px;
+    background: red;
+    top: 62px;
+    left: 13px; }
+    .box-lista-dientes-sub .pre-molar.active-sellantes-malo:before, .box-lista-dientes-sub .incisivos.active-sellantes-malo:before {
+      top: 8px; }
+
+.incisivos.active-sellantes:before {
+  width: 24px;
+  left: 8px; }
+
+.incisivos.active-sellantes-malo:before {
+  width: 24px;
+  left: 8px; }
 
 .cont-diente {
   width: 51px;
