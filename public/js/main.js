@@ -181,6 +181,14 @@ var MyApp = {
           $(this).parents("svg").toggleClass("active-remanente-radicular");
       }
 
+      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoSellantes) ) {
+          $(this).parents("svg").parent().toggleClass("active-sellantes");
+      }
+
+      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoSellantesMalo) ) {
+        $(this).parents("svg").parent().toggleClass("active-sellantes-malo");
+      }
+
 
       $( cuadroDiente ).each(function( index ) {
           var idCuadro = this.id;

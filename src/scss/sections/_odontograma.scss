@@ -544,8 +544,8 @@
       &:hover {
           cursor:pointer;
           .contorno {
-              stroke: blue;
-              stroke-width: 10px;
+              //stroke: blue;
+              //stroke-width: 10px;
           }
       }
   }
@@ -555,8 +555,8 @@
   .svg {
       &:hover {
           .contorno {
-              stroke: red;
-              stroke-width: 10px;
+              //stroke: red;
+              //stroke-width: 10px;
           }
       }
   }
@@ -982,7 +982,6 @@ svg.active-dentaria {
   }
 }
 
-
 .active-fractura-diagonal-derecha-small {
   position: relative;
   &:before {
@@ -1058,6 +1057,59 @@ svg.active-dentaria {
 }
 .incisivos.active-fractura-linea-sub:before {
     width: 39px;
+}
+
+
+.active-sellantes  {
+  position: relative;
+  &:before {
+      content: '';
+      position: absolute;
+      width: 25px;
+      height: 3px;
+      background: blue;
+      top: 62px;
+      left: 13px;
+      .box-lista-dientes-sub & {
+          top: 8px;
+      }
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 3px;
+    background: blue;
+    top: 62px;
+    left: 16px;
+    transform: rotate(90deg);
+  }
+}
+
+.active-sellantes-malo  {
+  position: relative;
+  &:before {
+      content: '';
+      position: absolute;
+      width: 25px;
+      height: 3px;
+      background: red;
+      top: 62px;
+      left: 13px;
+      .box-lista-dientes-sub & {
+          top: 8px;
+      }
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 3px;
+    background: red;
+    top: 62px;
+    left: 16px;
+    transform: rotate(90deg);
+  }
 }
 
 .cont-diente {

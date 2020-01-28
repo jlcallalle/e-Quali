@@ -638,13 +638,6 @@ body {
 
 .hallazgo-sellantes .svg:hover {
   cursor: pointer; }
-  .hallazgo-sellantes .svg:hover .contorno {
-    stroke: blue;
-    stroke-width: 10px; }
-
-.hallazgo-sellantes-malo .svg:hover .contorno {
-  stroke: red;
-  stroke-width: 10px; }
 
 .active-supernumeraria {
   position: relative; }
@@ -1016,6 +1009,52 @@ svg.active-dentaria {
 
 .incisivos.active-fractura-linea-sub:before {
   width: 39px; }
+
+.active-sellantes {
+  position: relative; }
+  .active-sellantes:before {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 3px;
+    background: blue;
+    top: 62px;
+    left: 13px; }
+    .box-lista-dientes-sub .active-sellantes:before {
+      top: 8px; }
+  .active-sellantes:after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 3px;
+    background: blue;
+    top: 62px;
+    left: 16px;
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg); }
+
+.active-sellantes-malo {
+  position: relative; }
+  .active-sellantes-malo:before {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 3px;
+    background: red;
+    top: 62px;
+    left: 13px; }
+    .box-lista-dientes-sub .active-sellantes-malo:before {
+      top: 8px; }
+  .active-sellantes-malo:after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 3px;
+    background: red;
+    top: 62px;
+    left: 16px;
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg); }
 
 .cont-diente {
   width: 51px;
