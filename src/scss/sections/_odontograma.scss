@@ -1071,7 +1071,7 @@ svg.active-dentaria {
       top: 62px;
       left: 13px;
       .box-lista-dientes-sub & {
-          top: 8px;
+        top: 18px;
       }
   }
   &:after {
@@ -1083,6 +1083,9 @@ svg.active-dentaria {
     top: 62px;
     left: 16px;
     transform: rotate(90deg);
+    .box-lista-dientes-sub & {
+      top: 18px;
+    }
   }
 }
 
@@ -1097,7 +1100,7 @@ svg.active-dentaria {
       top: 62px;
       left: 13px;
       .box-lista-dientes-sub & {
-          top: 8px;
+          top: 18px;
       }
   }
   &:after {
@@ -1109,6 +1112,9 @@ svg.active-dentaria {
     top: 62px;
     left: 16px;
     transform: rotate(90deg);
+    .box-lista-dientes-sub & {
+      top: 18px;
+    }
   }
 }
 
@@ -1124,7 +1130,7 @@ svg.active-dentaria {
       top: 62px;
       left: 13px;
       .box-lista-dientes-sub & {
-          top: 8px;
+        top: 18px;
       }
   }
 }
@@ -1140,7 +1146,7 @@ svg.active-dentaria {
       top: 62px;
       left: 13px;
       .box-lista-dientes-sub & {
-          top: 8px;
+        top: 18px;
       }
   }
 }
@@ -1154,6 +1160,67 @@ svg.active-dentaria {
   width: 24px;
   left: 8px;
 }
+
+
+
+.molar-oclusal.active-sellantes  {
+  position: relative;
+  &:before {
+      content: '';
+      position: absolute;
+      width: 25px;
+      height: 3px;
+      background: blue;
+      top: 62px;
+      left: 13px;
+      .box-lista-dientes-sub & {
+        top: 18px;
+      }
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    width: 9px;
+    height: 3px;
+    background: blue;
+    top: 62px;
+    left: 21px;
+    transform: rotate(90deg);
+    .box-lista-dientes-sub & {
+      top: 13px;
+    }
+  }
+}
+
+.molar-oclusal.active-sellantes-malo  {
+  position: relative;
+  &:before {
+      content: '';
+      position: absolute;
+      width: 25px;
+      height: 3px;
+      background: red;
+      top: 62px;
+      left: 13px;
+      .box-lista-dientes-sub & {
+          top: 18px;
+      }
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 3px;
+    background: red;
+    top: 62px;
+    left: 16px;
+    transform: rotate(90deg);
+    .box-lista-dientes-sub & {
+      top: 18px;
+    }
+  }
+}
+
 
 .cont-diente {
     width: 51px;
