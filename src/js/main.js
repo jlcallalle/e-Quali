@@ -1028,9 +1028,13 @@ var MyApp = {
           var posicionActual = $(this).parents(".svg").attr("data-count");
           arregloOrtodonticoFijo.push(posicionActual);
 
+          $('.contenido-polygon').addClass("row-active");
+          $(this).parents(".contenido-polygon").removeClass("row-active");
+
           var listarPiezaDentaria = $(".contenido-polygon .svg");
           $( listarPiezaDentaria ).each(function( index ) {
             var countIndex = index+1;
+           
             if (posicionActual > countIndex) {
               $(this).addClass("disabled");
             }
@@ -1047,13 +1051,14 @@ var MyApp = {
 
           $( listarPiezaDentaria ).each(function( index ) {
             var countIndex = index+1;
+            
             if (countIndex >= arregloOrtodonticoFijo[0] && countIndex <= arregloOrtodonticoFijo[1])  {
               $(this).addClass("disabled-range");
               var anchoDientes = $(this).outerWidth();
               var marginRight = 2;
               sumarAnchoRango += Number(anchoDientes);
               sumarMarginRango += Number(marginRight);
-            }
+            } 
           });
 
           var rangoTotal = sumarAnchoRango + sumarMarginRango;
@@ -1066,6 +1071,7 @@ var MyApp = {
           arregloOrtodonticoFijo = []
 
           $(".svg").removeClass("disabled");
+          $('.contenido-polygon').removeClass("row-active");
           $(this).parents("svg").parent().toggleClass("puente2-fijo");
           $(this).parents("svg").parent().addClass("seleccionado");
           $(this).parents("svg").parent().parent().find(".puente1-fijo").addClass("seleccionado");
@@ -1080,6 +1086,9 @@ var MyApp = {
           $(this).parents("svg").parent().toggleClass("puente1-fijo-malo");
           var posicionActual = $(this).parents(".svg").attr("data-count");
           arregloOrtodonticoFijoMalo.push(posicionActual);
+
+          $('.contenido-polygon').addClass("row-active");
+          $(this).parents(".contenido-polygon").removeClass("row-active");
 
           var listarPiezaDentaria = $(".contenido-polygon .svg");
           $( listarPiezaDentaria ).each(function( index ) {
@@ -1119,7 +1128,7 @@ var MyApp = {
 
           arregloOrtodonticoFijoMalo = []
           $(".svg").removeClass("disabled");
-
+          $('.contenido-polygon').removeClass("row-active");
           $(this).parents("svg").parent().toggleClass("puente2-fijo-malo");
           $(this).parents("svg").parent().addClass("seleccionado");
           $(this).parents("svg").parent().parent().find(".puente1-fijo-malo").addClass("seleccionado");

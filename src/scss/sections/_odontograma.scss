@@ -2539,8 +2539,15 @@ position:relative;
 
 .disabled {
   pointer-events: none;
+  // border-top:1px solid red;
 }
 
 .disabled-range {
+  pointer-events: none;
+  // border-top:1px solid orange;
+}
+
+.row-active {
+  border-top: 2px solid yellow;
   pointer-events: none;
 }
