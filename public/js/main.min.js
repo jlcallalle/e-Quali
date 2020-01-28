@@ -916,6 +916,9 @@ var MyApp = {
           var posicionActual = $(this).parents(".svg").attr("data-count");
           arregloProtesis.push(posicionActual);
 
+          $('.contenido-polygon').addClass("row-active");
+          $(this).parents(".contenido-polygon").removeClass("row-active");
+
           var listarPiezaDentaria = $(".contenido-polygon .svg");
           $( listarPiezaDentaria ).each(function( index ) {
             var countIndex = index+1;
@@ -954,6 +957,7 @@ var MyApp = {
           arregloProtesis = []
 
           $(".svg").removeClass("disabled");
+          $('.contenido-polygon').removeClass("row-active");
           $(this).parents("svg").parent().toggleClass("puente2-removible"); 
           $(this).parents("svg").parent().addClass("seleccionado");
           $(this).parents("svg").parent().parent().find(".puente1-removible").addClass("seleccionado");
@@ -967,6 +971,9 @@ var MyApp = {
             $(this).parents("svg").parent().toggleClass("puente1-removible-malo");
             var posicionActual = $(this).parents(".svg").attr("data-count");
             arregloProtesisMalo.push(posicionActual);
+
+            $('.contenido-polygon').addClass("row-active");
+            $(this).parents(".contenido-polygon").removeClass("row-active");
 
             var listarPiezaDentaria = $(".contenido-polygon .svg");
             $( listarPiezaDentaria ).each(function( index ) {
@@ -1006,6 +1013,7 @@ var MyApp = {
             arregloProtesisMalo = []
             
             $(".svg").removeClass("disabled");
+            $('.contenido-polygon').removeClass("row-active");
             $(this).parents("svg").parent().toggleClass("puente2-removible-malo");
             $(this).parents("svg").parent().addClass("seleccionado");
             $(this).parents("svg").parent().parent().find(".puente1-removible-malo").addClass("seleccionado");
