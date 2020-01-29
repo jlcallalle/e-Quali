@@ -1168,27 +1168,16 @@ svg.active-dentaria {
   &:before {
       content: '';
       position: absolute;
-      width: 25px;
-      height: 3px;
-      background: blue;
-      top: 62px;
-      left: 13px;
+      width: 44px;
+      height: 38px;
+      top: 10px;
+      left: 4px;
+      background-image: url(../img/sellante2.png);
+      background-repeat: no-repeat;
+      background-position: top center;
       .box-lista-dientes-sub & {
-        top: 18px;
+        //top: 18px;
       }
-  }
-  &:after {
-    content: '';
-    position: absolute;
-    width: 9px;
-    height: 3px;
-    background: blue;
-    top: 62px;
-    left: 21px;
-    transform: rotate(90deg);
-    .box-lista-dientes-sub & {
-      top: 13px;
-    }
   }
 }
 
@@ -1197,31 +1186,96 @@ svg.active-dentaria {
   &:before {
       content: '';
       position: absolute;
-      width: 25px;
-      height: 3px;
-      background: red;
-      top: 62px;
-      left: 13px;
+      width: 44px;
+      height: 38px;
+      top: 10px;
+      left: 4px;
+      background-image: url(../img/sellante_malo2.png);
+      background-repeat: no-repeat;
+      background-position: top center;
       .box-lista-dientes-sub & {
-          top: 18px;
+          //top: 18px;
       }
   }
-  &:after {
-    content: '';
-    position: absolute;
-    width: 20px;
-    height: 3px;
-    background: red;
-    top: 62px;
-    left: 16px;
-    transform: rotate(90deg);
-    .box-lista-dientes-sub & {
-      top: 18px;
-    }
+  // &:after {
+  //   content: '';
+  //   position: absolute;
+  //   width: 20px;
+  //   height: 3px;
+  //   background: red;
+  //   top: 62px;
+  //   left: 16px;
+  //   transform: rotate(90deg);
+  //   .box-lista-dientes-sub & {
+  //     top: 18px;
+  //   }
+  // }
+}
+
+.molar-oclusal-doble.active-sellantes  {
+  position: relative;
+  &:before {
+      content: '';
+      position: absolute;
+      width: 44px;
+      height: 38px;
+      top: 10px;
+      left: 6px;
+      background-image: url(../img/sellanteb.png);
+      background-repeat: no-repeat;
+      background-position: top center;
+      .box-lista-dientes-sub & {
+        //top: 18px;
+      }
   }
 }
 
+.molar-oclusal-doble.active-sellantes-malo  {
+  position: relative;
+  &:before {
+      content: '';
+      position: absolute;
+      width: 44px;
+      height: 38px;
+      top: 10px;
+      left: 6px;
+      background-image: url(../img/sellanteb-malo.png);
+      background-repeat: no-repeat;
+      background-position: top center;
+  }
+}
 
+.molar-oclusal-doble-derecha.active-sellantes  {
+  position: relative;
+  &:before {
+      content: '';
+      position: absolute;
+      width: 44px;
+      height: 38px;
+      top: -8px;
+      left: 2px;
+      background-image: url(../img/sellanteb.png);
+      background-repeat: no-repeat;
+      background-position: top center;
+      transform: rotate(180deg);
+  }
+}
+
+.molar-oclusal-doble-derecha.active-sellantes-malo  {
+  position: relative;
+  &:before {
+      content: '';
+      position: absolute;
+      width: 44px;
+      height: 38px;
+      top: -8px;
+      left: 1px;
+      background-image: url(../img/sellanteb-malo.png);
+      background-repeat: no-repeat;
+      background-position: top center;
+      transform: rotate(180deg);
+  }
+}
 .cont-diente {
     width: 51px;
     display: inline-block;
@@ -1728,22 +1782,6 @@ svg.active-dentaria {
       }
   }
 
-
-//Erupcion
-// .box-sub-adulto .seleccionado.active-erupcion,
-// .box-sub-nino .seleccionado.active-erupcion  {
-//     background-image: url(../img/erupcion-top.png);
-//     background-position: bottom center;
-// }
-// .seleccionado {
-//     &.active-erupcion {
-//         background-image: url(../img/erupcion-sub.png);
-//         background-repeat: no-repeat;
-//         background-position: top center;
-//         background-size: 80% 85%;
-//     }
-// }
-
 .box-sub-adulto .seleccionado.active-hallazgo-pieza-dentaria-en-erupcion,
 .box-sub-nino .seleccionado.active-hallazgo-pieza-dentaria-en-erupcion  {
     background-image: url(../img/erupcion-top.png);
@@ -2094,68 +2132,15 @@ svg.active-dentaria {
 }
 
 .seleccionado.puente1-fijo-malo {
-// &:after {
-//   content: '';
-//   width: 100%;
-//   display: block;
-//   width: 10px;
-//   height: 5px;
-//   background: red;
-//   width: 100%;
-//   position: absolute;
-//   top: -12px;
-// }
-// &:before {
-//   content: '+';
-//   width: 4px;
-//   color: red;
-//   height: 13px;
-//   position: absolute;
-//   top: -15px;
-//   z-index: 10;
-//   border: 1px solid;
-//   width: 13px;
-//   background: white;
-//   line-height: 8px;
-//   font-size: 16px;
-// }
-
-.contorno {
-    stroke: transparent;
-    stroke-width: 10px;
-}
+  .contorno {
+      stroke: transparent;
+      stroke-width: 10px;
+  }
 }
 
 
 .puente2-fijo-malo {
-position:relative;
-// &:after {
-//   content: '';
-//   width: 100%;
-//   display: block;
-//   width: 10px;
-//   height: 5px;
-//   background: white;
-//   width: 100%;
-//   position: absolute;
-//   top: -12px;
-// }
-// &:before {
-//   content: '+';
-//   width: 4px;
-//   height: 13px;
-//   width: 13px;
-//   position: absolute;
-//   top: -15px;
-//   background: green;
-//   z-index: 10;
-//   border: 1px solid;
-//   width: 13px;
-//   background: white;
-//   line-height: 8px;
-//   font-size: 16px;
-//   color: red;
-// }
+  position:relative;
 }
 
 
@@ -2176,35 +2161,6 @@ position:relative;
 
 
 .seleccionado.puente1-removible {
-  &:after {
-    // content: '';
-    // width: 100%;
-    // display: block;
-    // width: 10px;
-    // height: 3px;
-    // background: blue;
-    // width: 100%;
-    // position: absolute;
-    // top: -12px;
-
-    // .box-lista-dientes-sub & {
-    //   top: 90px;
-    // }
-  }
-  &:before {
-    // content: '';
-    // width: 100%;
-    // height: 3px;
-    // position: absolute;
-    // top: -18px;
-    // background: blue;
-    // z-index: 10;
-
-    // .box-lista-dientes-sub & {
-    //   top: 98px;
-    // }
-  }
-
   .contorno {
       stroke: transparent;
       stroke-width: 10px;
@@ -2213,34 +2169,7 @@ position:relative;
 
 
 .puente2-removible {
-  // position:static;
   position:relative;
-  // &:after {
-  //   content: '';
-  //   width: 100%;
-  //   display: block;
-  //   width: 10px;
-  //   height: 5px;
-  //   background: white;
-  //   width: 100%;
-  //   position: absolute;
-  //   top: -12px;
-  //   .box-lista-dientes-sub & {
-  //     top: 90px;
-  //   }
-  // }
-  // &:before {
-  //   content: '';
-  //   width: 100%;
-  //   height: 5px;
-  //   position: absolute;
-  //   top: -20px;
-  //   background: white;
-  //   z-index: 10;
-  //   .box-lista-dientes-sub & {
-  //     top: 98px;
-  //   }
-  // }
 }
 
 
@@ -2255,26 +2184,6 @@ position:relative;
 
 
 .seleccionado.puente1-removible-malo {
-  // &:after {
-  //   content: '';
-  //   width: 100%;
-  //   display: block;
-  //   width: 10px;
-  //   height: 3px;
-  //   background: red;
-  //   width: 100%;
-  //   position: absolute;
-  //   top: -12px;
-  // }
-  // &:before {
-  //   content: '';
-  //   width: 100%;
-  //   height: 3px;
-  //   position: absolute;
-  //   top: -18px;
-  //   background: red;
-  //   z-index: 10;
-  // }
   .contorno {
       stroke: transparent;
       stroke-width: 10px;
@@ -2284,26 +2193,6 @@ position:relative;
 
 .puente2-removible-malo {
   position:relative;
-  // &:after {
-  //   content: '';
-  //   width: 100%;
-  //   display: block;
-  //   width: 10px;
-  //   height: 5px;
-  //   background: white;
-  //   width: 100%;
-  //   position: absolute;
-  //   top: -12px;
-  // }
-  // &:before {
-  //   content: '';
-  //   width: 100%;
-  //   height: 5px;
-  //   position: absolute;
-  //   top: -20px;
-  //   background: white;
-  //   z-index: 10;
-  // }
 }
 
 
@@ -2477,7 +2366,9 @@ position:relative;
   }
 }
 
-
+.hallazgo-sellantes .incisivos {
+  pointer-events: none;
+}
 
 .active-edentulo-total,.active-hallazgo-edentulo-total {
   .svg {

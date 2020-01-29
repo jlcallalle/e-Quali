@@ -1099,50 +1099,82 @@ svg.active-dentaria {
   .molar-oclusal.active-sellantes:before {
     content: '';
     position: absolute;
-    width: 25px;
-    height: 3px;
-    background: blue;
-    top: 62px;
-    left: 13px; }
-    .box-lista-dientes-sub .molar-oclusal.active-sellantes:before {
-      top: 18px; }
-  .molar-oclusal.active-sellantes:after {
-    content: '';
-    position: absolute;
-    width: 9px;
-    height: 3px;
-    background: blue;
-    top: 62px;
-    left: 21px;
-    -webkit-transform: rotate(90deg);
-            transform: rotate(90deg); }
-    .box-lista-dientes-sub .molar-oclusal.active-sellantes:after {
-      top: 13px; }
+    width: 44px;
+    height: 38px;
+    top: 10px;
+    left: 4px;
+    background-image: url(../img/sellante2.png);
+    background-repeat: no-repeat;
+    background-position: top center; }
 
 .molar-oclusal.active-sellantes-malo {
   position: relative; }
   .molar-oclusal.active-sellantes-malo:before {
     content: '';
     position: absolute;
-    width: 25px;
-    height: 3px;
-    background: red;
-    top: 62px;
-    left: 13px; }
-    .box-lista-dientes-sub .molar-oclusal.active-sellantes-malo:before {
-      top: 18px; }
-  .molar-oclusal.active-sellantes-malo:after {
+    width: 44px;
+    height: 38px;
+    top: 10px;
+    left: 4px;
+    background-image: url(../img/sellante_malo2.png);
+    background-repeat: no-repeat;
+    background-position: top center; }
+
+.molar-oclusal-doble.active-sellantes {
+  position: relative; }
+  .molar-oclusal-doble.active-sellantes:before {
     content: '';
     position: absolute;
-    width: 20px;
-    height: 3px;
-    background: red;
-    top: 62px;
-    left: 16px;
-    -webkit-transform: rotate(90deg);
-            transform: rotate(90deg); }
-    .box-lista-dientes-sub .molar-oclusal.active-sellantes-malo:after {
-      top: 18px; }
+    width: 44px;
+    height: 38px;
+    top: 10px;
+    left: 6px;
+    background-image: url(../img/sellanteb.png);
+    background-repeat: no-repeat;
+    background-position: top center; }
+
+.molar-oclusal-doble.active-sellantes-malo {
+  position: relative; }
+  .molar-oclusal-doble.active-sellantes-malo:before {
+    content: '';
+    position: absolute;
+    width: 44px;
+    height: 38px;
+    top: 10px;
+    left: 6px;
+    background-image: url(../img/sellanteb-malo.png);
+    background-repeat: no-repeat;
+    background-position: top center; }
+
+.molar-oclusal-doble-derecha.active-sellantes {
+  position: relative; }
+  .molar-oclusal-doble-derecha.active-sellantes:before {
+    content: '';
+    position: absolute;
+    width: 44px;
+    height: 38px;
+    top: -8px;
+    left: 2px;
+    background-image: url(../img/sellanteb.png);
+    background-repeat: no-repeat;
+    background-position: top center;
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg); }
+
+.molar-oclusal-doble-derecha.active-sellantes-malo {
+  position: relative; }
+  .molar-oclusal-doble-derecha.active-sellantes-malo:before {
+    content: '';
+    position: absolute;
+    width: 44px;
+    height: 38px;
+    top: -8px;
+    left: 1px;
+    background-image: url(../img/sellanteb-malo.png);
+    background-repeat: no-repeat;
+    background-position: top center;
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg); }
 
 .cont-diente {
   width: 51px;
@@ -1866,6 +1898,9 @@ svg.active-dentaria {
   pointer-events: none; }
 
 .seleccionado.active-hallazgo-fosas-fisuras-profundas, .seleccionado.active-hallazgo-piesa-dentaria-ectopica, .seleccionado.active-hallazgo-macrodoncia, .seleccionado.active-hallazgo-microdoncia, .seleccionado.active-hallazgo-impactacion, .seleccionado.active-edentulo-total, .seleccionado.active-hallazgo-corona-temporal, .seleccionado.active-hallazgo-pieza-supernumeraria, .seleccionado.active-hallazgo-movilidad-patologica, .seleccionado.active-hallazgo-remanente-radicular, .seleccionado.active-hallazgo-geminacion, .seleccionado.active-hallazgo-fusion, .seleccionado.active-hallazgo-pieza-dentaria-clavija, .seleccionado.active-hallazgo-pieza-dentaria-en-erupcion, .seleccionado.active-hallazgo-implante-dental, .seleccionado.active-hallazgo-implante-dental-malo, .seleccionado.active-hallazgo-transposicion, .seleccionado.active-hallazgo-fractura, .seleccionado.active-hallazgo-fractura-linea-sub, .seleccionado.active-hallazgo-fractura-diagonal-izquierda, .seleccionado.active-hallazgo-fractura-diagonal-derecha, .seleccionado.active-hallazgo-fractura-diagonal-izquierda-small, .seleccionado.active-hallazgo-fractura-diagonal-derecha-small, .seleccionado.active-hallazgo-fractura-raya-izquierda, .seleccionado.active-hallazgo-fractura-raya-derecha, .seleccionado.active-hallazgo-protesis-total, .seleccionado.active-hallazgo-giroversion, .seleccionado.active-hallazgo-corona, .seleccionado.active-hallazgo-corona-malo, .seleccionado.active-hallazgo-corona-temporal, .seleccionado.active-hallazgo-pieza-dentaria-ausente, .seleccionado.active-hallazgo-ortodontico-removible, .seleccionado.active-hallazgo-ortodontico-removible-malo, .seleccionado.active-hallazgo-protesis-removible, .seleccionado.active-hallazgo-protesis-removible-malo, .seleccionado.puente1-removible, .seleccionado.puente2-removible, .seleccionado.active-hallazgo-ortodontico-fijo, .seleccionado.active-hallazgo-ortodontico-fijo-malo, .seleccionado.active-hallazgo-protesis-fija, .seleccionado.active-hallazgo-protesis-fija-malo {
+  pointer-events: none; }
+
+.hallazgo-sellantes .incisivos {
   pointer-events: none; }
 
 .active-edentulo-total .svg, .active-hallazgo-edentulo-total .svg {
