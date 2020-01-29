@@ -71,10 +71,14 @@ var MyApp = {
           $(this).removeClass("disabledbutton");
       }
 
-      // if(nombrePosition == 'oclusal-1' || nombrePosition == 'oclusal-2' || nombrePosition == 'oclusal-3' || nombrePosition == 'oclusal-4') {
-      //     $(this).parents('svg').find('[data-pos]').addClass('disabledbutton');
-      //     $(this).removeClass("disabledbutton");
-      // }
+      if(nombrePosition == 'oclusal-1' || nombrePosition == 'oclusal-2') {
+          var valorOclusal = nombrePosition.split('-')[0]; // oclusal
+          var numOclusal = nombrePosition.split('-')[1]; // 1
+          console.log(valorOclusal,'valorOclusal');
+          console.log(numOclusal,'numOclusal');
+          $(this).parents('svg').find(`[data-pos="oclusal-*"]`).addClass('disabledbutton');
+          $(this).removeClass("disabledbutton");
+      }
 
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoDienteExtruida) ) {
           $(this).parents("svg").toggleClass('active-extruida');
