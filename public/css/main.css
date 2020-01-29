@@ -1693,7 +1693,10 @@ svg.active-dentaria {
 
 .disabledbutton {
   pointer-events: none;
-  opacity: 0.6; }
+  opacity: 0.6;
+  cursor: default;
+  fill: #00ff9d !important;
+  opacity: 0.2; }
 
 .linea-fija {
   background: blue;
