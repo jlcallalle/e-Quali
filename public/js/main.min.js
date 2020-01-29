@@ -717,7 +717,7 @@ var MyApp = {
                           $(this).parents(".svg").find('[data-pos="oclusal"]').removeClass("disabledbutton");
                           $(this).parents(".diastema").find("img").remove();
                           $(this).parents(".flecha-extruida, .flecha-intruida, .giroversion").find("img").remove();
-                          $(this).parents(".svg").parent().removeClass("selecflecha-extruida flecha-intruida giroversion diastema");
+                          $(this).parents(".svg").parent().removeClass("active-sellantes active-sellantes-malo selecflecha-extruida flecha-intruida giroversion diastema");
                           $(this).parents(".svg").removeClass("active-extruida active-intruida active-hallazgo-giroversion active-diastema active-hallazgo-implante-dental active-hallazgo-implante-dental-malo active-hallazgo-transposicion active-hallazgo-fractura active-hallazgo-fractura-linea-sub active-hallazgo-fractura-diagonal-izquierda active-hallazgo-fractura-diagonal-derecha active-hallazgo-fractura-diagonal-izquierda-small active-hallazgo-fractura-diagonal-derecha-small active-hallazgo-fractura-raya-izquierda active-hallazgo-fractura-raya-derecha active-hallazgo-protesis-removible active-hallazgo-protesis-removible-malo active-hallazgo-ortodontico-fijo active-hallazgo-ortodontico-fijo-malo disabled-range");
                           $("svg").removeClass("disabled-range");
                       }

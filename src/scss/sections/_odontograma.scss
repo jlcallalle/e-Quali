@@ -2366,7 +2366,8 @@ svg.active-dentaria {
   }
 }
 
-.hallazgo-sellantes .incisivos {
+.hallazgo-sellantes .incisivos,
+.hallazgo-sellantes-malo .incisivos {
   pointer-events: none;
 }
 
