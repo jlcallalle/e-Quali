@@ -399,6 +399,16 @@
                 }
             }
         }
+        &.opcion-corona-temporal {
+            a {
+                &.active {
+                    color:red;
+                }
+                &:hover {
+                    color:red;
+                }
+            }
+        }
     }
 }
 

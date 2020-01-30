@@ -198,6 +198,15 @@ var MyApp = {
         $(this).parents("svg").parent().toggleClass("active-sellantes-malo");
       }
 
+      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoSuperficieDesgastada) ) {
+          $(this).parents("svg").parent().toggleClass("active-superficie-desgastada-linea-top");
+      }
+
+      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoSuperficieDesgastadaLineaSub) ) {
+        $(this).parents("svg").parent().toggleClass("active-superficie-desgastada-linea-sub");
+      }
+
+
 
       $( cuadroDiente ).each(function( index ) {
           var idCuadro = this.id;
@@ -276,6 +285,13 @@ var MyApp = {
               }
               if (nombreHallazgo == listaHallazgo.hallazgoSellantesMalo) {
                 $( this ).find('.select-hallazgos').append('<span class="hallazgo-sellantes-malo">S</span>');
+              }
+
+              if (nombreHallazgo == listaHallazgo.hallazgoSuperficieDesgastada) {
+                $( this ).find('.select-hallazgos').append('<span class="hallazgo-superficie-desgastada">DES</span>');
+              }
+              if (nombreHallazgo == listaHallazgo.hallazgoSuperficieDesgastadaLineaSub) {
+                $( this ).find('.select-hallazgos').append('<span class="hallazgo-superficie-desgastada">DES</span>');
               }
 
           }
@@ -610,6 +626,14 @@ var MyApp = {
               $(".fractura-estado").addClass("show");
           } else {
               $(".fractura-estado").removeClass("show");
+          }
+          
+          if( nombreHallazgo == listaHallazgo.hallazgoSuperficieDesgastada
+            || nombreHallazgo == listaHallazgo.hallazgoSuperficieDesgastadaLineaTop
+            || nombreHallazgo == listaHallazgo.hallazgoSuperficieDesgastadaLineaSub ){
+                $(".superficie-desgastada-estado").addClass("show");
+            } else {
+                $(".superficie-desgastada-estado").removeClass("show");
           }
 
       });

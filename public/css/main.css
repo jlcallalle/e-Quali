@@ -233,6 +233,10 @@ body {
     color: blue; }
   .lista-hallazgos li.opcion-sellantes a:hover {
     color: blue; }
+  .lista-hallazgos li.opcion-corona-temporal a.active {
+    color: red; }
+  .lista-hallazgos li.opcion-corona-temporal a:hover {
+    color: red; }
 
 .box-opciones {
   display: -webkit-box;
@@ -1010,6 +1014,38 @@ svg.active-dentaria {
 .incisivos.active-fractura-linea-sub:before {
   width: 39px; }
 
+.active-superficie-desgastada-linea-top {
+  position: relative; }
+  .active-superficie-desgastada-linea-top:before {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 3px;
+    background: red;
+    top: 50px;
+    left: 0; }
+    .box-lista-dientes-sub .active-superficie-desgastada-linea-top:before {
+      top: 0; }
+
+.active-superficie-desgastada-linea-sub {
+  position: relative; }
+  .active-superficie-desgastada-linea-sub:before {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 3px;
+    background: red;
+    top: 73px;
+    left: 0; }
+    .box-lista-dientes-sub .active-superficie-desgastada-linea-sub:before {
+      top: 37px; }
+
+.incisivos.active-superficie-desgastada-linea-top:before {
+  width: 39px; }
+
+.incisivos.active-superficie-desgastada-linea-sub:before {
+  width: 39px; }
+
 .molar.active-sellantes {
   position: relative; }
   .molar.active-sellantes:before {
@@ -1328,6 +1364,8 @@ svg.active-dentaria {
       color: blue; }
     .select-hallazgos span.hallazgo-sellantes-malo {
       color: red; }
+    .select-hallazgos span.hallazgo-superficie-desgastada {
+      color: red; }
 
 .contenido-odontograma .diente-restaura .diente.active {
   fill: blue; }
@@ -1597,7 +1635,8 @@ svg.active-dentaria {
 .protesis-removible-estado,
 .fractura-estado,
 .protesis-fija-estado,
-.sellantes-estado {
+.sellantes-estado,
+.superficie-desgastada-estado {
   position: absolute;
   top: 0;
   right: 5px;
@@ -1616,7 +1655,8 @@ svg.active-dentaria {
   .protesis-removible-estado.show,
   .fractura-estado.show,
   .protesis-fija-estado.show,
-  .sellantes-estado.show {
+  .sellantes-estado.show,
+  .superficie-desgastada-estado.show {
     display: block; }
   .restaura-estado .estados,
   .implante-estado .estados,
@@ -1627,7 +1667,8 @@ svg.active-dentaria {
   .protesis-removible-estado .estados,
   .fractura-estado .estados,
   .protesis-fija-estado .estados,
-  .sellantes-estado .estados {
+  .sellantes-estado .estados,
+  .superficie-desgastada-estado .estados {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1644,7 +1685,8 @@ svg.active-dentaria {
     .protesis-removible-estado .estados a,
     .fractura-estado .estados a,
     .protesis-fija-estado .estados a,
-    .sellantes-estado .estados a {
+    .sellantes-estado .estados a,
+    .superficie-desgastada-estado .estados a {
       width: 20px;
       height: 20px;
       position: relative; }
@@ -1657,7 +1699,8 @@ svg.active-dentaria {
     .protesis-removible-estado .estados .bueno,
     .fractura-estado .estados .bueno,
     .protesis-fija-estado .estados .bueno,
-    .sellantes-estado .estados .bueno {
+    .sellantes-estado .estados .bueno,
+    .superficie-desgastada-estado .estados .bueno {
       background: blue; }
     .restaura-estado .estados .malo,
     .implante-estado .estados .malo,
@@ -1668,7 +1711,8 @@ svg.active-dentaria {
     .protesis-removible-estado .estados .malo,
     .fractura-estado .estados .malo,
     .protesis-fija-estado .estados .malo,
-    .sellantes-estado .estados .malo {
+    .sellantes-estado .estados .malo,
+    .superficie-desgastada-estado .estados .malo {
       background: red; }
 
 .list-editable {
@@ -1892,6 +1936,99 @@ svg.active-dentaria {
       top: 8px;
       left: 5px; }
   .fractura-estado .estados a {
+    border: 1px solid gray; }
+
+.superficie-desgastada-estado {
+  width: 240px; }
+  .superficie-desgastada-estado .estados .fractura-linea-top {
+    background-color: white; }
+    .superficie-desgastada-estado .estados .fractura-linea-top:before {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 3px;
+      background: red;
+      top: 4px;
+      left: 0; }
+  .superficie-desgastada-estado .estados .fractura-linea-sub {
+    background-color: white; }
+    .superficie-desgastada-estado .estados .fractura-linea-sub:before {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 3px;
+      background: red;
+      top: 12px;
+      left: 0; }
+  .superficie-desgastada-estado .estados .diagonal-izquierda {
+    background-color: white; }
+    .superficie-desgastada-estado .estados .diagonal-izquierda:before {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 3px;
+      background: red;
+      top: 9px;
+      left: 0;
+      -webkit-transform: rotate(45deg);
+              transform: rotate(45deg); }
+  .superficie-desgastada-estado .estados .diagonal-derecha:before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 3px;
+    background: red;
+    top: 9px;
+    left: 0;
+    -webkit-transform: rotate(135deg);
+            transform: rotate(135deg); }
+  .superficie-desgastada-estado .estados .diagonal-izquierda-small:before {
+    content: '';
+    position: absolute;
+    width: 13px;
+    height: 3px;
+    background: red;
+    top: 11px;
+    left: 2px;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg); }
+  .superficie-desgastada-estado .estados .diagonal-derecha-small:before {
+    content: '';
+    position: absolute;
+    width: 13px;
+    height: 3px;
+    background: red;
+    top: 11px;
+    left: 2px;
+    -webkit-transform: rotate(135deg);
+            transform: rotate(135deg); }
+  .superficie-desgastada-estado .estados .fractura-raya-izquierda {
+    background-color: white; }
+    .superficie-desgastada-estado .estados .fractura-raya-izquierda:before {
+      content: '';
+      position: absolute;
+      width: 16px;
+      height: 3px;
+      background: red;
+      top: 8px;
+      left: -3px;
+      -webkit-transform: rotate(90deg);
+              transform: rotate(90deg); }
+  .superficie-desgastada-estado .estados .fractura-raya-derecha {
+    background-color: white; }
+    .superficie-desgastada-estado .estados .fractura-raya-derecha:before {
+      content: '';
+      position: absolute;
+      width: 16px;
+      height: 3px;
+      background: red;
+      top: 12px;
+      left: 0;
+      -webkit-transform: rotate(90deg);
+              transform: rotate(90deg);
+      top: 8px;
+      left: 5px; }
+  .superficie-desgastada-estado .estados a {
     border: 1px solid gray; }
 
 .seleccionado.hallazgo-fosas-fisuras-profundas, .seleccionado.hallazgo-piesa-dentaria-ectopica, .seleccionado.hallazgo-macrodoncia, .seleccionado.hallazgo-microdoncia, .seleccionado.hallazgo-impactacion, .seleccionado.active-edentulo-total, .seleccionado.hallazgo-corona-temporal, .seleccionado.hallazgo-pieza-supernumeraria {

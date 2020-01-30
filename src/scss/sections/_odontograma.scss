@@ -633,6 +633,14 @@
     }
 }
 
+// .active-hallazgo-superficie-desgastada   {
+//   .contorno {
+//       cursor: pointer;
+//       stroke: red;
+//       stroke-width: 10px;
+//   }
+// }
+
 .active-geminacion {
   position: relative;
   &:before {
@@ -1006,13 +1014,9 @@ svg.active-dentaria {
   top: 70px;
 }
 
-
 .incisivos.active-fractura-diagonal-derecha-small:before {
   left: 18px;
 }
-
-
-
 
 .active-fractura-raya-izquierda  {
   position: relative;
@@ -1059,6 +1063,47 @@ svg.active-dentaria {
     width: 39px;
 }
 
+
+// Superficie desgastada
+.active-superficie-desgastada-linea-top  {
+  position: relative;
+  &:before {
+      content: '';
+      position: absolute;
+      width: 50px;
+      height: 3px;
+      background: red;
+      top: 50px;
+      left: 0;
+      .box-lista-dientes-sub & {
+          top: 0;
+      }
+  }
+}
+
+.active-superficie-desgastada-linea-sub  {
+  position: relative;
+  &:before {
+      content: '';
+      position: absolute;
+      width: 50px;
+      height: 3px;
+      background: red;
+      top: 73px;
+      left: 0;
+      .box-lista-dientes-sub & {
+         top: 37px;
+      }
+  }
+}
+
+.incisivos.active-superficie-desgastada-linea-top:before {
+  width: 39px;
+}
+
+.incisivos.active-superficie-desgastada-linea-sub:before {
+  width: 39px;
+}
 
 .molar.active-sellantes  {
   position: relative;
@@ -1462,6 +1507,9 @@ svg.active-dentaria {
           color:blue;;
         }
         &.hallazgo-sellantes-malo {
+          color:red;;
+        }
+        &.hallazgo-superficie-desgastada {
           color:red;;
         }
     }
@@ -1930,7 +1978,8 @@ svg.active-dentaria {
 .protesis-removible-estado,
 .fractura-estado,
 .protesis-fija-estado,
-.sellantes-estado {
+.sellantes-estado,
+.superficie-desgastada-estado {
     position: absolute;
     top: 0;
     right: 5px;
@@ -2309,6 +2358,118 @@ svg.active-dentaria {
            border: 1px solid gray;
         }
     }
+}
+
+.superficie-desgastada-estado {
+  width: 240px;
+ .estados {
+     .fractura-linea-top {
+         background-color:white;
+         &:before {
+             content: '';
+             position: absolute;
+             width: 20px;
+             height: 3px;
+             background: red;
+             top: 4px;
+             left: 0;
+         }
+     }
+     .fractura-linea-sub {
+          background-color:white;
+         &:before {
+             content: '';
+             position: absolute;
+             width: 20px;
+             height: 3px;
+             background: red;
+             top: 12px;
+             left: 0;
+         }
+     }
+     .diagonal-izquierda {
+          background-color:white;
+         &:before {
+            content: '';
+             position: absolute;
+             width: 20px;
+             height: 3px;
+             background: red;
+             top: 9px;
+             left: 0;
+             transform: rotate(45deg);
+         }
+     }
+     .diagonal-derecha {
+         &:before {
+            content: '';
+             position: absolute;
+             width: 20px;
+             height: 3px;
+             background: red;
+             top: 9px;
+             left: 0;
+             transform: rotate(135deg);
+         }
+     }
+     .diagonal-izquierda-small {
+         &:before {
+            content: '';
+             position: absolute;
+             width: 13px;
+             height: 3px;
+             background: red;
+             top: 11px;
+             left: 2px;
+             transform: rotate(45deg);
+         }
+     }
+     .diagonal-derecha-small {
+         &:before {
+           content: '';
+             position: absolute;
+             width: 13px;
+             height: 3px;
+             background: red;
+             top: 11px;
+             left: 2px;
+             transform: rotate(135deg);
+         }
+     }
+
+     .fractura-raya-izquierda {
+         background-color:white;
+         &:before {
+           content: '';
+           position: absolute;
+           width: 16px;
+           height: 3px;
+           background: red;
+           top: 8px;
+           left: -3px;
+           transform: rotate(90deg);
+         }
+     }
+     .fractura-raya-derecha {
+       background-color:white;
+       &:before {
+         content: '';
+         position: absolute;
+         width: 16px;
+         height: 3px;
+         background: red;
+         top: 12px;
+         left: 0;
+         transform: rotate(90deg);
+         top: 8px;
+         left: 5px;
+       }
+   }
+
+     a {
+        border: 1px solid gray;
+     }
+ }
 }
 
 //desactiva evento js en estas clases
