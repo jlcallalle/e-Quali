@@ -2363,7 +2363,7 @@ svg.active-dentaria {
 .superficie-desgastada-estado {
   width: 240px;
  .estados {
-     .fractura-linea-top {
+     .superficie-desgastada-linea-top {
          background-color:white;
          &:before {
              content: '';
@@ -2375,7 +2375,7 @@ svg.active-dentaria {
              left: 0;
          }
      }
-     .fractura-linea-sub {
+     .superficie-desgastada-linea-sub {
           background-color:white;
          &:before {
              content: '';

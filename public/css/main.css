@@ -1940,9 +1940,9 @@ svg.active-dentaria {
 
 .superficie-desgastada-estado {
   width: 240px; }
-  .superficie-desgastada-estado .estados .fractura-linea-top {
+  .superficie-desgastada-estado .estados .superficie-desgastada-linea-top {
     background-color: white; }
-    .superficie-desgastada-estado .estados .fractura-linea-top:before {
+    .superficie-desgastada-estado .estados .superficie-desgastada-linea-top:before {
       content: '';
       position: absolute;
       width: 20px;
@@ -1950,9 +1950,9 @@ svg.active-dentaria {
       background: red;
       top: 4px;
       left: 0; }
-  .superficie-desgastada-estado .estados .fractura-linea-sub {
+  .superficie-desgastada-estado .estados .superficie-desgastada-linea-sub {
     background-color: white; }
-    .superficie-desgastada-estado .estados .fractura-linea-sub:before {
+    .superficie-desgastada-estado .estados .superficie-desgastada-linea-sub:before {
       content: '';
       position: absolute;
       width: 20px;
