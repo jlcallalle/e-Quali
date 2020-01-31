@@ -198,15 +198,6 @@ var MyApp = {
         $(this).parents("svg").parent().toggleClass("active-sellantes-malo");
       }
 
-      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoSuperficieDesgastada) ) {
-          $(this).parents("svg").parent().toggleClass("active-superficie-desgastada-linea-top");
-      }
-
-      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoSuperficieDesgastadaLineaSub) ) {
-        $(this).parents("svg").parent().toggleClass("active-superficie-desgastada-linea-sub");
-      }
-
-
 
       $( cuadroDiente ).each(function( index ) {
           var idCuadro = this.id;
@@ -250,6 +241,13 @@ var MyApp = {
                   var selectCaries ="<select class='select-tipo select-ausente' name='hallazgo-ausente'><option value=''>Elegir</option><option value='Diente no erupcionado'>DNE</option><option value='Diente ausente por extracción'>DEX</option><option value='Diente ausente por otras razones'>DAO</option> </select>"
                   $( this ).find('.select-hallazgos').append(selectCaries);
               }
+              if (nombreHallazgo == listaHallazgo.hallazgoSuperficieDesgastada) {
+                // var selectCaries ="<select class='select-tipo select-superficie-desgastada' name='hallazgo-superficie-desgastada'> <option value=''>Elegir</option> <option value='Atricción'>DES</option> <option value='Erosión'>DES</option> <option value='Abfracción'>DES</option></select>"
+
+                var selectCaries ="<select class='select-tipo select-superficie-desgastada' name='hallazgo-superficie-desgastada'> <option value=''>Elegir</option> <option value='DES'>Atricción</option> <option value='DES'>Erosión</option> <option value='DES'>Abfracción</option></select>"
+
+                $( this ).find('.select-hallazgos').append(selectCaries);
+             }
 
               /*----------Fin Generado por DB--------- */
 
@@ -287,12 +285,12 @@ var MyApp = {
                 $( this ).find('.select-hallazgos').append('<span class="hallazgo-sellantes-malo">S</span>');
               }
 
-              if (nombreHallazgo == listaHallazgo.hallazgoSuperficieDesgastada) {
-                $( this ).find('.select-hallazgos').append('<span class="hallazgo-superficie-desgastada">DES</span>');
-              }
-              if (nombreHallazgo == listaHallazgo.hallazgoSuperficieDesgastadaLineaSub) {
-                $( this ).find('.select-hallazgos').append('<span class="hallazgo-superficie-desgastada">DES</span>');
-              }
+              // if (nombreHallazgo == listaHallazgo.hallazgoSuperficieDesgastada) {
+              //   $( this ).find('.select-hallazgos').append('<span class="hallazgo-superficie-desgastada">DES</span>');
+              // }
+              // if (nombreHallazgo == listaHallazgo.hallazgoSuperficieDesgastadaLineaSub) {
+              //   $( this ).find('.select-hallazgos').append('<span class="hallazgo-superficie-desgastada">DES</span>');
+              // }
 
           }
 
@@ -396,7 +394,6 @@ var MyApp = {
       }
 
 
-
         $(document).on("change", ".select-tipo", function() {
 
           var codLesion = $(this).children("option:selected").text();
@@ -413,10 +410,11 @@ var MyApp = {
 
           var nomHallazgo = contenidoOdontograma.attr("data-name");
 
-          if (codLesion !== "Elegir") {
-             $(this).parent().append('<span  class='+ nomHallazgo + '>' + codLesion  + '</span> ');
+          if (codLesion !== "Elegir" && tipoHallazgo === listaPintado.tipoPintado10)  {
+            $(this).parent().append('<span  class='+ nomHallazgo + '>' + nombreLesion  + '</span> ');
+          } else if(codLesion !== "Elegir") {
+            $(this).parent().append('<span  class='+ nomHallazgo + '>' + codLesion  + '</span> ');
           }
-
 
           function mostrarCaraSelect() {
             lista.append(nombreLesion );
@@ -1321,6 +1319,23 @@ var MyApp = {
       }
 
     });
+  },
+  superficieDesgastada: function() {
+    console.log('superficieDesgastada');
+
+    $(".cont-diente .diente").on("click", function(e){
+      var contenidoOdontograma = $(this).parents(".contenido-odontograma");
+
+      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoSuperficieDesgastada) ) {
+        $(this).parents("svg").parent().toggleClass("active-superficie-desgastada-linea-top");
+      }
+
+      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoSuperficieDesgastadaLineaSub) ) {
+        $(this).parents("svg").parent().toggleClass("active-superficie-desgastada-linea-sub");
+      }
+      
+
+    });
   }
 
 }
@@ -1335,6 +1350,7 @@ $(function () {
       MyApp.protesisRemovible();
       MyApp.ortodonticoFijo();
       MyApp.protesisFija();
+      MyApp.superficieDesgastada();
   }
   if ($(".resultado-odontograma").length) {
       MyApp.mostrarOdontrograma();

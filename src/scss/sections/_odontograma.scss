@@ -2525,7 +2525,10 @@ svg.active-dentaria {
   &.active-hallazgo-ortodontico-fijo,
   &.active-hallazgo-ortodontico-fijo-malo,
   &.active-hallazgo-protesis-fija,
-  &.active-hallazgo-protesis-fija-malo {
+  &.active-hallazgo-protesis-fija-malo,
+  &.active-hallazgo-sellantes,
+  &.active-superficie-desgastada-linea-top,
+  &.active-hallazgo-superficie-desgastada-linea-sub {
     pointer-events: none;
   }
 }
