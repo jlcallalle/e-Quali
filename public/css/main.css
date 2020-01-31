@@ -1040,6 +1040,36 @@ svg.active-dentaria {
     .box-lista-dientes-sub .active-superficie-desgastada-linea-sub:before {
       top: 37px; }
 
+.active-superficie-desgastada-izquierda {
+  position: relative; }
+  .active-superficie-desgastada-izquierda:before {
+    content: '';
+    position: absolute;
+    width: 34px;
+    height: 3px;
+    background: red;
+    top: 62px;
+    left: -10px;
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg); }
+    .box-lista-dientes-sub .active-superficie-desgastada-izquierda:before {
+      top: 16px; }
+
+.active-superficie-desgastada-derecha {
+  position: relative; }
+  .active-superficie-desgastada-derecha:before {
+    content: '';
+    position: absolute;
+    width: 34px;
+    height: 3px;
+    background: red;
+    top: 62px;
+    left: 27px;
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg); }
+    .box-lista-dientes-sub .active-superficie-desgastada-derecha:before {
+      top: 16px; }
+
 .incisivos.active-superficie-desgastada-linea-top:before {
   width: 39px; }
 
@@ -1365,6 +1395,12 @@ svg.active-dentaria {
     .select-hallazgos span.hallazgo-sellantes-malo {
       color: red; }
     .select-hallazgos span.hallazgo-superficie-desgastada {
+      color: red; }
+    .select-hallazgos span.hallazgo-superficie-desgastada-linea-sub {
+      color: red; }
+    .select-hallazgos span.hallazgo-superficie-desgastada-izquierda {
+      color: red; }
+    .select-hallazgos span.hallazgo-superficie-desgastada-derecha {
       color: red; }
 
 .contenido-odontograma .diente-restaura .diente.active {
@@ -1948,7 +1984,7 @@ svg.active-dentaria {
       width: 20px;
       height: 3px;
       background: red;
-      top: 4px;
+      top: 0;
       left: 0; }
   .superficie-desgastada-estado .estados .superficie-desgastada-linea-sub {
     background-color: white; }
@@ -1958,8 +1994,34 @@ svg.active-dentaria {
       width: 20px;
       height: 3px;
       background: red;
-      top: 12px;
+      bottom: 0;
       left: 0; }
+  .superficie-desgastada-estado .estados .superficie-desgastada-izquierda {
+    background-color: white; }
+    .superficie-desgastada-estado .estados .superficie-desgastada-izquierda:before {
+      content: '';
+      position: absolute;
+      width: 16px;
+      height: 3px;
+      background: red;
+      top: 8px;
+      left: -3px;
+      -webkit-transform: rotate(90deg);
+              transform: rotate(90deg); }
+  .superficie-desgastada-estado .estados .superficie-desgastada-derecha {
+    background-color: white; }
+    .superficie-desgastada-estado .estados .superficie-desgastada-derecha:before {
+      content: '';
+      position: absolute;
+      width: 16px;
+      height: 3px;
+      background: red;
+      top: 12px;
+      left: 0;
+      -webkit-transform: rotate(90deg);
+              transform: rotate(90deg);
+      top: 8px;
+      left: 5px; }
   .superficie-desgastada-estado .estados .diagonal-izquierda {
     background-color: white; }
     .superficie-desgastada-estado .estados .diagonal-izquierda:before {
@@ -2002,32 +2064,6 @@ svg.active-dentaria {
     left: 2px;
     -webkit-transform: rotate(135deg);
             transform: rotate(135deg); }
-  .superficie-desgastada-estado .estados .fractura-raya-izquierda {
-    background-color: white; }
-    .superficie-desgastada-estado .estados .fractura-raya-izquierda:before {
-      content: '';
-      position: absolute;
-      width: 16px;
-      height: 3px;
-      background: red;
-      top: 8px;
-      left: -3px;
-      -webkit-transform: rotate(90deg);
-              transform: rotate(90deg); }
-  .superficie-desgastada-estado .estados .fractura-raya-derecha {
-    background-color: white; }
-    .superficie-desgastada-estado .estados .fractura-raya-derecha:before {
-      content: '';
-      position: absolute;
-      width: 16px;
-      height: 3px;
-      background: red;
-      top: 12px;
-      left: 0;
-      -webkit-transform: rotate(90deg);
-              transform: rotate(90deg);
-      top: 8px;
-      left: 5px; }
   .superficie-desgastada-estado .estados a {
     border: 1px solid gray; }
 
@@ -2042,6 +2078,9 @@ svg.active-dentaria {
   pointer-events: none; }
 
 .active-edentulo-total .svg, .active-hallazgo-edentulo-total .svg {
+  pointer-events: none; }
+
+.active-superficie-desgastada-linea-top .seleccionado {
   pointer-events: none; }
 
 .panel-examenes-periodontal {
