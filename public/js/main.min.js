@@ -318,13 +318,20 @@ var MyApp = {
               if (nombreHallazgo == listaHallazgo.hallazgoSellantesMalo) {
                 $( this ).find('.select-hallazgos').append('<span class="hallazgo-sellantes-malo">S</span>');
               }
-              if (nombreHallazgo == listaHallazgo.hallazgoTratamientoPulpar) {
-                $( this ).find('.select-hallazgos').append('<span class="hallazgo-tratamiento-pulpar">TC</span>');
-              }
-              if (nombreHallazgo == listaHallazgo.hallazgoTratamientoPulparMalo) {
-                $( this ).find('.select-hallazgos').append('<span class="hallazgo-tratamiento-pulpar-malo">S</span>');
+
+              var edadGrupo = $( this ).parents('.box-options').parent().data('edad');
+
+              if ( nombreHallazgo == listaHallazgo.hallazgoTratamientoPulpar) {
+                if ( edadGrupo == 'adulto') {
+                  $( this ).find('.select-hallazgos').append('<span class="hallazgo-tratamiento-pulpar">TC</span>');
+                }
               }
 
+              if (nombreHallazgo == listaHallazgo.hallazgoTratamientoPulparMalo) {
+                if ( edadGrupo == 'nino') {
+                  $( this ).find('.select-hallazgos').append('<span class="hallazgo-tratamiento-pulpar-malo">TC</span>');
+                }
+              }
 
           }
 
