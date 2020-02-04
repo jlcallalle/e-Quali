@@ -465,6 +465,7 @@
 
   .cont-diente {
     position:relative;
+    z-index:10;
   }
 
   .box-lista-dientes-sub {
@@ -1345,6 +1346,71 @@ svg.active-dentaria {
       transform: rotate(180deg);
   }
 }
+
+// Tratamiento Pulpar
+.box-adulto {
+  .active-tratamiento-pulpar  {
+    position: relative;
+    &:before {
+        content: '';
+        position: absolute;
+        width: 59px;
+        height: 3px;
+        background: blue;
+        left: -4px;
+        transform: rotate(90deg);
+        bottom: 44px;
+        .box-lista-dientes-sub & {
+          top: 18px;
+          border:1px solid red;
+        }
+    }
+     &.incisivos {
+       &:before {
+        left: -9px;
+       }
+
+    }
+  }
+  .box-lista-dientes-sub {
+    .active-tratamiento-pulpar:before {
+      bottom: 56px;
+    }
+  }
+}
+
+
+// .box-adulto .active-tratamiento-pulpar-malo  {
+//   position: relative;
+//   &:before {
+//       content: '';
+//       position: absolute;
+//       width: 25px;
+//       height: 3px;
+//       background: green;
+//       top: 62px;
+//       left: 13px;
+//       .box-lista-dientes-sub & {
+//           top: 18px;
+//       }
+//   }
+//   &:after {
+//     content: '';
+//     position: absolute;
+//     width: 20px;
+//     height: 3px;
+//     background: green;
+//     top: 62px;
+//     left: 16px;
+//     transform: rotate(90deg);
+//     .box-lista-dientes-sub & {
+//       top: 18px;
+//     }
+//   }
+// }
+
+
+
 .cont-diente {
     width: 51px;
     display: inline-block;
@@ -1544,6 +1610,12 @@ svg.active-dentaria {
         }
         &.hallazgo-superficie-desgastada-derecha {
           color:red;
+        }
+        &.hallazgo-tratamiento-pulpar {
+          color:blue;;
+        }
+        &.hallazgo-tratamiento-pulpar-malo {
+          color:red;;
         }
     }
 }
@@ -2012,7 +2084,8 @@ svg.active-dentaria {
 .fractura-estado,
 .protesis-fija-estado,
 .sellantes-estado,
-.superficie-desgastada-estado {
+.superficie-desgastada-estado,
+.tratamiento-pulpar-estado {
     position: absolute;
     top: 0;
     right: 5px;
@@ -2075,7 +2148,7 @@ svg.active-dentaria {
 
 .disabledbutton {
   pointer-events: none;
-  opacity: 0.6;
+  //opacity: 0.6;
   // cursor: default;
   // fill: #00ff9d!important;
   // opacity: 0.2;
@@ -2498,7 +2571,7 @@ svg.active-dentaria {
          }
      }
 
-     
+
 
      a {
         border: 1px solid gray;

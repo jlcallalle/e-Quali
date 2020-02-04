@@ -2693,7 +2693,6 @@
                                     <li class="opcion-protesis-removible">
                                         <span>31.-</span>
                                         <span class="codigo"></span>
-                                        <!-- <a id="hallazgo-protesis-removible" href="#" data-texto="Protesis removible" data-tipo="9">Protesis removible</a> -->
                                         <a id="hallazgo-protesis-removible" href="#" data-texto="Protesis removible" data-tipo="9">Protesis removible</a>
                                     </li>
                                     <li class="opcion-transposicion">
@@ -2711,10 +2710,15 @@
                                       <span class="codigo"></span>
                                       <a id="hallazgo-sellantes" href="#" data-texto="Sellantes" data-tipo="5">Sellantes</a>
                                     </li>
-                                    <li class="opcion-corona-temporal">
+                                    <li class="opcion-superficie-desgastada">
                                         <span>35.-</span>
                                         <span class="codigo"></span>
                                         <a id="hallazgo-superficie-desgastada" href="#" data-texto="Superficie desgastada" data-tipo="10">Superficie desgastada</a>
+                                    </li>
+                                    <li class="opcion-tratamiento-pulpar">
+                                      <span>36.-</span>
+                                      <span class="codigo"></span>
+                                      <a id="hallazgo-tratamiento-pulpar" href="#" data-texto="Tratamiento pulpar" data-tipo="5">Tratamiento pulpar</a>
                                     </li>
                                   </ul>
                                  <div class="box-estado restaura-estado">
@@ -2770,7 +2774,7 @@
                                     <span>Seleccione estado:</span>
                                     <div class="estados">
                                       <a class="bueno" href="#"></a>
-                                      <a id="hallazgo-protesis-fija-malo" class="malo" href="#" data-texto="Protesis fija malo" data-tipo="8"></a>
+                                      <a id="hallazgo-protesis-fija-malo" class="malo" href="#" data-texto="Protesis fija malo" data-tipo="9"></a>
                                     </div>
                                   </div>
                                   <div class="box-estado sellantes-estado">
@@ -2801,6 +2805,13 @@
                                       <a id="hallazgo-superficie-desgastada-linea-sub" class="superficie-desgastada-linea-sub" href="#" data-texto="Superficie desgastada" data-tipo="10"></a>
                                       <a id="hallazgo-superficie-desgastada-izquierda" class="superficie-desgastada-izquierda" href="#" data-texto="Superficie desgastada" data-tipo="10"></a>
                                       <a id="hallazgo-superficie-desgastada-derecha" class="superficie-desgastada-derecha" href="#" data-texto="Superficie desgastada" data-tipo="10"></a>
+                                    </div>
+                                  </div>
+                                  <div class="box-estado tratamiento-pulpar-estado">
+                                    <span>Seleccione estado:</span>
+                                    <div class="estados">
+                                      <a class="bueno" href="#"></a>
+                                      <a id="hallazgo-tratamiento-pulpar-malo" class="malo" href="#" data-texto="Tratamiento pulpar malo" data-tipo="5"></a>
                                     </div>
                                   </div>
                               </div>
@@ -3022,10 +3033,12 @@
         hallazgoSuperficieDesgastada: "hallazgo-superficie-desgastada",
         hallazgoSuperficieDesgastadaLineaTop: "hallazgo-superficie-desgastada-linea-top",
         hallazgoSuperficieDesgastadaLineaSub: "hallazgo-superficie-desgastada-linea-sub",
-
         hallazgoSuperficieDesgastadaIzquierda: "hallazgo-superficie-desgastada-izquierda",
         hallazgoSuperficieDesgastadaDerecha: "hallazgo-superficie-desgastada-derecha",
-        
+
+        hallazgoTratamientoPulpar: "hallazgo-tratamiento-pulpar",
+        hallazgoTratamientoPulparMalo: "hallazgo-tratamiento-pulpar-malo",
+
       };
       var urlImagenes = { //active-fractura-diagonal-izquierda-small
         dienteExtruido: "img/flecha-extruida.png",

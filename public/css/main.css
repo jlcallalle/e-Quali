@@ -237,6 +237,14 @@ body {
     color: red; }
   .lista-hallazgos li.opcion-corona-temporal a:hover {
     color: red; }
+  .lista-hallazgos li.opcion-superficie-desgastada a.active {
+    color: red; }
+  .lista-hallazgos li.opcion-superficie-desgastada a:hover {
+    color: red; }
+  .lista-hallazgos li.opcion-tratamiento-pulpar a.active {
+    color: blue; }
+  .lista-hallazgos li.opcion-tratamiento-pulpar a:hover {
+    color: blue; }
 
 .box-opciones {
   display: -webkit-box;
@@ -608,7 +616,8 @@ body {
   cursor: pointer; }
 
 .hallazgo-fusion .cont-diente {
-  position: relative; }
+  position: relative;
+  z-index: 10; }
 
 .hallazgo-fusion .box-lista-dientes-sub .cont-diente:hover:before {
   top: 103px; }
@@ -1242,6 +1251,27 @@ svg.active-dentaria {
     -webkit-transform: rotate(180deg);
             transform: rotate(180deg); }
 
+.box-adulto .active-tratamiento-pulpar {
+  position: relative; }
+  .box-adulto .active-tratamiento-pulpar:before {
+    content: '';
+    position: absolute;
+    width: 59px;
+    height: 3px;
+    background: blue;
+    left: -4px;
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+    bottom: 44px; }
+    .box-lista-dientes-sub .box-adulto .active-tratamiento-pulpar:before {
+      top: 18px;
+      border: 1px solid red; }
+  .box-adulto .active-tratamiento-pulpar.incisivos:before {
+    left: -9px; }
+
+.box-adulto .box-lista-dientes-sub .active-tratamiento-pulpar:before {
+  bottom: 56px; }
+
 .cont-diente {
   width: 51px;
   display: inline-block;
@@ -1401,6 +1431,10 @@ svg.active-dentaria {
     .select-hallazgos span.hallazgo-superficie-desgastada-izquierda {
       color: red; }
     .select-hallazgos span.hallazgo-superficie-desgastada-derecha {
+      color: red; }
+    .select-hallazgos span.hallazgo-tratamiento-pulpar {
+      color: blue; }
+    .select-hallazgos span.hallazgo-tratamiento-pulpar-malo {
       color: red; }
 
 .contenido-odontograma .diente-restaura .diente.active {
@@ -1672,7 +1706,8 @@ svg.active-dentaria {
 .fractura-estado,
 .protesis-fija-estado,
 .sellantes-estado,
-.superficie-desgastada-estado {
+.superficie-desgastada-estado,
+.tratamiento-pulpar-estado {
   position: absolute;
   top: 0;
   right: 5px;
@@ -1692,7 +1727,8 @@ svg.active-dentaria {
   .fractura-estado.show,
   .protesis-fija-estado.show,
   .sellantes-estado.show,
-  .superficie-desgastada-estado.show {
+  .superficie-desgastada-estado.show,
+  .tratamiento-pulpar-estado.show {
     display: block; }
   .restaura-estado .estados,
   .implante-estado .estados,
@@ -1704,7 +1740,8 @@ svg.active-dentaria {
   .fractura-estado .estados,
   .protesis-fija-estado .estados,
   .sellantes-estado .estados,
-  .superficie-desgastada-estado .estados {
+  .superficie-desgastada-estado .estados,
+  .tratamiento-pulpar-estado .estados {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1722,7 +1759,8 @@ svg.active-dentaria {
     .fractura-estado .estados a,
     .protesis-fija-estado .estados a,
     .sellantes-estado .estados a,
-    .superficie-desgastada-estado .estados a {
+    .superficie-desgastada-estado .estados a,
+    .tratamiento-pulpar-estado .estados a {
       width: 20px;
       height: 20px;
       position: relative; }
@@ -1736,7 +1774,8 @@ svg.active-dentaria {
     .fractura-estado .estados .bueno,
     .protesis-fija-estado .estados .bueno,
     .sellantes-estado .estados .bueno,
-    .superficie-desgastada-estado .estados .bueno {
+    .superficie-desgastada-estado .estados .bueno,
+    .tratamiento-pulpar-estado .estados .bueno {
       background: blue; }
     .restaura-estado .estados .malo,
     .implante-estado .estados .malo,
@@ -1748,7 +1787,8 @@ svg.active-dentaria {
     .fractura-estado .estados .malo,
     .protesis-fija-estado .estados .malo,
     .sellantes-estado .estados .malo,
-    .superficie-desgastada-estado .estados .malo {
+    .superficie-desgastada-estado .estados .malo,
+    .tratamiento-pulpar-estado .estados .malo {
       background: red; }
 
 .list-editable {
@@ -1772,8 +1812,7 @@ svg.active-dentaria {
   font-weight: bold; }
 
 .disabledbutton {
-  pointer-events: none;
-  opacity: 0.6; }
+  pointer-events: none; }
 
 .linea-fija {
   background: blue;

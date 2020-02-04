@@ -199,7 +199,6 @@ var MyApp = {
       }
 
 
-
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoSuperficieDesgastada) ) {
         $(this).parents("svg").parent().toggleClass("active-superficie-desgastada-linea-top");
       }
@@ -214,6 +213,14 @@ var MyApp = {
 
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoSuperficieDesgastadaDerecha) ) {
         $(this).parents("svg").parent().toggleClass("active-superficie-desgastada-derecha");
+      }
+
+      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoTratamientoPulpar) ) {
+          $(this).parents("svg").parent().toggleClass("active-tratamiento-pulpar");
+      }
+
+      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoTratamientoPulparMalo) ) {
+        $(this).parents("svg").parent().toggleClass("active-tratamiento-pulpar-malo");
       }
 
 
@@ -311,6 +318,13 @@ var MyApp = {
               if (nombreHallazgo == listaHallazgo.hallazgoSellantesMalo) {
                 $( this ).find('.select-hallazgos').append('<span class="hallazgo-sellantes-malo">S</span>');
               }
+              if (nombreHallazgo == listaHallazgo.hallazgoTratamientoPulpar) {
+                $( this ).find('.select-hallazgos').append('<span class="hallazgo-tratamiento-pulpar">TC</span>');
+              }
+              if (nombreHallazgo == listaHallazgo.hallazgoTratamientoPulparMalo) {
+                $( this ).find('.select-hallazgos').append('<span class="hallazgo-tratamiento-pulpar-malo">S</span>');
+              }
+
 
           }
 
@@ -645,15 +659,22 @@ var MyApp = {
           } else {
               $(".fractura-estado").removeClass("show");
           }
-          
+
           if( nombreHallazgo == listaHallazgo.hallazgoSuperficieDesgastada
             || nombreHallazgo == listaHallazgo.hallazgoSuperficieDesgastadaLineaTop
-            || nombreHallazgo == listaHallazgo.hallazgoSuperficieDesgastadaLineaSub 
+            || nombreHallazgo == listaHallazgo.hallazgoSuperficieDesgastadaLineaSub
             || nombreHallazgo == listaHallazgo.hallazgoSuperficieDesgastadaIzquierda
             || nombreHallazgo == listaHallazgo.hallazgoSuperficieDesgastadaDerecha){
                 $(".superficie-desgastada-estado").addClass("show");
             } else {
                 $(".superficie-desgastada-estado").removeClass("show");
+          }
+
+          if( nombreHallazgo == listaHallazgo.hallazgoTratamientoPulpar
+            || nombreHallazgo == listaHallazgo.hallazgoTratamientoPulparMalo ){
+              $(".tratamiento-pulpar-estado").addClass("show");
+          } else {
+              $(".tratamiento-pulpar-estado").removeClass("show");
           }
 
       });
@@ -989,7 +1010,7 @@ var MyApp = {
       var contenidoOdontograma = $(this).parents(".contenido-odontograma");
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoProtesisRemovible) ) {
         countClickRemovible++;
-      
+
         if(countClickRemovible === 1){
           $(this).parents("svg").parent().toggleClass("puente1-removible");
           var posicionActual = $(this).parents(".svg").attr("data-count");
@@ -1024,7 +1045,7 @@ var MyApp = {
               sumarMarginRango += Number(marginRight);
             }
           });
-         
+
           var rangoTotal = sumarAnchoRango + sumarMarginRango;
 
           $(this).parents("svg").parent().append('<div style="z-index: 9999; height: 3px; width:' + rangoTotal + 'px;"  class="puente-protesis-removible"></div>');
@@ -1037,7 +1058,7 @@ var MyApp = {
 
           $(".svg").removeClass("disabled");
           $('.contenido-polygon').removeClass("row-active");
-          $(this).parents("svg").parent().toggleClass("puente2-removible"); 
+          $(this).parents("svg").parent().toggleClass("puente2-removible");
           $(this).parents("svg").parent().addClass("seleccionado");
           $(this).parents("svg").parent().parent().find(".puente1-removible").addClass("seleccionado");
         }
@@ -1090,7 +1111,7 @@ var MyApp = {
             });;
 
             arregloProtesisMalo = []
-            
+
             $(".svg").removeClass("disabled");
             $('.contenido-polygon').removeClass("row-active");
             $(this).parents("svg").parent().toggleClass("puente2-removible-malo");
@@ -1109,7 +1130,7 @@ var MyApp = {
 
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoOrtodonticoFijo) ) {
         countClickOrtodonticoFijo++;
-      
+
         if(countClickOrtodonticoFijo === 1){
           $(this).parents("svg").parent().toggleClass("puente1-fijo");
           var posicionActual = $(this).parents(".svg").attr("data-count");
@@ -1121,7 +1142,7 @@ var MyApp = {
           var listarPiezaDentaria = $(".contenido-polygon .svg");
           $( listarPiezaDentaria ).each(function( index ) {
             var countIndex = index+1;
-           
+
             if (posicionActual > countIndex) {
               $(this).addClass("disabled");
             }
@@ -1138,14 +1159,14 @@ var MyApp = {
 
           $( listarPiezaDentaria ).each(function( index ) {
             var countIndex = index+1;
-            
+
             if (countIndex >= arregloOrtodonticoFijo[0] && countIndex <= arregloOrtodonticoFijo[1])  {
               $(this).addClass("disabled-range");
               var anchoDientes = $(this).outerWidth();
               var marginRight = 2;
               sumarAnchoRango += Number(anchoDientes);
               sumarMarginRango += Number(marginRight);
-            } 
+            }
           });
 
           var rangoTotal = sumarAnchoRango + sumarMarginRango;
@@ -1162,13 +1183,13 @@ var MyApp = {
           $(this).parents("svg").parent().toggleClass("puente2-fijo");
           $(this).parents("svg").parent().addClass("seleccionado");
           $(this).parents("svg").parent().parent().find(".puente1-fijo").addClass("seleccionado");
-          
+
         }
       }
-      
+
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoOrtodonticoFijoMalo) ) {
         countClickOrtodonticoFijoMalo++;
-      
+
         if(countClickOrtodonticoFijoMalo === 1){
           $(this).parents("svg").parent().toggleClass("puente1-fijo-malo");
           var posicionActual = $(this).parents(".svg").attr("data-count");
@@ -1219,7 +1240,7 @@ var MyApp = {
           $(this).parents("svg").parent().toggleClass("puente2-fijo-malo");
           $(this).parents("svg").parent().addClass("seleccionado");
           $(this).parents("svg").parent().parent().find(".puente1-fijo-malo").addClass("seleccionado");
-          
+
         }
       }
 
@@ -1234,7 +1255,7 @@ var MyApp = {
 
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoProtesisFija) ) {
         countClickProtesisFija++;
-       
+
         if(countClickProtesisFija === 1){
           $(this).parents("svg").parent().toggleClass("puente1");
           var posicionActual = $(this).parents(".svg").attr("data-count");
@@ -1283,13 +1304,13 @@ var MyApp = {
           $(this).parents("svg").parent().toggleClass("puente2");
           $(this).parents("svg").parent().addClass("seleccionado");
           $(this).parents("svg").parent().parent().find(".puente1").addClass("seleccionado");
-          
+
         }
       }
 
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoProtesisFijaMalo) ) {
         countClickProtesisFijaMalo++;
-       
+
         if(countClickProtesisFijaMalo === 1){
           $(this).parents("svg").parent().toggleClass("puente1-malo");
           var posicionActual = $(this).parents(".svg").attr("data-count");
@@ -1336,7 +1357,7 @@ var MyApp = {
           $(this).parents("svg").parent().toggleClass("puente2-malo");
           $(this).parents("svg").parent().addClass("seleccionado");
           $(this).parents("svg").parent().parent().find(".puente1-malo").addClass("seleccionado");
-          
+
         }
       }
 
@@ -1365,7 +1386,7 @@ $(function () {
     MyApp.onlyNumbers();
   }
 
- 
+
 
   $(".lista-hallazgos li").each(function(){
     var tipo = $(this).find("a").data('tipo');

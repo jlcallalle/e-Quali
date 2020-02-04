@@ -409,6 +409,26 @@
                 }
             }
         }
+        &.opcion-superficie-desgastada {
+          a {
+              &.active {
+                  color:red;
+              }
+              &:hover {
+                  color:red;
+              }
+          }
+        }
+        &.opcion-tratamiento-pulpar {
+          a {
+              &.active {
+                  color:blue;
+              }
+              &:hover {
+                  color:blue;
+              }
+          }
+        }
     }
 }
 
