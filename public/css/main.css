@@ -1292,6 +1292,36 @@ svg.active-dentaria {
 .box-adulto .box-lista-dientes-sub .active-tratamiento-pulpar-malo:before {
   bottom: 56px; }
 
+.box-nino .active-tratamiento-pulpar-nino {
+  position: relative; }
+  .box-nino .active-tratamiento-pulpar-nino:before {
+    content: '';
+    position: absolute;
+    width: 59px;
+    height: 3px;
+    background: green;
+    left: -4px;
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+    bottom: 44px; }
+    .box-lista-dientes-sub .box-nino .active-tratamiento-pulpar-nino:before {
+      top: 18px; }
+
+.box-nino .active-tratamiento-pulpar-malo-nino {
+  position: relative; }
+  .box-nino .active-tratamiento-pulpar-malo-nino:before {
+    content: '';
+    position: absolute;
+    width: 59px;
+    height: 3px;
+    background: black;
+    left: -4px;
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+    bottom: 44px; }
+    .box-lista-dientes-sub .box-nino .active-tratamiento-pulpar-malo-nino:before {
+      top: 18px; }
+
 .cont-diente {
   width: 51px;
   display: inline-block;

@@ -52,6 +52,8 @@ var MyApp = {
       var idDiente = $(this).parents("svg").attr("id");
       var piezaDiente = $(this).parents("svg").attr("data-pieza");
       var cuadroDiente = $(this).parents(".box-lista-dientes").siblings().find(".box");
+      var edadDentaria = $(this).parents(".row-dental").data('edad');
+      console.log(edadDentaria,'edadDentaria');
 
       $(this).toggleClass("active");
       $(this).toggleClass(nombreHallazgo);
@@ -216,11 +218,21 @@ var MyApp = {
       }
 
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoTratamientoPulpar) ) {
-          $(this).parents("svg").parent().toggleClass("active-tratamiento-pulpar");
+          if (edadDentaria == 'adulto') {
+            $(this).parents("svg").parent().toggleClass("active-tratamiento-pulpar");
+          } else {
+            $(this).parents("svg").parent().toggleClass("active-tratamiento-pulpar-nino");
+          }
+
       }
 
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoTratamientoPulparMalo) ) {
-        $(this).parents("svg").parent().toggleClass("active-tratamiento-pulpar-malo");
+        if (edadDentaria == 'adulto') {
+          $(this).parents("svg").parent().toggleClass("active-tratamiento-pulpar-malo");
+        } else {
+          $(this).parents("svg").parent().toggleClass("active-tratamiento-pulpar-malo-nino");
+        }
+
       }
 
 
@@ -283,6 +295,22 @@ var MyApp = {
                 $( this ).find('.select-hallazgos').append(selectCaries);
             }
 
+            if (nombreHallazgo == listaHallazgo.hallazgoTratamientoPulpar) {
+              if (edadDentaria == 'nino') {
+                console.log('se agrega select en pulpar');
+                var selectCaries ="<select class='select-tipo select-tratamiento-pulpar' name='hallazgo-tratamienito-pulpar'> <option value=''>Elegir</option> <option value='Pulpectomia'>PC</option> <option value='Pulpotomia'>PP</option> </select>"
+                $( this ).find('.select-hallazgos').append(selectCaries);
+                $( this ).parent().parent().addClass('callalle123')
+              }
+            }
+
+            if (nombreHallazgo == listaHallazgo.hallazgoTratamientoPulparMalo) {
+              if (edadDentaria == 'nino') {
+                var selectCaries ="<select class='select-tipo select-tratamiento-pulpar' name='hallazgo-tratamienito-pulpar'> <option value=''>Elegir</option> <option value='Pulpectomia'>PC</option> <option value='Pulpotomia'>PP</option> </select>"
+                $( this ).find('.select-hallazgos').append(selectCaries);
+              }
+            }
+
               /*----------Fin Generado por DB--------- */
 
               if (nombreHallazgo == listaHallazgo.hallazgoImplanteDental) {
@@ -320,9 +348,9 @@ var MyApp = {
               }
 
               if ( nombreHallazgo == listaHallazgo.hallazgoTratamientoPulpar) {
-                var edadGrupo = $( this ).parents('.box-options').parent().data('edad');
-                console.log(edadGrupo,'adulto bueno');
-                if ( edadGrupo == 'adulto') {
+                // var edadGrupo = $( this ).parents('.box-options').parent().data('edad');
+                // console.log(edadGrupo,'adulto bueno');
+                if ( edadDentaria == 'adulto') {
                   $( this ).find('.select-hallazgos').append('<span class="hallazgo-tratamiento-pulpar">TC</span>');
                 } else {
                   console.log('es niño');
@@ -330,9 +358,9 @@ var MyApp = {
               }
 
               if (nombreHallazgo == listaHallazgo.hallazgoTratamientoPulparMalo) {
-                var edadGrupo = $( this ).parents('.box-options').parent().data('edad');
-                console.log(edadGrupo,'adulto malo');
-                if ( edadGrupo == 'adulto') {
+                // var edadGrupo = $( this ).parents('.box-options').parent().data('edad');
+                // console.log(edadGrupo,'adulto malo');
+                if ( edadDentaria == 'adulto') {
                   $( this ).find('.select-hallazgos').append('<span class="hallazgo-tratamiento-pulpar-malo">TC</span>');
                 } else {
                   console.log('es niño malo');
