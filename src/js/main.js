@@ -319,17 +319,23 @@ var MyApp = {
                 $( this ).find('.select-hallazgos').append('<span class="hallazgo-sellantes-malo">S</span>');
               }
 
-              var edadGrupo = $( this ).parents('.box-options').parent().data('edad');
-
               if ( nombreHallazgo == listaHallazgo.hallazgoTratamientoPulpar) {
+                var edadGrupo = $( this ).parents('.box-options').parent().data('edad');
+                console.log(edadGrupo,'adulto bueno');
                 if ( edadGrupo == 'adulto') {
                   $( this ).find('.select-hallazgos').append('<span class="hallazgo-tratamiento-pulpar">TC</span>');
+                } else {
+                  console.log('es niño');
                 }
               }
 
               if (nombreHallazgo == listaHallazgo.hallazgoTratamientoPulparMalo) {
-                if ( edadGrupo == 'nino') {
+                var edadGrupo = $( this ).parents('.box-options').parent().data('edad');
+                console.log(edadGrupo,'adulto malo');
+                if ( edadGrupo == 'adulto') {
                   $( this ).find('.select-hallazgos').append('<span class="hallazgo-tratamiento-pulpar-malo">TC</span>');
+                } else {
+                  console.log('es niño malo');
                 }
               }
 
@@ -760,6 +766,10 @@ var MyApp = {
 
       $( ".superficie-desgastada-estado  .superficie-desgastada-linea-top" ).click(function(e) {
         $("#hallazgo-superficie-desgastada").trigger("click");
+      });
+
+      $( ".tratamiento-pulpar-estado .bueno" ).click(function(e) {
+        $("#hallazgo-tratamiento-pulpar").trigger("click")
       });
 
       $("#hallazgo-caries").click();
