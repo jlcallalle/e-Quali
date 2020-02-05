@@ -2717,7 +2717,11 @@ svg.active-dentaria {
   &.active-hallazgo-sellantes,
   &.active-hallazgo-sellantes-malo,
   &.active-superficie-desgastada-linea-top,
-  &.active-hallazgo-superficie-desgastada-linea-sub {
+  &.active-hallazgo-superficie-desgastada-linea-sub,
+  &.active-tratamiento-pulpar-nino,
+  &.active-tratamiento-pulpar-malo-nino,
+  &.tipo-pulponomia,
+  &.tipo-pulponomia-malo {
     pointer-events: none;
   }
 }
@@ -2727,7 +2731,10 @@ svg.active-dentaria {
   pointer-events: none;
 }
 
-.active-edentulo-total,.active-hallazgo-edentulo-total {
+.active-edentulo-total,
+.active-hallazgo-edentulo-total,
+.active-tratamiento-pulpar,
+.active-tratamiento-pulpar-malo {
   .svg {
     pointer-events: none;
   }
@@ -2989,3 +2996,4 @@ svg.active-dentaria {
 .row-active {
   pointer-events: none;
 }
+
