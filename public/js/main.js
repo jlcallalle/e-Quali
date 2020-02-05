@@ -53,7 +53,7 @@ var MyApp = {
       var piezaDiente = $(this).parents("svg").attr("data-pieza");
       var cuadroDiente = $(this).parents(".box-lista-dientes").siblings().find(".box");
       var edadDentaria = $(this).parents(".row-dental").data('edad');
-      console.log(edadDentaria,'edadDentaria');
+      // console.log(edadDentaria,'edadDentaria');
 
       $(this).toggleClass("active");
       $(this).toggleClass(nombreHallazgo);
@@ -66,6 +66,12 @@ var MyApp = {
          || tipoHallazgo == listaPintado.tipoPintado6 || tipoHallazgo == listaPintado.tipoPintado8
          || tipoHallazgo == listaPintado.tipoPintado9) {
         $(this).parents("svg").addClass(`active-${nombreHallazgo}`);
+      }
+
+      // TIPO 11
+      if (tipoHallazgo == listaPintado.tipoPintado11) {
+        // $(this).parents("svg").parent().addClass(`active-${nombreHallazgo}`);
+        // $(this).parents("svg").parent().addClass(`callalle`)
       }
 
       if(nombrePosition == 'oclusal') {
@@ -222,6 +228,7 @@ var MyApp = {
             $(this).parents("svg").parent().toggleClass("active-tratamiento-pulpar");
           } else {
             $(this).parents("svg").parent().toggleClass("active-tratamiento-pulpar-nino");
+            $(this).parents("svg").parent().addClass("pre-seleccionado");
           }
 
       }
@@ -300,7 +307,7 @@ var MyApp = {
                 console.log('se agrega select en pulpar');
                 var selectCaries ="<select class='select-tipo select-tratamiento-pulpar' name='hallazgo-tratamienito-pulpar'> <option value=''>Elegir</option> <option value='Pulpectomia'>PC</option> <option value='Pulpotomia'>PP</option> </select>"
                 $( this ).find('.select-hallazgos').append(selectCaries);
-                $( this ).parent().parent().addClass('callalle123')
+                // $( this ).parent().parent().addClass('callalle123')
               }
             }
 
@@ -425,7 +432,7 @@ var MyApp = {
         lista.attr("data-evento", codEvento);
         $("#id_odontograma_especificaciones").html(dOdont.getJsonData());
         // mostrarCPOCeo();
-      } else if (tipoHallazgo === listaPintado.tipoPintado5) {
+      } else if (tipoHallazgo === listaPintado.tipoPintado5 || tipoHallazgo === listaPintado.tipoPintado11) {
         var nombreSlug = contenidoOdontograma.attr("data-name");
         var idPieza = piezaDiente;
         var texto = "";
@@ -461,6 +468,12 @@ var MyApp = {
           $(".lista-hallazgo-detallado").append(lista);
       }
 
+      if (tipoHallazgo === listaPintado.tipoPintado11 ) {
+          $(this).parents("svg").addClass("seleccionado");
+          $(this).parents("svg").removeClass("pre-seleccionado");
+          $(".lista-hallazgo-detallado").append(lista);
+      }
+
       //HALLAZGOS PINTADO
       if (tipoHallazgo === listaPintado.tipoPintado9 ) {
           $(this).parents("svg").addClass("seleccionado");
@@ -490,6 +503,15 @@ var MyApp = {
           } else if(codLesion !== "Elegir") {
             $(this).parent().append('<span  class='+ nomHallazgo + '>' + codLesion  + '</span> ');
           }
+
+          if (tipoHallazgo === listaPintado.tipoPintado11)  {
+            console.log('select elegido en tipo 11');
+          }
+
+          // if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoTratamientoPulpar) ) {
+          //   alert('pulpar change');
+          // }
+
 
           function mostrarCaraSelect() {
             lista.append(nombreLesion );
@@ -570,8 +592,13 @@ var MyApp = {
 
                   $(".lista-hallazgo-detallado").append(lista);
 
-                  $(this).addClass("seleccionado");
-                  $(this).removeClass("pre-seleccionado");
+                  if (tipoHallazgo === !listaPintado.tipoPintado11 ) {
+                    $(this).parent().addClass("seleccionado");
+                    $(this).parent().removeClass("pre-seleccionado");
+                  } else {
+                    $(this).addClass("seleccionado");
+                    $(this).removeClass("pre-seleccionado");
+                  }
 
               }
           });
