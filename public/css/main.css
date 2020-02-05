@@ -1178,7 +1178,7 @@ svg.active-dentaria {
     height: 38px;
     top: 10px;
     left: 4px;
-    background-image: url(../img/sellante2.png);
+    background-image: url(../img/sellante-doble.png);
     background-repeat: no-repeat;
     background-position: top center; }
 
@@ -1191,7 +1191,7 @@ svg.active-dentaria {
     height: 38px;
     top: 10px;
     left: 4px;
-    background-image: url(../img/sellante_malo2.png);
+    background-image: url(../img/sellante_malo-doble.png);
     background-repeat: no-repeat;
     background-position: top center; }
 
@@ -1204,7 +1204,7 @@ svg.active-dentaria {
     height: 38px;
     top: 10px;
     left: 6px;
-    background-image: url(../img/sellanteb.png);
+    background-image: url(../img/sellante-triple.png);
     background-repeat: no-repeat;
     background-position: top center; }
 
@@ -1217,7 +1217,7 @@ svg.active-dentaria {
     height: 38px;
     top: 10px;
     left: 6px;
-    background-image: url(../img/sellanteb-malo.png);
+    background-image: url(../img/sellante-malo.png);
     background-repeat: no-repeat;
     background-position: top center; }
 
@@ -1230,7 +1230,7 @@ svg.active-dentaria {
     height: 38px;
     top: -8px;
     left: 2px;
-    background-image: url(../img/sellanteb.png);
+    background-image: url(../img/sellante-triple.png);
     background-repeat: no-repeat;
     background-position: top center;
     -webkit-transform: rotate(180deg);
@@ -1245,7 +1245,7 @@ svg.active-dentaria {
     height: 38px;
     top: -8px;
     left: 1px;
-    background-image: url(../img/sellanteb-malo.png);
+    background-image: url(../img/sellante-malo.png);
     background-repeat: no-repeat;
     background-position: top center;
     -webkit-transform: rotate(180deg);
@@ -1292,35 +1292,45 @@ svg.active-dentaria {
 .box-adulto .box-lista-dientes-sub .active-tratamiento-pulpar-malo:before {
   bottom: 56px; }
 
-.box-nino .active-tratamiento-pulpar-nino {
-  position: relative; }
-  .box-nino .active-tratamiento-pulpar-nino:before {
-    content: '';
-    position: absolute;
-    width: 59px;
-    height: 3px;
-    background: green;
-    left: -4px;
-    -webkit-transform: rotate(90deg);
-            transform: rotate(90deg);
-    bottom: 44px; }
-    .box-lista-dientes-sub .box-nino .active-tratamiento-pulpar-nino:before {
-      top: 18px; }
+.box-nino .box-lista-dientes-sub .active-tratamiento-pulpar-nino.seleccionado:before {
+  bottom: 56px; }
 
-.box-nino .active-tratamiento-pulpar-malo-nino {
+.box-nino .box-lista-dientes-sub .active-tratamiento-pulpar-malo-nino.seleccionado:before {
+  bottom: 56px; }
+
+.box-nino .active-tratamiento-pulpar-nino.seleccionado {
   position: relative; }
-  .box-nino .active-tratamiento-pulpar-malo-nino:before {
+  .box-nino .active-tratamiento-pulpar-nino.seleccionado:before {
     content: '';
     position: absolute;
     width: 59px;
     height: 3px;
-    background: black;
+    background: blue;
     left: -4px;
     -webkit-transform: rotate(90deg);
             transform: rotate(90deg);
     bottom: 44px; }
-    .box-lista-dientes-sub .box-nino .active-tratamiento-pulpar-malo-nino:before {
+    .box-lista-dientes-sub .box-nino .active-tratamiento-pulpar-nino.seleccionado:before {
       top: 18px; }
+  .box-nino .active-tratamiento-pulpar-nino.seleccionado.incisivos:before {
+    left: -9px; }
+
+.box-nino .active-tratamiento-pulpar-malo-nino.seleccionado {
+  position: relative; }
+  .box-nino .active-tratamiento-pulpar-malo-nino.seleccionado:before {
+    content: '';
+    position: absolute;
+    width: 59px;
+    height: 3px;
+    background: red;
+    left: -4px;
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+    bottom: 44px; }
+    .box-lista-dientes-sub .box-nino .active-tratamiento-pulpar-malo-nino.seleccionado:before {
+      top: 18px; }
+  .box-nino .active-tratamiento-pulpar-malo-nino.seleccionado.incisivos:before {
+    left: -9px; }
 
 .cont-diente {
   width: 51px;
@@ -1364,6 +1374,22 @@ svg.active-dentaria {
     content: "";
     display: table;
     clear: both; }
+
+.tipo-pulponomia [data-pos='oclusal'] {
+  fill: blue; }
+
+.tipo-pulponomia-malo [data-pos='oclusal'] {
+  fill: red; }
+
+.incisivos.tipo-pulponomia {
+  position: relative; }
+  .incisivos.tipo-pulponomia .active {
+    fill: blue; }
+
+.incisivos.tipo-pulponomia-malo {
+  position: relative; }
+  .incisivos.tipo-pulponomia-malo .active {
+    fill: red; }
 
 .box-contenido {
   max-width: 825px;

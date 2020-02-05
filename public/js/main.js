@@ -592,9 +592,22 @@ var MyApp = {
 
                   $(".lista-hallazgo-detallado").append(lista);
 
-                  if (tipoHallazgo === !listaPintado.tipoPintado11 ) {
-                    $(this).parent().addClass("seleccionado");
-                    $(this).parent().removeClass("pre-seleccionado");
+                  if (tipoHallazgo === listaPintado.tipoPintado11 ) {
+                      if (codLesion == 'PC') {
+                        $(this).parent().addClass("seleccionado");
+                        $(this).parent().removeClass("pre-seleccionado");
+                      } else {
+                        $(this).parent().addClass("seleccionado");
+                        $(this).parent().removeClass("pre-seleccionado");
+                        $(this).parent().removeClass("active-tratamiento-pulpar-nino active-tratamiento-pulpar-malo-nino")
+
+                        if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoTratamientoPulpar) ) {
+                          $(this).parent().addClass("tipo-pulponomia");
+                        }
+                        if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoTratamientoPulparMalo) ) {
+                          $(this).parent().addClass("tipo-pulponomia-malo");
+                        }
+                    }
                   } else {
                     $(this).addClass("seleccionado");
                     $(this).removeClass("pre-seleccionado");
@@ -867,7 +880,7 @@ var MyApp = {
                           $(this).parents(".svg").find('[data-pos="oclusal"]').removeClass("disabledbutton");
                           $(this).parents(".diastema").find("img").remove();
                           $(this).parents(".flecha-extruida, .flecha-intruida, .giroversion").find("img").remove();
-                          $(this).parents(".svg").parent().removeClass("active-superficie-desgastada-linea-top active-hallazgo-superficie-desgastada-izquierda   active-hallazgo-superficie-desgastada-derecha active-superficie-desgastada-linea-sub active-sellantes active-sellantes-malo selecflecha-extruida flecha-intruida giroversion diastema");
+                          $(this).parents(".svg").parent().removeClass("active-tratamiento-pulpar-nino active-tratamiento-pulpar-nino-malo active-tratamiento-pulpar active-tratamiento-pulpar-malo active-superficie-desgastada-linea-top active-hallazgo-superficie-desgastada-izquierda   active-hallazgo-superficie-desgastada-derecha active-superficie-desgastada-linea-sub active-sellantes active-sellantes-malo selecflecha-extruida flecha-intruida giroversion diastema");
                           $(this).parents(".svg").removeClass("active-extruida active-intruida active-hallazgo-giroversion active-diastema active-hallazgo-implante-dental active-hallazgo-implante-dental-malo active-hallazgo-transposicion active-hallazgo-fractura active-hallazgo-fractura-linea-sub active-hallazgo-fractura-diagonal-izquierda active-hallazgo-fractura-diagonal-derecha active-hallazgo-fractura-diagonal-izquierda-small active-hallazgo-fractura-diagonal-derecha-small active-hallazgo-fractura-raya-izquierda active-hallazgo-fractura-raya-derecha active-hallazgo-protesis-removible active-hallazgo-protesis-removible-malo active-hallazgo-ortodontico-fijo active-hallazgo-ortodontico-fijo-malo disabled-range");
                           $("svg").removeClass("disabled-range");
                       }
@@ -883,7 +896,7 @@ var MyApp = {
               if (boxId == idLista) {
                   var textoBox = $(this).find(".select-hallazgos").find("span");
 
-                  if ( tipoHallazgo == listaPintado.tipoPintado5 ) {
+                  if ( tipoHallazgo == listaPintado.tipoPintado5 || tipoHallazgo == listaPintado.tipoPintado10 || tipoHallazgo == listaPintado.tipoPintado11  ) {
                       textoBox.remove();
 
                   } else {
