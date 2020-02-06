@@ -15,8 +15,6 @@ var countClickOrtodonticoFijoMalo = 0;
 
 var countClickProtesisFija = 0;
 var countClickProtesisFijaMalo = 0;
-// var posicionActual = null;
-
 
 var MyApp = {
   eventoDientes : function() {
@@ -224,23 +222,34 @@ var MyApp = {
       }
 
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoTratamientoPulpar) ) {
-          if (edadDentaria == 'adulto') {
+          if (edadDentaria === "adulto") {
             $(this).parents("svg").parent().toggleClass("active-tratamiento-pulpar");
           } else {
             $(this).parents("svg").parent().toggleClass("active-tratamiento-pulpar-nino");
             $(this).parents("svg").parent().addClass("pre-seleccionado");
           }
-
       }
 
       if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoTratamientoPulparMalo) ) {
-        if (edadDentaria == 'adulto') {
+        if (edadDentaria === "adulto") {
           $(this).parents("svg").parent().toggleClass("active-tratamiento-pulpar-malo");
         } else {
           $(this).parents("svg").parent().toggleClass("active-tratamiento-pulpar-malo-nino");
         }
-
       }
+
+      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoEspigoMuñon) ) {
+         $(this).parents("svg").parent().toggleClass("active-espigo-muñon");
+     }
+
+      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoEspigoMuñonMalo) ) {
+         $(this).parents("svg").parent().toggleClass("active-espigo-muñon-malo");
+      }
+
+      // if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoEspigoMuñonMalo) ) {
+      //   $(this).parents("svg").parent().toggleClass("active-fractura-linea-sub");
+      // }
+
 
 
       $( cuadroDiente ).each(function( index ) {
@@ -761,6 +770,17 @@ var MyApp = {
               $(".tratamiento-pulpar-estado").removeClass("show");
           }
 
+          if( nombreHallazgo == listaHallazgo.hallazgoEspigoMuñon
+            || nombreHallazgo == listaHallazgo.hallazgoEspigoMuñonIzquierda
+            || nombreHallazgo == listaHallazgo.hallazgoEspigoMuñonDerecha
+            || nombreHallazgo == listaHallazgo.hallazgoEspigoMuñonMalo
+            || nombreHallazgo == listaHallazgo.hallazgoEspigoMuñonIzquierdaMalo
+            || nombreHallazgo == listaHallazgo.hallazgoEspigoMuñonDerechaMalo ){
+                $(".espigo-muñon-estado").addClass("show");
+            } else {
+                $(".espigo-muñon-estado").removeClass("show");
+            }
+
       });
 
       $( ".restaura-estado .bueno" ).click(function(e) {
@@ -842,6 +862,11 @@ var MyApp = {
       $( ".tratamiento-pulpar-estado .bueno" ).click(function(e) {
         $("#hallazgo-tratamiento-pulpar").trigger("click")
       });
+
+      $( ".espigo-muñon-estado .espigo-muñon-top" ).click(function(e) {
+        $("#hallazgo-espigo-muñon").trigger("click")
+      });
+
 
       $("#hallazgo-caries").click();
 

@@ -2720,6 +2720,11 @@
                                       <span class="codigo"></span>
                                       <a id="hallazgo-tratamiento-pulpar" href="#" data-texto="Tratamiento pulpar" data-tipo="11">Tratamiento pulpar</a>
                                     </li>
+                                    <li class="opcion-espigo-muñon">
+                                      <span>33.-</span>
+                                      <span class="codigo"></span>
+                                      <a id="hallazgo-espigo-muñon" href="#" data-texto="Espigo muñon" data-tipo="5">Espigo Muñon</a>
+                                    </li>
                                   </ul>
                                  <div class="box-estado restaura-estado">
                                     <span>Seleccione estado:</span>
@@ -2814,6 +2819,30 @@
                                       <a id="hallazgo-tratamiento-pulpar-malo" class="malo" href="#" data-texto="Tratamiento pulpar malo" data-tipo="11"></a>
                                     </div>
                                   </div>
+
+                                  <div class="box-estado espigo-muñon-estado">
+                                    <span>Seleccione estado:</span>
+                                    <div class="estados">
+                                      <a class="espigo-muñon-top" href="#"> <span class="cuadro"></span></a>
+
+                                      <a id="hallazgo-espigo-muñon-izquierda" class="espigo-muñon-izquierda" href="#" data-texto="Espigo muñon izquierda" data-tipo="5">
+                                        <span class="cuadro"></span>
+                                      </a>
+                                      <a id="hallazgo-espigo-muñon-derecha" class="espigo-muñon-derecha" href="#" data-texto="Espigo muñon derecha" data-tipo="5">
+                                        <span class="cuadro"></span>
+                                      </a>
+                                      <a id="hallazgo-espigo-muñon-malo" class="espigo-muñon-top-malo" href="#" data-texto="Espigo muñon malo" data-tipo="5">
+                                        <span class="cuadro"></span>
+                                      </a>
+                                      <a id="hallazgo-espigo-muñon-izquierda-malo" class="espigo-muñon-izquierda-malo" href="#" data-texto="Espigo muñon malo" data-tipo="5">
+                                        <span class="cuadro"></span>
+                                      </a>
+                                      <a id="hallazgo-espigo-muñon-derecha-malo" class="espigo-muñon-derecha-malo" href="#" data-texto="Espigo muñon malo" data-tipo="5">
+                                        <span class="cuadro"></span>
+                                      </a>
+                                    </div>
+                                  </div>
+
                               </div>
                             </div>
 
@@ -2950,7 +2979,7 @@
     <script src="static/minsalogin/vendor/jquery/js/jquery-ui.min.js"></script>
     <script src="static/minsalogin/vendor/moment/js/moment.min.js"></script>
     <script src="static/minsalogin/vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script src="static/minsalogin/vendor/sweetalert2/sweetalert2.min.js"></script>
+    <!-- <script src="sftatic/minsalogin/vendor/sweetalert2/sweetalert2.min.js"></script> -->
     <script src="static/minsalogin/vendor/select2/js/select2.full.min.js"></script>
     <script src="static/minsalogin/vendor/select2/js/i18n/es.js"></script>
     <script src="static/minsalogin/vendor/datatables/datatables.min.js"></script>
@@ -3039,6 +3068,13 @@
 
         hallazgoTratamientoPulpar: "hallazgo-tratamiento-pulpar",
         hallazgoTratamientoPulparMalo: "hallazgo-tratamiento-pulpar-malo",
+
+        hallazgoEspigoMuñon: "hallazgo-espigo-muñon",
+        hallazgoEspigoMuñonIzquierda: "hallazgo-espigo-muñon-izquierda",
+        hallazgoEspigoMuñonDerecha: "hallazgo-espigo-muñon-derecha",
+        hallazgoEspigoMuñonMalo: "hallazgo-espigo-muñon-malo",
+        hallazgoEspigoMuñonIzquierdaMalo: "hallazgo-espigo-muñon-izquierda-malo",
+        hallazgoEspigoMuñonDerechaMalo: "hallazgo-espigo-muñon-derecha-malo",
 
       };
       var urlImagenes = { //active-fractura-diagonal-izquierda-small

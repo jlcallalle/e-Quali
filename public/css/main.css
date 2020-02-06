@@ -245,6 +245,10 @@ body {
     color: blue; }
   .lista-hallazgos li.opcion-tratamiento-pulpar a:hover {
     color: blue; }
+  .lista-hallazgos li.opcion-espigo-muñon a.active {
+    color: blue; }
+  .lista-hallazgos li.opcion-espigo-muñon a:hover {
+    color: blue; }
 
 .box-opciones {
   display: -webkit-box;
@@ -890,6 +894,19 @@ svg.active-dentaria {
   .active-transposicion:last-child:before {
     display: none; }
 
+.active-espigo-muñon {
+  position: relative; }
+  .active-espigo-muñon:before {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 3px;
+    background: red;
+    top: 50px;
+    left: 0; }
+    .box-lista-dientes-sub .active-espigo-muñon:before {
+      top: 8px; }
+
 .active-fractura-linea-top {
   position: relative; }
   .active-fractura-linea-top:before {
@@ -1058,7 +1075,7 @@ svg.active-dentaria {
     height: 3px;
     background: red;
     top: 62px;
-    left: -10px;
+    left: -15px;
     -webkit-transform: rotate(90deg);
             transform: rotate(90deg); }
     .box-lista-dientes-sub .active-superficie-desgastada-izquierda:before {
@@ -1073,11 +1090,13 @@ svg.active-dentaria {
     height: 3px;
     background: red;
     top: 62px;
-    left: 27px;
+    left: 32px;
     -webkit-transform: rotate(90deg);
             transform: rotate(90deg); }
     .box-lista-dientes-sub .active-superficie-desgastada-derecha:before {
       top: 16px; }
+  .active-superficie-desgastada-derecha.incisivos:before {
+    left: 20px; }
 
 .incisivos.active-superficie-desgastada-linea-top:before {
   width: 39px; }
@@ -1783,7 +1802,8 @@ svg.active-dentaria {
 .protesis-fija-estado,
 .sellantes-estado,
 .superficie-desgastada-estado,
-.tratamiento-pulpar-estado {
+.tratamiento-pulpar-estado,
+.espigo-muñon-estado {
   position: absolute;
   top: 0;
   right: 5px;
@@ -1804,7 +1824,8 @@ svg.active-dentaria {
   .protesis-fija-estado.show,
   .sellantes-estado.show,
   .superficie-desgastada-estado.show,
-  .tratamiento-pulpar-estado.show {
+  .tratamiento-pulpar-estado.show,
+  .espigo-muñon-estado.show {
     display: block; }
   .restaura-estado .estados,
   .implante-estado .estados,
@@ -1817,7 +1838,8 @@ svg.active-dentaria {
   .protesis-fija-estado .estados,
   .sellantes-estado .estados,
   .superficie-desgastada-estado .estados,
-  .tratamiento-pulpar-estado .estados {
+  .tratamiento-pulpar-estado .estados,
+  .espigo-muñon-estado .estados {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1836,7 +1858,8 @@ svg.active-dentaria {
     .protesis-fija-estado .estados a,
     .sellantes-estado .estados a,
     .superficie-desgastada-estado .estados a,
-    .tratamiento-pulpar-estado .estados a {
+    .tratamiento-pulpar-estado .estados a,
+    .espigo-muñon-estado .estados a {
       width: 20px;
       height: 20px;
       position: relative; }
@@ -1851,7 +1874,8 @@ svg.active-dentaria {
     .protesis-fija-estado .estados .bueno,
     .sellantes-estado .estados .bueno,
     .superficie-desgastada-estado .estados .bueno,
-    .tratamiento-pulpar-estado .estados .bueno {
+    .tratamiento-pulpar-estado .estados .bueno,
+    .espigo-muñon-estado .estados .bueno {
       background: blue; }
     .restaura-estado .estados .malo,
     .implante-estado .estados .malo,
@@ -1864,8 +1888,13 @@ svg.active-dentaria {
     .protesis-fija-estado .estados .malo,
     .sellantes-estado .estados .malo,
     .superficie-desgastada-estado .estados .malo,
-    .tratamiento-pulpar-estado .estados .malo {
+    .tratamiento-pulpar-estado .estados .malo,
+    .espigo-muñon-estado .estados .malo {
       background: red; }
+
+.espigo-muñon-estado .estados {
+  top: 4px;
+  position: relative; }
 
 .list-editable {
   list-style: none;
@@ -2089,6 +2118,224 @@ svg.active-dentaria {
   .fractura-estado .estados a {
     border: 1px solid gray; }
 
+.espigo-muñon-estado {
+  width: 240px; }
+  .espigo-muñon-estado .estados .espigo-muñon-top {
+    background-color: white; }
+    .espigo-muñon-estado .estados .espigo-muñon-top:before {
+      content: '';
+      position: absolute;
+      width: 12px;
+      height: 2px;
+      background: blue;
+      top: 0px;
+      left: 3px;
+      -webkit-transform: rotate(90deg);
+              transform: rotate(90deg); }
+    .espigo-muñon-estado .estados .espigo-muñon-top .cuadro {
+      border: 2px solid blue;
+      width: 12px;
+      height: 10px;
+      display: block;
+      position: absolute;
+      left: 3px;
+      top: 5px; }
+  .espigo-muñon-estado .estados .espigo-muñon-izquierda {
+    background-color: white; }
+    .espigo-muñon-estado .estados .espigo-muñon-izquierda:before {
+      content: '';
+      position: absolute;
+      width: 12px;
+      height: 2px;
+      background: blue;
+      top: 0px;
+      left: 0;
+      -webkit-transform: rotate(60deg);
+              transform: rotate(60deg); }
+    .espigo-muñon-estado .estados .espigo-muñon-izquierda .cuadro {
+      border: 2px solid blue;
+      width: 12px;
+      height: 10px;
+      display: block;
+      position: absolute;
+      left: 3px;
+      top: 5px; }
+  .espigo-muñon-estado .estados .espigo-muñon-derecha {
+    background-color: white; }
+    .espigo-muñon-estado .estados .espigo-muñon-derecha:before {
+      content: '';
+      position: absolute;
+      width: 12px;
+      height: 2px;
+      background: blue;
+      top: 0px;
+      right: 0;
+      -webkit-transform: rotate(120deg);
+              transform: rotate(120deg); }
+    .espigo-muñon-estado .estados .espigo-muñon-derecha .cuadro {
+      border: 2px solid blue;
+      width: 12px;
+      height: 10px;
+      display: block;
+      position: absolute;
+      left: 3px;
+      top: 5px; }
+  .espigo-muñon-estado .estados .espigo-muñon-top-malo {
+    background-color: white; }
+    .espigo-muñon-estado .estados .espigo-muñon-top-malo:before {
+      content: '';
+      position: absolute;
+      width: 12px;
+      height: 2px;
+      background: red;
+      top: 0px;
+      left: 3px;
+      -webkit-transform: rotate(90deg);
+              transform: rotate(90deg); }
+    .espigo-muñon-estado .estados .espigo-muñon-top-malo .cuadro {
+      border: 2px solid red;
+      width: 12px;
+      height: 10px;
+      display: block;
+      position: absolute;
+      left: 3px;
+      top: 5px; }
+  .espigo-muñon-estado .estados .espigo-muñon-izquierda-malo {
+    background-color: white; }
+    .espigo-muñon-estado .estados .espigo-muñon-izquierda-malo:before {
+      content: '';
+      position: absolute;
+      width: 12px;
+      height: 2px;
+      background: red;
+      top: 0px;
+      left: 0;
+      -webkit-transform: rotate(60deg);
+              transform: rotate(60deg); }
+    .espigo-muñon-estado .estados .espigo-muñon-izquierda-malo .cuadro {
+      border: 2px solid red;
+      width: 12px;
+      height: 10px;
+      display: block;
+      position: absolute;
+      left: 3px;
+      top: 5px; }
+  .espigo-muñon-estado .estados .espigo-muñon-derecha-malo {
+    background-color: white; }
+    .espigo-muñon-estado .estados .espigo-muñon-derecha-malo:before {
+      content: '';
+      position: absolute;
+      width: 12px;
+      height: 2px;
+      background: red;
+      top: 0px;
+      right: 0;
+      -webkit-transform: rotate(120deg);
+              transform: rotate(120deg); }
+    .espigo-muñon-estado .estados .espigo-muñon-derecha-malo .cuadro {
+      border: 2px solid red;
+      width: 12px;
+      height: 10px;
+      display: block;
+      position: absolute;
+      left: 3px;
+      top: 5px; }
+  .espigo-muñon-estado .estados a {
+    border: 1px solid gray; }
+
+.fespigo-muñon-estado {
+  width: 240px; }
+  .fespigo-muñon-estado .estados .fractura-linea-top {
+    background-color: white; }
+    .fespigo-muñon-estado .estados .fractura-linea-top:before {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 3px;
+      background: red;
+      top: 4px;
+      left: 0; }
+  .fespigo-muñon-estado .estados .fractura-linea-sub {
+    background-color: white; }
+    .fespigo-muñon-estado .estados .fractura-linea-sub:before {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 3px;
+      background: red;
+      top: 12px;
+      left: 0; }
+  .fespigo-muñon-estado .estados .diagonal-izquierda {
+    background-color: white; }
+    .fespigo-muñon-estado .estados .diagonal-izquierda:before {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 3px;
+      background: red;
+      top: 9px;
+      left: 0;
+      -webkit-transform: rotate(45deg);
+              transform: rotate(45deg); }
+  .fespigo-muñon-estado .estados .diagonal-derecha:before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 3px;
+    background: red;
+    top: 9px;
+    left: 0;
+    -webkit-transform: rotate(135deg);
+            transform: rotate(135deg); }
+  .fespigo-muñon-estado .estados .diagonal-izquierda-small:before {
+    content: '';
+    position: absolute;
+    width: 13px;
+    height: 3px;
+    background: red;
+    top: 11px;
+    left: 2px;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg); }
+  .fespigo-muñon-estado .estados .diagonal-derecha-small:before {
+    content: '';
+    position: absolute;
+    width: 13px;
+    height: 3px;
+    background: red;
+    top: 11px;
+    left: 2px;
+    -webkit-transform: rotate(135deg);
+            transform: rotate(135deg); }
+  .fespigo-muñon-estado .estados .fractura-raya-izquierda {
+    background-color: white; }
+    .fespigo-muñon-estado .estados .fractura-raya-izquierda:before {
+      content: '';
+      position: absolute;
+      width: 16px;
+      height: 3px;
+      background: red;
+      top: 8px;
+      left: -3px;
+      -webkit-transform: rotate(90deg);
+              transform: rotate(90deg); }
+  .fespigo-muñon-estado .estados .fractura-raya-derecha {
+    background-color: white; }
+    .fespigo-muñon-estado .estados .fractura-raya-derecha:before {
+      content: '';
+      position: absolute;
+      width: 16px;
+      height: 3px;
+      background: red;
+      top: 12px;
+      left: 0;
+      -webkit-transform: rotate(90deg);
+              transform: rotate(90deg);
+      top: 8px;
+      left: 5px; }
+  .fespigo-muñon-estado .estados a {
+    border: 1px solid gray; }
+
 .superficie-desgastada-estado {
   width: 240px; }
   .superficie-desgastada-estado .estados .superficie-desgastada-linea-top {
@@ -2120,7 +2367,7 @@ svg.active-dentaria {
       height: 3px;
       background: red;
       top: 8px;
-      left: -3px;
+      left: -7px;
       -webkit-transform: rotate(90deg);
               transform: rotate(90deg); }
   .superficie-desgastada-estado .estados .superficie-desgastada-derecha {
@@ -2131,12 +2378,10 @@ svg.active-dentaria {
       width: 16px;
       height: 3px;
       background: red;
-      top: 12px;
-      left: 0;
       -webkit-transform: rotate(90deg);
               transform: rotate(90deg);
       top: 8px;
-      left: 5px; }
+      left: 9px; }
   .superficie-desgastada-estado .estados .diagonal-izquierda {
     background-color: white; }
     .superficie-desgastada-estado .estados .diagonal-izquierda:before {

@@ -429,6 +429,16 @@
               }
           }
         }
+        &.opcion-espigo-muñon {
+          a {
+              &.active {
+                  color:blue;
+              }
+              &:hover {
+                  color:blue;
+              }
+          }
+        }
     }
 }
 
