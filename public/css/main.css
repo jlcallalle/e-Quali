@@ -991,9 +991,9 @@ svg.active-dentaria {
     height: 3px;
     background: blue;
     top: -23px;
-    left: -9px;
-    -webkit-transform: rotate(80deg);
-            transform: rotate(80deg); }
+    left: -14px;
+    -webkit-transform: rotate(75deg);
+            transform: rotate(75deg); }
     .box-lista-dientes-sub .espigo-izquierda:before {
       top: 34px; }
   .box-lista-dientes-sub .espigo-izquierda {
@@ -1025,9 +1025,9 @@ svg.active-dentaria {
     height: 3px;
     background: blue;
     top: -23px;
-    left: -9px;
-    -webkit-transform: rotate(100deg);
-            transform: rotate(100deg); }
+    left: -3px;
+    -webkit-transform: rotate(104deg);
+            transform: rotate(104deg); }
     .box-lista-dientes-sub .espigo-derecha:before {
       top: 34px; }
   .box-lista-dientes-sub .espigo-derecha {
@@ -1060,8 +1060,8 @@ svg.active-dentaria {
     background: red;
     top: -23px;
     left: -9px;
-    -webkit-transform: rotate(80deg);
-            transform: rotate(80deg); }
+    -webkit-transform: rotate(104deg);
+            transform: rotate(104deg); }
     .box-lista-dientes-sub .espigo-derecha-malo:before {
       top: 34px; }
   .box-lista-dientes-sub .espigo-derecha-malo {
@@ -1093,9 +1093,9 @@ svg.active-dentaria {
     height: 3px;
     background: red;
     top: -23px;
-    left: -9px;
-    -webkit-transform: rotate(100deg);
-            transform: rotate(100deg); }
+    left: -14px;
+    -webkit-transform: rotate(75deg);
+            transform: rotate(75deg); }
     .box-lista-dientes-sub .espigo-izquierda-malo:before {
       top: 34px; }
   .box-lista-dientes-sub .espigo-izquierda-malo {

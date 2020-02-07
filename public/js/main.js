@@ -898,6 +898,10 @@ var MyApp = {
                           $(this).parents(".flecha-extruida, .flecha-intruida, .giroversion").find("img").remove();
                           $(this).parents(".active-espigo-muñon").find("div").remove();
                           $(this).parents(".active-espigo-muñon-malo").find("div").remove();
+                          $(this).parents(".active-espigo-muñon-izquierda").find("div").remove();
+                          $(this).parents(".active-espigo-muñon-derecha").find("div").remove();
+                          $(this).parents(".active-espigo-muñon-izquierda-malo").find("div").remove();
+                          $(this).parents(".active-espigo-muñon-derecha-malo").find("div").remove();
                           $(this).parents(".svg").parent().removeClass("active-espigo-muñon active-espigo-muñon-malo tipo-pulponomia tipo-pulponomia-malo active-tratamiento-pulpar-nino active-tratamiento-pulpar-nino-malo active-tratamiento-pulpar active-tratamiento-pulpar-malo active-superficie-desgastada-linea-top active-hallazgo-superficie-desgastada-izquierda   active-hallazgo-superficie-desgastada-derecha active-superficie-desgastada-linea-sub active-sellantes active-sellantes-malo selecflecha-extruida flecha-intruida giroversion diastema");
                           $(this).parents(".svg").removeClass("active-hallazgo-espigo-muñon active-hallazgo-espigo-muñon-malo active-extruida active-intruida active-hallazgo-giroversion active-diastema active-hallazgo-implante-dental active-hallazgo-implante-dental-malo active-hallazgo-transposicion active-hallazgo-fractura active-hallazgo-fractura-linea-sub active-hallazgo-fractura-diagonal-izquierda active-hallazgo-fractura-diagonal-derecha active-hallazgo-fractura-diagonal-izquierda-small active-hallazgo-fractura-diagonal-derecha-small active-hallazgo-fractura-raya-izquierda active-hallazgo-fractura-raya-derecha active-hallazgo-protesis-removible active-hallazgo-protesis-removible-malo active-hallazgo-ortodontico-fijo active-hallazgo-ortodontico-fijo-malo disabled-range");
                           $("svg").removeClass("disabled-range");
@@ -1473,13 +1477,14 @@ var MyApp = {
         var contenidoOdontograma = $(this).parents(".contenido-odontograma");
 
         if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoEspigoMuñon) ) {
-            console.log('click en espigo');
             $(this).parents("svg").parent().toggleClass("active-espigo-muñon");
             var tagFlecha = '<div class="espigo"> </div>';
             $(this).parents(".cont-diente").append(tagFlecha)
 
             if (cantRaiz === "1") {
               $(this).parents("svg").parent().toggleClass("seleccionado");
+            } else if (cantRaiz === "2") {
+              //alert('2');
             }
         }
 
