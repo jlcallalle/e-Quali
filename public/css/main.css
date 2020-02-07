@@ -1104,10 +1104,12 @@ svg.active-dentaria {
   .box-lista-dientes-sub .incisivos .espigo-izquierda-malo:before {
     top: 20px; }
 
-.box-lista-dientes-sub .incisivos .espigo {
-  top: 18px; }
-
-.box-lista-dientes-sub .incisivos .espigo-malo {
+.box-lista-dientes-sub .incisivos .espigo,
+.box-lista-dientes-sub .incisivos .espigo-malo,
+.box-lista-dientes-sub .incisivos .espigo-izquierda,
+.box-lista-dientes-sub .incisivos .espigo-derecha,
+.box-lista-dientes-sub .incisivos .espigo-izquierda-malo,
+.box-lista-dientes-sub .incisivos .espigo-derecha-malo {
   top: 18px; }
 
 .active-espigo-muñon-izquierda {
