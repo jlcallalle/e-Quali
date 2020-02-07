@@ -968,11 +968,159 @@ svg.active-dentaria {
   .box-lista-dientes-sub .incisivos .espigo-malo:before {
     top: 20px; }
 
+.espigo-izquierda {
+  border: 3px solid blue;
+  width: 27px;
+  height: 21px;
+  position: absolute;
+  bottom: 14px;
+  left: 12px; }
+  .incisivos .espigo-izquierda {
+    left: 8px;
+    border: none;
+    width: 24px;
+    height: 3px;
+    background: blue;
+    bottom: 23px; }
+    .incisivos .espigo-izquierda:before {
+      width: 43px; }
+  .espigo-izquierda:before {
+    content: '';
+    position: absolute;
+    width: 39px;
+    height: 3px;
+    background: blue;
+    top: -23px;
+    left: -9px;
+    -webkit-transform: rotate(80deg);
+            transform: rotate(80deg); }
+    .box-lista-dientes-sub .espigo-izquierda:before {
+      top: 34px; }
+  .box-lista-dientes-sub .espigo-izquierda {
+    bottom: auto;
+    top: 9px; }
+  .box-lista-dientes-sub .incisivos .espigo-izquierda:before {
+    top: 20px; }
+
+.espigo-derecha {
+  border: 3px solid blue;
+  width: 27px;
+  height: 21px;
+  position: absolute;
+  bottom: 14px;
+  left: 12px; }
+  .incisivos .espigo-derecha {
+    left: 8px;
+    border: none;
+    width: 24px;
+    height: 3px;
+    background: blue;
+    bottom: 23px; }
+    .incisivos .espigo-derecha:before {
+      width: 43px; }
+  .espigo-derecha:before {
+    content: '';
+    position: absolute;
+    width: 39px;
+    height: 3px;
+    background: blue;
+    top: -23px;
+    left: -9px;
+    -webkit-transform: rotate(100deg);
+            transform: rotate(100deg); }
+    .box-lista-dientes-sub .espigo-derecha:before {
+      top: 34px; }
+  .box-lista-dientes-sub .espigo-derecha {
+    bottom: auto;
+    top: 9px; }
+  .box-lista-dientes-sub .incisivos .espigo-derecha:before {
+    top: 20px; }
+
+.espigo-derecha-malo {
+  border: 3px solid red;
+  width: 27px;
+  height: 21px;
+  position: absolute;
+  bottom: 14px;
+  left: 12px; }
+  .incisivos .espigo-derecha-malo {
+    left: 8px;
+    border: none;
+    width: 24px;
+    height: 3px;
+    background: red;
+    bottom: 23px; }
+    .incisivos .espigo-derecha-malo:before {
+      width: 43px; }
+  .espigo-derecha-malo:before {
+    content: '';
+    position: absolute;
+    width: 39px;
+    height: 3px;
+    background: red;
+    top: -23px;
+    left: -9px;
+    -webkit-transform: rotate(80deg);
+            transform: rotate(80deg); }
+    .box-lista-dientes-sub .espigo-derecha-malo:before {
+      top: 34px; }
+  .box-lista-dientes-sub .espigo-derecha-malo {
+    bottom: auto;
+    top: 9px; }
+  .box-lista-dientes-sub .incisivos .espigo-derecha-malo:before {
+    top: 20px; }
+
+.espigo-izquierda-malo {
+  border: 3px solid red;
+  width: 27px;
+  height: 21px;
+  position: absolute;
+  bottom: 14px;
+  left: 12px; }
+  .incisivos .espigo-izquierda-malo {
+    left: 8px;
+    border: none;
+    width: 24px;
+    height: 3px;
+    background: red;
+    bottom: 23px; }
+    .incisivos .espigo-izquierda-malo:before {
+      width: 43px; }
+  .espigo-izquierda-malo:before {
+    content: '';
+    position: absolute;
+    width: 39px;
+    height: 3px;
+    background: red;
+    top: -23px;
+    left: -9px;
+    -webkit-transform: rotate(100deg);
+            transform: rotate(100deg); }
+    .box-lista-dientes-sub .espigo-izquierda-malo:before {
+      top: 34px; }
+  .box-lista-dientes-sub .espigo-izquierda-malo {
+    bottom: auto;
+    top: 9px; }
+  .box-lista-dientes-sub .incisivos .espigo-izquierda-malo:before {
+    top: 20px; }
+
 .box-lista-dientes-sub .incisivos .espigo {
   top: 18px; }
 
 .box-lista-dientes-sub .incisivos .espigo-malo {
   top: 18px; }
+
+.active-espigo-muñon-izquierda {
+  position: relative; }
+
+.active-espigo-muñon-derecha {
+  position: relative; }
+
+.active-espigo-muñon-izquierda-malo {
+  position: relative; }
+
+.active-espigo-muñon-derecha-malo {
+  position: relative; }
 
 /* .active-espigo-muñon  {
   position: relative;
@@ -1082,185 +1230,6 @@ svg.active-dentaria {
   }
 }
 */
-.active-espigo-muñon-izquierda {
-  position: relative;
-  background-image: url(../img/clavija.png);
-  background-repeat: no-repeat;
-  background-position: top center; }
-  .active-espigo-muñon-izquierda:before {
-    content: '';
-    position: absolute;
-    width: 39px;
-    height: 3px;
-    background: blue;
-    top: 33px;
-    left: 6px;
-    -webkit-transform: rotate(80deg);
-            transform: rotate(80deg); }
-    .box-lista-dientes-sub .active-espigo-muñon-izquierda:before {
-      top: auto;
-      left: 6px;
-      bottom: 38px; }
-  .active-espigo-muñon-izquierda:after {
-    content: '';
-    position: absolute;
-    width: 25px;
-    height: 3px;
-    left: 13px;
-    bottom: 15px;
-    border: 2px solid blue;
-    height: 20px; }
-    .box-lista-dientes-sub .active-espigo-muñon-izquierda:after {
-      bottom: 15px;
-      top: 9px; }
-  .active-espigo-muñon-izquierda.incisivos:before {
-    left: -3px;
-    width: 47px;
-    top: 38px; }
-    .box-lista-dientes-sub .active-espigo-muñon-izquierda.incisivos:before {
-      top: 41px; }
-  .active-espigo-muñon-izquierda.incisivos:after {
-    left: 8px;
-    border: none;
-    width: 24px;
-    height: 3px;
-    background: blue;
-    bottom: 23px; }
-    .box-lista-dientes-sub .active-espigo-muñon-izquierda.incisivos:after {
-      top: 18px; }
-
-.active-espigo-muñon-derecha {
-  position: relative; }
-  .active-espigo-muñon-derecha:before {
-    content: '';
-    position: absolute;
-    width: 39px;
-    height: 3px;
-    background: blue;
-    top: 33px;
-    left: 6px;
-    -webkit-transform: rotate(100deg);
-            transform: rotate(100deg); }
-    .box-lista-dientes-sub .active-espigo-muñon-derecha:before {
-      top: auto;
-      left: 6px;
-      bottom: 38px; }
-  .active-espigo-muñon-derecha:after {
-    content: '';
-    position: absolute;
-    width: 25px;
-    height: 3px;
-    left: 13px;
-    bottom: 15px;
-    border: 2px solid blue;
-    height: 20px; }
-    .box-lista-dientes-sub .active-espigo-muñon-derecha:after {
-      bottom: 15px;
-      top: 9px; }
-  .active-espigo-muñon-derecha.incisivos:before {
-    left: -3px;
-    width: 47px;
-    top: 38px; }
-    .box-lista-dientes-sub .active-espigo-muñon-derecha.incisivos:before {
-      top: 41px; }
-  .active-espigo-muñon-derecha.incisivos:after {
-    left: 8px;
-    border: none;
-    width: 24px;
-    height: 3px;
-    background: blue;
-    bottom: 23px; }
-    .box-lista-dientes-sub .active-espigo-muñon-derecha.incisivos:after {
-      top: 18px; }
-
-.active-espigo-muñon-izquierda-malo {
-  position: relative; }
-  .active-espigo-muñon-izquierda-malo:before {
-    content: '';
-    position: absolute;
-    width: 39px;
-    height: 3px;
-    background: red;
-    top: 33px;
-    left: 6px;
-    -webkit-transform: rotate(80deg);
-            transform: rotate(80deg); }
-    .box-lista-dientes-sub .active-espigo-muñon-izquierda-malo:before {
-      top: auto;
-      left: 6px;
-      bottom: 38px; }
-  .active-espigo-muñon-izquierda-malo:after {
-    content: '';
-    position: absolute;
-    width: 25px;
-    height: 3px;
-    left: 13px;
-    bottom: 15px;
-    border: 2px solid red;
-    height: 20px; }
-    .box-lista-dientes-sub .active-espigo-muñon-izquierda-malo:after {
-      bottom: 15px;
-      top: 9px; }
-  .active-espigo-muñon-izquierda-malo.incisivos:before {
-    left: -3px;
-    width: 47px;
-    top: 38px; }
-    .box-lista-dientes-sub .active-espigo-muñon-izquierda-malo.incisivos:before {
-      top: 41px; }
-  .active-espigo-muñon-izquierda-malo.incisivos:after {
-    left: 8px;
-    border: none;
-    width: 24px;
-    height: 3px;
-    background: red;
-    bottom: 23px; }
-    .box-lista-dientes-sub .active-espigo-muñon-izquierda-malo.incisivos:after {
-      top: 18px; }
-
-.active-espigo-muñon-derecha-malo {
-  position: relative; }
-  .active-espigo-muñon-derecha-malo:before {
-    content: '';
-    position: absolute;
-    width: 39px;
-    height: 3px;
-    background: red;
-    top: 33px;
-    left: 6px;
-    -webkit-transform: rotate(100deg);
-            transform: rotate(100deg); }
-    .box-lista-dientes-sub .active-espigo-muñon-derecha-malo:before {
-      top: auto;
-      left: 6px;
-      bottom: 38px; }
-  .active-espigo-muñon-derecha-malo:after {
-    content: '';
-    position: absolute;
-    width: 25px;
-    height: 3px;
-    left: 13px;
-    bottom: 15px;
-    border: 2px solid red;
-    height: 20px; }
-    .box-lista-dientes-sub .active-espigo-muñon-derecha-malo:after {
-      bottom: 15px;
-      top: 9px; }
-  .active-espigo-muñon-derecha-malo.incisivos:before {
-    left: -3px;
-    width: 47px;
-    top: 38px; }
-    .box-lista-dientes-sub .active-espigo-muñon-derecha-malo.incisivos:before {
-      top: 41px; }
-  .active-espigo-muñon-derecha-malo.incisivos:after {
-    left: 8px;
-    border: none;
-    width: 24px;
-    height: 3px;
-    background: red;
-    bottom: 23px; }
-    .box-lista-dientes-sub .active-espigo-muñon-derecha-malo.incisivos:after {
-      top: 18px; }
-
 .active-fractura-linea-top {
   position: relative; }
   .active-fractura-linea-top:before {
@@ -1706,6 +1675,7 @@ svg.active-dentaria {
     left: -9px; }
 
 .cont-diente {
+  position: relative;
   width: 51px;
   display: inline-block;
   margin-right: 2px; }

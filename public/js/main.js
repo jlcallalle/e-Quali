@@ -51,7 +51,6 @@ var MyApp = {
       var piezaDiente = $(this).parents("svg").attr("data-pieza");
       var cuadroDiente = $(this).parents(".box-lista-dientes").siblings().find(".box");
       var edadDentaria = $(this).parents(".row-dental").data('edad');
-      var cantRaiz = $(this).parents(".svg").attr("data-raiz");
 
       // console.log(edadDentaria,'edadDentaria');
 
@@ -237,56 +236,6 @@ var MyApp = {
           $(this).parents("svg").parent().toggleClass("active-tratamiento-pulpar-malo");
         } else {
           $(this).parents("svg").parent().toggleClass("active-tratamiento-pulpar-malo-nino");
-        }
-      }
-
-
-      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoEspigoMuñon) ) {
-         $(this).parents("svg").parent().toggleClass("active-espigo-muñon");
-
-         var tagFlecha = '<div class="espigo"> </div>';
-         $(this).parents(".cont-diente").append(tagFlecha)
-
-         if (cantRaiz === "1") {
-           $(this).parents("svg").parent().toggleClass("seleccionado");
-         }
-      }
-
-      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoEspigoMuñonMalo) ) {
-         $(this).parents("svg").parent().toggleClass("active-espigo-muñon-malo");
-         var tagFlecha = '<div class="espigo-malo"> </div>';
-         $(this).parents(".cont-diente").append(tagFlecha)
-         if (cantRaiz === "1") {
-          $(this).parents("svg").parent().toggleClass("seleccionado");
-        }
-      }
-
-      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoEspigoMuñonIzquierda) ) {
-        $(this).parents("svg").parent().toggleClass("active-espigo-muñon-izquierda");
-        if (cantRaiz === "1") {
-          $(this).parents("svg").parent().toggleClass("seleccionado");
-        }
-      }
-
-      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoEspigoMuñonDerecha) ) {
-        $(this).parents("svg").parent().toggleClass("active-espigo-muñon-derecha");
-        if (cantRaiz === "1") {
-          $(this).parents("svg").parent().toggleClass("seleccionado");
-        }
-      }
-
-      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoEspigoMuñonIzquierdaMalo) ) {
-        $(this).parents("svg").parent().toggleClass("active-espigo-muñon-izquierda-malo");
-        if (cantRaiz === "1") {
-          $(this).parents("svg").parent().toggleClass("seleccionado");
-        }
-      }
-
-      if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoEspigoMuñonDerechaMalo) ) {
-        $(this).parents("svg").parent().toggleClass("active-espigo-muñon-derecha-malo");
-
-        if (cantRaiz === "1") {
-          $(this).parents("svg").parent().toggleClass("seleccionado");
         }
       }
 
@@ -948,6 +897,7 @@ var MyApp = {
                           $(this).parents(".diastema").find("img").remove();
                           $(this).parents(".flecha-extruida, .flecha-intruida, .giroversion").find("img").remove();
                           $(this).parents(".active-espigo-muñon").find("div").remove();
+                          $(this).parents(".active-espigo-muñon-malo").find("div").remove();
                           $(this).parents(".svg").parent().removeClass("active-espigo-muñon active-espigo-muñon-malo tipo-pulponomia tipo-pulponomia-malo active-tratamiento-pulpar-nino active-tratamiento-pulpar-nino-malo active-tratamiento-pulpar active-tratamiento-pulpar-malo active-superficie-desgastada-linea-top active-hallazgo-superficie-desgastada-izquierda   active-hallazgo-superficie-desgastada-derecha active-superficie-desgastada-linea-sub active-sellantes active-sellantes-malo selecflecha-extruida flecha-intruida giroversion diastema");
                           $(this).parents(".svg").removeClass("active-hallazgo-espigo-muñon active-hallazgo-espigo-muñon-malo active-extruida active-intruida active-hallazgo-giroversion active-diastema active-hallazgo-implante-dental active-hallazgo-implante-dental-malo active-hallazgo-transposicion active-hallazgo-fractura active-hallazgo-fractura-linea-sub active-hallazgo-fractura-diagonal-izquierda active-hallazgo-fractura-diagonal-derecha active-hallazgo-fractura-diagonal-izquierda-small active-hallazgo-fractura-diagonal-derecha-small active-hallazgo-fractura-raya-izquierda active-hallazgo-fractura-raya-derecha active-hallazgo-protesis-removible active-hallazgo-protesis-removible-malo active-hallazgo-ortodontico-fijo active-hallazgo-ortodontico-fijo-malo disabled-range");
                           $("svg").removeClass("disabled-range");
@@ -1516,6 +1466,72 @@ var MyApp = {
 
     });
   },
+  espigoMuñon: function() {
+
+    $(".cont-diente .diente").on("click", function(e){
+        var cantRaiz = $(this).parents(".svg").attr("data-raiz");
+        var contenidoOdontograma = $(this).parents(".contenido-odontograma");
+
+        if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoEspigoMuñon) ) {
+            console.log('click en espigo');
+            $(this).parents("svg").parent().toggleClass("active-espigo-muñon");
+            var tagFlecha = '<div class="espigo"> </div>';
+            $(this).parents(".cont-diente").append(tagFlecha)
+
+            if (cantRaiz === "1") {
+              $(this).parents("svg").parent().toggleClass("seleccionado");
+            }
+        }
+
+        if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoEspigoMuñonMalo) ) {
+            $(this).parents("svg").parent().toggleClass("active-espigo-muñon-malo");
+            var tagFlecha = '<div class="espigo-malo"> </div>';
+            $(this).parents(".cont-diente").append(tagFlecha)
+            if (cantRaiz === "1") {
+              $(this).parents("svg").parent().toggleClass("seleccionado");
+            }
+        }
+
+
+        if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoEspigoMuñonIzquierda) ) {
+          $(this).parents("svg").parent().toggleClass("active-espigo-muñon-izquierda");
+          var tagFlecha = '<div class="espigo-izquierda"> </div>';
+          $(this).parents(".cont-diente").append(tagFlecha)
+          if (cantRaiz === "1") {
+            $(this).parents("svg").parent().toggleClass("seleccionado");
+          }
+        }
+
+        if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoEspigoMuñonDerecha) ) {
+          $(this).parents("svg").parent().toggleClass("active-espigo-muñon-derecha");
+          var tagFlecha = '<div class="espigo-derecha"> </div>';
+          $(this).parents(".cont-diente").append(tagFlecha)
+          if (cantRaiz === "1") {
+            $(this).parents("svg").parent().toggleClass("seleccionado");
+          }
+        }
+
+        if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoEspigoMuñonIzquierdaMalo) ) {
+          $(this).parents("svg").parent().toggleClass("active-espigo-muñon-izquierda-malo");
+          var tagFlecha = '<div class="espigo-derecha-malo"> </div>';
+          $(this).parents(".cont-diente").append(tagFlecha)
+          if (cantRaiz === "1") {
+            $(this).parents("svg").parent().toggleClass("seleccionado");
+          }
+        }
+
+        if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoEspigoMuñonDerechaMalo) ) {
+          $(this).parents("svg").parent().toggleClass("active-espigo-muñon-derecha-malo");
+          var tagFlecha = '<div class="espigo-izquierda-malo"> </div>';
+          $(this).parents(".cont-diente").append(tagFlecha)
+
+          if (cantRaiz === "1") {
+            $(this).parents("svg").parent().toggleClass("seleccionado");
+          }
+        }
+
+    });
+  },
 }
 
 $(function () {
@@ -1528,6 +1544,7 @@ $(function () {
       MyApp.protesisRemovible();
       MyApp.ortodonticoFijo();
       MyApp.protesisFija();
+      MyApp.espigoMuñon();
   }
   if ($(".resultado-odontograma").length) {
       MyApp.mostrarOdontrograma();
