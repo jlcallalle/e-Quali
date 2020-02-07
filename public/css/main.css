@@ -896,7 +896,198 @@ svg.active-dentaria {
 
 .active-espigo-muñon {
   position: relative; }
-  .active-espigo-muñon:before {
+
+.active-espigo-muñon-malo {
+  position: relative; }
+
+.espigo {
+  border: 3px solid blue;
+  width: 27px;
+  height: 21px;
+  position: absolute;
+  bottom: 14px;
+  left: 12px; }
+  .incisivos .espigo {
+    left: 8px;
+    border: none;
+    width: 24px;
+    height: 3px;
+    background: blue;
+    bottom: 23px; }
+    .incisivos .espigo:before {
+      width: 43px; }
+  .espigo:before {
+    content: '';
+    position: absolute;
+    width: 39px;
+    height: 3px;
+    background: blue;
+    top: -23px;
+    left: -9px;
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg); }
+    .box-lista-dientes-sub .espigo:before {
+      top: 34px; }
+  .box-lista-dientes-sub .espigo {
+    bottom: auto;
+    top: 9px; }
+  .box-lista-dientes-sub .incisivos .espigo:before {
+    top: 20px; }
+
+.espigo-malo {
+  border: 3px solid red;
+  width: 27px;
+  height: 21px;
+  position: absolute;
+  bottom: 14px;
+  left: 12px; }
+  .incisivos .espigo-malo {
+    left: 8px;
+    border: none;
+    width: 24px;
+    height: 3px;
+    background: red;
+    bottom: 23px; }
+    .incisivos .espigo-malo:before {
+      width: 43px; }
+  .espigo-malo:before {
+    content: '';
+    position: absolute;
+    width: 39px;
+    height: 3px;
+    background: red;
+    top: -23px;
+    left: -9px;
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg); }
+    .box-lista-dientes-sub .espigo-malo:before {
+      top: 34px; }
+  .box-lista-dientes-sub .espigo-malo {
+    bottom: auto;
+    top: 9px; }
+  .box-lista-dientes-sub .incisivos .espigo-malo:before {
+    top: 20px; }
+
+.box-lista-dientes-sub .incisivos .espigo {
+  top: 18px; }
+
+.box-lista-dientes-sub .incisivos .espigo-malo {
+  top: 18px; }
+
+/* .active-espigo-muñon  {
+  position: relative;
+  &:before {
+      content: '';
+      position: absolute;
+      width: 39px;
+      height: 3px;
+      background: blue;
+      top: 33px;
+      left: 6px;
+      transform: rotate(90deg);
+      .box-lista-dientes-sub & {
+        top: auto;
+        left: 6px;
+        bottom: 38px;
+      }
+  }
+  &:after {
+      content: '';
+      position: absolute;
+      width: 25px;
+      height: 3px;
+      left: 13px;
+      bottom: 15px;
+      border: 2px solid blue;
+      height: 20px;
+      .box-lista-dientes-sub & {
+        bottom: 15px;
+        top: 9px;
+      }
+  }
+  &.incisivos {
+    &:before {
+      left: -3px;
+      width: 47px;
+      top: 38px;
+      .box-lista-dientes-sub & {
+        top: 41px;
+      }
+    }
+    &:after {
+      left: 8px;
+      border: none;
+      width: 24px;
+      height: 3px;
+      background: blue;
+      bottom: 23px;
+      .box-lista-dientes-sub & {
+        top: 18px;
+      }
+    }
+  }
+}
+*/
+/* .active-espigo-muñon-malo  {
+  position: relative;
+  &:before {
+      content: '';
+      position: absolute;
+      width: 39px;
+      height: 3px;
+      background: red;
+      top: 33px;
+      left: 6px;
+      transform: rotate(90deg);
+      .box-lista-dientes-sub & {
+        top: auto;
+        left: 6px;
+        bottom: 38px;
+      }
+  }
+  &:after {
+      content: '';
+      position: absolute;
+      width: 25px;
+      height: 3px;
+      left: 13px;
+      bottom: 15px;
+      border: 2px solid red;
+      height: 20px;
+      .box-lista-dientes-sub & {
+        bottom: 15px;
+        top: 9px;
+      }
+  }
+  &.incisivos {
+    &:before {
+      left: -3px;
+      width: 47px;
+      top: 38px;
+      .box-lista-dientes-sub & {
+        top: 41px;
+      }
+    }
+    &:after {
+      left: 8px;
+      border: none;
+      width: 24px;
+      height: 3px;
+      background: red;
+      bottom: 23px;
+      .box-lista-dientes-sub & {
+        top: 18px;
+      }
+    }
+  }
+}
+*/
+.active-espigo-muñon-izquierda {
+  position: relative;
+  background-image: url(../img/clavija.png);
+  background-repeat: no-repeat;
+  background-position: top center; }
+  .active-espigo-muñon-izquierda:before {
     content: '';
     position: absolute;
     width: 39px;
@@ -904,13 +1095,13 @@ svg.active-dentaria {
     background: blue;
     top: 33px;
     left: 6px;
-    -webkit-transform: rotate(90deg);
-            transform: rotate(90deg); }
-    .box-lista-dientes-sub .active-espigo-muñon:before {
+    -webkit-transform: rotate(80deg);
+            transform: rotate(80deg); }
+    .box-lista-dientes-sub .active-espigo-muñon-izquierda:before {
       top: auto;
       left: 6px;
       bottom: 38px; }
-  .active-espigo-muñon:after {
+  .active-espigo-muñon-izquierda:after {
     content: '';
     position: absolute;
     width: 25px;
@@ -919,28 +1110,72 @@ svg.active-dentaria {
     bottom: 15px;
     border: 2px solid blue;
     height: 20px; }
-    .box-lista-dientes-sub .active-espigo-muñon:after {
+    .box-lista-dientes-sub .active-espigo-muñon-izquierda:after {
       bottom: 15px;
       top: 9px; }
-  .active-espigo-muñon.incisivos:before {
+  .active-espigo-muñon-izquierda.incisivos:before {
     left: -3px;
     width: 47px;
     top: 38px; }
-    .box-lista-dientes-sub .active-espigo-muñon.incisivos:before {
+    .box-lista-dientes-sub .active-espigo-muñon-izquierda.incisivos:before {
       top: 41px; }
-  .active-espigo-muñon.incisivos:after {
+  .active-espigo-muñon-izquierda.incisivos:after {
     left: 8px;
     border: none;
     width: 24px;
     height: 3px;
     background: blue;
     bottom: 23px; }
-    .box-lista-dientes-sub .active-espigo-muñon.incisivos:after {
+    .box-lista-dientes-sub .active-espigo-muñon-izquierda.incisivos:after {
       top: 18px; }
 
-.active-espigo-muñon-malo {
+.active-espigo-muñon-derecha {
   position: relative; }
-  .active-espigo-muñon-malo:before {
+  .active-espigo-muñon-derecha:before {
+    content: '';
+    position: absolute;
+    width: 39px;
+    height: 3px;
+    background: blue;
+    top: 33px;
+    left: 6px;
+    -webkit-transform: rotate(100deg);
+            transform: rotate(100deg); }
+    .box-lista-dientes-sub .active-espigo-muñon-derecha:before {
+      top: auto;
+      left: 6px;
+      bottom: 38px; }
+  .active-espigo-muñon-derecha:after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 3px;
+    left: 13px;
+    bottom: 15px;
+    border: 2px solid blue;
+    height: 20px; }
+    .box-lista-dientes-sub .active-espigo-muñon-derecha:after {
+      bottom: 15px;
+      top: 9px; }
+  .active-espigo-muñon-derecha.incisivos:before {
+    left: -3px;
+    width: 47px;
+    top: 38px; }
+    .box-lista-dientes-sub .active-espigo-muñon-derecha.incisivos:before {
+      top: 41px; }
+  .active-espigo-muñon-derecha.incisivos:after {
+    left: 8px;
+    border: none;
+    width: 24px;
+    height: 3px;
+    background: blue;
+    bottom: 23px; }
+    .box-lista-dientes-sub .active-espigo-muñon-derecha.incisivos:after {
+      top: 18px; }
+
+.active-espigo-muñon-izquierda-malo {
+  position: relative; }
+  .active-espigo-muñon-izquierda-malo:before {
     content: '';
     position: absolute;
     width: 39px;
@@ -948,13 +1183,13 @@ svg.active-dentaria {
     background: red;
     top: 33px;
     left: 6px;
-    -webkit-transform: rotate(90deg);
-            transform: rotate(90deg); }
-    .box-lista-dientes-sub .active-espigo-muñon-malo:before {
+    -webkit-transform: rotate(80deg);
+            transform: rotate(80deg); }
+    .box-lista-dientes-sub .active-espigo-muñon-izquierda-malo:before {
       top: auto;
       left: 6px;
       bottom: 38px; }
-  .active-espigo-muñon-malo:after {
+  .active-espigo-muñon-izquierda-malo:after {
     content: '';
     position: absolute;
     width: 25px;
@@ -963,23 +1198,67 @@ svg.active-dentaria {
     bottom: 15px;
     border: 2px solid red;
     height: 20px; }
-    .box-lista-dientes-sub .active-espigo-muñon-malo:after {
+    .box-lista-dientes-sub .active-espigo-muñon-izquierda-malo:after {
       bottom: 15px;
       top: 9px; }
-  .active-espigo-muñon-malo.incisivos:before {
+  .active-espigo-muñon-izquierda-malo.incisivos:before {
     left: -3px;
     width: 47px;
     top: 38px; }
-    .box-lista-dientes-sub .active-espigo-muñon-malo.incisivos:before {
+    .box-lista-dientes-sub .active-espigo-muñon-izquierda-malo.incisivos:before {
       top: 41px; }
-  .active-espigo-muñon-malo.incisivos:after {
+  .active-espigo-muñon-izquierda-malo.incisivos:after {
     left: 8px;
     border: none;
     width: 24px;
     height: 3px;
     background: red;
     bottom: 23px; }
-    .box-lista-dientes-sub .active-espigo-muñon-malo.incisivos:after {
+    .box-lista-dientes-sub .active-espigo-muñon-izquierda-malo.incisivos:after {
+      top: 18px; }
+
+.active-espigo-muñon-derecha-malo {
+  position: relative; }
+  .active-espigo-muñon-derecha-malo:before {
+    content: '';
+    position: absolute;
+    width: 39px;
+    height: 3px;
+    background: red;
+    top: 33px;
+    left: 6px;
+    -webkit-transform: rotate(100deg);
+            transform: rotate(100deg); }
+    .box-lista-dientes-sub .active-espigo-muñon-derecha-malo:before {
+      top: auto;
+      left: 6px;
+      bottom: 38px; }
+  .active-espigo-muñon-derecha-malo:after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 3px;
+    left: 13px;
+    bottom: 15px;
+    border: 2px solid red;
+    height: 20px; }
+    .box-lista-dientes-sub .active-espigo-muñon-derecha-malo:after {
+      bottom: 15px;
+      top: 9px; }
+  .active-espigo-muñon-derecha-malo.incisivos:before {
+    left: -3px;
+    width: 47px;
+    top: 38px; }
+    .box-lista-dientes-sub .active-espigo-muñon-derecha-malo.incisivos:before {
+      top: 41px; }
+  .active-espigo-muñon-derecha-malo.incisivos:after {
+    left: 8px;
+    border: none;
+    width: 24px;
+    height: 3px;
+    background: red;
+    bottom: 23px; }
+    .box-lista-dientes-sub .active-espigo-muñon-derecha-malo.incisivos:after {
       top: 18px; }
 
 .active-fractura-linea-top {
@@ -2507,7 +2786,7 @@ svg.active-dentaria {
 .seleccionado.hallazgo-fosas-fisuras-profundas, .seleccionado.hallazgo-piesa-dentaria-ectopica, .seleccionado.hallazgo-macrodoncia, .seleccionado.hallazgo-microdoncia, .seleccionado.hallazgo-impactacion, .seleccionado.active-edentulo-total, .seleccionado.hallazgo-corona-temporal, .seleccionado.hallazgo-pieza-supernumeraria {
   pointer-events: none; }
 
-.seleccionado.active-hallazgo-fosas-fisuras-profundas, .seleccionado.active-hallazgo-piesa-dentaria-ectopica, .seleccionado.active-hallazgo-macrodoncia, .seleccionado.active-hallazgo-microdoncia, .seleccionado.active-hallazgo-impactacion, .seleccionado.active-edentulo-total, .seleccionado.active-hallazgo-corona-temporal, .seleccionado.active-hallazgo-pieza-supernumeraria, .seleccionado.active-hallazgo-movilidad-patologica, .seleccionado.active-hallazgo-remanente-radicular, .seleccionado.active-hallazgo-geminacion, .seleccionado.active-hallazgo-fusion, .seleccionado.active-hallazgo-pieza-dentaria-clavija, .seleccionado.active-hallazgo-pieza-dentaria-en-erupcion, .seleccionado.active-hallazgo-implante-dental, .seleccionado.active-hallazgo-implante-dental-malo, .seleccionado.active-hallazgo-transposicion, .seleccionado.active-hallazgo-fractura, .seleccionado.active-hallazgo-fractura-linea-sub, .seleccionado.active-hallazgo-fractura-diagonal-izquierda, .seleccionado.active-hallazgo-fractura-diagonal-derecha, .seleccionado.active-hallazgo-fractura-diagonal-izquierda-small, .seleccionado.active-hallazgo-fractura-diagonal-derecha-small, .seleccionado.active-hallazgo-fractura-raya-izquierda, .seleccionado.active-hallazgo-fractura-raya-derecha, .seleccionado.active-hallazgo-protesis-total, .seleccionado.active-hallazgo-giroversion, .seleccionado.active-hallazgo-corona, .seleccionado.active-hallazgo-corona-malo, .seleccionado.active-hallazgo-corona-temporal, .seleccionado.active-hallazgo-pieza-dentaria-ausente, .seleccionado.active-hallazgo-ortodontico-removible, .seleccionado.active-hallazgo-ortodontico-removible-malo, .seleccionado.active-hallazgo-protesis-removible, .seleccionado.active-hallazgo-protesis-removible-malo, .seleccionado.puente1-removible, .seleccionado.puente2-removible, .seleccionado.active-hallazgo-ortodontico-fijo, .seleccionado.active-hallazgo-ortodontico-fijo-malo, .seleccionado.active-hallazgo-protesis-fija, .seleccionado.active-hallazgo-protesis-fija-malo, .seleccionado.active-hallazgo-sellantes, .seleccionado.active-hallazgo-sellantes-malo, .seleccionado.active-superficie-desgastada-linea-top, .seleccionado.active-hallazgo-superficie-desgastada-linea-sub, .seleccionado.active-tratamiento-pulpar-nino, .seleccionado.active-tratamiento-pulpar-malo-nino, .seleccionado.tipo-pulponomia, .seleccionado.tipo-pulponomia-malo {
+.seleccionado.active-hallazgo-fosas-fisuras-profundas, .seleccionado.active-hallazgo-piesa-dentaria-ectopica, .seleccionado.active-hallazgo-macrodoncia, .seleccionado.active-hallazgo-microdoncia, .seleccionado.active-hallazgo-impactacion, .seleccionado.active-edentulo-total, .seleccionado.active-hallazgo-corona-temporal, .seleccionado.active-hallazgo-pieza-supernumeraria, .seleccionado.active-hallazgo-movilidad-patologica, .seleccionado.active-hallazgo-remanente-radicular, .seleccionado.active-hallazgo-geminacion, .seleccionado.active-hallazgo-fusion, .seleccionado.active-hallazgo-pieza-dentaria-clavija, .seleccionado.active-hallazgo-pieza-dentaria-en-erupcion, .seleccionado.active-hallazgo-implante-dental, .seleccionado.active-hallazgo-implante-dental-malo, .seleccionado.active-hallazgo-transposicion, .seleccionado.active-hallazgo-fractura, .seleccionado.active-hallazgo-fractura-linea-sub, .seleccionado.active-hallazgo-fractura-diagonal-izquierda, .seleccionado.active-hallazgo-fractura-diagonal-derecha, .seleccionado.active-hallazgo-fractura-diagonal-izquierda-small, .seleccionado.active-hallazgo-fractura-diagonal-derecha-small, .seleccionado.active-hallazgo-fractura-raya-izquierda, .seleccionado.active-hallazgo-fractura-raya-derecha, .seleccionado.active-hallazgo-protesis-total, .seleccionado.active-hallazgo-giroversion, .seleccionado.active-hallazgo-corona, .seleccionado.active-hallazgo-corona-malo, .seleccionado.active-hallazgo-corona-temporal, .seleccionado.active-hallazgo-pieza-dentaria-ausente, .seleccionado.active-hallazgo-ortodontico-removible, .seleccionado.active-hallazgo-ortodontico-removible-malo, .seleccionado.active-hallazgo-protesis-removible, .seleccionado.active-hallazgo-protesis-removible-malo, .seleccionado.puente1-removible, .seleccionado.puente2-removible, .seleccionado.active-hallazgo-ortodontico-fijo, .seleccionado.active-hallazgo-ortodontico-fijo-malo, .seleccionado.active-hallazgo-protesis-fija, .seleccionado.active-hallazgo-protesis-fija-malo, .seleccionado.active-hallazgo-sellantes, .seleccionado.active-hallazgo-sellantes-malo, .seleccionado.active-superficie-desgastada-linea-top, .seleccionado.active-hallazgo-superficie-desgastada-linea-sub, .seleccionado.active-tratamiento-pulpar-nino, .seleccionado.active-tratamiento-pulpar-malo-nino, .seleccionado.tipo-pulponomia, .seleccionado.tipo-pulponomia-malo, .seleccionado.active-espigo-muñon, .seleccionado.active-espigo-muñon-malo {
   pointer-events: none; }
 
 .hallazgo-sellantes .incisivos,
