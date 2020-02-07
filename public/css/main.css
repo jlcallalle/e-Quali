@@ -899,13 +899,88 @@ svg.active-dentaria {
   .active-espigo-muñon:before {
     content: '';
     position: absolute;
-    width: 50px;
+    width: 39px;
+    height: 3px;
+    background: blue;
+    top: 33px;
+    left: 6px;
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg); }
+    .box-lista-dientes-sub .active-espigo-muñon:before {
+      top: auto;
+      left: 6px;
+      bottom: 38px; }
+  .active-espigo-muñon:after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 3px;
+    left: 13px;
+    bottom: 15px;
+    border: 2px solid blue;
+    height: 20px; }
+    .box-lista-dientes-sub .active-espigo-muñon:after {
+      bottom: 15px;
+      top: 9px; }
+  .active-espigo-muñon.incisivos:before {
+    left: -3px;
+    width: 47px;
+    top: 38px; }
+    .box-lista-dientes-sub .active-espigo-muñon.incisivos:before {
+      top: 41px; }
+  .active-espigo-muñon.incisivos:after {
+    left: 8px;
+    border: none;
+    width: 24px;
+    height: 3px;
+    background: blue;
+    bottom: 23px; }
+    .box-lista-dientes-sub .active-espigo-muñon.incisivos:after {
+      top: 18px; }
+
+.active-espigo-muñon-malo {
+  position: relative; }
+  .active-espigo-muñon-malo:before {
+    content: '';
+    position: absolute;
+    width: 39px;
     height: 3px;
     background: red;
-    top: 50px;
-    left: 0; }
-    .box-lista-dientes-sub .active-espigo-muñon:before {
-      top: 8px; }
+    top: 33px;
+    left: 6px;
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg); }
+    .box-lista-dientes-sub .active-espigo-muñon-malo:before {
+      top: auto;
+      left: 6px;
+      bottom: 38px; }
+  .active-espigo-muñon-malo:after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 3px;
+    left: 13px;
+    bottom: 15px;
+    border: 2px solid red;
+    height: 20px; }
+    .box-lista-dientes-sub .active-espigo-muñon-malo:after {
+      bottom: 15px;
+      top: 9px; }
+  .active-espigo-muñon-malo.incisivos:before {
+    left: -3px;
+    width: 47px;
+    top: 38px; }
+    .box-lista-dientes-sub .active-espigo-muñon-malo.incisivos:before {
+      top: 41px; }
+  .active-espigo-muñon-malo.incisivos:after {
+    left: 8px;
+    border: none;
+    width: 24px;
+    height: 3px;
+    background: red;
+    bottom: 23px; }
+    .box-lista-dientes-sub .active-espigo-muñon-malo.incisivos:after {
+      top: 18px; }
 
 .active-fractura-linea-top {
   position: relative; }
@@ -1892,9 +1967,11 @@ svg.active-dentaria {
     .espigo-muñon-estado .estados .malo {
       background: red; }
 
-.espigo-muñon-estado .estados {
-  top: 4px;
-  position: relative; }
+.espigo-muñon-estado {
+  z-index: 10; }
+  .espigo-muñon-estado .estados {
+    top: 4px;
+    position: relative; }
 
 .list-editable {
   list-style: none;

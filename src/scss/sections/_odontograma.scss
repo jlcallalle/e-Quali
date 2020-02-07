@@ -909,22 +909,114 @@ svg.active-dentaria {
 
 
 // espigo muñon
-
 .active-espigo-muñon  {
   position: relative;
   &:before {
       content: '';
       position: absolute;
-      width: 50px;
+      width: 39px;
       height: 3px;
-      background: red;
-      top: 50px;
-      left: 0;
+      background: blue;
+      top: 33px;
+      left: 6px;
+      transform: rotate(90deg);
       .box-lista-dientes-sub & {
-          top: 8px;
+        top: auto;
+        left: 6px;
+        bottom: 38px;
       }
   }
+  &:after {
+      content: '';
+      position: absolute;
+      width: 25px;
+      height: 3px;
+      left: 13px;
+      bottom: 15px;
+      border: 2px solid blue;
+      height: 20px;
+      .box-lista-dientes-sub & {
+        bottom: 15px;
+        top: 9px;
+      }
+  }
+  &.incisivos {
+    &:before {
+      left: -3px;
+      width: 47px;
+      top: 38px;
+      .box-lista-dientes-sub & {
+        top: 41px;
+      }
+    }
+    &:after {
+      left: 8px;
+      border: none;
+      width: 24px;
+      height: 3px;
+      background: blue;
+      bottom: 23px;
+      .box-lista-dientes-sub & {
+        top: 18px;
+      }
+    }
+  }
 }
+
+.active-espigo-muñon-malo  {
+  position: relative;
+  &:before {
+      content: '';
+      position: absolute;
+      width: 39px;
+      height: 3px;
+      background: red;
+      top: 33px;
+      left: 6px;
+      transform: rotate(90deg);
+      .box-lista-dientes-sub & {
+        top: auto;
+        left: 6px;
+        bottom: 38px;
+      }
+  }
+  &:after {
+      content: '';
+      position: absolute;
+      width: 25px;
+      height: 3px;
+      left: 13px;
+      bottom: 15px;
+      border: 2px solid red;
+      height: 20px;
+      .box-lista-dientes-sub & {
+        bottom: 15px;
+        top: 9px;
+      }
+  }
+  &.incisivos {
+    &:before {
+      left: -3px;
+      width: 47px;
+      top: 38px;
+      .box-lista-dientes-sub & {
+        top: 41px;
+      }
+    }
+    &:after {
+      left: 8px;
+      border: none;
+      width: 24px;
+      height: 3px;
+      background: red;
+      bottom: 23px;
+      .box-lista-dientes-sub & {
+        top: 18px;
+      }
+    }
+  }
+}
+
 
 //hallazgo fracturas
 
@@ -2223,6 +2315,7 @@ svg.active-dentaria {
 }
 
 .espigo-muñon-estado {
+  z-index: 10;
   .estados {
     top: 4px;
     position: relative;
