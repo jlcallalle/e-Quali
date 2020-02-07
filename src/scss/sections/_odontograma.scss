@@ -1031,6 +1031,7 @@ svg.active-dentaria {
     transform: rotate(75deg);
     .box-lista-dientes-sub & {
       top:34px;
+      transform: rotate(105deg);
      }
   }
 
@@ -1041,6 +1042,7 @@ svg.active-dentaria {
   .box-lista-dientes-sub .incisivos & {
     &:before {
       top: 20px;
+      transform: rotate(104deg);
     }
   }
 }
@@ -1084,6 +1086,7 @@ svg.active-dentaria {
   .box-lista-dientes-sub .incisivos & {
     &:before {
       top: 20px;
+      transform: rotate(74deg);
     }
   }
 }
@@ -1127,6 +1130,7 @@ svg.active-dentaria {
   .box-lista-dientes-sub .incisivos & {
     &:before {
       top: 20px;
+      transform: rotate(74deg);
     }
   }
 }
@@ -1170,6 +1174,7 @@ svg.active-dentaria {
   .box-lista-dientes-sub .incisivos & {
     &:before {
       top: 20px;
+      transform: rotate(104deg);
     }
   }
 }
