@@ -16,6 +16,10 @@ var countClickOrtodonticoFijoMalo = 0;
 var countClickProtesisFija = 0;
 var countClickProtesisFijaMalo = 0;
 
+var countClickEspigoMuñon = 0;
+var countClickEspigoMuñonMalo = 0;
+
+
 var MyApp = {
   eventoDientes : function() {
     $(".cont-diente .diente").on("click", function(e){
@@ -1477,15 +1481,35 @@ var MyApp = {
         var contenidoOdontograma = $(this).parents(".contenido-odontograma");
 
         if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoEspigoMuñon) ) {
-            $(this).parents("svg").parent().toggleClass("active-espigo-muñon");
+          countClickEspigoMuñon++;
+
+            $(this).parents("svg").parent().addClass("active-espigo-muñon");
             var tagFlecha = '<div class="espigo"> </div>';
             $(this).parents(".cont-diente").append(tagFlecha)
 
             if (cantRaiz === "1") {
-              $(this).parents("svg").parent().toggleClass("seleccionado");
+              $(this).parents("svg").parent().addClass("seleccionado");
+              console.log('cant raiz 1');
+
             } else if (cantRaiz === "2") {
-              //alert('2');
+              // countClickEspigoMuñon++;
+              // console.log(countClickEspigoMuñon,'countClickEspigoMuñon');
+              // console.log('cant raiz 2');
+
+              // if(countClickEspigoMuñon === 1){
+              //   console.log('click 1');
+
+              // } else if (countClickEspigoMuñon === 2) {
+              //   countClickEspigoMuñon = 0;
+              //   console.log('click 2');
+              //   $(this).parents("svg").parent().addClass("seleccionado");
+              // }
+
             }
+
+
+
+
         }
 
         if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoEspigoMuñonMalo) ) {
@@ -1518,7 +1542,7 @@ var MyApp = {
 
         if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoEspigoMuñonIzquierdaMalo) ) {
           $(this).parents("svg").parent().toggleClass("active-espigo-muñon-izquierda-malo");
-          var tagFlecha = '<div class="espigo-derecha-malo"> </div>';
+          var tagFlecha = '<div class="espigo-izquierda-malo"> </div>';
           $(this).parents(".cont-diente").append(tagFlecha)
           if (cantRaiz === "1") {
             $(this).parents("svg").parent().toggleClass("seleccionado");
@@ -1527,7 +1551,7 @@ var MyApp = {
 
         if ( $(contenidoOdontograma).hasClass(listaHallazgo.hallazgoEspigoMuñonDerechaMalo) ) {
           $(this).parents("svg").parent().toggleClass("active-espigo-muñon-derecha-malo");
-          var tagFlecha = '<div class="espigo-izquierda-malo"> </div>';
+          var tagFlecha = '<div class="espigo-derecha-malo"> </div>';
           $(this).parents(".cont-diente").append(tagFlecha)
 
           if (cantRaiz === "1") {

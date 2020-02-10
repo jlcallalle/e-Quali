@@ -1047,6 +1047,52 @@ svg.active-dentaria {
   }
 }
 
+.espigo-izquierda-malo {
+  border: 3px solid red;
+  width: 27px;
+  height: 21px;
+  position: absolute;
+  bottom: 14px;
+  left: 12px;
+  .incisivos & {
+    left: 8px;
+    border: none;
+    width: 24px;
+    height: 3px;
+    background: red;
+    bottom: 23px;
+    &:before {
+      width: 43px;
+    }
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    width: 39px;
+    height: 3px;
+    background: red;
+    top: -23px;
+    left: -14px;
+    transform: rotate(75deg);
+    .box-lista-dientes-sub & {
+      top:34px;
+      transform: rotate(105deg);
+     }
+  }
+
+  .box-lista-dientes-sub & {
+    bottom: auto;
+    top: 9px;
+  }
+  .box-lista-dientes-sub .incisivos & {
+    &:before {
+      top: 20px;
+      transform: rotate(104deg);
+    }
+  }
+}
+
+
 .espigo-derecha {
   border: 3px solid blue;
   width: 27px;
@@ -1076,6 +1122,7 @@ svg.active-dentaria {
     transform: rotate(104deg);
     .box-lista-dientes-sub & {
       top:34px;
+      transform: rotate(74deg);
      }
   }
 
@@ -1135,49 +1182,6 @@ svg.active-dentaria {
   }
 }
 
-.espigo-izquierda-malo {
-  border: 3px solid red;
-  width: 27px;
-  height: 21px;
-  position: absolute;
-  bottom: 14px;
-  left: 12px;
-  .incisivos & {
-    left: 8px;
-    border: none;
-    width: 24px;
-    height: 3px;
-    background: red;
-    bottom: 23px;
-    &:before {
-      width: 43px;
-    }
-  }
-  &:before {
-    content: '';
-    position: absolute;
-    width: 39px;
-    height: 3px;
-    background: red;
-    top: -23px;
-    left: -14px;
-    transform: rotate(75deg);
-    .box-lista-dientes-sub & {
-      top:34px;
-     }
-  }
-
-  .box-lista-dientes-sub & {
-    bottom: auto;
-    top: 9px;
-  }
-  .box-lista-dientes-sub .incisivos & {
-    &:before {
-      top: 20px;
-      transform: rotate(104deg);
-    }
-  }
-}
 
 
 .box-lista-dientes-sub .incisivos .espigo,

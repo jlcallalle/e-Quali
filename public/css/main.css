@@ -1006,6 +1006,44 @@ svg.active-dentaria {
     -webkit-transform: rotate(104deg);
             transform: rotate(104deg); }
 
+.espigo-izquierda-malo {
+  border: 3px solid red;
+  width: 27px;
+  height: 21px;
+  position: absolute;
+  bottom: 14px;
+  left: 12px; }
+  .incisivos .espigo-izquierda-malo {
+    left: 8px;
+    border: none;
+    width: 24px;
+    height: 3px;
+    background: red;
+    bottom: 23px; }
+    .incisivos .espigo-izquierda-malo:before {
+      width: 43px; }
+  .espigo-izquierda-malo:before {
+    content: '';
+    position: absolute;
+    width: 39px;
+    height: 3px;
+    background: red;
+    top: -23px;
+    left: -14px;
+    -webkit-transform: rotate(75deg);
+            transform: rotate(75deg); }
+    .box-lista-dientes-sub .espigo-izquierda-malo:before {
+      top: 34px;
+      -webkit-transform: rotate(105deg);
+              transform: rotate(105deg); }
+  .box-lista-dientes-sub .espigo-izquierda-malo {
+    bottom: auto;
+    top: 9px; }
+  .box-lista-dientes-sub .incisivos .espigo-izquierda-malo:before {
+    top: 20px;
+    -webkit-transform: rotate(104deg);
+            transform: rotate(104deg); }
+
 .espigo-derecha {
   border: 3px solid blue;
   width: 27px;
@@ -1033,7 +1071,9 @@ svg.active-dentaria {
     -webkit-transform: rotate(104deg);
             transform: rotate(104deg); }
     .box-lista-dientes-sub .espigo-derecha:before {
-      top: 34px; }
+      top: 34px;
+      -webkit-transform: rotate(74deg);
+              transform: rotate(74deg); }
   .box-lista-dientes-sub .espigo-derecha {
     bottom: auto;
     top: 9px; }
@@ -1077,42 +1117,6 @@ svg.active-dentaria {
     top: 20px;
     -webkit-transform: rotate(74deg);
             transform: rotate(74deg); }
-
-.espigo-izquierda-malo {
-  border: 3px solid red;
-  width: 27px;
-  height: 21px;
-  position: absolute;
-  bottom: 14px;
-  left: 12px; }
-  .incisivos .espigo-izquierda-malo {
-    left: 8px;
-    border: none;
-    width: 24px;
-    height: 3px;
-    background: red;
-    bottom: 23px; }
-    .incisivos .espigo-izquierda-malo:before {
-      width: 43px; }
-  .espigo-izquierda-malo:before {
-    content: '';
-    position: absolute;
-    width: 39px;
-    height: 3px;
-    background: red;
-    top: -23px;
-    left: -14px;
-    -webkit-transform: rotate(75deg);
-            transform: rotate(75deg); }
-    .box-lista-dientes-sub .espigo-izquierda-malo:before {
-      top: 34px; }
-  .box-lista-dientes-sub .espigo-izquierda-malo {
-    bottom: auto;
-    top: 9px; }
-  .box-lista-dientes-sub .incisivos .espigo-izquierda-malo:before {
-    top: 20px;
-    -webkit-transform: rotate(104deg);
-            transform: rotate(104deg); }
 
 .box-lista-dientes-sub .incisivos .espigo,
 .box-lista-dientes-sub .incisivos .espigo-malo,
