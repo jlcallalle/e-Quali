@@ -1,0 +1,203 @@
+#wrapwrap header a.navbar-brand img {
+    margin-top: 0;
+}
+
+#wrapwrap .navbar {
+    margin-bottom: 0;
+}
+
+#wrapwrap .navbar-brand {
+    padding: 6px 0;
+}
+
+.banner-minsa {
+    background-image: url(../img/banner-minsa-vigilancia.png);
+    background-size: cover;
+    background-color: white;
+    background-position: top center;
+    background-repeat: no-repeat;
+    height: 100px;
+}
+
+@media (min-width: 576px) { 
+    .banner-minsa {
+        height: 200px;
+    }
+ }
+
+ @media (min-width: 960px) { 
+    .banner-minsa {
+        height: 314px;
+    }
+  }
+
+.bg-danger {
+    background-color: #e74a3b!important;
+}
+.logo-minsa {
+    width: 150px;
+    border: 3px solid white;
+    margin: 0 16px 0 0;
+}
+
+body .homepage {
+    background-color: #eeeeee;
+}
+
+.section-contenido {
+    margin: 30px 0;
+}
+
+.section-contenido .container {
+    background-color: white;
+    /* padding: 30px 0; */
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.box-sector {
+    border: 1px solid lightgray;
+    margin: 0 0 20px 0;
+    overflow: hidden;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.box-sector img {
+    margin: 0 auto;
+    display: block;
+    padding: 10px;
+}
+
+.box-sector h2 {
+    font-size: 18px;
+    background-color: #e74a3b;
+    text-transform: uppercase;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+    padding: 12px;
+    margin: 0;
+    margin-top: 7px;
+}
+
+.box-sector p {
+    background-color: #EFB64F;
+    padding: 15px 35px;
+    margin: 0;
+    text-align: center;
+}
+.box-btn {
+    text-align: center;
+}
+
+.shadow {
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+}
+.shadow-lg {
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
+}
+
+footer #footer {
+    padding-top: 0;
+}
+
+
+
+@media (max-width: 960px) { 
+    .section-contenido .row > div {
+        margin: 0 0 25px 0
+    }
+}
+
+
+@media (min-width: 960px) { 
+    .box-texto {
+        display: flex;
+        height: 90px;
+    }
+}
+
+
+/* Pagina Login */
+
+.oe_website_login_container input,
+.oe_website_login_container select {
+    border: 2px solid #e74a3b;
+    border-radius: 10px;
+}
+
+
+.oe_website_login_container .input-group-addon {
+    background-color: #e74a3b;
+    border: magenta;
+}
+
+.oe_website_login_container .input-group-addon:first-child {
+    border-right: 0;
+    border-bottom-left-radius: 10px!important;
+    border-top-left-radius: 10px!important;
+}
+
+.oe_login_buttons {
+    margin: 35px 0 0 0px;
+}
+
+.icono-usuario {
+    background-image: url(../img/icono-persona.png);
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    display: block;
+    background-color: #e74a3b;
+    background-size: contain;
+}
+.icono-candado {
+    background-image: url(../img/icono-candado.png);
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    display: block;
+    background-color: #e74a3b;
+    background-size: contain; 
+}
+
+.icono-tuerca {
+    background-image: url(../img/icono-tuerca.png);
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    display: block;
+    background-color: #e74a3b;
+    background-size: contain; 
+}
+
+
+.icono-ruc {
+    background-image: url(../img/icono-ruc.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 20px;
+    height: 20px;
+    display: block;
+    background-color: #e74a3b;
+    background-size: contain; 
+}
+
+
+.icono-llave {
+    background-image: url(../img/icono-llave.png);
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    display: block;
+    background-color: #e74a3b;
+    background-size: contain; 
+}
+
+
+.oe_login_form, .oe_signup_form, .oe_reset_password_form {
+    max-width: 350px;
+}
+
