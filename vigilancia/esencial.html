@@ -332,7 +332,7 @@
                             <B>¿Su empresa realiza algunas de las siguientes actividades esenciales?</B>
                         </h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
+                                <span aria-hidden="true">x</span>
                             </button>
                         </div>
                         <div class="modal-body">
@@ -649,6 +649,11 @@
                     keyboard: false
                 })
                 $('#modal_esenciales').modal('show');
+
+                $(".box-actividades").click(function() {
+                    $('.box-actividades').removeClass('active-actividad');
+                    $(this).addClass('active-actividad');
+                });
 
                 $("#ruc").change(function() {
                     var ruc = $("#ruc").val()

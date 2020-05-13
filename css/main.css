@@ -27,7 +27,7 @@
 
  @media (min-width: 960px) { 
     .banner-minsa {
-        height: 314px;
+        height: 300px;
     }
   }
 
@@ -131,7 +131,7 @@ footer #footer {
 
 .oe_website_login_container .input-group-addon {
     background-color: #e74a3b;
-    border: magenta;
+    border: none;
 }
 
 .oe_website_login_container .input-group-addon:first-child {
@@ -147,6 +147,7 @@ footer #footer {
 .icono-usuario {
     background-image: url(../img/icono-persona.png);
     background-repeat: no-repeat;
+    background-position: center center;
     width: 20px;
     height: 20px;
     display: block;
@@ -156,16 +157,19 @@ footer #footer {
 .icono-candado {
     background-image: url(../img/icono-candado.png);
     background-repeat: no-repeat;
+    background-position: center center;
     width: 20px;
     height: 20px;
     display: block;
     background-color: #e74a3b;
     background-size: contain; 
+    background-position: top center;
 }
 
 .icono-tuerca {
     background-image: url(../img/icono-tuerca.png);
     background-repeat: no-repeat;
+    background-position: center center;
     width: 20px;
     height: 20px;
     display: block;
@@ -189,6 +193,7 @@ footer #footer {
 .icono-llave {
     background-image: url(../img/icono-llave.png);
     background-repeat: no-repeat;
+    background-position: center center;
     width: 20px;
     height: 20px;
     display: block;
@@ -196,8 +201,185 @@ footer #footer {
     background-size: contain; 
 }
 
+.icono-lupa {
+    background-image: url(../img/icono-lupa.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 20px;
+    height: 20px;
+    display: block;
+    background-color: #e74a3b;
+    background-size: contain;
+}
 
 .oe_login_form, .oe_signup_form, .oe_reset_password_form {
     max-width: 350px;
 }
 
+
+.box-top {
+    text-align: center;
+}
+.contenido-busqueda {
+    max-width: 700px;
+    position: relative;
+    margin: 50px auto;
+}
+
+.tabla-titulo {
+    background-color: #e74a3b;
+    color:white;
+}
+
+.box-resultado {
+    max-width: 990px;
+    position: relative;
+    margin: 50px auto;
+}
+
+.title-busqueda {
+    color: #e74a3b;
+    font-size: 18px;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.box-busqueda .input-group-addon {
+    background-color: #e74a3b;
+    border:none;
+}
+
+
+.box-select {
+    position: absolute;
+    left: 4px;
+    top: 2px;
+    z-index: 10;
+}
+
+.box-busqueda .box-select select {
+    background-color: white;
+    color: red;
+    height: 30px;
+    border: none;
+    border-top-left-radius: 10px!important;
+    border-bottom-left-radius: 10px!important;
+    text-transform: uppercase;
+}
+
+.box-busqueda .input-busqueda {
+    border: 2px solid #e74a3b;
+    border-top-left-radius: 10px!important;
+    border-bottom-left-radius: 10px!important;
+    overflow: hidden;
+    padding: 0 0 0 120px;
+}
+
+/* Modal Esenciales*/
+
+.modal-title {
+    background-color: #EBB54B;
+    color: white;
+    padding: 6px;
+}
+
+.title-actividades {
+    color: #e74a3b;
+    margin: 0 0 20px 0;
+}
+
+.box-actividades {
+    text-align: center;
+    border: 3px solid #e74a3b;
+    border-radius: 35px;
+    max-width: 201px;
+    margin: 0 auto 20px;
+    overflow: hidden;
+    display: block;
+    position: relative;
+}
+
+
+.box-actividades .box-img {
+    height: 125px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box-actividades .texto-actividades {
+    padding: 0;
+    margin: 0;
+    background-color: #e74a3b;
+    display: flex;
+    height: 46px;
+    align-items: center;
+    justify-content: center;
+}
+
+.box-actividades .texto-actividades h4 {
+    margin: 0;
+    padding: 0 8px;
+    font-size: 15px;
+    color: white;
+}
+
+.mostrar-texto {
+    display: none;
+}
+
+
+.box-actividades:hover {
+    text-decoration: none;
+}
+
+.box-actividades:hover a{
+    text-decoration: none;
+}
+
+.box-actividades:hover h4{
+    text-decoration: none;
+}
+
+
+.box-actividades:hover .mostrar-texto {
+    display: block;
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    color: black;
+    font-size: 13px;
+    height: 100%;
+    width: 100%;
+    background-image: url(../img/bg.png);
+    background-position: top center;
+    background-repeat: repeat;
+    border-radius: 30px;
+    overflow: overlay;
+    text-align: center;
+    padding: 13px 0;
+}
+
+.mostrar-texto p {
+    padding: 12px;
+    font-weight: bold;
+}
+
+.modal-esenciales .btn-primary {
+    background-color: #EFB550;
+    border: 1px solid #EFB550;
+}
+
+.modal-esenciales .btn-secondary {
+    background-color: white;
+    border: 1px solid #EFB550;
+    color: #e74a3b;
+}
+
+.modal-esenciales .btn-primary:active {
+    background-color: #EFB550;
+}
+.active-actividad {
+    border: 3px solid black;
+    box-shadow: 8px 8px 8px 0px rgba(0,0,0,0.3);
+}
