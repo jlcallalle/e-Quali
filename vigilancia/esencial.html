@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="es-PE" data-oe-company-name="Ministerio de Salud del Perú" data-website-id="1">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+    <title>Registro actividades esenciales | </title>
+    <link type="image/x-icon" rel="shortcut icon" href="/web/image/website/1/favicon/" />
+
+    <script type="text/javascript">
+        var odoo = {
+            csrf_token: "8aed01346eb54bf966b2d0762f02356b293e447eo",
+        };
+    </script>
+
+    <meta name="generator" content="Odoo" />
+
+    <meta property="og:title" content="Registro actividades esenciales" />
+    <meta property="og:site_name" content="Ministerio de Salud del Perú" />
+
+    <link rel="alternate" hreflang="es" href="http://saludtrabajo.minsa.gob.pe/permisotemporal/actividad/esencial" />
+
+    <script type="text/javascript">
+        odoo.session_info = {
+            is_superuser: false,
+            is_frontend: true,
+        };
+    </script>
+
+    <link href="css/web.assets_common.0.css" rel="stylesheet" />
+    <link href="css/web.assets_frontend.0.css" rel="stylesheet" />
+    <link href="css/web.assets_frontend.1.css" rel="stylesheet" />
+    <link href="css/main.css" rel="stylesheet" />
+
+    <script type="text/javascript" src="js/web.assets_common.js"></script>
+
+    <script type="text/javascript" src="js/web.assets_frontend.js"></script>
+
+</head>
+
+<body>
+
+    <div id="wrapwrap" class="">
+        <header>
+            <div class="navbar navbar-default navbar-static-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-top-collapse">
+                            <span class="sr-only">Activar navegación</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="/"></a>
+                    </div>
+                    <div class="collapse navbar-collapse navbar-top-collapse">
+                        <ul class="nav navbar-nav navbar-right" id="top_menu">
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main>
+
+            <div class="container" id="container" style="display: none;">
+                <form action="/website_form/" method="post" data-model_name="saludtrabajo.solicitudregistro_web" data-success_page="/permisotemporal/registrado/" class="s_website_form form-horizontal container-fluid mt32" enctype="multipart/form-data">
+                    <input type="hidden" name="csrf_token" value="5a72172567189411f7db8b3fe72aca5182815a40o1589326857" />
+                    <div class="panel panel-primary">
+                        <div class="panel-heading"><b>I. DATOS GENERALES DE LA EMPRESA O ENTIDAD PÚBLICA</b></div>
+                        <div class="panel-body" style="margin-left: 30px; margin-right: 30px;">
+                            <div class="row">
+                                <div class="col-12 col-md-1"></div>
+                                <div class="col-12 col-md-5 form-field">
+                                    <div class="form-group form-field o_website_form_required_custom" style="padding-left: 15px; padding-right: 15px;">
+                                        <label class="control-label">1. RUC</label>
+                                        <input type="hidden" name="empresa_sector_id" value="0" />
+                                        <input type="text" class="form-control o_website_form_input" id="ruc" name="ruc" minlength="11" maxlength="11" onkeypress="return validateKeypress(numeric);" required="" />
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-5 form-field o_website_form_required_custom">
+                                    <div class="form-group" style="padding-left: 15px; padding-right: 15px;">
+                                        <label class="control-label">2. Razón Social</label>
+                                        <input type="text" class="form-control o_website_form_input" id="razon_social" name="razon_social" readonly="" />
+                                    </div>
+                                    <div class="col-12 col-md-1"></div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-md-1"></div>
+                                <div class="col-12 col-md-5 form-field o_website_form_required_custom">
+                                    <div class="form-group" style="padding-left: 15px; padding-right: 15px;">
+                                        <label class="control-label">3. Formalización</label>
+                                        <br/>
+                                        <input type="hidden" id="formalizacion" name="formalizacion" readonly="" required="" />
+                                        <input type="text" id="formalizacion_text" class="form-control o_website_form_input" readonly="" />
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-5 form-field o_website_form_required_custom">
+                                    <div class="form-group form-field o_website_form_required_custom" style="padding-left: 15px; padding-right: 15px;">
+                                        <label class="control-label">4. Región</label>
+                                        <select class="form-control o_website_form_input" id="departamento_id" name="departamento_id" required="">
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-1"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-md-1"></div>
+                                <div class="col-12 col-md-5 form-field o_website_form_required_custom">
+                                    <div class="form-group form-field o_website_form_required_custom" style="padding-left: 15px; padding-right: 15px;">
+                                        <label class="control-label">5. Provincia</label>
+                                        <select class="form-control o_website_form_input" id="provincia_id" name="provincia_id" required="">
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-5 form-field o_website_form_required_custom">
+                                    <div class="form-group" style="padding-left: 15px; padding-right: 15px;">
+                                        <label class="control-label">6. Distrito </label>
+                                        <select class="form-control o_website_form_input" id="distrito_id" name="distrito_id" required="">
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-1"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-md-1"></div>
+                                <div class="col-12 col-md-10 form-field o_website_form_required_custom">
+                                    <div class="form-group" style="padding-left: 15px; padding-right: 15px;">
+                                        <label class="control-label">7. Dirección </label>
+                                        <input type="text" class="form-control o_website_form_input" id="direccion" name="direccion" required="" style="text-transform: uppercase" minlength="10" maxlength="100" />
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-1"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-primary">
+                        <div class="panel-heading"><b>II. DATOS DEL REPRESENTANTE LEGAL</b></div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-12 col-md-1"></div>
+                                <div class="col-12 col-md-5 form-field">
+                                    <div class="form-group form-field o_website_form_required_custom" style="padding-left: 15px; padding-right: 15px;">
+                                        <label class="control-label form-field o_website_form_required_custom">8. Tipo de documento</label>
+                                        <select class="form-control o_website_form_input" id="replegal_tipodoc" name="replegal_tipodoc" required="">
+                                            <option selected="" disabled="">(Seleccione)</option>
+
+                                            <option value="01">
+                                                DNI
+                                            </option>
+
+                                            <option value="03">
+                                                Carnet de Extranjería
+                                            </option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-5 form-field">
+                                    <div class="form-group form-field o_website_form_required_custom" style="padding-left: 15px; padding-right: 15px;">
+                                        <label class="control-label">9. Número de documento</label>
+                                        <input type="text" class="form-control o_website_form_input" id="replegal_documento" name="replegal_documento" minlength="8" maxlength="8" onkeypress="return validateKeypress(numeric);" required="" />
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-1"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-md-1"></div>
+                                <div class="col-12 col-md-3 form-field o_website_form_required_custom">
+                                    <label class="control-label" id="label_param"></label>
+                                    <div class="input-group date">
+                                        <input type="text" class="form-control o_website_form_input" id="replegal_param" placeholder="DD-MM-YYYY" name="replegal_param" required="" />
+                                        <span class="input-group-addon" id="span_param"><span class="fa fa-calendar"></span></span>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-7 form-field o_website_form_required_custom">
+                                    <div class="form-group" style="padding-left: 15px; padding-right: 15px;">
+                                        <label class="control-label">10. Apellidos y nombres</label>
+                                        <input type="text" class="form-control o_website_form_input" id="replegal_nombres" name="replegal_nombres" readonly="" required="" />
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-1"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-md-1"></div>
+                                <div class="col-12 col-md-10 form-field o_website_form_required_custom">
+                                    <div class="form-group" style="padding-left: 15px; padding-right: 15px;">
+                                        <label class="control-label">11. Correo electrónico </label>
+                                        <strong>IMPORTANTE: Ingresar el correo personal y no utilizar el correo corporativo para evitar incompatibilidad con el servidor de correo. Ingresar correctamente esta información para el envio de las credenciales.</strong>
+                                        <input type="email" class="form-control o_website_form_input" name="email" required="" style="text-transform: lowercase" />
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-1"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-primary">
+                        <div class="panel-heading"><b>III. DATOS DE LA SOLICITUD</b></div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-12 col-md-1"></div>
+                                <div class="col-12 col-md-10 form-field o_website_form_required_custom">
+                                    <div class="form-group" style="padding-left: 15px; padding-right: 15px;">
+                                        <label class="control-label">12. Actividad esencial</label>
+                                        <input type="hidden" id="tipo_actividad" name="tipo_actividad" required="" />
+                                        <select class="form-control o_website_form_input" id="actividad" name="actividad" required="">
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-1"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-md-1"></div>
+                                <div class="col-12 col-md-10 form-field o_website_form_required_custom">
+                                    <div class="form-group" style="padding-left: 15px; padding-right: 15px;">
+                                        <label class="control-label">13. Sector</label>
+                                        <select class="form-control o_website_form_input" id="sector_id" name="sector_id" required="">
+                                            <option selected="" disabled="">(Seleccione)</option>
+
+                                            <option value="10">
+                                                Ministerio de Agricultura y Riego
+                                            </option>
+
+                                            <option value="8">
+                                                Ministerio de Comercio Exterior y Turismo
+                                            </option>
+
+                                            <option value="11">
+                                                Ministerio de Defensa
+                                            </option>
+
+                                            <option value="12">
+                                                Ministerio de Desarrollo e Inclusión Social
+                                            </option>
+
+                                            <option value="13">
+                                                Ministerio de Economía y Finanzas
+                                            </option>
+
+                                            <option value="14">
+                                                Ministerio de Educación
+                                            </option>
+
+                                            <option value="5">
+                                                Ministerio de Energía y Minas
+                                            </option>
+
+                                            <option value="17">
+                                                Ministerio de Justicia y Derechos Humanos
+                                            </option>
+
+                                            <option value="25">
+                                                Ministerio del Ambiente
+                                            </option>
+
+                                            <option value="18">
+                                                Ministerio de la Producción
+                                            </option>
+
+                                            <option value="16">
+                                                Ministerio del Interior
+                                            </option>
+
+                                            <option value="19">
+                                                Ministerio de Relaciones Exteriores
+                                            </option>
+
+                                            <option value="20">
+                                                Ministerio de Salud
+                                            </option>
+
+                                            <option value="21">
+                                                Ministerio de Trabajo y Promoción del Empleo
+                                            </option>
+
+                                            <option value="6">
+                                                Ministerio de Transportes y Comunicaciones
+                                            </option>
+
+                                            <option value="23">
+                                                Ministerio de Vivienda, Construcción y Saneamiento
+                                            </option>
+
+                                            <option value="24">
+                                                No pertenece a un Sector
+                                            </option>
+
+                                            <option value="9">
+                                                Presidencia del Consejo de Ministerios
+                                            </option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-1"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-md-1"></div>
+                                <div class="col-12 col-md-10 form-field o_website_form_required_custom">
+                                    <div class="form-group" style="padding-left: 15px; padding-right: 15px;">
+                                        <label class="control-label">14. Proyecto y/o Sede</label>
+                                        <input type="text" class="form-control o_website_form_input" id="proyecto" name="proyecto" required="" style="text-transform: uppercase" />
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-1"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-md-1"></div>
+                                <div class="col-12 col-md-10 form-field o_website_form_required_custom">
+                                    <div class="form-group" style="padding-left: 15px; padding-right: 15px;">
+                                        <label class="control-label">15. Adjuntar el Plan de Lineamientos </label>
+                                        <br/>
+                                        <strong>Archivo en formato PDF</strong>
+                                        <input type="file" class="form-control o_website_form_input" id="binary_plan" name="binary_plan" onchange="return fileValidation('binary_plan', 'pdf')" required="" />
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-md-1"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt32 mb32">
+                        <div class="col-12 col-md-12">
+                            <div class="text-center">
+                                <span class="btn btn-primary btn-lg o_website_form_send"><b>Enviar</b></span>
+                                <br/>
+                                <span id="o_website_form_result"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+
+            <div id="modal_esenciales" class="modal fade bd-example-modal-lg modal-esenciales" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">
+                            <B>¿Su empresa realiza algunas de las siguientes actividades esenciales?</B>
+                        </h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+
+                           <div class="row">
+                                <div class="col-12 col-md-1"></div>
+                                <div class="col-12 col-md-10 title-actividades">
+                                    Lista de actividades esenciales
+                                </div>
+                                <div class="col-12 col-md-1"></div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-12 col-md-1"></div>
+                                <div class="col-12 col-md-10">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <a href="#" class="box-actividades">
+                                                <div class="box-actividades-inner">
+                                                    <div class="box-img">
+                                                        <img src="img/icono-carro.png"/>
+                                                    </div>
+                                                    <div class="texto-actividades">
+                                                        <h4>Abastecimiento de alinentos</h4>
+                                                    </div>
+                                                </div>
+                                                <div class="mostrar-texto">
+                                                  <p>Adquisición, producción y abastecimiento de alimentos, lo que incluye su almacenamiento y distribución para la venta al público.</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <a href="#" class="box-actividades">
+                                                <div class="box-actividades-inner">
+                                                    <div class="box-img">
+                                                        <img src="img/icono-farmacia.png"/>
+                                                    </div>
+                                                    <div class="texto-actividades">
+                                                        <h4>Abastecimiento de productos farmacéuticos</h4>
+                                                    </div>
+                                                </div>
+                                                <div class="mostrar-texto">
+                                                  <p>Adquisición, producción y abastecimiento de productos farmacéuticos y de primera necesidad.</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <a href="#" class="box-actividades">
+                                                <div class="box-actividades-inner">
+                                                    <div class="box-img">
+                                                        <img src="img/icono-establecimiento.png"/>
+                                                    </div>
+                                                    <div class="texto-actividades">
+                                                        <h4>Establecimientos de salud</h4>
+                                                    </div>
+                                                </div>
+                                                <div class="mostrar-texto">
+                                                  <p>Asistencia a centros, servicios y establecimientos de salud, así como centros de diagnóstico, en casos de emergencias y urgencias..</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <a href="#" class="box-actividades">
+                                                <div class="box-actividades-inner">
+                                                    <div class="box-img">
+                                                        <img src="img/icono-doctor.png"/>
+                                                    </div>
+                                                    <div class="texto-actividades">
+                                                        <h4>Prestación laboral, profesional o empresarial</h4>
+                                                    </div>
+                                                </div>
+                                                <div class="mostrar-texto">
+                                                  <p>Prestación laboral, profesional o empresarial para garantizar los servicios enumerados en el artículo 2.</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <a href="#" class="box-actividades">
+                                                <div class="box-actividades-inner">
+                                                    <div class="box-img">
+                                                        <img src="img/icono-retorno.png"/>
+                                                    </div>
+                                                    <div class="texto-actividades">
+                                                        <h4>Retorno al lugar de residencia habitual</h4>
+                                                    </div>
+                                                </div>
+                                                <div class="mostrar-texto">
+                                                  <p>Retorno al lugar de residencia habitual..</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <a href="#" class="box-actividades">
+                                                <div class="box-actividades-inner">
+                                                    <div class="box-img">
+                                                        <img src="img/icono-asistencia.png"/>
+                                                    </div>
+                                                    <div class="texto-actividades">
+                                                        <h4>Asistencia y cuidado a personas</h4>
+                                                    </div>
+                                                </div>
+                                                <div class="mostrar-texto">
+                                                  <p>Asistencia y cuidado a personas adultas mayores, niñas, niños, adolescentes, dependientes, personas con discapacidad o personas en situación de vulnerabilidad.</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <a href="#" class="box-actividades">
+                                                <div class="box-actividades-inner">
+                                                    <div class="box-img">
+                                                        <img src="img/icono-financiero.png"/>
+                                                    </div>
+                                                    <div class="texto-actividades">
+                                                        <h4>Entidades Financieras</h4>
+                                                    </div>
+                                                </div>
+                                                <div class="mostrar-texto">
+                                                  <p>Entidades financieras, seguros y pensiones, así como los servicios complementarios y conexos que garanticen su adecuado funcionamiento.</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <a href="#" class="box-actividades">
+                                                <div class="box-actividades-inner">
+                                                    <div class="box-img">
+                                                        <img src="img/icono-conbustible.png"/>
+                                                    </div>
+                                                    <div class="texto-actividades">
+                                                        <h4>Producción y venta de combustibles</h4>
+                                                    </div>
+                                                </div>
+                                                <div class="mostrar-texto">
+                                                  <p>Producción, almacenamiento, transporte, distribución y venta de combustible.</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <a href="#" class="box-actividades">
+                                                <div class="box-actividades-inner">
+                                                    <div class="box-img">
+                                                        <img src="img/icono-abojamiento.png"/>
+                                                    </div>
+                                                    <div class="texto-actividades">
+                                                        <h4>Centros de alojamiento</h4>
+                                                    </div>
+                                                </div>
+                                                <div class="mostrar-texto">
+                                                  <p>Hoteles y centros de alojamiento, solo con la finalidad de cumplir con la cuarentena dispuesta.</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <a href="#" class="box-actividades">
+                                                <div class="box-actividades-inner">
+                                                    <div class="box-img">
+                                                        <img src="img/icono-llamada.png"/>
+                                                    </div>
+                                                    <div class="texto-actividades">
+                                                        <h4>Atención Telefónica</h4>
+                                                    </div>
+                                                </div>
+                                                <div class="mostrar-texto">
+                                                  <p>Medios de comunicación y en el caso de las centrales de atención telefónica (call center), solo para los servicios vinculados a la emergencia.</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <a href="#" class="box-actividades">
+                                                <div class="box-actividades-inner">
+                                                    <div class="box-img">
+                                                        <img src="img/icono-publico.png"/>
+                                                    </div>
+                                                    <div class="texto-actividades">
+                                                        <h4>Sector Público</h4>
+                                                    </div>
+                                                </div>
+                                                <div class="mostrar-texto">
+                                                  <p>Los/as trabajadores/as del sector público que excepcionalmente presten servicios necesarios para la atención de acciones relacionadas con la emergencia sanitaria producida por el COVID-19 pueden desplazarse a sus centros de trabajo en forma restringida.</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <a href="#" class="box-actividades">
+                                                <div class="box-actividades-inner">
+                                                    <div class="box-img">
+                                                        <img src="img/icono-economia.png"/>
+                                                    </div>
+                                                    <div class="texto-actividades">
+                                                        <h4>Ministerio de economía</h4>
+                                                    </div>
+                                                </div>
+                                                <div class="mostrar-texto">
+                                                  <p>Por excepción, en los casos de sectores productivos e industriales, el Ministerio de Economía y Finanzas, en coordinación con el sector competente, puede incluir actividades adicionales estrictamente indispensables a las señaladas en los numerales precedentes, que no afecten el estado de emergencia nacional..</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <a href="#" class="box-actividades">
+                                                <div class="box-actividades-inner">
+                                                    <div class="box-img">
+                                                        <img src="img/icono-analogica.png"/>
+                                                    </div>
+                                                    <div class="texto-actividades">
+                                                        <h4>Actividad de naturaleza análoga</h4>
+                                                    </div>
+                                                </div>
+                                                <div class="mostrar-texto">
+                                                  <p>Cualquier otra actividad de naturaleza análoga a las enumeradas en los literales precedentes o que deban realizarse por caso fortuito o fuerza mayor.</p>
+                                                </div>
+                                            </a>
+                                        </div>
+
+                                         <div class="col-md-4">
+                                            <a href="#" class="box-actividades">
+                                                <div class="box-actividades-inner">
+                                                    <div class="box-img">
+                                                        <img src="img/icono-odontologo.png"/>
+                                                    </div>
+                                                    <div class="texto-actividades">
+                                                        <h4>Servicios Odontológicos</h4>
+                                                    </div>
+                                                </div>
+                                                <div class="mostrar-texto">
+                                                  <p>  Servicios odontológicos.  </p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-1"></div>
+                            </div>
+                            
+                            <!-- nuevo layout -->
+            
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" id="button_si" class="btn btn-primary" data-dismiss="modal">Si</button>
+                            <button type="button" id="button_no" class="btn btn-secondary" data-dismiss="modal">No</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script type="text/javascript" src="/saludtrabajo/static/src/js/ws.js"></script>
+            <script type="text/javascript">
+                var alpha = /[ A-Za-z]/;
+                var numeric = /[0-9]/;
+                var alphanumeric = /[ A-Za-z0-9]/;
+                var date = /[[0-9-]/;
+
+                function validateKeypress(validChars) {
+                    var keyChar = String.fromCharCode(event.which || event.keyCode);
+                    return validChars.test(keyChar) ? true : false;
+                }
+
+                $("div.input-group span.fa-calendar").on('click', function(e) {
+                    var todayDate = new Date().getDate();
+                    var maxDate = new Date(new Date().setDate(todayDate - 18 * 365));
+                    $(e.currentTarget).closest("div.date").datetimepicker({
+                        format: 'DD-MM-YYYY',
+                        pickTime: false,
+                        maxDate: maxDate,
+                        icons: {
+                            time: 'fa fa-clock-o',
+                            date: 'fa fa-calendar',
+                            up: 'fa fa-chevron-up',
+                            down: 'fa fa-chevron-down',
+                        },
+                    });
+                });
+
+                function replegal_param2date() {
+                    $("#label_param").append("Fecha de nacimiento")
+                    $("#span_param").show()
+                    $("#replegal_param").attr("placeholder", "DD-MM-YYYY")
+                    $("#replegal_param").attr("onkeypress", "return validateKeypress(date);")
+                    $("#replegal_param").attr("minlength", "10")
+                    $("#replegal_param").attr("maxlength", "10")
+                    $("#replegal_documento").attr("minlength", "8")
+                    $("#replegal_documento").attr("maxlength", "8")
+                }
+
+                function replegal_param2apellido() {
+                    $("#span_param").hide()
+                    $("#label_param").append("Apellido Paterno")
+                    $("#replegal_param").attr("placeholder", "")
+                    $("#replegal_param").attr("onkeypress", "return validateKeypress(alpha);")
+                    $("#replegal_param").attr("minlength", "5")
+                    $("#replegal_param").attr("maxlength", "50")
+                    $("#replegal_param").val("")
+                    $("#replegal_documento").attr("minlength", "8")
+                    $("#replegal_documento").attr("maxlength", "9")
+                }
+
+                replegal_param2date()
+                    //cargar_actividades("1")
+                    //$("#tipo_actividad").val("1")
+                    //$("#tipo_actividad").change()
+
+                $("#button_si").click(function() {
+                    $('#tipo_actividad').val("1");
+                    $("#tipo_actividad").change()
+                    $("#container").attr("style", "display: block;");
+                });
+                $("#button_no").click(function() {
+                    $("#container").attr("style", "display: none;");
+                    window.history.back();
+                });
+                $('#modal_esenciales').modal({
+                    backdrop: 'static',
+                    keyboard: false
+                })
+                $('#modal_esenciales').modal('show');
+
+                $("#ruc").change(function() {
+                    var ruc = $("#ruc").val()
+                    $("#razon_social").val("")
+                    $("#departamento_id").val("")
+                    $("#provincia_id").val("")
+                    $("#distrito_id").val("")
+                    $("#distrito_id").val("")
+                    $("#formalizacion").val("")
+                    $("#formalizacion_text").val("")
+                    $("#direccion").val("")
+
+                    $.ajax({
+                        url: "/ws/consultar/documento/ruc/" + ruc,
+                        type: 'post',
+                        dataType: 'json',
+                        timeout: 10000,
+                        success: function(response) {
+                            $("#razon_social").val(response.noEmpresa)
+                            $("#direccion").val(response.deDireccion)
+                            $("#formalizacion").val(response.tipo_persona)
+                            $("#formalizacion_text").val(response.tiIdenti)
+                        }
+                    });
+                });
+                $("#formalizacion").change(function() {
+                    if ($(this).val() == '2') {
+                        // Persona juridica
+                        $("#direccion").attr("readonly", "")
+                    } else {
+                        $("#direccion").removeAttr("readonly");
+                    }
+                });
+
+                $("#replegal_tipodoc").change(function() {
+                    $("#label_param").empty();
+                    $("#replegal_param").val("");
+                    if ($(this).val() == "01") {
+                        replegal_param2date()
+                    } else {
+                        replegal_param2apellido()
+                    }
+                    $("#replegal_documento").change()
+                });
+                $("#replegal_param").change(function() {
+                    $("#replegal_documento").change()
+                });
+                $("#replegal_documento").change(function() {
+                    $("#replegal_nombres").val("")
+                    if ($("#replegal_tipodoc").val() == null || $("#replegal_tipodoc").val() == "" || $(this).val() == "" || $("#replegal_param").val() == "") {
+                        return false;
+                    }
+                    $("#replegal_nombres").val(null)
+                    $.ajax({
+                        url: "/ws/consultar/documento/" + $("#replegal_tipodoc").val() + "/" + $(this).val() + "/" + $("#replegal_param").val(),
+                        type: 'post',
+                        dataType: 'json',
+                        success: function(response) {
+                            $("#replegal_nombres").val(response["nombres"])
+                        }
+                    });
+                });
+                $(document).ajaxError(function(event, jqXHR, options, thrownError) {
+                    if (thrownError == 'timeout') {
+                        alert('Ocurrió un problema, intente nuevamente')
+                    }
+                })
+            </script>
+
+        </main>
+        <footer>
+            <div class="oe_structure" id="footer"></div>
+            <section class="bg-gray-dark" style="">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4 class="mt16" style="text-align: center; ">
+              <br/>
+            </h4>
+                            <h4 class="mt16" style="text-align: center; ">Ministerio de Salud del Perú – Todos los derechos Reservados 2020</h4>
+                            <p style="text-align: center; ">Av. Salaverry 801 Jesús María – Lima, Perú</p>
+                            <p style="text-align: center;">Central Telefónica (511) 315-6600 | Correo: salud_trabajo_covid19@minsa.gob.pe</p>
+                            <p style="text-align: center;">
+                                <br/>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="container mt16 mb8">
+                <div class="pull-right">
+                    Create a <a href="http://www.odoo.com/page/website-builder">free website</a> with
+                    <a class="label label-danger" href="http://www.odoo.com/page/website-builder">Odoo</a>
+                </div>
+                <div class="pull-left text-muted" itemscope="itemscope" itemtype="http://schema.org/Organization">
+                    Copyright &copy; <span itemprop="name">Ministerio de Salud del Perú</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+</body>
+
+</html>
