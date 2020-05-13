@@ -44,27 +44,15 @@
 
     <div id="wrapwrap" class="">
         <header>
-            <div class="navbar navbar-default navbar-static-top">
-                <div class="container">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-top-collapse">
-                            <span class="sr-only">Activar navegación</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="/"></a>
-                    </div>
-                    <div class="collapse navbar-collapse navbar-top-collapse">
-                        <ul class="nav navbar-nav navbar-right" id="top_menu">
-
-                        </ul>
-                    </div>
+            <div class="navbar nav-default bg-danger box-shadow">
+                <div class="container d-flex justify-content-between">
+                    <a href="#" class="navbar-brand d-flex align-items-center">
+                        <img class="logo-minsa" src="http://e-quali.herokuapp.com/vigilancia/img/logo-minsa.jpeg" alt=""/>
+                    </a>
                 </div>
             </div>
         </header>
         <main>
-
             <div class="container" id="container" style="display: none;">
                 <form action="/website_form/" method="post" data-model_name="saludtrabajo.solicitudregistro_web" data-success_page="/permisotemporal/registrado/" class="s_website_form form-horizontal container-fluid mt32" enctype="multipart/form-data">
                     <input type="hidden" name="csrf_token" value="5a72172567189411f7db8b3fe72aca5182815a40o1589326857" />
@@ -585,8 +573,6 @@
                                 <div class="col-12 col-md-1"></div>
                             </div>
                             
-                            <!-- nuevo layout -->
-            
                         </div>
                         <div class="modal-footer">
                             <button type="button" id="button_si" class="btn btn-primary" data-dismiss="modal">Si</button>
@@ -648,9 +634,6 @@
                 }
 
                 replegal_param2date()
-                    //cargar_actividades("1")
-                    //$("#tipo_actividad").val("1")
-                    //$("#tipo_actividad").change()
 
                 $("#button_si").click(function() {
                     $('#tipo_actividad').val("1");
@@ -693,7 +676,6 @@
                 });
                 $("#formalizacion").change(function() {
                     if ($(this).val() == '2') {
-                        // Persona juridica
                         $("#direccion").attr("readonly", "")
                     } else {
                         $("#direccion").removeAttr("readonly");
