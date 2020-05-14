@@ -45,7 +45,7 @@
     <div id="wrapwrap" class="homepage  page-home">
 
         <header>
-            <div class="navbar navbar-default nav-default bg-danger box-shadow">
+            <div class="navbar nav-default bg-danger box-shadow">
                 <div class="container d-flex justify-content-between">
                     <a href="#" class="navbar-brand d-flex align-items-center">
                         <img class="logo-minsa" src="img/logo-minsa.jpeg" alt="">
@@ -105,87 +105,71 @@
                     </div>
                 </section>
 
-                <section class="section-busqueda-contenido">
+                <section class="section-contenido">
                     <div class="container">
-                        <div class="row">
+                          <div class="row">
                             <div class="col-md-12">
-                                <form method="post">
-                                    <input type="hidden" name="csrf_token" value="ee6a664cf81718d5eff7313ba2b29f38974c3991o1589424753" />
-
-                                    <div class="box-top">
-                                        <div class="icono-edificio">
-                                            <img class="logo-edificio" src="img/icono-edificio-check.png" alt="">
-                                        </div>
-                                        <h3 class="title-busqueda">Buscado de empresas autorizadas</h3>
+                                <div class="box-top">
+                                    <div class="icono-edificio">
+                                        <img class="logo-edificio" src="img/icono-edificio-check.png" alt="">
                                     </div>
-
-                                    <div class="box-busqueda">
-                                        
-                                        <div class="contenido-busqueda">
-                                            <div class="contenido-ruc">
-                                                <div class="row">
-                                                    <div class="col-12 col-md-6 form-field">
-                                                        <div class="form-group form-field o_website_form_required_custom">
-                                                            <label class="control-label">RUC</label>
-                                                            <input type="text" class="form-control o_website_form_input" id="ruc" name="ruc" minlength="11" maxlength="11" onkeypress="return validateKeypress(numeric);" required="" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-12 col-md-6 form-field o_website_form_required_custom">
-                                                        <div class="form-group">
-                                                            <label class="control-label">Razón Social</label>
-                                                            <input type="text" class="form-control o_website_form_input" id="razon_social" name="razon_social" />
-                                                        </div>
-                                                        <div class="col-12 col-md-1"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                    <h3 class="title-busqueda">Buscado de empresas autorizadas</h3>
+                                </div>
+                                <div class="box-busqueda">
+                                    
+                                    <div class="contenido-busqueda">
+                                        <form>
                                             <div class="form-group field-login">
-
-                                                <div class="input-group group-select">
+                                                <div class="input-group">
                                                     <div class="box-select">
-                                                        <select class="form-control o_website_form_input" id="sector_id" name="sector_id" required="">
-                                                            <option selected="" disabled="">(Seleccione)</option>
-                                                            <option value="9"> No pertenece a un Sector</option>
-                                                            <option value="8">Comercio</option>
-                                                            <option value="6">Construcción </option>
-                                                            <option value="5">Minería e industria</option>
-                                                            <option value="7">Servicios y turismo</option>
+                                                        <select name="select" class="form-control">
+                                                            <option value="value1">Value 1</option> 
+                                                            <option value="value2" selected>Value 2</option>
+                                                            <option value="value3">Value 3</option>
                                                         </select>
                                                     </div>
                                                     <input type="text" name="login" id="login" class="form-control input-busqueda"/>
-                                                    <div class="box-buscar">
-                                                        <button id="button_buscar" type="button" class="btn-bucscar btn bg-danger btn-primary pull-center"><i class="icono-lupa"></i></button>
-                                                    </div>
+                                                    <span class="input-group-addon"><i class="icono-lupa"></i></span>
+
                                                 </div>
                                             </div>
-                                        </div>
+                                        </form>
                                     </div>
+                                </div>
 
+                                <div class="box-resultado">
+                                    <table class="table table-responsive table-striped table-bordered table-hover">
+                                        <thead class="tabla-titulo">
+                                            <th scope="col">Sector</th>
+                                            <th scope="col">RUC</th>
+                                            <th scope="col">RAZON SOCIAL</th>
+                                            <th scope="col">FECHA DE APROVACIÓN</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <th >1</th>
+                                            <td>Mark</td>
+                                            <td>Otto</td>
+                                            <td>@mdo</td>
+                                            </tr>
+                                            <th >2</th>
+                                            <td>Jacob</td>
+                                            <td>Thornton</td>
+                                            <td>@fat</td>
+                                            </tr>
+                                            <th >3</th>
+                                            <td>Larry</td>
+                                            <td>the Bird</td>
+                                            <td>@twitter</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
 
-                                    <div class="box-resultado">
-                                        <div class="row tabla-titulo">
-                                            <div class="col-12 col-md-3">
-                                                <label class="control-label">SECTOR </label>
-                                            </div>
-                                            <div class="col-12 col-md-3">
-                                                <label class="control-label">RUC </label>
-                                            </div>
-                                            <div class="col-12 col-md-3">
-                                                <label class="control-label">RAZON SOCIAL</label>
-                                            </div>
-                                            <div class="col-12 col-md-3">
-                                                <label class="control-label">FECHA DE APROBACIÓN </label>
-                                            </div>
-                                        </div>
-                                        <div id="resultados"></div>
-                                    </div>
-
-                                </form>
                             </div>
                         </div>
                     </div>
-                </div>
-
+                </section>
 
             </div>
 

@@ -50,7 +50,16 @@ body .homepage {
 
 .section-contenido .container {
     background-color: white;
-    /* padding: 30px 0; */
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.section-busqueda-contenido {
+    margin: 30px 0;
+}
+
+.section-busqueda-contenido .container {
+    background-color: white;
     padding-top: 40px;
     padding-bottom: 40px;
 }
@@ -107,7 +116,7 @@ footer #footer {
 
 @media (max-width: 960px) { 
     .section-contenido .row > div {
-        margin: 0 0 25px 0
+        margin: 0 0 25px 0;
     }
 }
 
@@ -229,6 +238,7 @@ footer #footer {
 .tabla-titulo {
     background-color: #e74a3b;
     color:white;
+    padding: 4px 0;
 }
 
 .box-resultado {
@@ -247,6 +257,7 @@ footer #footer {
 .box-busqueda .input-group-addon {
     background-color: #e74a3b;
     border:none;
+    padding: 0;
 }
 
 
@@ -259,20 +270,23 @@ footer #footer {
 
 .box-busqueda .box-select select {
     background-color: white;
-    color: red;
+    color: #e74a3b;
     height: 30px;
     border: none;
     border-top-left-radius: 10px!important;
     border-bottom-left-radius: 10px!important;
     text-transform: uppercase;
+    border-right: 2px solid #e74a3b; 
 }
 
 .box-busqueda .input-busqueda {
     border: 2px solid #e74a3b;
     border-top-left-radius: 10px!important;
     border-bottom-left-radius: 10px!important;
+    border-bottom-right-radius: 10px!important;
+    border-top-right-radius: 10px!important;
     overflow: hidden;
-    padding: 0 0 0 120px;
+    padding: 0 0 0 270px;
 }
 
 /* Modal Esenciales*/
@@ -382,4 +396,94 @@ footer #footer {
 .active-actividad {
     border: 3px solid black;
     box-shadow: 8px 8px 8px 0px rgba(0,0,0,0.3);
+}
+
+.navbar-default{ 
+    background-color: #ff3535; 
+    border-color: #e7e7e7;
+}
+.navbar-nav li a, .navbar-nav li a b {
+    color: white;
+}
+
+.box-buscar {
+    position: absolute;
+    right: 0;
+    z-index: 10;
+}
+
+.contenido-busqueda .box-buscar .btn-buscar {
+    background-color: #e74a3b;
+    border: 1px solid #e74a3b;
+    border-radius: 0;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.btn-bucscar {
+    background-color: #e74a3b;
+    color: white;
+    border: 1px solid #e74a3b;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.group-select {
+    display: flex;
+}
+
+div#resultados .col-12 {
+    padding: 0;
+    border-radius: 0;
+}
+
+div#resultados .col-12 a {
+    border-radius: 0;
+}
+
+div#resultados .col-12 a:hover {
+    background-color: white;
+}
+
+
+div#resultados [class*="col-"] {
+    padding: 0;
+    border-radius: 0;
+}
+
+div#resultados [class*="col-"] a {
+    border-radius: 0;
+}
+
+div#resultados [class*="col-"] a:hover {
+    background-color: white;
+}
+
+
+@media (max-width: 960px) { 
+    div#resultados [class*="col-"] {
+        width: 25%;
+        float: left;
+    }
+    .tabla-titulo [class*="col-"] {
+        width: 25%;
+        float: left;
+    }
+}
+
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+.contenido-ruc input {
+    border: 2px solid #e74a3b;
+    border-radius: 10px;
+}
+
+.box-busqueda .form-control:focus {
+    border-color: #e74a3b;
 }
