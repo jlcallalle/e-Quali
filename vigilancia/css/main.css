@@ -426,6 +426,22 @@ footer #footer {
     border: 1px solid #e74a3b;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
+    outline: none!important;
+}
+
+.btn-bucscar:focus { 
+    outline: none; 
+    box-shadow: none;
+}
+
+.contenido-busqueda .btn-bucscar:hover {
+    background-color: gray;
+    border: 1px solid gray;
+}
+
+.contenido-busqueda .btn-bucscar:active {
+    background-color: #e74a3b;
+    border-color: #e74a3b;
 }
 
 .group-select {
@@ -490,4 +506,40 @@ input:-webkit-autofill:active  {
 
 .navbar-default .navbar-nav > li > a {
     color: white;
+}
+
+/* Style Header Admin*/
+
+.o_main_navbar {
+    background-color: gray;
+    border: 1px solid gray;
+}
+
+#oe_main_menu_navbar .o_menu_systray a[data-action="edit"],
+#oe_main_menu_navbar .o_menu_systray a[data-action="translate"] {
+    color: white;
+    background-color: gray;
+    border-color: gray;
+}
+
+.o_main_navbar > ul > li > a:hover {
+    background-color: gray;
+}
+
+/* Style Forms Default */
+
+.panel-primary {
+    border-color: #e74a3b;
+}
+
+.panel-primary > .panel-heading {
+    color: #fff;
+    background-color: #e74a3b;
+    border-color: #e74a3b;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #d9534f;
+    border-color: #d43f3a;
 }
