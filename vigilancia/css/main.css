@@ -487,3 +487,7 @@ input:-webkit-autofill:active  {
 .box-busqueda .form-control:focus {
     border-color: #e74a3b;
 }
+
+.navbar-default .navbar-nav > li > a {
+    color: white;
+}
