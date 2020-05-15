@@ -32,11 +32,18 @@
     <link href="css/web.assets_common.0.css" rel="stylesheet" />
     <link href="css/web.assets_frontend.0.css" rel="stylesheet" />
     <link href="css/web.assets_frontend.1.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/dt-1.10.21/datatables.min.css"/>
+
     <link href="css/main.css" rel="stylesheet" />
+    
 
     <script type="text/javascript" src="js/web.assets_common.js"></script>
 
     <script type="text/javascript" src="js/web.assets_frontend.js"></script>
+
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs/dt-1.10.21/datatables.min.js"></script>
+
+   
 
 </head>
 
@@ -105,86 +112,229 @@
                     </div>
                 </section>
 
-                <section class="section-busqueda-contenido">
+                <section class="section-busqueda-filtros">
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12">
                                 <form method="post">
                                     <input type="hidden" name="csrf_token" value="ee6a664cf81718d5eff7313ba2b29f38974c3991o1589424753" />
-
                                     <div class="box-top">
                                         <div class="icono-edificio">
                                             <img class="logo-edificio" src="img/icono-edificio-check.png" alt="">
                                         </div>
                                         <h3 class="title-busqueda">Buscado de empresas autorizadas</h3>
                                     </div>
+                                    <div class="box-filtro box-resultado">
 
-                                    <div class="box-busqueda">
-                                        
-                                        <div class="contenido-busqueda">
-                                            <div class="contenido-ruc">
-                                                <div class="row">
-                                                    <div class="col-12 col-md-6 form-field">
-                                                        <div class="form-group form-field o_website_form_required_custom">
-                                                            <label class="control-label">RUC</label>
-                                                            <input type="text" class="form-control o_website_form_input" id="ruc" name="ruc" minlength="11" maxlength="11" onkeypress="return validateKeypress(numeric);" required="" />
+                                        <ul class="nav nav-tabs">
+                                            <li class="active"><a data-toggle="tab" href="#home">Búsqueda por RUC o Razón Social</a></li>
+                                            <li><a data-toggle="tab" href="#menu1">Búsqueda por Sector</a></li>
+                                        </ul>
+
+                                        <div class="tab-content">
+                                            <div id="home" class="tab-pane fade in active">
+                                               <div class="contenido-busqueda-sector">
+                                                    <form>
+                                                        <div class="form-group row">
+                                                            <div class="col-sm-2">
+                                                                <div class="form-group">
+                                                                    <select id="elige_documento" class="form-control">
+                                                                        <option value="ruc" selected >RUC</option>
+                                                                        <option value="razon_social">Razon Social</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-6">
+                                                               <input type="text" class="form-control o_website_form_input" id="ruc" name="ruc" minlength="11" maxlength="11" onkeypress="return validateKeypress(numeric);" required="" placeholder="Ingrese ruc"/>
+                                                               <input type="text" class="hide form-control o_website_form_input" id="razon_social" name="razon_social" placeholder="Ingrese razon social" />
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-12 col-md-6 form-field o_website_form_required_custom">
-                                                        <div class="form-group">
-                                                            <label class="control-label">Razón Social</label>
-                                                            <input type="text" class="form-control o_website_form_input" id="razon_social" name="razon_social" />
+                                                        <div class="form-group row">
+                                                            <div class="col-sm-2">
+                                                                <label class="col-form-label title-tab">ESTADO</label>
+                                                            </div>
+                                                            <div class="col-sm-6">
+                                                                <div class="form-group">
+                                                                    <select class="form-control o_website_form_input" id="state_solicitud" name="state_solicitud">
+                                                                        <option selected="" disabled="">(Seleccione)</option>
+                                                                        <option value="nuevo"> Nueva</option>
+                                                                        <option value="en_atencion">En atencion</option>
+                                                                        <option value="rechazada">Rechazada</option>
+                                                                        <option value="aprobada">Aprobada</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                        <div class="col-12 col-md-1"></div>
-                                                    </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-sm-6">
+                                                                <button id="button_buscar" type="button" class="btn btn-danger pull-center">Buscar</button>
+                                                            </div>
+                                                        </div>
+
+                                                       
+                                                    </form>
                                                 </div>
                                             </div>
-                                            <div class="form-group field-login">
+                                            <div id="menu1" class="tab-pane fade">
+                                                <div class="contenido-busqueda-sector">
+                                                    <form>
+                                                        <div class="form-group row">
+                                                            <div class="col-sm-2">
+                                                                <label class="col-form-label title-tab">ESTADO</label>
+                                                            </div>
+                                                            <div class="col-sm-6">
+                                                                <div class="form-group">
+                                                                     <select class="form-control o_website_form_input" id="state_solicitud" name="state_solicitud">
+                                                                        <option selected="" disabled="">(Seleccione)</option>
+                                                                        <option value="nuevo"> Nueva</option>
+                                                                        <option value="en_atencion">En atencion</option>
+                                                                        <option value="rechazada">Rechazada</option>
+                                                                        <option value="aprobada">Aprobada</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-sm-2">
+                                                                <label class="col-form-label title-tab">SECTOR</label>
+                                                            </div>
+                                                            <div class="col-sm-6">
+                                                                <div class="form-group">
+                                                                    <select class="form-control o_website_form_input" id="sector_id" name="sector_id">
+                                                                        <option selected="" disabled="">(Seleccione)</option>
+                                                                        <option value="9">No pertenece a un Sector</option>
+                                                                        <option value="8">Comercio</option>
+                                                                        <option value="6">Construcción</option>
+                                                                        <option value="5"> Minería e industria</option>
+                                                                        <option value="7">Servicios y turismo</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-sm-6">
+                                                             <button id="button_buscar" type="button" class="btn btn-danger pull-center">Buscar</button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
 
-                                                <div class="input-group group-select">
-                                                    <div class="box-select">
-                                                        <select class="form-control o_website_form_input" id="sector_id" name="sector_id" required="">
-                                                            <option selected="" disabled="">(Seleccione)</option>
-                                                            <option value="9"> No pertenece a un Sector</option>
-                                                            <option value="8">Comercio</option>
-                                                            <option value="6">Construcción </option>
-                                                            <option value="5">Minería e industria</option>
-                                                            <option value="7">Servicios y turismo</option>
-                                                        </select>
-                                                    </div>
-                                                    <input type="text" name="login" id="login" class="form-control input-busqueda"/>
-                                                    <div class="box-buscar">
-                                                        <button id="button_buscar" type="button" class="btn-bucscar btn bg-danger btn-primary pull-center"><i class="icono-lupa"></i></button>
+                                        <br/>
+
+                                         <div class="contenido-resultados">
+                                            <div class="card ">
+                                                <div class="card-body">
+                                                    <div class="table-responsive">
+                                                        <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
+                                                            <thead class="tabla-titulo">
+                                                                <tr>
+                                                                    <th>SECTOR</th>
+                                                                    <th>RUC</th>
+                                                                    <th>NOMBRE</th>
+                                                                    <th>SEDE</th>
+                                                                    <th>FECHA DE APROBACIÓN</th>
+                                                                    <th>ESTADO</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody id="resultados">
+                                                                <tr>
+                                                                    <td>Tiger Nixon</td>
+                                                                    <td>System Architect</td>
+                                                                    <td>Edinburgh</td>
+                                                                    <td>61</td>
+                                                                    <td>11/05/2020</td>
+                                                                    <td>Aprobado</td>                                                                                 
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Garrett Winters</td>
+                                                                    <td>Accountant</td>
+                                                                    <td>Tokyo</td>
+                                                                    <td>63</td>
+                                                                    <td>11/05/2020</td>
+                                                                    <td>Aprobado</td>                                                                                 
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Ashton Cox</td>
+                                                                    <td>Junior Technical Author</td>
+                                                                    <td>San Francisco</td>
+                                                                    <td>66</td>
+                                                                    <td>11/05/2020</td>
+                                                                    <td>Aprobado</td>                                                                                 
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Cedric Kelly</td>
+                                                                    <td>Senior Javascript Developer</td>
+                                                                    <td>Edinburgh</td>
+                                                                    <td>22</td>
+                                                                    <td>11/05/2020</td>
+                                                                    <td>Aprobado</td>                                                                                 
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Michael Bruce</td>
+                                                                    <td>Javascript Developer</td>
+                                                                    <td>Singapore</td>
+                                                                    <td>29</td>
+                                                                    <td>11/05/2020</td>
+                                                                    <td>Aprobado</td>                                                                                 
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Donna Snider</td>
+                                                                    <td>Customer Support</td>
+                                                                    <td>New York</td>
+                                                                    <td>27</td>
+                                                                    <td>11/05/2020</td>
+                                                                    <td>Aprobado</td>                                                                                 
+                                                                </tr>
+                                                                    <tr>
+                                                                    <td>Cedric Kelly</td>
+                                                                    <td>Senior Javascript Developer</td>
+                                                                    <td>Edinburgh</td>
+                                                                    <td>22</td>
+                                                                    <td>11/05/2020</td>
+                                                                    <td>Aprobado</td>                                                                                 
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Michael Bruce</td>
+                                                                    <td>Javascript Developer</td>
+                                                                    <td>Singapore</td>
+                                                                    <td>29</td>
+                                                                    <td>11/05/2020</td>
+                                                                    <td>Aprobado</td>                                                                                 
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+
+                                                        <div class="box-pagination">
+                                                            <nav aria-label="...">
+                                                                <ul class="pagination">
+                                                                    <li class="page-item disabled">
+                                                                    <a class="page-link" href="#" tabindex="-1">Anterior</a>
+                                                                    </li>
+                                                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                                                    <li class="page-item active">
+                                                                    <a class="page-link" href="#">2 <span class="sr-only">(actual)</span></a>
+                                                                    </li>
+                                                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                                    <li class="page-item">
+                                                                    <a class="page-link" href="#">Siguiente</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </nav>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+
                                     </div>
-
-
-                                    <div class="box-resultado">
-                                        <div class="row tabla-titulo">
-                                            <div class="col-12 col-md-3">
-                                                <label class="control-label">SECTOR </label>
-                                            </div>
-                                            <div class="col-12 col-md-3">
-                                                <label class="control-label">RUC </label>
-                                            </div>
-                                            <div class="col-12 col-md-3">
-                                                <label class="control-label">RAZON SOCIAL</label>
-                                            </div>
-                                            <div class="col-12 col-md-3">
-                                                <label class="control-label">FECHA DE APROBACIÓN </label>
-                                            </div>
-                                        </div>
-                                        <div id="resultados"></div>
-                                    </div>
-
+                                   
                                 </form>
                             </div>
                         </div>
                     </div>
-                </div>
+                </section>
 
 
             </div>
@@ -224,4 +374,64 @@
 
 </body>
 
+<script>
+
+
+$(document).ready(function() {
+	$("#button_buscar").click(function() {
+
+        $("#resultados").append(
+                "<tr>" +
+                    "<td>"+'elem.sector'+"</td>" +
+                    "<td>"+'elem.razon_social'+"</td>" +
+                    "<td>"+'elem.ruc'+"</td>" +
+                    "<td>"+'elem.fecha_aprobado'+"</td>" +
+                    "<td>"+'elem.sede'+"</td>" +
+                    "<td>"+'elem.estado_solicitud'+"</td>" +
+                "</tr>"
+            )
+    })
+})
+
+
+$(document).ready(function() {
+    $('#dataTable').DataTable({
+         "paging":   false,
+         "language": {
+            "decimal": "",
+            "emptyTable": "No hay información",
+            "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+            "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
+            "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+            "infoPostFix": "",
+            "thousands": ",",
+            "lengthMenu": "Mostrar _MENU_ Entradas",
+            "loadingRecords": "Cargando...",
+            "processing": "Procesando...",
+            "search": "Buscar:",
+            "zeroRecords": "Sin resultados encontrados",
+            "paginate": {
+                "first": "Primero",
+                "last": "Ultimo",
+                "next": "Siguiente",
+                "previous": "Anterior"
+            }
+        },
+    });
+
+    $( "#elige_documento" ).change(function() {
+        var valueSelected = this.value;
+        if(valueSelected === 'ruc') {
+            $('#ruc').addClass('show');
+            $('#razon_social').addClass('hide');
+            $('#razon_social').removeClass('show');
+        } else {
+            $('#razon_social').addClass('show');
+            $('#ruc').addClass('hide');
+            $('#ruc').removeClass('show');
+        }
+    });
+
+} );
+</script>
 </html>
