@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>SB Admin 2 - Dashboard</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="css/sb-admin-2.min.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+  integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+  crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+  integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+  crossorigin=""></script>
+</head>
+
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+      <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <div class="sidebar-brand-icon rotate-n-15">
+          <i class="fas fa-laugh-wink"></i>
+        </div>
+        <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+      </a>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+
+      <!-- Nav Item - Dashboard -->
+      <li class="nav-item active">
+        <a class="nav-link" href="index.html">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Dashboard</span></a>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Heading -->
+      <div class="sidebar-heading">
+        Interface
+      </div>
+
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+          <i class="fas fa-fw fa-cog"></i>
+          <span>Components</span>
+        </a>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Custom Components:</h6>
+            <a class="collapse-item" href="buttons.html">Buttons</a>
+            <a class="collapse-item" href="cards.html">Cards</a>
+          </div>
+        </div>
+      </li>
+
+      <!-- Nav Item - Utilities Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+          <i class="fas fa-fw fa-wrench"></i>
+          <span>Utilities</span>
+        </a>
+        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Custom Utilities:</h6>
+            <a class="collapse-item" href="utilities-color.html">Colors</a>
+            <a class="collapse-item" href="utilities-border.html">Borders</a>
+            <a class="collapse-item" href="utilities-animation.html">Animations</a>
+            <a class="collapse-item" href="utilities-other.html">Other</a>
+          </div>
+        </div>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Heading -->
+      <div class="sidebar-heading">
+        Addons
+      </div>
+
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+          <i class="fas fa-fw fa-folder"></i>
+          <span>Pages</span>
+        </a>
+        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Login Screens:</h6>
+            <a class="collapse-item" href="login.html">Login</a>
+            <a class="collapse-item" href="register.html">Register</a>
+            <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
+            <div class="collapse-divider"></div>
+            <h6 class="collapse-header">Other Pages:</h6>
+            <a class="collapse-item" href="404.html">404 Page</a>
+            <a class="collapse-item" href="blank.html">Blank Page</a>
+          </div>
+        </div>
+      </li>
+
+      <!-- Nav Item - Charts -->
+      <li class="nav-item">
+        <a class="nav-link" href="charts.html">
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span>Charts</span></a>
+      </li>
+
+      <!-- Nav Item - Tables -->
+      <li class="nav-item">
+        <a class="nav-link" href="tables.html">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Tables</span></a>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider d-none d-md-block">
+
+      <!-- Sidebar Toggler (Sidebar) -->
+      <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+      </div>
+
+    </ul>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Topbar -->
+        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+          <!-- Sidebar Toggle (Topbar) -->
+          <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+            <i class="fa fa-bars"></i>
+          </button>
+
+          <!-- Topbar Search -->
+          <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+            <div class="input-group">
+              <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+              <div class="input-group-append">
+                <button class="btn btn-primary" type="button">
+                  <i class="fas fa-search fa-sm"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+
+          <!-- Topbar Navbar -->
+          <ul class="navbar-nav ml-auto">
+
+            <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+            <li class="nav-item dropdown no-arrow d-sm-none">
+              <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-search fa-fw"></i>
+              </a>
+              <!-- Dropdown - Messages -->
+              <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
+                <form class="form-inline mr-auto w-100 navbar-search">
+                  <div class="input-group">
+                    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                      <button class="btn btn-primary" type="button">
+                        <i class="fas fa-search fa-sm"></i>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </li>
+
+            <!-- Nav Item - Alerts -->
+            <li class="nav-item dropdown no-arrow mx-1">
+              <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-bell fa-fw"></i>
+                <!-- Counter - Alerts -->
+                <span class="badge badge-danger badge-counter">3+</span>
+              </a>
+              <!-- Dropdown - Alerts -->
+              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
+                <h6 class="dropdown-header">
+                  Alerts Center
+                </h6>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="mr-3">
+                    <div class="icon-circle bg-primary">
+                      <i class="fas fa-file-alt text-white"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="small text-gray-500">December 12, 2019</div>
+                    <span class="font-weight-bold">A new monthly report is ready to download!</span>
+                  </div>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="mr-3">
+                    <div class="icon-circle bg-success">
+                      <i class="fas fa-donate text-white"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="small text-gray-500">December 7, 2019</div>
+                    $290.29 has been deposited into your account!
+                  </div>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="mr-3">
+                    <div class="icon-circle bg-warning">
+                      <i class="fas fa-exclamation-triangle text-white"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="small text-gray-500">December 2, 2019</div>
+                    Spending Alert: We've noticed unusually high spending for your account.
+                  </div>
+                </a>
+                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+              </div>
+            </li>
+
+            <!-- Nav Item - Messages -->
+            <li class="nav-item dropdown no-arrow mx-1">
+              <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-envelope fa-fw"></i>
+                <!-- Counter - Messages -->
+                <span class="badge badge-danger badge-counter">7</span>
+              </a>
+              <!-- Dropdown - Messages -->
+              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
+                <h6 class="dropdown-header">
+                  Message Center
+                </h6>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="dropdown-list-image mr-3">
+                    <img class="rounded-circle" src="https://source.unsplash.com/fn_BT9fwg_E/60x60" alt="">
+                    <div class="status-indicator bg-success"></div>
+                  </div>
+                  <div class="font-weight-bold">
+                    <div class="text-truncate">Hi there! I am wondering if you can help me with a problem I've been having.</div>
+                    <div class="small text-gray-500">Emily Fowler · 58m</div>
+                  </div>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="dropdown-list-image mr-3">
+                    <img class="rounded-circle" src="https://source.unsplash.com/AU4VPcFN4LE/60x60" alt="">
+                    <div class="status-indicator"></div>
+                  </div>
+                  <div>
+                    <div class="text-truncate">I have the photos that you ordered last month, how would you like them sent to you?</div>
+                    <div class="small text-gray-500">Jae Chun · 1d</div>
+                  </div>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="dropdown-list-image mr-3">
+                    <img class="rounded-circle" src="https://source.unsplash.com/CS2uCrpNzJY/60x60" alt="">
+                    <div class="status-indicator bg-warning"></div>
+                  </div>
+                  <div>
+                    <div class="text-truncate">Last month's report looks great, I am very happy with the progress so far, keep up the good work!</div>
+                    <div class="small text-gray-500">Morgan Alvarez · 2d</div>
+                  </div>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="dropdown-list-image mr-3">
+                    <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" alt="">
+                    <div class="status-indicator bg-success"></div>
+                  </div>
+                  <div>
+                    <div class="text-truncate">Am I a good boy? The reason I ask is because someone told me that people say this to all dogs, even if they aren't good...</div>
+                    <div class="small text-gray-500">Chicken the Dog · 2w</div>
+                  </div>
+                </a>
+                <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
+              </div>
+            </li>
+
+            <div class="topbar-divider d-none d-sm-block"></div>
+
+            <!-- Nav Item - User Information -->
+            <li class="nav-item dropdown no-arrow">
+              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
+                <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
+              </a>
+              <!-- Dropdown - User Information -->
+              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                <a class="dropdown-item" href="#">
+                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Profile
+                </a>
+                <a class="dropdown-item" href="#">
+                  <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Settings
+                </a>
+                <a class="dropdown-item" href="#">
+                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Activity Log
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Logout
+                </a>
+              </div>
+            </li>
+
+          </ul>
+
+        </nav>
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+          <div class="card shadow mb-4">
+              <div class="card-body">
+                  <fieldset class="border p-2">
+                      <legend class="w-auto"> Datos del Paciente </legend>
+                      <div class="row">
+                          <div class="col-md-2">Tipo Doc.: </div>
+                          <div class="col-md-4">Apellidos y Nombre: </div>
+                          <div class="col-md-1">Edad:</div>
+                          <div class="col-md-2">Seguro: </div>
+                          <div class="col-md-3">Correo: </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-md-2">Nro. Doc.: </div>
+                          <div class="col-md-4">Fec Nacimiento: </div>
+                          <div class="col-md-3">Sexo: </div>
+                          <div class="col-md-3">Celular: </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-md-2">Departamento: </div>
+                          <div class="col-md-4">Provincia: </div>
+                          <div class="col-md-6">Distrito: </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-md-12">Dirección: </div>
+                      </div>
+                  </fieldset>
+              </div>
+          </div>
+          <div class="card shadow mb-4">
+              <div class="card-body">
+                  <form>
+                      <h5><U>Datos de Notificación</U></h5>
+                    
+                      <div class="form-row">
+                          <div class="form-group col-md-6 col-lg-4">
+                              <label for="event_date">Fecha de Notificación</label>
+                              <input class="form-control" id="event_date" type="text">
+                          </div>
+                          <div class="form-group col-md-6 col-lg-4">
+                              <label for="estblecimiento_origen">Fecha de Nacimiento</label>
+                              <select id="estblecimiento_origen" class="form-control">
+                                  <option selected>Elegir...</option>
+                              </select>
+                          </div>
+                      </div>
+                      <hr>
+                      <h5><U>¿Qué Profeción ocupación tienes?</U></h5>
+                      <br/>
+                      <div class="form-row">
+                          <div class="form-group col-md-6 col-lg-4">
+                              <label for="personalSalud">¿Es personal de Salud?</label>
+                              <select id="personalSalud" class="form-control">
+                                  <option selected>Elegir...</option>
+                              </select>
+      
+                          </div>
+                          <div class="form-group col-md-6 col-lg-4">
+                              <label for="estblecimiento_origen">¿Cuál?</label>
+                              <input class="form-control" id="event_date" type="text">
+                          </div>
+                      </div>
+                      <hr>
+                      <h5><U>Sintomas o Signos</U></h5>
+                      <br>
+                      <div class="form-row">
+      
+                          <div class="form-group col-md-12 col-lg-3">
+                              <div class="row">Sintomas <span class="text-danger"> (*)</span></div>
+                              <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" name="rbSintomas1" id="rbSintomas1">
+                                  <label class="form-check-label" for="rbSintomas1">
+                                      Tos
+                                  </label>
+                              </div>
+                              <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" name="rbSintomas1" id="rbSintomas2">
+                                  <label class="form-check-label" for="rbSintomas2">
+                                      Dolor de Garganta
+                                  </label>
+                              </div>
+                              <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" name="rbSintomas3" id="rbSintomas3">
+                                  <label class="form-check-label" for="rbSintomas3">
+                                      Congestión Nasal
+                                  </label>
+                              </div>
+                              <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" name="rbSintomas4" id="rbSintomas4">
+                                  <label class="form-check-label" for="rbSintomas4">
+                                      Dificultad Respiratoria
+                                  </label>
+                              </div>
+                              <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" name="rbSintomas5" id="rbSintomas5">
+                                  <label class="form-check-label" for="rbSintomas5">
+                                      Fiebre/ Escalofrío
+                                  </label>
+                              </div>
+                              <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" name="rbSintomas6" id="rbSintomas6">
+                                  <label class="form-check-label" for="rbSintomas6">
+                                      Malestar General
+                                  </label>
+                              </div>
+                              <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" name="rbSintomas7" id="rbSintomas7">
+                                  <label class="form-check-label" for="rbSintomas7">
+                                      Diarrea
+                                  </label>
+                              </div>
+                              <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" name="rbSintomas8" id="rbSintomas8">
+                                  <label class="form-check-label" for="rbSintomas8">
+                                      Nauseas/Vomitos
+                                  </label>
+                              </div>
+                              <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" name="rbSintomas9" id="rbSintomas9">
+                                  <label class="form-check-label" for="rbSintomas9">
+                                      Cefalea
+                                  </label>
+                              </div>
+                              <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" name="rbSintomas10" id="rbSintomas10">
+                                  <label class="form-check-label" for="rbSintomas10">
+                                      Irritabilidad/Confusión
+                                  </label>
+                              </div>
+                              <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" name="rbSintomas11" id="rbSintomas11">
+                                  <label class="form-check-label" for="rbSintomas11">
+                                      Dolor
+                                  </label>
+                              </div>
+                              <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" name="rbSintomas12" id="rbSintomas12">
+                                  <label class="form-check-label" for="rbSintomas12">
+                                      Otros
+                                  </label>
+                              </div>
+      
+                          </div>
+                          <div class="form-group col-md-12 col-lg-3">
+                              <div class="row">Dolor <span class="text-danger"> (*)</span></div>
+                              <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" name="rbDolor1" id="rbDolor1">
+                                  <label class="form-check-label" for="rbDolor1">
+                                      Muscular
+                                  </label>
+                              </div>
+                              <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" name="rbDolor2" id="rbDolor2">
+                                  <label class="form-check-label" for="rbDolor2">
+                                      Abdominal
+                                  </label>
+                              </div>
+                              <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" name="rbDolor3" id="rbDolor3">
+                                  <label class="form-check-label" for="rbDolor3">
+                                      Pecho
+                                  </label>
+                              </div>
+                              <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" name="rbDolor4" id="rbDolor4">
+                                  <label class="form-check-label" for="rbDolor4">
+                                      Articulaciones
+                                  </label>
+                              </div>
+                          </div>
+                          <div class="form-group col-md-12 col-lg-2">
+                              <label for="otrosDolorSintomas">Otros, Especificar</label>
+                              <input class="form-control" id="otrosDolorSintomas" type="text">
+                          </div>
+                      </div>
+                      <div class="form-row">
+                          <div class="form-group col-md-12  col-lg-4">
+                              <label for="txtTemperatura">Temperatura °C</label>
+                              <input class="form-control" id="txtTemperatura" type="text">
+                          </div>
+                      </div>
+                      <div class="form-row">
+                          <div class="form-group col-md-12 col-lg-4">
+                              <label for="txtTemperatura">Signos <span class="text-danger"> (*)</span></label>
+                              <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" name="rbSignos1" id="rbSignos1">
+                                  <label class="form-check-label" for="rbSignos1">
+                                      Exudado Faringeo
+                                  </label>
+                              </div>
+                              <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" name="rbSignos2" id="rbSignos2">
+                                  <label class="form-check-label" for="rbSignos2">
+                                      Inyección Conjuntival
+                                  </label>
+                              </div>
+                              <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" name="rbSignos3" id="rbSignos3">
+                                  <label class="form-check-label" for="rbSignos3">
+                                      Coma
+                                  </label>
+                              </div>
+                              <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" name="rbSignos4" id="rbSignos4">
+                                  <label class="form-check-label" for="rbSignos4">
+                                      Disnea/Taquipnea
+                                  </label>
+                              </div>
+                              <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" name="rbSignos5" id="rbSignos5">
+                                  <label class="form-check-label" for="rbSignos5">
+                                      Otros
+                                  </label>
+                              </div>
+                          </div>
+                          <div class="form-group col-md-12 col-lg-4">
+                              <label for="txtTemperatura">Otros, Especificar<span class="text-danger"> (*)</span></label>
+                              <input class="form-control" id="txtOtrosSignos" type="text">
+                          </div>
+                      </div>
+                      <hr>
+                      <h5><U>Condiciones de Comorbilidad</U></h5>
+                      <br/>
+                      <div class="form-row">
+                          <div class="form-group col-md-12 col-lg-4">
+                              <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" name="rbComor1" id="rbComor1">
+                                  <label class="form-check-label" for="rbComor1">
+                                      Embarazo
+                                  </label>
+                              </div> 
+                              <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" name="rbComor2" id="rbComor2">
+                                  <label class="form-check-label" for="rbComor2">
+                                      Enfermedad Cardiovascular (Incluye Hipertensión)
+                                  </label>
+                              </div> 
+                              <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" name="rbComor3" id="rbComor3">
+                                  <label class="form-check-label" for="rbComor3">
+                                      Diabetes
+                                  </label>
+                              </div> 
+                              <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" name="rbComor3" id="rbComor3">
+                                  <label class="form-check-label" for="rbComor3">
+                                      Enfermedad Hepática
+                                  </label>
+                              </div> 
+                              <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" name="rbComor4" id="rbComor4">
+                                  <label class="form-check-label" for="rbComor4">
+                                      Enfermedad Crónica Neurológica o Neuromuscular
+                                  </label>
+                              </div> 
+                              <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" name="rbComor5" id="rbComor5">
+                                  <label class="form-check-label" for="rbComor5">
+                                      Pos Parto (< 6 Semanas)
+                                  </label>
+                              </div> 
+                              <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" name="rbComor6" id="rbComor6">
+                                  <label class="form-check-label" for="rbComor6">
+                                      Inmunodeficiencia (Incluye VIH)
+                                  </label>
+                              </div> 
+                              <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" name="rbComor7" id="rbComor7">
+                                  <label class="form-check-label" for="rbComor7">
+                                      Nauseas/Vomitos
+                                  </label>
+                              </div> 
+                              <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" name="rbComor8" id="rbComor8">
+                                  <label class="form-check-label" for="rbComor8">
+                                      Enfermedad Renal
+                                  </label>
+                              </div> 
+                              <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" name="rbComor9" id="rbComor9">
+                                  <label class="form-check-label" for="rbComor9">
+                                      Enfermedad Pulmonar Crónica
+                                  </label>
+                              </div> 
+                              <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" name="rbComor10" id="rbComor10">
+                                  <label class="form-check-label" for="rbComor10">
+                                      Cáncer
+                                  </label>
+                              </div> 
+                          </div>
+                          <div class="form-group col-md-12 col-lg-4">
+                              <div class="form-row">
+                                  <div class="form-group col-md-12">
+                                      <label for="opTrimestre">Embarazo Trimestre<span class="text-danger">
+                                              (*)</span></label>
+                                      <select id="opTrimestre" class="form-control">
+                                          <option selected>Elegir...</option>
+                                      </select>
+      
+                                  </div>
+                              </div>
+                              <div class="form-row">
+                                  <div class="form-group col-md-12">
+                                      <label for="txtComorbilidad">Otros, Especificar<span class="text-danger"> (*)</span></label>
+                                      <input class="form-control" id="txtComorbilidad" type="text">
+                                  </div>
+                              </div>
+      
+                          </div>
+                      </div>
+      
+                      <hr>
+                      <h5><U>Información de Viaje y Exposición en los 14 días anteriores a la fecha de inicio de sintomas(Antes de Informar si es asintomático) </U></h5>
+                      <br/>
+                      <div class="form-row">
+                          <div class="form-group col-md-12 col-lg-4">
+                              <label for="optViajado">¿Ha viajado? <span class="text-danger"> (*)</span></label>
+                              <select id="optViajado" class="form-control">
+                                  <option selected>Elegir...</option>
+                              </select>
+                          </div>
+                      </div>
+                      <div >
+                          <div class="form-row">
+                              <div class="form-group col-md-4">
+                                  <label for="optViajado">País <span class="text-danger"> (*)</span></label>
+                                  <select id="optViajado" class="form-control">
+                                      <option selected>Elegir...</option>
+                                  </select>
+                              </div>
+                              <div class="form-group col-md-4">
+                                  <label for="optViajado">Ciudad <span class="text-danger"> (*)</span></label>
+                                  <select id="optViajado" class="form-control">
+                                      <option selected>Elegir...</option>
+                                  </select>
+                              </div>
+                              <div class="form-group col-md-2">
+                                  <div class="text-center">
+                                  <button type="button" class="btn btn-primary btn-circle">
+                                      <i class="fas fa fa-plus"></i></button>
+                              </div>
+                              </div>
+                          </div>
+                          <div>
+                              <table class="table table-striped">
+                                  <thead>
+                                      <tr>
+                                          <th scope="col">#</th>
+                                          <th scope="col">Pais</th>
+                                          <th scope="col">Ciudad</th>
+                                          <th scope="col">Acción</th>
+                                      </tr>
+                                  </thead>
+                                  <tbody>
+                                      <tr>
+                                          <th scope="row"></th>
+                                          <td></td>
+                                          <td></td>
+                                          <td>
+                                              <button type="button" class="btn ">
+                                                  <i class="fas fa fa-trash"></i></button>
+                                                  <button type="button" class="btn ">
+                                                      <i class="fas fa-edit"></i></button>
+                                          </td>
+                                      </tr>
+                                  </tbody>
+                              </table>
+                          </div>
+                      
+                      </div>
+                      <div class="form-row">
+                          <div class="form-group col-md-12 col-lg-4">
+                              <label for="optViajado">¿Ha tenido con un caso confirmado o probable en los 14 días antes del inicio de los sintomas? <span class="text-danger"> (*)</span></label>
+                              <select id="optViajado" class="form-control">
+                                  <option selected>Elegir...</option>
+                              </select>
+                          </div>
+                      </div>
+                      <hr>
+                      <h5><U> Laboratorio </U></h5>
+                      <br/>
+      
+                      <div class="form-row">
+                          <div class="form-group col-md-12 col-lg-3">
+                              <label for="txtFechaMuestra">Fecha de obtención de la muestra <span class="text-danger"> (*)</span></label>
+                              <input class="form-control" id="txtFechaMuestra" type="date">
+                          </div>
+                          <div class="form-group col-md-12 col-lg-5">
+                              <label >Tipo de Muestra <span class="text-danger"> (*)</span></label>
+                              <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" name="rbMuestra1" id="rbMuestra1">
+                                  <label class="form-check-label" for="rbMuestra1">
+                                      Hisopado nasal y faringeo 
+                                  </label>
+                              </div>
+                              <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" name="rbMuestra2" id="rbMuestra2">
+                                  <label class="form-check-label" for="rbMuestra2">
+                                      Aspirado Traqueal
+                                  </label>
+                              </div>
+                              <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" name="rbMuestra3" id="rbMuestra3">
+                                  <label class="form-check-label" for="rbMuestra3">
+                                      Aspirado Broncoalveolar
+                                  </label>
+                              </div>
+                              <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" name="rbMuestra4" id="rbMuestra4">
+                                  <label class="form-check-label" for="rbMuestra">
+                                      Aspirado Broncoalveolar
+                                  </label>
+                              </div>
+                              <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" name="rbMuestra5" id="rbMuestra5">
+                                  <label class="form-check-label" for="rbMuestra5">
+                                      Lavado Broncoalveolar
+                                  </label>
+                              </div>
+                              <div class="form-check">
+                                  <input class="form-check-input" type="checkbox" name="rbMuestra6" id="rbMuestra6">
+                                  <label class="form-check-label" for="rbMuestra6">
+                                      Tejido Pulmonar
+                                  </label>
+                              </div>
+                          </div>
+                      </div>
+                      <hr>
+                      <h5><U> Investigador </U></h5>
+                      <br/>
+                      <div class="form-row">
+                          <div class="form-group col-md-12 col-lg-3">
+                              <label for="txtFechaMuestra">DNI <span class="text-danger"> (*)</span></label>
+                              <input class="form-control" id="txtFechaMuestra" type="text">
+                          </div>
+                          <div class="form-group col-md-3 col-lg-1">
+                              <div class="box-button">
+                              <button class="btn btn-primary btn-sm"><i class="fas fa fa-search"></i>Buscar</button>
+                          </div>
+                          </div>
+                      </div>
+                      <hr>
+                      <h5><U> Ubicación </U></h5>
+                      <br/>
+                      <div class="form-row">
+                          <div class="form-group col-md-12 col-lg-4">
+                              <div class="form-row">
+                                  <div class="form-group col-md-12 col-lg-9">
+                                      <label for="txtFechaMuestra">Dirección <span class="text-danger"> (*)</span></label>
+                                      <input class="form-control" id="txtFechaMuestra" type="text">
+                                  </div>
+                                  <div class="form-group col-md-3">
+                                      <div class="box-button">
+                                      <button class="btn btn-primary btn-sm"><i class="fas fa fa-search"></i>Buscar</button>
+                                  </div>
+                                  </div>
+                              </div>
+                              <div class="form-row">
+                                  <div id="map"></div>
+                              </div>
+                          </div>
+                          <div class="form-group col-md-12 col-lg-4">
+                              <div class="form-group col-md-12 col-lg-6">
+                                  <label for="txtFechaMuestra">Latitud(x.y°) </label>
+                                  <input class="form-control" id="txtFechaMuestra" type="text">
+                              </div>
+                              <div class="form-group col-md-12 col-lg-6">
+                                  <label for="txtFechaMuestra">Longitud(x.y°) </label>
+                                  <input class="form-control" id="txtFechaMuestra" type="text">
+                              </div>
+                              <div class="form-group col-md-12 col-lg-6">
+                                  <label for="txtFechaMuestra">altitud(m) </label>
+                                  <input class="form-control" id="txtFechaMuestra" type="number">
+                              </div>
+                              <div class="form-group col-md-12 col-lg-6">
+                                <label for="txtFechaMuestra">precisión(m)</label>
+                                <input class="form-control" id="txtFechaMuestra" type="number">
+                              </div>
+                          </div>
+                      </div>
+                      <div class="form-row text-center">
+                          <div class="form-group col-md-6">
+                              <button class="btn btn-info"><i class="far fa-folder-open"></i> Guardar</button>
+                          </div>
+                          <div class="form-group col-md-6">
+                              <button class="btn btn-primary"><i class="fas fa fa-save"></i> Registrar</button>
+                          </div>
+                      </div>
+                  </form>
+              </div>
+          </div>
+        </div>
+        <!-- /.container-fluid -->
+
+      </div>
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+      <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright &copy; Your Website 2019</span>
+          </div>
+        </div>
+      </footer>
+      <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-primary" href="login.html">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin-2.min.js"></script>
+  <script src="js/main.js"></script>
+
+
+<script>
+
+	var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+
+	L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+		maxZoom: 18,
+		id: 'mapbox/streets-v11',
+		tileSize: 512,
+		zoomOffset: -1
+	}).addTo(mymap);
+
+</script>
+</body>
+
+</html>
