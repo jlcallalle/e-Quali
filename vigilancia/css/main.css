@@ -90,6 +90,10 @@ body .homepage {
     padding: 12px;
     margin: 0;
     margin-top: 7px;
+    min-height: 53px;
+    display: flex;
+    align-items: center;
+    justify-content: center
 }
 
 .box-sector p {
@@ -125,7 +129,7 @@ footer #footer {
 @media (min-width: 960px) {
     .box-texto {
         display: flex;
-        height: 90px;
+        min-height: 90px;
     }
 }
 
@@ -961,20 +965,135 @@ table.dataTable {
     margin-left: -1px;
 }
 
-.pagination > .active > button, 
-.pagination > .active > button:hover, 
+.pagination > .active > button,
+.pagination > .active > button:hover,
 .pagination > .active > button:focus{
     background-color: #e74a3b;
     border-color: #e74a3b;
 }
 
 
-.pagination > .active > button, 
-.pagination > .active > button:hover, 
+.pagination > .active > button,
+.pagination > .active > button:hover,
 .pagination > .active > button:focus{
     z-index: 2;
     color: #ffffff;
     background-color: #e74a3b;
     border-color: #e74a3b;
     cursor: default;
+}
+
+/*Redesign Layouot*/
+
+.section-tablero {
+  margin-top: 25px;
+}
+.col-sidebar {
+  border-left: 1px solid lightgray;
+  margin-left: 30px;
+}
+
+.sidebar {
+  padding: 0 0 0 20px;
+}
+
+@media (max-width: 960px) {
+  .sidebar {
+    padding: 0;
+  }
+}
+
+
+.box-sidebar {
+  margin: 0 0 25px 0;
+}
+
+.box-sidebar h4 {
+  color: #e74a3b;
+  text-align: center;
+  font-weight: bold;
+}
+
+.logo-fiscalizador {
+  width: 180px;
+}
+
+
+.box-sidebar button {
+  display: flex;
+  align-items: center;
+  padding: 6px 16px;
+}
+
+.box-icon {
+  width: 25px;
+  margin: 0 10px 0 0;
+}
+
+.box-icon img {
+  width: 100%;
+}
+
+.box-sidebar span {
+  font-size: 15px;
+}
+
+.box-video {
+  background-image: url(../img/icono-youtube.png);
+  background-position: top center;
+  background-repeat: no-repeat;
+  height: 134px;
+  width: 260px;
+  margin: 0 auto;
+  background-size: contain;
+}
+
+.box-youtube {
+  display: flex;
+  margin-bottom: 6px;
+}
+
+.box-youtube iframe {
+  margin: 0 auto;
+}
+
+.box-tablero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box-tablero .box-icon {
+  width: 50px;
+}
+
+
+@media (max-width: 960px) {
+  .box-tablero .box-icon {
+    display: none;
+  }
+}
+
+
+.btn-ingresar {
+  color: #d9534f;
+  margin-left: 15px;
+  background-color: #ffffff;
+  border-color: #ffffff;
+  font-weight: bold;
+}
+
+.btn-ingresar:hover {
+  color: #d9534f;
+}
+
+.box-tablero-titulo {
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
+  border-radius: 6px;
+  color: #ffffff;
+  background-color: #d9534f;
+  border-color: #d43f3a;
+  text-align: center;
 }

@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="es-PE" data-oe-company-name="Ministerio de Salud del Perú" data-website-id="1">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+    <title>Homepage | </title>
+    <link type="image/x-icon" rel="shortcut icon" href="https://saludtrabajo.minsa.gob.pe/web/image/website/1/favicon/" />
+
+    <script type="text/javascript">
+        var odoo = {
+            csrf_token: "8aed01346eb54bf966b2d0762f02356b293e447eo",
+        };
+    </script>
+
+    <meta name="generator" content="Odoo" />
+
+    <meta property="og:title" content="Homepage" />
+    <meta property="og:site_name" content="Ministerio de Salud del Perú" />
+
+    <link rel="alternate" hreflang="es" href="http://saludtrabajo.minsa.gob.pe/" />
+
+    <script type="text/javascript">
+        odoo.session_info = {
+            is_superuser: false,
+            is_frontend: true,
+        };
+    </script>
+
+    <link href="css/web.assets_common.0.css" rel="stylesheet" />
+    <link href="css/web.assets_frontend.0.css" rel="stylesheet" />
+    <link href="css/web.assets_frontend.1.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/dt-1.10.21/datatables.min.css"/>
+
+    <link href="css/main.css" rel="stylesheet" />
+    
+
+    <script type="text/javascript" src="js/web.assets_common.js"></script>
+
+    <script type="text/javascript" src="js/web.assets_frontend.js"></script>
+
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs/dt-1.10.21/datatables.min.js"></script>
+
+   
+
+</head>
+
+<body>
+
+    <div id="wrapwrap" class="homepage  page-home">
+
+        <header>
+            <div class="navbar navbar-default nav-default bg-danger box-shadow">
+                <div class="container d-flex justify-content-between">
+                    <a href="#" class="navbar-brand d-flex align-items-center">
+                        <img class="logo-minsa" src="img/logo-minsa.jpeg" alt="">
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <main>
+
+            <div id="wrap" class="oe_structure oe_empty">
+                <section class="s_image_text ">
+                    <div class="container banner-minsa">
+                        
+                    </div>
+                </section>
+                <section class="section-contenido">
+                    <div class="container">
+                          <div class="row">
+                            <div class="col-md-4">
+                                <div class="box-sector">
+                                    <img class="logo-sector" src="img/sector-trabajo.png" alt=""/>
+                                    <h2>Sector</h2>
+                                    <div class="box-texto">
+                                        <p> Registro de empresas autorizadas para autorizar empresas, el sector.</p>
+                                    </div>
+                                </div>
+                                <div class="box-btn">
+                                    <a href="/web" class="btn btn-lg btn-danger shadow" title="">Ingresar</a>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="box-sector">
+                                    <img class="logo-sector" src="img/empresa-trabajo.png" alt=""/>
+                                    <h2>Empresa Autorizada por sector</h2>
+                                    <div class="box-texto">
+                                       <p> Registro de datos complementarios para empresas autorizadas. Para completar el registro, la empresa.</p>
+                                    </div>
+                                </div>
+                                <div class="box-btn">
+                                    <a href="/permisotemporal" class="btn btn-lg btn-danger shadow" title="">Ingresar</a>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="box-sector">
+                                    <img class="logo-sector" src="img/actividad-trabajo.png" alt=""/>
+                                    <h2>Empresa con Actividades Esenciales</h2>
+                                    <div class="box-texto">
+                                        <p> Para registrar directamente una empresa que realiza actividades esenciales.</p>
+                                    </div>
+                                </div>
+                                <div class="box-btn">
+                                    <a href="/permisotemporal/actividad/esencial" class="btn btn-lg btn-danger shadow" title="">Ingresar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section-busqueda-filtros">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <form method="post">
+                                    <input type="hidden" name="csrf_token" value="ee6a664cf81718d5eff7313ba2b29f38974c3991o1589424753" />
+                                    <div class="box-top">
+                                        <div class="icono-edificio">
+                                            <img class="logo-edificio" src="img/icono-edificio-check.png" alt="">
+                                        </div>
+                                        <h3 class="title-busqueda">Buscado de empresas autorizadas</h3>
+                                    </div>
+                                    <div class="box-filtro box-resultado">
+
+                                        <ul class="nav nav-tabs">
+                                            <li class="active"><a data-toggle="tab" href="#home">Búsqueda por RUC o Razón Social</a></li>
+                                            <li><a data-toggle="tab" href="#menu1">Búsqueda por Sector</a></li>
+                                        </ul>
+
+                                        <div class="tab-content">
+                                            <div id="home" class="tab-pane fade in active">
+                                               <div class="contenido-busqueda-sector">
+                                                    <form>
+                                                        <div class="form-group row">
+                                                            <div class="col-sm-2">
+                                                                <div class="form-group">
+                                                                    <select id="elige_documento" class="form-control">
+                                                                        <option value="ruc" selected >RUC</option>
+                                                                        <option value="razon_social">Razon Social</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-6">
+                                                               <input type="text" class="form-control o_website_form_input" id="ruc" name="ruc" minlength="11" maxlength="11" onkeypress="return validateKeypress(numeric);" required="" placeholder="Ingrese ruc"/>
+                                                               <input type="text" class="hide form-control o_website_form_input" id="razon_social" name="razon_social" placeholder="Ingrese razon social" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-sm-2">
+                                                                <label class="col-form-label title-tab">ESTADO</label>
+                                                            </div>
+                                                            <div class="col-sm-6">
+                                                                <div class="form-group">
+                                                                    <select class="form-control o_website_form_input" id="state_solicitud" name="state_solicitud">
+                                                                        <option selected="" disabled="">(Seleccione)</option>
+                                                                        <option value="nuevo"> Nueva</option>
+                                                                        <option value="en_atencion">En atencion</option>
+                                                                        <option value="rechazada">Rechazada</option>
+                                                                        <option value="aprobada">Aprobada</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-sm-6">
+                                                                <button id="button_buscar" type="button" class="btn btn-danger pull-center">Buscar</button>
+                                                            </div>
+                                                        </div>
+
+                                                       
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            <div id="menu1" class="tab-pane fade">
+                                                <div class="contenido-busqueda-sector">
+                                                    <form>
+                                                        <div class="form-group row">
+                                                            <div class="col-sm-2">
+                                                                <label class="col-form-label title-tab">ESTADO</label>
+                                                            </div>
+                                                            <div class="col-sm-6">
+                                                                <div class="form-group">
+                                                                     <select class="form-control o_website_form_input" id="state_solicitud" name="state_solicitud">
+                                                                        <option selected="" disabled="">(Seleccione)</option>
+                                                                        <option value="nuevo"> Nueva</option>
+                                                                        <option value="en_atencion">En atencion</option>
+                                                                        <option value="rechazada">Rechazada</option>
+                                                                        <option value="aprobada">Aprobada</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-sm-2">
+                                                                <label class="col-form-label title-tab">SECTOR</label>
+                                                            </div>
+                                                            <div class="col-sm-6">
+                                                                <div class="form-group">
+                                                                    <select class="form-control o_website_form_input" id="sector_id" name="sector_id">
+                                                                        <option selected="" disabled="">(Seleccione)</option>
+                                                                        <option value="9">No pertenece a un Sector</option>
+                                                                        <option value="8">Comercio</option>
+                                                                        <option value="6">Construcción</option>
+                                                                        <option value="5"> Minería e industria</option>
+                                                                        <option value="7">Servicios y turismo</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-sm-6">
+                                                             <button id="button_buscar2" type="button" class="btn btn-danger pull-center">Buscar</button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <br/>
+
+                                         <div class="contenido-resultados">
+                                            <div class="card ">
+                                                <div class="card-body">
+                                                    <div class="table-responsive">
+                                                        <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
+                                                            <thead class="tabla-titulo">
+                                                                <tr>
+                                                                    <th>SECTOR</th>
+                                                                    <th>RUC</th>
+                                                                    <th>NOMBRE</th>
+                                                                    <th>SEDE</th>
+                                                                    <th>FECHA DE APROBACIÓN</th>
+                                                                    <th>ESTADO</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody id="resultados">
+                                                                <tr>
+                                                                    <td>Tiger Nixon</td>
+                                                                    <td>System Architect</td>
+                                                                    <td>Edinburgh</td>
+                                                                    <td>61</td>
+                                                                    <td>11/05/2020</td>
+                                                                    <td>Aprobado</td>                                                                                 
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>Garrett Winters</td>
+                                                                    <td>Accountant</td>
+                                                                    <td>Tokyo</td>
+                                                                    <td>63</td>
+                                                                    <td>11/05/2020</td>
+                                                                    <td>Aprobado</td>                                                                                 
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+
+                                                        <div class="box-pagination">
+                                                            <nav aria-label="...">
+                                                                <ul class="pagination">
+                                                                    <li class="page-item disabled">
+                                                                        <button class="page-link" name="button">Anterior</button>
+                                                                    </li>
+                                                                    <li class="page-item">
+                                                                        <button class="page-link" name="button">1</button>
+                                                                    </li>
+                                                                    <li class="page-item active">
+                                                                        <button class="page-link" name="button"> 2
+                                                                             <span class="sr-only">(actual)</span>
+                                                                        </button>
+                                                                    </li>
+                                                                    <li class="page-item">
+                                                                        <button class="page-link" name="button">3</button>
+                                                                    </li>
+                                                                    <li class="page-item">
+                                                                         <button class="page-link" name="button">Siguiente</button>
+                                                                    </li>
+                                                                </ul>
+                                                            </nav>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                   
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+            </div>
+
+        </main>
+        <footer>
+            <div class="oe_structure" id="footer">
+                <section class="bg-gray-dark" style="">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h4 class="mt16" style="text-align: center; ">
+                                <br/>
+                                </h4>
+                                <h4 class="mt16" style="text-align: center; ">Ministerio de Salud del Perú – Todos los derechos Reservados 2020</h4>
+                                <p style="text-align: center; ">Av. Salaverry 801 Jesús María – Lima, Perú</p>
+                                <p style="text-align: center;">Central Telefónica (511) 315-6600 | Correo: salud_trabajo_covid19@minsa.gob.pe</p>
+                                <p style="text-align: center;">
+                                    <br/>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="container mt16 mb8">
+                    <div class="pull-right">
+                        Create a <a href="http://www.odoo.com/page/website-builder">free website</a> with
+                        <a class="label label-danger" href="http://www.odoo.com/page/website-builder">Odoo</a>
+                    </div>
+                    <div class="pull-left text-muted" itemscope="itemscope" itemtype="http://schema.org/Organization">
+                        Copyright &copy; <span itemprop="name">Ministerio de Salud del Perú</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+</body>
+
+<script>
+$(document).ready(function() {
+
+    $("#button_buscar").click(function() {
+        console.log('click buscar');
+		var tableResultado = $("#resultados");
+        tableResultado.append(
+            "<tr>" +
+                "<td>"+'sector'+"</td>" +
+                "<td>"+'10454215376'+"</td>" +
+                "<td>"+'empresa'+"</td>" +
+                "<td>"+'sede'+"</td>" +
+                "<td>"+'10/05/2020'+"</td>" +
+                "<td>"+'aprobado'+"</td>" +
+            "</tr>"
+        );
+    })
+
+    var table = $('#dataTable').DataTable({
+         "paging":   false,
+         "language": {
+            "decimal": "",
+            "emptyTable": "No hay información",
+            "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+            "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
+            "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+            "infoPostFix": "",
+            "thousands": ",",
+            "lengthMenu": "Mostrar _MENU_ Entradas",
+            "loadingRecords": "Cargando...",
+            "processing": "Procesando...",
+            "search": "Buscar:",
+            "zeroRecords": "Sin resultados encontrados",
+            "paginate": {
+                "first": "Primero",
+                "last": "Ultimo",
+                "next": "Siguiente",
+                "previous": "Anterior"
+            }
+        },
+    });
+
+    var data = table
+    .rows()
+    .data();
+    console.log( data,' registros' );
+    console.log( data.length, ' registros tamaño' );
+
+    $('#dataTable tbody').on( 'click', 'tr', function () {
+        console.log( table.row( this ).data() );
+    } );
+
+
+    $( "#elige_documento" ).change(function() {
+        var valueSelected = this.value;
+        if(valueSelected === 'ruc') {
+            $('#ruc').addClass('show');
+            $('#razon_social').addClass('hide');
+            $('#razon_social').removeClass('show');
+        } else {
+            $('#razon_social').addClass('show');
+            $('#ruc').addClass('hide');
+            $('#ruc').removeClass('show');
+        }
+    });
+
+
+ 
+
+
+} );
+</script>
+</html>

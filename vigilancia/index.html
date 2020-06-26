@@ -35,7 +35,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/dt-1.10.21/datatables.min.css"/>
 
     <link href="css/main.css" rel="stylesheet" />
-    
+
 
     <script type="text/javascript" src="js/web.assets_common.js"></script>
 
@@ -43,7 +43,7 @@
 
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs/dt-1.10.21/datatables.min.js"></script>
 
-   
+
 
 </head>
 
@@ -66,234 +66,107 @@
             <div id="wrap" class="oe_structure oe_empty">
                 <section class="s_image_text ">
                     <div class="container banner-minsa">
-                        
+
                     </div>
                 </section>
-                <section class="section-contenido">
-                    <div class="container">
-                          <div class="row">
-                            <div class="col-md-4">
-                                <div class="box-sector">
-                                    <img class="logo-sector" src="img/sector-trabajo.png" alt=""/>
-                                    <h2>Sector</h2>
-                                    <div class="box-texto">
-                                        <p> Registro de empresas autorizadas para autorizar empresas, el sector.</p>
-                                    </div>
-                                </div>
-                                <div class="box-btn">
-                                    <a href="/web" class="btn btn-lg btn-danger shadow" title="">Ingresar</a>
-                                </div>
+                <section class="section-tablero">
+                  <div class="container">
+                      <div class="row">
+                        <div class="box-tablero">
+                          <div class="box-icon">
+                            <img src="img/icono-tablero.png" alt="">
+                          </div>
+
+                          <div class="box-tablero-titulo">
+                            <div class="title-tablero">
+                              Accede al Tablero de Seguimiento del Registro de Empresas en SISCOVID
+                              <a class="btn btn-default  btn-ingresar" target="_blank" href="http://www.minsa.gob.pe/saludtrabajo/">Ingresar</a>
                             </div>
-                            <div class="col-md-4">
+                          </div>
+
+                        </div>
+
+                      </div>
+                  </div>
+                </section>
+                <section class="section-contenido">
+                  <div class="container">
+                        <div class="row">
+                          <div class="col-md-8">
+                            <div class="row">
+                              <div class="col-md-6">
                                 <div class="box-sector">
-                                    <img class="logo-sector" src="img/empresa-trabajo.png" alt=""/>
-                                    <h2>Empresa Autorizada por sector</h2>
-                                    <div class="box-texto">
-                                       <p> Registro de datos complementarios para empresas autorizadas. Para completar el registro, la empresa.</p>
-                                    </div>
+                                  <img class="logo-sector logo-fiscalizador" src="img/icono-fiscalizador.png" alt=""/>
+                                  <h2>Ente Fiscalizador</h2>
+                                  <div class="box-texto">
+                                     <p>Para al acceso a los diferentes entes fiscalizadores como SUNAFIL, OEFA, DIRESA/GERESA, Municipalidades entre otros.</p>
+                                  </div>
                                 </div>
                                 <div class="box-btn">
                                     <a href="/permisotemporal" class="btn btn-lg btn-danger shadow" title="">Ingresar</a>
                                 </div>
-                            </div>
-                            <div class="col-md-4">
+                              </div>
+                              <div class="col-md-6">
                                 <div class="box-sector">
-                                    <img class="logo-sector" src="img/actividad-trabajo.png" alt=""/>
-                                    <h2>Empresa con Actividades Esenciales</h2>
+                                    <img class="logo-sector" src="img/icono-empresa.png" alt=""/>
+                                    <h2>Entidades, Personas NAturales o Jurídicas</h2>
                                     <div class="box-texto">
-                                        <p> Para registrar directamente una empresa que realiza actividades esenciales.</p>
+                                        <p>Para el registro de Plan para la vigilancia, prevención y control de COVID-19 en el trabajo, según D.S.46-2020-PCM,D.S.94-2020-PCM y D.S.101-2020-PCM.</p>
                                     </div>
                                 </div>
                                 <div class="box-btn">
                                     <a href="/permisotemporal/actividad/esencial" class="btn btn-lg btn-danger shadow" title="">Ingresar</a>
                                 </div>
+                              </div>
                             </div>
-                        </div>
-                    </div>
-                </section>
+                          </div>
+                          <div class="col-md-3 col-sidebar">
+                            <div class="sidebar">
+                              <div class="box-sidebar box-entidad">
+                                <h4>EMPRESA / ENTIDAD</h4>
+                                <button type="button" class="btn btn-warning btn-lg btn-block">
+                                  <div class="box-icon"><img src="img/icono-registro.png" alt=""></div>
+                                  <span>Registro de Empresas </span>
+                                </button>
+                                <button type="button" class="btn btn-warning btn-lg btn-block">
+                                  <div class="box-icon"><img src="img/icono-lupa.png" alt=""></div>
+                                  <span>Búsqueda de empresas </span>
+                                </button>
+                                <button type="button" class="btn btn-warning btn-lg btn-block">
+                                  <div class="box-icon"><img src="img/icono-normas.png" alt=""></div>
+                                  <span>Normativas </span>
+                                </button>
+                              </div>
 
-                <section class="section-busqueda-filtros">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <form method="post">
-                                    <input type="hidden" name="csrf_token" value="ee6a664cf81718d5eff7313ba2b29f38974c3991o1589424753" />
-                                    <div class="box-top">
-                                        <div class="icono-edificio">
-                                            <img class="logo-edificio" src="img/icono-edificio-check.png" alt="">
-                                        </div>
-                                        <h3 class="title-busqueda">Buscado de empresas autorizadas</h3>
-                                    </div>
-                                    <div class="box-filtro box-resultado">
+                              <div class="box-sidebar box-entidad">
+                                <h4>TRABAJADOR</h4>
+                                <button type="button" class="btn btn-danger btn-lg btn-block">
+                                  <div class="box-icon"><img src="img/icono-incidencia.png" alt=""></div>
+                                  <span>Registro de Incidencias </span>
+                                </button>
+                                <button type="button" class="btn btn-danger btn-lg btn-block">
+                                  <div class="box-icon"><img src="img/icono-normas.png" alt=""></div>
+                                  <span>Normativas </span>
+                                </button>
+                              </div>
 
-                                        <ul class="nav nav-tabs">
-                                            <li class="active"><a data-toggle="tab" href="#home">Búsqueda por RUC o Razón Social</a></li>
-                                            <li><a data-toggle="tab" href="#menu1">Búsqueda por Sector</a></li>
-                                        </ul>
+                              <div class="box-sidebar box-entidad">
+                                <h4>MULTIMEDIA</h4>
+                                <div class="contenido-multimedia">
+                                  <div class="box-youtube">
+                                    <iframe width="260" height="135" src="https://www.youtube.com/embed/2kWtspEAww4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                  </div>
+                                  <div class="box-youtube">
+                                    <iframe width="260" height="135" src="https://www.youtube.com/embed/2kWtspEAww4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                  </div>
+                                </div>
+                              </div>
 
-                                        <div class="tab-content">
-                                            <div id="home" class="tab-pane fade in active">
-                                               <div class="contenido-busqueda-sector">
-                                                    <form>
-                                                        <div class="form-group row">
-                                                            <div class="col-sm-2">
-                                                                <div class="form-group">
-                                                                    <select id="elige_documento" class="form-control">
-                                                                        <option value="ruc" selected >RUC</option>
-                                                                        <option value="razon_social">Razon Social</option>
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-sm-6">
-                                                               <input type="text" class="form-control o_website_form_input" id="ruc" name="ruc" minlength="11" maxlength="11" onkeypress="return validateKeypress(numeric);" required="" placeholder="Ingrese ruc"/>
-                                                               <input type="text" class="hide form-control o_website_form_input" id="razon_social" name="razon_social" placeholder="Ingrese razon social" />
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <div class="col-sm-2">
-                                                                <label class="col-form-label title-tab">ESTADO</label>
-                                                            </div>
-                                                            <div class="col-sm-6">
-                                                                <div class="form-group">
-                                                                    <select class="form-control o_website_form_input" id="state_solicitud" name="state_solicitud">
-                                                                        <option selected="" disabled="">(Seleccione)</option>
-                                                                        <option value="nuevo"> Nueva</option>
-                                                                        <option value="en_atencion">En atencion</option>
-                                                                        <option value="rechazada">Rechazada</option>
-                                                                        <option value="aprobada">Aprobada</option>
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <div class="col-sm-6">
-                                                                <button id="button_buscar" type="button" class="btn btn-danger pull-center">Buscar</button>
-                                                            </div>
-                                                        </div>
-
-                                                       
-                                                    </form>
-                                                </div>
-                                            </div>
-                                            <div id="menu1" class="tab-pane fade">
-                                                <div class="contenido-busqueda-sector">
-                                                    <form>
-                                                        <div class="form-group row">
-                                                            <div class="col-sm-2">
-                                                                <label class="col-form-label title-tab">ESTADO</label>
-                                                            </div>
-                                                            <div class="col-sm-6">
-                                                                <div class="form-group">
-                                                                     <select class="form-control o_website_form_input" id="state_solicitud" name="state_solicitud">
-                                                                        <option selected="" disabled="">(Seleccione)</option>
-                                                                        <option value="nuevo"> Nueva</option>
-                                                                        <option value="en_atencion">En atencion</option>
-                                                                        <option value="rechazada">Rechazada</option>
-                                                                        <option value="aprobada">Aprobada</option>
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <div class="col-sm-2">
-                                                                <label class="col-form-label title-tab">SECTOR</label>
-                                                            </div>
-                                                            <div class="col-sm-6">
-                                                                <div class="form-group">
-                                                                    <select class="form-control o_website_form_input" id="sector_id" name="sector_id">
-                                                                        <option selected="" disabled="">(Seleccione)</option>
-                                                                        <option value="9">No pertenece a un Sector</option>
-                                                                        <option value="8">Comercio</option>
-                                                                        <option value="6">Construcción</option>
-                                                                        <option value="5"> Minería e industria</option>
-                                                                        <option value="7">Servicios y turismo</option>
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group row">
-                                                            <div class="col-sm-6">
-                                                             <button id="button_buscar2" type="button" class="btn btn-danger pull-center">Buscar</button>
-                                                            </div>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <br/>
-
-                                         <div class="contenido-resultados">
-                                            <div class="card ">
-                                                <div class="card-body">
-                                                    <div class="table-responsive">
-                                                        <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
-                                                            <thead class="tabla-titulo">
-                                                                <tr>
-                                                                    <th>SECTOR</th>
-                                                                    <th>RUC</th>
-                                                                    <th>NOMBRE</th>
-                                                                    <th>SEDE</th>
-                                                                    <th>FECHA DE APROBACIÓN</th>
-                                                                    <th>ESTADO</th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody id="resultados">
-                                                                <tr>
-                                                                    <td>Tiger Nixon</td>
-                                                                    <td>System Architect</td>
-                                                                    <td>Edinburgh</td>
-                                                                    <td>61</td>
-                                                                    <td>11/05/2020</td>
-                                                                    <td>Aprobado</td>                                                                                 
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>Garrett Winters</td>
-                                                                    <td>Accountant</td>
-                                                                    <td>Tokyo</td>
-                                                                    <td>63</td>
-                                                                    <td>11/05/2020</td>
-                                                                    <td>Aprobado</td>                                                                                 
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-
-                                                        <div class="box-pagination">
-                                                            <nav aria-label="...">
-                                                                <ul class="pagination">
-                                                                    <li class="page-item disabled">
-                                                                        <button class="page-link" name="button">Anterior</button>
-                                                                    </li>
-                                                                    <li class="page-item">
-                                                                        <button class="page-link" name="button">1</button>
-                                                                    </li>
-                                                                    <li class="page-item active">
-                                                                        <button class="page-link" name="button"> 2
-                                                                             <span class="sr-only">(actual)</span>
-                                                                        </button>
-                                                                    </li>
-                                                                    <li class="page-item">
-                                                                        <button class="page-link" name="button">3</button>
-                                                                    </li>
-                                                                    <li class="page-item">
-                                                                         <button class="page-link" name="button">Siguiente</button>
-                                                                    </li>
-                                                                </ul>
-                                                            </nav>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                   
-                                </form>
                             </div>
-                        </div>
-                    </div>
-                </section>
-
+                          </div>
+                      </div>
+                  </div>
+              </section>
 
             </div>
 
@@ -399,7 +272,7 @@ $(document).ready(function() {
     });
 
 
- 
+
 
 
 } );
