@@ -1019,7 +1019,7 @@ table.dataTable {
 }
 
 
-.box-sidebar button {
+.box-sidebar a, .box-sidebar button {
   display: flex;
   align-items: center;
   padding: 6px 16px;
