@@ -1097,3 +1097,122 @@ table.dataTable {
   border-color: #d43f3a;
   text-align: center;
 }
+
+
+/* Formulario Incidencias */
+
+
+.form-incidencias {
+  width: 100%;
+  max-width: 950px;
+  padding: 15px;
+  margin: 0 auto 50px;
+}
+
+.form-incidencias h3 {
+  color: #d43f3a;
+  font-weight: bold;
+  font-size: 23px;
+  margin-bottom: 28px;
+}
+
+.form-incidencias .panel-default .panel-heading {
+  background-color: #F0B957;
+  color: black;
+  padding: 7px 15px;
+}
+
+
+.form-incidencias .panel-body {
+  padding: 15px 75px;
+}
+
+@media (max-width: 960px) {
+  .form-incidencias .panel-body {
+    padding: 15px 20px;
+  }
+}
+
+
+.form-incidencias .btn {
+  padding: 6px 25px;
+}
+
+.mt-15 {
+  margin-top: 15px;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mt-30 {
+  margin-top: 30px;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.flex {
+  display: flex;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.form-incidencias .table-responsive > .table-bordered {
+  border: 1px solid #e3e6f0;
+}
+
+.box-input button {
+  margin-top: 8px;
+}
+
+
+.form-incidencias .text-danger {
+  color: red;
+}
+
+
+.form-incidencias .box-panel-inner .panel-heading {
+  background-color: lightgray;
+}
+
+.form-incidencias .box-panel-inner .panel-body {
+  padding: 15px 25px;
+}
+
+.box-check .form-check label {
+  margin-top: 6px;
+  margin-left: 7px;
+}
+
+.form-check-inline {
+  display: inline-flex;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-left: 0;
+  margin-right: .75rem;
+}
+
+.importante p {
+  margin: 0 0 4px 0;
+}
+
+.text-small {
+  font-weight: 200;
+  font-size: 14px;
+  display: block;
+  color: gray;
+}
+
+.box-capcha {
+  margin: 50px auto 50px;
+  text-align: center;
+}
