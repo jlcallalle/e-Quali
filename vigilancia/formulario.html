@@ -78,26 +78,23 @@
                                           <div class="col-12 col-md-6">
                                               <div class="form-group">
                                                   <label class="control-label">Tipo de documento (*)</label>
-                                                  <select class="form-control o_website_form_input" id="sector_id" name="sector_id">
+                                                  <select class="form-control" id="elige_documento_incidencia">
                                                       <option selected="" disabled="">(Seleccione)</option>
-                                                      <option value="dni">
-                                                         DNI
+                                                      <option value="dni"> DNI
                                                       </option>
-                                                      <option value="carnet">
-                                                        Carnet
-                                                      </option>
+                                                      <option value="carnet">Carnet de extranjería</option>
                                                   </select>
                                               </div>
                                           </div>
                                           <div class="col-12 col-md-6 ">
                                               <div class="form-group">
                                                   <label class="control-label">Número de documento (*)</label>
-                                                  <input type="text" class="form-control o_website_form_input" />
+                                                  <input type="text" class="form-control" />
                                               </div>
                                           </div>
                                       </div>
                                       <div class="row">
-                                          <div class="col-12 col-md-6">
+                                          <div class="col-12 col-md-6" id="col_emision_dni">
                                               <div class="form-group">
                                                   <label class="control-label">Fecha de emisión del DNI (*)</label>
                                                   <input type="date" class="form-control" />
@@ -156,13 +153,21 @@
                                         <div class="col-12 col-md-6">
                                           <div class="form-group">
                                               <label class="control-label">¿Trabaja en la entidad a reportar? (*)</label>
-                                              <input type="text" class="form-control" />
+                                              <select class="form-control">
+                                                  <option selected="" disabled="">(Seleccione)</option>
+                                                  <option value="si">Si</option>
+                                                  <option value="no">No</option>
+                                              </select>
                                           </div>
                                         </div>
                                         <div class="col-12 col-md-6">
                                           <div class="form-group">
                                               <label class="control-label">¿Es representante lega de quien presenta la incidencia? (*)</label>
-                                              <input type="text" class="form-control" />
+                                              <select class="form-control">
+                                                  <option selected="" disabled="">(Seleccione)</option>
+                                                  <option value="si">Si</option>
+                                                  <option value="no">No</option>
+                                              </select>
                                           </div>
                                         </div>
                                       </div>
@@ -212,7 +217,7 @@
                                                   <div class="form-inline">
                                                     <div class="form-group">
                                                         <label class="control-label">¿Datos de domicilio son correctos? (*)</label>
-                                                        <select class="form-control">
+                                                        <select class="form-control" id="domicilio-incidencia">
                                                             <option selected="" disabled="">(Seleccione)</option>
                                                             <option value="si">si</option>
                                                             <option value="no">no</option>
@@ -226,7 +231,7 @@
                                                 <div class="col-12 col-md-6">
                                                   <div class="form-group">
                                                       <label class="control-label">Pais (*)</label>
-                                                      <select class="form-control">
+                                                      <select class="form-control input-domicilio">
                                                         <option selected="" disabled="">(Seleccione)</option>
                                                         <option value="peru">peru</option>
                                                         <option value="chile">chile</option>
@@ -236,7 +241,7 @@
                                                 <div class="col-12 col-md-6">
                                                   <div class="form-group">
                                                       <label class="control-label">Departamento (*)</label>
-                                                      <select class="form-control">
+                                                      <select class="form-control input-domicilio">
                                                           <option selected="" disabled="">(Seleccione)</option>
                                                           <option value="lima">lima</option>
                                                           <option value="arequipa">arequipa</option>
@@ -248,7 +253,7 @@
                                                 <div class="col-12 col-md-6">
                                                   <div class="form-group">
                                                       <label class="control-label">Provincia (*)</label>
-                                                      <select class="form-control">
+                                                      <select class="form-control input-domicilio">
                                                         <option selected="" disabled="">(Seleccione)</option>
                                                         <option value="peru">peru</option>
                                                         <option value="chile">chile</option>
@@ -258,7 +263,7 @@
                                                 <div class="col-12 col-md-6">
                                                   <div class="form-group">
                                                       <label class="control-label">Distrito (*)</label>
-                                                      <select class="form-control">
+                                                      <select class="form-control input-domicilio">
                                                           <option selected="" disabled="">(Seleccione)</option>
                                                           <option value="lima">lima</option>
                                                           <option value="arequipa">arequipa</option>
@@ -271,7 +276,7 @@
                                                 <div class="col-12 col-md-6">
                                                   <div class="form-group">
                                                       <label class="control-label">Dirección (*)</label>
-                                                      <input type="text" class="form-control" />
+                                                      <input type="text" class="form-control input-domicilio" />
                                                   </div>
                                                 </div>
                                                 <div class="col-12 col-md-6">
@@ -288,13 +293,13 @@
                                     <div class="row mt-15">
                                       <div class="col-12 col-md-6">
                                         <div class="form-group">
-                                            <label class="control-label">Correo Electrónico principal (*)</label>
+                                            <label class="control-label">Correo electrónico principal (*)</label>
                                             <input type="text" class="form-control" />
                                         </div>
                                       </div>
                                       <div class="col-12 col-md-6">
                                         <div class="form-group">
-                                            <label class="control-label">Correo electrónico alternativo (*)</label>
+                                            <label class="control-label">Correo electrónico alternativo</label>
                                             <input type="text" class="form-control" />
                                         </div>
                                       </div>
@@ -307,13 +312,13 @@
                                     <div class="row">
                                       <div class="col-12 col-md-6">
                                         <div class="form-group">
-                                            <label class="control-label">Celular Principal (*)</label>
+                                            <label class="control-label">Celular principal (*)</label>
                                             <input type="text" class="form-control" />
                                         </div>
                                       </div>
                                       <div class="col-12 col-md-6">
                                         <div class="form-group">
-                                            <label class="control-label">Celular Alternativo (*)</label>
+                                            <label class="control-label">Celular alternativo</label>
                                             <input type="text" class="form-control" />
                                         </div>
                                       </div>
@@ -361,20 +366,23 @@
                                           <div class="form-group">
                                               <div class="box-check">
                                                 <div class="form-check form-check-inline">
-                                                  <input class="form-check-input" type="radio" name="plan" id="sede" value="option1">
-                                                  <label class="form-check-label" for="sede">Sede</label>
+                                                  <input class="form-check-input" type="radio" name="tipo-registro" id="sede_incidencia" value="sede" checked >
+                                                  <label class="form-check-label" for="sede_incidencia">Sede</label>
                                                 </div>
                                                 <div class="form-check form-check-inline">
-                                                  <input class="form-check-input" type="radio" name="plan" id="proyecto" value="option2">
-                                                  <label class="form-check-label" for="proyecto">Proyecto</label>
+                                                  <input class="form-check-input" type="radio" name="tipo-registro" id="proyecto_incidencia" value="proyecto">
+                                                  <label class="form-check-label" for="proyecto_incidencia">Proyecto</label>
                                                 </div>
                                               </div>
                                           </div>
-                                          <select class="form-control">
+
+                                          <select id="nombre_sede_incidencia" class="form-control">
                                             <option selected="" disabled="">(Seleccione)</option>
-                                            <option value="a">a</option>
-                                            <option value="b">b</option>
+                                            <option value="sede1">Sede 1</option>
+                                            <option value="sede2">Sede 2</option>
                                           </select>
+                                          <input type="text" name="nombre_proyecto_incidencia" id="nombre_proyecto_incidencia" class="hide form-control">
+
                                         </div>
                                       </div>
 
@@ -430,8 +438,8 @@
 
                                         <div class="col-12 col-md-12">
                                           <div class="form-group">
-                                            <label for="validationTextarea">Información adicional</label>
-                                            <textarea class="form-control" id="validationTextarea" placeholder="Registrar información que considere relevante." required></textarea>
+                                            <label for="validationTextarea">Posible efecto ocasionado</label>
+                                            <textarea class="form-control" id="validationTextarea" placeholder="Registrar en caso conozca la posible afectación a la función o al servicio público." required></textarea>
                                           </div>
                                         </div>
 
@@ -500,7 +508,7 @@
                                                 <div class="row mt-10 mb-10">
                                                     <div class="col-12 col-md-12">
                                                       <div>
-                                                          <button id="button_buscar" type="button" class="btn btn-danger pull-center">Agregar Sede / Proyecto</button>
+                                                          <button id="button_buscar" type="button" class="btn btn-danger pull-center">Agregar documento</button>
                                                       </div>
                                                     </div>
                                                 </div>
@@ -608,11 +616,23 @@
                               </div>
 
                               <p>Su Incidencia será registrada de manera anónima o identificable? (*)</p>
-                              <div class="importante text-danger mt-20">
+
+                              <div class="importante text-danger">
                                 <p>IMPORTANTE</p>
                                 <p>Si su incidencia es registrada de manera anónima, sus datos serán reservados y se mostrarán de forma anónima</p>
                                 <p>Si su incidencia es registrada de manera identificable, datos se compartirán con los diferentes entes que lo soliciten para la
                                   fiscalización</p>
+                              </div>
+                              <div class="row">
+                                  <div class="col-12 col-md-6">
+                                      <div class="form-group">
+                                          <select class="form-control">
+                                              <option selected="" disabled="">(Seleccione)</option>
+                                              <option value="anonimo"> Anónimo</option>
+                                              <option value="identificable">Identificable</option>
+                                          </select>
+                                      </div>
+                                  </div>
                               </div>
 
                               <div class="box-capcha">
@@ -716,8 +736,8 @@ $(document).ready(function() {
     var data = table
     .rows()
     .data();
-    console.log( data,' registros' );
-    console.log( data.length, ' registros tamaño' );
+    //console.log( data,' registros' );
+    //console.log( data.length, ' registros tamaño' );
 
     $('#dataTable tbody').on( 'click', 'tr', function () {
         console.log( table.row( this ).data() );
@@ -737,6 +757,52 @@ $(document).ready(function() {
         }
     });
 
+
+
+
+    /* EVENTOS FORMULARIO INCIDENCIAS*/
+
+    /* Evento Tipo Documento Incidencia - Select*/
+    $( "#elige_documento_incidencia" ).change(function() {
+        var valueSelected = this.value;
+        if(valueSelected === 'dni') {
+          $('#col_emision_dni').addClass('show');
+          $('#col_emision_dni').removeClass('hide');
+        } else {
+            $('#col_emision_dni').addClass('hide');
+            $('#col_emision_dni').removeClass('show');
+        }
+    });
+
+    /* Evento Tipo Sede o Proyecto - Checkbox*/
+    $("input[name='tipo-registro']").click(function(){
+      var valorTipoRegistro = $(this).val();
+      if (valorTipoRegistro === 'sede') {
+        console.log(valorTipoRegistro);
+        $('#nombre_proyecto_incidencia').addClass('hide');
+        $('#nombre_proyecto_incidencia').removeClass('show');
+        $('#nombre_sede_incidencia').addClass('show');
+        $('#nombre_sede_incidencia').removeClass('hide');
+      } else {
+        console.log(valorTipoRegistro);
+        $('#nombre_sede_incidencia').addClass('hide');
+        $('#nombre_sede_incidencia').removeClass('show');
+
+        $('#nombre_proyecto_incidencia').addClass('show');
+        $('#nombre_proyecto_incidencia').removeClass('hide');
+      }
+    });
+
+    /* Evento Domicilio Actual - Select */
+    $("#domicilio-incidencia" ).change(function() {
+        var valueSelected = this.value;
+        if(valueSelected === 'si') {
+          $('.input-domicilio').attr("disabled", true)
+        } else {
+          console.log(valueSelected);
+          $('.input-domicilio').attr("disabled", false)
+        }
+    });
 
 
 
