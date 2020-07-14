@@ -1127,6 +1127,9 @@ body .page-login {
   text-align: center;
   margin-top: 115px;
   margin-bottom: 80px;
+  box-shadow: 6px 6px 4px 0px rgba(165, 165, 165, 0.55);
+  border-radius: 30px;
+  background-color: rgba(0, 0, 0, 0.1);
 }
 .form-contacto .input-group-addon {
   background-color: white;
