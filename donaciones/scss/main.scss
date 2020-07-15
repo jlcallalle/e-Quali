@@ -2,15 +2,30 @@
 $color-red : #ff3535;
 
 //Custom Boostrap Theme
-.navbar-default {
-  background-color: $color-red;
+.navbar-light {
+  background-color: $color-red!important;
   .navbar-nav > li > a:hover,
   .navbar-nav > li > a:focus {
     opacity: 0.8;
+    color:white;
   }
   .navbar-nav > li > .active:hover {
     opacity: 1;
   }
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: white;
+  &:hover, &:focus {
+    color: white;
+  }
+}
+
+.navbar-light .navbar-nav .show > .nav-link,
+.navbar-light .navbar-nav .active > .nav-link,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .nav-link.active {
+  color: white;
 }
 
 .navbar-nav {
@@ -38,9 +53,6 @@ $color-red : #ff3535;
   background-color: #dddddd;
 }
 
-.navbar-default .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-}
 
 // Page Home
 
@@ -101,16 +113,13 @@ body .page-login {
 }
 
 
-.bg-gray {
+
+.o_footer{
+  text-align: center;
+  color:white;
   background-color: #333333!important;
 }
 
-.footer {
-  height: 150px;
-  h1, h2, h3, h4, h5, h6, a, i, span, p {
-      color:white;
-  }
-}
 
 
 /* Page Login */

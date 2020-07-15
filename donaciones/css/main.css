@@ -1,12 +1,27 @@
-.navbar-default {
-  background-color: #ff3535;
+.navbar-light {
+  background-color: #ff3535 !important;
 }
-.navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus {
+.navbar-light .navbar-nav > li > a:hover,
+.navbar-light .navbar-nav > li > a:focus {
   opacity: 0.8;
+  color: white;
 }
-.navbar-default .navbar-nav > li > .active:hover {
+.navbar-light .navbar-nav > li > .active:hover {
   opacity: 1;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: white;
+}
+.navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus {
+  color: white;
+}
+
+.navbar-light .navbar-nav .show > .nav-link,
+.navbar-light .navbar-nav .active > .nav-link,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .nav-link.active {
+  color: white;
 }
 
 .navbar-nav li a {
@@ -28,10 +43,6 @@
 
 .navbar-toggler {
   background-color: #dddddd;
-}
-
-.navbar-default .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
 body .homepage,
@@ -91,15 +102,10 @@ body .page-login {
   }
 }
 
-.bg-gray {
-  background-color: #333333 !important;
-}
-
-.footer {
-  height: 150px;
-}
-.footer h1, .footer h2, .footer h3, .footer h4, .footer h5, .footer h6, .footer a, .footer i, .footer span, .footer p {
+.o_footer {
+  text-align: center;
   color: white;
+  background-color: #333333 !important;
 }
 
 /* Page Login */
