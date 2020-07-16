@@ -45,6 +45,16 @@
   background-color: #dddddd;
 }
 
+.navbar-nav li a {
+  color: black;
+}
+
+.dropdown-item.active, .dropdown-item:active {
+  color: black;
+  text-decoration: none;
+  background-color: transparent;
+}
+
 body .homepage,
 body .page-login {
   background-color: #CDE6F9;

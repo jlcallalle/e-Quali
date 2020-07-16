@@ -53,6 +53,15 @@ $color-red : #ff3535;
   background-color: #dddddd;
 }
 
+.navbar-nav li a {
+  color: black;
+}
+
+.dropdown-item.active, .dropdown-item:active {
+  color: black;
+  text-decoration: none;
+  background-color: transparent;
+}
 
 // Page Home
 
